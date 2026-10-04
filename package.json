@@ -31,6 +31,9 @@
     "still": "remotion still Showcase out/showcase.png --frame=60",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "tts": "node scripts/tts.mjs",
+    "tts:check": "node scripts/tts.mjs check",
+    "voiceover": "node scripts/tts.mjs build"
   }
 }

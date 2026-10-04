@@ -1,0 +1,23 @@
+{
+  "name": "example",
+  "model": "gemini-3.8-flash-tts",
+  "totalSeconds": 6.48,
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "Xin chào! Đây là giọng đọc được tạo bằng Gemini.",
+      "voice": "Kore",
+      "src": "voiceover/example/line-01.wav",
+      "durationInSeconds": 3.64,
+      "hash": "0aefc20d07d4"
+    },
+    {
+      "id": "line-02",
+      "text": "Video của bạn giờ đã có thể tự động lồng tiếng.",
+      "voice": "Puck",
+      "src": "voiceover/example/line-02.wav",
+      "durationInSeconds": 2.84,
+      "hash": "7117c55ce2d7"
+    }
+  ]
+}

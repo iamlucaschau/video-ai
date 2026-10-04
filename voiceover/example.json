@@ -1,0 +1,19 @@
+{
+  "name": "example",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Kore",
+  "style": "warm, clear, confident narrator; natural Vietnamese pacing",
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "Xin chào! Đây là giọng đọc được tạo bằng Gemini.",
+      "voice": "Kore"
+    },
+    {
+      "id": "line-02",
+      "text": "Video của bạn giờ đã có thể tự động lồng tiếng.",
+      "voice": "Puck",
+      "style": "upbeat and energetic"
+    }
+  ]
+}

@@ -11,6 +11,8 @@ npm run dev          # open Remotion Studio at http://localhost:3000
 npm run render       # render the sample to out/showcase.mp4
 npm run still        # render frame 60 to out/showcase.png
 npm run lint         # eslint + typecheck
+npm run tts:check    # validate Gemini TTS keys
+npm run voiceover -- voiceover/example.json   # generate narration
 ```
 
 ## The sample: `Showcase`
@@ -35,6 +37,14 @@ live in `src/compositions/Showcase/schema.ts`.
 
 See **[AGENTS.md](AGENTS.md)** for the full guide to creating scenes,
 animating typography and graphics, syncing audio, previewing, and rendering.
+
+## Voiceover
+
+Narration is generated with Gemini TTS (two API keys, rotated with automatic
+failover). Keys live in the git-ignored `gemini_key.txt.txt` or in `.env` (see
+`.env.example`). Write lines in `voiceover/<name>.json`, run
+`npm run voiceover -- voiceover/<name>.json`, then drop
+`<Voiceover manifest={...} />` into a composition. Details are in AGENTS.md.
 
 ## Rendering options
 

@@ -38,6 +38,8 @@ src/
   Root.tsx                 registers every <Composition> (id, size, fps, duration, schema, defaultProps)
   config.ts                VIDEO (width/height/fps), DESIGN canvas, scene timings in SECONDS, toFrames()
   theme.ts                 FONTS (Google Fonts), COLORS, TYPE scale, SAFE area
+  lib/voiceover.ts         voiceoverTimeline(), voiceoverDurationInFrames() for TTS manifests
+  voiceover/*.json         generated TTS manifests (durations), do not edit by hand
   lib/animation.ts         EASE presets, CLAMP, progress(), fadeUp(), popIn(), float(), stagger(), mix()
   components/              reusable building blocks (import from "../components")
     Stage.tsx              1920×1080 design canvas scaled to the real output size
@@ -47,12 +49,15 @@ src/
     FloatingShape.tsx      positions a shape with springy entrance + ambient drift
     GlassCard.tsx          frosted card with rise-in entrance
     Counter.tsx            eased number count-up
+    Voiceover.tsx          plays a TTS manifest line by line
   compositions/
     Showcase/              the sample video
       Showcase.tsx         TransitionSeries of scenes + synced sound effects
       schema.ts            Zod props schema + showcaseDefaults (Studio-editable props)
       scenes/*.tsx         one file per scene
     _template/             SceneTemplate.tsx, a copyable starter (not registered)
+scripts/tts.mjs            Gemini TTS generator (check / say / build), multi-key rotation
+voiceover/*.json           voiceover scripts (input for npm run voiceover)
 public/
   audio/                   whoosh.wav, pop.wav (generated, royalty-free). Add music/VO here
   images/  fonts/          static assets, referenced with staticFile("images/x.png")
@@ -178,6 +183,48 @@ these conventions (see the `remotion-interactivity` skill):
 4. Full render: `npx remotion render <id> out/<id>.mp4`. Confirm with
    `ffprobe out/<id>.mp4` (dimensions, fps, frame count, audio stream).
 5. Delete scratch outputs in `out/` that the user didn't ask for.
+
+## Voiceover (Gemini TTS)
+
+`scripts/tts.mjs` generates narration with the Gemini API
+(`POST /v1beta/interactions`, model `gemini-3.8-flash-tts`, 24 kHz mono WAV).
+
+- **Keys**: two keys are configured in `gemini_key.txt.txt` (git-ignored).
+  The script also accepts `GEMINI_API_KEYS=key1,key2` in `.env` (see
+  `.env.example`). Requests rotate across keys round-robin and automatically
+  fail over to the next key on 401/403/429/5xx. **Never print, log, or commit keys.**
+- **Check keys** (no quota used): `npm run tts:check`
+- **One-off line**: `npm run tts -- say "Xin chào" --out public/voiceover/hello.wav --voice Kore --style "warm, calm"`
+- **Full script** (preferred): write `voiceover/<name>.json` (see
+  `voiceover/example.json`: `lines[]` with `id`, `text`, optional
+  `voice`/`style`/`model`), then `npm run voiceover -- voiceover/<name>.json`.
+  This writes `public/voiceover/<name>/<id>.wav` plus a manifest at
+  `src/voiceover/<name>.json` with each line's exact duration. Unchanged lines
+  are cached by hash; `--force` regenerates everything.
+- **Voices**: Zephyr, Puck, Charon, Kore, Fenrir, Leda, Orus, Aoede,
+  Callirrhoe, Autonoe, Enceladus, Iapetus, Umbriel, Algieba, Despina, Erinome,
+  Algenib, Rasalgethi, Laomedeia, Achernar, Alnilam, Schedar, Gacrux,
+  Pulcherrima, Achird, Zubenelgenubi, Vindemiatrix, Sadachbia, Sadaltager,
+  Sulafat. Vietnamese and 130+ languages are supported; language is detected
+  from the text. Steer delivery with `style` (emotion, pace, tone). Inline tags
+  like `<short pause>` work inside `text`.
+- **Use in a video** (timing comes from real audio durations):
+
+  ```tsx
+  import manifest from "../../voiceover/example.json";
+  import { Voiceover } from "../../components";
+  import { voiceoverTimeline, voiceoverDurationInFrames } from "../../lib/voiceover";
+
+  <Voiceover manifest={manifest} gapSeconds={0.35} startSeconds={0.5} />
+  // Sync visuals: voiceoverTimeline(manifest, fps, {...})[i].from / .durationInFrames
+  // Size the composition: durationInFrames={voiceoverDurationInFrames(manifest, VIDEO.fps, {...}) + tail}
+  ```
+
+  Pass the same `gapSeconds`/`startSeconds` to the component and the timeline
+  helpers so audio and visuals stay locked together. Lower music under VO
+  (`volume={0.25}`).
+- Windows note: send Vietnamese text via a UTF-8 JSON file (as the script
+  does), not inline in a `curl -d` argument, or the request body gets corrupted.
 
 ## Props
 

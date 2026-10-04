@@ -5,3 +5,4 @@ export { Counter } from "./Counter";
 export { FloatingShape } from "./FloatingShape";
 export { GlassCard } from "./GlassCard";
 export { Stage } from "./Stage";
+export { Voiceover } from "./Voiceover";
