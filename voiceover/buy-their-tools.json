@@ -1,0 +1,452 @@
+{
+  "name": "buy-their-tools",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Orus",
+  "style": "Calm, confident storytelling narrator for a short finance lesson. Measured, unhurried pace with clear pauses between sentences. Cold and plain, never shouting; the sting is in the words. Crisp emphasis on every number.",
+  "trimSilence": true,
+  "tempo": 1.15,
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "A poor person buys the machine first."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "A rich person sells the first job."
+    },
+    {
+      "id": "03",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.15,
+      "text": "Same pressure washer."
+    },
+    {
+      "id": "04",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.6,
+      "text": "Opposite order."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.35,
+      "text": "The poor person wants to start pressure washing."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "Four hundred dollars for a machine."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "Credit card."
+    },
+    {
+      "id": "08",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.35,
+      "text": "Twenty-two percent interest."
+    },
+    {
+      "id": "09",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.35,
+      "text": "Zero customers."
+    },
+    {
+      "id": "10",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "But now there's a pressure washer in the garage."
+    },
+    {
+      "id": "11",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.35,
+      "text": "They feel like a business owner."
+    },
+    {
+      "id": "12",
+      "scene": "s2",
+      "take": "t03",
+      "gapAfter": 0.15,
+      "text": "They didn't buy a pressure washer."
+    },
+    {
+      "id": "13",
+      "scene": "s2",
+      "take": "t03",
+      "gapAfter": 0.6,
+      "text": "They bought a feeling."
+    },
+    {
+      "id": "14",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "Two jobs come in."
+    },
+    {
+      "id": "15",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.35,
+      "text": "One hundred fifty dollars each."
+    },
+    {
+      "id": "16",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.35,
+      "text": "Three hundred dollars."
+    },
+    {
+      "id": "17",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.35,
+      "text": "Then nothing."
+    },
+    {
+      "id": "18",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "The machine sits."
+    },
+    {
+      "id": "19",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.35,
+      "text": "The payments don't."
+    },
+    {
+      "id": "20",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "Eventually, they sell it for one hundred fifty dollars."
+    },
+    {
+      "id": "21",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.35,
+      "text": "But they keep paying the card."
+    },
+    {
+      "id": "22",
+      "scene": "s3",
+      "take": "t05",
+      "gapAfter": 0.35,
+      "text": "Spread the purchase over twelve monthly payments, and that four hundred costs about four hundred fifty."
+    },
+    {
+      "id": "23",
+      "scene": "s3",
+      "take": "t05",
+      "gapAfter": 0.15,
+      "text": "Three hundred from customers."
+    },
+    {
+      "id": "24",
+      "scene": "s3",
+      "take": "t05",
+      "gapAfter": 0.35,
+      "text": "One hundred fifty from selling the machine."
+    },
+    {
+      "id": "25",
+      "scene": "s3",
+      "take": "t05",
+      "gapAfter": 0.15,
+      "text": "Four hundred fifty in."
+    },
+    {
+      "id": "26",
+      "scene": "s3",
+      "take": "t05",
+      "gapAfter": 0.35,
+      "text": "Four hundred fifty out."
+    },
+    {
+      "id": "27",
+      "scene": "s3",
+      "take": "t05",
+      "gapAfter": 0.35,
+      "text": "Then forty dollars for fuel and supplies."
+    },
+    {
+      "id": "28",
+      "scene": "s3",
+      "take": "t06",
+      "gapAfter": 0.15,
+      "text": "Two jobs."
+    },
+    {
+      "id": "29",
+      "scene": "s3",
+      "take": "t06",
+      "gapAfter": 0.15,
+      "text": "No machine left."
+    },
+    {
+      "id": "30",
+      "scene": "s3",
+      "take": "t06",
+      "gapAfter": 0.35,
+      "text": "About forty dollars short."
+    },
+    {
+      "id": "31",
+      "scene": "s3",
+      "take": "t06",
+      "gapAfter": 0.35,
+      "text": "The only one who made money was the credit card company."
+    },
+    {
+      "id": "32",
+      "scene": "s3",
+      "take": "t06",
+      "gapAfter": 0.15,
+      "text": "They bought the equipment."
+    },
+    {
+      "id": "33",
+      "scene": "s3",
+      "take": "t06",
+      "gapAfter": 0.6,
+      "text": "They never built the demand."
+    },
+    {
+      "id": "34",
+      "scene": "s4",
+      "take": "t07",
+      "gapAfter": 0.6,
+      "text": "Here's what a rich person does before spending that four hundred."
+    },
+    {
+      "id": "35",
+      "scene": "s5",
+      "take": "t08",
+      "gapAfter": 0.35,
+      "text": "First, they book the work."
+    },
+    {
+      "id": "36",
+      "scene": "s5",
+      "take": "t08",
+      "gapAfter": 0.15,
+      "text": "Two driveways."
+    },
+    {
+      "id": "37",
+      "scene": "s5",
+      "take": "t08",
+      "gapAfter": 0.35,
+      "text": "Same one hundred fifty dollars each."
+    },
+    {
+      "id": "38",
+      "scene": "s5",
+      "take": "t08",
+      "gapAfter": 0.35,
+      "text": "The first purchase is a customer's decision to say yes."
+    },
+    {
+      "id": "39",
+      "scene": "s5",
+      "take": "t08",
+      "gapAfter": 0.35,
+      "text": "Second, they rent."
+    },
+    {
+      "id": "40",
+      "scene": "s5",
+      "take": "t08",
+      "gapAfter": 0.35,
+      "text": "Sixty dollars for one day, once the jobs are confirmed."
+    },
+    {
+      "id": "41",
+      "scene": "s5",
+      "take": "t08",
+      "gapAfter": 0.6,
+      "text": "They need the machine for the work — not for the garage."
+    },
+    {
+      "id": "42",
+      "scene": "s6",
+      "take": "t09",
+      "gapAfter": 0.35,
+      "text": "Third, they put both jobs on that rental day."
+    },
+    {
+      "id": "43",
+      "scene": "s6",
+      "take": "t09",
+      "gapAfter": 0.35,
+      "text": "Three hundred dollars in."
+    },
+    {
+      "id": "44",
+      "scene": "s6",
+      "take": "t09",
+      "gapAfter": 0.15,
+      "text": "Sixty for the machine."
+    },
+    {
+      "id": "45",
+      "scene": "s6",
+      "take": "t09",
+      "gapAfter": 0.35,
+      "text": "Forty for fuel and supplies."
+    },
+    {
+      "id": "46",
+      "scene": "s6",
+      "take": "t09",
+      "gapAfter": 0.35,
+      "text": "Two hundred left before taxes and other overhead."
+    },
+    {
+      "id": "47",
+      "scene": "s6",
+      "take": "t09",
+      "gapAfter": 0.15,
+      "text": "Same two jobs."
+    },
+    {
+      "id": "48",
+      "scene": "s6",
+      "take": "t09",
+      "gapAfter": 0.15,
+      "text": "Same prices."
+    },
+    {
+      "id": "49",
+      "scene": "s6",
+      "take": "t09",
+      "gapAfter": 0.6,
+      "text": "Different equipment bill."
+    },
+    {
+      "id": "50",
+      "scene": "s7",
+      "take": "t10",
+      "gapAfter": 0.35,
+      "text": "Fourth, with more work booked, they buy used."
+    },
+    {
+      "id": "51",
+      "scene": "s7",
+      "take": "t10",
+      "gapAfter": 0.15,
+      "text": "One hundred fifty dollars."
+    },
+    {
+      "id": "52",
+      "scene": "s7",
+      "take": "t10",
+      "gapAfter": 0.15,
+      "text": "Tested."
+    },
+    {
+      "id": "53",
+      "scene": "s7",
+      "take": "t10",
+      "gapAfter": 0.15,
+      "text": "Working."
+    },
+    {
+      "id": "54",
+      "scene": "s7",
+      "take": "t10",
+      "gapAfter": 0.35,
+      "text": "Cash."
+    },
+    {
+      "id": "55",
+      "scene": "s7",
+      "take": "t10",
+      "gapAfter": 0.35,
+      "text": "The machine the poor person just sold."
+    },
+    {
+      "id": "56",
+      "scene": "s7",
+      "take": "t10",
+      "gapAfter": 0.35,
+      "text": "Now they've got a pressure washer and fifty dollars left from those first jobs."
+    },
+    {
+      "id": "57",
+      "scene": "s7",
+      "take": "t10",
+      "gapAfter": 0.6,
+      "text": "No card balance."
+    },
+    {
+      "id": "58",
+      "scene": "s8",
+      "take": "t11",
+      "gapAfter": 0.35,
+      "text": "One person bought a machine and hoped customers would pay for it."
+    },
+    {
+      "id": "59",
+      "scene": "s8",
+      "take": "t11",
+      "gapAfter": 0.35,
+      "text": "The other found customers, then let them pay for the machine."
+    },
+    {
+      "id": "60",
+      "scene": "s8",
+      "take": "t11",
+      "gapAfter": 0.35,
+      "text": "Poor people buy tools to feel like a business."
+    },
+    {
+      "id": "61",
+      "scene": "s8",
+      "take": "t11",
+      "gapAfter": 0.35,
+      "text": "Rich people let the business buy the tools."
+    },
+    {
+      "id": "62",
+      "scene": "s8",
+      "take": "t11",
+      "gapAfter": 0.15,
+      "text": "Same pressure washer."
+    },
+    {
+      "id": "63",
+      "scene": "s8",
+      "take": "t11",
+      "gapAfter": 0.6,
+      "text": "Opposite first purchase."
+    }
+  ]
+}

@@ -20,6 +20,19 @@ export const DESIGN = {
   height: 1080,
 } as const;
 
+/** Vertical 9:16 video (Shorts / Reels / TikTok). */
+export const VERTICAL = {
+  width: 1080,
+  height: 1920,
+  fps: 30,
+} as const;
+
+/** Design canvas for vertical layouts (pass to <Stage design={...}>). */
+export const VERTICAL_DESIGN = {
+  width: 1080,
+  height: 1920,
+} as const;
+
 /** Durations (in seconds) for the Showcase sample composition. */
 export const SHOWCASE_TIMING = {
   introSeconds: 3.5,

@@ -2,15 +2,17 @@ import { AbsoluteFill, useVideoConfig } from "remotion";
 import { DESIGN } from "../config";
 
 /**
- * A fixed 1920×1080 design canvas, scaled to fit the actual composition size.
- * Author layouts in 1920×1080 pixel values inside <Stage>; they stay
- * proportional at 720p, 4K, etc. Put full-bleed backgrounds outside of it.
+ * A fixed design canvas (1920×1080 by default, or e.g. VERTICAL_DESIGN for
+ * 9:16), scaled to fit the actual composition size. Author layouts in design
+ * pixels inside <Stage>; they stay proportional at any resolution with the
+ * same aspect ratio. Put full-bleed backgrounds outside of it.
  */
-export const Stage: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export const Stage: React.FC<{
+  children: React.ReactNode;
+  design?: { width: number; height: number };
+}> = ({ children, design = DESIGN }) => {
   const { width, height } = useVideoConfig();
-  const scale = Math.min(width / DESIGN.width, height / DESIGN.height);
+  const scale = Math.min(width / design.width, height / design.height);
 
   return (
     <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
@@ -18,8 +20,8 @@ export const Stage: React.FC<{ children: React.ReactNode }> = ({
         style={{
           position: "relative",
           flexShrink: 0,
-          width: DESIGN.width,
-          height: DESIGN.height,
+          width: design.width,
+          height: design.height,
           scale: String(scale),
         }}
       >

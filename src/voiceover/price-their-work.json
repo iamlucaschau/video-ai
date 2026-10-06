@@ -1,0 +1,567 @@
+{
+  "name": "price-their-work",
+  "model": "gemini-3.8-flash-lite-tts",
+  "totalSeconds": 113.098,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "hook",
+      "text": "How poor versus rich people price their work.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/01.wav",
+      "durationInSeconds": 2.612,
+      "tempo": 1.08,
+      "hash": "cf161827723f"
+    },
+    {
+      "id": "02",
+      "scene": "poor",
+      "text": "A poor person cleans houses for twenty-five dollars an hour.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/02.wav",
+      "durationInSeconds": 3.102,
+      "tempo": 1.08,
+      "hash": "ee3f035010d0"
+    },
+    {
+      "id": "03",
+      "scene": "poor",
+      "text": "Not because the market decided that.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/03.wav",
+      "durationInSeconds": 1.797,
+      "tempo": 1.08,
+      "hash": "ee3f035010d0"
+    },
+    {
+      "id": "04",
+      "scene": "poor",
+      "text": "Because they did.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/04.wav",
+      "durationInSeconds": 0.97,
+      "tempo": 1.08,
+      "hash": "ee3f035010d0"
+    },
+    {
+      "id": "05",
+      "scene": "poor",
+      "text": "Ten houses a week, three hours each.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/05.wav",
+      "durationInSeconds": 2.282,
+      "tempo": 1.08,
+      "hash": "ee3f035010d0"
+    },
+    {
+      "id": "06",
+      "scene": "poor",
+      "text": "Thirty hours of cleaning.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/06.wav",
+      "durationInSeconds": 1.124,
+      "tempo": 1.08,
+      "hash": "ee3f035010d0"
+    },
+    {
+      "id": "07",
+      "scene": "poor",
+      "text": "Plus ten hours of driving between houses, unpaid.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/07.wav",
+      "durationInSeconds": 3.088,
+      "tempo": 1.08,
+      "hash": "ee3f035010d0"
+    },
+    {
+      "id": "08",
+      "scene": "poor",
+      "text": "Plus sixty dollars of supplies, from their own pocket.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/08.wav",
+      "durationInSeconds": 3.156,
+      "tempo": 1.08,
+      "hash": "ee3f035010d0"
+    },
+    {
+      "id": "09",
+      "scene": "poorMath",
+      "text": "Do the math they refuse to do.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/09.wav",
+      "durationInSeconds": 1.971,
+      "tempo": 1.08,
+      "hash": "ab5a8083bb15"
+    },
+    {
+      "id": "10",
+      "scene": "poorMath",
+      "text": "Seven hundred fifty dollars in.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/10.wav",
+      "durationInSeconds": 1.451,
+      "tempo": 1.08,
+      "hash": "ab5a8083bb15"
+    },
+    {
+      "id": "11",
+      "scene": "poorMath",
+      "text": "Minus sixty for supplies.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/11.wav",
+      "durationInSeconds": 1.705,
+      "tempo": 1.08,
+      "hash": "ab5a8083bb15"
+    },
+    {
+      "id": "12",
+      "scene": "poorMath",
+      "text": "Six hundred ninety left.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/12.wav",
+      "durationInSeconds": 1.328,
+      "tempo": 1.08,
+      "hash": "ab5a8083bb15"
+    },
+    {
+      "id": "13",
+      "scene": "poorMath",
+      "text": "For forty hours of work.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/13.wav",
+      "durationInSeconds": 1.316,
+      "tempo": 1.08,
+      "hash": "ab5a8083bb15"
+    },
+    {
+      "id": "14",
+      "scene": "poorMath",
+      "text": "Seventeen dollars and twenty-five cents an hour.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/14.wav",
+      "durationInSeconds": 2.499,
+      "tempo": 1.08,
+      "hash": "ab5a8083bb15"
+    },
+    {
+      "id": "15",
+      "scene": "poorMath",
+      "text": "They call it hard work.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/15.wav",
+      "durationInSeconds": 1.42,
+      "tempo": 1.08,
+      "hash": "ab5a8083bb15"
+    },
+    {
+      "id": "16",
+      "scene": "poorMath",
+      "text": "It's not hard work.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/16.wav",
+      "durationInSeconds": 1.171,
+      "tempo": 1.08,
+      "hash": "ab5a8083bb15"
+    },
+    {
+      "id": "17",
+      "scene": "poorMath",
+      "text": "It's cheap work with long hours.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/17.wav",
+      "durationInSeconds": 2.127,
+      "tempo": 1.08,
+      "hash": "ab5a8083bb15"
+    },
+    {
+      "id": "18",
+      "scene": "backbone",
+      "text": "When a client asks for a discount, they say yes,",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/18.wav",
+      "durationInSeconds": 2.694,
+      "tempo": 1.08,
+      "hash": "3108c8caa45c"
+    },
+    {
+      "id": "19",
+      "scene": "backbone",
+      "text": "then complain about cheap clients behind their back.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/19.wav",
+      "durationInSeconds": 2.624,
+      "tempo": 1.08,
+      "hash": "3108c8caa45c"
+    },
+    {
+      "id": "20",
+      "scene": "backbone",
+      "text": "Nobody forced that discount.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/20.wav",
+      "durationInSeconds": 1.781,
+      "tempo": 1.08,
+      "hash": "3108c8caa45c"
+    },
+    {
+      "id": "21",
+      "scene": "backbone",
+      "text": "They volunteered it.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/21.wav",
+      "durationInSeconds": 1.037,
+      "tempo": 1.08,
+      "hash": "3108c8caa45c"
+    },
+    {
+      "id": "22",
+      "scene": "backbone",
+      "text": "When the far house calls, forty-five minutes away, they say yes too.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/22.wav",
+      "durationInSeconds": 3.553,
+      "tempo": 1.08,
+      "hash": "3108c8caa45c"
+    },
+    {
+      "id": "23",
+      "scene": "backbone",
+      "text": "They don't have a pricing problem.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/23.wav",
+      "durationInSeconds": 1.426,
+      "tempo": 1.08,
+      "hash": "3108c8caa45c"
+    },
+    {
+      "id": "24",
+      "scene": "backbone",
+      "text": "They have a backbone problem.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/24.wav",
+      "durationInSeconds": 1.451,
+      "tempo": 1.08,
+      "hash": "3108c8caa45c"
+    },
+    {
+      "id": "25",
+      "scene": "pivot",
+      "text": "Here's what a rich person does with the same mop and bucket.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/25.wav",
+      "durationInSeconds": 3.108,
+      "tempo": 1.08,
+      "hash": "bf28995e65b5"
+    },
+    {
+      "id": "26",
+      "scene": "step1",
+      "text": "First, they raise the price to forty dollars an hour, new inquiries only.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/26.wav",
+      "durationInSeconds": 4.203,
+      "tempo": 1.08,
+      "hash": "b22fb134add2"
+    },
+    {
+      "id": "27",
+      "scene": "step1",
+      "text": "Two cheap clients leave.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/27.wav",
+      "durationInSeconds": 1.354,
+      "tempo": 1.08,
+      "hash": "b22fb134add2"
+    },
+    {
+      "id": "28",
+      "scene": "step1",
+      "text": "Good.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/28.wav",
+      "durationInSeconds": 0.564,
+      "tempo": 1.08,
+      "hash": "b22fb134add2"
+    },
+    {
+      "id": "29",
+      "scene": "step1",
+      "text": "Those two were never customers.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/29.wav",
+      "durationInSeconds": 1.557,
+      "tempo": 1.08,
+      "hash": "b22fb134add2"
+    },
+    {
+      "id": "30",
+      "scene": "step1",
+      "text": "They were charity cases.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/30.wav",
+      "durationInSeconds": 1.285,
+      "tempo": 1.08,
+      "hash": "b22fb134add2"
+    },
+    {
+      "id": "31",
+      "scene": "step2",
+      "text": "Second, they kill hourly pricing completely.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/31.wav",
+      "durationInSeconds": 2.882,
+      "tempo": 1.08,
+      "hash": "bd99832d195c"
+    },
+    {
+      "id": "32",
+      "scene": "step2",
+      "text": "One hundred forty dollars per house, flat.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/32.wav",
+      "durationInSeconds": 2.449,
+      "tempo": 1.08,
+      "hash": "bd99832d195c"
+    },
+    {
+      "id": "33",
+      "scene": "step2",
+      "text": "Two and a half hours with their system.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/33.wav",
+      "durationInSeconds": 1.524,
+      "tempo": 1.08,
+      "hash": "bd99832d195c"
+    },
+    {
+      "id": "34",
+      "scene": "step2",
+      "text": "Fifty-six dollars an hour.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/34.wav",
+      "durationInSeconds": 1.354,
+      "tempo": 1.08,
+      "hash": "bd99832d195c"
+    },
+    {
+      "id": "35",
+      "scene": "step2",
+      "text": "Clients don't buy hours.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/35.wav",
+      "durationInSeconds": 1.301,
+      "tempo": 1.08,
+      "hash": "bd99832d195c"
+    },
+    {
+      "id": "36",
+      "scene": "step2",
+      "text": "They buy a clean house.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/36.wav",
+      "durationInSeconds": 1.847,
+      "tempo": 1.08,
+      "hash": "bd99832d195c"
+    },
+    {
+      "id": "37",
+      "scene": "step2",
+      "text": "Price the house.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/37.wav",
+      "durationInSeconds": 0.764,
+      "tempo": 1.08,
+      "hash": "bd99832d195c"
+    },
+    {
+      "id": "38",
+      "scene": "step3",
+      "text": "Third, they fire the two farthest houses and take two on the same street.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/38.wav",
+      "durationInSeconds": 3.982,
+      "tempo": 1.08,
+      "hash": "66092de40a68"
+    },
+    {
+      "id": "39",
+      "scene": "step3",
+      "text": "Driving drops to zero.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/39.wav",
+      "durationInSeconds": 1.701,
+      "tempo": 1.08,
+      "hash": "66092de40a68"
+    },
+    {
+      "id": "40",
+      "scene": "step3",
+      "text": "The distance was never the client's problem.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/40.wav",
+      "durationInSeconds": 2.579,
+      "tempo": 1.08,
+      "hash": "66092de40a68"
+    },
+    {
+      "id": "41",
+      "scene": "step3",
+      "text": "It was theirs.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/41.wav",
+      "durationInSeconds": 1.124,
+      "tempo": 1.08,
+      "hash": "66092de40a68"
+    },
+    {
+      "id": "42",
+      "scene": "step4",
+      "text": "Fourth, one upsell.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/42.wav",
+      "durationInSeconds": 1.746,
+      "tempo": 1.08,
+      "hash": "0421d362e9dc"
+    },
+    {
+      "id": "43",
+      "scene": "step4",
+      "text": "Fridge clean. Thirty dollars. Fifteen minutes.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/43.wav",
+      "durationInSeconds": 2.964,
+      "tempo": 1.08,
+      "hash": "0421d362e9dc"
+    },
+    {
+      "id": "44",
+      "scene": "step4",
+      "text": "Four out of eight say yes.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/44.wav",
+      "durationInSeconds": 1.39,
+      "tempo": 1.08,
+      "hash": "0421d362e9dc"
+    },
+    {
+      "id": "45",
+      "scene": "step4",
+      "text": "One hundred twenty dollars extra. Every week.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/45.wav",
+      "durationInSeconds": 2.712,
+      "tempo": 1.08,
+      "hash": "0421d362e9dc"
+    },
+    {
+      "id": "46",
+      "scene": "richMath",
+      "text": "Now the real math.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/46.wav",
+      "durationInSeconds": 1.512,
+      "tempo": 1.08,
+      "hash": "0fac2f36b058"
+    },
+    {
+      "id": "47",
+      "scene": "richMath",
+      "text": "Eight houses times one hundred forty: one thousand one hundred twenty.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/47.wav",
+      "durationInSeconds": 3.364,
+      "tempo": 1.08,
+      "hash": "0fac2f36b058"
+    },
+    {
+      "id": "48",
+      "scene": "richMath",
+      "text": "Plus one hundred twenty in upsells.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/48.wav",
+      "durationInSeconds": 2.082,
+      "tempo": 1.08,
+      "hash": "0fac2f36b058"
+    },
+    {
+      "id": "49",
+      "scene": "richMath",
+      "text": "One thousand two hundred forty dollars.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/49.wav",
+      "durationInSeconds": 2.295,
+      "tempo": 1.08,
+      "hash": "0fac2f36b058"
+    },
+    {
+      "id": "50",
+      "scene": "richMath",
+      "text": "Twenty hours. Zero driving.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/50.wav",
+      "durationInSeconds": 2.173,
+      "tempo": 1.08,
+      "hash": "0fac2f36b058"
+    },
+    {
+      "id": "51",
+      "scene": "richMath",
+      "text": "Sixty-two dollars an hour.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/51.wav",
+      "durationInSeconds": 1.651,
+      "tempo": 1.08,
+      "hash": "0fac2f36b058"
+    },
+    {
+      "id": "52",
+      "scene": "outro",
+      "text": "Nobody underpays you.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/52.wav",
+      "durationInSeconds": 1.449,
+      "tempo": 1.08,
+      "hash": "898578554722"
+    },
+    {
+      "id": "53",
+      "scene": "outro",
+      "text": "You underprice you.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/53.wav",
+      "durationInSeconds": 1.542,
+      "tempo": 1.08,
+      "hash": "898578554722"
+    },
+    {
+      "id": "54",
+      "scene": "outro",
+      "text": "Poor people sell hours and blame the market.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/54.wav",
+      "durationInSeconds": 2.523,
+      "tempo": 1.08,
+      "hash": "898578554722"
+    },
+    {
+      "id": "55",
+      "scene": "outro",
+      "text": "Rich people sell outcomes and set the market.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/55.wav",
+      "durationInSeconds": 2.529,
+      "tempo": 1.08,
+      "hash": "898578554722"
+    },
+    {
+      "id": "56",
+      "scene": "outro",
+      "text": "Same mop, opposite price tag.",
+      "voice": "Orus",
+      "src": "voiceover/price-their-work/56.wav",
+      "durationInSeconds": 1.903,
+      "tempo": 1.08,
+      "hash": "898578554722"
+    }
+  ]
+}

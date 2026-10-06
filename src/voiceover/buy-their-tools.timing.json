@@ -1,0 +1,446 @@
+{
+  "durationInSeconds": 142.173625,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 2.887,
+      "text": "A poor person buys the machine first."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 3.2375,
+      "end": 5.903499999999999,
+      "text": "A rich person sells the first job."
+    },
+    {
+      "id": "03",
+      "scene": "s1",
+      "start": 6.253208333333333,
+      "end": 7.203208333333333,
+      "text": "Same pressure washer."
+    },
+    {
+      "id": "04",
+      "scene": "s1",
+      "start": 7.353291666666666,
+      "end": 8.338291666666667,
+      "text": "Opposite order."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 8.938583333333334,
+      "end": 11.442583333333333,
+      "text": "The poor person wants to start pressure washing."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 11.792333333333334,
+      "end": 13.624333333333334,
+      "text": "Four hundred dollars for a machine."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "start": 13.773916666666667,
+      "end": 14.514916666666666,
+      "text": "Credit card."
+    },
+    {
+      "id": "08",
+      "scene": "s2",
+      "start": 14.664625,
+      "end": 15.983625,
+      "text": "Twenty-two percent interest."
+    },
+    {
+      "id": "09",
+      "scene": "s2",
+      "start": 16.333458333333333,
+      "end": 17.72745833333333,
+      "text": "Zero customers."
+    },
+    {
+      "id": "10",
+      "scene": "s2",
+      "start": 18.077875,
+      "end": 20.439875,
+      "text": "But now there's a pressure washer in the garage."
+    },
+    {
+      "id": "11",
+      "scene": "s2",
+      "start": 20.589875,
+      "end": 22.317875,
+      "text": "They feel like a business owner."
+    },
+    {
+      "id": "12",
+      "scene": "s2",
+      "start": 22.668083333333332,
+      "end": 24.741083333333332,
+      "text": "They didn't buy a pressure washer."
+    },
+    {
+      "id": "13",
+      "scene": "s2",
+      "start": 24.891,
+      "end": 26.435,
+      "text": "They bought a feeling."
+    },
+    {
+      "id": "14",
+      "scene": "s3",
+      "start": 27.035249999999998,
+      "end": 28.37325,
+      "text": "Two jobs come in."
+    },
+    {
+      "id": "15",
+      "scene": "s3",
+      "start": 28.5235,
+      "end": 30.371499999999997,
+      "text": "One hundred fifty dollars each."
+    },
+    {
+      "id": "16",
+      "scene": "s3",
+      "start": 30.721041666666665,
+      "end": 31.838041666666665,
+      "text": "Three hundred dollars."
+    },
+    {
+      "id": "17",
+      "scene": "s3",
+      "start": 32.187958333333334,
+      "end": 32.842958333333335,
+      "text": "Then nothing."
+    },
+    {
+      "id": "18",
+      "scene": "s3",
+      "start": 33.19329166666667,
+      "end": 34.25029166666667,
+      "text": "The machine sits."
+    },
+    {
+      "id": "19",
+      "scene": "s3",
+      "start": 34.40045833333333,
+      "end": 35.676458333333336,
+      "text": "The payments don't."
+    },
+    {
+      "id": "20",
+      "scene": "s3",
+      "start": 36.026375,
+      "end": 39.185375,
+      "text": "Eventually, they sell it for one hundred fifty dollars."
+    },
+    {
+      "id": "21",
+      "scene": "s3",
+      "start": 39.335875,
+      "end": 41.300875000000005,
+      "text": "But they keep paying the card."
+    },
+    {
+      "id": "22",
+      "scene": "s3",
+      "start": 41.65079166666667,
+      "end": 48.15379166666667,
+      "text": "Spread the purchase over twelve monthly payments, and that four hundred costs about four hundred fifty."
+    },
+    {
+      "id": "23",
+      "scene": "s3",
+      "start": 48.50420833333334,
+      "end": 49.87820833333334,
+      "text": "Three hundred from customers."
+    },
+    {
+      "id": "24",
+      "scene": "s3",
+      "start": 50.02866666666667,
+      "end": 51.99866666666667,
+      "text": "One hundred fifty from selling the machine."
+    },
+    {
+      "id": "25",
+      "scene": "s3",
+      "start": 52.34845833333334,
+      "end": 53.60445833333334,
+      "text": "Four hundred fifty in."
+    },
+    {
+      "id": "26",
+      "scene": "s3",
+      "start": 53.75495833333334,
+      "end": 55.12695833333334,
+      "text": "Four hundred fifty out."
+    },
+    {
+      "id": "27",
+      "scene": "s3",
+      "start": 55.47729166666667,
+      "end": 57.924291666666676,
+      "text": "Then forty dollars for fuel and supplies."
+    },
+    {
+      "id": "28",
+      "scene": "s3",
+      "start": 58.27462500000001,
+      "end": 59.10962500000001,
+      "text": "Two jobs."
+    },
+    {
+      "id": "29",
+      "scene": "s3",
+      "start": 59.259916666666676,
+      "end": 60.42991666666668,
+      "text": "No machine left."
+    },
+    {
+      "id": "30",
+      "scene": "s3",
+      "start": 60.57979166666668,
+      "end": 62.21679166666668,
+      "text": "About forty dollars short."
+    },
+    {
+      "id": "31",
+      "scene": "s3",
+      "start": 62.566375000000015,
+      "end": 65.50537500000002,
+      "text": "The only one who made money was the credit card company."
+    },
+    {
+      "id": "32",
+      "scene": "s3",
+      "start": 65.85566666666668,
+      "end": 66.92966666666668,
+      "text": "They bought the equipment."
+    },
+    {
+      "id": "33",
+      "scene": "s3",
+      "start": 67.08004166666667,
+      "end": 68.31604166666668,
+      "text": "They never built the demand."
+    },
+    {
+      "id": "34",
+      "scene": "s4",
+      "start": 68.91570833333334,
+      "end": 72.33470833333334,
+      "text": "Here's what a rich person does before spending that four hundred."
+    },
+    {
+      "id": "35",
+      "scene": "s5",
+      "start": 72.93429166666668,
+      "end": 74.69029166666668,
+      "text": "First, they book the work."
+    },
+    {
+      "id": "36",
+      "scene": "s5",
+      "start": 75.04037500000001,
+      "end": 75.93137500000002,
+      "text": "Two driveways."
+    },
+    {
+      "id": "37",
+      "scene": "s5",
+      "start": 76.08175000000001,
+      "end": 78.09275000000001,
+      "text": "Same one hundred fifty dollars each."
+    },
+    {
+      "id": "38",
+      "scene": "s5",
+      "start": 78.44258333333335,
+      "end": 82.02658333333335,
+      "text": "The first purchase is a customer's decision to say yes."
+    },
+    {
+      "id": "39",
+      "scene": "s5",
+      "start": 82.37662500000002,
+      "end": 83.76262500000001,
+      "text": "Second, they rent."
+    },
+    {
+      "id": "40",
+      "scene": "s5",
+      "start": 84.11304166666669,
+      "end": 87.9000416666667,
+      "text": "Sixty dollars for one day, once the jobs are confirmed."
+    },
+    {
+      "id": "41",
+      "scene": "s5",
+      "start": 88.25029166666668,
+      "end": 91.14329166666668,
+      "text": "They need the machine for the work — not for the garage."
+    },
+    {
+      "id": "42",
+      "scene": "s6",
+      "start": 91.74279166666669,
+      "end": 94.8007916666667,
+      "text": "Third, they put both jobs on that rental day."
+    },
+    {
+      "id": "43",
+      "scene": "s6",
+      "start": 95.15045833333336,
+      "end": 96.30945833333337,
+      "text": "Three hundred dollars in."
+    },
+    {
+      "id": "44",
+      "scene": "s6",
+      "start": 96.65979166666669,
+      "end": 97.78979166666669,
+      "text": "Sixty for the machine."
+    },
+    {
+      "id": "45",
+      "scene": "s6",
+      "start": 97.93970833333336,
+      "end": 99.80270833333336,
+      "text": "Forty for fuel and supplies."
+    },
+    {
+      "id": "46",
+      "scene": "s6",
+      "start": 100.15283333333336,
+      "end": 102.91283333333337,
+      "text": "Two hundred left before taxes and other overhead."
+    },
+    {
+      "id": "47",
+      "scene": "s6",
+      "start": 103.26250000000003,
+      "end": 104.43950000000004,
+      "text": "Same two jobs."
+    },
+    {
+      "id": "48",
+      "scene": "s6",
+      "start": 104.5897916666667,
+      "end": 105.5187916666667,
+      "text": "Same prices."
+    },
+    {
+      "id": "49",
+      "scene": "s6",
+      "start": 105.6692916666667,
+      "end": 106.87329166666669,
+      "text": "Different equipment bill."
+    },
+    {
+      "id": "50",
+      "scene": "s7",
+      "start": 107.47291666666669,
+      "end": 111.12491666666669,
+      "text": "Fourth, with more work booked, they buy used."
+    },
+    {
+      "id": "51",
+      "scene": "s7",
+      "start": 111.47495833333336,
+      "end": 112.94695833333336,
+      "text": "One hundred fifty dollars."
+    },
+    {
+      "id": "52",
+      "scene": "s7",
+      "start": 113.09725000000003,
+      "end": 113.65125000000003,
+      "text": "Tested."
+    },
+    {
+      "id": "53",
+      "scene": "s7",
+      "start": 113.8011666666667,
+      "end": 114.3721666666667,
+      "text": "Working."
+    },
+    {
+      "id": "54",
+      "scene": "s7",
+      "start": 114.52183333333338,
+      "end": 115.11283333333337,
+      "text": "Cash."
+    },
+    {
+      "id": "55",
+      "scene": "s7",
+      "start": 115.46250000000005,
+      "end": 117.42950000000005,
+      "text": "The machine the poor person just sold."
+    },
+    {
+      "id": "56",
+      "scene": "s7",
+      "start": 117.77933333333338,
+      "end": 121.60633333333338,
+      "text": "Now they've got a pressure washer and fifty dollars left from those first jobs."
+    },
+    {
+      "id": "57",
+      "scene": "s7",
+      "start": 121.95658333333338,
+      "end": 122.94858333333339,
+      "text": "No card balance."
+    },
+    {
+      "id": "58",
+      "scene": "s8",
+      "start": 123.54854166666672,
+      "end": 127.49254166666672,
+      "text": "One person bought a machine and hoped customers would pay for it."
+    },
+    {
+      "id": "59",
+      "scene": "s8",
+      "start": 127.84241666666672,
+      "end": 131.6464166666667,
+      "text": "The other found customers, then let them pay for the machine."
+    },
+    {
+      "id": "60",
+      "scene": "s8",
+      "start": 131.99641666666673,
+      "end": 135.10941666666673,
+      "text": "Poor people buy tools to feel like a business."
+    },
+    {
+      "id": "61",
+      "scene": "s8",
+      "start": 135.4590833333334,
+      "end": 138.2210833333334,
+      "text": "Rich people let the business buy the tools."
+    },
+    {
+      "id": "62",
+      "scene": "s8",
+      "start": 138.57116666666676,
+      "end": 140.10216666666676,
+      "text": "Same pressure washer."
+    },
+    {
+      "id": "63",
+      "scene": "s8",
+      "start": 140.25179166666675,
+      "end": 141.57379166666675,
+      "text": "Opposite first purchase."
+    }
+  ]
+}

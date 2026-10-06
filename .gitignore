@@ -10,3 +10,9 @@ out
 .env*
 !.env.example
 gemini_key*.txt*
+
+# Raw TTS output cache (regenerable from voiceover/*.json)
+voiceover/.cache/
+
+# Episode renders (regenerable with npm/remotion; delivered from the episode folder)
+Poor vs Rich Daily/episodes/**/*.mp4

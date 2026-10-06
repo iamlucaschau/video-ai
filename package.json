@@ -34,6 +34,8 @@
     "lint": "eslint src && tsc",
     "tts": "node scripts/tts.mjs",
     "tts:check": "node scripts/tts.mjs check",
-    "voiceover": "node scripts/tts.mjs build"
+    "voiceover": "node scripts/tts.mjs build",
+    "render:ptw": "remotion render PriceTheirWork out/price-their-work-raw.mp4 --crf=18 && ffmpeg -y -i out/price-their-work-raw.mp4 -c:v copy -af loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000 -c:a aac -b:a 192k -movflags +faststart out/price-their-work.mp4",
+    "audio": "node scripts/make-audio.mjs"
   }
 }

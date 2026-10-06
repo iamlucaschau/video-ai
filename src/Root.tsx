@@ -1,8 +1,18 @@
 import { Composition, Folder } from "remotion";
 import {
+  Ep01,
+  ep01Duration,
+  Ep01TestScene3,
+  sceneRange,
+} from "./series/pvr/ep01/Ep01";
+import { PVR } from "./series/pvr/theme";
+import { PriceTheirWork } from "./compositions/PriceTheirWork/PriceTheirWork";
+import { buildTimeline } from "./compositions/PriceTheirWork/timeline";
+import {
   getShowcaseDuration,
   SHOWCASE_TIMING,
   toFrames,
+  VERTICAL,
   VIDEO,
 } from "./config";
 import {
@@ -21,6 +31,35 @@ import { OutroScene } from "./compositions/Showcase/scenes/OutroScene";
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Folder name="PoorVsRich-Ep01">
+        <Composition
+          id="PBR-Ep01-BuyTheirTools"
+          component={Ep01}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={ep01Duration(PVR.fps)}
+        />
+        <Composition
+          id="PBR-Ep01-Test-Scene3"
+          component={Ep01TestScene3}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={sceneRange("s3", PVR.fps).durationInFrames}
+        />
+      </Folder>
+
+      {/* 9:16 explainer, timed by its Gemini TTS voiceover */}
+      <Composition
+        id="PriceTheirWork"
+        component={PriceTheirWork}
+        width={VERTICAL.width}
+        height={VERTICAL.height}
+        fps={VERTICAL.fps}
+        durationInFrames={buildTimeline(VERTICAL.fps).durationInFrames}
+      />
+
       <Composition
         id="Showcase"
         component={Showcase}

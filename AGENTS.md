@@ -40,6 +40,7 @@ src/
   theme.ts                 FONTS (Google Fonts), COLORS, TYPE scale, SAFE area
   lib/voiceover.ts         voiceoverTimeline(), voiceoverDurationInFrames() for TTS manifests
   voiceover/*.json         generated TTS manifests (durations), do not edit by hand
+  compositions/PriceTheirWork/  9:16 voiceover-driven explainer (see "Voiceover-driven videos")
   lib/animation.ts         EASE presets, CLAMP, progress(), fadeUp(), popIn(), float(), stagger(), mix()
   components/              reusable building blocks (import from "../components")
     Stage.tsx              1920×1080 design canvas scaled to the real output size
@@ -57,6 +58,7 @@ src/
       scenes/*.tsx         one file per scene
     _template/             SceneTemplate.tsx, a copyable starter (not registered)
 scripts/tts.mjs            Gemini TTS generator (check / say / build), multi-key rotation
+scripts/make-audio.mjs     synthesizes music beds + SFX into public/audio/
 voiceover/*.json           voiceover scripts (input for npm run voiceover)
 public/
   audio/                   whoosh.wav, pop.wav (generated, royalty-free). Add music/VO here
@@ -225,6 +227,62 @@ these conventions (see the `remotion-interactivity` skill):
   (`volume={0.25}`).
 - Windows note: send Vietnamese text via a UTF-8 JSON file (as the script
   does), not inline in a `curl -d` argument, or the request body gets corrupted.
+
+### Quota (important)
+
+The keys are on the **Free Tier: 10 requests/day and 3 requests/minute per
+model, per key**. Quotas are separate per model (`gemini-3.8-flash-tts`,
+`gemini-3.8-flash-lite-tts`, `gemini-3.1-flash-tts-preview`, …). So:
+
+- Never generate one request per sentence for long scripts. Use
+  `"batchBy": "scene"` (below): ~1 request per scene.
+- The script skips a key whose daily quota is used up, waits out per-minute
+  limits automatically, and caches finished lines. Re-run after a failure;
+  don't use `--force` unless the text actually changed.
+- Keep one model per video for a consistent voice.
+
+### Voiceover script options (`voiceover/<name>.json`)
+
+| Field | Effect |
+| --- | --- |
+| `model`, `voice`, `style` | Defaults for every line (each line may override) |
+| `batchBy: "scene"` | Consecutive lines with the same `scene` (and voice/style/model) are read in **one** request, then split back into per-line files at the pauses (matched to each line's expected length) |
+| `trimSilence: true` | Trims leading/trailing silence of every line, giving tight timing |
+| `tempo: 1.08` | Speeds speech up (or down) without changing pitch (needs `ffmpeg` on PATH or `FFMPEG_PATH`) |
+| any other line field (e.g. `scene`) | Copied into the manifest for use in the composition |
+
+Raw API output is cached in `voiceover/.cache/<name>/` (git-ignored), so
+changing `trimSilence`/`tempo` re-processes locally **without new requests**.
+Gemini reads ~200 wpm; use `tempo` and the composition's gaps to hit a target length.
+
+## Sound design
+
+`node scripts/make-audio.mjs` synthesizes royalty-free audio into
+`public/audio/`: `bed-dark.wav` / `bed-bright.wav` (40 s loops, 96 BPM; play
+with `<Audio loop>`), and SFX `tick`, `impact`, `ching`, `riser`, `buzz`
+(plus `whoosh`, `pop`). Keep music around `volume={0.12–0.15}` under voiceover.
+
+## Voiceover-driven videos (pattern: `src/compositions/PriceTheirWork/`)
+
+For narrated explainers, derive **every** cue from the voiceover manifest so
+regenerating the voice re-times the whole video:
+
+- `timeline.ts`: `buildTimeline(fps)` lays out lines with `PACING` gaps, groups
+  them into scenes and computes the total duration (used by `Root.tsx`).
+- `beats.tsx`: inside a scene, `const { at, end } = useBeats()`; `at("14")` is
+  the local frame where line 14 starts. Animate against `at(id)` or
+  `at(id) + (end(id) - at(id)) * 0.6` (≈60% through the sentence).
+- `captions.ts`: on-screen caption per line id (numerals, `*highlight*`).
+  Captions appear word by word, estimated from each word's share of the line.
+- `ui/`: price tags, receipts, stamps, strikes, chat bubbles, icons, `Show`
+  windows, `Sfx` one-shots. 9:16 layout zones are in `theme.ts` (`Z`): keep
+  content between y=330 and 1260, captions from 1330, nothing important in
+  the bottom ~350 px (platform UI).
+
+To make a new video in this style: copy the folder, write
+`voiceover/<name>.json` with `scene` tags, run `npm run voiceover`, then edit
+the scenes. Render with `npm run render:ptw`: Remotion renders, then ffmpeg masters
+the audio to -14 LUFS / -1.5 dBTP (stacked voice + music + SFX otherwise clip).
 
 ## Props
 
