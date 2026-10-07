@@ -14,6 +14,12 @@ import {
 import { Ep02B } from "./series/pvr/ep02b/Ep02B";
 import { Ep02C } from "./series/pvr/ep02c/Ep02C";
 import { Ep02D } from "./series/pvr/ep02d/Ep02D";
+import {
+  Ep03,
+  ep03Duration,
+  Ep03TestScene3,
+  ep03SceneRange,
+} from "./series/pvr/ep03/Ep03";
 import { PVR } from "./series/pvr/theme";
 import { PriceTheirWork } from "./compositions/PriceTheirWork/PriceTheirWork";
 import { buildTimeline } from "./compositions/PriceTheirWork/timeline";
@@ -40,6 +46,24 @@ import { OutroScene } from "./compositions/Showcase/scenes/OutroScene";
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Folder name="PoorVsRich-Ep03">
+        <Composition
+          id="PBR-Ep03-GetPaid"
+          component={Ep03}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={ep03Duration(PVR.fps)}
+        />
+        <Composition
+          id="PBR-Ep03-Test-Scene3"
+          component={Ep03TestScene3}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={ep03SceneRange("s3", PVR.fps).durationInFrames}
+        />
+      </Folder>
       <Folder name="PoorVsRich-Ep02">
         <Composition
           id="PBR-Ep02-GiveDiscounts"

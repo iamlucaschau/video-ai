@@ -226,6 +226,8 @@ export type Msg = {
   label?: string;
   avatar?: { color: string; text: string };
   heart?: number;
+  /** read receipts under the message: [frame, "Delivered" | "Seen" …] */
+  receipt?: [number, string][];
   strong?: boolean;
   card?: {
     title: string;
@@ -288,7 +290,7 @@ const Item: React.FC<{ m: Msg; typing?: boolean }> = ({ m, typing }) => {
         }}
       >
         <div style={{ fontSize: 50 }}>How Poor vs Rich People</div>
-        <div style={{ fontSize: 96, lineHeight: 1.05 }}>Give Discounts</div>
+        <div style={{ fontSize: 96, lineHeight: 1.05 }}>{m.text}</div>
       </div>
     );
   }
@@ -468,6 +470,42 @@ const Heart: React.FC<{ at: number }> = ({ at }) => {
   );
 };
 
+const Receipt: React.FC<{ m: Msg }> = ({ m }) => {
+  const f = useCurrentFrame();
+  const cur = [...(m.receipt ?? [])].reverse().find(([at]) => f >= at);
+  if (!cur) return null;
+  return (
+    <div
+      style={{
+        alignSelf: "flex-end",
+        ...font,
+        fontSize: 28,
+        color: cur[1] === "Seen" ? "#2F80ED" : MUTED,
+        marginTop: 6,
+        opacity: prog(f, cur[0], 5),
+      }}
+    >
+      {cur[1]}
+    </div>
+  );
+};
+
+/** Darkens the app behind closing truth lines. */
+export const Dim: React.FC<{ at: number }> = ({ at }) => {
+  const f = useCurrentFrame();
+  if (f < at) return null;
+  return (
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        background: "rgba(20,28,36,0.78)",
+        opacity: prog(f, at, 8),
+      }}
+    />
+  );
+};
+
 /** Message list anchored to the bottom; new messages push older ones up. */
 export const Chat: React.FC<{ items: Msg[]; bottom?: number }> = ({
   items,
@@ -508,6 +546,7 @@ export const Chat: React.FC<{ items: Msg[]; bottom?: number }> = ({
         .map((m, i) => (
           <div key={i} style={grow(m.at)}>
             <Item m={m} />
+            <Receipt m={m} />
           </div>
         ))}
       {typing ? (

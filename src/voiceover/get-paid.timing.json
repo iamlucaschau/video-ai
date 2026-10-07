@@ -1,0 +1,453 @@
+{
+  "durationInSeconds": 153.7905,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 4.447,
+      "text": "A poor person paints the house, then asks to get paid."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 4.796833333333333,
+      "end": 8.898833333333332,
+      "text": "A rich person gets paid before the first brushstroke."
+    },
+    {
+      "id": "03",
+      "scene": "s1",
+      "start": 9.248583333333332,
+      "end": 10.377583333333332,
+      "text": "Same job."
+    },
+    {
+      "id": "04",
+      "scene": "s1",
+      "start": 10.527375,
+      "end": 11.410374999999998,
+      "text": "Opposite order."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 12.010124999999999,
+      "end": 13.937124999999998,
+      "text": "The poor person paints houses."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 14.087374999999998,
+      "end": 15.860374999999998,
+      "text": "Two clients book the same month."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "start": 16.01083333333333,
+      "end": 17.366833333333332,
+      "text": "Two thousand dollars each."
+    },
+    {
+      "id": "08",
+      "scene": "s2",
+      "start": 17.71683333333333,
+      "end": 20.44383333333333,
+      "text": "Paint and supplies cost six hundred a house."
+    },
+    {
+      "id": "09",
+      "scene": "s2",
+      "start": 20.59383333333333,
+      "end": 22.10283333333333,
+      "text": "It goes on a credit card."
+    },
+    {
+      "id": "10",
+      "scene": "s2",
+      "start": 22.45320833333333,
+      "end": 23.85220833333333,
+      "text": "Four days of work."
+    },
+    {
+      "id": "11",
+      "scene": "s2",
+      "start": 24.002041666666663,
+      "end": 26.988041666666664,
+      "text": "Then they send the invoice and wait."
+    },
+    {
+      "id": "12",
+      "scene": "s2",
+      "start": 27.33833333333333,
+      "end": 28.65833333333333,
+      "text": "They didn't make a sale."
+    },
+    {
+      "id": "13",
+      "scene": "s2",
+      "start": 28.80820833333333,
+      "end": 29.82920833333333,
+      "text": "They made a loan."
+    },
+    {
+      "id": "14",
+      "scene": "s3",
+      "start": 30.429624999999994,
+      "end": 31.866624999999996,
+      "text": "Here's how the loan goes."
+    },
+    {
+      "id": "15",
+      "scene": "s3",
+      "start": 32.216583333333325,
+      "end": 35.33958333333332,
+      "text": "Client one pays forty-five days later."
+    },
+    {
+      "id": "16",
+      "scene": "s3",
+      "start": 35.489374999999995,
+      "end": 39.114374999999995,
+      "text": "After three \"just checking in\" texts."
+    },
+    {
+      "id": "17",
+      "scene": "s3",
+      "start": 39.46429166666666,
+      "end": 42.62729166666666,
+      "text": "The card charges twenty-four percent a year."
+    },
+    {
+      "id": "18",
+      "scene": "s3",
+      "start": 42.77779166666666,
+      "end": 44.94879166666666,
+      "text": "Six hundred dollars for a month and a half."
+    },
+    {
+      "id": "19",
+      "scene": "s3",
+      "start": 45.09837499999999,
+      "end": 46.59237499999999,
+      "text": "Eighteen dollars in interest."
+    },
+    {
+      "id": "20",
+      "scene": "s3",
+      "start": 46.94270833333332,
+      "end": 51.17970833333332,
+      "text": "Two thousand, minus six hundred, minus eighteen."
+    },
+    {
+      "id": "21",
+      "scene": "s3",
+      "start": 51.32945833333332,
+      "end": 54.800458333333324,
+      "text": "One thousand three hundred eighty-two."
+    },
+    {
+      "id": "22",
+      "scene": "s3",
+      "start": 54.950124999999986,
+      "end": 55.97612499999999,
+      "text": "A month and a half late."
+    },
+    {
+      "id": "23",
+      "scene": "s3",
+      "start": 56.32583333333332,
+      "end": 58.90183333333332,
+      "text": "Client two loves the walls."
+    },
+    {
+      "id": "24",
+      "scene": "s3",
+      "start": 59.05162499999999,
+      "end": 60.14462499999999,
+      "text": "Then stops answering."
+    },
+    {
+      "id": "25",
+      "scene": "s3",
+      "start": 60.494624999999985,
+      "end": 63.17362499999999,
+      "text": "Six hundred in paint, still on the card."
+    },
+    {
+      "id": "26",
+      "scene": "s3",
+      "start": 63.323666666666654,
+      "end": 64.93866666666665,
+      "text": "Four days of work, gone."
+    },
+    {
+      "id": "27",
+      "scene": "s3",
+      "start": 65.28875,
+      "end": 70.05874999999999,
+      "text": "One thousand three hundred eighty-two, minus six hundred."
+    },
+    {
+      "id": "28",
+      "scene": "s3",
+      "start": 70.20899999999999,
+      "end": 74.48499999999999,
+      "text": "Seven hundred eighty-two dollars for eight days of painting."
+    },
+    {
+      "id": "29",
+      "scene": "s3",
+      "start": 74.63495833333332,
+      "end": 76.46995833333331,
+      "text": "And a card that's still charging."
+    },
+    {
+      "id": "30",
+      "scene": "s3",
+      "start": 76.82004166666665,
+      "end": 80.25004166666666,
+      "text": "The only one who got paid on time was the card company."
+    },
+    {
+      "id": "31",
+      "scene": "s3",
+      "start": 80.60024999999999,
+      "end": 81.74324999999999,
+      "text": "They sold the paint job."
+    },
+    {
+      "id": "32",
+      "scene": "s3",
+      "start": 81.89304166666666,
+      "end": 83.54304166666667,
+      "text": "They never sold the terms."
+    },
+    {
+      "id": "33",
+      "scene": "s4",
+      "start": 84.14291666666666,
+      "end": 87.47091666666667,
+      "text": "Here's what a rich person does before the first brushstroke."
+    },
+    {
+      "id": "34",
+      "scene": "s5",
+      "start": 88.07083333333333,
+      "end": 90.89183333333332,
+      "text": "First, the price comes with terms."
+    },
+    {
+      "id": "35",
+      "scene": "s5",
+      "start": 91.04220833333332,
+      "end": 92.28720833333333,
+      "text": "Half to book the date."
+    },
+    {
+      "id": "36",
+      "scene": "s5",
+      "start": 92.43708333333332,
+      "end": 93.60408333333332,
+      "text": "Half at the walkthrough."
+    },
+    {
+      "id": "37",
+      "scene": "s5",
+      "start": 93.75399999999999,
+      "end": 95.06799999999998,
+      "text": "It's called a deposit."
+    },
+    {
+      "id": "38",
+      "scene": "s5",
+      "start": 95.41779166666666,
+      "end": 97.95779166666667,
+      "text": "Second, the deposit buys the paint."
+    },
+    {
+      "id": "39",
+      "scene": "s5",
+      "start": 98.10804166666667,
+      "end": 99.14204166666667,
+      "text": "One thousand in."
+    },
+    {
+      "id": "40",
+      "scene": "s5",
+      "start": 99.29204166666666,
+      "end": 100.71004166666667,
+      "text": "Six hundred on supplies."
+    },
+    {
+      "id": "41",
+      "scene": "s5",
+      "start": 100.859625,
+      "end": 103.244625,
+      "text": "Four hundred left before day one."
+    },
+    {
+      "id": "42",
+      "scene": "s5",
+      "start": 103.39416666666666,
+      "end": 105.06716666666667,
+      "text": "The card stays at zero."
+    },
+    {
+      "id": "43",
+      "scene": "s6",
+      "start": 105.66741666666667,
+      "end": 107.42641666666667,
+      "text": "Third, the walkthrough."
+    },
+    {
+      "id": "44",
+      "scene": "s6",
+      "start": 107.57629166666666,
+      "end": 109.86629166666667,
+      "text": "Client one checks every wall."
+    },
+    {
+      "id": "45",
+      "scene": "s6",
+      "start": 110.01608333333333,
+      "end": 113.01708333333333,
+      "text": "The second thousand lands before the tape comes off."
+    },
+    {
+      "id": "46",
+      "scene": "s6",
+      "start": 113.16687499999999,
+      "end": 114.54987499999999,
+      "text": "Zero days waiting."
+    },
+    {
+      "id": "47",
+      "scene": "s6",
+      "start": 114.90029166666666,
+      "end": 116.14829166666667,
+      "text": "Client two?"
+    },
+    {
+      "id": "48",
+      "scene": "s6",
+      "start": 116.29862499999999,
+      "end": 117.106625,
+      "text": "Same walls."
+    },
+    {
+      "id": "49",
+      "scene": "s6",
+      "start": 117.25666666666666,
+      "end": 118.22166666666666,
+      "text": "Same silence."
+    },
+    {
+      "id": "50",
+      "scene": "s6",
+      "start": 118.57199999999999,
+      "end": 120.85499999999999,
+      "text": "But the deposit is already in."
+    },
+    {
+      "id": "51",
+      "scene": "s6",
+      "start": 121.00479166666665,
+      "end": 122.98679166666665,
+      "text": "Four hundred is kept."
+    },
+    {
+      "id": "52",
+      "scene": "s7",
+      "start": 123.58695833333331,
+      "end": 125.73095833333332,
+      "text": "Fourth, the math."
+    },
+    {
+      "id": "53",
+      "scene": "s7",
+      "start": 125.88112499999998,
+      "end": 129.74012499999998,
+      "text": "Client one: two thousand minus six hundred."
+    },
+    {
+      "id": "54",
+      "scene": "s7",
+      "start": 129.8902083333333,
+      "end": 131.5872083333333,
+      "text": "One thousand four hundred."
+    },
+    {
+      "id": "55",
+      "scene": "s7",
+      "start": 131.73708333333332,
+      "end": 134.28608333333332,
+      "text": "Client two: four hundred."
+    },
+    {
+      "id": "56",
+      "scene": "s7",
+      "start": 134.43604166666665,
+      "end": 137.03704166666665,
+      "text": "One thousand eight hundred dollars."
+    },
+    {
+      "id": "57",
+      "scene": "s7",
+      "start": 137.18704166666666,
+      "end": 138.70904166666665,
+      "text": "Same two clients."
+    },
+    {
+      "id": "58",
+      "scene": "s7",
+      "start": 138.8595,
+      "end": 139.8975,
+      "text": "More than double."
+    },
+    {
+      "id": "59",
+      "scene": "s8",
+      "start": 140.49741666666665,
+      "end": 143.49841666666666,
+      "text": "One person did the work, then hoped to get paid."
+    },
+    {
+      "id": "60",
+      "scene": "s8",
+      "start": 143.84841666666665,
+      "end": 146.53341666666665,
+      "text": "The other got paid, then did the work."
+    },
+    {
+      "id": "61",
+      "scene": "s8",
+      "start": 146.88329166666665,
+      "end": 149.15229166666666,
+      "text": "Poor people send invoices."
+    },
+    {
+      "id": "62",
+      "scene": "s8",
+      "start": 149.301875,
+      "end": 151.16287499999999,
+      "text": "Rich people take deposits."
+    },
+    {
+      "id": "63",
+      "scene": "s8",
+      "start": 151.51274999999998,
+      "end": 152.21775,
+      "text": "Same job."
+    },
+    {
+      "id": "64",
+      "scene": "s8",
+      "start": 152.36779166666665,
+      "end": 153.19079166666666,
+      "text": "Opposite order."
+    }
+  ]
+}

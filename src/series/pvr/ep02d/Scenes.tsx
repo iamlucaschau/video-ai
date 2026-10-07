@@ -9,7 +9,14 @@ import { useCurrentFrame } from "remotion";
 import { Banner, prog, Slam } from "../styles/chipTable";
 import { Hud } from "../styles/streetSim";
 import { INK as SIDE } from "../theme";
-import { Chat, type Msg, Rows, Screen, Summary, Toast } from "../styles/textThread";
+import {
+  Chat,
+  type Msg,
+  Rows,
+  Screen,
+  Summary,
+  Toast,
+} from "../styles/textThread";
 
 const RED = SIDE.poor;
 const GREEN = SIDE.rich;
@@ -29,7 +36,7 @@ const clientHeader = {
 export const Scene1: React.FC = () => {
   const { at } = useCues();
   const items: Msg[] = [
-    { at: 0, kind: "title" },
+    { at: 0, kind: "title", text: "Give Discounts" },
     {
       at: at("01", 0.05),
       kind: "in",

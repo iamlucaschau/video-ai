@@ -1,0 +1,459 @@
+{
+  "name": "get-paid",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Orus",
+  "style": "You are a seasoned storyteller narrating a short documentary-style money lesson for adults. Warm, grounded, human, like telling a friend a hard truth over coffee. Unhurried natural pace. Slow down on every number and let it land. Take a small pause before the punchline. A hint of dry irony about the mistake. Never rushed, never shouty, never robotic.",
+  "trimSilence": true,
+  "tempo": 1,
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "A poor person paints the house, then asks to get paid."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "A rich person gets paid before the first brushstroke."
+    },
+    {
+      "id": "03",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.15,
+      "text": "Same job."
+    },
+    {
+      "id": "04",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.6,
+      "text": "Opposite order."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "The poor person paints houses."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "Two clients book the same month."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.35,
+      "text": "Two thousand dollars each."
+    },
+    {
+      "id": "08",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "Paint and supplies cost six hundred a house."
+    },
+    {
+      "id": "09",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.35,
+      "text": "It goes on a credit card."
+    },
+    {
+      "id": "10",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "Four days of work."
+    },
+    {
+      "id": "11",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.35,
+      "text": "Then they send the invoice and wait."
+    },
+    {
+      "id": "12",
+      "scene": "s2",
+      "take": "t03",
+      "gapAfter": 0.15,
+      "text": "They didn't make a sale."
+    },
+    {
+      "id": "13",
+      "scene": "s2",
+      "take": "t03",
+      "gapAfter": 0.6,
+      "text": "They made a loan."
+    },
+    {
+      "id": "14",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.35,
+      "text": "Here's how the loan goes."
+    },
+    {
+      "id": "15",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "Client one pays forty-five days later."
+    },
+    {
+      "id": "16",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.35,
+      "text": "After three \"just checking in\" texts."
+    },
+    {
+      "id": "17",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "The card charges twenty-four percent a year."
+    },
+    {
+      "id": "18",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "Six hundred dollars for a month and a half."
+    },
+    {
+      "id": "19",
+      "scene": "s3",
+      "take": "t04",
+      "gapAfter": 0.35,
+      "text": "Eighteen dollars in interest."
+    },
+    {
+      "id": "20",
+      "scene": "s3",
+      "take": "t05",
+      "gapAfter": 0.15,
+      "text": "Two thousand, minus six hundred, minus eighteen."
+    },
+    {
+      "id": "21",
+      "scene": "s3",
+      "take": "t05",
+      "gapAfter": 0.15,
+      "text": "One thousand three hundred eighty-two."
+    },
+    {
+      "id": "22",
+      "scene": "s3",
+      "take": "t05",
+      "gapAfter": 0.35,
+      "text": "A month and a half late."
+    },
+    {
+      "id": "23",
+      "scene": "s3",
+      "take": "t05",
+      "gapAfter": 0.15,
+      "text": "Client two loves the walls."
+    },
+    {
+      "id": "24",
+      "scene": "s3",
+      "take": "t05",
+      "gapAfter": 0.35,
+      "text": "Then stops answering."
+    },
+    {
+      "id": "25",
+      "scene": "s3",
+      "take": "t05",
+      "gapAfter": 0.15,
+      "text": "Six hundred in paint, still on the card."
+    },
+    {
+      "id": "26",
+      "scene": "s3",
+      "take": "t05",
+      "gapAfter": 0.35,
+      "text": "Four days of work, gone."
+    },
+    {
+      "id": "27",
+      "scene": "s3",
+      "take": "t06",
+      "gapAfter": 0.15,
+      "text": "One thousand three hundred eighty-two, minus six hundred."
+    },
+    {
+      "id": "28",
+      "scene": "s3",
+      "take": "t06",
+      "gapAfter": 0.15,
+      "text": "Seven hundred eighty-two dollars for eight days of painting."
+    },
+    {
+      "id": "29",
+      "scene": "s3",
+      "take": "t06",
+      "gapAfter": 0.35,
+      "text": "And a card that's still charging."
+    },
+    {
+      "id": "30",
+      "scene": "s3",
+      "take": "t06",
+      "gapAfter": 0.35,
+      "text": "The only one who got paid on time was the card company."
+    },
+    {
+      "id": "31",
+      "scene": "s3",
+      "take": "t06",
+      "gapAfter": 0.15,
+      "text": "They sold the paint job."
+    },
+    {
+      "id": "32",
+      "scene": "s3",
+      "take": "t06",
+      "gapAfter": 0.6,
+      "text": "They never sold the terms."
+    },
+    {
+      "id": "33",
+      "scene": "s4",
+      "take": "t07",
+      "gapAfter": 0.6,
+      "text": "Here's what a rich person does before the first brushstroke."
+    },
+    {
+      "id": "34",
+      "scene": "s5",
+      "take": "t08",
+      "gapAfter": 0.15,
+      "text": "First, the price comes with terms."
+    },
+    {
+      "id": "35",
+      "scene": "s5",
+      "take": "t08",
+      "gapAfter": 0.15,
+      "text": "Half to book the date."
+    },
+    {
+      "id": "36",
+      "scene": "s5",
+      "take": "t08",
+      "gapAfter": 0.15,
+      "text": "Half at the walkthrough."
+    },
+    {
+      "id": "37",
+      "scene": "s5",
+      "take": "t08",
+      "gapAfter": 0.35,
+      "text": "It's called a deposit."
+    },
+    {
+      "id": "38",
+      "scene": "s5",
+      "take": "t09",
+      "gapAfter": 0.15,
+      "text": "Second, the deposit buys the paint."
+    },
+    {
+      "id": "39",
+      "scene": "s5",
+      "take": "t09",
+      "gapAfter": 0.15,
+      "text": "One thousand in."
+    },
+    {
+      "id": "40",
+      "scene": "s5",
+      "take": "t09",
+      "gapAfter": 0.15,
+      "text": "Six hundred on supplies."
+    },
+    {
+      "id": "41",
+      "scene": "s5",
+      "take": "t09",
+      "gapAfter": 0.15,
+      "text": "Four hundred left before day one."
+    },
+    {
+      "id": "42",
+      "scene": "s5",
+      "take": "t09",
+      "gapAfter": 0.6,
+      "text": "The card stays at zero."
+    },
+    {
+      "id": "43",
+      "scene": "s6",
+      "take": "t10",
+      "gapAfter": 0.15,
+      "text": "Third, the walkthrough."
+    },
+    {
+      "id": "44",
+      "scene": "s6",
+      "take": "t10",
+      "gapAfter": 0.15,
+      "text": "Client one checks every wall."
+    },
+    {
+      "id": "45",
+      "scene": "s6",
+      "take": "t10",
+      "gapAfter": 0.15,
+      "text": "The second thousand lands before the tape comes off."
+    },
+    {
+      "id": "46",
+      "scene": "s6",
+      "take": "t10",
+      "gapAfter": 0.35,
+      "text": "Zero days waiting."
+    },
+    {
+      "id": "47",
+      "scene": "s6",
+      "take": "t10",
+      "gapAfter": 0.15,
+      "text": "Client two?"
+    },
+    {
+      "id": "48",
+      "scene": "s6",
+      "take": "t10",
+      "gapAfter": 0.15,
+      "text": "Same walls."
+    },
+    {
+      "id": "49",
+      "scene": "s6",
+      "take": "t10",
+      "gapAfter": 0.35,
+      "text": "Same silence."
+    },
+    {
+      "id": "50",
+      "scene": "s6",
+      "take": "t11",
+      "gapAfter": 0.15,
+      "text": "But the deposit is already in."
+    },
+    {
+      "id": "51",
+      "scene": "s6",
+      "take": "t11",
+      "gapAfter": 0.6,
+      "text": "Four hundred is kept."
+    },
+    {
+      "id": "52",
+      "scene": "s7",
+      "take": "t12",
+      "gapAfter": 0.15,
+      "text": "Fourth, the math."
+    },
+    {
+      "id": "53",
+      "scene": "s7",
+      "take": "t12",
+      "gapAfter": 0.15,
+      "text": "Client one: two thousand minus six hundred."
+    },
+    {
+      "id": "54",
+      "scene": "s7",
+      "take": "t12",
+      "gapAfter": 0.15,
+      "text": "One thousand four hundred."
+    },
+    {
+      "id": "55",
+      "scene": "s7",
+      "take": "t12",
+      "gapAfter": 0.15,
+      "text": "Client two: four hundred."
+    },
+    {
+      "id": "56",
+      "scene": "s7",
+      "take": "t12",
+      "gapAfter": 0.15,
+      "text": "One thousand eight hundred dollars."
+    },
+    {
+      "id": "57",
+      "scene": "s7",
+      "take": "t12",
+      "gapAfter": 0.15,
+      "text": "Same two clients."
+    },
+    {
+      "id": "58",
+      "scene": "s7",
+      "take": "t12",
+      "gapAfter": 0.6,
+      "text": "More than double."
+    },
+    {
+      "id": "59",
+      "scene": "s8",
+      "take": "t13",
+      "gapAfter": 0.35,
+      "text": "One person did the work, then hoped to get paid."
+    },
+    {
+      "id": "60",
+      "scene": "s8",
+      "take": "t13",
+      "gapAfter": 0.35,
+      "text": "The other got paid, then did the work."
+    },
+    {
+      "id": "61",
+      "scene": "s8",
+      "take": "t13",
+      "gapAfter": 0.15,
+      "text": "Poor people send invoices."
+    },
+    {
+      "id": "62",
+      "scene": "s8",
+      "take": "t13",
+      "gapAfter": 0.35,
+      "text": "Rich people take deposits."
+    },
+    {
+      "id": "63",
+      "scene": "s8",
+      "take": "t13",
+      "gapAfter": 0.15,
+      "text": "Same job."
+    },
+    {
+      "id": "64",
+      "scene": "s8",
+      "take": "t13",
+      "gapAfter": 0.6,
+      "text": "Opposite order."
+    }
+  ]
+}

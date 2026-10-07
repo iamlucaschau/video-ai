@@ -604,7 +604,7 @@ export const Hud: React.FC<{
             fontVariantNumeric: "tabular-nums",
           }}
         >
-          ${v}
+          ${v.toLocaleString("en-US")}
         </div>
       ) : null}
     </div>

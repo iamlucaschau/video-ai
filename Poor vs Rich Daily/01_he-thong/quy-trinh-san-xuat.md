@@ -44,6 +44,7 @@ Chi tiết thao tác từng cổng: xem `huong-dan-ban-giao-claude.md` (message 
 |----|-------|----------|------|----|------------|------|-------|-----------|---------|
 | 01 | Buy Their Tools | FINAL ✓ | ✓ | ✓ | ✓ | ✓ | ✓ 2026-10-07 | — | Do you buy tools like a poor or rich person? |
 | 02 | Give Discounts | FINAL ✓ | ✓ | ✓ | ✓ | ✓ | ✓ 4 bản A/B/C/D (đề xuất đăng C) | — | Do you give discounts like a poor or rich person? |
+| 03 | Get Paid | FINAL ✓ | ✓ | ✓ | ✓ D | ✓ | ✓ 2026-10-08 | — | Do you get paid like a poor or rich person? |
 
 *Ký hiệu: ☐ chưa làm · ◐ đang làm · ✓ xong.*
 
