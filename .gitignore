@@ -16,3 +16,13 @@ voiceover/.cache/
 
 # Episode renders (regenerable with npm/remotion; delivered from the episode folder)
 Poor vs Rich Daily/episodes/**/*.mp4
+
+# Pixabay SFX: licensed for use in videos, not for redistribution as files
+public/sfx/**/*.mp3
+
+# third-party repos cloned for study (see reference/README.md, not committed)
+reference/*
+!reference/README.md
+
+# reference videos downloaded for analysis (third-party, not ours)
+Test/*.mp4

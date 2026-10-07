@@ -8,6 +8,7 @@ import {
 } from "remotion";
 import { CueProvider } from "./cues";
 import { sceneRange, type Timing } from "./episode";
+import { SafeGuide } from "./safe";
 import { Subtitles } from "./subs";
 
 /** Bed levels: ≈ −24 LUFS each, ~10 LU under the VO (Ep01, Lucas). */
@@ -22,6 +23,8 @@ type Props = {
   vo: string;
   /** VO line id where the music turns from the poor bed to the rich bed */
   pivot: string;
+  /** subtitles as approved before the 2026-10-08 rules (Ep01–Ep03) */
+  legacySubs?: boolean;
 };
 
 /** Any episode: hard-cut scenes from the VO timing, subtitles, VO, music bed. */
@@ -31,6 +34,7 @@ export const EpisodeCut: React.FC<Props> = ({
   captions,
   vo,
   pivot,
+  legacySubs,
 }) => {
   const { fps, durationInFrames } = useVideoConfig();
   const turn = Math.round(
@@ -59,7 +63,7 @@ export const EpisodeCut: React.FC<Props> = ({
           </Sequence>
         );
       })}
-      <Subtitles lines={timing.lines} captions={captions} />
+      <Subtitles lines={timing.lines} captions={captions} legacy={legacySubs} />
       <Audio name="VO" src={staticFile(vo)} />
       <Audio
         name="Music (poor)"
@@ -75,6 +79,7 @@ export const EpisodeCut: React.FC<Props> = ({
           volume={(f) => fade(f, 0, durationInFrames - turn + 5, MUSIC.rich)}
         />
       </Sequence>
+      <SafeGuide />
     </AbsoluteFill>
   );
 };
@@ -82,7 +87,7 @@ export const EpisodeCut: React.FC<Props> = ({
 /** Gate 4 test: one scene with its slice of the VO and subtitles. */
 export const SceneTest: React.FC<
   Omit<Props, "scenes" | "pivot"> & { scene: string; Scene: React.FC }
-> = ({ timing, captions, vo, scene, Scene }) => {
+> = ({ timing, captions, vo, scene, Scene, legacySubs }) => {
   const { fps } = useVideoConfig();
   const { from } = sceneRange(timing, scene, fps);
   const local = timing.lines.map((l) => ({
@@ -95,8 +100,9 @@ export const SceneTest: React.FC<
       <CueProvider value={{ cues: timing, sceneFrom: from }}>
         <Scene />
       </CueProvider>
-      <Subtitles lines={local} captions={captions} />
+      <Subtitles lines={local} captions={captions} legacy={legacySubs} />
       <Audio src={staticFile(vo)} trimBefore={from} />
+      <SafeGuide />
     </AbsoluteFill>
   );
 };

@@ -5,6 +5,9 @@ this repo. Videos here are **React components rendered frame by frame** with
 [Remotion](https://www.remotion.dev) 4.0.532.
 
 Remotion Agent Skills are installed in `.claude/skills/` and `.agents/skills/`.
+Also installed: `.claude/skills/motion-design/` (LottieFiles, MIT) for timing,
+easing and choreography. Third-party repos pulled for study, and which Remocn
+components fit our rules, are listed in `reference/README.md`.
 **Load `remotion-best-practices` before writing Remotion code**. It routes to
 topic guides for markup, timing, transitions, audio, fonts, captions,
 rendering, etc. If a skill and this file disagree on project conventions, this
@@ -98,6 +101,37 @@ out/                       render output (git-ignored)
    `public/fonts` and load them with `@remotion/fonts`.
 7. **Run `npm run lint`** after changes, then visually verify (see below).
 
+## Short-form rules (Lucas, 2026-10-08, non-negotiable for 9:16)
+
+Most vertical videos ignore these. Ours may not. Check every one at QA.
+
+1. **Safe zone.** Platform UI covers the top bar, the bottom
+   caption/account/audio/progress stack, the right action rail and the left
+   edge. On 1080×1920 keep **every word, number, face and key shape inside
+   x 60–940, y 220–1440** (`SAFE` in `src/series/pvr/theme.ts`: top 220,
+   bottom 480, left 60, right 140). Backgrounds may bleed; information may
+   not. Subtitles sit on the bottom line of the safe zone (`Subtitles`
+   default). QA: render stills with `--props='{"safeGuide":true}'` (red =
+   danger zone, `SafeGuide` in `src/series/pvr/safe.tsx`) and check that
+   nothing readable touches red.
+2. **No fake camera.** No zoom transitions (punch-in, zoom-blur, scale
+   swap), no camera shake, wobble, handheld drift or "breathing" camera,
+   and no shake when focusing on an object. Change scenes with a hard cut,
+   a short crossfade (≤ 8 frames) or by moving/morphing the element itself.
+   A style may allow one purposeful camera move (e.g. a map flight between
+   two places): single, eased in-out, ≥ 20 frames, no overshoot, no shake,
+   never continuous.
+3. **Less text.** Viewers cannot read dense screens.
+   - The VO and subtitles carry the sentences. **Never put a VO sentence on
+     screen as a banner/card**; show only the keyword or the number.
+   - Each on-screen text element ≤ 5 words (numbers count as one); at most
+     2 text elements visible at once besides subtitles; no paragraph or
+     2-line blocks; no dense grids of labels.
+   - Subtitles: 1–3 words at a time (≤ 18 characters per chunk).
+   - One clean sans family, weight 700–800, ≥ 48 px on 1080 wide. No
+     cinematic/display serif fonts for text blocks or quotes.
+4. **Real SFX only** (see Sound design).
+
 ## Studio-editable markup
 
 Remotion Studio can select, drag and keyframe elements when markup follows
@@ -174,6 +208,8 @@ these conventions (see the `remotion-interactivity` skill):
 ## Verifying your work
 
 1. `npm run lint` must pass.
+   Then check the short-form rules: safe zone (`safeGuide` stills), no fake
+   camera, text density, real SFX.
 2. Spot-check frames with `npx remotion still <id> out/check.png --frame=<n>`
    and view the image. For several frames, either run `still` per frame or
    render a range as images: `npx remotion render <id> out/seq --sequence --frames=90-100 --image-format=jpeg`.
@@ -257,10 +293,19 @@ Gemini reads ~200 wpm; use `tempo` and the composition's gaps to hit a target le
 
 ## Sound design
 
-`node scripts/make-audio.mjs` synthesizes royalty-free audio into
-`public/audio/`: `bed-dark.wav` / `bed-bright.wav` (40 s loops, 96 BPM; play
-with `<Audio loop>`), and SFX `tick`, `impact`, `ching`, `riser`, `buzz`
-(plus `whoosh`, `pop`). Keep music around `volume={0.12–0.15}` under voiceover.
+- **SFX: real recordings only.** Use the curated Pixabay library in
+  `public/sfx/<category>/` (whoosh, click, flash, shutter, progress, deephit,
+  hit; 73 files) listed in `public/sfx/catalog.json` with measured loudness.
+  Play them with `<Sfx file="sfx/whoosh/clean-whoosh-382726.mp3" at={frame} />`
+  (`src/series/pvr/sfx.tsx`), which levels every file to −26 LUFS under the VO.
+  Add files with `node scripts/fetch-sfx.mjs <list.json>` (audio is git-ignored:
+  Pixabay license allows use in videos, not redistribution of the files).
+- **Never synthesize SFX** and never use cartoon sounds (boing, pop, ding,
+  slide-whistle). The SFX in `scripts/make-audio.mjs` (`tick`, `impact`,
+  `ching`, `riser`, `buzz`, `whoosh`, `pop`) sound cartoonish and are retired
+  for new work (Lucas, 2026-10-08). Max one SFX per beat; most beats need none.
+- Music beds: `node scripts/make-audio.mjs` still makes `bed-dark.wav` /
+  `bed-bright.wav` (40 s loops; `<Audio loop>`). Levels per series rules.
 
 ## Voiceover-driven videos (pattern: `src/compositions/PriceTheirWork/`)
 

@@ -37,6 +37,7 @@ Chi tiết thao tác từng cổng: xem `huong-dan-ban-giao-claude.md` (message 
 | 7 | Âm thanh | VO −14 LUFS; nhạc nền ≈ −24 LUFS (Lyria khi có billing), đổi sắc thái ở câu transition; không SFX hoạt hình |
 | 8 | Quy trình | VO-first (TTS → đo timing → code); storyboard duyệt trước code; test 1 scene trước render full |
 | 9 | Ngôn ngữ | VO tiếng Anh (khán giả US/UK); caption tiếng Anh một câu hỏi |
+| 10 | Short-form | Vùng an toàn x 60–940 · y 220–1440; không máy quay giả (zoom chuyển cảnh, rung); ít chữ (không lặp câu VO trên màn hình, khối ≤ 5 từ, phụ đề 1–3 từ); SFX thật từ thư viện Pixabay (`03_STYLE-LIBRARY.md` §1) |
 
 ## 4. Episode log
 
@@ -71,5 +72,6 @@ Chi tiết thao tác từng cổng: xem `huong-dan-ban-giao-claude.md` (message 
 | 2026-10-06 | Chốt look series **C — sổ kẻ ô** (mực navy, highlight vàng, giấy note) + **camera push-in** của A; nhân vật nét chi tiết hơn. So sánh A/B/C: `episodes/ep01-buy-their-tools/test/style-compare-A-B-C.jpg` | Lucas |
 | 2026-10-06 | **Đổi look series sang "Receipt × Paper"** (hướng 1 + 3), thay whiteboard/sổ kẻ ô. So sánh: `episodes/ep01-buy-their-tools/test/new-style-compare-1-2-3.jpg`. Nhạc nền dùng Lyria | Lucas |
 | 2026-10-06 | Font **Bricolage Grotesque** thay Fredoka/Archivo Black; thêm **phụ đề** bắt buộc (cụm ≤ 30 ký tự, số viết bằng số). So sánh: `episodes/ep01-buy-their-tools/test/font-compare-*.jpg` | Lucas |
+| 2026-10-08 | **Quy tắc short-form** (invariant 10): vùng an toàn cho UI nền tảng, cấm chuyển cảnh zoom/rung máy, giảm chữ (không lặp câu VO, khối ≤ 5 từ, phụ đề 1–3 từ), SFX thật từ Pixabay (73 file, `public/sfx/`) thay SFX tự tổng hợp. Ep01–Ep03 giữ nguyên bản đã duyệt; áp dụng từ Ep04 | Lucas |
 | 2026-10-07 | **Thư viện 4 phong cách** A/B/C/D thay một look duy nhất; Claude chọn phong cách theo kịch bản (hoặc đề xuất phong cách mới) ở bước spec, Lucas duyệt ở Cổng 3. Xem `03_series-lock/03_STYLE-LIBRARY.md` | Lucas |
 | 2026-10-07 | Bỏ mọi chuyển động máy quay (kể cả push-in); thêm hệ diễn xuất con rối, chữ đập (slam), tiền bay, giấy "thở", thẻ đung đưa, dòng in lóe vàng | Lucas |

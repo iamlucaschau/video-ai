@@ -30,7 +30,7 @@
 
 ## 4. Typography trên màn hình
 - Font: **Space Mono** (chữ hóa đơn) + **Bricolage Grotesque** 700/800 (dải giấy, nhãn, tiêu đề, biển số, phụ đề) — chốt 2026-10-06
-- **Phụ đề (subtitles) bắt buộc:** chữ trắng viền đen, ~y 1600 ở mọi phong cách (A: dải sàn dưới máy in), mỗi câu VO chia cụm ≤ 30 ký tự, hiện đúng nhịp VO; số tiền viết bằng số ($400, 22%) cho khớp hóa đơn, phần lời còn lại giữ nguyên văn FINAL
+- **Phụ đề (subtitles) bắt buộc:** chữ trắng viền đen, **1–3 từ một lần**, đặt ở mép dưới vùng an toàn (~y 1350, trong x 60–940) — từ Ep04 (Ep01–Ep03: ~y 1600, cụm ≤ 30 ký tự, đã duyệt). Quy tắc short-form: `03_STYLE-LIBRARY.md` §1, mỗi câu VO chia cụm ≤ 30 ký tự, hiện đúng nhịp VO; số tiền viết bằng số ($400, 22%) cho khớp hóa đơn, phần lời còn lại giữ nguyên văn FINAL
 - Cỡ chữ phân cấp: keyword lớn (tiêu đề beat) > số tiền/phép tính (nổi bật thứ hai) > chú thích nhỏ
 - Màu chữ: mực đen `#2B2B2B`; số tiền màu theo phe (đỏ/xanh); cảnh báo/sự thật gắt có thể dùng đỏ
 - Mỗi dòng chữ xuất hiện **đồng bộ với từ khóa trong voiceover** (±0.2s), không hiện trước khi VO đọc tới

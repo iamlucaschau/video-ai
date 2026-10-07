@@ -75,7 +75,7 @@ export const Ep01: React.FC = () => {
           </Sequence>
         );
       })}
-      <Subtitles lines={timing.lines} captions={EP01_CAPTIONS} />
+      <Subtitles lines={timing.lines} captions={EP01_CAPTIONS} legacy />
       <Audio name="VO" src={VO} />
       <Audio
         name="Music (poor)"

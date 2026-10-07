@@ -1,0 +1,64 @@
+#!/usr/bin/env node
+/**
+ * Downloads the curated Pixabay SFX library into public/sfx/<category>/ and
+ * writes public/sfx/catalog.json (id, title, author, seconds, loudness, file).
+ *
+ *   node scripts/fetch-sfx.mjs <list.json>
+ *
+ * <list.json>: [[category, pixabayId, "Title by Author", seconds, mp3Url], …]
+ * (collected from pixabay.com/sound-effects detail pages). Pixabay Content
+ * License: free for commercial use in videos, no attribution required; do not
+ * redistribute the files on their own, so public/sfx/** audio is git-ignored.
+ */
+import { spawnSync } from "node:child_process";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const OUT = path.join(ROOT, "public", "sfx");
+const list = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
+
+const slug = (s) =>
+  s
+    .toLowerCase()
+    .replace(/ by .*$/, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+/** Integrated loudness (LUFS) so the mix can level SFX consistently. */
+const lufs = (file) => {
+  const r = spawnSync("ffmpeg", ["-hide_banner", "-i", file, "-af", "ebur128", "-f", "null", "-"], {
+    encoding: "utf8",
+  });
+  const m = [...(r.stderr ?? "").matchAll(/I:\s+(-?[\d.]+) LUFS/g)].pop();
+  return m ? Number(m[1]) : null;
+};
+
+const catalog = [];
+for (const [category, id, titleBy, seconds, url] of list) {
+  const [, title = titleBy, author = ""] = titleBy.match(/^(.*) by (.*)$/) ?? [];
+  const rel = `${category}/${slug(title)}-${id}.mp3`;
+  const file = path.join(OUT, rel);
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  if (!fs.existsSync(file)) {
+    const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0", Referer: "https://pixabay.com/" } });
+    if (!res.ok) {
+      console.warn(`✗ ${rel}: HTTP ${res.status}`);
+      continue;
+    }
+    fs.writeFileSync(file, Buffer.from(await res.arrayBuffer()));
+  }
+  catalog.push({
+    file: `sfx/${rel}`,
+    category,
+    title,
+    author,
+    seconds,
+    lufs: lufs(file),
+    source: `https://pixabay.com/sound-effects/${id}/`,
+  });
+  console.log(`✓ ${rel}`);
+}
+fs.writeFileSync(path.join(OUT, "catalog.json"), JSON.stringify(catalog, null, 2) + "\n");
+console.log(`${catalog.length} SFX → public/sfx/catalog.json`);

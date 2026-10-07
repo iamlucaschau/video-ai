@@ -27,6 +27,7 @@ export const Ep03TestScene3: React.FC = () => (
     vo={VO}
     scene="s3"
     Scene={Scene3}
+    legacySubs
   />
 );
 
@@ -49,5 +50,6 @@ export const Ep03: React.FC = () => (
     captions={EP03_CAPTIONS}
     vo={VO}
     pivot="33"
+    legacySubs
   />
 );

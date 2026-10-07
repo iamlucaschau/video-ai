@@ -43,6 +43,7 @@ export const Ep02Cut: React.FC<{ scenes: Record<string, React.FC> }> = ({
     captions={EP02_CAPTIONS}
     vo={VO}
     pivot="33"
+    legacySubs
   />
 );
 
@@ -54,5 +55,6 @@ export const Ep02TestScene3: React.FC = () => (
     vo={VO}
     scene="s3"
     Scene={Scene3}
+    legacySubs
   />
 );

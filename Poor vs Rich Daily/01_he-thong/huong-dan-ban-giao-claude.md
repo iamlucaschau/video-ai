@@ -102,6 +102,10 @@ Quy tắc vàng: **Claude không được tự ý qua cổng.** Mỗi cổng c�
 - [ ] Loudness −14 LUFS
 - [ ] Phụ đề có mặt suốt VO, khớp lời FINAL (số viết bằng số), không che nội dung chính
 - [ ] Có caption.txt đúng nội dung (một câu hỏi)
+- [ ] **Vùng an toàn:** ảnh QA có lớp phủ `safeGuide` — không chữ/số/mặt nào chạm vùng đỏ (trên 220 · dưới 480 · phải 140 · trái 60)
+- [ ] **Không máy quay giả:** không zoom chuyển cảnh, không rung/lắc
+- [ ] **Ít chữ:** không câu VO nào lặp thành dải chữ; khối chữ ≤ 5 từ; ≤ 2 khối cùng lúc; phụ đề 1–3 từ
+- [ ] **SFX** chỉ từ `public/sfx/` (thật, không hoạt hình), không lấn VO
 
 ## 7. Quyết định đã chốt / còn mở
 

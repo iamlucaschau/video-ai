@@ -12,3 +12,11 @@ export const INK = {
   poor: "#D32F2F",
   rich: "#388E3C",
 } as const;
+
+/**
+ * Platform-UI safe zone for 9:16 (Reels / TikTok / Shorts), Lucas 2026-10-08.
+ * Top bar, bottom caption/account/audio/progress stack, right action rail,
+ * left edge. Every word, number, face and key shape stays inside
+ * x 60–940, y 220–1440. Check with --props='{"safeGuide":true}'.
+ */
+export const SAFE = { top: 220, bottom: 480, left: 60, right: 140 } as const;
