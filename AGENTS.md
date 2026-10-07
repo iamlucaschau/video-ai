@@ -191,7 +191,7 @@ these conventions (see the `remotion-interactivity` skill):
 `scripts/tts.mjs` generates narration with the Gemini API
 (`POST /v1beta/interactions`, model `gemini-3.8-flash-tts`, 24 kHz mono WAV).
 
-- **Keys**: two keys are configured in `gemini_key.txt.txt` (git-ignored).
+- **Keys**: four keys are configured in `gemini_key.txt` (git-ignored).
   The script also accepts `GEMINI_API_KEYS=key1,key2` in `.env` (see
   `.env.example`). Requests rotate across keys round-robin and automatically
   fail over to the next key on 401/403/429/5xx. **Never print, log, or commit keys.**

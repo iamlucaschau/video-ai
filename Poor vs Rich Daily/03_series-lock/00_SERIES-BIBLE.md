@@ -6,13 +6,17 @@
 - Độ dài: 105–125 giây
 - Ngôn ngữ: voiceover tiếng Anh (~150 từ/phút), chữ trên màn hình tiếng Anh
 
-## 2. Visual style — "Receipt × Paper" (chốt 2026-10-06, Lucas; thay whiteboard)
+## 2. Visual style — thư viện 4 phong cách (chốt 2026-10-07, Lucas)
+- Series dùng **4 phong cách**: A "Receipt × Paper", B "Chip Table", C "Street Sim", D "Text Thread". Mỗi tập Claude chọn phong cách hợp kịch bản (hoặc đề xuất phong cách mới) theo **`03_STYLE-LIBRARY.md`**; Lucas duyệt ở Cổng 3. Bất biến chung của mọi phong cách: `03_STYLE-LIBRARY.md` §1
+- Chi tiết phong cách A (phong cách gốc, Ep01) giữ nguyên bên dưới:
+
+### A — "Receipt × Paper" (chốt 2026-10-06)
 - **Thế giới:** diorama giấy nhiều lớp — tường giấy kraft `#D9C6A3`, sàn giấy nâu, đồ vật cắt giấy có mép xé và bóng đổ thật. MỘT tập một bối cảnh chính
 - **Nhân vật:** con rối giấy (paper puppet) — POOR tạp dề đỏ, RICH tạp dề xanh lá; biểu cảm bằng mặt + cử chỉ (giơ biển số tiền)
 - **Mọi phép tính in trên hóa đơn nhiệt:** máy in giấy đặt trong cảnh, hóa đơn nhả từ dưới lên, mỗi dòng in đúng lúc VO đọc (có tiếng máy in). Kết phe nghèo: con dấu đỏ (vd. LOSS); phe giàu: con dấu xanh (vd. PAID)
 - **Bảng ghim trên tường:** các tấm giấy ghim kể diễn biến (job, lịch, sao kê…), rơi vào/ra theo nhịp
 - **Câu đắt:** viết trên mảnh giấy xé dán lên tường
-- **Chuyển động:** stop-motion ~12 khung/giây; **camera push-in** vào con số/khoảnh khắc đắt rồi lùi ra; chuyển scene hard cut
+- **Chuyển động (chốt 2026-10-07):** stop-motion ~12 khung/giây; **khung hình đứng yên — KHÔNG máy quay di chuyển** (không trôi, không rung tay, không nảy, không lia/zoom, không push-in; Lucas thấy khó chịu). Nhấn mạnh bằng: con rối diễn xuất (chớp mắt, nhìn, chỉ tay, gật/giật mình, gục vai, mấp máy khi nói), chữ đập giữa màn hình cho con số đắt, tiền giấy bay, mép giấy "thở", thẻ ghim đung đưa, dòng hóa đơn mới lóe vàng; chuyển scene hard cut
 - Không ảnh raster/AI — toàn bộ dựng bằng code
 
 ## 3. Character sheet (bất biến)
@@ -22,10 +26,11 @@
 | RICH | Xanh lá `#388E3C` (áo/tạp dề) | Nữ hoặc nam tùy tập, tự tin, cười nhẹ |
 | Phụ | Xám/xanh navy `#37474F` | Khách hàng, đồ vật |
 - Quy tắc: POOR luôn đỏ, RICH luôn xanh lá — không đảo, không đổi sắc độ giữa các tập
+- Hình thể nhân vật đổi theo phong cách (con rối giấy ở A, quân cờ ở B, xe/HUD ở C, bong bóng chat ở D), **màu phe thì không đổi**
 
 ## 4. Typography trên màn hình
 - Font: **Space Mono** (chữ hóa đơn) + **Bricolage Grotesque** 700/800 (dải giấy, nhãn, tiêu đề, biển số, phụ đề) — chốt 2026-10-06
-- **Phụ đề (subtitles) bắt buộc:** chữ trắng viền đen, đặt ở dải sàn dưới máy in (~y 1600), mỗi câu VO chia cụm ≤ 30 ký tự, hiện đúng nhịp VO; số tiền viết bằng số ($400, 22%) cho khớp hóa đơn, phần lời còn lại giữ nguyên văn FINAL
+- **Phụ đề (subtitles) bắt buộc:** chữ trắng viền đen, ~y 1600 ở mọi phong cách (A: dải sàn dưới máy in), mỗi câu VO chia cụm ≤ 30 ký tự, hiện đúng nhịp VO; số tiền viết bằng số ($400, 22%) cho khớp hóa đơn, phần lời còn lại giữ nguyên văn FINAL
 - Cỡ chữ phân cấp: keyword lớn (tiêu đề beat) > số tiền/phép tính (nổi bật thứ hai) > chú thích nhỏ
 - Màu chữ: mực đen `#2B2B2B`; số tiền màu theo phe (đỏ/xanh); cảnh báo/sự thật gắt có thể dùng đỏ
 - Mỗi dòng chữ xuất hiện **đồng bộ với từ khóa trong voiceover** (±0.2s), không hiện trước khi VO đọc tới
@@ -39,6 +44,7 @@
 
 ## 6. Âm thanh
 - Voiceover tiếng Anh, giọng kể chuyện nam/nữ đều được nhưng **một tập một giọng**, nhịp đều, nhấn vào con số
+- **Giọng chuẩn (chốt 2026-10-07):** Gemini `Orus`, chỉ dẫn *"seasoned storyteller… warm, grounded, human… slow down on every number… small pause before the punchline… hint of dry irony… never rushed"* (bản đầy đủ: `scripts/episode.mjs`). **Tempo tự nhiên ×1.0 — không ép tốc độ để kịp thời lượng** (ép tempo làm mất cảm xúc, bài học Ep02); thời lượng ~2:15–2:25 được chấp nhận
 - Nhạc nền: **Lyria** (Google) khi có billing, không lời; mức **≈ −24 LUFS, thấp hơn VO ~10 LU** (nghe rõ trên điện thoại, lời vẫn nổi); đổi sắc thái đúng câu transition (Poor trầm → Rich sáng hơn)
 - Foley của look: tiếng máy in hóa đơn mỗi dòng in
 - Không SFX hoạt hình lố (boing/pop) — giữ tone "bài học nghiêm túc"

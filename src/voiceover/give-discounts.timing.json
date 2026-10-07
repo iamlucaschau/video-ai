@@ -1,0 +1,432 @@
+{
+  "durationInSeconds": 134.105625,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 4.484999999999999,
+      "text": "A poor person hears \"Can you do it for less?\" and cuts the price."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 4.834958333333333,
+      "end": 8.762958333333334,
+      "text": "A rich person hears the same question and sells the discount."
+    },
+    {
+      "id": "03",
+      "scene": "s1",
+      "start": 9.112874999999999,
+      "end": 9.920874999999999,
+      "text": "Same lawn."
+    },
+    {
+      "id": "04",
+      "scene": "s1",
+      "start": 10.070416666666667,
+      "end": 11.176416666666666,
+      "text": "Opposite answer."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 11.77625,
+      "end": 13.985249999999999,
+      "text": "The poor person mows lawns."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 14.135541666666665,
+      "end": 16.379541666666665,
+      "text": "Sixty dollars a cut, every two weeks."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "start": 16.729416666666665,
+      "end": 19.251416666666664,
+      "text": "A client asks for twenty percent off."
+    },
+    {
+      "id": "08",
+      "scene": "s2",
+      "start": 19.601208333333332,
+      "end": 20.317208333333333,
+      "text": "They say yes."
+    },
+    {
+      "id": "09",
+      "scene": "s2",
+      "start": 20.467375,
+      "end": 21.934375,
+      "text": "Forty-eight dollars a cut."
+    },
+    {
+      "id": "10",
+      "scene": "s2",
+      "start": 22.284708333333334,
+      "end": 23.443708333333333,
+      "text": "The client is happy."
+    },
+    {
+      "id": "11",
+      "scene": "s2",
+      "start": 23.59404166666667,
+      "end": 25.32604166666667,
+      "text": "They feel like they saved the account."
+    },
+    {
+      "id": "12",
+      "scene": "s2",
+      "start": 25.675541666666668,
+      "end": 27.51354166666667,
+      "text": "They didn't save a customer."
+    },
+    {
+      "id": "13",
+      "scene": "s2",
+      "start": 27.663666666666668,
+      "end": 29.008666666666667,
+      "text": "They paid one to stay."
+    },
+    {
+      "id": "14",
+      "scene": "s3",
+      "start": 29.608958333333334,
+      "end": 30.951958333333334,
+      "text": "Here's the math they skip."
+    },
+    {
+      "id": "15",
+      "scene": "s3",
+      "start": 31.3015,
+      "end": 33.7395,
+      "text": "Every cut costs eighteen dollars."
+    },
+    {
+      "id": "16",
+      "scene": "s3",
+      "start": 33.88941666666667,
+      "end": 36.24541666666667,
+      "text": "Gas, trimmer line, blades."
+    },
+    {
+      "id": "17",
+      "scene": "s3",
+      "start": 36.395583333333335,
+      "end": 38.477583333333335,
+      "text": "Six of that is just driving to the street."
+    },
+    {
+      "id": "18",
+      "scene": "s3",
+      "start": 38.827333333333335,
+      "end": 41.27333333333333,
+      "text": "At sixty, they keep forty-two."
+    },
+    {
+      "id": "19",
+      "scene": "s3",
+      "start": 41.62383333333334,
+      "end": 43.61083333333334,
+      "text": "At forty-eight, they keep thirty."
+    },
+    {
+      "id": "20",
+      "scene": "s3",
+      "start": 43.961125,
+      "end": 45.685125,
+      "text": "They cut the price twenty percent."
+    },
+    {
+      "id": "21",
+      "scene": "s3",
+      "start": 45.835166666666666,
+      "end": 47.94316666666666,
+      "text": "They cut their profit almost thirty."
+    },
+    {
+      "id": "22",
+      "scene": "s3",
+      "start": 48.292791666666666,
+      "end": 51.69379166666667,
+      "text": "Then the neighbor hears about the deal."
+    },
+    {
+      "id": "23",
+      "scene": "s3",
+      "start": 51.84395833333333,
+      "end": 52.854958333333336,
+      "text": "Same question."
+    },
+    {
+      "id": "24",
+      "scene": "s3",
+      "start": 53.00454166666667,
+      "end": 53.74554166666667,
+      "text": "Same yes."
+    },
+    {
+      "id": "25",
+      "scene": "s3",
+      "start": 54.095125,
+      "end": 57.439125000000004,
+      "text": "Next door, there's no driving, so that lawn costs twelve."
+    },
+    {
+      "id": "26",
+      "scene": "s3",
+      "start": 57.789500000000004,
+      "end": 59.240500000000004,
+      "text": "Forty-eight minus twelve."
+    },
+    {
+      "id": "27",
+      "scene": "s3",
+      "start": 59.39016666666667,
+      "end": 60.25616666666667,
+      "text": "Thirty-six."
+    },
+    {
+      "id": "28",
+      "scene": "s3",
+      "start": 60.60591666666667,
+      "end": 62.445916666666676,
+      "text": "Two lawns on one street."
+    },
+    {
+      "id": "29",
+      "scene": "s3",
+      "start": 62.59579166666667,
+      "end": 64.28079166666667,
+      "text": "Sixty-six dollars a visit."
+    },
+    {
+      "id": "30",
+      "scene": "s3",
+      "start": 64.63058333333333,
+      "end": 67.61558333333333,
+      "text": "The only one who got a raise was the customer."
+    },
+    {
+      "id": "31",
+      "scene": "s3",
+      "start": 67.96525,
+      "end": 69.22725,
+      "text": "They lowered the price."
+    },
+    {
+      "id": "32",
+      "scene": "s3",
+      "start": 69.37766666666667,
+      "end": 70.91066666666667,
+      "text": "They never asked for anything back."
+    },
+    {
+      "id": "33",
+      "scene": "s4",
+      "start": 71.51029166666667,
+      "end": 74.95129166666668,
+      "text": "Here's what a rich person does with the same question."
+    },
+    {
+      "id": "34",
+      "scene": "s5",
+      "start": 75.55095833333334,
+      "end": 78.24595833333333,
+      "text": "First, they never give a discount away."
+    },
+    {
+      "id": "35",
+      "scene": "s5",
+      "start": 78.39641666666668,
+      "end": 79.06641666666668,
+      "text": "They trade it."
+    },
+    {
+      "id": "36",
+      "scene": "s5",
+      "start": 79.41595833333335,
+      "end": 81.71995833333335,
+      "text": "Second, they name the trade."
+    },
+    {
+      "id": "37",
+      "scene": "s5",
+      "start": 81.86958333333335,
+      "end": 84.95658333333336,
+      "text": "\"Twenty percent off, when two neighbors on your street sign up.\""
+    },
+    {
+      "id": "38",
+      "scene": "s5",
+      "start": 85.30687500000002,
+      "end": 88.57987500000002,
+      "text": "If nobody signs, the price stays sixty."
+    },
+    {
+      "id": "39",
+      "scene": "s5",
+      "start": 88.93012500000002,
+      "end": 91.06012500000001,
+      "text": "The client stops asking for less."
+    },
+    {
+      "id": "40",
+      "scene": "s5",
+      "start": 91.20987500000001,
+      "end": 92.72787500000001,
+      "text": "They start selling for them."
+    },
+    {
+      "id": "41",
+      "scene": "s6",
+      "start": 93.32829166666667,
+      "end": 95.42029166666667,
+      "text": "Third, two neighbors sign up."
+    },
+    {
+      "id": "42",
+      "scene": "s6",
+      "start": 95.56987500000001,
+      "end": 96.44787500000001,
+      "text": "Full price."
+    },
+    {
+      "id": "43",
+      "scene": "s6",
+      "start": 96.59804166666667,
+      "end": 97.83604166666667,
+      "text": "Sixty dollars each."
+    },
+    {
+      "id": "44",
+      "scene": "s6",
+      "start": 98.18654166666667,
+      "end": 99.05254166666667,
+      "text": "Same street."
+    },
+    {
+      "id": "45",
+      "scene": "s6",
+      "start": 99.20283333333333,
+      "end": 100.93583333333333,
+      "text": "No driving between lawns."
+    },
+    {
+      "id": "46",
+      "scene": "s6",
+      "start": 101.08616666666667,
+      "end": 102.76616666666668,
+      "text": "Twelve dollars each to cut."
+    },
+    {
+      "id": "47",
+      "scene": "s7",
+      "start": 103.36645833333334,
+      "end": 105.02645833333334,
+      "text": "Fourth, the math."
+    },
+    {
+      "id": "48",
+      "scene": "s7",
+      "start": 105.17637500000001,
+      "end": 107.899375,
+      "text": "The client: forty-eight minus eighteen."
+    },
+    {
+      "id": "49",
+      "scene": "s7",
+      "start": 108.04941666666667,
+      "end": 108.60141666666668,
+      "text": "Thirty."
+    },
+    {
+      "id": "50",
+      "scene": "s7",
+      "start": 108.75129166666667,
+      "end": 111.64129166666667,
+      "text": "Each neighbor: sixty minus twelve."
+    },
+    {
+      "id": "51",
+      "scene": "s7",
+      "start": 111.79150000000001,
+      "end": 112.52550000000001,
+      "text": "Forty-eight."
+    },
+    {
+      "id": "52",
+      "scene": "s7",
+      "start": 112.67504166666669,
+      "end": 113.92404166666668,
+      "text": "Ninety-six for both."
+    },
+    {
+      "id": "53",
+      "scene": "s7",
+      "start": 114.27445833333336,
+      "end": 116.78245833333335,
+      "text": "One hundred twenty-six dollars a visit."
+    },
+    {
+      "id": "54",
+      "scene": "s7",
+      "start": 116.93258333333335,
+      "end": 117.82658333333336,
+      "text": "Same street."
+    },
+    {
+      "id": "55",
+      "scene": "s7",
+      "start": 117.97637500000002,
+      "end": 118.81637500000002,
+      "text": "Almost double."
+    },
+    {
+      "id": "56",
+      "scene": "s8",
+      "start": 119.41683333333336,
+      "end": 123.48283333333336,
+      "text": "One person gave a discount and got a neighbor asking for one too."
+    },
+    {
+      "id": "57",
+      "scene": "s8",
+      "start": 123.83241666666669,
+      "end": 128.1024166666667,
+      "text": "The other sold a discount and got two neighbors at full price."
+    },
+    {
+      "id": "58",
+      "scene": "s8",
+      "start": 128.45225000000002,
+      "end": 129.88525,
+      "text": "Poor people give discounts."
+    },
+    {
+      "id": "59",
+      "scene": "s8",
+      "start": 130.03495833333335,
+      "end": 131.11495833333336,
+      "text": "Rich people sell them."
+    },
+    {
+      "id": "60",
+      "scene": "s8",
+      "start": 131.46450000000002,
+      "end": 132.19850000000002,
+      "text": "Same lawn."
+    },
+    {
+      "id": "61",
+      "scene": "s8",
+      "start": 132.348125,
+      "end": 133.50512500000002,
+      "text": "Opposite answer."
+    }
+  ]
+}

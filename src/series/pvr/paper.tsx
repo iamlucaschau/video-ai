@@ -61,50 +61,58 @@ export const step = (frame: number, from: number, frames: number) =>
     easing: Easing.out(Easing.cubic),
   });
 
+/** Damped pendulum swing (degrees) `t` frames after something lands. */
+export const swing = (t: number, amp = 6) =>
+  t <= 0 ? 0 : amp * Math.exp(-t / 14) * Math.sin(t / 2.2);
+
 // ---------------------------------------------------------------- world
 
-export const PaperDefs: React.FC = () => (
-  <svg width={0} height={0} style={{ position: "absolute" }}>
-    <filter id="paper-edge">
-      <feTurbulence
-        type="fractalNoise"
-        baseFrequency="0.06"
-        numOctaves={3}
-        seed={3}
-        result="w"
-      />
-      <feDisplacementMap in="SourceGraphic" in2="w" scale={7} />
-    </filter>
-    <filter id="paper-grain">
-      <feTurbulence
-        type="fractalNoise"
-        baseFrequency="0.8"
-        numOctaves={3}
-        seed={5}
-      />
-      <feColorMatrix type="saturate" values="0" />
-      <feComponentTransfer>
-        <feFuncA type="linear" slope="0.10" />
-      </feComponentTransfer>
-    </filter>
-    <filter id="thermal">
-      <feTurbulence
-        type="fractalNoise"
-        baseFrequency="1.1"
-        numOctaves={1}
-        seed={9}
-        result="n"
-      />
-      <feColorMatrix
-        in="n"
-        type="matrix"
-        values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.75"
-        result="m"
-      />
-      <feComposite in="SourceGraphic" in2="m" operator="in" />
-    </filter>
-  </svg>
-);
+export const PaperDefs: React.FC = () => {
+  // "Boil": the cut edges change every stop-motion step, like re-shot paper.
+  const boil = Math.floor(useCurrentFrame() / 5) % 3;
+  return (
+    <svg width={0} height={0} style={{ position: "absolute" }}>
+      <filter id="paper-edge">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.06"
+          numOctaves={3}
+          seed={3 + boil}
+          result="w"
+        />
+        <feDisplacementMap in="SourceGraphic" in2="w" scale={7} />
+      </filter>
+      <filter id="paper-grain">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.8"
+          numOctaves={3}
+          seed={5}
+        />
+        <feColorMatrix type="saturate" values="0" />
+        <feComponentTransfer>
+          <feFuncA type="linear" slope="0.10" />
+        </feComponentTransfer>
+      </filter>
+      <filter id="thermal">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="1.1"
+          numOctaves={1}
+          seed={9}
+          result="n"
+        />
+        <feColorMatrix
+          in="n"
+          type="matrix"
+          values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.75"
+          result="m"
+        />
+        <feComposite in="SourceGraphic" in2="m" operator="in" />
+      </filter>
+    </svg>
+  );
+};
 
 /** Kraft-paper wall + torn floor layer. */
 export const Diorama: React.FC<{ floorY?: number }> = ({ floorY = 1390 }) => (
@@ -193,7 +201,7 @@ export const PinCard: React.FC<{
         top: y - (1 - p) * 120 + q * 300,
         width: w,
         height: h,
-        rotate: `${rotate + (1 - p) * 8 + q * 25}deg`,
+        rotate: `${rotate + (1 - p) * 8 + q * 25 + swing(f - at - 8)}deg`,
         opacity: Math.min(1, p * 2) * (1 - q),
       }}
     >
@@ -220,10 +228,56 @@ export const Puppet: React.FC<{
   sweat?: boolean;
   rich?: boolean;
   flip?: boolean;
-}> = ({ x, y, scale = 1, apron, sign, signUp = 0, sweat, rich, flip }) => {
+  /** Side characters (client, neighbor): baseball cap. */
+  cap?: boolean;
+  /** Eyes/head look direction: -1 left … 1 right. */
+  look?: number;
+  /** Mouth flaps while true (character is speaking). */
+  talk?: boolean;
+  /** Frame of a surprise/nod reaction: squash then bounce. */
+  react?: number;
+  /** 0→1 shoulders drop, head bows (bad news). */
+  slump?: number;
+  /** 0→1 right arm points right (at the receipt). */
+  point?: number;
+  /** Override the default mouth (POOR frowns, RICH smiles). */
+  smile?: boolean;
+}> = ({
+  x,
+  y,
+  scale = 1,
+  apron,
+  sign,
+  signUp = 0,
+  sweat,
+  rich,
+  flip,
+  cap,
+  look = 0,
+  talk,
+  react,
+  slump = 0,
+  point = 0,
+  smile,
+}) => {
   const f = useStepFrame();
-  const sway = Math.sin(f / 18) * 2;
+  const happy = smile ?? rich;
+  // per-puppet phase so a crowd doesn't move in sync
+  const phase = (x * 7 + y * 3) % 97;
+  const sway = Math.sin((f + phase) / 18) * 2 - slump * 6;
+  const breath = 1 + Math.sin((f + phase) / 11) * 0.012;
+  const blink = (f + phase) % 95 < 5;
+  const mouthOpen = talk && Math.floor(f / 2.5) % 2 === 0;
+  // reaction: squash (0.9) → stretch (1.06) → settle, over ~10 frames
+  const r =
+    react === undefined
+      ? 1
+      : f < react
+        ? 1
+        : interpolate(f - react, [0, 3, 7, 12], [1, 0.9, 1.06, 1], CLAMP);
   const up = signUp > 0;
+  const eye = look * 8;
+
   return (
     <svg
       width={520 * scale}
@@ -238,7 +292,13 @@ export const Puppet: React.FC<{
         scale: flip ? "-1 1" : undefined,
       }}
     >
-      <g filter="url(#paper-edge)">
+      <g
+        filter="url(#paper-edge)"
+        style={{
+          scale: `${2 - r} ${r * breath}`,
+          transformOrigin: "208px 850px",
+        }}
+      >
         {/* legs + shoes */}
         <rect
           x={150}
@@ -258,126 +318,173 @@ export const Puppet: React.FC<{
         />
         <ellipse cx={168} cy={836} rx={44} ry={20} fill="#2a2a2a" />
         <ellipse cx={248} cy={836} rx={44} ry={20} fill="#2a2a2a" />
-        {/* torso + apron */}
-        <path
-          d="M120 420 Q208 380 296 420 L310 660 L106 660 Z"
-          fill={PAPER.shirt}
-        />
-        <path d="M150 440 L266 440 L278 690 L138 690 Z" fill={apron} />
-        <rect
-          x={180}
-          y={560}
-          width={56}
-          height={44}
-          rx={6}
-          fill="rgba(0,0,0,0.18)"
-        />
-        {/* left arm (down) */}
-        <path
-          d="M120 430 Q80 520 110 600"
-          stroke={PAPER.shirt}
-          strokeWidth={40}
-          strokeLinecap="round"
-          fill="none"
-        />
-        <circle cx={112} cy={610} r={24} fill={PAPER.skin} />
-        {/* right arm: down, or raised with the sign */}
-        {up ? (
-          <g style={{ translate: `0px ${(1 - signUp) * 260}px` }}>
-            <rect x={322} y={230} width={14} height={330} fill="#B08A5A" />
-            <rect
-              x={160}
-              y={30}
-              width={340}
-              height={210}
-              rx={10}
-              fill={PAPER.card}
-            />
-            <text
-              x={330}
-              y={170}
-              textAnchor="middle"
-              fontFamily={FONT.sign}
-              fontSize={100}
-              fill={apron}
-            >
-              {sign}
-            </text>
-          </g>
-        ) : null}
-        {up ? (
-          <>
-            <path
-              d="M296 430 Q330 380 330 330"
-              stroke={PAPER.shirt}
-              strokeWidth={40}
-              strokeLinecap="round"
-              fill="none"
-            />
-            <circle cx={330} cy={318} r={26} fill={PAPER.skin} />
-          </>
-        ) : (
-          <>
-            <path
-              d="M296 430 Q336 520 306 600"
-              stroke={PAPER.shirt}
-              strokeWidth={40}
-              strokeLinecap="round"
-              fill="none"
-            />
-            <circle cx={304} cy={610} r={24} fill={PAPER.skin} />
-          </>
-        )}
-        {/* head (sways) */}
-        <g style={{ rotate: `${sway}deg`, transformOrigin: "208px 400px" }}>
-          {rich ? (
-            <ellipse
-              cx={312}
-              cy={290}
-              rx={34}
-              ry={70}
-              fill={PAPER.hair}
-              style={{ rotate: "18deg", transformOrigin: "300px 250px" }}
-            />
-          ) : null}
-          <rect x={190} y={360} width={36} height={40} fill={PAPER.skin} />
-          <ellipse cx={208} cy={300} rx={92} ry={100} fill={PAPER.skin} />
-          {rich ? (
-            <path
-              d="M116 300 C110 200 300 190 300 290 C270 240 160 236 116 300 Z"
-              fill={PAPER.hair}
-            />
-          ) : (
-            <path
-              d="M118 290 L130 220 L150 250 L162 196 L184 236 L200 186 L220 232 L238 192 L254 240 L274 206 L296 286 Q210 230 118 290 Z"
-              fill={PAPER.hair}
-            />
-          )}
-          <circle cx={178} cy={310} r={9} fill="#222" />
-          <circle cx={238} cy={310} r={9} fill="#222" />
+        <g style={{ translate: `0px ${slump * 14}px` }}>
+          {/* torso + apron */}
           <path
-            d={
-              rich
-                ? "M160 282 L196 280 M256 282 L220 280"
-                : "M156 286 L196 274 M260 286 L220 274"
-            }
-            stroke={PAPER.hair}
-            strokeWidth={8}
-            strokeLinecap="round"
+            d="M120 420 Q208 380 296 420 L310 660 L106 660 Z"
+            fill={PAPER.shirt}
           />
+          <path d="M150 440 L266 440 L278 690 L138 690 Z" fill={apron} />
+          <rect
+            x={180}
+            y={560}
+            width={56}
+            height={44}
+            rx={6}
+            fill="rgba(0,0,0,0.18)"
+          />
+          {/* left arm (down) */}
           <path
-            d={rich ? "M184 348 Q208 372 232 348" : "M186 360 Q208 344 230 360"}
-            stroke="#7a3b2a"
-            strokeWidth={7}
+            d="M120 430 Q80 520 110 600"
+            stroke={PAPER.shirt}
+            strokeWidth={40}
+            strokeLinecap="round"
             fill="none"
-            strokeLinecap="round"
           />
-          {sweat ? (
-            <path
-              d="M292 266 Q282 290 292 302 Q302 290 292 266"
-              fill="#8fd3ff"
-            />
+          <circle cx={112} cy={610} r={24} fill={PAPER.skin} />
+          {/* right arm: sign raised, pointing, or down */}
+          {up ? (
+            <g style={{ translate: `0px ${(1 - signUp) * 260}px` }}>
+              <rect x={322} y={230} width={14} height={330} fill="#B08A5A" />
+              <rect
+                x={160}
+                y={30}
+                width={340}
+                height={210}
+                rx={10}
+                fill={PAPER.card}
+              />
+              <text
+                x={330}
+                y={170}
+                textAnchor="middle"
+                fontFamily={FONT.sign}
+                fontSize={100}
+                fill={apron}
+                // long words ("SIGNED") squeeze to fit the 340-wide card
+                textLength={sign && sign.length > 5 ? 300 : undefined}
+                lengthAdjust="spacingAndGlyphs"
+              >
+                {sign}
+              </text>
+            </g>
           ) : null}
+          {up ? (
+            <>
+              <path
+                d="M296 430 Q330 380 330 330"
+                stroke={PAPER.shirt}
+                strokeWidth={40}
+                strokeLinecap="round"
+                fill="none"
+              />
+              <circle cx={330} cy={318} r={26} fill={PAPER.skin} />
+            </>
+          ) : (
+            <>
+              <path
+                d={`M296 430 Q${336 + point * 40} ${520 - point * 100} ${306 + point * 130} ${600 - point * 180}`}
+                stroke={PAPER.shirt}
+                strokeWidth={40}
+                strokeLinecap="round"
+                fill="none"
+              />
+              <circle
+                cx={304 + point * 132}
+                cy={610 - point * 182}
+                r={24}
+                fill={PAPER.skin}
+              />
+            </>
+          )}
+          {/* head */}
+          <g
+            style={{
+              rotate: `${sway}deg`,
+              transformOrigin: "208px 400px",
+              translate: `${look * 6}px 0px`,
+            }}
+          >
+            {rich ? (
+              <ellipse
+                cx={312}
+                cy={290}
+                rx={34}
+                ry={70}
+                fill={PAPER.hair}
+                style={{ rotate: "18deg", transformOrigin: "300px 250px" }}
+              />
+            ) : null}
+            <rect x={190} y={360} width={36} height={40} fill={PAPER.skin} />
+            <ellipse cx={208} cy={300} rx={92} ry={100} fill={PAPER.skin} />
+            {rich ? (
+              <path
+                d="M116 300 C110 200 300 190 300 290 C270 240 160 236 116 300 Z"
+                fill={PAPER.hair}
+              />
+            ) : (
+              <path
+                d="M118 290 L130 220 L150 250 L162 196 L184 236 L200 186 L220 232 L238 192 L254 240 L274 206 L296 286 Q210 230 118 290 Z"
+                fill={PAPER.hair}
+              />
+            )}
+            {blink ? (
+              <path
+                d={`M${170 + eye} 310 L${186 + eye} 310 M${230 + eye} 310 L${246 + eye} 310`}
+                stroke="#222"
+                strokeWidth={5}
+                strokeLinecap="round"
+              />
+            ) : (
+              <>
+                <circle cx={178 + eye} cy={310} r={9} fill="#222" />
+                <circle cx={238 + eye} cy={310} r={9} fill="#222" />
+              </>
+            )}
+            <path
+              d={
+                rich
+                  ? "M160 282 L196 280 M256 282 L220 280"
+                  : "M156 286 L196 274 M260 286 L220 274"
+              }
+              stroke={PAPER.hair}
+              strokeWidth={8}
+              strokeLinecap="round"
+            />
+            {mouthOpen ? (
+              <ellipse
+                cx={208 + eye / 2}
+                cy={356}
+                rx={16}
+                ry={12}
+                fill="#7a3b2a"
+              />
+            ) : (
+              <path
+                d={
+                  happy
+                    ? "M184 348 Q208 372 232 348"
+                    : "M186 360 Q208 344 230 360"
+                }
+                stroke="#7a3b2a"
+                strokeWidth={7}
+                fill="none"
+                strokeLinecap="round"
+              />
+            )}
+            {cap ? (
+              <>
+                <path d="M112 262 C110 186 306 186 304 262 Z" fill={apron} />
+                <path d="M286 254 L372 266 L292 278 Z" fill={apron} />
+              </>
+            ) : null}
+            {sweat ? (
+              <path
+                d="M292 266 Q282 290 292 302 Q302 290 292 266"
+                fill="#8fd3ff"
+              />
+            ) : null}
+          </g>
         </g>
       </g>
     </svg>
@@ -385,6 +492,152 @@ export const Puppet: React.FC<{
 };
 
 // ---------------------------------------------------------------- props
+
+/** Green paper lawn strip with a grass-blade top edge. */
+export const Grass: React.FC<{ y?: number; height?: number }> = ({
+  y = 1340,
+  height = 90,
+}) => (
+  <div
+    style={{
+      position: "absolute",
+      left: -20,
+      right: -20,
+      top: y,
+      height,
+      filter: SHADOW,
+    }}
+  >
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        background: "#6E9F55",
+        clipPath: `polygon(${Array.from({ length: 49 }, (_, i) => `${(i / 48) * 100}% ${i % 2 ? 0 : 22}px`).join(", ")}, 100% 100%, 0 100%)`,
+        filter: "url(#paper-edge)",
+      }}
+    />
+  </div>
+);
+
+/** Paper push mower (300×240 viewBox). */
+export const Mower: React.FC<{ x: number; y: number; scale?: number }> = ({
+  x,
+  y,
+  scale = 1,
+}) => (
+  <svg
+    width={300 * scale}
+    height={240 * scale}
+    viewBox="0 0 300 240"
+    style={{
+      position: "absolute",
+      left: x,
+      top: y,
+      filter: SHADOW,
+      overflow: "visible",
+    }}
+  >
+    <g filter="url(#paper-edge)">
+      <path
+        d="M150 140 L250 10"
+        stroke={PAPER.machineDark}
+        strokeWidth={12}
+        strokeLinecap="round"
+      />
+      <path
+        d="M230 10 L280 18"
+        stroke={PAPER.machineDark}
+        strokeWidth={14}
+        strokeLinecap="round"
+      />
+      <path
+        d="M30 130 Q40 100 90 98 L200 98 Q240 100 250 130 L250 180 L30 180 Z"
+        fill="#7C8B5E"
+      />
+      <rect x={100} y={74} width={70} height={34} rx={8} fill="#4A5763" />
+      <circle cx={70} cy={196} r={30} fill={PAPER.machineDark} />
+      <circle cx={210} cy={196} r={30} fill={PAPER.machineDark} />
+    </g>
+  </svg>
+);
+
+/** Wooden paper fence panel. */
+export const Fence: React.FC<{
+  x: number;
+  y: number;
+  width: number;
+  height?: number;
+}> = ({ x, y, width, height = 140 }) => (
+  <Paper bg="#C9A26B" style={{ left: x, top: y, width, height }}>
+    <div
+      style={{ display: "flex", gap: 10, padding: "0 10px", height: "100%" }}
+    >
+      {Array.from({ length: Math.floor(width / 60) }).map((_, i) => (
+        <div
+          key={i}
+          style={{ flex: 1, background: "#B88E57", marginTop: i % 2 ? 0 : 12 }}
+        />
+      ))}
+    </div>
+  </Paper>
+);
+
+/** Paper speech bubble that pops in at `at`; tail points down-left. */
+export const Bubble: React.FC<{
+  at: number;
+  x: number;
+  y: number;
+  children: React.ReactNode;
+  out?: number;
+  size?: number;
+}> = ({ at, x, y, children, out = Infinity, size = 50 }) => {
+  const f = useStepFrame();
+  if (f < at || f > out + 6) return null;
+  const p = step(f, at, 5);
+  const q = Number.isFinite(out) ? step(f, out, 6) : 0;
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: x,
+        top: y,
+        filter: SHADOW,
+        scale: String(0.6 + 0.4 * p),
+        transformOrigin: "10% 100%",
+        opacity: Math.min(1, p * 2) * (1 - q),
+      }}
+    >
+      <div
+        style={{
+          background: PAPER.card,
+          borderRadius: 40,
+          padding: "20px 34px",
+          fontFamily: FONT.paper,
+          fontWeight: FONT.paperWeight,
+          fontSize: size,
+          color: PAPER.ink,
+          whiteSpace: "nowrap",
+          filter: "url(#paper-edge)",
+        }}
+      >
+        {children}
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          left: 40,
+          bottom: -26,
+          width: 0,
+          height: 0,
+          borderLeft: "16px solid transparent",
+          borderRight: "16px solid transparent",
+          borderTop: `30px solid ${PAPER.card}`,
+        }}
+      />
+    </div>
+  );
+};
 
 /** Paper pressure washer (380×300 viewBox) with an optional tag (0→1 pops it in). */
 export const Machine: React.FC<{
@@ -687,6 +940,8 @@ export const ReceiptPrinter: React.FC<{
                 height: LINE_H[l.kind],
                 display: "flex",
                 alignItems: "center",
+                // fresh line flashes like a highlighter, then fades
+                background: `rgba(255,226,0,${(0.55 * (1 - step(f, l.at + 2, 14))).toFixed(3)})`,
               }}
             >
               {l.kind === "row" ? (

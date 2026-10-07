@@ -17,6 +17,7 @@ Poor vs Rich Daily/
 │   └── master-prompt-nang-cap-kich-ban-toi-uu.md  GĐ1b: v1 → v2 lock
 ├── 03_series-lock/                   khóa cứng toàn series
 │   ├── 00_SERIES-BIBLE.md             style, màu, nhân vật, cấu trúc, âm thanh
+│   ├── 03_STYLE-LIBRARY.md            4 phong cách A/B/C/D + cách chọn theo kịch bản
 │   └── 02_REMOTION-TECH-SPEC.md       kiến trúc component, QA kỹ thuật
 └── episodes/
     └── epNN-<slug>/                  mỗi tập một thư mục
@@ -45,7 +46,7 @@ Tên file giữ nguyên như bản gốc để các tham chiếu chéo trong spe
 
 ### Chi tiết GĐ3 (đã tự động hóa)
 - `prep` **kiểm tra lời VO trong spec khớp từng chữ với kịch bản FINAL** (sai là dừng, sửa spec chứ không sửa FINAL), tách câu, gán scene, gom thành ~1 request/≤8 câu.
-- Gemini TTS free tier: **10 request/ngày/model/key** (2 key). Một tập ≈ 11 request → mỗi ngày tạo VO được ~1 tập bằng model chính. Đừng `--force` khi không đổi lời.
+- Gemini TTS free tier: **10 request/ngày/model/key** (4 key = 40 request/ngày). Một tập ≈ 12 request → mỗi ngày tạo được VO ~3 tập bằng model chính. Đừng `--force` khi không đổi lời.
 - Tốc độ chỉnh không tốn request: sửa `tempo` trong `voiceover/<slug>.json` hoặc khoảng nghỉ `GAP` trong `scripts/episode.mjs`, chạy lại `npm run voiceover` + `export`.
 - `export` xuất `vo.mp3` đã chuẩn hóa −14 LUFS và `src/voiceover/<slug>.timing.json` cho Remotion.
 

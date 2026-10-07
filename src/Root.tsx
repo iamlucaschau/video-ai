@@ -5,6 +5,15 @@ import {
   Ep01TestScene3,
   sceneRange,
 } from "./series/pvr/ep01/Ep01";
+import {
+  Ep02,
+  ep02Duration,
+  Ep02TestScene3,
+  ep02SceneRange,
+} from "./series/pvr/ep02/Ep02";
+import { Ep02B } from "./series/pvr/ep02b/Ep02B";
+import { Ep02C } from "./series/pvr/ep02c/Ep02C";
+import { Ep02D } from "./series/pvr/ep02d/Ep02D";
 import { PVR } from "./series/pvr/theme";
 import { PriceTheirWork } from "./compositions/PriceTheirWork/PriceTheirWork";
 import { buildTimeline } from "./compositions/PriceTheirWork/timeline";
@@ -31,6 +40,48 @@ import { OutroScene } from "./compositions/Showcase/scenes/OutroScene";
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Folder name="PoorVsRich-Ep02">
+        <Composition
+          id="PBR-Ep02-GiveDiscounts"
+          component={Ep02}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={ep02Duration(PVR.fps)}
+        />
+        <Composition
+          id="PBR-Ep02-GiveDiscounts-B"
+          component={Ep02B}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={ep02Duration(PVR.fps)}
+        />
+        <Composition
+          id="PBR-Ep02-GiveDiscounts-C"
+          component={Ep02C}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={ep02Duration(PVR.fps)}
+        />
+        <Composition
+          id="PBR-Ep02-GiveDiscounts-D"
+          component={Ep02D}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={ep02Duration(PVR.fps)}
+        />
+        <Composition
+          id="PBR-Ep02-Test-Scene3"
+          component={Ep02TestScene3}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={ep02SceneRange("s3", PVR.fps).durationInFrames}
+        />
+      </Folder>
       <Folder name="PoorVsRich-Ep01">
         <Composition
           id="PBR-Ep01-BuyTheirTools"

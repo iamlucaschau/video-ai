@@ -17,7 +17,7 @@
 | 1 | Kịch bản v1 → v2 | Claude viết (master prompts) | Topic package | kich-ban-*-FINAL.md (EN+VN) | **CỔNG 1 · KỊCH BẢN** — Lucas duyệt trực tiếp → lock FINAL |
 | 2 | Episode spec | Muse | Kịch bản FINAL | 01_EPISODE-SPEC_*.md (8 scenes + timecode ước lượng) | (gộp vào gói bàn giao; Lucas có thể xem trước) |
 | 3 | Voiceover | Claude (TTS) | Kịch bản FINAL | vo.mp3 + bảng timestamp | **CỔNG 2 · VO** — Lucas nghe duyệt |
-| 4 | Storyboard | Claude | Spec + VO timing | Frame plan từng scene, timecode hiệu chỉnh | **CỔNG 3 · STORYBOARD** — Lucas duyệt mới được code |
+| 4 | Storyboard | Claude | Spec + VO timing | **Phong cách đề xuất + lý do** (theo `03_STYLE-LIBRARY.md` §3) + frame plan từng scene, timecode hiệu chỉnh | **CỔNG 3 · STORYBOARD** — Lucas duyệt phong cách + storyboard mới được code |
 | 5 | Test 1 scene | Claude (Remotion) | Storyboard đã duyệt | Frames Scene 3 (bảng phép tính) | **CỔNG 4 · TEST** — Lucas duyệt mới render full |
 | 6 | Full render + QA | Claude | Toàn bộ | MP4 + caption.txt + báo cáo QA | **CỔNG 5 · FINAL** — Lucas check checklist |
 | 7 | Đăng bài | Lucas | MP4 + caption | Bài đăng trên Poor vs Rich Daily | — |
@@ -29,12 +29,12 @@ Chi tiết thao tác từng cổng: xem `huong-dan-ban-giao-claude.md` (message 
 | # | Bất biến | Giá trị khóa |
 |---|----------|--------------|
 | 1 | Format | 1080×1920, 30fps, 105–135s |
-| 2 | Visual | **Receipt × Paper**: diorama giấy + con rối giấy, phép tính in trên hóa đơn nhiệt, bảng ghim, câu đắt trên giấy xé, stop-motion 12fps, camera push-in, hard cut giữa scene |
+| 2 | Visual | **Thư viện 4 phong cách** (A Receipt × Paper · B Chip Table · C Street Sim · D Text Thread), chọn theo kịch bản mỗi tập (`03_STYLE-LIBRARY.md`); mọi phong cách: khung đứng yên (không máy quay di chuyển), hard cut giữa scene |
 | 3 | Nhân vật | Poor luôn đỏ #D32F2F, Rich luôn xanh lá #388E3C |
-| 4 | Chữ | Space Mono (hóa đơn) + Bricolage Grotesque (mọi chữ khác); **phụ đề bắt buộc**; đồng bộ VO ±0.2s, không cắt khung |
+| 4 | Chữ | Bricolage Grotesque (+ Space Mono cho hóa đơn ở A); **phụ đề bắt buộc**; đồng bộ VO ±0.2s, không cắt khung |
 | 5 | Cấu trúc | 5 hồi + thesis hook 3 dòng + mirror tuyệt đối + câu chốt 3 lớp |
 | 6 | Số liệu | Mọi số qua kiểm toán, phép tính hiện từng bước |
-| 7 | Âm thanh | VO + tiếng máy in hóa đơn; nhạc nền Lyria (thấp dưới VO); không SFX hoạt hình |
+| 7 | Âm thanh | VO −14 LUFS; nhạc nền ≈ −24 LUFS (Lyria khi có billing), đổi sắc thái ở câu transition; không SFX hoạt hình |
 | 8 | Quy trình | VO-first (TTS → đo timing → code); storyboard duyệt trước code; test 1 scene trước render full |
 | 9 | Ngôn ngữ | VO tiếng Anh (khán giả US/UK); caption tiếng Anh một câu hỏi |
 
@@ -43,7 +43,7 @@ Chi tiết thao tác từng cổng: xem `huong-dan-ban-giao-claude.md` (message 
 | EP | Title | Kịch bản | Spec | VO | Storyboard | Test | Final | Ngày đăng | Caption |
 |----|-------|----------|------|----|------------|------|-------|-----------|---------|
 | 01 | Buy Their Tools | FINAL ✓ | ✓ | ✓ | ✓ | ✓ | ✓ 2026-10-07 | — | Do you buy tools like a poor or rich person? |
-| 02 | *(chờ chủ đề)* | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | — | — |
+| 02 | Give Discounts | FINAL ✓ | ✓ | ✓ | ✓ | ✓ | ✓ 4 bản A/B/C/D (đề xuất đăng C) | — | Do you give discounts like a poor or rich person? |
 
 *Ký hiệu: ☐ chưa làm · ◐ đang làm · ✓ xong.*
 
@@ -70,3 +70,5 @@ Chi tiết thao tác từng cổng: xem `huong-dan-ban-giao-claude.md` (message 
 | 2026-10-06 | Chốt look series **C — sổ kẻ ô** (mực navy, highlight vàng, giấy note) + **camera push-in** của A; nhân vật nét chi tiết hơn. So sánh A/B/C: `episodes/ep01-buy-their-tools/test/style-compare-A-B-C.jpg` | Lucas |
 | 2026-10-06 | **Đổi look series sang "Receipt × Paper"** (hướng 1 + 3), thay whiteboard/sổ kẻ ô. So sánh: `episodes/ep01-buy-their-tools/test/new-style-compare-1-2-3.jpg`. Nhạc nền dùng Lyria | Lucas |
 | 2026-10-06 | Font **Bricolage Grotesque** thay Fredoka/Archivo Black; thêm **phụ đề** bắt buộc (cụm ≤ 30 ký tự, số viết bằng số). So sánh: `episodes/ep01-buy-their-tools/test/font-compare-*.jpg` | Lucas |
+| 2026-10-07 | **Thư viện 4 phong cách** A/B/C/D thay một look duy nhất; Claude chọn phong cách theo kịch bản (hoặc đề xuất phong cách mới) ở bước spec, Lucas duyệt ở Cổng 3. Xem `03_series-lock/03_STYLE-LIBRARY.md` | Lucas |
+| 2026-10-07 | Bỏ mọi chuyển động máy quay (kể cả push-in); thêm hệ diễn xuất con rối, chữ đập (slam), tiền bay, giấy "thở", thẻ đung đưa, dòng in lóe vàng | Lucas |

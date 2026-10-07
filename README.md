@@ -41,7 +41,7 @@ animating typography and graphics, syncing audio, previewing, and rendering.
 ## Voiceover
 
 Narration is generated with Gemini TTS (two API keys, rotated with automatic
-failover). Keys live in the git-ignored `gemini_key.txt.txt` or in `.env` (see
+failover). Keys live in the git-ignored `gemini_key.txt` (4 keys) or in `.env` (see
 `.env.example`). Write lines in `voiceover/<name>.json`, run
 `npm run voiceover -- voiceover/<name>.json`, then drop
 `<Voiceover manifest={...} />` into a composition. Details are in AGENTS.md.

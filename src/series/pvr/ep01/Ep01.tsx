@@ -8,9 +8,9 @@ import {
 } from "remotion";
 import timing from "../../../voiceover/buy-their-tools.timing.json";
 import { CueProvider } from "../cues";
+import { episodeDuration, sceneRange as sceneRangeOf } from "../episode";
 import { Subtitles } from "../subs";
 import { EP01_CAPTIONS } from "./captions";
-import { PVR } from "../theme";
 import { Scene3 } from "./Scene3";
 import {
   Scene1,
@@ -23,8 +23,6 @@ import {
 } from "./Scenes";
 
 const VO = staticFile("voiceover/buy-their-tools/vo.mp3");
-/** Hard cut this long before a scene's first VO line. */
-const CUT_LEAD = 0.15;
 /**
  * Music bed gains: each bed lands at ≈ −24 LUFS, ~10 LU under the VO
  * (−14 LUFS) — clearly audible on phones, voice stays on top.
@@ -42,23 +40,10 @@ const SCENES: Record<string, React.FC> = {
   s8: Scene8,
 };
 
-/** Scene boundaries (frames) derived from the approved VO timestamps. */
-export const sceneRange = (scene: string, fps: number) => {
-  const lines = timing.lines.filter((l) => l.scene === scene);
-  const order = [...new Set(timing.lines.map((l) => l.scene))];
-  const next = order[order.indexOf(scene) + 1];
-  const from =
-    order[0] === scene ? 0 : Math.round((lines[0].start - CUT_LEAD) * fps);
-  const end = next
-    ? Math.round(
-        (timing.lines.find((l) => l.scene === next)!.start - CUT_LEAD) * fps,
-      )
-    : Math.round((timing.durationInSeconds + PVR.tailSeconds) * fps);
-  return { from, durationInFrames: end - from };
-};
-
-export const ep01Duration = (fps: number) =>
-  Math.round((timing.durationInSeconds + PVR.tailSeconds) * fps);
+/** Scene boundaries / duration for this episode (shared logic in ../episode). */
+export const sceneRange = (scene: string, fps: number) =>
+  sceneRangeOf(timing, scene, fps);
+export const ep01Duration = (fps: number) => episodeDuration(timing, fps);
 
 /** Full episode: 8 hard-cut scenes, VO, printer foley (inside scenes), music bed. */
 export const Ep01: React.FC = () => {

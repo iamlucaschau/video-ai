@@ -120,7 +120,8 @@ const prep = (dir) => {
     voice: existing.voice ?? "Orus",
     style:
       existing.style ??
-      "Calm, confident storytelling narrator for a short finance lesson. Measured, unhurried pace with clear pauses between sentences. Cold and plain, never shouting; the sting is in the words. Crisp emphasis on every number.",
+      // Series voice direction (bible §6, 2026-10-07). Keep tempo 1.0: forcing speed kills the emotion.
+      "You are a seasoned storyteller narrating a short documentary-style money lesson for adults. Warm, grounded, human, like telling a friend a hard truth over coffee. Unhurried natural pace. Slow down on every number and let it land. Take a small pause before the punchline. A hint of dry irony about the mistake. Never rushed, never shouty, never robotic.",
     trimSilence: true,
     tempo: existing.tempo ?? 1,
     batchBy: "take",
