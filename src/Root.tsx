@@ -14,6 +14,7 @@ import {
 import { Ep02B } from "./series/pvr/ep02b/Ep02B";
 import { Ep02C } from "./series/pvr/ep02c/Ep02C";
 import { Ep02D } from "./series/pvr/ep02d/Ep02D";
+import { Ep02E } from "./series/pvr/ep02e/Ep02E";
 import {
   Ep03,
   ep03Duration,
@@ -92,6 +93,14 @@ export const RemotionRoot: React.FC = () => {
         <Composition
           id="PBR-Ep02-GiveDiscounts-D"
           component={Ep02D}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={ep02Duration(PVR.fps)}
+        />
+        <Composition
+          id="PBR-Ep02-GiveDiscounts-E"
+          component={Ep02E}
           width={PVR.width}
           height={PVR.height}
           fps={PVR.fps}
