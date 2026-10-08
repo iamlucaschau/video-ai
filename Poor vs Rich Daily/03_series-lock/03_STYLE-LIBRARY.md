@@ -1,6 +1,6 @@
 # 03 — THƯ VIỆN PHONG CÁCH (Style Library)
 
-*Chốt 2026-10-07 (Lucas): series dùng **cả 4 phong cách**. Mỗi tập Claude đề xuất phong cách hợp với kịch bản; kịch bản không hợp phong cách nào thì Claude đề xuất phong cách mới. So sánh cùng một khoảnh khắc ("Almost double", Ep02): `episodes/ep02-give-discounts/test/style-library-A-B-C-D.jpg`.*
+*Chốt 2026-10-07 (Lucas): series dùng **cả 4 phong cách** A–D; thêm **E "Map Story"** 2026-10-08. Mỗi tập Claude đề xuất phong cách hợp với kịch bản; kịch bản không hợp phong cách nào thì Claude đề xuất phong cách mới. So sánh cùng một khoảnh khắc ("Almost double", Ep02): `episodes/ep02-give-discounts/test/style-library-A-B-C-D.jpg`.*
 
 ## 1. Bất biến chung (mọi phong cách)
 
@@ -47,22 +47,29 @@
 - **Yếu:** phép tính phải đọc chứ không thấy; tin nhắn là lời thoại dựng thêm (phải diễn ý FINAL, không thêm số)
 - **Code:** `src/series/pvr/styles/textThread.tsx` · mẫu: `ep02d/`
 
+### E — "Map Story" (thêm 2026-10-08)
+- **Look:** bản đồ phẳng nhìn từ trên xuống, tông tối (đất xanh rêu, sông/hồ navy, lưới đường); khu vực sáng lên màu phe với viền phát sáng + sọc chéo; đường tự vẽ; avatar đầu tròn; tiêu đề bước ① ② ③; dấu đóng lớn cho con số đắt. Khung đứng yên, **máy quay chỉ bay khi đổi địa điểm** (một cú, ease, không rung)
+- **Mạnh:** kịch bản có **địa điểm / quãng đường / khu vực** (lái xe xa vs gần, vùng phục vụ, chọn chỗ mở tiệm, so sánh hai khu); ít chữ nhất trong 5 phong cách — dựng sẵn theo quy tắc short-form
+- **Yếu:** không hợp chuyện không gắn nơi chốn; nhân vật đơn giản (avatar)
+- **Code:** bộ dùng chung `Map Story/map-story.tsx` (hướng dẫn `Map Story/README.md`, dùng được cho dự án khác) + lớp Ep02 `src/series/pvr/styles/mapStory.tsx` · mẫu: `ep02e/`
+
 ## 3. Chọn phong cách theo kịch bản
 
 Claude chấm kịch bản theo các tín hiệu dưới đây, chọn phong cách có nhiều tín hiệu nhất, ghi lý do vào spec (mục "Phong cách") để Lucas duyệt cùng storyboard ở **Cổng 3**.
 
-| Tín hiệu trong kịch bản | A Paper | B Chip | C Sim | D Thread |
-|---|:---:|:---:|:---:|:---:|
-| Một món đồ / vật mua cụ thể (công cụ, máy móc) | ●● | ● | | |
-| Chuỗi phép tính dài, nhiều khoản chi phí nhỏ | ●● | ● | | ● |
-| Kết quả là **so sánh hai con số lớn** (gấp đôi, gấp ba) | | ●● | ● | |
-| Các con số có ước chung đẹp (chia hết cho 5/6/10…) | | ●● | | |
-| Câu chuyện xảy ra ở **địa điểm** (con phố, khu, cửa hàng, tuyến đường) | ● | | ●● | |
-| Nhiều bên / nhiều khách hàng tham gia, tăng dần | | ● | ●● | ● |
-| Các bước đánh số của RICH (First, Second, Third…) | | | ●● | ● |
-| Cốt truyện là **cuộc nói chuyện**: đàm phán, mặc cả, nhắn tin, email, hợp đồng | | | | ●● |
-| Tiền vào/ra tài khoản theo thời gian (lương, nợ, trả góp, lãi) | ● | | | ●● |
-| Cảm xúc / phản ứng nhân vật là điểm nhấn | ●● | ● | | ● |
+| Tín hiệu trong kịch bản | A Paper | B Chip | C Sim | D Thread | E Map |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Một món đồ / vật mua cụ thể (công cụ, máy móc) | ●● | ● | | | |
+| Chuỗi phép tính dài, nhiều khoản chi phí nhỏ | ●● | ● | | ● | |
+| Kết quả là **so sánh hai con số lớn** (gấp đôi, gấp ba) | | ●● | ● | | ● |
+| Các con số có ước chung đẹp (chia hết cho 5/6/10…) | | ●● | | | |
+| Câu chuyện xảy ra ở **địa điểm** (con phố, khu, cửa hàng, tuyến đường) | ● | | ●● | | ●● |
+| Nhiều bên / nhiều khách hàng tham gia, tăng dần | | ● | ●● | ● | ● |
+| Các bước đánh số của RICH (First, Second, Third…) | | | ●● | ● | ● |
+| Cốt truyện là **cuộc nói chuyện**: đàm phán, mặc cả, nhắn tin, email, hợp đồng | | | | ●● | |
+| Tiền vào/ra tài khoản theo thời gian (lương, nợ, trả góp, lãi) | ● | | | ●● | |
+| Cảm xúc / phản ứng nhân vật là điểm nhấn | ●● | ● | | ● | |
+| **Nhiều nơi / quãng đường dài / so sánh hai khu vực** (thị trấn, thành phố, vùng phục vụ) | | | ● | | ●● |
 
 **Luân phiên:** tránh dùng cùng một phong cách quá 2 tập liên tiếp, trừ khi kịch bản hợp rõ rệt hơn hẳn.
 
