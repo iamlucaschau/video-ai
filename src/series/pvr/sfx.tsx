@@ -6,14 +6,14 @@ import catalog from "../../../public/sfx/catalog.json";
  * One real sound effect from the curated Pixabay library (public/sfx,
  * scripts/fetch-sfx.mjs). Every file is levelled from its measured loudness
  * to `level` LUFS so a whoosh and a deep hit sit at the same height under
- * the VO (−14 LUFS). Default −18 (Lucas 2026-10-08: −26 was too quiet): clearly heard, ~4 LU under the voice.
+ * the VO (−14 LUFS). Default −15 (Lucas 2026-10-08: −26 and −18 were too quiet): an accent at about voice level.
  *
  *   <Sfx file="sfx/whoosh/clean-whoosh-382726.mp3" at={at("12")} />
  */
 export const Sfx: React.FC<{ file: string; at: number; level?: number }> = ({
   file,
   at,
-  level = -18,
+  level = -15,
 }) => {
   const entry = catalog.find((c) => c.file === file);
   if (!entry) throw new Error(`SFX not in public/sfx/catalog.json: ${file}`);

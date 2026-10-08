@@ -297,7 +297,7 @@ Gemini reads ~200 wpm; use `tempo` and the composition's gaps to hit a target le
   `public/sfx/<category>/` (whoosh, click, flash, shutter, progress, deephit,
   hit; 73 files) listed in `public/sfx/catalog.json` with measured loudness.
   Play them with `<Sfx file="sfx/whoosh/clean-whoosh-382726.mp3" at={frame} />`
-  (`src/series/pvr/sfx.tsx`), which levels every file to −18 LUFS (~4 LU under the VO; −26 was too quiet).
+  (`src/series/pvr/sfx.tsx`), which levels every file to −15 LUFS, about voice level, as an accent (−26 and −18 were too quiet).
   Add files with `node scripts/fetch-sfx.mjs <list.json>` (audio is git-ignored:
   Pixabay license allows use in videos, not redistribution of the files).
 - **Never synthesize SFX** and never use cartoon sounds (boing, pop, ding,
