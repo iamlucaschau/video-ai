@@ -17,7 +17,7 @@
 1. **Vùng an toàn:** mọi chữ, số, khuôn mặt, hình chính nằm trong **x 60–940, y 220–1440** (lề trên 220 · dưới 480 · phải 140 · trái 60) để không bị menu trên, caption/tên tài khoản/thanh tiến trình dưới và cột nút bên phải che. Nền được tràn ra ngoài, thông tin thì không. QA bằng ảnh có lớp phủ `safeGuide` (vùng đỏ = nguy hiểm).
 2. **Không máy quay giả:** không chuyển cảnh kiểu zoom, không rung/lắc/trôi, không rung khi tập trung vào vật. Chuyển cảnh = hard cut, crossfade ≤ 8 frame, hoặc chính vật thể di chuyển/biến hình. Ngoại lệ chỉ khi phong cách cho phép một cú máy có chủ đích (vd. E bay giữa hai địa điểm): một lần, ease mượt, ≥ 20 frame, không nảy, không rung.
 3. **Ít chữ:** không đưa nguyên câu VO lên màn hình thành dải chữ (phụ đề đã làm việc đó) — chỉ hiện **từ khóa hoặc con số**. Mỗi khối chữ ≤ 5 từ; tối đa 2 khối chữ cùng lúc ngoài phụ đề; không đoạn văn, không khối 2 dòng; phụ đề 1–3 từ một lần. Một họ font sans, đậm 700–800, ≥ 48 px; không font serif "điện ảnh" cho khối chữ.
-4. **SFX thật:** chỉ dùng thư viện Pixabay trong `public/sfx/` (whoosh, click, flash, shutter, progress, deep hit, hit) qua `<Sfx>`, cân về −26 LUFS dưới VO; không SFX tự tổng hợp, không âm thanh hoạt hình; tối đa 1 SFX mỗi nhịp.
+4. **SFX thật:** chỉ dùng thư viện Pixabay trong `public/sfx/` (whoosh, click, flash, shutter, progress, deep hit, hit) qua `<Sfx>`, cân về −18 LUFS (~4 LU dưới VO; −26 quá nhỏ); không SFX tự tổng hợp, không âm thanh hoạt hình; tối đa 1 SFX mỗi nhịp.
 
 **Hệ quả cho từng phong cách:** A — hóa đơn nằm trọn trong vùng an toàn, dòng hóa đơn ≤ 5 từ; B/C — HUD, nhãn, bảng quest dời vào trong (không chạm cột nút phải); D — tin nhắn ≤ 5 từ, bỏ các dải câu kết lặp lại VO, header app nằm dưới y 220.
 
