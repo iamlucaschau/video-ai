@@ -7,7 +7,7 @@
 - Ngôn ngữ: voiceover tiếng Anh (~150 từ/phút), chữ trên màn hình tiếng Anh
 
 ## 2. Visual style — thư viện 4 phong cách (chốt 2026-10-07, Lucas)
-- Series dùng **4 phong cách**: A "Receipt × Paper", B "Chip Table", C "Street Sim", D "Text Thread". Mỗi tập Claude chọn phong cách hợp kịch bản (hoặc đề xuất phong cách mới) theo **`03_STYLE-LIBRARY.md`**; Lucas duyệt ở Cổng 3. Bất biến chung của mọi phong cách: `03_STYLE-LIBRARY.md` §1
+- Series dùng **8 phong cách** A–H từ thư viện dùng chung `Style Library/` (gốc dự án). Mỗi tập Claude chọn phong cách hợp kịch bản (hoặc đề xuất phong cách mới) theo **`03_STYLE-LIBRARY.md`**; Lucas duyệt ở Cổng 3. Bất biến chung của mọi phong cách: `03_STYLE-LIBRARY.md` §1
 - Chi tiết phong cách A (phong cách gốc, Ep01) giữ nguyên bên dưới:
 
 ### A — "Receipt × Paper" (chốt 2026-10-06)

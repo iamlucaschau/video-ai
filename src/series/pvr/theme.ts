@@ -5,6 +5,8 @@ export const PVR = {
   fps: 30,
   /** Hold after the last VO line (tech spec §2). */
   tailSeconds: 1.5,
+  /** Loop-ending episodes cut right after the last word so the replay joins seamlessly (style library §2.5). */
+  loopTailSeconds: 0.2,
 } as const;
 
 /** Side colors (bible §3): POOR always red, RICH always green. */

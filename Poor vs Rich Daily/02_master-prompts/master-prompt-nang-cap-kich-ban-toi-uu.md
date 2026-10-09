@@ -133,7 +133,7 @@ B. Chuyện "poor": quyết định dễ hiểu → hành động → hậu qu�
 C. Câu chuyển: "Here's what a rich person does with the same [resource]" hoặc biến thể phù hợp.
 D. Chuyện "rich": 3–4 bước, mỗi bước tháo một nút đã xuất hiện ở nửa đầu.
 E. Phép tính hoặc kết quả trả lời hook.
-F. Câu chốt 3 lớp: bridge couplet (tái khẳng định đối lập) → classic couplet ("Poor people X. Rich people Y.") → circular callback về hook ("Same [resource], opposite [first purchase/order/choice]") [TỐI ƯU — từ kịch bản Buy Their Tools].
+F. Câu chốt 3 lớp: bridge couplet (tái khẳng định đối lập) → classic couplet ("Poor people X. Rich people Y.") → circular callback về hook ("Same [resource], opposite [first purchase/order/choice]") [TỐI ƯU — từ kịch bản Buy Their Tools] → **loop seam**: vế cuối ≤ 8 từ bỏ lửng, nối vào câu đầu của hook thành một câu đúng ngữ pháp và đúng nghĩa, để vòng phát lại liền mạch (vd. "And that's why, on every street," → "A poor person buys the tools first.") [BẮT BUỘC từ Ep04 — Lucas 2026-10-09; luật đầy đủ: `Style Library/README.md` §2.5]. Không kết bằng lời chào, khoảng lặng hay "follow for more".
 
 Nếu tôi chọn khung "poor vs rich", hãy giữ khung và hệ màu nhân vật. Không tự đổi thành beginner/pro chỉ để làm giọng an toàn hơn.
 
@@ -240,6 +240,7 @@ Chỉ rõ những phần phải giữ để không phá hỏng bản gốc.
 - Có câu sắc nhưng sai hoặc không nói gì mới không?
 - Payoff có trả đúng promise không?
 - Câu chốt có 3 lớp (bridge → classic → circular callback) không?
+- Có loop seam ở cuối không? Đọc to "vế cuối + câu đầu hook" liền một hơi: có thành một câu đúng nghĩa không?
 - Có thể cắt phần lặp mà giữ được lực không?
 - Thời lượng có thực tế với cách đọc không? (300–360 từ)
 

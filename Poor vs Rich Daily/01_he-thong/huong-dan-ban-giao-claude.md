@@ -40,7 +40,7 @@ Quy tắc vàng: **Claude không được tự ý qua cổng.** Mỗi cổng c�
 
 ### Cổng 1 — Kịch bản
 - **Claude trả:** kịch bản v2 (EN + VN + kiểm toán số), số từ, thời lượng ước tính.
-- **Bạn kiểm:** hook 3 dòng, mirror giữ nguyên, số liệu khớp, câu chốt 3 lớp.
+- **Bạn kiểm:** hook 3 dòng, mirror giữ nguyên, số liệu khớp, câu chốt 3 lớp + loop seam nối về hook (từ Ep04).
 - Duyệt → bản đó thành FINAL, không đổi một chữ nào nữa.
 
 ### Cổng 2 — Voiceover

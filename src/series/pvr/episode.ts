@@ -2,6 +2,8 @@ import { PVR } from "./theme";
 
 export type Timing = {
   durationInSeconds: number;
+  /** Script ends on a fragment that runs into the hook: no end hold. */
+  loop?: boolean;
   lines: {
     id: string;
     scene: string;
@@ -29,6 +31,10 @@ export const sceneRange = (timing: Timing, scene: string, fps: number) => {
   return { from, durationInFrames: end - from };
 };
 
-/** VO length + the series' 1.5 s hold. */
+/** VO length + the series' 1.5 s hold; loop endings cut 0.2 s after the last word. */
 export const episodeDuration = (timing: Timing, fps: number) =>
-  Math.round((timing.durationInSeconds + PVR.tailSeconds) * fps);
+  Math.round(
+    (timing.loop
+      ? timing.lines[timing.lines.length - 1].end + PVR.loopTailSeconds
+      : timing.durationInSeconds + PVR.tailSeconds) * fps,
+  );

@@ -32,7 +32,7 @@ Chi tiết thao tác từng cổng: xem `huong-dan-ban-giao-claude.md` (message 
 | 2 | Visual | **Thư viện 4 phong cách** (A Receipt × Paper · B Chip Table · C Street Sim · D Text Thread), chọn theo kịch bản mỗi tập (`03_STYLE-LIBRARY.md`); mọi phong cách: khung đứng yên (không máy quay di chuyển), hard cut giữa scene |
 | 3 | Nhân vật | Poor luôn đỏ #D32F2F, Rich luôn xanh lá #388E3C |
 | 4 | Chữ | Bricolage Grotesque (+ Space Mono cho hóa đơn ở A); **phụ đề bắt buộc**; đồng bộ VO ±0.2s, không cắt khung |
-| 5 | Cấu trúc | 5 hồi + thesis hook 3 dòng + mirror tuyệt đối + câu chốt 3 lớp |
+| 5 | Cấu trúc | 5 hồi + thesis hook 3 dòng + mirror tuyệt đối + câu chốt 3 lớp + loop seam nối về hook (từ Ep04) |
 | 6 | Số liệu | Mọi số qua kiểm toán, phép tính hiện từng bước |
 | 7 | Âm thanh | VO −14 LUFS; nhạc nền ≈ −24 LUFS (Lyria khi có billing), đổi sắc thái ở câu transition; không SFX hoạt hình |
 | 8 | Quy trình | VO-first (TTS → đo timing → code); storyboard duyệt trước code; test 1 scene trước render full |

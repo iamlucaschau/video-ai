@@ -64,7 +64,7 @@ Bố cục mẫu (zoom 1): các lô/khu vực trong dải x −440…440 quanh t
 ## 7. Dùng cho dự án mới
 
 ```tsx
-import { MapScene, Town, Area, Avatar, Route, Tag, Stamp, StepTitle, PALETTE, type Cam } from "../../Map Story/map-story";
+import { MapScene, Town, Area, Avatar, Route, Tag, Stamp, StepTitle, PALETTE, type Cam } from "../../../Style Library/E-map-story/map-story"; // từ src/compositions/<Tên>/
 
 const HOME: Cam = { at: -999, x: 0, y: 0, z: 1 };
 const CITY: Cam = { at: -999, x: -650, y: -1060, z: 0.3 };

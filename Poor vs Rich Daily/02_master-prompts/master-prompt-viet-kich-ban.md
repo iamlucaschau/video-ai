@@ -38,6 +38,10 @@ The title card shows "How Poor vs Rich People [X]" visually; your voice delivers
    > Poor people [X]. / Rich people [Y].
 3. **Circular callback** — end with the hook's wording:
    > Same [resource]. Opposite [first purchase / order / choice].
+4. **Loop seam** (≤ 8 words, the very last words of the script) — an unfinished line that runs straight into the hook's first line, so when the video replays, "seam + hook line 1" sounds like ONE true sentence:
+   > And that's why, on every street, → *A poor person buys the tools first.*
+   > So next time you see a new truck, remember: → *A poor person buys the tools first.*
+   Read seam + hook line 1 aloud in one breath: it must be grammatical, true to the story, and add no new number. Never end on a pause, sign-off or "follow for more".
 
 ## VOICE & TONE
 - Short sentences. Spoken English, conversational, no jargon, no corporate speak.
@@ -55,7 +59,7 @@ The title card shows "How Poor vs Rich People [X]" visually; your voice delivers
 4. **Demand thesis** — "They bought the [equipment]. They never built the [demand]."
 5. **Mirror discipline** — identical setup in both halves.
 6. **Narrative knot** — one object/detail crossing from poor half to rich half.
-7. **Bridge couplet + circular close** — contrast restated, then callback to the hook.
+7. **Bridge couplet + circular close + loop seam** — contrast restated, callback to the hook, then a last fragment that runs into the hook so the replay is seamless (mandatory from Ep04).
 
 ## SCRIPT QA GATES (check before delivering)
 - [ ] Thesis hook present (not just the title)?
@@ -68,6 +72,7 @@ The title card shows "How Poor vs Rich People [X]" visually; your voice delivers
 - [ ] 300–360 words?
 - [ ] Tactic named explicitly at least once?
 - [ ] Ends with circular callback to the hook?
+- [ ] Last words are a loop seam: "seam + hook line 1" reads aloud as one true sentence?
 
 ## OUTPUT FORMAT
 1. **Title:** How Poor vs Rich People [X]

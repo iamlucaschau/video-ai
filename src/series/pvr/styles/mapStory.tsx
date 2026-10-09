@@ -1,6 +1,6 @@
 /**
  * Style E "Map Story" for Poor vs Rich Daily: the reusable kit lives in
- * `Map Story/map-story.tsx` (guide: `Map Story/README.md`). This file only
+ * `Style Library/E-map-story/map-story.tsx` (guide: `Style Library/E-map-story/README.md`). This file only
  * adds the Ep02 town (the client's street with three lots, the poor
  * person's garage, river and lake) and the series' side colours.
  */
@@ -15,7 +15,7 @@ import {
   Strip,
   Town,
   Vehicle,
-} from "../../../../Map Story/map-story";
+} from "../../../../Style Library/E-map-story/map-story";
 
 export {
   Bubble,
@@ -26,7 +26,7 @@ export {
   StepTitle,
   Tag,
   TagSteps,
-} from "../../../../Map Story/map-story";
+} from "../../../../Style Library/E-map-story/map-story";
 
 export const MAP = PALETTE;
 export const STREET_Y = 170;

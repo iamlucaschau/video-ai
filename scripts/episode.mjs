@@ -10,7 +10,8 @@
  *   node scripts/episode.mjs export "Poor vs Rich Daily/episodes/ep01-buy-their-tools"
  *     After `npm run voiceover -- voiceover/<slug>.json`: lays the lines out with
  *     their pauses, writes <episode>/vo.mp3 + vo-timestamps.md, and
- *     src/voiceover/<slug>.timing.json for Remotion.
+ *     src/voiceover/<slug>.timing.json for Remotion. Add --loop when the script
+ *     ends on a fragment that runs into the hook (no end hold, style library §2.5).
  */
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
@@ -178,7 +179,7 @@ const exportVo = (dir) => {
   fs.writeFileSync(path.join(ep.abs, "vo-timestamps.md"), md);
   fs.writeFileSync(
     path.join(ROOT, "src", "voiceover", `${ep.slug}.timing.json`),
-    JSON.stringify({ durationInSeconds: total, lines: rows }, null, 2) + "\n",
+    JSON.stringify({ durationInSeconds: total, ...(process.argv.includes("--loop") && { loop: true }), lines: rows }, null, 2) + "\n",
   );
   console.log(`✓ ${path.relative(ROOT, mp3)}  ${total.toFixed(2)}s, ${Math.round((words / total) * 60)} wpm\n✓ vo-timestamps.md`);
 };
@@ -188,7 +189,7 @@ try {
   if (cmd === "prep" && dir) prep(dir);
   else if (cmd === "export" && dir) exportVo(dir);
   else {
-    console.log('Usage: node scripts/episode.mjs prep|export "<episode dir>"');
+    console.log('Usage: node scripts/episode.mjs prep|export "<episode dir>" [--loop]');
     process.exitCode = 1;
   }
 } catch (err) {
