@@ -11,9 +11,9 @@
 | C | [Street Sim](C-street-sim/) | game quản lý isometric, HUD tiền, quest log | địa điểm gần, các bước đánh số | mẫu trong PvR |
 | D | [Text Thread](D-text-thread/) | màn hình điện thoại: chat, app ngân hàng | đàm phán, tin nhắn, hợp đồng | mẫu trong PvR |
 | E | [Map Story](E-map-story/) | bản đồ phẳng tông tối, vùng sáng, đường tự vẽ | nhiều nơi, quãng đường, so sánh khu vực | **kit dùng chung** |
-| F | [Atomic Retro](F-atomic-retro/) | minh họa Mỹ thập niên 50, nền màu khối, isotype | lịch sử, "ngày xưa người ta đã…" | chưa có |
-| G | [Hologram HUD](G-hologram-hud/) | nền đen, hologram cam, đồng hồ đo, đồ thị | cơ chế, khoa học, chuỗi cộng trừ | chưa có |
-| H | [Paper Dossier](H-paper-dossier/) | hồ sơ giấy, tranh khắc đen trắng, con dấu | điều tra, nghiên cứu, hậu quả ẩn | chưa có |
+| F | [Atomic Retro](F-atomic-retro/) | minh họa Mỹ thập niên 50, nền màu khối, isotype | lịch sử, "ngày xưa người ta đã…" | kit v1 (đang thử) |
+| G | [Hologram HUD](G-hologram-hud/) | nền đen, hologram cam, đồng hồ đo, đồ thị | cơ chế, khoa học, chuỗi cộng trừ | kit v1 (đang thử) |
+| H | [Paper Dossier](H-paper-dossier/) | hồ sơ giấy, tranh khắc đen trắng, con dấu | điều tra, nghiên cứu, hậu quả ẩn | kit v1 (đang thử) |
 
 Mỗi thư mục có `README.md` (look, mạnh/yếu, cách dựng) và `ref.jpg` (khung mẫu).
 **Code:** "kit dùng chung" = tự chứa, import thẳng. "Mẫu trong PvR" = code đang gắn với series Poor vs Rich (`src/series/pvr/…`); lần đầu dự án khác dùng thì **tách thành kit trong thư mục style đó** (như E đã làm), rồi PvR import lại từ kit. "Chưa có" = dựng ở Cổng 4 (test scene) của tập đầu tiên dùng, đặt thẳng vào thư mục style.

@@ -1,0 +1,123 @@
+{
+  "name": "g-round-windows",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Orus",
+  "style": "You are a seasoned documentary narrator telling a surprising true story from history in a short video. Warm, curious, grounded, quietly amazed. Natural unhurried pace. Slow down on every year and number and let it land. Small pause before a reveal. The very last line is unfinished: keep the voice lifted and suspended, as if the sentence continues, never a falling final tone. Never rushed, never shouty, never robotic.",
+  "trimSilence": true,
+  "tempo": 1.1,
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.15,
+      "text": "Every airliner window has rounded corners."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.6,
+      "text": "That is not for style."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "In nineteen fifty-two, the de Havilland Comet became the first jet airliner to carry passengers."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.6,
+      "text": "It flew high and fast, in a pressurized cabin."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.15,
+      "text": "Then, in nineteen fifty-four, two Comets broke apart in the sky, three months apart."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.6,
+      "text": "Every Comet was grounded."
+    },
+    {
+      "id": "07",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "Engineers put a whole Comet in a giant water tank."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "They pumped the cabin up and down, flight after flight."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "After about three thousand flights' worth of pressure, the cabin split open."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.6,
+      "text": "The crack started at a corner."
+    },
+    {
+      "id": "11",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.15,
+      "text": "Every flight, the cabin swells like a balloon."
+    },
+    {
+      "id": "12",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.15,
+      "text": "A sharp corner piles that stress into one tiny point."
+    },
+    {
+      "id": "13",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.15,
+      "text": "Metal bent there again and again gets tired, and cracks."
+    },
+    {
+      "id": "14",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.6,
+      "text": "Round corners spread the stress out."
+    },
+    {
+      "id": "15",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.15,
+      "text": "So the corners were rounded."
+    },
+    {
+      "id": "16",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.6,
+      "text": "And that is why, to this day,"
+    }
+  ]
+}

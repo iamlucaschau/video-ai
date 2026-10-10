@@ -1,0 +1,104 @@
+{
+  "durationInSeconds": 57.304208333333335,
+  "loop": true,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.05,
+      "end": 4.764,
+      "text": "In nineteen forty-five, a chocolate bar melted in an engineer's pocket."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 4.913958333333333,
+      "end": 6.659958333333334,
+      "text": "Nobody had turned on a stove."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 7.260458333333333,
+      "end": 12.518458333333333,
+      "text": "Percy Spencer was testing magnetrons, the tubes that powered wartime radar."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 12.668166666666668,
+      "end": 15.402166666666668,
+      "text": "He guessed the invisible waves had cooked his snack."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 15.552375000000001,
+      "end": 18.301375,
+      "text": "So he held popcorn kernels up to the tube."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 18.45125,
+      "end": 20.50025,
+      "text": "They popped all over the lab."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "start": 21.10066666666667,
+      "end": 25.797666666666668,
+      "text": "His company built the first microwave oven in nineteen forty-seven."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "start": 25.947333333333336,
+      "end": 31.628333333333337,
+      "text": "It stood almost six feet tall and weighed about seven hundred fifty pounds."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "start": 31.777833333333337,
+      "end": 34.68383333333334,
+      "text": "It went to restaurants and ships, not homes."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "start": 35.283625,
+      "end": 41.477625,
+      "text": "Twenty years later, a countertop model hit stores for four hundred ninety-five dollars."
+    },
+    {
+      "id": "11",
+      "scene": "s4",
+      "start": 41.62733333333333,
+      "end": 45.730333333333334,
+      "text": "Today, more than nine in ten American homes have one."
+    },
+    {
+      "id": "12",
+      "scene": "s5",
+      "start": 46.330124999999995,
+      "end": 52.443124999999995,
+      "text": "The waves make the water in food spin back and forth, and that motion becomes heat."
+    },
+    {
+      "id": "13",
+      "scene": "s5",
+      "start": 52.59358333333333,
+      "end": 54.25158333333333,
+      "text": "Radar, pointed at dinner."
+    },
+    {
+      "id": "14",
+      "scene": "s5",
+      "start": 54.40154166666666,
+      "end": 56.70454166666666,
+      "text": "And it all started because"
+    }
+  ]
+}

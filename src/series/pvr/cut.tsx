@@ -21,8 +21,10 @@ type Props = {
   captions: Record<string, string>;
   /** public/ path of the episode VO */
   vo: string;
-  /** VO line id where the music turns from the poor bed to the rich bed */
-  pivot: string;
+  /** VO line id where the music turns from the poor bed to the rich bed; omit for one bed (`music`) */
+  pivot?: string;
+  /** single bed when there is no pivot */
+  music?: "dark" | "bright";
   /** subtitles as approved before the 2026-10-08 rules (Ep01–Ep03) */
   legacySubs?: boolean;
 };
@@ -34,14 +36,18 @@ export const EpisodeCut: React.FC<Props> = ({
   captions,
   vo,
   pivot,
+  music = "dark",
   legacySubs,
 }) => {
   const { fps, durationInFrames } = useVideoConfig();
-  const turn = Math.round(
-    timing.lines.find((l) => l.id === pivot)!.start * fps,
-  );
+  // no pivot: one bed for the whole video (the "rich" bed never starts)
+  const turn = pivot
+    ? Math.round(timing.lines.find((l) => l.id === pivot)!.start * fps)
+    : durationInFrames;
+  // loop endings run straight back into the hook: no fade in or out at the seam
+  const tail = timing.loop ? 0 : 20;
   const fade = (f: number, a: number, b: number, level: number) =>
-    interpolate(f, [a, a + 15, b - 20, b], [0, level, level, 0], {
+    interpolate(f, [a, a + 15, b - tail - 0.001, b], [timing.loop ? level : 0, level, level, tail ? 0 : level], {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     });
@@ -67,18 +73,20 @@ export const EpisodeCut: React.FC<Props> = ({
       <Audio name="VO" src={staticFile(vo)} />
       <Audio
         name="Music (poor)"
-        src={staticFile("audio/bed-dark.wav")}
+        src={staticFile(`audio/bed-${pivot ? "dark" : music}.wav`)}
         loop
         durationInFrames={turn + 10}
         volume={(f) => fade(f, 0, turn + 10, MUSIC.poor)}
       />
-      <Sequence name="Music (rich)" from={turn - 5} layout="none">
-        <Audio
-          src={staticFile("audio/bed-bright.wav")}
-          loop
-          volume={(f) => fade(f, 0, durationInFrames - turn + 5, MUSIC.rich)}
-        />
-      </Sequence>
+      {pivot && (
+        <Sequence name="Music (rich)" from={turn - 5} layout="none">
+          <Audio
+            src={staticFile("audio/bed-bright.wav")}
+            loop
+            volume={(f) => fade(f, 0, durationInFrames - turn + 5, MUSIC.rich)}
+          />
+        </Sequence>
+      )}
       <SafeGuide />
     </AbsoluteFill>
   );

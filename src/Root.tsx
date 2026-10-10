@@ -22,6 +22,18 @@ import {
   ep03SceneRange,
 } from "./series/pvr/ep03/Ep03";
 import { PVR } from "./series/pvr/theme";
+import {
+  FMicrowave,
+  fMicrowaveDuration,
+} from "../Style Library/F-atomic-retro/f-microwave/Video";
+import {
+  GRoundWindows,
+  gRoundWindowsDuration,
+} from "../Style Library/G-hologram-hud/g-round-windows/Video";
+import {
+  HRadiumGirls,
+  hRadiumGirlsDuration,
+} from "../Style Library/H-paper-dossier/h-radium-girls/Video";
 import { PriceTheirWork } from "./compositions/PriceTheirWork/PriceTheirWork";
 import { buildTimeline } from "./compositions/PriceTheirWork/timeline";
 import {
@@ -47,6 +59,32 @@ import { OutroScene } from "./compositions/Showcase/scenes/OutroScene";
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Folder name="Style-Tests">
+        <Composition
+          id="Style-F-AtomicRetro-Microwave"
+          component={FMicrowave}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={fMicrowaveDuration(PVR.fps)}
+        />
+        <Composition
+          id="Style-G-HologramHUD-RoundWindows"
+          component={GRoundWindows}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={gRoundWindowsDuration(PVR.fps)}
+        />
+        <Composition
+          id="Style-H-PaperDossier-RadiumGirls"
+          component={HRadiumGirls}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={hRadiumGirlsDuration(PVR.fps)}
+        />
+      </Folder>
       <Folder name="PoorVsRich-Ep03">
         <Composition
           id="PBR-Ep03-GetPaid"

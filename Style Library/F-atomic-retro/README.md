@@ -8,4 +8,4 @@
 - **Màu:** nền teal/mù tạt/kem như mẫu; màu nhấn của dự án thay đỏ san hô cho từ khóa và số chốt.
 - **Chuyển cảnh:** hard cut kèm đổi màu nền (mẫu dùng wipe mép sóng, không dùng vì luật không máy quay giả).
 - **Điều chỉnh so với mẫu:** mẫu đặt phụ đề 2 dòng trong nhãn kem giữa màn hình → dùng phụ đề chuẩn 1–3 từ của dự án.
-- **Code:** chưa có. Dựng ở Cổng 4 của tập đầu tiên dùng, đặt `atomic-retro.tsx` vào thư mục này.
+- **Code (kit, bản thử v1 2026-10-09):** `atomic-retro.tsx` (RetroBg, BigNumber, Plaque, Burst, Engineer, Shadow, Waves, isotype `House`…) dùng `../kit-common.ts`. Video kiểm nghiệm: `f-microwave/` (kịch bản, spec, `Video.tsx`, MP4), composition `Style-F-AtomicRetro-Microwave`.

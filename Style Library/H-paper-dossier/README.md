@@ -8,4 +8,4 @@
 - **Màu:** đen trắng trên giấy; màu nhấn duy nhất là màu của dự án (mẫu dùng đỏ).
 - **Khác A:** A là diorama kraft 3D có con rối, stop-motion; H là trang phẳng, tranh khắc, cắt thẳng.
 - **Điều chỉnh so với mẫu:** nhãn serif máy chữ → Bricolage ≥ 48 px; phụ đề trên dải giấy 2 dòng → phụ đề chuẩn 1–3 từ.
-- **Code:** chưa có. Dựng ở Cổng 4 của tập đầu tiên dùng, đặt `paper-dossier.tsx` vào thư mục này.
+- **Code (kit, bản thử v1 2026-10-09):** `paper-dossier.tsx` (PaperBg giấy nhàu, Engraving hatch/cross/stipple, Tape, Stat, Stamp, MarkerCircle, Watch, Brush, Jar, Jaw, Bust, Doc, Atom) dùng `../kit-common.ts`. Video kiểm nghiệm: `h-radium-girls/`, composition `Style-H-PaperDossier-RadiumGirls`.

@@ -23,6 +23,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 /** Pauses after a line, in seconds. Tune here, then re-run `export`. */
 const GAP = { sentence: 0.15, paragraph: 0.35, scene: 0.6 };
 const LEAD = 0.3; // silence before the first line
+const LOOP_LEAD = 0.05; // loop endings: the replay must join the last word with no gap
 const MAX_TAKE = 8; // sentences per TTS request (keeps pause-splitting reliable)
 
 const norm = (s) => s.replace(/[“”]/g, '"').replace(/\s+/g, " ").trim();
@@ -140,8 +141,9 @@ const exportVo = (dir) => {
   const sr = 24000;
   const chunks = [];
   const rows = [];
-  let t = LEAD;
-  chunks.push(Buffer.alloc(Math.round(LEAD * sr) * 2));
+  const lead = process.argv.includes("--loop") ? LOOP_LEAD : LEAD;
+  let t = lead;
+  chunks.push(Buffer.alloc(Math.round(lead * sr) * 2));
   for (const line of manifest.lines) {
     const wav = fs.readFileSync(path.join(ROOT, "public", line.src));
     const pcm = wav.subarray(44);

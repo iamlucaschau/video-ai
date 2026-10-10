@@ -1,0 +1,118 @@
+{
+  "durationInSeconds": 60.013041666666666,
+  "loop": true,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.05,
+      "end": 3.2889999999999997,
+      "text": "Every airliner window has rounded corners."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 3.439458333333333,
+      "end": 5.256458333333333,
+      "text": "That is not for style."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 5.856541666666667,
+      "end": 12.003541666666667,
+      "text": "In nineteen fifty-two, the de Havilland Comet became the first jet airliner to carry passengers."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 12.153708333333334,
+      "end": 15.219708333333333,
+      "text": "It flew high and fast, in a pressurized cabin."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "start": 15.819625000000002,
+      "end": 22.609625,
+      "text": "Then, in nineteen fifty-four, two Comets broke apart in the sky, three months apart."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "start": 22.759375000000002,
+      "end": 24.121375,
+      "text": "Every Comet was grounded."
+    },
+    {
+      "id": "07",
+      "scene": "s4",
+      "start": 24.72116666666667,
+      "end": 28.63116666666667,
+      "text": "Engineers put a whole Comet in a giant water tank."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "start": 28.78166666666667,
+      "end": 32.07666666666667,
+      "text": "They pumped the cabin up and down, flight after flight."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "start": 32.22616666666667,
+      "end": 37.77216666666667,
+      "text": "After about three thousand flights' worth of pressure, the cabin split open."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "start": 37.92208333333334,
+      "end": 40.14008333333334,
+      "text": "The crack started at a corner."
+    },
+    {
+      "id": "11",
+      "scene": "s5",
+      "start": 40.74029166666667,
+      "end": 43.91429166666667,
+      "text": "Every flight, the cabin swells like a balloon."
+    },
+    {
+      "id": "12",
+      "scene": "s5",
+      "start": 44.063875,
+      "end": 47.750875,
+      "text": "A sharp corner piles that stress into one tiny point."
+    },
+    {
+      "id": "13",
+      "scene": "s5",
+      "start": 47.900375000000004,
+      "end": 52.007375,
+      "text": "Metal bent there again and again gets tired, and cracks."
+    },
+    {
+      "id": "14",
+      "scene": "s5",
+      "start": 52.15716666666667,
+      "end": 54.64516666666667,
+      "text": "Round corners spread the stress out."
+    },
+    {
+      "id": "15",
+      "scene": "s6",
+      "start": 55.24525,
+      "end": 57.46025,
+      "text": "So the corners were rounded."
+    },
+    {
+      "id": "16",
+      "scene": "s6",
+      "start": 57.6105,
+      "end": 59.4135,
+      "text": "And that is why, to this day,"
+    }
+  ]
+}

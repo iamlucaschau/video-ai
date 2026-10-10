@@ -1,0 +1,109 @@
+{
+  "name": "f-microwave",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Orus",
+  "style": "You are a seasoned documentary narrator telling a surprising true story from history in a short video. Warm, curious, grounded, quietly amazed. Natural unhurried pace. Slow down on every year and number and let it land. Small pause before a reveal. The very last line is unfinished: keep the voice lifted and suspended, as if the sentence continues, never a falling final tone. Never rushed, never shouty, never robotic.",
+  "trimSilence": true,
+  "tempo": 1.1,
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.15,
+      "text": "In nineteen forty-five, a chocolate bar melted in an engineer's pocket."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.6,
+      "text": "Nobody had turned on a stove."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "Percy Spencer was testing magnetrons, the tubes that powered wartime radar."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "He guessed the invisible waves had cooked his snack."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "So he held popcorn kernels up to the tube."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.6,
+      "text": "They popped all over the lab."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.15,
+      "text": "His company built the first microwave oven in nineteen forty-seven."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.15,
+      "text": "It stood almost six feet tall and weighed about seven hundred fifty pounds."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.6,
+      "text": "It went to restaurants and ships, not homes."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "Twenty years later, a countertop model hit stores for four hundred ninety-five dollars."
+    },
+    {
+      "id": "11",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.6,
+      "text": "Today, more than nine in ten American homes have one."
+    },
+    {
+      "id": "12",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.15,
+      "text": "The waves make the water in food spin back and forth, and that motion becomes heat."
+    },
+    {
+      "id": "13",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.15,
+      "text": "Radar, pointed at dinner."
+    },
+    {
+      "id": "14",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.6,
+      "text": "And it all started because"
+    }
+  ]
+}

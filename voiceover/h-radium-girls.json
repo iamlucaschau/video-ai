@@ -1,0 +1,109 @@
+{
+  "name": "h-radium-girls",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Orus",
+  "style": "You are a seasoned documentary narrator telling a surprising true story from history in a short video. Warm, curious, grounded, quietly amazed. Natural unhurried pace. Slow down on every year and number and let it land. Small pause before a reveal. The very last line is unfinished: keep the voice lifted and suspended, as if the sentence continues, never a falling final tone. Never rushed, never shouty, never robotic.",
+  "trimSilence": true,
+  "tempo": 1.1,
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.6,
+      "text": "They were told the glowing paint was safe enough to put in their mouths."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "In nineteen seventeen, young women in New Jersey painted watch dials with radium, so soldiers could read the time in the dark."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "To keep a fine tip, they shaped each brush with their lips."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.6,
+      "text": "Lip, dip, paint."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.15,
+      "text": "Radium settles in bone, like calcium."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.15,
+      "text": "Within a few years, some workers' jaws began to crumble."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.6,
+      "text": "Some died."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "The company blamed other causes."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.6,
+      "text": "In nineteen twenty-five, a medical examiner tied the deaths to radium."
+    },
+    {
+      "id": "10",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.15,
+      "text": "In nineteen twenty-seven, five of the women sued."
+    },
+    {
+      "id": "11",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.6,
+      "text": "They settled for ten thousand dollars each, and six hundred a year for life."
+    },
+    {
+      "id": "12",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.15,
+      "text": "Their bones became the data behind the first radiation safety limits."
+    },
+    {
+      "id": "13",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.15,
+      "text": "Limits that later protected the workers of the atomic age."
+    },
+    {
+      "id": "14",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.6,
+      "text": "They exist because, a century ago,"
+    }
+  ]
+}

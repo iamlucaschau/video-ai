@@ -1,5 +1,5 @@
 import { Audio } from "@remotion/media";
-import { Sequence, staticFile } from "remotion";
+import { Sequence, staticFile, useVideoConfig } from "remotion";
 import catalog from "../../../public/sfx/catalog.json";
 
 /**
@@ -22,5 +22,26 @@ export const Sfx: React.FC<{ file: string; at: number; level?: number }> = ({
     <Sequence from={Math.round(at)} name={`SFX ${entry.title}`} layout="none">
       <Audio src={staticFile(file)} volume={gain} />
     </Sequence>
+  );
+};
+
+/** [file under sfx/, VO line id, fraction through the line, frame offset, LUFS level] */
+export type SfxCue = [string, string, number?, number?, number?];
+
+/** A whole SFX track cued from the VO timing (same cues as the visuals). */
+export const SfxCues: React.FC<{
+  timing: { lines: { id: string; start: number; end: number }[] };
+  cues: SfxCue[];
+}> = ({ timing, cues }) => {
+  const { fps } = useVideoConfig();
+  return (
+    <>
+      {cues.map(([file, id, k = 0, off = 0, level], i) => {
+        const l = timing.lines.find((x) => x.id === id);
+        if (!l) throw new Error(`SFX cue: no VO line ${id}`);
+        const at = (l.start + (l.end - l.start) * k) * fps + off;
+        return <Sfx key={i} file={`sfx/${file}`} at={Math.max(0, at)} level={level} />;
+      })}
+    </>
   );
 };

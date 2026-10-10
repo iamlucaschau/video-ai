@@ -8,4 +8,4 @@
 - **Màu:** đen + cam phát sáng; màu nhấn của dự án thay teal cho số chốt (mẫu: teal = kết quả).
 - **Chuyển cảnh:** hard cut, hoặc vật tự biến hình (vật → đồng hồ → đồ thị).
 - **Điều chỉnh so với mẫu:** nhãn monospace nhỏ ("CLOCK OFFSET", "µS/DAY") → Bricolage ≥ 48 px, tối đa 2 khối; phụ đề kiểu máy đánh chữ 2 dòng → phụ đề chuẩn 1–3 từ.
-- **Code:** chưa có. Dựng ở Cổng 4 của tập đầu tiên dùng, đặt `hologram-hud.tsx` vào thư mục này.
+- **Code (kit, bản thử v1 2026-10-09):** `hologram-hud.tsx` (HudBg + bệ chiếu, HudLabel gõ chữ, HudNumber, Brackets, YearRuler, Gauge, Airliner, CabinSection, StressWindow, Crack, Tank) dùng `../kit-common.ts`. Video kiểm nghiệm: `g-round-windows/`, composition `Style-G-HologramHUD-RoundWindows`.
