@@ -1,6 +1,6 @@
 # Ảnh minh họa cho H "Paper Dossier" — video Radium Girls
 
-*Cách 2 (Lucas 2026-10-10): Free Tier của key Gemini không có quota tạo ảnh (`limit: 0`), nên Lucas tạo ảnh trong app (Gemini / ChatGPT) rồi bỏ vào `public/images/h-radium-girls/` đúng tên file. Ảnh nền trắng mực đen được đặt lên giấy bằng chế độ multiply (nền trắng tự biến mất, không cần tách nền). Nhãn băng dính, con dấu, vòng đỏ, số vẫn là vector.*
+*Cách 2 (Lucas 2026-10-10): Free Tier của key Gemini không có quota tạo ảnh (`limit: 0`), nên Lucas tạo ảnh trong app (Gemini / ChatGPT) rồi bỏ vào `public/images/h-radium-girls/` đúng tên file. Ảnh nền trắng mực đen được đặt lên giấy bằng chế độ multiply (nền trắng tự biến mất, không cần tách nền). Nhãn băng dính, con dấu, vòng đỏ, số vẫn là vector. Đã dùng trong bản v2 (2026-10-10): ảnh nền trắng (`Engr`) đặt thẳng lên giấy, ảnh tràn viền (`Print`) thành ảnh in dán băng dính.*
 
 ## Cách tạo
 

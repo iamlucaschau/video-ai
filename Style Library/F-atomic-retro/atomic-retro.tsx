@@ -8,8 +8,9 @@
  * Static frame: only the elements move. Everything is SVG on the 1080×1920
  * canvas; every motion is derived from the frame passed in.
  */
-import { AbsoluteFill, interpolate, random } from "remotion";
-import { CANVAS, CX, FONT, pop, prog } from "../kit-common";
+import { AbsoluteFill, Img, interpolate, random, staticFile } from "remotion";
+import { CANVAS, CX, FONT, pop, prog, SAFE, SUB_BOTTOM } from "../kit-common";
+import type { SubSkin } from "../subs";
 
 export const RETRO = {
   teal: "#2B8C84",
@@ -29,7 +30,7 @@ export const RETRO = {
 
 const INK = 5; // outline width
 /** Floor line: figures and objects stand here; the ground band sits under the subtitles. */
-export const GROUND = 1290;
+export const GROUND = 1240;
 
 /** Soft contact shadow under a figure/object. */
 export const Shadow: React.FC<{ x: number; y?: number; w: number }> = ({ x, y = GROUND, w }) => (
@@ -85,6 +86,35 @@ export const RetroBg: React.FC<{ color: string; f: number; ornament?: string; gr
       <Sparkle x={70} y={760} s={0.7} color={RETRO.mustard} f={f} seed={3} />
     </svg>
   </AbsoluteFill>
+);
+
+// ------------------------------------------------------------------ illustrations (AI / hand-made images)
+
+/** Full-frame illustrated plate (9:16 image in public/). Static: no pan, no zoom. */
+export const Backdrop: React.FC<{ src: string; o?: number }> = ({ src, o = 1 }) => (
+  <AbsoluteFill style={{ opacity: o }}>
+    <Img src={staticFile(src)} style={{ width: CANVAS.width, height: CANVAS.height, objectFit: "cover" }} />
+  </AbsoluteFill>
+);
+
+/**
+ * Cut-out figure/object (transparent PNG, trimmed) standing with its bottom
+ * centre at (x, bottom). `enter` 0→1 rises it into place.
+ */
+export const Cutout: React.FC<{
+  src: string; x: number; bottom: number; height: number; o?: number; enter?: number;
+}> = ({ src, x, bottom, height, o = 1, enter = 1 }) => (
+  <Img
+    src={staticFile(src)}
+    style={{
+      position: "absolute",
+      left: x,
+      top: bottom - height,
+      height,
+      translate: `-50% ${(1 - enter) * 60}px`,
+      opacity: o * Math.min(1, enter * 2),
+    }}
+  />
 );
 
 // ------------------------------------------------------------------ type
@@ -389,3 +419,26 @@ export const Dish: React.FC<{ x: number; y: number; s?: number }> = ({ x, y, s =
   </g>
 );
 
+
+// ------------------------------------------------------------------ subtitles
+
+/** Karaoke subtitle skin: cream paper plaque, ink border, hard accent shadow (as in the reference). */
+export const RetroSub: SubSkin = ({ lines }) => (
+  <div style={{ position: "absolute", left: SAFE.left, right: SAFE.right, bottom: CANVAS.height - SUB_BOTTOM, display: "flex", justifyContent: "center" }}>
+    <div style={{
+      background: RETRO.paper, border: `5px solid ${RETRO.ink}`, borderRadius: 18, padding: "14px 34px 18px",
+      boxShadow: `10px 10px 0 ${RETRO.accent}`, textAlign: "center",
+      fontFamily: FONT, fontWeight: 800, fontSize: 62, lineHeight: 1.12,
+    }}>
+      {lines.map((ln, i) => (
+        <div key={i} style={{ whiteSpace: "nowrap" }}>
+          {ln.map((w, k) => (
+            <span key={k} style={{ color: w.key ? RETRO.accent : w.said ? RETRO.ink : "#A9A194", opacity: w.key && !w.said ? 0.55 : 1 }}>
+              {k ? " " : ""}{w.text}
+            </span>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+);

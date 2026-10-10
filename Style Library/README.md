@@ -20,14 +20,15 @@ Mỗi thư mục có `README.md` (look, mạnh/yếu, cách dựng) và `ref.jpg
 
 ## 2. Luật chung cho mọi phong cách
 
-1. **Quy tắc short-form** (`AGENTS.md`): vùng an toàn x 60–940, y 220–1440; không máy quay giả (zoom, rung, trôi); ít chữ (khối ≤ 5 từ, tối đa 2 khối ngoài phụ đề, phụ đề 1–3 từ); SFX thật từ `public/sfx/`.
+1. **Quy tắc short-form** (`AGENTS.md`): vùng an toàn x 60–940, y 220–1440; không máy quay giả (zoom, rung, trôi); ít chữ (khối ≤ 5 từ, tối đa 2 khối ngoài phụ đề; phụ đề 1–3 từ, trừ phụ đề karaoke ở mục 6); SFX thật từ `public/sfx/`.
 2. **Khung đứng yên**, chỉ vật thể chuyển động. Chuyển cảnh: hard cut, crossfade ≤ 8 frame, hoặc vật thể tự biến hình.
 3. **Màu nhấn theo dự án:** mỗi style chỉ quy định *vai trò* màu (nền, mực, 1–2 màu nhấn). Dự án tự đặt màu nhấn (PvR: POOR đỏ `#D32F2F` / RICH xanh lá `#388E3C`).
 4. **Một họ font sans** đậm 700–800, ≥ 48 px (mặc định Bricolage Grotesque). Font trang trí của video mẫu (serif máy chữ, monospace nhỏ) được thay bằng font này.
 5. **Kết nối vòng (loop ending, Lucas 2026-10-09):** câu cuối của VO là một vế bỏ lửng, đọc nối vào câu đầu thành **một câu đúng ngữ pháp và đúng nghĩa**, để khi nền tảng phát lại, người xem nghe liền mạch và xem thêm vòng nữa. Cách làm:
    - Viết câu mở đầu trước, rồi viết vế cuối ≤ 8 từ dẫn vào nó: *"…which is exactly why"* → *"In 1949, scientists planted…"*; *"And that is why, to this day,"* → *"every GPS clock is built to run slow."*; *"A reminder of what it cost."* → *"When India's vultures vanished…"*.
    - Đọc to "vế cuối + câu đầu" liền một hơi để kiểm: phải tự nhiên, không sai nghĩa, không thêm số mới.
-   - Dựng: cắt video **≤ 0,3 s sau chữ cuối** (không đọng, không fade nhạc, không outro); khung cuối trở về bố cục của khung đầu (cùng nền, cùng vật chính) để chỗ nối không lộ.
+   - Dựng: cắt video **≤ 0,3 s sau chữ cuối** (không đọng, không fade nhạc, không outro); khung cuối trở về bố cục của khung đầu (cùng nền, cùng vật chính) để chỗ nối không lộ. Xuất VO bằng `episode.mjs export … --loop` (đầu video chỉ 0,05 s im lặng).
+6. **Phụ đề karaoke (Lucas 2026-10-10, theo video mẫu; thay luật "1–3 từ" cho các kit F/G/H):** mỗi cụm ≤ 4 từ / ≤ 26 ký tự, tối đa 2 dòng cân nhau; từ **chưa đọc màu nhạt, đọc tới đâu đậm tới đó**; từ khóa (`*đánh dấu*` trong captions) và mọi con số mang màu nhấn. Thời điểm từng từ lấy từ giọng thật: `python -P scripts/words.py <slug>` (Whisper) → `src/voiceover/<slug>.words.json`. Dùng `<KaraokeSubs … Skin={…} />` (`subs.tsx`); mỗi kit có skin riêng (`RetroSub`, `HudSub`, `DossierSub`). Hộp phụ đề nằm ở đáy vùng an toàn (đáy y ≈ 1428).
 
 ## 3. Chọn phong cách theo kịch bản
 

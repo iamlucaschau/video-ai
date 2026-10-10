@@ -1,6 +1,6 @@
 # Ảnh minh họa cho F "Atomic Retro" — video lò vi sóng
 
-*Cách 2 (Lucas 2026-10-10): Free Tier của key Gemini không có quota tạo ảnh (`limit: 0`), nên Lucas tạo ảnh trong app (Gemini / ChatGPT) rồi bỏ vào `public/images/f-microwave/` đúng tên file. Claude tách nền và ghép vào video; số, nhãn, isotype vẫn là vector.*
+*Cách 2 (Lucas 2026-10-10): Free Tier của key Gemini không có quota tạo ảnh (`limit: 0`), nên Lucas tạo ảnh trong app (Gemini / ChatGPT) rồi bỏ vào `public/images/f-microwave/` đúng tên file. Claude tách nền (`python -P scripts/cutout.py public/images/f-microwave public/images/f-microwave/cut 38 <file>`) và ghép vào video; số, nhãn, isotype vẫn là vector. Đã dùng trong bản v2 (2026-10-10).*
 
 ## Cách tạo
 

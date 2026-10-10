@@ -27,6 +27,8 @@ type Props = {
   music?: "dark" | "bright";
   /** subtitles as approved before the 2026-10-08 rules (Ep01–Ep03) */
   legacySubs?: boolean;
+  /** replaces the series subtitles (e.g. a Style Library karaoke skin) */
+  subtitles?: React.ReactNode;
 };
 
 /** Any episode: hard-cut scenes from the VO timing, subtitles, VO, music bed. */
@@ -38,6 +40,7 @@ export const EpisodeCut: React.FC<Props> = ({
   pivot,
   music = "dark",
   legacySubs,
+  subtitles,
 }) => {
   const { fps, durationInFrames } = useVideoConfig();
   // no pivot: one bed for the whole video (the "rich" bed never starts)
@@ -69,7 +72,7 @@ export const EpisodeCut: React.FC<Props> = ({
           </Sequence>
         );
       })}
-      <Subtitles lines={timing.lines} captions={captions} legacy={legacySubs} />
+      {subtitles ?? <Subtitles lines={timing.lines} captions={captions} legacy={legacySubs} />}
       <Audio name="VO" src={staticFile(vo)} />
       <Audio
         name="Music (poor)"

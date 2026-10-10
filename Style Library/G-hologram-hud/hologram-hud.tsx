@@ -7,7 +7,8 @@
  * the holograms move. All SVG on the 1080×1920 canvas, driven by the frame.
  */
 import { AbsoluteFill, interpolate } from "remotion";
-import { CANVAS, CX, FONT, prog } from "../kit-common";
+import { CANVAS, CX, FONT, prog, SAFE, SUB_BOTTOM } from "../kit-common";
+import type { SubSkin } from "../subs";
 
 export const HUD = {
   bg: "#050505",
@@ -263,3 +264,40 @@ export const Tank: React.FC<{ x: number; y: number; w: number; h: number; f: num
   </g>
 );
 
+
+// ------------------------------------------------------------------ subtitles
+
+/** Karaoke subtitle skin: dark glass panel with amber corner brackets and a typing cursor. */
+export const HudSub: SubSkin = ({ lines, f }) => {
+  const last = lines.flat().filter((w) => w.said).length - 1;
+  let n = -1;
+  const corner = (v: "top" | "bottom", h: "left" | "right"): React.CSSProperties => ({
+    position: "absolute", [v]: -6, [h]: -6, width: 34, height: 34,
+    [`border${v === "top" ? "Top" : "Bottom"}`]: `5px solid ${HUD.amber}`,
+    [`border${h === "left" ? "Left" : "Right"}`]: `5px solid ${HUD.amber}`,
+  });
+  return (
+    <div style={{ position: "absolute", left: SAFE.left, right: SAFE.right, bottom: CANVAS.height - SUB_BOTTOM, display: "flex", justifyContent: "center" }}>
+      <div style={{
+        position: "relative", background: "rgba(8,6,4,0.78)", padding: "16px 34px 20px", textAlign: "center",
+        fontFamily: FONT, fontWeight: 800, fontSize: 58, lineHeight: 1.14, filter: `drop-shadow(0 0 10px ${HUD.amber}55)`,
+      }}>
+        <div style={corner("top", "left")} /><div style={corner("top", "right")} />
+        <div style={corner("bottom", "left")} /><div style={corner("bottom", "right")} />
+        {lines.map((ln, i) => (
+          <div key={i} style={{ whiteSpace: "nowrap" }}>
+            {ln.map((w, k) => {
+              n++;
+              return (
+                <span key={k} style={{ color: w.key ? HUD.amber : w.said ? HUD.white : "#5E5146", textShadow: w.said ? `0 0 12px ${w.key ? HUD.amber : HUD.white}66` : "none" }}>
+                  {k ? " " : ""}{w.text}
+                  {n === last && <span style={{ color: HUD.amber, opacity: Math.floor(f / 8) % 2 ? 0 : 1 }}>▌</span>}
+                </span>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};

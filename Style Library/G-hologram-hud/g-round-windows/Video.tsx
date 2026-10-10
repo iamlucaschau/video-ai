@@ -5,14 +5,16 @@
  */
 import { AbsoluteFill, interpolate } from "remotion";
 import timing from "../../../src/voiceover/g-round-windows.timing.json";
+import words from "../../../src/voiceover/g-round-windows.words.json";
 import { useCues } from "../../../src/series/pvr/cues";
 import { EpisodeCut } from "../../../src/series/pvr/cut";
 import { episodeDuration } from "../../../src/series/pvr/episode";
 import { SfxCues, type SfxCue } from "../../../src/series/pvr/sfx";
+import { KaraokeSubs } from "../../subs";
 import { CANVAS, CX, FONT, prog } from "../../kit-common";
 import {
   Airliner, Brackets, CabinSection, Crack, Gauge, glow, HUD, HudBg, HudLabel, HudNumber,
-  StressWindow, Tank, YearRuler,
+  StressWindow, Tank, YearRuler, HudSub,
 } from "../hologram-hud";
 
 const Svg: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -198,11 +200,24 @@ const S6: React.FC = () => {
   );
 };
 
+/** On-screen words per VO line: numerals, *keywords* in the accent colour. */
 const CAPTIONS: Record<string, string> = {
+  "01": "Every airliner window has *rounded corners*.",
+  "02": "That is *not for style*.",
+  "03": "In 1952, the de Havilland *Comet* became the first *jet airliner* to carry passengers.",
+  "04": "It flew high and fast, in a *pressurized* cabin.",
+  "05": "Then, in 1954, two Comets *broke apart* in the sky, 3 months apart.",
+  "06": "Every Comet was *grounded*.",
+  "07": "Engineers put a whole Comet in a giant *water tank*.",
+  "08": "They pumped the cabin *up and down*, flight after flight.",
+  "09": "After about 3,000 flights' worth of pressure, the cabin *split open*.",
+  "10": "The crack started at a *corner*.",
+  "11": "Every flight, the cabin *swells* like a balloon.",
+  "12": "A *sharp corner* piles that stress into one tiny point.",
+  "13": "Metal bent there again and again gets *tired*, and cracks.",
+  "14": "*Round corners* spread the stress out.",
+  "15": "So the corners were *rounded*.",
   "16": "And that is why, to this day…",
-  "03": "In 1952, the de Havilland Comet became the first jet airliner to carry passengers.",
-  "05": "Then, in 1954, two Comets broke apart in the sky, 3 months apart.",
-  "09": "After about 3,000 flights' worth of pressure, the cabin split open.",
 };
 
 const SFX: SfxCue[] = [
@@ -231,7 +246,8 @@ const SFX: SfxCue[] = [
 export const GRoundWindows: React.FC = () => (
   <AbsoluteFill>
     <EpisodeCut timing={timing} scenes={{ s1: S1, s2: S2, s3: S3, s4: S4, s5: S5, s6: S6 }}
-      captions={CAPTIONS} vo="voiceover/g-round-windows/vo.mp3" />
+      captions={CAPTIONS} vo="voiceover/g-round-windows/vo.mp3"
+      subtitles={<KaraokeSubs timing={timing} words={words} captions={CAPTIONS} Skin={HudSub} />} />
     <SfxCues timing={timing} cues={SFX} />
   </AbsoluteFill>
 );

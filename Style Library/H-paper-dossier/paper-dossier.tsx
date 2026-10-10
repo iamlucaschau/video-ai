@@ -7,8 +7,9 @@
  * dotted outlines for what is gone. One accent colour (red by default).
  * Static frame: elements stick on, stamp, draw on. All SVG, frame-driven.
  */
-import { AbsoluteFill, interpolate } from "remotion";
-import { CANVAS, CLAMP, CX, FONT, prog } from "../kit-common";
+import { AbsoluteFill, Img, interpolate, staticFile } from "remotion";
+import { CANVAS, CLAMP, CX, FONT, prog, SAFE, SUB_BOTTOM } from "../kit-common";
+import type { SubSkin } from "../subs";
 
 export const DOSSIER = {
   paper: "#E9E3D4",
@@ -267,4 +268,82 @@ export const Atom: React.FC<{ x: number; y: number; r: number; f: number }> = ({
     ))}
     <circle r={r * 0.2} fill="url(#dz-cross)" strokeWidth={5} />
   </g>
+);
+
+// ------------------------------------------------------------------ subtitles
+
+/** Karaoke subtitle skin: a torn paper strip pasted slightly askew. */
+export const DossierSub: SubSkin = ({ lines }) => {
+  const jag = "polygon(0 6%, 2% 0, 98% 3%, 100% 0, 99% 50%, 100% 100%, 97% 96%, 3% 100%, 0 94%, 1% 50%)";
+  return (
+    <div style={{ position: "absolute", left: SAFE.left, right: SAFE.right, bottom: CANVAS.height - SUB_BOTTOM, display: "flex", justifyContent: "center" }}>
+      <div style={{ filter: "drop-shadow(0 8px 10px rgba(0,0,0,0.28))", rotate: "-1.2deg" }}>
+        <div style={{
+          background: DOSSIER.white, clipPath: jag, padding: "16px 40px 20px", textAlign: "center",
+          fontFamily: FONT, fontWeight: 800, fontSize: 60, lineHeight: 1.12,
+        }}>
+          {lines.map((ln, i) => (
+            <div key={i} style={{ whiteSpace: "nowrap" }}>
+              {ln.map((w, k) => (
+                <span key={k} style={{ color: w.key ? DOSSIER.accent : w.said ? DOSSIER.ink : "#ABA597", opacity: w.key && !w.said ? 0.5 : 1 }}>
+                  {k ? " " : ""}{w.text}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ------------------------------------------------------------------ engraving images (AI / scanned plates)
+
+/** Black-ink-on-white engraving laid onto the paper (multiply: the white disappears). Centred on (x, y). */
+export const Engr: React.FC<{ src: string; x: number; y: number; w: number; aspect?: number; o?: number; enter?: number }> = ({
+  src, x, y, w, aspect = 1, o = 1, enter = 1,
+}) => (
+  <Img
+    src={staticFile(src)}
+    style={{
+      position: "absolute", left: x - w / 2, top: y - (w / aspect) / 2, width: w, height: w / aspect,
+      mixBlendMode: "multiply", opacity: o * enter, scale: 0.96 + 0.04 * enter,
+    }}
+  />
+);
+
+/** A full-bleed plate printed on a white card, pasted into the file with a strip of tape. */
+export const Print: React.FC<{
+  src: string; x: number; y: number; w: number; aspect?: number; rot?: number; o?: number; enter?: number; gone?: number;
+}> = ({ src, x, y, w, aspect = 1, rot = -2, o = 1, enter = 1, gone = 0 }) => {
+  const h = w / aspect;
+  const pad = Math.max(10, w * 0.035);
+  return (
+    <div style={{
+      position: "absolute", left: x - w / 2 - pad, top: y - h / 2 - pad, width: w + 2 * pad, height: h + 2 * pad,
+      rotate: `${rot}deg`, opacity: o * enter, scale: 1.04 - 0.04 * enter,
+    }}>
+      <div style={{
+        position: "absolute", inset: 0, background: DOSSIER.white, boxShadow: "0 10px 22px rgba(0,0,0,0.28)",
+        outline: gone > 0 ? `4px dashed ${DOSSIER.ink}` : "none", outlineOffset: -pad / 2,
+      }} />
+      <Img src={staticFile(src)} style={{
+        position: "absolute", left: pad, top: pad, width: w, height: h, objectFit: "cover",
+        filter: "grayscale(1) contrast(1.05)", opacity: 1 - 0.85 * gone,
+      }} />
+      <div style={{
+        position: "absolute", left: "50%", top: -pad * 1.4, width: Math.min(180, w * 0.4), height: pad * 2.6,
+        translate: "-50% 0", rotate: "3deg", background: "rgba(222,214,190,0.85)", boxShadow: "0 2px 4px rgba(0,0,0,0.15)",
+      }} />
+    </div>
+  );
+};
+
+/** Soft radium glow (pale green), e.g. over a painted dial. */
+export const RadGlow: React.FC<{ x: number; y: number; r: number; o?: number }> = ({ x, y, r, o = 1 }) => (
+  <div style={{
+    position: "absolute", left: x - r, top: y - r, width: 2 * r, height: 2 * r, borderRadius: "50%", opacity: o,
+    background: `radial-gradient(circle, ${DOSSIER.glow} 0%, ${DOSSIER.glow}AA 30%, ${DOSSIER.glow}00 70%)`,
+    mixBlendMode: "screen",
+  }} />
 );

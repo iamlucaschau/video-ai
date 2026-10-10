@@ -9,8 +9,10 @@ import { Easing, interpolate } from "remotion";
 export const CANVAS = { width: 1080, height: 1920 } as const;
 /** Platform UI (Reels / TikTok / Shorts): keep every word, number and face inside. */
 export const SAFE = { top: 220, bottom: 480, left: 60, right: 140 } as const;
-/** Centre of the safe zone, x. Subtitles sit at y ≈ 1350, so visuals live in y 240–1280. */
+/** Centre of the safe zone, x. */
 export const CX = (SAFE.left + CANVAS.width - SAFE.right) / 2;
+/** Bottom edge of the karaoke subtitle box (bottom line of the safe zone); it grows upward to ≈ y 1250. */
+export const SUB_BOTTOM = CANVAS.height - SAFE.bottom - 12;
 
 export const FONT = loadFont("normal", {
   weights: ["700", "800"],
