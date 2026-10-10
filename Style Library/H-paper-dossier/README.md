@@ -8,4 +8,4 @@
 - **Màu:** đen trắng trên giấy; màu nhấn duy nhất là màu của dự án (mẫu dùng đỏ).
 - **Khác A:** A là diorama kraft 3D có con rối, stop-motion; H là trang phẳng, tranh khắc, cắt thẳng.
 - **Điều chỉnh so với mẫu:** nhãn serif máy chữ → Bricolage ≥ 48 px; phụ đề **giữ kiểu mẫu** (Lucas 2026-10-10): karaoke trên dải giấy xé dán lệch (`DossierSub`).
-- **Code (kit, bản thử v1 2026-10-09):** `paper-dossier.tsx` (PaperBg giấy nhàu, Engraving hatch/cross/stipple, Tape, Stat, Stamp, MarkerCircle, Watch, Brush, Jar, Jaw, Bust, Doc, Atom) dùng `../kit-common.ts`. Video kiểm nghiệm: `h-radium-girls/`, composition `Style-H-PaperDossier-RadiumGirls`.
+- **Code (kit đã duyệt, Lucas 2026-10-10):** `paper-dossier.tsx`: `PaperBg` giấy nhàu, `Engr` (tranh khắc nền trắng, multiply), `Print` (ảnh in dán băng dính, `gone` = viền nét đứt), `RadGlow`, `Tape`, `Stat`, `Stamp`, `MarkerCircle`, `Doc`, phụ đề `DossierSub` (còn các hình vector Watch/Jar/Jaw/Bust/Atom làm phương án dự phòng); dùng `../kit-common.ts`, `../subs.tsx`. **Cần ảnh tranh khắc:** bộ prompt mẫu `h-radium-girls/image-prompts.md`. Video mẫu: `h-radium-girls/`, composition `Style-H-PaperDossier-RadiumGirls`.

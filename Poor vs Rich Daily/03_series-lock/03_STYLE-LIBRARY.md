@@ -61,21 +61,21 @@
 - **Mạnh:** ấm, có nhân vật diễn xuất và bối cảnh đời thường; hợp chuyện **lịch sử / "ngày xưa người ta đã…"**, nguồn gốc một ý tưởng kiếm tiền; isotype biến số đếm thành hình
 - **Yếu:** mỗi cảnh cần một tranh minh họa riêng (tốn công nhất); tông hoài cổ không hợp chuyện công nghệ hiện đại
 - **Chuyển cảnh:** hard cut kèm đổi màu nền (mẫu dùng wipe sóng; không dùng vì quy tắc 2)
-- **Code:** chưa có, dựng ở Cổng 4 của tập đầu tiên dùng · tham chiếu: `Style Library/F-atomic-retro/`
+- **Code:** kit đã duyệt (2026-10-10) `Style Library/F-atomic-retro/atomic-retro.tsx`; tập PvR đầu tiên dùng chỉ cần thêm lớp màu POOR/RICH · mẫu: `Style Library/F-atomic-retro/`
 
 ### G — "Hologram HUD" (thêm 2026-10-09)
 - **Look:** nền đen, mô hình 3D khung dây/hologram phát sáng cam (vật, người, tòa nhà, Trái Đất) đứng trên bệ chiếu sáng; đồng hồ đo tròn đếm số, thanh cộng/trừ, đồ thị đường tự vẽ, thước thời gian trượt về một năm; khung ngắm ở góc để chỉ vật. Số chốt đổi sang màu phe (RICH xanh lá / POOR đỏ thay teal của mẫu)
 - **Mạnh:** giải thích **cơ chế / chuỗi nhân quả / phép tính cộng trừ** từng bước (−7 + 45 = +38 thấy được trên đồng hồ); hợp công nghệ, khoa học, số đo nhỏ; tương phản mạnh, ít chữ
 - **Yếu:** lạnh, không có cảm xúc nhân vật; vật thể hologram phải dựng 3D hoặc vẽ wireframe cho từng chủ đề
 - **Chuyển cảnh:** hard cut hoặc chính vật thể biến hình (vật → đồng hồ → đồ thị)
-- **Code:** chưa có, dựng ở Cổng 4 của tập đầu tiên dùng · tham chiếu: `Style Library/G-hologram-hud/`
+- **Code:** kit đã duyệt (2026-10-10) `Style Library/G-hologram-hud/hologram-hud.tsx`; tập PvR đầu tiên dùng chỉ cần thêm lớp màu POOR/RICH · mẫu: `Style Library/G-hologram-hud/`
 
 ### H — "Paper Dossier" (thêm 2026-10-09)
 - **Look:** hồ sơ điều tra trên giấy nhàu trắng ngà, dấu căn chỉnh in (+) ở góc; tranh khắc/chấm đen trắng; nhãn băng dính đen chữ in hoa; con dấu ("BANNED", "KIDNEY FAILURE"), vòng tròn vẽ tay quanh con số, viền chấm cho thứ đã mất; bản đồ, biểu đồ cột/đường tối giản. Đen trắng + màu phe (POOR đỏ, RICH xanh lá) là màu duy nhất
 - **Mạnh:** chuyện **điều tra / nghiên cứu / hậu quả ẩn** (A gây ra B gây ra C), có nguồn, năm, con số gây sốc; đọc như tin thời sự, đáng tin
 - **Yếu:** khô, ít nhân vật; dễ nhiều nhãn cùng lúc nên phải giữ tối đa 2 khối chữ (mẫu thường có 3)
 - **Khác A:** A là diorama kraft 3D có con rối, stop-motion; H là trang phẳng, tranh khắc, cắt thẳng
-- **Code:** chưa có, dựng ở Cổng 4 của tập đầu tiên dùng · tham chiếu: `Style Library/H-paper-dossier/`
+- **Code:** kit đã duyệt (2026-10-10) `Style Library/H-paper-dossier/paper-dossier.tsx`; tập PvR đầu tiên dùng chỉ cần thêm lớp màu POOR/RICH · mẫu: `Style Library/H-paper-dossier/`
 
 ## 3. Chọn phong cách theo kịch bản
 

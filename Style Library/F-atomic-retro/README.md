@@ -8,4 +8,4 @@
 - **Màu:** nền teal/mù tạt/kem như mẫu; màu nhấn của dự án thay đỏ san hô cho từ khóa và số chốt.
 - **Chuyển cảnh:** hard cut kèm đổi màu nền (mẫu dùng wipe mép sóng, không dùng vì luật không máy quay giả).
 - **Điều chỉnh so với mẫu:** phụ đề **giữ kiểu mẫu** (Lucas 2026-10-10): karaoke trong nhãn giấy kem viền mực, bóng đổ màu nhấn (`RetroSub`), nhưng đặt ở đáy vùng an toàn thay vì giữa màn hình.
-- **Code (kit, bản thử v1 2026-10-09):** `atomic-retro.tsx` (RetroBg, BigNumber, Plaque, Burst, Engineer, Shadow, Waves, isotype `House`…) dùng `../kit-common.ts`. Video kiểm nghiệm: `f-microwave/` (kịch bản, spec, `Video.tsx`, MP4), composition `Style-F-AtomicRetro-Microwave`.
+- **Code (kit đã duyệt, Lucas 2026-10-10):** `atomic-retro.tsx`: `RetroBg` (nền màu khối + sàn), `Backdrop` (ảnh nền nguyên khung), `Cutout` (nhân vật/vật đã tách nền), `BigNumber`, `Plaque`, `Burst`, `Shadow`, `Waves`, `WaterMolecule`, isotype `House`, phụ đề `RetroSub`; dùng `../kit-common.ts`, `../subs.tsx`. **Cần ảnh minh họa:** bộ prompt mẫu `f-microwave/image-prompts.md` (nền kem phẳng → `scripts/cutout.py`). Video mẫu: `f-microwave/`, composition `Style-F-AtomicRetro-Microwave`.
