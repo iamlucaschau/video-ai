@@ -1,0 +1,177 @@
+{
+  "name": "p3-dbscl-sut-lun",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Orus",
+  "style": "Giọng nam Việt Nam trưởng thành, giọng miền Bắc chuẩn, trầm vừa, thân thiện và đáng tin, như người kể chuyện địa lý hấp dẫn, có chút dí dỏm. Nhịp vừa phải, không vội: đọc con số chậm hơn một nhịp. Câu \"Mà khoan\" và \"Oái oăm ở chỗ\" đọc có ý cười nhẹ; \"Thủ phạm số một, số hai\" nhấn như đang đếm. Không cường điệu, không hù doạ. Câu cuối cùng chưa kết thúc: giữ giọng treo lên như câu còn tiếp, không hạ giọng kết câu.",
+  "trimSilence": true,
+  "tempo": 1.1,
+  "gaps": {
+    "sentence": 0.06,
+    "paragraph": 0.12,
+    "scene": 0.25
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.06,
+      "text": "Ai cũng lo nước biển dâng."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.25,
+      "text": "Nhưng miền Tây đang tự lún xuống, còn nhanh hơn thế."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.06,
+      "text": "Đồng bằng sông Cửu Long là vựa lúa lớn nhất cả nước."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.06,
+      "text": "Vậy mà trung bình, nó chỉ cao hơn mặt biển khoảng tám mươi phân."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "Chưa tới ngang hông một người lớn."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.06,
+      "text": "Mà khoan, suốt mấy chục năm, nhiều nghiên cứu còn tưởng nó cao hơn hai mét rưỡi."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.06,
+      "text": "Vì sao tính sai?"
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "Vì mốc đo lấy theo mặt biển gần Hà Nội, cách đó gần hai nghìn cây số."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.06,
+      "text": "Giờ đặt hai cây thước cạnh nhau."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.06,
+      "text": "Nước biển toàn cầu dâng chưa tới bốn li mỗi năm."
+    },
+    {
+      "id": "11",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.06,
+      "text": "Đất miền Tây lún khoảng một phân, có nơi hơn hai phân rưỡi."
+    },
+    {
+      "id": "12",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "Nhanh gấp khoảng ba lần."
+    },
+    {
+      "id": "13",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.06,
+      "text": "Thủ phạm số một nằm ngay dưới chân: nước ngầm."
+    },
+    {
+      "id": "14",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.06,
+      "text": "Bơm nước lên, các lớp đất bên dưới xẹp xuống."
+    },
+    {
+      "id": "15",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "Hai mươi lăm năm, riêng chuyện này đã kéo đồng bằng xuống khoảng mười tám phân."
+    },
+    {
+      "id": "16",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.06,
+      "text": "Thủ phạm số hai: phù sa."
+    },
+    {
+      "id": "17",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.06,
+      "text": "Các đập trên dòng Mekong giữ lại một phần, cát dưới lòng sông thì bị hút đi."
+    },
+    {
+      "id": "18",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.06,
+      "text": "Phù sa về đồng bằng đã giảm khoảng một nửa."
+    },
+    {
+      "id": "19",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "Đất lún mà không được bồi lại."
+    },
+    {
+      "id": "20",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.06,
+      "text": "Đồng bằng càng thấp, càng dễ bị nước mặn lấn vào."
+    },
+    {
+      "id": "21",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "Mùa khô năm hai nghìn mười sáu và hai nghìn hai mươi là những đợt hạn mặn lịch sử."
+    },
+    {
+      "id": "22",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.06,
+      "text": "Oái oăm ở chỗ: thứ kéo đồng bằng xuống nhiều nhất lại là nước ngọt ngay dưới chân, để uống, tưới ruộng, nuôi tôm cá."
+    },
+    {
+      "id": "23",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.25,
+      "text": "Vậy mà"
+    }
+  ]
+}

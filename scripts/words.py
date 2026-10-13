@@ -2,7 +2,7 @@
 Word timestamps for karaoke subtitles: runs faster-whisper on an episode's VO
 and writes, per VO line, the start time of every spoken word.
 
-  python -P scripts/words.py <slug>          (reads public/voiceover/<slug>/vo.mp3
+  python -P scripts/words.py <slug> [lang]   (lang: en default, vi, …; reads public/voiceover/<slug>/vo.mp3
                                               and src/voiceover/<slug>.timing.json)
 
 Output: src/voiceover/<slug>.words.json  { "<line id>": [t0, t1, ...] } in seconds,
@@ -30,7 +30,7 @@ subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(mp3), "-ac", "1", "-ar"
 w = wave.open(str(wav))
 audio = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
 model = WhisperModel("small", device="cpu", compute_type="int8")
-segs, _ = model.transcribe(audio, language="en", word_timestamps=True)
+segs, _ = model.transcribe(audio, language=sys.argv[2] if len(sys.argv) > 2 else "en", word_timestamps=True)
 heard = [(x.start, x.end) for s in segs for x in s.words]
 
 out = {}

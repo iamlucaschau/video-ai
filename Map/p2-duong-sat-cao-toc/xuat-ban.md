@@ -1,0 +1,52 @@
+# Gói xuất bản v2 — "67 tỷ đô để mua một ngày"
+
+*Cổng 5 v2 (2026-10-13). Video: `p2-duong-sat-cao-toc.mp4` (9:16, −14 LUFS). Bản lặp: `p2-duong-sat-cao-toc-loop-preview-x2.mp4`. Bản v1: `v1/`.*
+
+## 1. Tiêu đề (thử A/B)
+
+1. **67 tỷ đô để mua… một ngày?** 🇻🇳 *(chính)*
+2. Hà Nội – Sài Gòn: hơn 30 tiếng hay 5 tiếng rưỡi?
+3. Ăn sáng phở Hà Nội, ăn trưa cơm tấm Sài Gòn: cái giá 67 tỷ đô
+4. Mỗi mét đường sắt hơn 1 tỷ đồng: vì sao? 🤯
+5. Tuyến đường sắt 1936 và tuyến 67 tỷ đô
+
+## 2. Mô tả
+
+> Tàu Thống Nhất hôm nay: hơn 30 tiếng từ Hà Nội vào Sài Gòn. Tàu cao tốc 350 km/h: dự kiến khoảng 5 tiếng rưỡi, với vốn sơ bộ khoảng 67 tỷ đô, tính ra hơn 1 tỷ đồng mỗi mét đường. Theo bạn, có đáng không?
+>
+> #duongsattocdocao #duongsatbacnam #tauthongnhat #vietnam
+>
+> *(giới thiệu kênh — điền khi có tên kênh)*
+>
+> **Nguồn** (truy cập 12–13/10/2026):
+> - Nghị quyết 172/2024/QH15 (30/11/2024): Báo Luật sư VN, SGGP, Nhà Đầu tư, Thị trường Tài chính Tiền tệ, VOH
+> - Thời gian chạy dự kiến, 5 ga dừng: VnExpress (phát biểu Bộ trưởng GTVT, 11/2024); Báo Hà Tĩnh
+> - 60% cầu, 10% hầm: Báo Luật sư VN (tờ trình dự thảo), Báo Hà Tĩnh, VietnamNet
+> - Hoàn vốn, chi phí vận hành: Thị trường Tài chính Tiền tệ, Pháp Luật TP.HCM, Cổng TTĐT Hà Tĩnh
+> - Lịch tàu Thống Nhất: Báo Đấu thầu (2/2023), Bộ Xây dựng / SGGP (hè 2026), Pháp Luật TP.HCM
+> - Mối nối ray cuối cùng năm 1936 (Km1221, Phú Yên): Tuổi Trẻ, SGGP, Nhân Dân
+> - "Mỗi mét hơn 1 tỷ đồng" = 1.713.548 tỷ đồng ÷ 1.541 km (vốn sơ bộ).
+> - Bản đồ: Natural Earth. **Tuyến trên bản đồ là sơ đồ minh hoạ, không phải hướng tuyến chính xác.** Vị trí ga là minh hoạ.
+>
+> #bando #diali #kinhte #hatang #giaothong
+
+## 3. Hashtag (≤ 20)
+
+#duongsattocdocao #duongsatbacnam #tauthongnhat #vietnam #kinhte #hatang #giaothong #bando #diali #quochoi #hanoi #saigon #dautucong #highspeedrail #vietnamrailway #maps #geography #economy #infrastructure #shorts
+
+## 4. Ảnh bìa
+
+Chữ **"67 TỶ ĐÔ / MUA 1 NGÀY?"** trên khung toàn Việt Nam, có tuyến vàng và hai đoàn tàu ở Hà Nội (still ~ frame 200).
+
+## 5. Bình luận ghim
+
+> Nếu có tuyến này: bạn chọn **5 tiếng rưỡi** với vé tàu cao tốc, hay **hơn 30 tiếng** với vé rẻ? 👇
+
+## Trước khi đăng (còn mở)
+
+- [ ] **C16:** mở lịch tàu hiện hành trên dsvn.vn để kiểm thời gian Hà Nội → Vinh (câu cao trào "còn chưa tới Vinh").
+- [ ] **C19:** giờ đến Sài Gòn của SE1 theo lịch hiện hành ("ngủ hai đêm").
+- [ ] Mở Công báo: NQ 172/2024/QH15.
+- [ ] Gắn link bài gốc cho SRC-016 (PLO), SRC-017 (hatinh.gov.vn).
+- [x] Ảnh p-09, p-10, p-11 (đã thay, 2026-10-13).
+- [ ] Tên kênh + câu giới thiệu kênh.

@@ -16,7 +16,7 @@ export const SUB_BOTTOM = CANVAS.height - SAFE.bottom - 12;
 
 export const FONT = loadFont("normal", {
   weights: ["700", "800"],
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext", "vietnamese"],
 }).fontFamily;
 
 export const CLAMP = {

@@ -8,7 +8,8 @@
  */
 import { useCurrentFrame, useVideoConfig } from "remotion";
 
-export type SubWord = { text: string; said: boolean; key: boolean };
+/** said: already spoken · active: being spoken right now · key: keyword / number */
+export type SubWord = { text: string; said: boolean; active: boolean; key: boolean };
 export type SubSkin = React.FC<{ lines: SubWord[][]; f: number }>;
 
 type Line = { id: string; start: number; end: number; text: string };
@@ -39,7 +40,11 @@ export const KaraokeSubs: React.FC<{
   words?: Record<string, number[]>;
   captions?: Record<string, string>;
   Skin: SubSkin;
-}> = ({ timing, words = {}, captions = {}, Skin }) => {
+  /** chunk size; defaults: 4 words / 26 chars on two balanced lines */
+  maxWords?: number;
+  maxChars?: number;
+  oneLine?: boolean;
+}> = ({ timing, words = {}, captions = {}, Skin, maxWords = MAX_WORDS, maxChars = MAX_CHARS, oneLine = false }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = f / fps;
@@ -61,7 +66,7 @@ export const KaraokeSubs: React.FC<{
   let cur: number[] = [];
   ws.forEach((w, k) => {
     const chars = cur.reduce((n, j) => n + ws[j].text.length + 1, 0) + w.text.length;
-    if (cur.length && (cur.length >= MAX_WORDS || chars > MAX_CHARS)) {
+    if (cur.length && (cur.length >= maxWords || chars > maxChars)) {
       chunks.push(cur);
       cur = [];
     }
@@ -70,6 +75,10 @@ export const KaraokeSubs: React.FC<{
   if (cur.length) chunks.push(cur);
   const c = [...chunks].reverse().find((ch) => t >= at[ch[0]] - 0.05) ?? chunks[0];
 
-  const shown = c.map((k) => ({ ...ws[k], said: t >= at[k] - 0.03 }));
-  return <Skin lines={balance(shown)} f={f} />;
+  const shown = c.map((k) => ({
+    ...ws[k],
+    said: t >= at[k] - 0.03,
+    active: t >= at[k] - 0.03 && (k === ws.length - 1 || t < at[k + 1] - 0.03),
+  }));
+  return <Skin lines={oneLine ? [shown] : balance(shown)} f={f} />;
 };

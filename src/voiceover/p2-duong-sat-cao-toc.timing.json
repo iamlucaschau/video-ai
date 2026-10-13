@@ -1,0 +1,160 @@
+{
+  "durationInSeconds": 70.828625,
+  "loop": true,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.05,
+      "end": 3.912,
+      "text": "Việt Nam dự kiến chi khoảng sáu mươi bảy tỷ đô, chỉ để mua một ngày."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 3.9719583333333333,
+      "end": 5.095958333333334,
+      "text": "Nghe vô lý?"
+    },
+    {
+      "id": "03",
+      "scene": "s1",
+      "start": 5.155625,
+      "end": 7.264625,
+      "text": "Thử cho hai đoàn tàu cùng rời Hà Nội."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 7.5149583333333325,
+      "end": 12.720958333333332,
+      "text": "Tàu Thống Nhất hôm nay: lên tàu buổi tối, ngủ hai đêm, hơn ba mươi tiếng mới tới Sài Gòn."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 12.780624999999999,
+      "end": 16.766624999999998,
+      "text": "Tàu cao tốc nhanh nhất, chỉ dừng năm ga, dự kiến khoảng năm tiếng rưỡi."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 16.826208333333334,
+      "end": 19.667208333333335,
+      "text": "Ăn sáng phở Hà Nội, ăn trưa cơm tấm Sài Gòn."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "start": 19.91754166666667,
+      "end": 21.64254166666667,
+      "text": "Nhưng cái giá thì không hề nhẹ."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "start": 21.702375000000004,
+      "end": 24.422375000000002,
+      "text": "Tuyến dài khoảng một nghìn năm trăm bốn mươi mốt cây số."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "start": 24.48204166666667,
+      "end": 27.864041666666672,
+      "text": "Theo vốn sơ bộ, mỗi mét đường tốn hơn một tỷ đồng."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "start": 28.114375000000003,
+      "end": 29.021375000000003,
+      "text": "Vì sao đắt vậy?"
+    },
+    {
+      "id": "11",
+      "scene": "s4",
+      "start": 29.08141666666667,
+      "end": 35.12641666666667,
+      "text": "Để chạy ba trăm năm mươi cây số một giờ, tuyến dự kiến có khoảng sáu mươi phần trăm là cầu, mười phần trăm là hầm."
+    },
+    {
+      "id": "12",
+      "scene": "s4",
+      "start": 35.186125000000004,
+      "end": 37.403125,
+      "text": "Phần lớn con đường được nhấc hẳn lên khỏi mặt đất."
+    },
+    {
+      "id": "13",
+      "scene": "s5",
+      "start": 37.65354166666667,
+      "end": 41.59154166666667,
+      "text": "Dù vậy, cuối năm hai nghìn hai mươi tư, Quốc hội vẫn bấm nút."
+    },
+    {
+      "id": "14",
+      "scene": "s5",
+      "start": 41.65204166666667,
+      "end": 44.84004166666667,
+      "text": "Bốn trăm bốn mươi ba trên bốn trăm năm mươi tư đại biểu tán thành."
+    },
+    {
+      "id": "15",
+      "scene": "s6",
+      "start": 45.09029166666667,
+      "end": 47.96629166666667,
+      "text": "Câu hỏi lớn nhất vẫn còn đó: bao giờ hoàn vốn?"
+    },
+    {
+      "id": "16",
+      "scene": "s6",
+      "start": 48.02629166666667,
+      "end": 52.64629166666667,
+      "text": "Chính phủ thừa nhận, bốn năm đầu, doanh thu chỉ đủ bù chi phí vận hành."
+    },
+    {
+      "id": "17",
+      "scene": "s6",
+      "start": 52.70629166666667,
+      "end": 55.28629166666667,
+      "text": "Phần bảo trì hạ tầng, Nhà nước vẫn phải lo."
+    },
+    {
+      "id": "18",
+      "scene": "s7",
+      "start": 55.53633333333334,
+      "end": 56.97533333333334,
+      "text": "Giờ quay lại hai đoàn tàu."
+    },
+    {
+      "id": "19",
+      "scene": "s7",
+      "start": 57.03541666666667,
+      "end": 60.61841666666667,
+      "text": "Khi tàu cao tốc đã tới Thủ Thiêm, tàu Thống Nhất còn chưa tới Vinh."
+    },
+    {
+      "id": "20",
+      "scene": "s8",
+      "start": 60.86804166666667,
+      "end": 65.86204166666667,
+      "text": "Mà oái oăm ở chỗ: tuyến Thống Nhất được nối liền từ năm một nghìn chín trăm ba mươi sáu."
+    },
+    {
+      "id": "21",
+      "scene": "s8",
+      "start": 65.92175,
+      "end": 69.29675,
+      "text": "Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày."
+    },
+    {
+      "id": "22",
+      "scene": "s8",
+      "start": 69.35708333333334,
+      "end": 70.57908333333333,
+      "text": "Đó là lý do"
+    }
+  ]
+}

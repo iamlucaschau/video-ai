@@ -1,0 +1,132 @@
+{
+  "durationInSeconds": 63.374875,
+  "loop": true,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.05,
+      "end": 3.0749999999999997,
+      "text": "Đi từ Lào Cai sang Hà Khẩu, đồng hồ nhảy một tiếng."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 3.1350416666666665,
+      "end": 6.834041666666666,
+      "text": "Nhưng đi tiếp hơn ba nghìn cây số về phía tây, nó không nhảy thêm phút nào."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 7.0837916666666665,
+      "end": 10.430791666666666,
+      "text": "Nếu chia theo Mặt Trời, lãnh thổ Trung Quốc trải gần năm múi giờ."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 10.490416666666667,
+      "end": 13.361416666666667,
+      "text": "Cứ mười lăm độ kinh, mặt trời mọc chậm hơn một tiếng."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "start": 13.611791666666667,
+      "end": 18.819791666666667,
+      "text": "Vậy mà từ khoảng năm một nghìn chín trăm bốn mươi chín, cả nước dùng chung một chiếc đồng hồ: giờ Bắc Kinh."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "start": 18.879583333333333,
+      "end": 21.29658333333333,
+      "text": "Đây là nước rộng nhất thế giới chỉ dùng một giờ."
+    },
+    {
+      "id": "07",
+      "scene": "s4",
+      "start": 21.546125,
+      "end": 22.389125,
+      "text": "Hệ quả?"
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "start": 22.448625,
+      "end": 27.299625,
+      "text": "Ở Kashgar, cực tây Tân Cương, ngày đầu năm, gần mười giờ sáng mặt trời mới mọc."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "start": 27.359333333333332,
+      "end": 30.349333333333334,
+      "text": "Cùng ngày ấy ở Bắc Kinh, mặt trời mọc từ khoảng bảy giờ rưỡi."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "start": 30.409458333333333,
+      "end": 32.918458333333334,
+      "text": "Mùa hè, hơn mười giờ tối trời mới tắt nắng."
+    },
+    {
+      "id": "11",
+      "scene": "s5",
+      "start": 33.16829166666667,
+      "end": 36.41529166666667,
+      "text": "Thử tưởng tượng: tám giờ sáng đi học, ngoài trời vẫn tối om."
+    },
+    {
+      "id": "12",
+      "scene": "s6",
+      "start": 36.66491666666667,
+      "end": 41.24791666666667,
+      "text": "Nên ở Tân Cương, nhiều người còn dùng thêm một giờ không chính thức, chậm hơn hai tiếng."
+    },
+    {
+      "id": "13",
+      "scene": "s6",
+      "start": 41.307625,
+      "end": 44.087625,
+      "text": "Đài truyền hình ở đây còn xếp lịch theo cả hai giờ."
+    },
+    {
+      "id": "14",
+      "scene": "s6",
+      "start": 44.147708333333334,
+      "end": 45.98770833333334,
+      "text": "Một vùng đất, hai chiếc đồng hồ."
+    },
+    {
+      "id": "15",
+      "scene": "s7",
+      "start": 46.237375,
+      "end": 51.550375,
+      "text": "Nhưng chỗ kỳ lạ nhất nằm ở biên giới với Afghanistan, nước dùng múi giờ lẻ nửa tiếng."
+    },
+    {
+      "id": "16",
+      "scene": "s7",
+      "start": 51.61025,
+      "end": 57.37825,
+      "text": "Nếu bước qua được, đồng hồ lệch tới ba tiếng rưỡi, một trong những chỗ lệch giờ lớn nhất thế giới."
+    },
+    {
+      "id": "17",
+      "scene": "s8",
+      "start": 57.62833333333333,
+      "end": 60.43233333333333,
+      "text": "Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua."
+    },
+    {
+      "id": "18",
+      "scene": "s8",
+      "start": 60.49208333333333,
+      "end": 63.125083333333336,
+      "text": "Muốn thấy đồng hồ nhảy, cách dễ nhất vẫn là"
+    }
+  ]
+}

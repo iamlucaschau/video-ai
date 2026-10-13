@@ -1,0 +1,142 @@
+{
+  "name": "p5-trung-quoc-mui-gio",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Orus",
+  "style": "Giọng nam Việt Nam trưởng thành, giọng miền Bắc chuẩn, trầm vừa, thân thiện và đáng tin, như người kể chuyện địa lý kỳ lạ, có chút dí dỏm. Nhịp vừa phải: đọc giờ, con số và địa danh chậm hơn một nhịp. \"Hệ quả?\" và \"Thử tưởng tượng\" đọc có ý cười nhẹ. Đọc Kashgar là \"Cát-ga\", Afghanistan là \"Áp-ga-ni-xtan\". Trung tính, không cường điệu. Câu cuối cùng chưa kết thúc: giữ giọng treo lên như câu còn tiếp, không hạ giọng kết câu.",
+  "trimSilence": true,
+  "tempo": 1.1,
+  "gaps": {
+    "sentence": 0.06,
+    "paragraph": 0.12,
+    "scene": 0.25
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.06,
+      "text": "Đi từ Lào Cai sang Hà Khẩu, đồng hồ nhảy một tiếng."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.25,
+      "text": "Nhưng đi tiếp hơn ba nghìn cây số về phía tây, nó không nhảy thêm phút nào."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.06,
+      "text": "Nếu chia theo Mặt Trời, lãnh thổ Trung Quốc trải gần năm múi giờ."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "Cứ mười lăm độ kinh, mặt trời mọc chậm hơn một tiếng."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.06,
+      "text": "Vậy mà từ khoảng năm một nghìn chín trăm bốn mươi chín, cả nước dùng chung một chiếc đồng hồ: giờ Bắc Kinh."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "Đây là nước rộng nhất thế giới chỉ dùng một giờ."
+    },
+    {
+      "id": "07",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.06,
+      "text": "Hệ quả?"
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.06,
+      "text": "Ở Kashgar, cực tây Tân Cương, ngày đầu năm, gần mười giờ sáng mặt trời mới mọc."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.06,
+      "text": "Cùng ngày ấy ở Bắc Kinh, mặt trời mọc từ khoảng bảy giờ rưỡi."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "Mùa hè, hơn mười giờ tối trời mới tắt nắng."
+    },
+    {
+      "id": "11",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "Thử tưởng tượng: tám giờ sáng đi học, ngoài trời vẫn tối om."
+    },
+    {
+      "id": "12",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.06,
+      "text": "Nên ở Tân Cương, nhiều người còn dùng thêm một giờ không chính thức, chậm hơn hai tiếng."
+    },
+    {
+      "id": "13",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.06,
+      "text": "Đài truyền hình ở đây còn xếp lịch theo cả hai giờ."
+    },
+    {
+      "id": "14",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "Một vùng đất, hai chiếc đồng hồ."
+    },
+    {
+      "id": "15",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.06,
+      "text": "Nhưng chỗ kỳ lạ nhất nằm ở biên giới với Afghanistan, nước dùng múi giờ lẻ nửa tiếng."
+    },
+    {
+      "id": "16",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "Nếu bước qua được, đồng hồ lệch tới ba tiếng rưỡi, một trong những chỗ lệch giờ lớn nhất thế giới."
+    },
+    {
+      "id": "17",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.06,
+      "text": "Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua."
+    },
+    {
+      "id": "18",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.25,
+      "text": "Muốn thấy đồng hồ nhảy, cách dễ nhất vẫn là"
+    }
+  ]
+}

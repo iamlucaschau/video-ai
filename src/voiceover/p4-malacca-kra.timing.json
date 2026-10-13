@@ -1,0 +1,139 @@
+{
+  "durationInSeconds": 63.576,
+  "loop": true,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.05,
+      "end": 4.486,
+      "text": "Gần một phần ba lượng dầu chở bằng đường biển của thế giới phải chen qua một eo biển."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 4.546166666666666,
+      "end": 8.663166666666665,
+      "text": "Ngay phía trên có một lối tắt, mà gần ba trăm năm mươi năm nay chưa ai đào."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 8.913416666666667,
+      "end": 11.775416666666667,
+      "text": "Thử theo một con tàu dầu từ Trung Đông sang Đông Á."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 11.835875,
+      "end": 14.796875,
+      "text": "Muốn vào Biển Đông, nó phải vòng xuống tận eo Malacca."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "start": 15.046833333333332,
+      "end": 18.72383333333333,
+      "text": "Năm hai nghìn hai mươi lăm, hơn một trăm nghìn lượt tàu chen qua đây."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "start": 18.78395833333333,
+      "end": 22.50195833333333,
+      "text": "Chỗ hẹp nhất, gần Singapore, chỉ rộng khoảng hai, ba cây số."
+    },
+    {
+      "id": "07",
+      "scene": "s4",
+      "start": 22.752166666666664,
+      "end": 27.098166666666664,
+      "text": "Trong khi đó, ở miền Nam Thái Lan, eo đất Kra chỉ rộng hơn bốn mươi cây số."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "start": 27.15845833333333,
+      "end": 30.154458333333327,
+      "text": "Đào một con kênh ở đây, tàu khỏi phải vòng qua Singapore."
+    },
+    {
+      "id": "09",
+      "scene": "s5",
+      "start": 30.40420833333333,
+      "end": 34.01320833333333,
+      "text": "Ý tưởng này có từ năm một nghìn sáu trăm bảy mươi bảy, thời vua Narai."
+    },
+    {
+      "id": "10",
+      "scene": "s5",
+      "start": 34.07366666666666,
+      "end": 37.29166666666666,
+      "text": "Bàn đi bàn lại mấy trăm năm, vẫn chưa đào một mét nào."
+    },
+    {
+      "id": "11",
+      "scene": "s6",
+      "start": 37.54166666666666,
+      "end": 38.307666666666655,
+      "text": "Vì sao?"
+    },
+    {
+      "id": "12",
+      "scene": "s6",
+      "start": 38.36733333333332,
+      "end": 40.17633333333332,
+      "text": "Thứ nhất, tốn hàng chục tỷ đô."
+    },
+    {
+      "id": "13",
+      "scene": "s6",
+      "start": 40.23670833333332,
+      "end": 43.35170833333332,
+      "text": "Thứ hai, lối tắt chỉ tiết kiệm khoảng một đến ba ngày đi biển."
+    },
+    {
+      "id": "14",
+      "scene": "s6",
+      "start": 43.41124999999999,
+      "end": 45.74924999999999,
+      "text": "Thứ ba, lo ngại về môi trường và an ninh."
+    },
+    {
+      "id": "15",
+      "scene": "s7",
+      "start": 45.99954166666666,
+      "end": 52.08654166666666,
+      "text": "Nhưng lý do oái oăm nhất: phần lớn tàu vẫn phải ghé Singapore, để giao hàng, lấy nhiên liệu, sửa chữa."
+    },
+    {
+      "id": "16",
+      "scene": "s7",
+      "start": 52.14612499999999,
+      "end": 54.81312499999999,
+      "text": "Lối tắt có đẹp mấy, cũng không bỏ được Singapore."
+    },
+    {
+      "id": "17",
+      "scene": "s8",
+      "start": 55.06362499999999,
+      "end": 58.11162499999999,
+      "text": "Năm hai nghìn hai mươi ba, Thái Lan lại đưa ra phương án mới."
+    },
+    {
+      "id": "18",
+      "scene": "s8",
+      "start": 58.17166666666665,
+      "end": 62.74166666666665,
+      "text": "Không đào kênh, mà xây cầu đất liền: cảng, đường sắt và đường ống dầu."
+    },
+    {
+      "id": "19",
+      "scene": "s8",
+      "start": 62.80183333333332,
+      "end": 63.32583333333332,
+      "text": "Còn hiện tại,"
+    }
+  ]
+}

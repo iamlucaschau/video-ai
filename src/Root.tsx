@@ -34,6 +34,11 @@ import {
   HRadiumGirls,
   hRadiumGirlsDuration,
 } from "../Style Library/H-paper-dossier/h-radium-girls/Video";
+import { ISingapore, iSingaporeDuration } from "../Map/i-singapore/Video";
+import { P2DuongSatCaoToc, p2DuongSatCaoTocDuration } from "../Map/p2-duong-sat-cao-toc/Video";
+import { P3DbsclSutLun, p3DbsclSutLunDuration } from "../Map/p3-dbscl-sut-lun/Video";
+import { P4MalaccaKra, p4MalaccaKraDuration } from "../Map/p4-malacca-kra/Video";
+import { P5TrungQuocMuiGio, p5TrungQuocMuiGioDuration } from "../Map/p5-trung-quoc-mui-gio/Video";
 import { PriceTheirWork } from "./compositions/PriceTheirWork/PriceTheirWork";
 import { buildTimeline } from "./compositions/PriceTheirWork/timeline";
 import {
@@ -83,6 +88,48 @@ export const RemotionRoot: React.FC = () => {
           height={PVR.height}
           fps={PVR.fps}
           durationInFrames={hRadiumGirlsDuration(PVR.fps)}
+        />
+        <Composition
+          id="Style-I-ToyAtlas-Singapore"
+          component={ISingapore}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={iSingaporeDuration(PVR.fps)}
+        />
+      </Folder>
+      <Folder name="Map">
+        <Composition
+          id="Map-P2-DuongSatCaoToc"
+          component={P2DuongSatCaoToc}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={p2DuongSatCaoTocDuration(PVR.fps)}
+        />
+        <Composition
+          id="Map-P3-DbsclSutLun"
+          component={P3DbsclSutLun}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={p3DbsclSutLunDuration(PVR.fps)}
+        />
+        <Composition
+          id="Map-P4-MalaccaKra"
+          component={P4MalaccaKra}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={p4MalaccaKraDuration(PVR.fps)}
+        />
+        <Composition
+          id="Map-P5-TrungQuocMuiGio"
+          component={P5TrungQuocMuiGio}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={p5TrungQuocMuiGioDuration(PVR.fps)}
         />
       </Folder>
       <Folder name="PoorVsRich-Ep03">

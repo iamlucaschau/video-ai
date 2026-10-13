@@ -92,6 +92,10 @@ const prep = (dir) => {
   });
   if (s !== scenes.length) throw new Error(`FINAL script ended inside SCENE ${scenes[s].n}`);
 
+  // Pauses: series defaults, or a tighter set from the episode's VO json ("gaps": {sentence, paragraph, scene}).
+  const voPathEarly = path.join(ROOT, "voiceover", `${ep.slug}.json`);
+  const gaps = { ...GAP, ...(fs.existsSync(voPathEarly) ? JSON.parse(fs.readFileSync(voPathEarly, "utf8")).gaps ?? {} : {}) };
+
   // Group into TTS takes: within a scene, at paragraph boundaries, ≤ MAX_TAKE sentences.
   let take = 0;
   let inTake = 0;
@@ -108,7 +112,7 @@ const prep = (dir) => {
       id: String(i + 1).padStart(2, "0"),
       scene: l.scene,
       take: `t${String(take).padStart(2, "0")}`,
-      gapAfter: l.sceneEnd ? GAP.scene : l.last ? GAP.paragraph : GAP.sentence,
+      gapAfter: l.sceneEnd ? gaps.scene : l.last ? gaps.paragraph : gaps.sentence,
       text: l.text,
     };
   });
@@ -126,6 +130,7 @@ const prep = (dir) => {
       "You are a seasoned storyteller narrating a short documentary-style money lesson for adults. Warm, grounded, human, like telling a friend a hard truth over coffee. Unhurried natural pace. Slow down on every number and let it land. Take a small pause before the punchline. A hint of dry irony about the mistake. Never rushed, never shouty, never robotic.",
     trimSilence: true,
     tempo: existing.tempo ?? 1,
+    ...(existing.gaps && { gaps: existing.gaps }),
     batchBy: "take",
     lines: out,
   };
@@ -184,6 +189,18 @@ const exportVo = (dir) => {
     JSON.stringify({ durationInSeconds: total, ...(process.argv.includes("--loop") && { loop: true }), lines: rows }, null, 2) + "\n",
   );
   console.log(`✓ ${path.relative(ROOT, mp3)}  ${total.toFixed(2)}s, ${Math.round((words / total) * 60)} wpm\n✓ vo-timestamps.md`);
+
+  // A batched TTS take is split back into lines at its pauses; when a pause is missed one line
+  // swallows part of the next (p4: line 17 at 2.5 words/s, line 18 at 5.7). Flag lines far off the median pace.
+  const pace = manifest.lines
+    .filter((l) => l.text.split(/\s+/).length >= 5) // "Vì sao?" and loop fragments are naturally off-pace
+    .map((l) => ({ id: l.id, wps: l.text.split(/\s+/).length / l.durationInSeconds }));
+  const sorted = pace.map((p) => p.wps).sort((a, b) => a - b);
+  const median = sorted[Math.floor(sorted.length / 2)];
+  const odd = pace.filter((p) => p.wps < median * 0.7 || p.wps > median * 1.4);
+  if (odd.length) {
+    console.warn(`⚠ check the split (pace vs median ${median.toFixed(1)} words/s): ${odd.map((p) => `${p.id} ${p.wps.toFixed(1)}`).join(", ")}`);
+  }
 };
 
 const [cmd, dir] = process.argv.slice(2);

@@ -27,3 +27,11 @@ reference/*
 
 # reference videos downloaded for analysis (third-party, not ours)
 Test/*.mp4
+
+# Map project: third-party reference videos + Production Engine zip (study only), and our renders
+Map/*.mp4
+Map/*.zip
+Map/**/*.mp4
+# frames + transcripts cut from third-party videos for analysis (study only; our findings are in the .md reports)
+Map/phan-tich/*.jpg
+Map/phan-tich-doi-thu/_work/
