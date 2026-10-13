@@ -20,16 +20,13 @@ import { SfxCues, type SfxCue } from "../../src/series/pvr/sfx";
 import { CLAMP, FONT, prog } from "../../Style Library/kit-common";
 import { KaraokeSubs } from "../../Style Library/subs";
 import {
-  Atlas, ATLAS, AtlasSub, BigGold, camAt, CountryShape, DataCard, type Fill, type GeoCam, ImgSticker, MapLabel, Pulse,
-  Question, RegionFill, Sticker, toScreen, VnIslands, YearRibbon,
+  ATLAS, Atlas, AtlasSub, beats, BigGold, camAt, CountryShape, DataCard, type Fill, type GeoCam, ImgSticker, MapLabel, Pulse, Question, RegionFill, show, Sticker, toScreen, VnIslands, YearRibbon,
 } from "../../Style Library/I-toy-atlas/toy-atlas";
 
 const FPS = 30;
 const IMG = "images/p5-trung-quoc-mui-gio/cut";
 const TV = "images/i-singapore/cut/i-09-tv.png";
-const line = (id: string) => timing.lines.find((l) => l.id === id)!;
-/** Absolute frame where VO line `id` is k of the way through. */
-const at = (id: string, k = 0) => Math.round((line(id).start + (line(id).end - line(id).start) * k) * FPS);
+const { at } = beats(timing, FPS);
 
 const VIEW = {
   laocai: { lon: 103.95, lat: 22.45, zoom: 70 },
@@ -56,7 +53,6 @@ const KASHGAR: [number, number] = [75.99, 39.47];
 const LAOCAI: [number, number] = [103.96, 22.5];
 const WAKHJIR: [number, number] = [74.47, 37.08];
 
-const show = (f: number, a: number, b = Infinity) => Math.min(prog(f, a, 5), b === Infinity ? 1 : 1 - prog(f, b, 5));
 
 /** Analog clock (hours as a decimal, e.g. 10.27); `digital` adds h:mm under it. */
 const Clock: React.FC<{ x: number; y: number; r: number; hours: number; f: number; at: number; out?: number; digital?: boolean; dark?: boolean }> = ({

@@ -18,15 +18,12 @@ import { SfxCues, type SfxCue } from "../../src/series/pvr/sfx";
 import { CLAMP, FONT, prog } from "../../Style Library/kit-common";
 import { KaraokeSubs } from "../../Style Library/subs";
 import {
-  Atlas, ATLAS, AtlasSub, BigGold, camAt, DataCard, type Fill, type GeoCam, ImgSticker, MapLabel, PegImg, Pulse,
-  Question, RegionFill, Route, routeHead, Stamp, toScreen, Track, VnIslands, YearRibbon,
+  ATLAS, Atlas, AtlasSub, beats, BigGold, camAt, DataCard, type Fill, type GeoCam, ImgSticker, MapLabel, PegImg, pts, Pulse, Question, RegionFill, Route, routeHead, show, Stamp, toScreen, Track, VnIslands, YearRibbon,
 } from "../../Style Library/I-toy-atlas/toy-atlas";
 
 const FPS = 30;
 const IMG = "images/p3-dbscl-sut-lun/cut";
-const line = (id: string) => timing.lines.find((l) => l.id === id)!;
-/** Absolute frame where VO line `id` is k of the way through. */
-const at = (id: string, k = 0) => Math.round((line(id).start + (line(id).end - line(id).start) * k) * FPS);
+const { at } = beats(timing, FPS);
 
 const VIEW = {
   vn: { lon: 109.8, lat: 14.8, zoom: 19 },
@@ -73,8 +70,6 @@ const MEKONG: [number, number][] = [
 const HANOI: [number, number] = [105.85, 21.03];
 const DELTA_C: [number, number] = [105.6, 9.9];
 
-const show = (f: number, a: number, b = Infinity) => Math.min(prog(f, a, 5), b === Infinity ? 1 : 1 - prog(f, b, 5));
-const pts = (cam: GeoCam, ll: [number, number][]) => ll.map(([lo, la]) => toScreen(cam, lo, la));
 
 /** A measuring stick filled from the bottom (fill = p of its height). */
 const Ruler: React.FC<{ x: number; y: number; h: number; p: number; color: string; o: number }> = ({ x, y, h, p, color, o }) => (

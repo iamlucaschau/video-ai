@@ -19,8 +19,7 @@ import { SfxCues, type SfxCue } from "../../src/series/pvr/sfx";
 import { CLAMP, FONT, prog } from "../../Style Library/kit-common";
 import { KaraokeSubs } from "../../Style Library/subs";
 import {
-  Atlas, ATLAS, AtlasSub, BigGold, camAt, DataCard, type Fill, Flag, type GeoCam, ImgSticker, MapLabel, PegImg,
-  Pulse, Question, Route, routeHead, Sticker, toScreen, Track, VnIslands, YearRibbon,
+  ATLAS, Atlas, AtlasSub, beats, BigGold, camAt, count, DataCard, type Fill, Flag, type GeoCam, ImgSticker, MapLabel, PegImg, pts, Pulse, Question, Route, routeHead, show, Sticker, toScreen, Track, vertexP, VnIslands, YearRibbon,
 } from "../../Style Library/I-toy-atlas/toy-atlas";
 
 const FPS = 30;
@@ -28,9 +27,7 @@ const IMG = "images/p2-duong-sat-cao-toc/cut";
 /** Lucas's v2 images (image-prompts.md); vector / tinted stand-ins until they exist. */
 const HAS = { pho: true, comtam: true, steam: true };
 
-const line = (id: string) => timing.lines.find((l) => l.id === id)!;
-/** Absolute frame where VO line `id` is k of the way through. */
-const at = (id: string, k = 0) => Math.round((line(id).start + (line(id).end - line(id).start) * k) * FPS);
+const { at } = beats(timing, FPS);
 
 const VIEW = {
   vn: { lon: 109.8, lat: 14.8, zoom: 19 },
@@ -66,15 +63,6 @@ const KM1221 = 12;
 const HANOI: [number, number] = [105.85, 21.03];
 const HCM: [number, number] = [106.7, 10.78];
 
-const show = (f: number, a: number, b = Infinity) => Math.min(prog(f, a, 5), b === Infinity ? 1 : 1 - prog(f, b, 5));
-const pts = (cam: GeoCam, ll: [number, number][]) => ll.map(([lo, la]) => toScreen(cam, lo, la));
-/** Fraction along a screen polyline at vertex i. */
-const vertexP = (ps: [number, number][], i: number) => {
-  const len = (n: number) => ps.slice(1, n + 1).reduce((s, q, k) => s + Math.hypot(q[0] - ps[k][0], q[1] - ps[k][1]), 0);
-  return len(i) / len(ps.length - 1);
-};
-const count = (f: number, a: number, d: number, to: number, from = 0, digits = 0) =>
-  interpolate(f, [a, a + d], [from, to], CLAMP).toLocaleString("vi-VN", { minimumFractionDigits: digits, maximumFractionDigits: digits });
 const clock = (hours: number) => `${Math.floor(hours)}:${String(Math.floor((hours % 1) * 60)).padStart(2, "0")}`;
 
 // ── screen layout (vn view): top band over China, open sea east of Hainan, Gulf of Thailand rows

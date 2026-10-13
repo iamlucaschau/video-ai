@@ -9,7 +9,7 @@
  *
  *   node scripts/episode.mjs export "Poor vs Rich Daily/episodes/ep01-buy-their-tools"
  *     After `npm run voiceover -- voiceover/<slug>.json`: lays the lines out with
- *     their pauses, writes <episode>/vo.mp3 + vo-timestamps.md, and
+ *     their pauses, writes <episode>/vo.mp3 (local listening copy, git-ignored) + vo-timestamps.md, and
  *     src/voiceover/<slug>.timing.json for Remotion. Add --loop when the script
  *     ends on a fragment that runs into the hook (no end hold, style library §2.5).
  */

@@ -1,7 +1,7 @@
 # VO timestamps — p4-malacca-kra
 
 Voice: Orus · model: gemini-3.8-flash-tts · tempo ×1.1
-Duration: **63.58 s** (1:03.58) · 242 words · **228 wpm** overall
+Duration: **64.72 s** (1:04.72) · 242 words · **224 wpm** overall
 
 | # | Scene | Start | End | Text |
 |---|-------|-------|-----|------|
@@ -21,6 +21,6 @@ Duration: **63.58 s** (1:03.58) · 242 words · **228 wpm** overall
 | 14 | S6 | 0:43.41 | 0:45.75 | Thứ ba, lo ngại về môi trường và an ninh. |
 | 15 | S7 | 0:46.00 | 0:52.09 | Nhưng lý do oái oăm nhất: phần lớn tàu vẫn phải ghé Singapore, để giao hàng, lấy nhiên liệu, sửa chữa. |
 | 16 | S7 | 0:52.15 | 0:54.81 | Lối tắt có đẹp mấy, cũng không bỏ được Singapore. |
-| 17 | S8 | 0:55.06 | 0:58.11 | Năm hai nghìn hai mươi ba, Thái Lan lại đưa ra phương án mới. |
-| 18 | S8 | 0:58.17 | 1:02.74 | Không đào kênh, mà xây cầu đất liền: cảng, đường sắt và đường ống dầu. |
-| 19 | S8 | 1:02.80 | 1:03.33 | Còn hiện tại, |
+| 17 | S8 | 0:55.06 | 0:58.51 | Năm hai nghìn hai mươi ba, Thái Lan lại đưa ra phương án mới. |
+| 18 | S8 | 0:58.57 | 1:03.82 | Không đào kênh, mà xây cầu đất liền: cảng, đường sắt và đường ống dầu. |
+| 19 | S8 | 1:03.88 | 1:04.47 | Còn hiện tại, |

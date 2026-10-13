@@ -1,5 +1,5 @@
 {
-  "durationInSeconds": 63.576,
+  "durationInSeconds": 64.71679166666667,
   "loop": true,
   "lines": [
     {
@@ -118,21 +118,21 @@
       "id": "17",
       "scene": "s8",
       "start": 55.06362499999999,
-      "end": 58.11162499999999,
+      "end": 58.51062499999999,
       "text": "Năm hai nghìn hai mươi ba, Thái Lan lại đưa ra phương án mới."
     },
     {
       "id": "18",
       "scene": "s8",
-      "start": 58.17166666666665,
-      "end": 62.74166666666665,
+      "start": 58.57049999999999,
+      "end": 63.81749999999999,
       "text": "Không đào kênh, mà xây cầu đất liền: cảng, đường sắt và đường ống dầu."
     },
     {
       "id": "19",
       "scene": "s8",
-      "start": 62.80183333333332,
-      "end": 63.32583333333332,
+      "start": 63.877083333333324,
+      "end": 64.46708333333332,
       "text": "Còn hiện tại,"
     }
   ]

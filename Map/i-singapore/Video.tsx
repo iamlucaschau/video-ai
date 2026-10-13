@@ -22,15 +22,12 @@ import { SfxCues, type SfxCue } from "../../src/series/pvr/sfx";
 import { CLAMP, FONT, prog } from "../../Style Library/kit-common";
 import { KaraokeSubs } from "../../Style Library/subs";
 import {
-  Atlas, ATLAS, AtlasSub, BigGold, camAt, CountryShape, type Fill, Flag, type GeoCam, ImgSticker, MapLabel, PegImg,
-  Pulse, Route, routeHead, Sticker, toScreen, YearRibbon,
+  ATLAS, Atlas, AtlasSub, beats, BigGold, camAt, count, CountryShape, type Fill, Flag, type GeoCam, ImgSticker, MapLabel, PegImg, pts, Pulse, Route, routeHead, show, Sticker, toScreen, YearRibbon,
 } from "../../Style Library/I-toy-atlas/toy-atlas";
 
 const FPS = 30;
 const IMG = "images/i-singapore/cut";
-const line = (id: string) => timing.lines.find((l) => l.id === id)!;
-/** Absolute frame where VO line `id` is k of the way through. */
-const at = (id: string, k = 0) => Math.round((line(id).start + (line(id).end - line(id).start) * k) * FPS);
+const { at } = beats(timing, FPS);
 
 const SG: [number, number] = [103.82, 1.36];
 const KL: [number, number] = [101.69, 3.14];
@@ -81,11 +78,6 @@ const fillsAt = (f: number): Fill[] => {
   ];
 };
 
-const show = (f: number, a: number, b = Infinity) => Math.min(prog(f, a, 5), b === Infinity ? 1 : 1 - prog(f, b, 5));
-const pts = (cam: GeoCam, ll: number[][]) => ll.map(([lo, la]) => toScreen(cam, lo, la));
-/** Count-up text: from → to between frames a and a + d, formatted vi-VN. */
-const count = (f: number, a: number, d: number, to: number, from = 0, digits = 0) =>
-  interpolate(f, [a, a + d], [from, to], CLAMP).toLocaleString("vi-VN", { minimumFractionDigits: digits, maximumFractionDigits: digits });
 
 const Bubble: React.FC<{ x: number; y: number; f: number; at: number; out?: number }> = ({ x, y, f, at: a, out }) => (
   <Sticker x={x} y={y} f={f} at={a} out={out} s={1.1}>

@@ -35,3 +35,7 @@ Map/**/*.mp4
 # frames + transcripts cut from third-party videos for analysis (study only; our findings are in the .md reports)
 Map/phan-tich/*.jpg
 Map/phan-tich-doi-thu/_work/
+
+# episode-folder vo.mp3 is a local listening copy of public/voiceover/<slug>/vo.mp3 (tracked there)
+Map/**/vo.mp3
+Poor vs Rich Daily/episodes/**/vo.mp3

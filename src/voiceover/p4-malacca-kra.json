@@ -1,7 +1,7 @@
 {
   "name": "p4-malacca-kra",
   "model": "gemini-3.8-flash-tts",
-  "totalSeconds": 60.864,
+  "totalSeconds": 62.006,
   "lines": [
     {
       "id": "01",
@@ -203,7 +203,7 @@
       "text": "Năm hai nghìn hai mươi ba, Thái Lan lại đưa ra phương án mới.",
       "voice": "Orus",
       "src": "voiceover/p4-malacca-kra/17.wav",
-      "durationInSeconds": 3.048,
+      "durationInSeconds": 3.447,
       "tempo": 1.1,
       "hash": "608079dc907c"
     },
@@ -215,7 +215,7 @@
       "text": "Không đào kênh, mà xây cầu đất liền: cảng, đường sắt và đường ống dầu.",
       "voice": "Orus",
       "src": "voiceover/p4-malacca-kra/18.wav",
-      "durationInSeconds": 4.57,
+      "durationInSeconds": 5.247,
       "tempo": 1.1,
       "hash": "c445c84d3279"
     },
@@ -227,7 +227,7 @@
       "text": "Còn hiện tại,",
       "voice": "Orus",
       "src": "voiceover/p4-malacca-kra/19.wav",
-      "durationInSeconds": 0.524,
+      "durationInSeconds": 0.59,
       "tempo": 1.1,
       "hash": "c445c84d3279"
     }

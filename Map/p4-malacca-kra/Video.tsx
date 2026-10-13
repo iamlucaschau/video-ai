@@ -18,17 +18,14 @@ import { SfxCues, type SfxCue } from "../../src/series/pvr/sfx";
 import { CLAMP, prog } from "../../Style Library/kit-common";
 import { KaraokeSubs } from "../../Style Library/subs";
 import {
-  Atlas, ATLAS, AtlasSub, BigGold, camAt, DataCard, type Fill, type GeoCam, ImgSticker, MapLabel, PegImg, Pulse,
-  Question, Route, routeHead, Sticker, toScreen, Track, VnIslands, YearRibbon,
+  ATLAS, Atlas, AtlasSub, beats, BigGold, camAt, DataCard, type Fill, type GeoCam, ImgSticker, MapLabel, PegImg, pts, Pulse, Question, Route, routeHead, show, Sticker, toScreen, Track, vertexP, VnIslands, YearRibbon,
 } from "../../Style Library/I-toy-atlas/toy-atlas";
 
 const FPS = 30;
 const IMG = "images/p4-malacca-kra/cut";
 const BAGS = "images/p2-duong-sat-cao-toc/cut/p-03-money-bags.png";
 const CRANE = "images/i-singapore/cut/i-10-port-crane.png";
-const line = (id: string) => timing.lines.find((l) => l.id === id)!;
-/** Absolute frame where VO line `id` is k of the way through. */
-const at = (id: string, k = 0) => Math.round((line(id).start + (line(id).end - line(id).start) * k) * FPS);
+const { at } = beats(timing, FPS);
 
 const VIEW = {
   sea: { lon: 104.5, lat: 8, zoom: 11 },
@@ -78,12 +75,6 @@ const RANONG: [number, number] = [98.6, 9.97];
 const CHUMPHON: [number, number] = [99.18, 10.48];
 const SINGAPORE: [number, number] = [103.82, 1.3];
 
-const show = (f: number, a: number, b = Infinity) => Math.min(prog(f, a, 5), b === Infinity ? 1 : 1 - prog(f, b, 5));
-const pts = (cam: GeoCam, ll: [number, number][]) => ll.map(([lo, la]) => toScreen(cam, lo, la));
-const vertexP = (ps: [number, number][], i: number) => {
-  const len = (n: number) => ps.slice(1, n + 1).reduce((s, q, k) => s + Math.hypot(q[0] - ps[k][0], q[1] - ps[k][1]), 0);
-  return len(i) / len(ps.length - 1);
-};
 
 /** Ships sailing along a lane between fractions a..b, spaced out, looping. */
 const Fleet: React.FC<{ ps: [number, number][]; a: number; b: number; n: number; f: number; at: number; out: number; speed: number; w: number }> = ({

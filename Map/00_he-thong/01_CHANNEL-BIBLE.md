@@ -114,6 +114,7 @@ Giữ của Engine V2: một hành động bản đồ chính mỗi beat; nhãn 
 7. Nguồn mâu thuẫn đáng kể → **dừng ở Cổng 2**, trình Lucas.
 8. **Lãnh thổ / biên giới tranh chấp** (đặc biệt Biển Đông, Hoàng Sa, Trường Sa) → **dừng ở Cổng 2**, Lucas duyệt cách vẽ. Mặc định: chỉ tô màu các nước trong câu chuyện, nước khác màu đất trung tính, không nhãn.
    - **Bản đồ toàn lãnh thổ Việt Nam** (vd. tuyến Bắc–Nam): theo quy định của Việt Nam phải thể hiện **quần đảo Hoàng Sa và Trường Sa thuộc Việt Nam**. Dữ liệu Natural Earth không bảo đảm điều này → **không dùng nguyên dữ liệu gốc** cho khung có Biển Đông; Lucas duyệt cách vẽ ở Cổng 2 (vẽ bổ sung hai quần đảo cùng màu Việt Nam + nhãn, hoặc cắt khung chỉ còn đất liền khi câu chuyện không cần biển).
+   - **Cách hiển thị chuẩn (Lucas 2026-10-14):** `VnIslands` kiểu "callout" — vài chấm nhỏ trong quầng màu Việt Nam nhạt; nhãn "HOÀNG SA", "TRƯỜNG SA" (42 px, viên thuốc nền tối viền đỏ) căn **lề phải vùng an toàn**, nối về cụm đảo bằng đường mảnh; tự tránh dải chữ trên cùng, vùng phụ đề và nhau. Khi khung có Biển Đông, **cột lề phải giữa khung dành cho hai nhãn này** — hình và chữ khác tránh ra.
    - **Địa giới tỉnh sau sáp nhập (1/7/2025):** dữ liệu tỉnh cũ đã lỗi thời → không vẽ ranh giới tỉnh trừ khi có nguồn hình học mới; số liệu theo tỉnh phải ghi rõ "trước / sau sáp nhập".
 9. Không bịa toạ độ, ranh giới, tuyến đường, ngày, trích dẫn, số liệu, URL, tên nguồn.
 10. Người thật trong lịch sử: hình chibi tôn trọng, không biếm hoạ xúc phạm; không gọi tên cá nhân/tổ chức ngoài nguồn trong chủ đề nhạy cảm.
@@ -135,4 +136,5 @@ Ghi số liệu ở **24 h · 7 ngày · 30 ngày** cho YouTube / Facebook / Ins
 | 2026-10-12 | 5 pillar cân bằng (30/30/20/10/10); Engine V2 chỉ lấy quy trình; người duyệt Lucas, tên kênh chốt sau | Lucas |
 | 2026-10-13 | Sau phân tích 20 video đối thủ: camera đẩy chậm mỗi beat; giọng kể vui vừa phải; giữ phụ đề karaoke; Standard 60–75 s, ~220 wpm; hook mẫu F + 5 kỹ thuật kịch bản; tiêu đề hook vẫn ≤ 5 chữ | Lucas |
 | 2026-10-13 | Tempo mặc định trở lại 1.1 (tập ĐBSCL: 1.0 → 1.1, 217 → 238 wpm) | Lucas |
+| 2026-10-14 | Hoàng Sa, Trường Sa hiển thị kiểu nhãn chỉ dẫn lề phải, chữ 42 px (ngoại lệ luật 48 px cho nhãn nền bản đồ) | Lucas |
 | 2026-10-13 | Phụ đề tối đa 4 chữ/dòng; từ khoá + con số vàng nhạt, chữ đang đọc vàng đậm + to 10 % | Lucas |

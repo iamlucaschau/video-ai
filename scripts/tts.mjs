@@ -573,7 +573,15 @@ const cmdBuild = async (keys, args) => {
       .digest("hex")
       .slice(0, 12);
     const files = group.map((l) => path.join(audioDir, `${l.id}.wav`));
-    const raws = group.map((l) => path.join(rawDir, `${l.id}.wav`));
+    // Raw takes are stored per content hash, so regrouping lines and changing back never
+    // needs a new request (2026-10-14: a test regroup overwrote p4's cached take).
+    const raws = group.map((l) => path.join(rawDir, hash, `${l.id}.wav`));
+    fs.mkdirSync(path.join(rawDir, hash), { recursive: true });
+    // older cache layout: <rawDir>/<id>.wav, valid while the manifest still has this hash
+    group.forEach((l, k) => {
+      const legacy = path.join(rawDir, `${l.id}.wav`);
+      if (!fs.existsSync(raws[k]) && fs.existsSync(legacy) && prevById.get(l.id)?.hash === hash) fs.copyFileSync(legacy, raws[k]);
+    });
     const label =
       group.length > 1
         ? `${group[0].id}–${group[group.length - 1].id}`
@@ -588,7 +596,7 @@ const cmdBuild = async (keys, args) => {
     });
     const cached =
       !args.force &&
-      group.every((l, k) => prevById.get(l.id)?.hash === hash && fs.existsSync(raws[k]));
+      group.every((_, k) => fs.existsSync(raws[k]));
 
     try {
       let parts;

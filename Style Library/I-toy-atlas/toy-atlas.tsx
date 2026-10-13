@@ -41,6 +41,24 @@ export const ATLAS = {
 
 /** Where the map is centred on screen (visual area between the year ribbon and the subtitles). */
 export const MAP_Y = 760;
+/**
+ * Layout zones of the 9:16 frame (Lucas 2026-10-14: most fix-ups in the pilot episodes were
+ * things landing on each other). Place every layer in its zone:
+ * - top: BigGold / DataCard / YearRibbon, centred on y = top.y
+ * - stage: characters, props, the action on the map
+ * - rows: bottom bars, comparison rows, low data cards
+ * - subs: karaoke subtitles only
+ * - islandLane: right edge of the stage, kept free for the Hoàng Sa / Trường Sa tags whenever
+ *   the South China Sea is in frame (VnIslands)
+ */
+export const ZONE = {
+  top: { y: 330, y0: SAFE.top + 20, y1: SAFE.top + 220 },
+  stage: { y0: SAFE.top + 250, y1: 1100 },
+  rows: { y0: 1140, y1: 1320 },
+  subs: { y0: SUB_BOTTOM - 100, y1: SUB_BOTTOM },
+  islandLane: { x0: 600, x1: CANVAS.width - SAFE.right },
+} as const;
+
 /** Minimum length of a camera flight, frames (rule: ≥ 20; v2.1 Lucas wanted a faster pace). */
 export const FLIGHT = 22;
 
@@ -405,22 +423,86 @@ const TRUONG_SA: [number, number][] = [
 export const VnIslands: React.FC<{
   cam: GeoCam; f: number; color: string; o?: number; labels?: boolean;
   hsLabel?: [number, number]; tsLabel?: [number, number];
-}> = ({ cam, f, color, o = 1, labels = true, hsLabel = [40, -60], tsLabel = [0, -110] }) => {
+  /**
+   * "labels" (old): names next to each cluster, placed per episode (hsLabel / tsLabel).
+   * "callout" (default, Lucas 2026-10-14): fewer, smaller dots in a soft halo; names in two dark
+   * tags right-aligned on the safe-zone edge, joined to their cluster by a thin leader, so
+   * they never sit on the coast, on each other or on the subtitles.
+   */
+  mode?: "labels" | "callout";
+}> = ({ cam, f, color, o = 1, labels = true, hsLabel = [40, -60], tsLabel = [0, -110], mode = "callout" }) => {
   const group = (pts: [number, number][]) => pts.map(([lo, la]) => toScreen(cam, lo, la));
   const centre = (ps: [number, number][]) => [ps.reduce((a, p) => a + p[0], 0) / ps.length, ps.reduce((a, p) => a + p[1], 0) / ps.length];
   const hs = group(HOANG_SA);
   const ts = group(TRUONG_SA);
   const [hx, hy] = centre(hs);
   const [tx, ty] = centre(ts);
+  if (mode === "labels") {
+    return (
+      <AbsoluteFill style={{ opacity: o }}>
+        <svg width={CANVAS.width} height={CANVAS.height} style={{ position: "absolute" }}>
+          {[...hs, ...ts].map(([x, y], i) => (
+            <circle key={i} cx={x} cy={y} r={7 + 0.8 * Math.sin(f / 10 + i)} fill={color} stroke={ATLAS.ink} strokeWidth={3} />
+          ))}
+        </svg>
+        {labels && <MapLabel text="QĐ. HOÀNG SA" x={hx + hsLabel[0]} y={hy + hsLabel[1]} size={48} />}
+        {labels && <MapLabel text="QĐ. TRƯỜNG SA" x={tx + tsLabel[0]} y={ty + tsLabel[1]} size={48} />}
+      </AbsoluteFill>
+    );
+  }
+  // callout: tags on the right edge of the safe zone, one above the other
+  const RIGHT = CANVAS.width - SAFE.right - 4;
+  // inside the stage: never on the top band (big words, cards) or the subtitles
+  const TOP = ZONE.top.y1 + 50;
+  const BOTTOM = ZONE.subs.y0 - 70;
+  // 42 px (Lucas 2026-10-14: a touch smaller than the 48 px rule, these are background map names)
+  const tagW = (t: string) => t.length * 26 + 40;
+  const halo = (ps: [number, number][]) => {
+    const xs = ps.map((p) => p[0]);
+    const ys = ps.map((p) => p[1]);
+    return { cx: (Math.min(...xs) + Math.max(...xs)) / 2, cy: (Math.min(...ys) + Math.max(...ys)) / 2,
+      rx: (Math.max(...xs) - Math.min(...xs)) / 2 + 14, ry: (Math.max(...ys) - Math.min(...ys)) / 2 + 14 };
+  };
+  const tags = [
+    { text: "HOÀNG SA", x: hx, y: hy, pts: hs, h: halo(hs) },
+    { text: "TRƯỜNG SA", x: tx, y: ty, pts: ts, h: halo(ts) },
+  ].map((t) => {
+    const w = tagW(t.text);
+    // beside the cluster, unless the tag would cover it: then above (Hoàng Sa) / below (Trường Sa)
+    const covers = t.x > RIGHT - w - 30;
+    const dy = covers ? (t.text === "HOÀNG SA" ? -(t.h.ry + 50) : t.h.ry + 50) : 0;
+    return { ...t, w, ty: Math.min(BOTTOM, Math.max(TOP, t.y + dy)) };
+  });
+  // keep the two tags apart
+  if (tags[1].ty - tags[0].ty < 74) {
+    const mid = (tags[0].ty + tags[1].ty) / 2;
+    tags[0].ty = Math.max(TOP, mid - 37);
+    tags[1].ty = Math.min(BOTTOM, mid + 37);
+  }
+  const onScreen = (x: number, y: number) => x > -40 && x < CANVAS.width + 40 && y > 0 && y < CANVAS.height;
   return (
     <AbsoluteFill style={{ opacity: o }}>
       <svg width={CANVAS.width} height={CANVAS.height} style={{ position: "absolute" }}>
-        {[...hs, ...ts].map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r={7 + 0.8 * Math.sin(f / 10 + i)} fill={color} stroke={ATLAS.ink} strokeWidth={3} />
+        {tags.map((t, k) => (
+          <g key={k}>
+            <ellipse cx={t.h.cx} cy={t.h.cy} rx={t.h.rx} ry={t.h.ry} fill={color} opacity={0.16} stroke={color} strokeOpacity={0.5} strokeWidth={2} />
+            {t.pts.filter((_, i) => i % 2 === 0).map(([x, y], i) => (
+              <circle key={i} cx={x} cy={y} r={5} fill={color} stroke={ATLAS.ink} strokeWidth={2} />
+            ))}
+          </g>
         ))}
+        {labels && tags.filter((t) => onScreen(t.x, t.y)).map((t, k) => {
+          const left = RIGHT - t.w;
+          const ex = Math.min(Math.max(t.x, left), RIGHT);
+          return (
+            <g key={`tag${k}`} style={{ opacity: 0.6 + 0.4 * Math.min(1, o) }}>
+              <line x1={t.h.cx} y1={t.h.cy} x2={t.x < left ? left : ex} y2={t.ty} stroke={ATLAS.white} strokeOpacity={0.75} strokeWidth={3} />
+              <rect x={left} y={t.ty - 30} width={t.w} height={60} rx={30} fill="rgba(22,32,40,0.82)" stroke={color} strokeWidth={4} />
+              <text x={left + t.w / 2} y={t.ty + 14} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={42} fill={ATLAS.white}>{t.text}</text>
+            </g>
+          );
+        })}
       </svg>
-      {labels && <MapLabel text="QĐ. HOÀNG SA" x={hx + hsLabel[0]} y={hy + hsLabel[1]} size={48} />}
-      {labels && <MapLabel text="QĐ. TRƯỜNG SA" x={tx + tsLabel[0]} y={ty + tsLabel[1]} size={48} />}
     </AbsoluteFill>
   );
 };
@@ -688,3 +770,34 @@ export const Question: React.FC<{ x: number; y: number; f: number; at: number; o
     <text y={22} textAnchor="middle" fontFamily={FONT} fontSize={64} fontWeight={800} fill={ATLAS.ink}>?</text>
   </Sticker>
 );
+
+// ------------------------------------------------------------------ episode helpers (shared by every Video.tsx)
+
+type TimedLine = { id: string; start: number; end: number };
+
+/** `at(id, k)`: absolute frame where VO line `id` is k of the way through (k = 0 → its first word). */
+export const beats = (timing: { lines: TimedLine[] }, fps: number) => {
+  const line = (id: string) => {
+    const l = timing.lines.find((x) => x.id === id);
+    if (!l) throw new Error(`No VO line "${id}" in the timing file`);
+    return l;
+  };
+  const at = (id: string, k = 0) => Math.round((line(id).start + (line(id).end - line(id).start) * k) * fps);
+  return { line, at };
+};
+
+/** 0 → 1 fade-in from frame a, back to 0 from frame b (5-frame fades). */
+export const show = (f: number, a: number, b = Infinity) => Math.min(prog(f, a, 5), b === Infinity ? 1 : 1 - prog(f, b, 5));
+
+/** lon/lat points → screen points under a camera. */
+export const pts = (cam: GeoCam, ll: number[][]): [number, number][] => ll.map(([lo, la]) => toScreen(cam, lo, la));
+
+/** Fraction of a screen polyline's length reached at vertex i (to time things that ride along a route). */
+export const vertexP = (ps: [number, number][], i: number) => {
+  const len = (n: number) => ps.slice(1, n + 1).reduce((s, q, k) => s + Math.hypot(q[0] - ps[k][0], q[1] - ps[k][1]), 0);
+  return len(i) / len(ps.length - 1);
+};
+
+/** Count-up text: from → to between frames a and a + d, formatted vi-VN. */
+export const count = (f: number, a: number, d: number, to: number, from = 0, digits = 0) =>
+  interpolate(f, [a, a + d], [from, to], CLAMP).toLocaleString("vi-VN", { minimumFractionDigits: digits, maximumFractionDigits: digits });

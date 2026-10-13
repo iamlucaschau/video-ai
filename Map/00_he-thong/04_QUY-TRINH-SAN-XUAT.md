@@ -44,7 +44,7 @@ node scripts/episode.mjs export "Map/<slug>" --loop
 python -P scripts/words.py <slug> vi
 ```
 - ~1 request TTS / cảnh (Free Tier: 10/ngày/key/model, 4 key). Đổi chữ 1 câu → chỉ tạo lại cảnh đó. Đổi tempo / khoảng nghỉ → **không tốn request**.
-- `export` cảnh báo `⚠ check the split` khi một câu đọc nhanh/chậm bất thường (một lượt TTS nhiều câu bị cắt lệch chỗ ngắt). Khi có cảnh báo: nghe lại câu đó; nếu lệch thì đổi `take` của các câu sau thành lượt riêng trong `voiceover/<slug>.json` (vd. `t08` → `t08b`) rồi chạy lại `npm run voiceover` (tốn 1–2 request).
+- `words.py` nghe lại **file riêng của từng câu** và so chữ đầu / chữ cuối với kịch bản; `export` so tốc độ đọc từng câu. Cả hai in `⚠ check the split` khi một câu bị cắt lệch (một lượt TTS nhiều câu bị cắt lệch chỗ ngắt). Khi có cảnh báo: nghe lại câu đó; nếu lệch thì đổi `take` của các câu sau thành lượt riêng trong `voiceover/<slug>.json` (vd. `t08` → `t08b`) rồi chạy lại `npm run voiceover` (tốn 1–2 request).
 - Kết quả: `src/voiceover/<slug>.timing.json` (mốc thời gian từng câu), `<slug>.words.json` (mốc từng chữ cho phụ đề karaoke), `public/voiceover/<slug>/vo.mp3`.
 
 ## 2. Beat sheet (Cổng 4)
