@@ -128,15 +128,8 @@
       "id": "17",
       "scene": "s8",
       "take": "t08",
-      "gapAfter": 0.06,
-      "text": "Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua."
-    },
-    {
-      "id": "18",
-      "scene": "s8",
-      "take": "t08",
       "gapAfter": 0.25,
-      "text": "Muốn thấy đồng hồ nhảy, cách dễ nhất vẫn là"
+      "text": "Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua."
     }
   ]
 }

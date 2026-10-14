@@ -2,6 +2,8 @@
 
 *v2 (Lucas 2026-10-12): hook có câu hỏi; bỏ cụm "GDP bình quân đầu người" khỏi lời đọc (giữ trong nhãn và sổ nguồn); payoff so 2 con số. Video kiểm nghiệm style I "Toy Atlas" (Lucas 2026-10-10: tiếng Việt trước). Engine: Historical Timeline (+ tiền). Loop seam: câu cuối nối vào câu đầu. 222 tiếng.*
 
+*Nối vòng mềm (Lucas 2026-10-14): bỏ vế bỏ lửng "Thật khó tin, vì năm một nghìn chín trăm sáu mươi lăm,"; lời đọc kết ở câu "Người Malaysia, chưa tới mười hai nghìn." (cùng bản thu). Hình vẫn lặp liền: bản đồ quay về khung đầu trong 0,7 s nhạc sau chữ cuối.*
+
 ---
 
 ## VOICEOVER (English)
@@ -18,7 +20,7 @@ Một hòn đảo chưa đầy sáu trăm cây số vuông. Không tài nguyên.
 
 Nên Singapore dồn hết vào thứ duy nhất họ có: vị trí. Cảng biển, nhà máy, ngân hàng. Họ còn lấn biển, nới rộng hòn đảo thêm khoảng một phần tư.
 
-Năm hai nghìn hai mươi tư, mỗi người dân Singapore làm ra hơn chín mươi nghìn đô la. Người Malaysia, chưa tới mười hai nghìn. Thật khó tin, vì năm một nghìn chín trăm sáu mươi lăm,
+Năm hai nghìn hai mươi tư, mỗi người dân Singapore làm ra hơn chín mươi nghìn đô la. Người Malaysia, chưa tới mười hai nghìn.
 
 ---
 

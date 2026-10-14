@@ -48,15 +48,12 @@ export const MAP_Y = 760;
  * - stage: characters, props, the action on the map
  * - rows: bottom bars, comparison rows, low data cards
  * - subs: karaoke subtitles only
- * - islandLane: right edge of the stage, kept free for the Hoàng Sa / Trường Sa tags whenever
- *   the South China Sea is in frame (VnIslands)
  */
 export const ZONE = {
   top: { y: 330, y0: SAFE.top + 20, y1: SAFE.top + 220 },
   stage: { y0: SAFE.top + 250, y1: 1100 },
   rows: { y0: 1140, y1: 1320 },
   subs: { y0: SUB_BOTTOM - 100, y1: SUB_BOTTOM },
-  islandLane: { x0: 600, x1: CANVAS.width - SAFE.right },
 } as const;
 
 /** Minimum length of a camera flight, frames (rule: ≥ 20; v2.1 Lucas wanted a faster pace). */
@@ -140,6 +137,17 @@ export const camAt = (keys: GeoCam[], f: number, push = 0, cap = 0.2): GeoCam =>
     settled = k.at + dur;
   }
   return { ...cam, zoom: cam.zoom * grow(settled, f) };
+};
+
+/**
+ * Loop seam: the slow push keeps creeping in on the last hold, so the final frame would be a few %
+ * closer than the opening frame and the replay jumps. Retargets the last key's zoom so frame
+ * `end - 1` lands exactly on keys[0]'s framing (the last key must be the opening place).
+ */
+export const seamKeys = (keys: GeoCam[], end: number, push = 0, cap = 0.2): GeoCam[] => {
+  const last = keys[keys.length - 1];
+  const z = camAt(keys, end - 1, push, cap).zoom;
+  return [...keys.slice(0, -1), { ...last, zoom: (last.zoom * keys[0].zoom) / z }];
 };
 
 /** Screen position of a lon/lat under a camera. */
@@ -356,7 +364,9 @@ export const MapLabel: React.FC<{ text: string; x: number; y: number; o?: number
   </svg>
 );
 
-export type FlagKind = "uk" | "singapore" | "malaysia" | "vietnam";
+/** Five-point star, unit radius (flag stars). */
+const STAR = "M0,-1 L0.2245,-0.309 L0.951,-0.309 L0.3633,0.118 L0.5878,0.809 L0,0.382 L-0.5878,0.809 L-0.3633,0.118 L-0.951,-0.309 L-0.2245,-0.309 Z";
+export type FlagKind = "uk" | "singapore" | "malaysia" | "vietnam" | "thailand" | "china" | "brunei";
 
 export const Flag: React.FC<{ kind: FlagKind; w?: number; f?: number }> = ({ kind, w = 64, f = 0 }) => {
   const h = w * 0.62;
@@ -397,13 +407,91 @@ export const Flag: React.FC<{ kind: FlagKind; w?: number; f?: number }> = ({ kin
         {kind === "vietnam" && (
           <g>
             <rect width={w} height={h} fill="#DA251D" />
-            <path transform={`translate(${w / 2} ${h / 2}) scale(${h * 0.3})`} fill="#FFCD00"
-              d="M0,-1 L0.2245,-0.309 L0.951,-0.309 L0.3633,0.118 L0.5878,0.809 L0,0.382 L-0.5878,0.809 L-0.3633,0.118 L-0.951,-0.309 L-0.2245,-0.309 Z" />
+            <path transform={`translate(${w / 2} ${h / 2}) scale(${h * 0.3})`} fill="#FFCD00" d={STAR} />
+          </g>
+        )}
+        {kind === "china" && (
+          <g fill="#FFDE00">
+            <rect width={w} height={h} fill="#DE2910" />
+            {([[0.167, 0.25, 0.15], [0.333, 0.1, 0.05], [0.4, 0.2, 0.05], [0.4, 0.35, 0.05], [0.333, 0.45, 0.05]] as const).map(([x, y, r], i) => (
+              <path key={i} transform={`translate(${w * x} ${h * y}) scale(${h * r})`} d={STAR} />
+            ))}
+          </g>
+        )}
+        {kind === "brunei" && (
+          <g>
+            {/* simplified: yellow field, white over black diagonal band, red crest reduced to crescent + mast */}
+            <rect width={w} height={h} fill="#F7E017" />
+            <path d={`M0 ${h * 0.1} L${w} ${h * 0.62} L${w} ${h * 0.8} L0 ${h * 0.28} Z`} fill="#FFFFFF" />
+            <path d={`M0 ${h * 0.28} L${w} ${h * 0.8} L${w} ${h * 0.96} L0 ${h * 0.44} Z`} fill="#1E1E1E" />
+            <path d={`M${w * 0.36} ${h * 0.5} A ${h * 0.2} ${h * 0.2} 0 0 0 ${w * 0.64} ${h * 0.5} A ${h * 0.15} ${h * 0.14} 0 0 1 ${w * 0.36} ${h * 0.5} Z`} fill="#CE1126" />
+            <rect x={w * 0.49} y={h * 0.18} width={w * 0.02} height={h * 0.38} fill="#CE1126" />
+            <path d={`M${w * 0.42} ${h * 0.24} Q${w * 0.5} ${h * 0.12} ${w * 0.58} ${h * 0.24} Z`} fill="#CE1126" />
+          </g>
+        )}
+        {kind === "thailand" && (
+          <g>
+            <rect width={w} height={h} fill="#A51931" />
+            <rect y={h / 6} width={w} height={(h * 2) / 3} fill="#F4F5F8" />
+            <rect y={h / 3} width={w} height={h / 3} fill="#2D2A4A" />
           </g>
         )}
         <rect width={w} height={h} fill="none" stroke={ATLAS.ink} strokeWidth={2} />
       </g>
     </g>
+  );
+};
+
+/**
+ * Country name + flag pinned to the map, and a gold outline that flashes when the VO says the
+ * name (Lucas 2026-10-14: viewers must recognise every country the story names, not only by its
+ * colour). Use for countries the VO names or the map colours; background countries stay unlabelled.
+ * - `anchor` (lon/lat) sits on the country's land in the shots where it is named; the tag follows
+ *   the camera and fades out near the safe-zone edges (like the island pins).
+ * - `from` pops the tag in (first mention); `o` hides it in beats where the frame already has two
+ *   text elements or the tag would sit on a prop.
+ * - `glow`: frames where the name is spoken; each flashes the outline twice (~1 s).
+ */
+export const CountryTag: React.FC<{
+  cam: GeoCam; f: number; name: string; label: string; flag?: FlagKind; anchor: [number, number];
+  from?: number; o?: number; glow?: number[];
+}> = ({ cam, f, name, label, flag, anchor, from = -100, o = 1, glow = [] }) => {
+  const c = byName.get(name);
+  const flash = Math.max(0, ...glow.map((g) => (f >= g && f < g + 30 ? Math.sin((Math.PI * 2 * (f - g)) / 30) ** 2 : 0)));
+  const [x, y] = toScreen(cam, ...anchor);
+  const SIZE = 52;
+  const FW = 58; // flag width
+  const tw = label.length * SIZE * 0.6;
+  const w = (flag ? FW + 14 : 0) + tw;
+  const L = SAFE.left;
+  const R = CANVAS.width - SAFE.right;
+  const inside = Math.min(x - L, R - x, y - ZONE.top.y1, ZONE.subs.y0 - 20 - y);
+  const v = o * interpolate(inside, [0, 40], [0, 1], CLAMP) * (f >= from ? 1 : 0);
+  const k = f >= from ? pop(f, from) : 0;
+  const left = Math.min(R - w, Math.max(L, x - w / 2));
+  const [cx, cy] = base(cam.lon, cam.lat);
+  const z = cam.zoom;
+  return (
+    <svg width={CANVAS.width} height={CANVAS.height} style={{ position: "absolute" }}>
+      {c && flash > 0 && (
+        <g style={{ translate: `${CX - cx * z}px ${MAP_Y - cy * z}px`, scale: z, transformOrigin: "0 0" }}>
+          {/* gold halo + white core: reads on any fill colour */}
+          <path d={c.d} fill={ATLAS.white} fillOpacity={0.14 * flash} stroke={ATLAS.gold} strokeOpacity={flash} strokeWidth={16 / z} strokeLinejoin="round" />
+          <path d={c.d} fill="none" stroke={ATLAS.white} strokeOpacity={flash} strokeWidth={5 / z} strokeLinejoin="round" />
+        </g>
+      )}
+      {v > 0 && (
+        <g opacity={v} style={{ translate: `${left + w / 2}px ${y}px`, scale: k }}>
+          {flag && (
+            <g style={{ translate: `${-w / 2}px ${-FW * 0.62 - 14}px` }}>
+              <Flag kind={flag} w={FW} f={f} />
+            </g>
+          )}
+          <text x={-w / 2 + (flag ? FW + 14 : 0) + tw / 2} y={SIZE * 0.36} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={SIZE}
+            fill={ATLAS.white} stroke={ATLAS.ink} strokeWidth={9} strokeLinejoin="round" paintOrder="stroke" letterSpacing={1}>{label}</text>
+        </g>
+      )}
+    </svg>
   );
 };
 
@@ -415,90 +503,51 @@ const TRUONG_SA: [number, number][] = [
 ];
 
 /**
- * Quần đảo Hoàng Sa + Trường Sa, always shown (with labels) when a frame
- * includes Vietnam's whole coast. Fill "Paracel Is." / "Spratly Is." with the
- * same colour in `fills` too. Label offsets (px from each cluster's centre) let
- * a layout move the names off other content.
+ * Quần đảo Hoàng Sa + Trường Sa. The island dots (Vietnam's colour) are drawn whenever a frame
+ * includes Vietnam's whole coast. Names follow the "map pin" look (Lucas 2026-10-14): one red dot
+ * with a white ring per archipelago, a white name with a dark outline beside it, pinned to the map
+ * so it moves with the camera, and faded in only while the pin is inside the safe stage (so it
+ * appears in the shots the camera goes to, never as a fixed overlay). Fill "Paracel Is." /
+ * "Spratly Is." with the same colour in `fills` too.
  */
-export const VnIslands: React.FC<{
-  cam: GeoCam; f: number; color: string; o?: number; labels?: boolean;
-  hsLabel?: [number, number]; tsLabel?: [number, number];
-  /**
-   * "labels" (old): names next to each cluster, placed per episode (hsLabel / tsLabel).
-   * "callout" (default, Lucas 2026-10-14): fewer, smaller dots in a soft halo; names in two dark
-   * tags right-aligned on the safe-zone edge, joined to their cluster by a thin leader, so
-   * they never sit on the coast, on each other or on the subtitles.
-   */
-  mode?: "labels" | "callout";
-}> = ({ cam, f, color, o = 1, labels = true, hsLabel = [40, -60], tsLabel = [0, -110], mode = "callout" }) => {
+export const VnIslands: React.FC<{ cam: GeoCam; f: number; color: string; o?: number; labels?: boolean }> = ({
+  cam, f, color, o = 1, labels = true,
+}) => {
   const group = (pts: [number, number][]) => pts.map(([lo, la]) => toScreen(cam, lo, la));
   const centre = (ps: [number, number][]) => [ps.reduce((a, p) => a + p[0], 0) / ps.length, ps.reduce((a, p) => a + p[1], 0) / ps.length];
   const hs = group(HOANG_SA);
   const ts = group(TRUONG_SA);
-  const [hx, hy] = centre(hs);
-  const [tx, ty] = centre(ts);
-  if (mode === "labels") {
-    return (
-      <AbsoluteFill style={{ opacity: o }}>
-        <svg width={CANVAS.width} height={CANVAS.height} style={{ position: "absolute" }}>
-          {[...hs, ...ts].map(([x, y], i) => (
-            <circle key={i} cx={x} cy={y} r={7 + 0.8 * Math.sin(f / 10 + i)} fill={color} stroke={ATLAS.ink} strokeWidth={3} />
-          ))}
-        </svg>
-        {labels && <MapLabel text="QĐ. HOÀNG SA" x={hx + hsLabel[0]} y={hy + hsLabel[1]} size={48} />}
-        {labels && <MapLabel text="QĐ. TRƯỜNG SA" x={tx + tsLabel[0]} y={ty + tsLabel[1]} size={48} />}
-      </AbsoluteFill>
-    );
-  }
-  // callout: tags on the right edge of the safe zone, one above the other
-  const RIGHT = CANVAS.width - SAFE.right - 4;
-  // inside the stage: never on the top band (big words, cards) or the subtitles
-  const TOP = ZONE.top.y1 + 50;
-  const BOTTOM = ZONE.subs.y0 - 70;
-  // 42 px (Lucas 2026-10-14: a touch smaller than the 48 px rule, these are background map names)
-  const tagW = (t: string) => t.length * 26 + 40;
-  const halo = (ps: [number, number][]) => {
-    const xs = ps.map((p) => p[0]);
-    const ys = ps.map((p) => p[1]);
-    return { cx: (Math.min(...xs) + Math.max(...xs)) / 2, cy: (Math.min(...ys) + Math.max(...ys)) / 2,
-      rx: (Math.max(...xs) - Math.min(...xs)) / 2 + 14, ry: (Math.max(...ys) - Math.min(...ys)) / 2 + 14 };
-  };
-  const tags = [
-    { text: "HOÀNG SA", x: hx, y: hy, pts: hs, h: halo(hs) },
-    { text: "TRƯỜNG SA", x: tx, y: ty, pts: ts, h: halo(ts) },
-  ].map((t) => {
-    const w = tagW(t.text);
-    // beside the cluster, unless the tag would cover it: then above (Hoàng Sa) / below (Trường Sa)
-    const covers = t.x > RIGHT - w - 30;
-    const dy = covers ? (t.text === "HOÀNG SA" ? -(t.h.ry + 50) : t.h.ry + 50) : 0;
-    return { ...t, w, ty: Math.min(BOTTOM, Math.max(TOP, t.y + dy)) };
-  });
-  // keep the two tags apart
-  if (tags[1].ty - tags[0].ty < 74) {
-    const mid = (tags[0].ty + tags[1].ty) / 2;
-    tags[0].ty = Math.max(TOP, mid - 37);
-    tags[1].ty = Math.min(BOTTOM, mid + 37);
-  }
-  const onScreen = (x: number, y: number) => x > -40 && x < CANVAS.width + 40 && y > 0 && y < CANVAS.height;
+  const L = SAFE.left;
+  const R = CANVAS.width - SAFE.right;
+  const T = ZONE.top.y1;
+  const B = ZONE.subs.y0 - 20;
+  const SIZE = 42; // Lucas 2026-10-14: a touch under the 48 px rule, these are background map names
+  const pins = [
+    { text: "Hoàng Sa", c: centre(hs), above: true },
+    { text: "Trường Sa", c: centre(ts), above: false },
+  ];
+  // names only when the camera is close enough to tell the two archipelagos apart (wide Asia shots: dots only)
+  const near = interpolate(Math.hypot(pins[0].c[0] - pins[1].c[0], pins[0].c[1] - pins[1].c[1]), [200, 300], [0, 1], CLAMP);
   return (
     <AbsoluteFill style={{ opacity: o }}>
       <svg width={CANVAS.width} height={CANVAS.height} style={{ position: "absolute" }}>
-        {tags.map((t, k) => (
-          <g key={k}>
-            <ellipse cx={t.h.cx} cy={t.h.cy} rx={t.h.rx} ry={t.h.ry} fill={color} opacity={0.16} stroke={color} strokeOpacity={0.5} strokeWidth={2} />
-            {t.pts.filter((_, i) => i % 2 === 0).map(([x, y], i) => (
-              <circle key={i} cx={x} cy={y} r={5} fill={color} stroke={ATLAS.ink} strokeWidth={2} />
-            ))}
-          </g>
+        {[...hs, ...ts].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r={4} fill={color} />
         ))}
-        {labels && tags.filter((t) => onScreen(t.x, t.y)).map((t, k) => {
-          const left = RIGHT - t.w;
-          const ex = Math.min(Math.max(t.x, left), RIGHT);
+        {labels && pins.map(({ text, c: [x, y], above }) => {
+          // fade in while the pin is inside the safe stage, out as the camera leaves
+          const inside = Math.min(x - L, R - x, y - T, B - y);
+          const v = near * interpolate(inside, [0, 40], [0, 1], CLAMP);
+          if (v <= 0) return null;
+          const w = text.length * SIZE * 0.55;
+          // Hoàng Sa: name centred above the dot; Trường Sa: name to the right (left if no room)
+          const tx = above ? Math.min(R - w / 2, Math.max(L + w / 2, x)) : x + 22 + w <= R ? x + 22 + w / 2 : x - 22 - w / 2;
+          const ty = above ? y - 26 : y + SIZE * 0.36;
           return (
-            <g key={`tag${k}`} style={{ opacity: 0.6 + 0.4 * Math.min(1, o) }}>
-              <line x1={t.h.cx} y1={t.h.cy} x2={t.x < left ? left : ex} y2={t.ty} stroke={ATLAS.white} strokeOpacity={0.75} strokeWidth={3} />
-              <rect x={left} y={t.ty - 30} width={t.w} height={60} rx={30} fill="rgba(22,32,40,0.82)" stroke={color} strokeWidth={4} />
-              <text x={left + t.w / 2} y={t.ty + 14} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={42} fill={ATLAS.white}>{t.text}</text>
+            <g key={text} opacity={v}>
+              <circle cx={x} cy={y} r={11} fill="#E53935" stroke={ATLAS.white} strokeWidth={4} />
+              <text x={tx} y={ty} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={SIZE}
+                fill={ATLAS.white} stroke="rgba(10,20,30,0.85)" strokeWidth={8} strokeLinejoin="round" paintOrder="stroke">{text}</text>
             </g>
           );
         })}
@@ -680,7 +729,10 @@ export const AtlasSub: SubSkin = ({ lines }) => (
         <span key={k}>
           {k ? " " : ""}
           <span style={{
-            display: "inline-block", scale: w.active ? 1.1 : 1, transformOrigin: "50% 80%",
+            // the active word grows 10 % from its centre (≈ 1 px per letter each side) and the 12 px stroke
+            // adds 6 px: reserve that on every word, always, so neighbours never touch and the line never shifts
+            display: "inline-block", margin: `0 ${Math.round(w.text.length * 1.1) + 3}px`,
+            scale: w.active ? 1.1 : 1, transformOrigin: "50% 80%",
             color: w.active ? "#FFB81C" : w.key ? "#FFE58F" : ATLAS.white,
             WebkitTextStroke: `12px ${ATLAS.ink}`, paintOrder: "stroke fill",
             textShadow: "0 6px 12px rgba(0,0,0,0.45)",
@@ -741,6 +793,36 @@ export const RegionFill: React.FC<{
         <path d={d} fill={pattern ?? fill} clipPath={`url(#rf-${id})`} />
         <path d={d} fill="none" stroke={stroke} strokeWidth={3 / z} strokeDasharray={dash.split(" ").map((v) => Number(v) / z).join(" ")}
           clipPath={`url(#rf-${id})`} />
+      </g>
+    </svg>
+  );
+};
+
+/**
+ * A band of colour hugging the coasts of `countries` inside `ring` (lon/lat), `width` px wide on
+ * screen: an illustrative "sphere of influence along the coast" (e.g. old Brunei around Borneo).
+ * The countries' outlines are stroked twice as wide and clipped to their own land, so only the
+ * inland half shows; `ring` keeps it to one island. Mark it "minh hoạ" in the description.
+ */
+export const CoastBand: React.FC<{
+  cam: GeoCam; id: string; countries: string[]; ring: [number, number][]; color: string; width?: number; o?: number;
+}> = ({ cam, id, countries, ring, color, width = 26, o = 1 }) => {
+  const cs = countries.map((n) => byName.get(n)).filter((c): c is Country => !!c);
+  if (!cs.length || o <= 0) return null;
+  const [cx, cy] = base(cam.lon, cam.lat);
+  const z = cam.zoom;
+  const d = cs.map((c) => c.d).join(" ");
+  const r = `${ring.map(([lo, la], i) => `${i ? "L" : "M"} ${base(lo, la).join(" ")}`).join(" ")} Z`;
+  return (
+    <svg width={CANVAS.width} height={CANVAS.height} style={{ position: "absolute", opacity: o }}>
+      <defs>
+        <clipPath id={`cb-land-${id}`}><path d={d} /></clipPath>
+        <clipPath id={`cb-ring-${id}`}><path d={r} /></clipPath>
+      </defs>
+      <g style={{ translate: `${CX - cx * z}px ${MAP_Y - cy * z}px`, scale: z, transformOrigin: "0 0" }}>
+        <g clipPath={`url(#cb-ring-${id})`}>
+          <path d={d} fill="none" stroke={color} strokeWidth={(2 * width) / z} strokeLinejoin="round" clipPath={`url(#cb-land-${id})`} />
+        </g>
       </g>
     </svg>
   );

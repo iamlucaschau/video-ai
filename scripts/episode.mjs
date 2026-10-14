@@ -132,7 +132,11 @@ const prep = (dir) => {
     tempo: existing.tempo ?? 1,
     ...(existing.gaps && { gaps: existing.gaps }),
     batchBy: "take",
-    lines: out,
+    // keep hand-tuned pauses (e.g. a beat after "Không.") for lines whose text did not change
+    lines: out.map((l) => {
+      const old = existing.lines?.find((x) => x.id === l.id && x.text === l.text);
+      return old ? { ...l, gapAfter: old.gapAfter } : l;
+    }),
   };
   fs.writeFileSync(voPath, JSON.stringify(json, null, 2) + "\n");
   console.log(
@@ -147,6 +151,9 @@ const exportVo = (dir) => {
   const chunks = [];
   const rows = [];
   const lead = process.argv.includes("--loop") ? LOOP_LEAD : LEAD;
+  // --tail=0.7: music-only seconds after the last word (map "soft loop", Lucas 2026-10-14: the VO ends
+  // on a whole sentence and the picture returns to the opening frame in the tail)
+  const tail = Number(process.argv.find((x) => x.startsWith("--tail="))?.slice(7)) || 0;
   let t = lead;
   chunks.push(Buffer.alloc(Math.round(lead * sr) * 2));
   for (const line of manifest.lines) {
@@ -186,7 +193,7 @@ const exportVo = (dir) => {
   fs.writeFileSync(path.join(ep.abs, "vo-timestamps.md"), md);
   fs.writeFileSync(
     path.join(ROOT, "src", "voiceover", `${ep.slug}.timing.json`),
-    JSON.stringify({ durationInSeconds: total, ...(process.argv.includes("--loop") && { loop: true }), lines: rows }, null, 2) + "\n",
+    JSON.stringify({ durationInSeconds: total, ...(process.argv.includes("--loop") && { loop: true }), ...(tail && { tail }), lines: rows }, null, 2) + "\n",
   );
   console.log(`✓ ${path.relative(ROOT, mp3)}  ${total.toFixed(2)}s, ${Math.round((words / total) * 60)} wpm\n✓ vo-timestamps.md`);
 
@@ -208,7 +215,7 @@ try {
   if (cmd === "prep" && dir) prep(dir);
   else if (cmd === "export" && dir) exportVo(dir);
   else {
-    console.log('Usage: node scripts/episode.mjs prep|export "<episode dir>" [--loop]');
+    console.log('Usage: node scripts/episode.mjs prep|export "<episode dir>" [--loop] [--tail=0.7]');
     process.exitCode = 1;
   }
 } catch (err) {

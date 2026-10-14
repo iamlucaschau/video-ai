@@ -1,106 +1,93 @@
-# Kịch bản FINAL — "Eo Malacca chật như vậy, sao Thái Lan không đào kênh Kra?"
+# Kịch bản FINAL v2 — "Lối tắt hơn 300 năm chưa ai đào"
 
-*Cổng 3 (2026-10-13). Pillar P4 · Journey Route (+ Money+Maps) · Standard 60–75 s · 242 chữ ≈ 62 s ở tempo 1.1 · giọng "vui vừa phải". Chỉ dùng nhận định đã duyệt ở Cổng 2 (`cong-2_so-nguon.md`). Loop seam: "Còn hiện tại," + câu đầu.*
+*Cổng 3 v2 (Lucas duyệt 2026-10-14). Pillar P4 · Journey Route (+ Money+Maps) · Standard 60–75 s · 273 chữ ≈ 68 s ở tempo 1.1 · giọng "vui vừa phải" · theo 7 luật kịch bản mới (Bible §3 mục 6–11). Loop seam: "Vì vậy hôm nay," + câu đầu. Bản đề xuất, so sánh v1 ↔ v2 và nhận định mới: `kich-ban-v2-de-xuat.md`. v1: `v1/`.*
 
 ---
 
 ## VOICEOVER (English)
 
-Gần một phần ba lượng dầu chở bằng đường biển của thế giới phải chen qua một eo biển. Ngay phía trên có một lối tắt, mà gần ba trăm năm mươi năm nay chưa ai đào.
+Gần một phần ba lượng dầu chở bằng đường biển của thế giới phải chen qua một eo biển. Ngay phía trên có một lối tắt, mà hơn ba trăm năm nay chưa ai đào.
 
-Thử theo một con tàu dầu từ Trung Đông sang Đông Á. Muốn vào Biển Đông, nó phải vòng xuống tận eo Malacca.
+Hình dung một con tàu dầu đi từ Trung Đông sang Đông Á. Muốn vào Biển Đông, nó phải vòng xuống tận eo Malacca.
 
-Năm hai nghìn hai mươi lăm, hơn một trăm nghìn lượt tàu chen qua đây. Chỗ hẹp nhất, gần Singapore, chỉ rộng khoảng hai, ba cây số.
+Năm ngoái, hơn một trăm nghìn lượt tàu chen qua đây. Chỗ hẹp nhất, gần Singapore, chỉ rộng khoảng hai, ba cây số. Kẹt xe giờ cao điểm, nhưng là trên biển.
 
-Trong khi đó, ở miền Nam Thái Lan, eo đất Kra chỉ rộng hơn bốn mươi cây số. Đào một con kênh ở đây, tàu khỏi phải vòng qua Singapore.
+Trong khi đó, eo đất Kra của Thái Lan chỉ rộng hơn bốn mươi cây số. Đào một con kênh ở đây, tàu khỏi phải vòng qua Singapore.
 
-Ý tưởng này có từ năm một nghìn sáu trăm bảy mươi bảy, thời vua Narai. Bàn đi bàn lại mấy trăm năm, vẫn chưa đào một mét nào.
+Ý tưởng này có từ thời vua Narai, thế kỷ mười bảy. Năm một nghìn tám trăm tám mươi ba, một đoàn kỹ sư Pháp nhân danh công ty kênh Suez tới tận nơi đo đạc. Nhưng Xiêm không cấp phép cho nước phương Tây nào.
 
-Vì sao? Thứ nhất, tốn hàng chục tỷ đô. Thứ hai, lối tắt chỉ tiết kiệm khoảng một đến ba ngày đi biển. Thứ ba, lo ngại về môi trường và an ninh.
+Vậy sao tới giờ vẫn chưa đào? Vì khó có lời. Tốn hàng chục tỷ đô. Mà tàu chỉ về sớm được một đến ba ngày.
 
-Nhưng lý do oái oăm nhất: phần lớn tàu vẫn phải ghé Singapore, để giao hàng, lấy nhiên liệu, sửa chữa. Lối tắt có đẹp mấy, cũng không bỏ được Singapore.
+Năm hai nghìn hai mươi ba, Thái Lan đổi cách: không đào kênh, mà nối hai cảng bằng đường sắt. Chính phủ nói dự án đáng đầu tư. Người dân Chumphon, Ranong thì xuống đường phản đối, lo mất biển, mất vườn sầu riêng.
 
-Năm hai nghìn hai mươi ba, Thái Lan lại đưa ra phương án mới. Không đào kênh, mà xây cầu đất liền: cảng, đường sắt và đường ống dầu. Còn hiện tại,
+Nhưng lý do thật có lẽ nằm ở đây: phần lớn tàu vẫn phải ghé Singapore. Để giao hàng, lấy nhiên liệu, sửa chữa. Lối tắt có ngắn mấy, đường vẫn dẫn về Singapore.
 
 ---
 
 ## Tiêu đề
 
-- **Chính:** Lối tắt gần 350 năm chưa ai đào
+- **Chính:** Lối tắt hơn 300 năm chưa ai đào
 - Eo Malacca chật như vậy, sao Thái Lan không đào kênh Kra?
 - Một phần ba dầu đi biển của thế giới chen qua đây
-- Vì sao tàu dầu phải vòng qua Singapore?
-
-## Cấu trúc (Journey Route + kỹ thuật học từ đối thủ)
-
-| Cảnh | Vai trò | Kỹ thuật |
-|---|---|---|
-| 1 | Ràng buộc + nghịch lý | hook mẫu F (con số lớn + lối tắt chưa đào) |
-| 2 | Xuất phát | "Thử theo một con tàu…" (thử tưởng tượng) |
-| 3 | Chướng ngại leo thang | chi tiết cụ thể: 100.000 lượt tàu, chỗ hẹp 2–3 km |
-| 4 | Lối tắt | so sánh quy mô: hơn 40 km |
-| 5 | Lịch sử | 1677 → "chưa đào một mét nào" |
-| 6 | Ba lý do | câu hỏi treo "Vì sao?" + đánh số |
-| 7 | Twist | "lý do oái oăm nhất" (có nguồn) |
-| 8 | Hiện tại + nối vòng | cầu đất liền 2023 (trung tính) |
+- Vì sao tàu dầu vẫn phải ghé Singapore?
 
 ## Bảng truy vết (câu → nhận định)
 
 | Câu | Lời (rút gọn) | Nhận định |
 |---|---|---|
 | 01 | Gần 1/3 dầu đi biển chen qua một eo biển | C1 |
-| 02 | Ngay phía trên có lối tắt, gần 350 năm chưa ai đào | C5 (1677 → 2026), C4 |
-| 03 | Thử theo một con tàu dầu từ Trung Đông sang Đông Á | — (minh hoạ hành trình) |
-| 04 | Muốn vào Biển Đông, phải vòng xuống eo Malacca | địa lý |
-| 05 | 2025: hơn 100.000 lượt tàu | C2 |
-| 06 | Chỗ hẹp nhất gần Singapore ~2–3 km | C3 |
-| 07 | Eo đất Kra chỉ rộng hơn 40 km | C4 (Wikipedia 44 km; Britannica 40–48 km) |
-| 08 | Đào kênh ở đây, tàu khỏi phải vòng qua Singapore | C4 (địa lý) |
-| 09 | Ý tưởng từ năm 1677, thời vua Narai | C5 |
-| 10 | Bàn mấy trăm năm, chưa đào một mét nào | C5, SRC-007 (kênh chưa khởi công) |
-| 11 | Vì sao? | — |
-| 12 | Tốn hàng chục tỷ đô | C8 |
-| 13 | Chỉ tiết kiệm khoảng 1–3 ngày | C6 |
-| 14 | Lo ngại môi trường và an ninh | C10 |
-| 15 | Phần lớn tàu vẫn phải ghé Singapore (giao hàng, nhiên liệu, sửa chữa) | C9 |
-| 16 | Lối tắt có đẹp mấy, cũng không bỏ được Singapore | C9 (diễn giải) |
-| 17 | 2023 Thái Lan đưa ra phương án mới | C12 |
-| 18 | Cầu đất liền: cảng, đường sắt, đường ống dầu | C12 |
-| 19 | Còn hiện tại, | — (nối vòng) |
+| 02 | Lối tắt hơn 300 năm chưa ai đào | C5 (thế kỷ 17, không nêu năm), C4 |
+| 03–04 | Tàu dầu Trung Đông → Đông Á phải vòng xuống Malacca | địa lý (minh hoạ) |
+| 05 | Năm ngoái hơn 100.000 lượt tàu | C2, C17 (chỉ đúng khi đăng trong 2026) |
+| 06 | Chỗ hẹp nhất ~2–3 km | C3 |
+| 07 | Kẹt xe giờ cao điểm, nhưng là trên biển `[ĐÙA]` | — |
+| 08 | Eo đất Kra hơn 40 km | C4 |
+| 09 | Đào kênh, tàu khỏi vòng qua Singapore | C4 (địa lý) |
+| 10 | Ý tưởng từ thời vua Narai, thế kỷ 17 | C5 |
+| 11 | 1883, đoàn kỹ sư Pháp nhân danh công ty kênh Suez tới đo đạc `[NGƯỜI]` | C13 |
+| 12 | Xiêm không cấp phép cho nước phương Tây nào | C14 |
+| 13–14 | Vậy sao chưa đào? Vì khó có lời. | C6, C8, C9 (tổng hợp) |
+| 15 | Tốn hàng chục tỷ đô | C8 |
+| 16 | Tàu chỉ về sớm 1–3 ngày | C6 |
+| 17 | 2023: không đào kênh, nối hai cảng bằng đường sắt | C12 |
+| 18 | Chính phủ nói dự án đáng đầu tư `[PHE 1]` | C15 |
+| 19 | Người dân Chumphon, Ranong phản đối, lo mất biển, vườn sầu riêng `[PHE 2][NGƯỜI]` | C16 |
+| 20–21 | Phần lớn tàu vẫn ghé Singapore (giao hàng, nhiên liệu, sửa chữa) | C9 |
+| 22 | Lối tắt có ngắn mấy, đường vẫn dẫn về Singapore | C9 (diễn giải) |
 
-Không dùng: "tiết kiệm 1.200 km" (C7, mâu thuẫn đơn vị), con số chi phí cụ thể, chuyện vua Chulalongkorn (C11, 1 nguồn), trạng thái dự án sau 2024, tên nước tài trợ.
+Không dùng: mốc "1677" (C5 hạ ⚠️), "tiết kiệm 1.200 km" (C7), con số chi phí cụ thể, trạng thái cầu đất liền sau 2024, câu "biển có đẹp không?" (chưa đọc được bài gốc).
 
 ## Phụ đề hiển thị (chữ số, `*từ khoá*`)
 
 | Câu | Phụ đề |
 |---|---|
 | 01 | Gần *1/3* lượng dầu chở bằng đường biển của thế giới phải chen qua một eo biển. |
-| 02 | Ngay phía trên có một *lối tắt*, mà gần *350 năm* nay chưa ai đào. |
-| 05 | Năm 2025, hơn *100.000* lượt tàu chen qua đây. |
+| 02 | Ngay phía trên có một *lối tắt*, mà hơn *300 năm* nay chưa ai đào. |
+| 05 | Năm ngoái, hơn *100.000* lượt tàu chen qua đây. |
 | 06 | Chỗ hẹp nhất, gần Singapore, chỉ rộng khoảng *2, 3 km*. |
-| 07 | Trong khi đó, ở miền Nam Thái Lan, eo đất Kra chỉ rộng hơn *40 km*. |
-| 09 | Ý tưởng này có từ năm *1677*, thời vua Narai. |
-| 12 | Thứ 1, tốn *hàng chục tỷ đô*. |
-| 13 | Thứ 2, lối tắt chỉ tiết kiệm khoảng *1–3 ngày* đi biển. |
-| 14 | Thứ 3, lo ngại về môi trường và an ninh. |
-| 15 | Nhưng lý do oái oăm nhất: phần lớn tàu vẫn phải ghé *Singapore*, để giao hàng, lấy nhiên liệu, sửa chữa. |
-| 17 | Năm 2023, Thái Lan lại đưa ra phương án mới. |
-| 18 | Không đào kênh, mà xây *cầu đất liền*: cảng, đường sắt và đường ống dầu. |
+| 08 | Trong khi đó, eo đất Kra của Thái Lan chỉ rộng hơn *40 km*. |
+| 10 | Ý tưởng này có từ thời vua Narai, *thế kỷ 17*. |
+| 11 | Năm *1883*, một đoàn kỹ sư Pháp nhân danh công ty *kênh Suez* tới tận nơi đo đạc. |
+| 14 | Vì *khó có lời*. |
+| 15 | Tốn *hàng chục tỷ đô*. |
+| 16 | Mà tàu chỉ về sớm được *1–3 ngày*. |
+| 17 | Năm *2023*, Thái Lan đổi cách: không đào kênh, mà nối hai cảng bằng *đường sắt*. |
+| 20 | Nhưng lý do thật có lẽ nằm ở đây: phần lớn tàu vẫn phải ghé *Singapore*. |
 
 ## Ghi chú phát âm / giọng
 
-- "Malacca" đọc "Ma-lắc-ca"; "Kra" đọc "Cra"; "Narai" đọc "Na-rai".
-- "Bàn đi bàn lại mấy trăm năm" và "Lối tắt có đẹp mấy" đọc có ý cười nhẹ; "Thứ nhất, thứ hai, thứ ba" đếm rõ.
-- Câu cuối "Còn hiện tại," giữ giọng treo.
+- "Malacca" đọc "Ma-lắc-ca"; "Kra" đọc "Cra"; "Narai" đọc "Na-rai"; "Suez" đọc "Su-ê"; "Chumphon" đọc "Chum-phôn"; "Ranong" đọc "Ra-nông".
+- "Kẹt xe giờ cao điểm, nhưng là trên biển" đọc có ý cười nhẹ; "Vì khó có lời" ngắn, dứt khoát.
+- Câu cuối "Vì vậy hôm nay," giữ giọng treo.
 
-## Câu nối vòng (đã đọc thử)
+## Kết thúc (nối vòng mềm, Lucas 2026-10-14)
 
-"…cảng, đường sắt và đường ống dầu. Còn hiện tại, **gần một phần ba lượng dầu chở bằng đường biển của thế giới phải chen qua một eo biển.**"
+Bỏ vế bỏ lửng "Vì vậy hôm nay,"; lời đọc kết ở câu "Lối tắt có ngắn mấy, đường vẫn dẫn về Singapore." (cùng bản thu, không đọc lại). Hình vẫn lặp liền: khung cuối = khung đầu (`seamKeys`), hình quay về trong câu cuối hoặc trong đoạn nhạc 0,7–0,8 s sau chữ cuối.
 
 ---
 
 ## Sổ số liệu (claim ledger)
 
-Bản đầy đủ: `cong-2_so-nguon.md` (C1–C12, SRC-001…013). C4 đã có nguồn thứ 2 (SRC-013 Britannica: 40–48 km).
+`cong-2_so-nguon.md` (C1–C12, SRC-001…013; C5 hạ ⚠️ cho mốc năm) + `kich-ban-v2-de-xuat.md` mục D (C13–C17, SRC-014…019).
 
-*Bản đồ: Natural Earth; Việt Nam (nhạt) + Hoàng Sa, Trường Sa có nhãn ở mọi khung thấy Biển Đông (Lucas, phương án A). Tuyến tàu, tuyến kênh, cầu đất liền là **sơ đồ minh hoạ**.*
+*Bản đồ: Natural Earth; Việt Nam (nhạt) + Hoàng Sa, Trường Sa (kiểu ghim) ở mọi khung thấy cả bờ biển Việt Nam (Lucas, phương án A). Tuyến tàu, tuyến kênh, đường sắt cầu đất liền là **sơ đồ minh hoạ**.*

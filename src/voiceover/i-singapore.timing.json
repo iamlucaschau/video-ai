@@ -1,6 +1,7 @@
 {
-  "durationInSeconds": 57.58475,
+  "durationInSeconds": 55.15079166666667,
   "loop": true,
+  "tail": 0.7,
   "lines": [
     {
       "id": "01",
@@ -113,13 +114,6 @@
       "start": 52.85608333333334,
       "end": 54.90108333333334,
       "text": "Người Malaysia, chưa tới mười hai nghìn."
-    },
-    {
-      "id": "17",
-      "scene": "s7",
-      "start": 54.96079166666667,
-      "end": 57.334791666666675,
-      "text": "Thật khó tin, vì năm một nghìn chín trăm sáu mươi lăm,"
     }
   ]
 }

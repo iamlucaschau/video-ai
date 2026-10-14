@@ -1,26 +1,27 @@
-# Spec — "Eo Malacca chật như vậy, sao Thái Lan không đào kênh Kra?" (P4 · Journey Route · style I)
+# 01 · EPISODE SPEC v2 — p4-malacca-kra
 
-## SCENE 1 — Hook: 1/3 dầu thế giới + lối tắt chưa ai đào
-- **VO:** "Gần một phần ba lượng dầu chở bằng đường biển của thế giới phải chen qua một eo biển. Ngay phía trên có một lối tắt, mà gần ba trăm năm mươi năm nay chưa ai đào."
+*Lời VO trùng từng chữ với `kich-ban-p4-malacca-kra-FINAL.md` (v2, 2026-10-14). Hình chi tiết: `beat-sheet.md`.*
 
-## SCENE 2 — Hành trình: tàu dầu phải vòng xuống Malacca
-- **VO:** "Thử theo một con tàu dầu từ Trung Đông sang Đông Á. Muốn vào Biển Đông, nó phải vòng xuống tận eo Malacca."
+## SCENE 1 — Hook
+- **VO:** "Gần một phần ba lượng dầu chở bằng đường biển của thế giới phải chen qua một eo biển. Ngay phía trên có một lối tắt, mà hơn ba trăm năm nay chưa ai đào."
 
-## SCENE 3 — Chướng ngại: 100.000 tàu, chỗ hẹp 2–3 km
-- **VO:** "Năm hai nghìn hai mươi lăm, hơn một trăm nghìn lượt tàu chen qua đây. Chỗ hẹp nhất, gần Singapore, chỉ rộng khoảng hai, ba cây số."
+## SCENE 2 — Hành trình
+- **VO:** "Hình dung một con tàu dầu đi từ Trung Đông sang Đông Á. Muốn vào Biển Đông, nó phải vòng xuống tận eo Malacca."
 
-## SCENE 4 — Lối tắt: eo đất Kra hơn 40 km
-- **VO:** "Trong khi đó, ở miền Nam Thái Lan, eo đất Kra chỉ rộng hơn bốn mươi cây số. Đào một con kênh ở đây, tàu khỏi phải vòng qua Singapore."
+## SCENE 3 — Nút thắt
+- **VO:** "Năm ngoái, hơn một trăm nghìn lượt tàu chen qua đây. Chỗ hẹp nhất, gần Singapore, chỉ rộng khoảng hai, ba cây số. Kẹt xe giờ cao điểm, nhưng là trên biển."
 
-## SCENE 5 — Lịch sử: từ năm 1677
-- **VO:** "Ý tưởng này có từ năm một nghìn sáu trăm bảy mươi bảy, thời vua Narai. Bàn đi bàn lại mấy trăm năm, vẫn chưa đào một mét nào."
+## SCENE 4 — Lối tắt
+- **VO:** "Trong khi đó, eo đất Kra của Thái Lan chỉ rộng hơn bốn mươi cây số. Đào một con kênh ở đây, tàu khỏi phải vòng qua Singapore."
 
-## SCENE 6 — Ba lý do
-- **VO:** "Vì sao? Thứ nhất, tốn hàng chục tỷ đô. Thứ hai, lối tắt chỉ tiết kiệm khoảng một đến ba ngày đi biển. Thứ ba, lo ngại về môi trường và an ninh."
+## SCENE 5 — Khoảnh khắc người (lịch sử)
+- **VO:** "Ý tưởng này có từ thời vua Narai, thế kỷ mười bảy. Năm một nghìn tám trăm tám mươi ba, một đoàn kỹ sư Pháp nhân danh công ty kênh Suez tới tận nơi đo đạc. Nhưng Xiêm không cấp phép cho nước phương Tây nào."
 
-## SCENE 7 — Twist: vẫn phải ghé Singapore
-- **VO:** "Nhưng lý do oái oăm nhất: phần lớn tàu vẫn phải ghé Singapore, để giao hàng, lấy nhiên liệu, sửa chữa. Lối tắt có đẹp mấy, cũng không bỏ được Singapore."
+## SCENE 6 — Câu hỏi treo + đáp ngắn
+- **VO:** "Vậy sao tới giờ vẫn chưa đào? Vì khó có lời. Tốn hàng chục tỷ đô. Mà tàu chỉ về sớm được một đến ba ngày."
 
-## SCENE 8 — Cầu đất liền 2023 + nối vòng
-- **VO:** "Năm hai nghìn hai mươi ba, Thái Lan lại đưa ra phương án mới. Không đào kênh, mà xây cầu đất liền: cảng, đường sắt và đường ống dầu. Còn hiện tại,"
+## SCENE 7 — Hiện tại + hai phe
+- **VO:** "Năm hai nghìn hai mươi ba, Thái Lan đổi cách: không đào kênh, mà nối hai cảng bằng đường sắt. Chính phủ nói dự án đáng đầu tư. Người dân Chumphon, Ranong thì xuống đường phản đối, lo mất biển, mất vườn sầu riêng."
 
+## SCENE 8 — Twist + nối vòng
+- **VO:** "Nhưng lý do thật có lẽ nằm ở đây: phần lớn tàu vẫn phải ghé Singapore. Để giao hàng, lấy nhiên liệu, sửa chữa. Lối tắt có ngắn mấy, đường vẫn dẫn về Singapore."

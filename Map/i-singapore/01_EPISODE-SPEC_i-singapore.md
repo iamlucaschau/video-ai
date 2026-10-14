@@ -19,4 +19,4 @@
 - **VO:** "Nên Singapore dồn hết vào thứ duy nhất họ có: vị trí. Cảng biển, nhà máy, ngân hàng. Họ còn lấn biển, nới rộng hòn đảo thêm khoảng một phần tư."
 
 ## SCENE 7 — Payoff + loop seam
-- **VO:** "Năm hai nghìn hai mươi tư, mỗi người dân Singapore làm ra hơn chín mươi nghìn đô la. Người Malaysia, chưa tới mười hai nghìn. Thật khó tin, vì năm một nghìn chín trăm sáu mươi lăm,"
+- **VO:** "Năm hai nghìn hai mươi tư, mỗi người dân Singapore làm ra hơn chín mươi nghìn đô la. Người Malaysia, chưa tới mười hai nghìn."

@@ -1,6 +1,7 @@
 {
-  "durationInSeconds": 63.374875,
+  "durationInSeconds": 60.68208333333333,
   "loop": true,
+  "tail": 0.8,
   "lines": [
     {
       "id": "01",
@@ -120,13 +121,6 @@
       "start": 57.62833333333333,
       "end": 60.43233333333333,
       "text": "Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua."
-    },
-    {
-      "id": "18",
-      "scene": "s8",
-      "start": 60.49208333333333,
-      "end": 63.125083333333336,
-      "text": "Muốn thấy đồng hồ nhảy, cách dễ nhất vẫn là"
     }
   ]
 }

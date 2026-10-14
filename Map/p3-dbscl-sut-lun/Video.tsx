@@ -2,7 +2,7 @@
  * Map channel · P3 Địa lý giải thích hiện tượng · Cause-and-Effect (style I Toy Atlas):
  * "Miền Tây đang chìm nhanh hơn nước biển dâng".
  * Script + sources: kich-ban-p3-dbscl-sut-lun-FINAL.md, cong-2_so-nguon.md. Beats: beat-sheet.md.
- * Every cue comes from the VO timing. Loop: line 23 ("Vậy mà") runs into line 01 and the last
+ * Every cue comes from the VO timing. Soft loop (Lucas 2026-10-14): the VO ends on line 22; the last
  * frame is the opening frame (whole-Vietnam view, nothing else).
  *
  * Map rules: Hoàng Sa + Trường Sa in Vietnam's colour with labels whenever the whole coast is in
@@ -14,11 +14,11 @@ import timing from "../../src/voiceover/p3-dbscl-sut-lun.timing.json";
 import words from "../../src/voiceover/p3-dbscl-sut-lun.words.json";
 import { episodeDuration } from "../../src/series/pvr/episode";
 import { SafeGuide } from "../../src/series/pvr/safe";
-import { SfxCues, type SfxCue } from "../../src/series/pvr/sfx";
+import { MusicBed, PILLAR_MUSIC, SfxCues, type SfxCue } from "../../src/series/pvr/sfx";
 import { CLAMP, FONT, prog } from "../../Style Library/kit-common";
 import { KaraokeSubs } from "../../Style Library/subs";
 import {
-  ATLAS, Atlas, AtlasSub, beats, BigGold, camAt, DataCard, type Fill, type GeoCam, ImgSticker, MapLabel, PegImg, pts, Pulse, Question, RegionFill, Route, routeHead, show, Stamp, toScreen, Track, VnIslands, YearRibbon,
+  ATLAS, Atlas, AtlasSub, beats, BigGold, camAt, DataCard, type Fill, type GeoCam, ImgSticker, MapLabel, PegImg, pts, Pulse, Question, RegionFill, Route, routeHead, seamKeys, show, Stamp, toScreen, Track, VnIslands, YearRibbon,
 } from "../../Style Library/I-toy-atlas/toy-atlas";
 
 const FPS = 30;
@@ -30,7 +30,7 @@ const VIEW = {
   delta: { lon: 105.65, lat: 9.85, zoom: 110 },
   mekong: { lon: 105.6, lat: 12.4, zoom: 38 },
 };
-const KEYS: GeoCam[] = [
+const KEYS0: GeoCam[] = [
   { at: 0, ...VIEW.vn },
   { at: at("03") - 4, ...VIEW.delta },
   { at: at("08") - 4, ...VIEW.vn },
@@ -41,6 +41,8 @@ const KEYS: GeoCam[] = [
 ];
 const PUSH = 0.04;
 const PUSH_CAP = 0.08;
+// loop seam: the last frame lands exactly on the opening framing
+const KEYS = seamKeys(KEYS0, episodeDuration(timing, FPS), PUSH, PUSH_CAP);
 
 const VN = ATLAS.c;
 const FILLS: Fill[] = ["Vietnam", "Paracel Is.", "Spratly Is."].map((name) => ({ name, color: VN }));
@@ -163,7 +165,7 @@ const Scene: React.FC = () => {
   return (
     <AbsoluteFill>
       <Atlas cam={cam} fills={FILLS} f={f} />
-      <VnIslands cam={cam} f={f} color={VN} o={islandsO} hsLabel={[40, 82]} tsLabel={[-10, -118]} />
+      <VnIslands cam={cam} f={f} color={VN} o={islandsO} />
       <RegionFill cam={cam} id="delta" country="Vietnam" ring={DELTA} fill={RICE} o={deltaO * (1 - 0.35 * sink)} />
       {sink > 0 && <RegionFill cam={cam} id="sink" country="Vietnam" ring={DELTA} fill="#2C5476" o={0.35 * sink * (1 - prog(f, at("22", 0.75), 10))} dash="1 0" />}
       <RegionFill cam={cam} id="salt1" country="Vietnam" ring={SALT_NEAR} fill={SALT} o={0.7 * saltNear} dash="1 0" />
@@ -328,15 +330,15 @@ const SFX: SfxCue[] = [
   [SHUTTER, "22", 0.35], [W2, "22", 0.8],
 ];
 
-/** Music: bed ~11 dB under the voice, dipped for the closing twist. */
-const musicVolume = (f: number) => interpolate(f, [at("22") - 6, at("22") + 6, at("23") - 4, at("23") + 6], [0.2, 0.07, 0.07, 0.2], CLAMP);
+/** Music duck: the pillar bed dips for the closing twist. */
+const musicDuck = (f: number) => interpolate(f, [at("22") - 6, at("22") + 6, at("22", 1) - 4, at("22", 1) + 6], [1, 0.35, 0.35, 1], CLAMP);
 
 export const P3DbsclSutLun: React.FC = () => (
   <AbsoluteFill style={{ backgroundColor: ATLAS.deep }}>
     <Scene />
-    <KaraokeSubs timing={timing} words={words} captions={CAPTIONS} Skin={AtlasSub} oneLine maxWords={4} maxChars={22} />
+    <KaraokeSubs timing={timing} words={words} captions={CAPTIONS} Skin={AtlasSub} oneLine maxWords={4} maxChars={20} />
     <Audio name="VO" src={staticFile("voiceover/p3-dbscl-sut-lun/vo.mp3")} />
-    <Audio name="Music" src={staticFile("audio/bed-bright.wav")} loop volume={musicVolume} />
+    <MusicBed file={PILLAR_MUSIC.P3} duck={musicDuck} />
     <SfxCues timing={timing} cues={SFX} />
   </AbsoluteFill>
 );

@@ -22,5 +22,5 @@
 - **VO:** "Đồng bằng càng thấp, càng dễ bị nước mặn lấn vào. Mùa khô năm hai nghìn mười sáu và hai nghìn hai mươi là những đợt hạn mặn lịch sử."
 
 ## SCENE 8 — Twist nước ngọt + nối vòng
-- **VO:** "Oái oăm ở chỗ: thứ kéo đồng bằng xuống nhiều nhất lại là nước ngọt ngay dưới chân, để uống, tưới ruộng, nuôi tôm cá. Vậy mà"
+- **VO:** "Oái oăm ở chỗ: thứ kéo đồng bằng xuống nhiều nhất lại là nước ngọt ngay dưới chân, để uống, tưới ruộng, nuôi tôm cá."
 

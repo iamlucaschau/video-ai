@@ -121,15 +121,8 @@
       "id": "16",
       "scene": "s7",
       "take": "t07",
-      "gapAfter": 0.06,
-      "text": "Người Malaysia, chưa tới mười hai nghìn."
-    },
-    {
-      "id": "17",
-      "scene": "s7",
-      "take": "t07",
       "gapAfter": 0.25,
-      "text": "Thật khó tin, vì năm một nghìn chín trăm sáu mươi lăm,"
+      "text": "Người Malaysia, chưa tới mười hai nghìn."
     }
   ]
 }

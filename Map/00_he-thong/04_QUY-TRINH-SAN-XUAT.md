@@ -38,7 +38,7 @@ node scripts/episode.mjs prep "Map/<slug>"
 npm run voiceover -- voiceover/<slug>.json
 ```
 ```bash
-node scripts/episode.mjs export "Map/<slug>" --loop
+node scripts/episode.mjs export "Map/<slug>" --loop --tail=0.7
 ```
 ```bash
 python -P scripts/words.py <slug> vi
@@ -89,10 +89,11 @@ node scripts/stills.mjs <CompositionId> out/check.jpg 0,60,150,300 --safe
 | Nguồn | mọi số trên màn/lời đọc có trong sổ nhận định ✅; loại số liệu đúng |
 | Vùng an toàn | chữ, số, mặt, hình chính trong x 60–940, y 220–1440 (`--safe`) |
 | Chữ | mỗi khối ≤ 5 chữ, ≤ 2 khối + phụ đề, ≥ 48 px, Bricolage |
-| Phụ đề | 1 dòng, ≤ 4 chữ / 22 ký tự, ~1 s mỗi cụm; từ khoá vàng nhạt, chữ đang đọc vàng đậm + to 10 % |
+| Phụ đề | 1 dòng, ≤ 4 chữ / 20 ký tự, ~1 s mỗi cụm; các chữ không dính nhau; từ khoá vàng nhạt, chữ đang đọc vàng đậm + to 10 % |
 | Chuyển động | bay chỉ khi đổi nơi (≥ 22 frame, không blur/rung); không đoạn nào đứng yên hoàn toàn > 2 s |
 | Âm thanh | nhạc ~11 dB dưới giọng; SFX thật; master −14 LUFS / −1,5 dBTP |
-| Nối vòng | khung cuối = khung đầu; xem bản lặp 2 vòng |
+| Nối vòng mềm | lời kết bằng câu trọn vẹn; khung cuối = khung đầu (`seamKeys`); xem bản lặp 2 vòng |
+| Tên nước | mỗi nước được gọi tên / tô màu có nhãn + cờ (`CountryTag`), viền loé đúng lúc lời đọc nói tên |
 | Bản đồ | không tô màu nước ngoài câu chuyện; không nhãn vùng tranh chấp |
 
 ## 6. Render + gói xuất bản (Cổng 5)

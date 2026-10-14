@@ -305,7 +305,11 @@ Gemini reads ~200 wpm; use `tempo` and the composition's gaps to hit a target le
   slide-whistle). The SFX in `scripts/make-audio.mjs` (`tick`, `impact`,
   `ching`, `riser`, `buzz`, `whoosh`, `pop`) sound cartoonish and are retired
   for new work (Lucas, 2026-10-08). Max one SFX per beat; most beats need none.
-- Music beds: `node scripts/make-audio.mjs` still makes `bed-dark.wav` /
+- Licensed music beds (Lucas 2026-10-14): Pixabay tracks in `public/sfx/music/`
+  (list + sources: `scripts/music-list.json`, fetched with `node scripts/fetch-sfx.mjs
+  scripts/music-list.json`, which merges into `catalog.json`). Use `<MusicBed file={PILLAR_MUSIC.P1} />`
+  (`src/series/pvr/sfx.tsx`): levels to −28 LUFS, soft ends, optional `duck(frame)`.
+- Synth beds (older series): `node scripts/make-audio.mjs` still makes `bed-dark.wav` /
   `bed-bright.wav` (40 s loops; `<Audio loop>`). Levels per series rules.
 
 ## Voiceover-driven videos (pattern: `src/compositions/PriceTheirWork/`)

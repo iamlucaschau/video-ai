@@ -1,7 +1,7 @@
 {
   "name": "p3-dbscl-sut-lun",
   "model": "gemini-3.8-flash-tts",
-  "totalSeconds": 61.944,
+  "totalSeconds": 61.339,
   "lines": [
     {
       "id": "01",
@@ -259,25 +259,13 @@
       "id": "22",
       "scene": "s8",
       "take": "t08",
-      "gapAfter": 0.06,
+      "gapAfter": 0.25,
       "text": "Oái oăm ở chỗ: thứ kéo đồng bằng xuống nhiều nhất lại là nước ngọt ngay dưới chân, để uống, tưới ruộng, nuôi tôm cá.",
       "voice": "Orus",
       "src": "voiceover/p3-dbscl-sut-lun/22.wav",
       "durationInSeconds": 7.114,
       "tempo": 1.1,
-      "hash": "f5632a601efb"
-    },
-    {
-      "id": "23",
-      "scene": "s8",
-      "take": "t08",
-      "gapAfter": 0.25,
-      "text": "Vậy mà",
-      "voice": "Orus",
-      "src": "voiceover/p3-dbscl-sut-lun/23.wav",
-      "durationInSeconds": 0.605,
-      "tempo": 1.1,
-      "hash": "f5632a601efb"
+      "hash": "0af04960e78f"
     }
   ]
 }

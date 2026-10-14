@@ -20,7 +20,7 @@ Câu hỏi lớn nhất vẫn còn đó: bao giờ hoàn vốn? Chính phủ th�
 
 Giờ quay lại hai đoàn tàu. Khi tàu cao tốc đã tới Thủ Thiêm, tàu Thống Nhất còn chưa tới Vinh.
 
-Mà oái oăm ở chỗ: tuyến Thống Nhất được nối liền từ năm một nghìn chín trăm ba mươi sáu. Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày. Đó là lý do
+Mà oái oăm ở chỗ: tuyến Thống Nhất được nối liền từ năm một nghìn chín trăm ba mươi sáu. Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày.
 
 ---
 
@@ -69,7 +69,6 @@ Mà oái oăm ở chỗ: tuyến Thống Nhất được nối liền từ năm 
 | 19 | Tàu cao tốc tới Thủ Thiêm, Thống Nhất còn chưa tới Vinh | C16, C3 |
 | 20 | Tuyến Thống Nhất nối liền từ năm 1936 | C18 |
 | 21 | 90 năm sau, đi hết tuyến vẫn hơn một ngày | C18 + C9 (2026 − 1936 = 90; > 30 giờ) |
-| 22 | Đó là lý do | — (nối vòng) |
 
 Không dùng: mốc khởi công (C11 mâu thuẫn), số tỉnh (C12), 23/5 ga (không cần), hoàn vốn 34 năm (chỉ phần phương tiện), giá vé so với máy bay (chưa kiểm chứng).
 
@@ -95,9 +94,9 @@ Không dùng: mốc khởi công (C11 mâu thuẫn), số tỉnh (C12), 23/5 ga 
 - "sáu mươi phần trăm", "mười phần trăm": rõ ràng, không nuốt chữ.
 - Câu cuối "Đó là lý do" giữ giọng treo, không hạ giọng kết câu.
 
-## Câu nối vòng (đã đọc thử)
+## Kết thúc (nối vòng mềm, Lucas 2026-10-14)
 
-"…Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày. Đó là lý do **Việt Nam dự kiến chi khoảng sáu mươi bảy tỷ đô, chỉ để mua một ngày.**"
+Bỏ vế bỏ lửng "Đó là lý do"; lời đọc kết ở câu "Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày." (cùng bản thu, không đọc lại). Hình vẫn lặp liền: khung cuối = khung đầu (`seamKeys`), hình quay về trong câu cuối hoặc trong đoạn nhạc 0,7–0,8 s sau chữ cuối.
 
 ---
 

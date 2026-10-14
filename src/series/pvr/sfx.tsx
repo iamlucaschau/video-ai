@@ -1,5 +1,5 @@
 import { Audio } from "@remotion/media";
-import { Sequence, staticFile, useVideoConfig } from "remotion";
+import { interpolate, Sequence, staticFile, useVideoConfig } from "remotion";
 import catalog from "../../../public/sfx/catalog.json";
 
 /**
@@ -45,3 +45,44 @@ export const SfxCues: React.FC<{
     </>
   );
 };
+
+/**
+ * Licensed music bed from the catalog (public/sfx/music, Pixabay Content License), levelled from
+ * its measured loudness to `level` LUFS (−28 ≈ the old bed-bright at volume 0.2, ~14 dB under
+ * the VO before mastering). Short fades at both ends keep the loop seam soft; `duck(frame)`
+ * (0–1) dips it, e.g. under a climax. Tracks are longer than the episodes, so no loop.
+ *
+ *   <MusicBed file={PILLAR_MUSIC.P2} duck={(f) => …} />
+ */
+export const MusicBed: React.FC<{ file: string; level?: number; duck?: (f: number) => number }> = ({
+  file,
+  level = -28,
+  duck = () => 1,
+}) => {
+  const { durationInFrames, fps } = useVideoConfig();
+  const entry = catalog.find((c) => c.file === file);
+  if (!entry) throw new Error(`Music not in public/sfx/catalog.json: ${file}`);
+  const gain = Math.min(4, 10 ** ((level - (entry.lufs ?? level)) / 20));
+  const fade = Math.round(0.3 * fps);
+  return (
+    <Audio
+      name={`Music ${entry.title}`}
+      src={staticFile(file)}
+      volume={(f) =>
+        gain * duck(f) * interpolate(f, [0, fade, durationInFrames - fade, durationInFrames], [0, 1, 1, 0], {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        })
+      }
+    />
+  );
+};
+
+/** Map channel: one music bed per pillar (Lucas 2026-10-14; alternates in Map/00_he-thong/01_CHANNEL-BIBLE.md §6). */
+export const PILLAR_MUSIC = {
+  P1: "sfx/music/p1-historical-documentary-music-349042.mp3",
+  P2: "sfx/music/p2-explainer-explainer-music-576633.mp3",
+  P3: "sfx/music/p3-science-documentary-169621.mp3",
+  P4: "sfx/music/p4-cinematic-documentary-115669.mp3",
+  P5: "sfx/music/p5-mystery-quirky-355604.mp3",
+} as const;

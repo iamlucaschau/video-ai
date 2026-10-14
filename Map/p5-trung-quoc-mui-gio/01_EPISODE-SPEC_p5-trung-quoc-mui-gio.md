@@ -22,5 +22,5 @@
 - **VO:** "Nhưng chỗ kỳ lạ nhất nằm ở biên giới với Afghanistan, nước dùng múi giờ lẻ nửa tiếng. Nếu bước qua được, đồng hồ lệch tới ba tiếng rưỡi, một trong những chỗ lệch giờ lớn nhất thế giới."
 
 ## SCENE 8 — Không có cửa khẩu + nối vòng
-- **VO:** "Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua. Muốn thấy đồng hồ nhảy, cách dễ nhất vẫn là"
+- **VO:** "Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua."
 

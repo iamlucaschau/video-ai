@@ -1,6 +1,7 @@
 {
-  "durationInSeconds": 64.894875,
+  "durationInSeconds": 64.22954166666666,
   "loop": true,
+  "tail": 0.7,
   "lines": [
     {
       "id": "01",
@@ -155,13 +156,6 @@
       "start": 56.865291666666664,
       "end": 63.97929166666666,
       "text": "Oái oăm ở chỗ: thứ kéo đồng bằng xuống nhiều nhất lại là nước ngọt ngay dưới chân, để uống, tưới ruộng, nuôi tôm cá."
-    },
-    {
-      "id": "23",
-      "scene": "s8",
-      "start": 64.03954166666666,
-      "end": 64.64454166666667,
-      "text": "Vậy mà"
     }
   ]
 }

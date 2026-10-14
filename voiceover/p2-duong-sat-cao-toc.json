@@ -156,15 +156,8 @@
       "id": "21",
       "scene": "s8",
       "take": "t08",
-      "gapAfter": 0.06,
-      "text": "Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày."
-    },
-    {
-      "id": "22",
-      "scene": "s8",
-      "take": "t08",
       "gapAfter": 0.25,
-      "text": "Đó là lý do"
+      "text": "Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày."
     }
   ]
 }

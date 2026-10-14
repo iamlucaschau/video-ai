@@ -22,4 +22,4 @@
 - **VO:** "Giờ quay lại hai đoàn tàu. Khi tàu cao tốc đã tới Thủ Thiêm, tàu Thống Nhất còn chưa tới Vinh."
 
 ## SCENE 8 — Twist 1936 + nối vòng
-- **VO:** "Mà oái oăm ở chỗ: tuyến Thống Nhất được nối liền từ năm một nghìn chín trăm ba mươi sáu. Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày. Đó là lý do"
+- **VO:** "Mà oái oăm ở chỗ: tuyến Thống Nhất được nối liền từ năm một nghìn chín trăm ba mươi sáu. Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày."

@@ -37,6 +37,7 @@ import {
 import { ISingapore, iSingaporeDuration } from "../Map/i-singapore/Video";
 import { P2DuongSatCaoToc, p2DuongSatCaoTocDuration } from "../Map/p2-duong-sat-cao-toc/Video";
 import { P3DbsclSutLun, p3DbsclSutLunDuration } from "../Map/p3-dbscl-sut-lun/Video";
+import { P1BruneiChiaDoi, p1BruneiChiaDoiDuration } from "../Map/p1-brunei-chia-doi/Video";
 import { P4MalaccaKra, p4MalaccaKraDuration } from "../Map/p4-malacca-kra/Video";
 import { P5TrungQuocMuiGio, p5TrungQuocMuiGioDuration } from "../Map/p5-trung-quoc-mui-gio/Video";
 import { PriceTheirWork } from "./compositions/PriceTheirWork/PriceTheirWork";
@@ -99,6 +100,14 @@ export const RemotionRoot: React.FC = () => {
         />
       </Folder>
       <Folder name="Map">
+        <Composition
+          id="Map-P1-BruneiChiaDoi"
+          component={P1BruneiChiaDoi}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={p1BruneiChiaDoiDuration(PVR.fps)}
+        />
         <Composition
           id="Map-P2-DuongSatCaoToc"
           component={P2DuongSatCaoToc}

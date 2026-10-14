@@ -1,7 +1,7 @@
 {
   "name": "p2-duong-sat-cao-toc",
   "model": "gemini-3.8-flash-tts",
-  "totalSeconds": 67.939,
+  "totalSeconds": 66.717,
   "lines": [
     {
       "id": "01",
@@ -241,31 +241,19 @@
       "src": "voiceover/p2-duong-sat-cao-toc/20.wav",
       "durationInSeconds": 4.994,
       "tempo": 1,
-      "hash": "c9267282061a"
+      "hash": "1d9f522bc249"
     },
     {
       "id": "21",
       "scene": "s8",
       "take": "t08",
-      "gapAfter": 0.06,
+      "gapAfter": 0.25,
       "text": "Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày.",
       "voice": "Orus",
       "src": "voiceover/p2-duong-sat-cao-toc/21.wav",
       "durationInSeconds": 3.375,
       "tempo": 1,
-      "hash": "c9267282061a"
-    },
-    {
-      "id": "22",
-      "scene": "s8",
-      "take": "t08",
-      "gapAfter": 0.25,
-      "text": "Đó là lý do",
-      "voice": "Orus",
-      "src": "voiceover/p2-duong-sat-cao-toc/22.wav",
-      "durationInSeconds": 1.222,
-      "tempo": 1,
-      "hash": "c9267282061a"
+      "hash": "1d9f522bc249"
     }
   ]
 }

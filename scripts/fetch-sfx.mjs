@@ -5,8 +5,9 @@
  *
  *   node scripts/fetch-sfx.mjs <list.json>
  *
- * <list.json>: [[category, pixabayId, "Title by Author", seconds, mp3Url], …]
- * (collected from pixabay.com/sound-effects detail pages). Pixabay Content
+ * <list.json>: [[category, pixabayId, "Title by Author", seconds, mp3Url, pageUrl?], …]
+ * (collected from pixabay.com/sound-effects or /music detail pages; category "music" holds
+ * the background beds). New entries are merged into the existing catalog (same file replaced). Pixabay Content
  * License: free for commercial use in videos, no attribution required; do not
  * redistribute the files on their own, so public/sfx/** audio is git-ignored.
  */
@@ -35,8 +36,14 @@ const lufs = (file) => {
   return m ? Number(m[1]) : null;
 };
 
-const catalog = [];
-for (const [category, id, titleBy, seconds, url] of list) {
+const catalogFile = path.join(OUT, "catalog.json");
+const catalog = fs.existsSync(catalogFile) ? JSON.parse(fs.readFileSync(catalogFile, "utf8")) : [];
+const upsert = (entry) => {
+  const i = catalog.findIndex((c) => c.file === entry.file);
+  if (i >= 0) catalog[i] = entry;
+  else catalog.push(entry);
+};
+for (const [category, id, titleBy, seconds, url, pageUrl] of list) {
   const [, title = titleBy, author = ""] = titleBy.match(/^(.*) by (.*)$/) ?? [];
   const rel = `${category}/${slug(title)}-${id}.mp3`;
   const file = path.join(OUT, rel);
@@ -49,16 +56,16 @@ for (const [category, id, titleBy, seconds, url] of list) {
     }
     fs.writeFileSync(file, Buffer.from(await res.arrayBuffer()));
   }
-  catalog.push({
+  upsert({
     file: `sfx/${rel}`,
     category,
     title,
     author,
     seconds,
     lufs: lufs(file),
-    source: `https://pixabay.com/sound-effects/${id}/`,
+    source: pageUrl ?? `https://pixabay.com/sound-effects/${id}/`,
   });
   console.log(`✓ ${rel}`);
 }
-fs.writeFileSync(path.join(OUT, "catalog.json"), JSON.stringify(catalog, null, 2) + "\n");
-console.log(`${catalog.length} SFX → public/sfx/catalog.json`);
+fs.writeFileSync(catalogFile, JSON.stringify(catalog, null, 2) + "\n");
+console.log(`${catalog.length} entries → public/sfx/catalog.json`);

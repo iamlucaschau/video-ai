@@ -655,5 +655,95 @@
     "seconds": 3,
     "lufs": -16.2,
     "source": "https://pixabay.com/sound-effects/454852/"
+  },
+  {
+    "file": "sfx/music/p1-historical-documentary-music-349042.mp3",
+    "category": "music",
+    "title": "p1 Historical Documentary Music",
+    "author": "Tunetank",
+    "seconds": 110,
+    "lufs": -11.6,
+    "source": "https://pixabay.com/music/dramatic-classical-historical-documentary-music-349042/"
+  },
+  {
+    "file": "sfx/music/p1-history-history-music-569200.mp3",
+    "category": "music",
+    "title": "p1 History - History Music",
+    "author": "Tatamusic",
+    "seconds": 137,
+    "lufs": -12.3,
+    "source": "https://pixabay.com/music/military-historical-history-history-music-569200/"
+  },
+  {
+    "file": "sfx/music/p2-this-light-inspiration-217984.mp3",
+    "category": "music",
+    "title": "p2 This Light Inspiration",
+    "author": "moodmode",
+    "seconds": 146,
+    "lufs": -8.6,
+    "source": "https://pixabay.com/music/upbeat-this-light-inspiration-217984/"
+  },
+  {
+    "file": "sfx/music/p2-explainer-explainer-music-576633.mp3",
+    "category": "music",
+    "title": "p2 Explainer - Explainer Music",
+    "author": "AtlasAudio",
+    "seconds": 137,
+    "lufs": -7.5,
+    "source": "https://pixabay.com/music/corporate-explainer-explainer-music-576633/"
+  },
+  {
+    "file": "sfx/music/p3-science-documentary-169621.mp3",
+    "category": "music",
+    "title": "p3 Science Documentary",
+    "author": "Lexin_Music",
+    "seconds": 127,
+    "lufs": -11.9,
+    "source": "https://pixabay.com/music/build-up-scenes-science-documentary-169621/"
+  },
+  {
+    "file": "sfx/music/p3-documentary-nature-516419.mp3",
+    "category": "music",
+    "title": "p3 Documentary Nature",
+    "author": "leberch",
+    "seconds": 92,
+    "lufs": -14.9,
+    "source": "https://pixabay.com/music/adventure-documentary-nature-516419/"
+  },
+  {
+    "file": "sfx/music/p4-travel-adventure-586187.mp3",
+    "category": "music",
+    "title": "p4 Travel Adventure",
+    "author": "leberch",
+    "seconds": 94,
+    "lufs": -19.3,
+    "source": "https://pixabay.com/music/ambient-travel-adventure-586187/"
+  },
+  {
+    "file": "sfx/music/p4-cinematic-documentary-115669.mp3",
+    "category": "music",
+    "title": "p4 Cinematic Documentary",
+    "author": "Lexin_Music",
+    "seconds": 132,
+    "lufs": -11.1,
+    "source": "https://pixabay.com/music/beautiful-plays-cinematic-documentary-115669/"
+  },
+  {
+    "file": "sfx/music/p5-mystery-quirky-355604.mp3",
+    "category": "music",
+    "title": "p5 Mystery Quirky",
+    "author": "leberch",
+    "seconds": 145,
+    "lufs": -16.9,
+    "source": "https://pixabay.com/music/sneaky-mystery-quirky-355604/"
+  },
+  {
+    "file": "sfx/music/p5-the-smallest-detective-495789.mp3",
+    "category": "music",
+    "title": "p5 The Smallest Detective",
+    "author": "Tomas_Herudek",
+    "seconds": 97,
+    "lufs": -7.8,
+    "source": "https://pixabay.com/music/traditional-jazz-the-smallest-detective-funny-cartoon-playful-mysterious-music-495789/"
   }
 ]

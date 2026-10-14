@@ -20,7 +20,7 @@ Nên ở Tân Cương, nhiều người còn dùng thêm một giờ không chí
 
 Nhưng chỗ kỳ lạ nhất nằm ở biên giới với Afghanistan, nước dùng múi giờ lẻ nửa tiếng. Nếu bước qua được, đồng hồ lệch tới ba tiếng rưỡi, một trong những chỗ lệch giờ lớn nhất thế giới.
 
-Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua. Muốn thấy đồng hồ nhảy, cách dễ nhất vẫn là
+Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua.
 
 ---
 
@@ -65,7 +65,6 @@ Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua. Mu�
 | 15 | Biên giới Afghanistan, nước dùng múi giờ lẻ nửa tiếng | C9 (UTC+4:30) |
 | 16 | Lệch 3,5 tiếng, một trong những chỗ lệch lớn nhất | C9, C10 |
 | 17 | Chẳng có cửa khẩu nào để bước qua | C11 |
-| 18 | Muốn thấy đồng hồ nhảy, cách dễ nhất vẫn là | — (nối vòng) |
 
 Không dùng: "lớn nhất thế giới" (C10 chỉ "một trong những"), các hệ thống 5 múi giờ trước 1949 (nguồn chưa chắc), mọi bình luận chính trị về Tân Cương.
 
@@ -91,9 +90,9 @@ Không dùng: "lớn nhất thế giới" (C10 chỉ "một trong những"), cá
 - "Hệ quả?", "Thử tưởng tượng" đọc có ý cười nhẹ; câu 11 vui.
 - Câu cuối "…cách dễ nhất vẫn là" giữ giọng treo.
 
-## Câu nối vòng (đã đọc thử)
+## Kết thúc (nối vòng mềm, Lucas 2026-10-14)
 
-"…Muốn thấy đồng hồ nhảy, cách dễ nhất vẫn là **đi từ Lào Cai sang Hà Khẩu, đồng hồ nhảy một tiếng.**" (vế sau đọc như một câu mới; nghĩa liền mạch)
+Bỏ vế bỏ lửng "Muốn thấy đồng hồ nhảy, cách dễ nhất vẫn là"; lời đọc kết ở câu "Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua." (cùng bản thu, không đọc lại). Hình vẫn lặp liền: khung cuối = khung đầu (`seamKeys`), hình quay về trong câu cuối hoặc trong đoạn nhạc 0,7–0,8 s sau chữ cuối.
 
 ---
 

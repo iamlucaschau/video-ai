@@ -8,7 +8,7 @@
 | Chủ đề (câu hỏi) | Liên quan VN/Á | Rủi ro | Trạng thái |
 |---|---|---|---|
 | Vì sao bị Malaysia đuổi đi, Singapore lại giàu gấp 7 lần? | ✔ | T | **Đã làm** (`Map/i-singapore/`, v2.1) |
-| Vì sao Brunei không gia nhập Malaysia năm 1963? | ✔ | T | ý tưởng |
+| Vì sao Brunei không gia nhập Malaysia năm 1963? | ✔ | T | **Đã làm** (`Map/p1-brunei-chia-doi/`, góc "bị cắt làm đôi", 2026-10-14) |
 | Vì sao Mỹ mua Alaska từ Nga — và bị cười là "món hớ"? | | T | ý tưởng (mẫu V3) |
 | Vì sao Napoleon bán cả miền giữa nước Mỹ? (Louisiana) | | T | ý tưởng (mẫu V4) — cần ranh giới lịch sử |
 | Vì sao Hồng Kông về lại Trung Quốc năm 1997 dù chỉ có một phần là "thuê"? | ✔ | TB | ý tưởng — cần ranh giới Cửu Long / Tân Giới |

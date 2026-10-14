@@ -20,7 +20,7 @@ Thủ phạm số hai: phù sa. Các đập trên dòng Mekong giữ lại một
 
 Đồng bằng càng thấp, càng dễ bị nước mặn lấn vào. Mùa khô năm hai nghìn mười sáu và hai nghìn hai mươi là những đợt hạn mặn lịch sử.
 
-Oái oăm ở chỗ: thứ kéo đồng bằng xuống nhiều nhất lại là nước ngọt ngay dưới chân, để uống, tưới ruộng, nuôi tôm cá. Vậy mà
+Oái oăm ở chỗ: thứ kéo đồng bằng xuống nhiều nhất lại là nước ngọt ngay dưới chân, để uống, tưới ruộng, nuôi tôm cá.
 
 ---
 
@@ -70,7 +70,6 @@ Oái oăm ở chỗ: thứ kéo đồng bằng xuống nhiều nhất lại là 
 | 20 | Đồng bằng càng thấp, càng dễ bị nước mặn lấn vào | SRC-013 (delta "increasingly vulnerable") |
 | 21 | Mùa khô 2016 và 2020: hạn mặn lịch sử | C12 |
 | 22 | Thứ kéo xuống nhiều nhất là nước ngọt dưới chân (uống, tưới ruộng, nuôi tôm cá) | C14 (SRC-005) |
-| 23 | Vậy mà | — (nối vòng) |
 
 Không dùng: 2,5 triệu m³/ngày (C7), > 90% gạo xuất khẩu (C11), kịch bản 2100 (C13), số km mặn / số hộ thiếu nước, tên nước có đập, mọi phép ngoại suy "năm X sẽ chìm".
 
@@ -98,9 +97,9 @@ Không dùng: 2,5 triệu m³/ngày (C7), > 90% gạo xuất khẩu (C11), kịc
 - "Mekong" đọc "Mê Kông".
 - Câu cuối "Vậy mà" giữ giọng treo.
 
-## Câu nối vòng (đã đọc thử)
+## Kết thúc (nối vòng mềm, Lucas 2026-10-14)
 
-"…để uống, tưới ruộng, nuôi tôm cá. Vậy mà **ai cũng lo nước biển dâng.** Nhưng miền Tây đang tự lún xuống, còn nhanh hơn thế."
+Bỏ vế bỏ lửng "Vậy mà"; lời đọc kết ở câu "Oái oăm ở chỗ: thứ kéo đồng bằng xuống nhiều nhất lại là nước ngọt ngay dưới chân, để uống, tưới ruộng, nuôi tôm cá." (cùng bản thu, không đọc lại). Hình vẫn lặp liền: khung cuối = khung đầu (`seamKeys`), hình quay về trong câu cuối hoặc trong đoạn nhạc 0,7–0,8 s sau chữ cuối.
 
 ---
 

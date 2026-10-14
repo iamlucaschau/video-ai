@@ -1,7 +1,7 @@
 # VO timestamps — p3-dbscl-sut-lun
 
 Voice: Orus · model: gemini-3.8-flash-tts · tempo ×1.1
-Duration: **64.89 s** (1:04.89) · 257 words · **238 wpm** overall
+Duration: **64.23 s** (1:04.23) · 255 words · **238 wpm** overall
 
 | # | Scene | Start | End | Text |
 |---|-------|-------|-----|------|
@@ -27,4 +27,3 @@ Duration: **64.89 s** (1:04.89) · 257 words · **238 wpm** overall
 | 20 | S7 | 0:49.36 | 0:52.14 | Đồng bằng càng thấp, càng dễ bị nước mặn lấn vào. |
 | 21 | S7 | 0:52.20 | 0:56.61 | Mùa khô năm hai nghìn mười sáu và hai nghìn hai mươi là những đợt hạn mặn lịch sử. |
 | 22 | S8 | 0:56.87 | 1:03.98 | Oái oăm ở chỗ: thứ kéo đồng bằng xuống nhiều nhất lại là nước ngọt ngay dưới chân, để uống, tưới ruộng, nuôi tôm cá. |
-| 23 | S8 | 1:04.04 | 1:04.64 | Vậy mà |

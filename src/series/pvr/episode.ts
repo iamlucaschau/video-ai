@@ -4,6 +4,8 @@ export type Timing = {
   durationInSeconds: number;
   /** Script ends on a fragment that runs into the hook: no end hold. */
   loop?: boolean;
+  /** Seconds after the last word when `loop` is set (default PVR.loopTailSeconds); map soft loops use ~0.7. */
+  tail?: number;
   lines: {
     id: string;
     scene: string;
@@ -35,6 +37,6 @@ export const sceneRange = (timing: Timing, scene: string, fps: number) => {
 export const episodeDuration = (timing: Timing, fps: number) =>
   Math.round(
     (timing.loop
-      ? timing.lines[timing.lines.length - 1].end + PVR.loopTailSeconds
+      ? timing.lines[timing.lines.length - 1].end + (timing.tail ?? PVR.loopTailSeconds)
       : timing.durationInSeconds + PVR.tailSeconds) * fps,
   );

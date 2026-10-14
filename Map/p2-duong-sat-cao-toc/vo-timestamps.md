@@ -1,7 +1,7 @@
 # VO timestamps — p2-duong-sat-cao-toc
 
 Voice: Orus · model: gemini-3.8-flash-tts · tempo ×1
-Duration: **70.83 s** (1:10.83) · 269 words · **228 wpm** overall
+Duration: **69.55 s** (1:09.55) · 265 words · **229 wpm** overall
 
 | # | Scene | Start | End | Text |
 |---|-------|-------|-----|------|
@@ -26,4 +26,3 @@ Duration: **70.83 s** (1:10.83) · 269 words · **228 wpm** overall
 | 19 | S7 | 0:57.04 | 1:00.62 | Khi tàu cao tốc đã tới Thủ Thiêm, tàu Thống Nhất còn chưa tới Vinh. |
 | 20 | S8 | 1:00.87 | 1:05.86 | Mà oái oăm ở chỗ: tuyến Thống Nhất được nối liền từ năm một nghìn chín trăm ba mươi sáu. |
 | 21 | S8 | 1:05.92 | 1:09.30 | Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày. |
-| 22 | S8 | 1:09.36 | 1:10.58 | Đó là lý do |

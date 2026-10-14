@@ -61,3 +61,8 @@
 
 - **Duyệt Cổng 2**, chọn **phương án A**: Việt Nam (nhạt) + Hoàng Sa, Trường Sa có nhãn ở mọi khung thấy Biển Đông; không tô màu nước khác trên Biển Đông.
 - C4 bổ sung nguồn thứ 2 (Britannica) → ✅.
+
+## 6. Bổ sung 2026-10-14 (kịch bản v2)
+
+- **C5 hạ xuống ⚠️ cho mốc năm 1677:** nghiên cứu Thái cho biết kỹ sư de Lamare tới Xiêm năm 1685. Chỉ nói "thời vua Narai, thế kỷ 17" / "hơn 300 năm".
+- Nhận định mới C13–C17 và nguồn SRC-014…019: xem `kich-ban-v2-de-xuat.md` mục D.

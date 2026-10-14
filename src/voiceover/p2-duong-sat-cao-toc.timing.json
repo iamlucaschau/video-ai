@@ -1,6 +1,7 @@
 {
-  "durationInSeconds": 70.828625,
+  "durationInSeconds": 69.54708333333333,
   "loop": true,
+  "tail": 0.7,
   "lines": [
     {
       "id": "01",
@@ -148,13 +149,6 @@
       "start": 65.92175,
       "end": 69.29675,
       "text": "Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày."
-    },
-    {
-      "id": "22",
-      "scene": "s8",
-      "start": 69.35708333333334,
-      "end": 70.57908333333333,
-      "text": "Đó là lý do"
     }
   ]
 }

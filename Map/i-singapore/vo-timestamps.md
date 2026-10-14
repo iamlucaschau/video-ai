@@ -1,7 +1,7 @@
 # VO timestamps — i-singapore
 
 Voice: Orus · model: gemini-3.8-flash-tts · tempo ×1.1
-Duration: **57.58 s** (0:57.58) · 225 words · **234 wpm** overall
+Duration: **55.15 s** (0:55.15) · 213 words · **232 wpm** overall
 
 | # | Scene | Start | End | Text |
 |---|-------|-------|-----|------|
@@ -21,4 +21,3 @@ Duration: **57.58 s** (0:57.58) · 225 words · **234 wpm** overall
 | 14 | S6 | 0:45.52 | 0:48.55 | Họ còn lấn biển, nới rộng hòn đảo thêm khoảng một phần tư. |
 | 15 | S7 | 0:48.80 | 0:52.80 | Năm hai nghìn hai mươi tư, mỗi người dân Singapore làm ra hơn chín mươi nghìn đô la. |
 | 16 | S7 | 0:52.86 | 0:54.90 | Người Malaysia, chưa tới mười hai nghìn. |
-| 17 | S7 | 0:54.96 | 0:57.33 | Thật khó tin, vì năm một nghìn chín trăm sáu mươi lăm, |

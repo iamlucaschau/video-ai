@@ -1,7 +1,7 @@
 {
   "name": "p5-trung-quoc-mui-gio",
   "model": "gemini-3.8-flash-tts",
-  "totalSeconds": 60.728,
+  "totalSeconds": 58.095,
   "lines": [
     {
       "id": "01",
@@ -199,25 +199,13 @@
       "id": "17",
       "scene": "s8",
       "take": "t08",
-      "gapAfter": 0.06,
+      "gapAfter": 0.25,
       "text": "Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua.",
       "voice": "Orus",
       "src": "voiceover/p5-trung-quoc-mui-gio/17.wav",
       "durationInSeconds": 2.804,
       "tempo": 1.1,
-      "hash": "4677681a5f88"
-    },
-    {
-      "id": "18",
-      "scene": "s8",
-      "take": "t08",
-      "gapAfter": 0.25,
-      "text": "Muốn thấy đồng hồ nhảy, cách dễ nhất vẫn là",
-      "voice": "Orus",
-      "src": "voiceover/p5-trung-quoc-mui-gio/18.wav",
-      "durationInSeconds": 2.633,
-      "tempo": 1.1,
-      "hash": "4677681a5f88"
+      "hash": "9bdfd2d43990"
     }
   ]
 }

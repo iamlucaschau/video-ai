@@ -46,7 +46,18 @@ Kết thúc đúng câu: "Duyệt Cổng 2, hoặc cho biết cần kiểm chứ
 Viết lời đọc TIẾNG VIỆT cho video bản đồ 9:16, CHỈ dùng các nhận định đã duyệt ở Cổng 2: [dán sổ nhận định].
 Pillar: [P_]. Engine: [__]. Preset: [Quick 130–165 chữ | Standard 220–275 chữ | Deep 275–330 chữ] (đếm theo chữ/âm tiết, tempo 1.1 ≈ 235–240 wpm).
 Giọng kể "vui vừa phải": cảnh đời thường, chơi chữ nhẹ, tối đa 1–2 câu khẩu ngữ; số liệu chuẩn, tranh luận trung tính.
-Kỹ thuật (Channel Bible §3): hook mẫu F lật ngược · phá ngộ nhận · "thử tưởng tượng" · câu hỏi treo giữa video · chi tiết nhỏ dễ nhớ · twist có nguồn trước vế nối vòng.
+Kỹ thuật (Channel Bible §3): hook mẫu F lật ngược · phá ngộ nhận · "thử tưởng tượng" · câu hỏi treo giữa video · chi tiết nhỏ dễ nhớ · twist có nguồn ở cuối, kết bằng câu trọn vẹn.
+Luật bắt buộc (Bible §3, 6–11):
+- Câu hỏi treo → câu sau đáp NGAY bằng 1–3 chữ, rồi mới giải thích.
+- ≥ 1 khoảnh khắc người: nhân vật thật + hành động cụ thể, có ID nhận định.
+- 1–2 câu đùa, đặt sau con số nặng, đánh dấu [ĐÙA] trong bảng truy vết (không ghi vào lời đọc).
+- Chủ đề có tranh luận: 2 câu hai phe, mỗi vế một ID nhận định.
+- Mỗi câu tối đa 1 con số mới (năm cũng tính).
+- Twist là nhịp nội dung cuối; tin cập nhật đặt trước twist.
+- Kho câu thay thế (mỗi cụm ≤ 1 lần / 3 tập liên tiếp; kiểm 2 tập gần nhất trước khi dùng):
+  · twist: "Nhưng chi tiết lạ nhất là…" · "Và cú ngược đời?" · "Lý do thật có lẽ nằm ở đây:" · "Trớ trêu là…" · "Oái oăm ở chỗ…"
+  · mở cảnh hình dung: "Hình dung thế này:" · "Giả sử bạn…" · "Lấy một ví dụ:" · "Thử…"
+  · câu hỏi treo: "Sao lại thế?" · "Tại sao chưa…?" · "Hệ quả?" · "Vì sao?"
 
 CẤU TRÚC (theo engine, xem mạch chuẩn bên dưới), chia thành CẢNH; mỗi cảnh 1–4 câu; mỗi câu = 1 beat hình:
 - Hook ≤ 3 giây, có CÂU HỎI (mẫu A–E). Ví dụ mẫu B: "Malaysia từng đuổi Singapore ra khỏi đất nước. Vậy vì sao hôm nay, Singapore lại giàu gấp hơn bảy lần?"
@@ -54,9 +65,9 @@ CẤU TRÚC (theo engine, xem mạch chuẩn bên dưới), chia thành CẢNH; 
 - Năm, con số, địa danh: viết bằng CHỮ cho TTS ("năm một nghìn chín trăm sáu mươi lăm", "một trăm hai mươi sáu trên không").
 - Payoff trả lời ĐÚNG câu hỏi hook, có SO SÁNH (hai con số / trước–sau).
 - Lời đọc có thể nói bình dân, KHÔNG được đổi loại số liệu ("làm ra" cho GDP/người: được; "thu nhập" cho GDP/người: không).
-- KẾT NỐI VÒNG: câu cuối là vế bỏ lửng ≤ 8 chữ, đọc liền với câu đầu thành một câu đúng ngữ pháp và đúng nghĩa
-  (ví dụ: "Thật khó tin, vì năm một nghìn chín trăm sáu mươi lăm," → "Malaysia từng đuổi Singapore ra khỏi đất nước.").
-  Đọc to "vế cuối + câu đầu" để kiểm. Không lời chào, không "follow để xem thêm".
+- KẾT THÚC (nối vòng mềm, Lucas 2026-10-14): câu cuối là MỘT CÂU TRỌN VẸN, ngắn, có sức nặng (twist / nghịch lý chốt),
+  KHÔNG dùng vế bỏ lửng nối vào câu đầu. Video vẫn lặp liền bằng hình (khung cuối = khung đầu).
+  Ví dụ: "Lối tắt có ngắn mấy, đường vẫn dẫn về Singapore." Không lời chào, không "follow để xem thêm".
 - Không ghi chỉ dẫn sân khấu trong lời đọc.
 
 ĐẦU RA:
@@ -66,7 +77,7 @@ CẤU TRÚC (theo engine, xem mạch chuẩn bên dưới), chia thành CẢNH; 
 4. Bảng truy vết: câu → ID nhận định
 5. Phụ đề hiển thị cho các câu có số (chữ số, *từ khoá* đánh dấu sao)
 6. Ghi chú phát âm (tên riêng nước ngoài, viết tắt)
-7. Ý tưởng câu nối vòng đã kiểm (vế cuối + câu đầu)
+7. Câu kết (một câu trọn vẹn) và lý do nó đủ sức nặng
 Kết thúc đúng câu: "Duyệt Cổng 3, hoặc cho biết cần đổi gì."
 ```
 
@@ -74,11 +85,11 @@ Kết thúc đúng câu: "Duyệt Cổng 3, hoặc cho biết cần đổi gì."
 
 | Engine | Cảnh |
 |---|---|
-| Historical Timeline | 1 Hook (sự thật + câu hỏi) · 2 Trạng thái đầu (mốc năm 1) · 3 Biến cố (mốc 2) · 4 Quyết định (mốc 3, cao trào) · 5 Bất lợi / cái giá · 6 Bước ngoặt · 7 Payoff "hôm nay" + so sánh + vế nối vòng |
-| Money+Maps | 1 Nghịch lý tiền · 2 Định vị 2 khu · 3–4 Hai–ba nguyên nhân có nguồn · 5 So sánh số đúng loại · 6 "Vậy thì sao" + giới hạn · 7 vế nối vòng |
-| Cause-and-Effect | 1 Nghịch lý nhìn thấy · 2 Định vị · 3–5 Nguyên nhân 1–3 (đánh số) · 6 Tương tác / hệ quả · 7 vế nối vòng |
-| Journey Route | 1 Ràng buộc cực đoan · 2 Xuất phát · 3–5 Chướng ngại leo thang · 6 Vượt qua + quy mô · 7 vế nối vòng |
-| Region Reveal | 1 Ngộ nhận · 2–4 Từng mảnh · 5 Gộp lại · 6 Twist · 7 vế nối vòng |
+| Historical Timeline | 1 Hook (sự thật + câu hỏi) · 2 Trạng thái đầu (mốc năm 1) · 3 Biến cố (mốc 2) · 4 Quyết định (mốc 3, cao trào) · 5 Bất lợi / cái giá · 6 Bước ngoặt · 7 Payoff "hôm nay" + so sánh + câu kết |
+| Money+Maps | 1 Nghịch lý tiền · 2 Định vị 2 khu · 3–4 Hai–ba nguyên nhân có nguồn · 5 So sánh số đúng loại · 6 "Vậy thì sao" + giới hạn · 7 câu kết |
+| Cause-and-Effect | 1 Nghịch lý nhìn thấy · 2 Định vị · 3–5 Nguyên nhân 1–3 (đánh số) · 6 Tương tác / hệ quả · 7 câu kết |
+| Journey Route | 1 Ràng buộc cực đoan · 2 Xuất phát · 3–5 Chướng ngại leo thang · 6 Vượt qua + quy mô · 7 câu kết |
+| Region Reveal | 1 Ngộ nhận · 2–4 Từng mảnh · 5 Gộp lại · 6 Twist · 7 câu kết |
 
 ### Định dạng file FINAL (bắt buộc — `scripts/episode.mjs prep` đọc file này)
 

@@ -4,7 +4,7 @@
  * v2 (Lucas 2026-10-13, after the 20-video competitor study): the story is a race between
  * two trains (opened in scene 1, paid off in scene 7); slow camera push inside every beat;
  * data cards; glowing route; profile card for bridges/tunnels; music dips at the climax.
- * Every cue comes from the VO timing. Loop: line 22 runs into line 01, last frame = first.
+ * Every cue comes from the VO timing. Soft loop (Lucas 2026-10-14): the VO ends on line 21; in the 0.7 s tail the picture returns to the first frame.
  *
  * Map rules (Lucas 2026-10-12): Hoàng Sa + Trường Sa in Vietnam's colour with labels whenever
  * the whole coast is in frame; the route is a SCHEMATIC (not the official alignment).
@@ -15,11 +15,11 @@ import timing from "../../src/voiceover/p2-duong-sat-cao-toc.timing.json";
 import words from "../../src/voiceover/p2-duong-sat-cao-toc.words.json";
 import { episodeDuration } from "../../src/series/pvr/episode";
 import { SafeGuide } from "../../src/series/pvr/safe";
-import { SfxCues, type SfxCue } from "../../src/series/pvr/sfx";
+import { MusicBed, PILLAR_MUSIC, SfxCues, type SfxCue } from "../../src/series/pvr/sfx";
 import { CLAMP, FONT, prog } from "../../Style Library/kit-common";
 import { KaraokeSubs } from "../../Style Library/subs";
 import {
-  ATLAS, Atlas, AtlasSub, beats, BigGold, camAt, count, DataCard, type Fill, Flag, type GeoCam, ImgSticker, MapLabel, PegImg, pts, Pulse, Question, Route, routeHead, show, Sticker, toScreen, Track, vertexP, VnIslands, YearRibbon,
+  ATLAS, Atlas, AtlasSub, beats, BigGold, camAt, count, DataCard, type Fill, Flag, type GeoCam, ImgSticker, MapLabel, PegImg, pts, Pulse, Question, Route, routeHead, seamKeys, show, Sticker, toScreen, Track, vertexP, VnIslands, YearRibbon,
 } from "../../Style Library/I-toy-atlas/toy-atlas";
 
 const FPS = 30;
@@ -34,7 +34,7 @@ const VIEW = {
   hanoi: { lon: 105.85, lat: 20.6, zoom: 60 },
   coast: { lon: 108.85, lat: 14.4, zoom: 48 },
 };
-const KEYS: GeoCam[] = [
+const KEYS0: GeoCam[] = [
   { at: 0, ...VIEW.vn },
   { at: at("09") - 2, ...VIEW.coast },
   { at: at("13") - 4, ...VIEW.hanoi },
@@ -45,6 +45,8 @@ const KEYS: GeoCam[] = [
 /** Slow push inside each beat: 4 % per 3 s, at most +8 % (keeps the islands and bottom rows clear). */
 const PUSH = 0.04;
 const PUSH_CAP = 0.08;
+// loop seam: the last frame lands exactly on the opening framing
+const KEYS = seamKeys(KEYS0, episodeDuration(timing, FPS), PUSH, PUSH_CAP);
 
 const VN = ATLAS.c;
 const FILLS: Fill[] = ["Vietnam", "Paracel Is.", "Spratly Is."].map((name) => ({ name, color: VN }));
@@ -191,7 +193,7 @@ const Scene: React.FC = () => {
   const pVinh = vertexP(route, VINH);
 
   // the gold route glows once the race starts and is gone again for the loop frame
-  const goldO = Math.min(prog(f, at("03", 0.2), 8), 1 - prog(f, at("22"), 20));
+  const goldO = Math.min(prog(f, at("03", 0.2), 8), 1 - prog(f, at("21", 1), 20));
 
   // scene 2: new train runs the whole line in ~2 s
   const runP = prog(f, at("05", 0.1), 60, Easing.inOut(Easing.quad));
@@ -207,7 +209,7 @@ const Scene: React.FC = () => {
   return (
     <AbsoluteFill>
       <Atlas cam={cam} fills={FILLS} f={f} />
-      <VnIslands cam={cam} f={f} color={VN} o={islandsO} hsLabel={[40, 82]} tsLabel={[-10, -118]} />
+      <VnIslands cam={cam} f={f} color={VN} o={islandsO} />
 
       {/* the route: dotted always; solid + glowing from the race on */}
       <Route pts={route} p={1} />
@@ -415,8 +417,8 @@ const Scene: React.FC = () => {
           </>
         );
       })()}
-      <BigGold text="90 NĂM SAU" f={f} at={at("21", 0.05)} out={at("22")} y={470} size={110} />
-      <DataCard value="> 1 NGÀY" label="TÀU THỐNG NHẤT" x={540} y={1230} f={f} at={at("21", 0.4)} out={at("22")} color={ATLAS.white} size={80} />
+      <BigGold text="90 NĂM SAU" f={f} at={at("21", 0.05)} out={at("21", 1)} y={470} size={110} />
+      <DataCard value="> 1 NGÀY" label="TÀU THỐNG NHẤT" x={540} y={1230} f={f} at={at("21", 0.4)} out={at("21", 1)} color={ATLAS.white} size={80} />
       <SafeGuide />
     </AbsoluteFill>
   );
@@ -454,16 +456,16 @@ const SFX: SfxCue[] = [
   [SHUTTER, "20", 0.3], [CLICK, "21", 0.4],
 ];
 
-/** Music: bed ~11 dB under the voice, dipped for the climax so the race clock carries it. */
-const musicVolume = (f: number) =>
-  interpolate(f, [at("18") - 6, at("18") + 6, at("20") - 4, at("20") + 10], [0.2, 0.06, 0.06, 0.2], CLAMP);
+/** Music duck: the pillar bed dips under the climax so the race clock carries it. */
+const musicDuck = (f: number) =>
+  interpolate(f, [at("18") - 6, at("18") + 6, at("20") - 4, at("20") + 10], [1, 0.3, 0.3, 1], CLAMP);
 
 export const P2DuongSatCaoToc: React.FC = () => (
   <AbsoluteFill style={{ backgroundColor: ATLAS.deep }}>
     <Scene />
-    <KaraokeSubs timing={timing} words={words} captions={CAPTIONS} Skin={AtlasSub} oneLine maxWords={4} maxChars={22} />
+    <KaraokeSubs timing={timing} words={words} captions={CAPTIONS} Skin={AtlasSub} oneLine maxWords={4} maxChars={20} />
     <Audio name="VO" src={staticFile("voiceover/p2-duong-sat-cao-toc/vo.mp3")} />
-    <Audio name="Music" src={staticFile("audio/bed-bright.wav")} loop volume={musicVolume} />
+    <MusicBed file={PILLAR_MUSIC.P2} duck={musicDuck} />
     <SfxCues timing={timing} cues={SFX} />
   </AbsoluteFill>
 );

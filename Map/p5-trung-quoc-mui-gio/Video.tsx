@@ -2,8 +2,8 @@
  * Map channel · P5 Kỳ lạ & kỷ lục · Region Reveal (style I Toy Atlas):
  * "Trung Quốc rộng gần 5 múi giờ, vì sao chỉ dùng một giờ?"
  * Script + sources: kich-ban-p5-trung-quoc-mui-gio-FINAL.md, cong-2_so-nguon.md. Beats: beat-sheet.md.
- * Every cue comes from the VO timing. Loop: line 18 ("…cách dễ nhất vẫn là") runs into line 01
- * and the last frame is the opening frame (Lào Cai border, map only).
+ * Every cue comes from the VO timing. Soft loop (Lucas 2026-10-14): the VO ends on line 17; the map flies home
+ * from 80 % of that line and the last frame is the opening frame (Lào Cai border, map only).
  *
  * Map rules (Lucas 2026-10-13, option A): China filled from Natural Earth (de facto); Hoàng Sa +
  * Trường Sa in Vietnam's colour with labels; Taiwan not filled; no labels on disputed areas. The
@@ -16,11 +16,11 @@ import timing from "../../src/voiceover/p5-trung-quoc-mui-gio.timing.json";
 import words from "../../src/voiceover/p5-trung-quoc-mui-gio.words.json";
 import { episodeDuration } from "../../src/series/pvr/episode";
 import { SafeGuide } from "../../src/series/pvr/safe";
-import { SfxCues, type SfxCue } from "../../src/series/pvr/sfx";
+import { MusicBed, PILLAR_MUSIC, SfxCues, type SfxCue } from "../../src/series/pvr/sfx";
 import { CLAMP, FONT, prog } from "../../Style Library/kit-common";
 import { KaraokeSubs } from "../../Style Library/subs";
 import {
-  ATLAS, Atlas, AtlasSub, beats, BigGold, camAt, CountryShape, DataCard, type Fill, type GeoCam, ImgSticker, MapLabel, Pulse, Question, RegionFill, show, Sticker, toScreen, VnIslands, YearRibbon,
+  ATLAS, Atlas, AtlasSub, beats, BigGold, camAt, CountryShape, CountryTag, DataCard, type Fill, type GeoCam, ImgSticker, MapLabel, Pulse, Question, RegionFill, seamKeys, show, Sticker, toScreen, VnIslands, YearRibbon,
 } from "../../Style Library/I-toy-atlas/toy-atlas";
 
 const FPS = 30;
@@ -34,15 +34,17 @@ const VIEW = {
   kashgar: { lon: 76, lat: 39.5, zoom: 40 },
   wakhan: { lon: 74.6, lat: 37.1, zoom: 60 },
 };
-const KEYS: GeoCam[] = [
+const KEYS0: GeoCam[] = [
   { at: 0, ...VIEW.laocai },
   { at: at("02", 0.05), ...VIEW.china },
   { at: at("08") - 4, ...VIEW.kashgar },
   { at: at("15") - 4, ...VIEW.wakhan },
-  { at: at("18", 0.1), ...VIEW.laocai },
+  { at: at("17", 0.8), ...VIEW.laocai },
 ];
 const PUSH = 0.04;
 const PUSH_CAP = 0.08;
+// loop seam: the last frame lands exactly on the opening framing
+const KEYS = seamKeys(KEYS0, episodeDuration(timing, FPS), PUSH, PUSH_CAP);
 
 const CN_BASE = "#E8B86A";
 /** "Beijing time" colour: must not look like Vietnam's red (the Lào Cai frame shows both). */
@@ -97,7 +99,7 @@ const Scene: React.FC = () => {
 
   // 1949: one colour floods China from Beijing; the solar bands fade under it
   // …and drains back during the flight home so the last frame matches the first
-  const merge = prog(f, at("05", 0.3), 45, Easing.inOut(Easing.cubic)) * (1 - prog(f, at("18", 0.05), 30, Easing.inOut(Easing.cubic)));
+  const merge = prog(f, at("05", 0.3), 45, Easing.inOut(Easing.cubic)) * (1 - prog(f, at("17", 0.75), 30, Easing.inOut(Easing.cubic)));
   const fills: Fill[] = [
     ...["Vietnam", "Paracel Is.", "Spratly Is."].map((name) => ({ name, color: ATLAS.c })),
     { name: "China", color: ONE_CLOCK, wipe: { from: CN_BASE, lon: BEIJING[0], lat: BEIJING[1], p: merge } },
@@ -129,7 +131,12 @@ const Scene: React.FC = () => {
             ring={[[w0, 18.2], [w0 + 15, 18.2], [w0 + 15, 55], [w0, 55]]} />
         );
       })}
-      <VnIslands cam={cam} f={f} color={ATLAS.c} o={islandsO} hsLabel={[-120, -40]} tsLabel={[-130, 95]} />
+      <VnIslands cam={cam} f={f} color={ATLAS.c} o={islandsO} />
+      {/* country names + flags where the VO names them (Lucas 2026-10-14) */}
+      <CountryTag cam={cam} f={f} name="China" label="TRUNG QUỐC" flag="china" anchor={[101, 33]} from={at("02", 0.6)}
+        o={show(f, at("02", 0.6), at("05"))} glow={[at("03", 0.25)]} />
+      <CountryTag cam={cam} f={f} name="Afghanistan" label="AFGHANISTAN" anchor={[73.3, 37.05]} from={at("15", 0.35)}
+        o={show(f, at("15", 0.35), at("16", 0.1))} glow={[at("15", 0.45)]} />
       {night > 0 && <AbsoluteFill style={{ background: "linear-gradient(#0B1530 0%, #1B2A50 60%, rgba(27,42,80,0.4) 100%)", opacity: 0.72 * night }} />}
 
       {/* ── 01 Lào Cai – Hà Khẩu: +1 hour ── */}
@@ -204,14 +211,13 @@ const Scene: React.FC = () => {
       <BigGold text="1 VÙNG · 2 ĐỒNG HỒ" f={f} at={at("14", 0.05)} out={at("15") - 4} y={330} size={84} />
 
       {/* ── 15–17 the Afghan border: 3.5 hours, no way across ── */}
-      {f >= at("15") && f < at("18", 0.2) && (() => {
+      {f >= at("15") && f < at("17", 0.85) && (() => {
         const [ax, ay] = toScreen(cam, 73.6, 37.0);
         const [cx, cy] = toScreen(cam, 75.4, 37.4);
         const [gx, gy] = toScreen(cam, ...WAKHJIR);
-        const o = 1 - prog(f, at("18", 0.05), 5);
+        const o = 1 - prog(f, at("17", 0.75), 5);
         return (
           <AbsoluteFill style={{ opacity: o }}>
-            <MapLabel text="AFGHANISTAN" x={300} y={ay + 170} o={show(f, at("15", 0.35), at("16", 0.1))} />
             <CountryShape cam={cam} name="China" stroke={ATLAS.gold} o={show(f, at("15", 0.5)) * (0.6 + 0.4 * Math.sin(f / 4))} />
             <Clock x={ax - 40} y={ay - 330} r={85} hours={4.5} f={f} at={at("16", 0.1)} digital />
             <Clock x={cx + 60} y={cy - 330} r={85} hours={8} f={f} at={at("16", 0.2)} digital />
@@ -246,15 +252,15 @@ const SFX: SfxCue[] = [
   [CLICK, "01", 0.5], [W, "02", 0.05],
   [CLICK, "03", 0.3], [THUD, "05", 0.3, 0, -18], [CLICK, "06", 0.1], [CLICK, "07"],
   [W2, "08", 0, -4], [CLICK, "08", 0.55], [CLICK, "09", 0.25], [CLICK, "10", 0.35], [CLICK, "11", 0.2],
-  [CLICK, "12", 0.45], [CLICK, "13", 0.25], [W, "15", 0, -4], [THUD, "16", 0.45, 0, -18], [CLICK, "17", 0.1], [W2, "18", 0.1],
+  [CLICK, "12", 0.45], [CLICK, "13", 0.25], [W, "15", 0, -4], [THUD, "16", 0.45, 0, -18], [CLICK, "17", 0.1], [W2, "17", 0.8],
 ];
 
 export const P5TrungQuocMuiGio: React.FC = () => (
   <AbsoluteFill style={{ backgroundColor: ATLAS.deep }}>
     <Scene />
-    <KaraokeSubs timing={timing} words={words} captions={CAPTIONS} Skin={AtlasSub} oneLine maxWords={4} maxChars={22} />
+    <KaraokeSubs timing={timing} words={words} captions={CAPTIONS} Skin={AtlasSub} oneLine maxWords={4} maxChars={20} />
     <Audio name="VO" src={staticFile("voiceover/p5-trung-quoc-mui-gio/vo.mp3")} />
-    <Audio name="Music" src={staticFile("audio/bed-bright.wav")} loop volume={0.2} />
+    <MusicBed file={PILLAR_MUSIC.P5} />
     <SfxCues timing={timing} cues={SFX} />
   </AbsoluteFill>
 );

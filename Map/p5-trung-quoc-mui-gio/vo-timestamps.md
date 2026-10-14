@@ -1,7 +1,7 @@
 # VO timestamps — p5-trung-quoc-mui-gio
 
 Voice: Orus · model: gemini-3.8-flash-tts · tempo ×1.1
-Duration: **63.37 s** (1:03.37) · 244 words · **231 wpm** overall
+Duration: **60.68 s** (1:00.68) · 234 words · **231 wpm** overall
 
 | # | Scene | Start | End | Text |
 |---|-------|-------|-----|------|
@@ -22,4 +22,3 @@ Duration: **63.37 s** (1:03.37) · 244 words · **231 wpm** overall
 | 15 | S7 | 0:46.24 | 0:51.55 | Nhưng chỗ kỳ lạ nhất nằm ở biên giới với Afghanistan, nước dùng múi giờ lẻ nửa tiếng. |
 | 16 | S7 | 0:51.61 | 0:57.38 | Nếu bước qua được, đồng hồ lệch tới ba tiếng rưỡi, một trong những chỗ lệch giờ lớn nhất thế giới. |
 | 17 | S8 | 0:57.63 | 1:00.43 | Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua. |
-| 18 | S8 | 1:00.49 | 1:03.13 | Muốn thấy đồng hồ nhảy, cách dễ nhất vẫn là |

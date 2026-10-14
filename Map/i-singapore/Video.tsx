@@ -3,8 +3,8 @@
  * "Vì sao bị Malaysia đuổi đi, Singapore lại giàu gấp 7 lần?"
  * Script + claim ledger: kich-ban-i-singapore-FINAL.md. One continuous map:
  * the camera flies at each change of place; every cue comes from the VO
- * timing. Loop ending: line 17 runs into line 01 and the last beat is the
- * opening frame.
+ * timing. Soft loop (Lucas 2026-10-14): the VO ends on line 16; in the 0.7 s tail the map
+ * returns to the opening frame.
  *
  * v2 (Lucas 2026-10-12): Lucas's chibi cut-outs; ambient motion everywhere
  * (water, flags, pawns, floating stickers, pulse) plus an event every
@@ -18,7 +18,7 @@ import timing from "../../src/voiceover/i-singapore.timing.json";
 import words from "../../src/voiceover/i-singapore.words.json";
 import { episodeDuration } from "../../src/series/pvr/episode";
 import { SafeGuide } from "../../src/series/pvr/safe";
-import { SfxCues, type SfxCue } from "../../src/series/pvr/sfx";
+import { MusicBed, PILLAR_MUSIC, SfxCues, type SfxCue } from "../../src/series/pvr/sfx";
 import { CLAMP, FONT, prog } from "../../Style Library/kit-common";
 import { KaraokeSubs } from "../../Style Library/subs";
 import {
@@ -92,14 +92,14 @@ const Scene: React.FC = () => {
   const sg = toScreen(cam, SG[0], SG[1]);
   const home = f < at("03") - 4 || f >= at("15") - 6;
   // the pawns leave for the flight to Britain and return on the home view; they step aside for the bars
-  const homeO = f < at("03") - 4 ? 1 - prog(f, at("03") - 8, 4) : prog(f, at("15") + 8, 6) * (1 - prog(f, at("15", 0.3), 6)) + prog(f, at("17"), 6);
+  const homeO = f < at("03") - 4 ? 1 - prog(f, at("03") - 8, 4) : prog(f, at("15") + 8, 6) * (1 - prog(f, at("15", 0.3), 6)) + prog(f, at("16", 1) + 2, 6);
   const [tx, ty] = toScreen(cam, 102.1, 3.3);
   const [lx, ly] = toScreen(cam, 105.7, 1.1);
 
   // bars (payoff): Singapore vs Malaysia GDP per person, 2024
   const sgBar = 560 * prog(f, at("15", 0.35), 24);
   const myBar = (560 / 7.64) * prog(f, at("16", 0.15), 18);
-  const barsO = Math.min(prog(f, at("15", 0.3), 5), 1 - prog(f, at("17"), 6));
+  const barsO = Math.min(prog(f, at("15", 0.3), 5), 1 - prog(f, at("16", 1) + 2, 6));
 
   return (
     <AbsoluteFill>
@@ -320,7 +320,6 @@ const CAPTIONS: Record<string, string> = {
   "14": "Họ còn lấn biển, nới rộng hòn đảo thêm khoảng 1/4.",
   "15": "Năm 2024, mỗi người dân Singapore làm ra hơn 90.000 đô la.",
   "16": "Người Malaysia, chưa tới 12.000.",
-  "17": "Thật khó tin, vì năm 1965…",
 };
 
 const W = "whoosh/simple-whoosh-382724.mp3";
@@ -341,10 +340,10 @@ export const ISingapore: React.FC = () => (
   <AbsoluteFill style={{ backgroundColor: ATLAS.deep }}>
     <Scene />
     {/* Vietnamese words are syllables: allow 5 per chunk so chunks stay on screen ≈ 1 s */}
-    <KaraokeSubs timing={timing} words={words} captions={CAPTIONS} Skin={AtlasSub} oneLine maxWords={4} maxChars={22} />
+    <KaraokeSubs timing={timing} words={words} captions={CAPTIONS} Skin={AtlasSub} oneLine maxWords={4} maxChars={20} />
     <Audio name="VO" src={staticFile("voiceover/i-singapore/vo.mp3")} />
-    {/* bed ≈ 11 dB under the voice, as in the reference */}
-    <Audio name="Music" src={staticFile("audio/bed-bright.wav")} loop volume={0.2} />
+    {/* pillar music bed (Pixabay), levelled to -28 LUFS by MusicBed */}
+    <MusicBed file={PILLAR_MUSIC.P1} />
     <SfxCues timing={timing} cues={SFX} />
   </AbsoluteFill>
 );

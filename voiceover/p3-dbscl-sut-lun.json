@@ -163,15 +163,8 @@
       "id": "22",
       "scene": "s8",
       "take": "t08",
-      "gapAfter": 0.06,
-      "text": "Oái oăm ở chỗ: thứ kéo đồng bằng xuống nhiều nhất lại là nước ngọt ngay dưới chân, để uống, tưới ruộng, nuôi tôm cá."
-    },
-    {
-      "id": "23",
-      "scene": "s8",
-      "take": "t08",
       "gapAfter": 0.25,
-      "text": "Vậy mà"
+      "text": "Oái oăm ở chỗ: thứ kéo đồng bằng xuống nhiều nhất lại là nước ngọt ngay dưới chân, để uống, tưới ruộng, nuôi tôm cá."
     }
   ]
 }

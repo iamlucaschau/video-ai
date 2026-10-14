@@ -61,7 +61,15 @@ Tài liệu nguồn (tham khảo, không sửa): `Map/master-map-explainer-playb
 2. **Cảnh đời thường / "thử tưởng tượng":** đổi con số thành trải nghiệm ("ăn sáng ở A, ăn trưa ở B"), tính từ số liệu có nguồn.
 3. **Câu hỏi treo giữa video**, trả lời ngay bằng 1–3 chữ.
 4. **Chi tiết nhỏ, cụ thể, dễ nhớ** hơn thông số kỹ thuật; so sánh quy mô bằng thứ người xem biết ("mỗi mét hơn 1 tỷ đồng").
-5. **Twist / nghịch lý ở cuối** (có nguồn), rồi mới nối vòng.
+5. **Twist / nghịch lý ở cuối** (có nguồn), kết bằng một câu trọn vẹn.
+
+**Luật kịch bản bổ sung** (so sánh với đối thủ, `Map/phan-tich-doi-thu/SO-SANH-KICH-BAN.md`, Lucas duyệt 2026-10-14):
+6. **Câu hỏi treo phải được đáp ngay bằng 1–3 chữ**, rồi mới giải thích ("Vì sao tính sai? Vì cái thước. Mốc đo…").
+7. **Mỗi tập ≥ 1 khoảnh khắc người:** nhân vật thật làm một việc cụ thể (khóc trên truyền hình, cử kỹ sư đi đo, hỏi thẳng thủ tướng), có nguồn.
+8. **Câu đùa: ít nhất 1, nhiều nhất 2**, đặt ngay sau một con số nặng; Cổng 3 đánh dấu `[ĐÙA]`.
+9. **Chủ đề có tranh luận → 2 câu hai phe** trung tính, mỗi vế có nguồn (xem §8).
+10. **Mỗi câu VO tối đa 1 con số mới** (năm cũng tính).
+11. **Không lặp câu cửa miệng:** "oái oăm", "thử…", "Vì sao?" trơn mỗi cụm tối đa 1 lần trong 3 tập liên tiếp; dùng kho câu thay thế ở prompt Cổng 3.
 
 ## 4. Thời lượng & nhịp
 
@@ -81,10 +89,12 @@ Chi tiết + code: `Style Library/I-toy-atlas/README.md`. Tóm tắt những đi
 |---|---|
 | Nền than chì/navy + amber `#F5A524` | Bản đồ Natural Earth có vân địa hình, biển xanh, lãnh thổ màu theo phe |
 | Font Be Vietnam Pro | **Bricolage Grotesque** 700–800 (có bộ tiếng Việt), mọi chữ ≥ 48 px |
-| Phụ đề IN HOA 2–5 từ, 2 dòng | **Karaoke 1 dòng, ≤ 4 chữ / 22 ký tự** (Lucas 2026-10-13); từ khoá + con số vàng nhạt suốt cụm, chữ đang đọc vàng đậm và to hơn 10 % (`AtlasSub`); tối đa 1–2 cụm từ khoá `*…*` mỗi câu |
+| Phụ đề IN HOA 2–5 từ, 2 dòng | **Karaoke 1 dòng, ≤ 4 chữ / 20 ký tự** (Lucas 2026-10-13); từ khoá + con số vàng nhạt suốt cụm, chữ đang đọc vàng đậm và to hơn 10 % (`AtlasSub`); tối đa 1–2 cụm từ khoá `*…*` mỗi câu |
 | Push / pan nhẹ mỗi beat | **Bay khi đổi nơi** (ease, ≥ 22 frame, không blur/rung) + **đẩy chậm mỗi beat** (Lucas 2026-10-13): camera tiến rất chậm, đều về chủ thể, ≤ ~5 % zoom mỗi 3 s, không rung, không giật, không "thở", không zoom đột ngột; **trong khung luôn có chuyển động** (biển, cờ, quân cờ, tàu, sticker, viền phát sáng) |
 | Logo dấu phẩy amber | Bỏ (thương hiệu chốt sau cùng tên kênh) |
 | Minh hoạ vector + paper collage | **Quân cờ chibi + sticker đạo cụ** từ bộ prompt ảnh (Lucas tạo), tách nền bằng `scripts/cutout.py` |
+
+**Tên nước + cờ + viền sáng** (Lucas 2026-10-14): nước nào được lời đọc gọi tên hoặc được tô màu thì có nhãn tên (52 px) kèm cờ cắm trên lãnh thổ khi lần đầu vào khung, nhãn đi theo camera; viền vàng–trắng của nước đó loé 2 lần khi lời đọc nói tên (`CountryTag`). Nước nền không nhãn; nhãn tạm ẩn khi khung đã đủ 2 chữ hoặc nhãn đè lên đạo cụ.
 
 Giữ của Engine V2: một hành động bản đồ chính mỗi beat; nhãn chỉ cho địa danh của beat đó; thẻ số liệu gắn với bản đồ; không dùng ảnh vệ tinh làm nền chính; nguồn ở description, không trên màn hình (trừ attribution bắt buộc).
 
@@ -93,15 +103,27 @@ Giữ của Engine V2: một hành động bản đồ chính mỗi beat; nhãn 
 - **Giọng:** Gemini TTS, nam, `Orus`, model `gemini-3.8-flash-tts`, **tempo 1.1** (Lucas 2026-10-13; 1.2 nghe kém tự nhiên, 1.0 hơi chậm), ~235–240 wpm, khoảng nghỉ ngắn `{sentence 0.06, paragraph 0.12, scene 0.25}` cho nhịp nhanh.
 - Chỉ dẫn giọng mặc định: *"Giọng nam Việt Nam trưởng thành, giọng miền Bắc chuẩn, trung tính, trầm vừa và đáng tin, như người kể chuyện lịch sử hấp dẫn. Mở đầu nhanh, gọn và tò mò; giải thích rõ ràng; đọc năm, con số và địa danh chậm hơn một nhịp. Không cường điệu, không hét. Câu cuối chưa kết thúc: giữ giọng treo lên."*
 - **Giọng kể "vui vừa phải"** (Lucas 2026-10-13): cảnh đời thường, chơi chữ nhẹ, tối đa 1–2 câu khẩu ngữ/lóng mỗi video; số liệu vẫn chuẩn; phần tranh luận vẫn trung tính.
-- Nhạc nền sáng (`bed-bright.wav`) **~11 dB dưới giọng** (volume ≈ 0.2). SFX thật Pixabay: whoosh mỗi cú bay, click khi sticker hiện, deep hit ở con số chốt; không pop/ding hoạt hình; master −14 LUFS / −1,5 dBTP.
+- **Nhạc nền theo pillar** (Lucas 2026-10-14): nhạc Pixabay có giấy phép (dùng trong video, không cần ghi công, không phân phối lại file; `public/sfx/music/`, nguồn trong `scripts/music-list.json`). `<MusicBed file={PILLAR_MUSIC.Px} />` tự cân về **−28 LUFS** (~14 dB dưới giọng trước master), fade 0,3 s hai đầu cho mượt chỗ nối vòng, `duck` để lắng ở cao trào.
+
+  | Pillar | Bài chính | Bài dự phòng |
+  |---|---|---|
+  | P1 Lịch sử | Historical Documentary Music — Tunetank (hồi hộp, dồn) | History — Tatamusic (êm) |
+  | P2 Tiền & bản đồ | Explainer — AtlasAudio (tươi, explainer) | This Light Inspiration — moodmode |
+  | P3 Địa lý hiện tượng | Science Documentary — Lexin_Music (khám phá) | Documentary Nature — leberch |
+  | P4 Hành trình | Cinematic Documentary — Lexin_Music (nhịp đập) | Travel Adventure — leberch |
+  | P5 Kỳ lạ & kỷ lục | Mystery Quirky — leberch (tò mò, tinh nghịch) | The Smallest Detective — Tomas_Herudek |
+
+  YouTube đôi khi gắn Content ID nhầm cho nhạc Pixabay → khiếu nại kèm link trang Pixabay của bài (cột `source` trong `public/sfx/catalog.json`).
+- SFX thật Pixabay: whoosh mỗi cú bay, click khi sticker hiện, deep hit ở con số chốt; không pop/ding hoạt hình; master −14 LUFS / −1,5 dBTP.
 
 ## 7. Cấu trúc bắt buộc mọi tập
 
 1. **Hook ≤ 3 s** (mẫu §3), có câu hỏi.
 2. Mạch theo engine; mỗi câu 1 beat.
 3. **Payoff trả lời đúng câu hỏi hook**, có **so sánh nhìn thấy được** (2 cột, 2 con số, trước/sau).
-4. **Kết nối vòng:** câu cuối là vế bỏ lửng ≤ 8 chữ nối vào câu đầu thành 1 câu đúng nghĩa; khung cuối = khung đầu; cắt 0,2 s sau chữ cuối (`--loop`).
-5. CTA chỉ khi câu hỏi thật sự có ích (câu hỏi gợi comment để trong pinned comment, không đọc trong video).
+4. **Twist / nghịch lý là nhịp nội dung cuối cùng**; tin cập nhật, bối cảnh hiện tại đặt **trước** twist (hoặc vào bình luận ghim).
+5. **Nối vòng mềm** (Lucas 2026-10-14, thay câu bỏ lửng): lời đọc **kết bằng một câu trọn vẹn, có sức nặng** (không còn vế bỏ lửng nối vào câu đầu, vì nghe cụt khi không tự lặp và giọng TTS đọc câu treo gượng). **Hình vẫn lặp liền:** khung cuối = khung đầu (`seamKeys` trong kit), hình quay về trong câu cuối hoặc trong **0,7–1 s nhạc sau chữ cuối** (`export --loop --tail=0.7`).
+6. CTA chỉ khi câu hỏi thật sự có ích (câu hỏi gợi comment để trong pinned comment, không đọc trong video).
 
 ## 8. Nguyên tắc dữ liệu & an toàn (gộp playbook §7 + Engine V2)
 
@@ -112,14 +134,15 @@ Giữ của Engine V2: một hành động bản đồ chính mỗi beat; nhãn 
 5. Không biến tương quan thành nhân quả ("sau khi", "đi cùng với", "trùng với").
 6. Không dự báo giá chắc chắn, không khuyên mua/bán.
 7. Nguồn mâu thuẫn đáng kể → **dừng ở Cổng 2**, trình Lucas.
-8. **Lãnh thổ / biên giới tranh chấp** (đặc biệt Biển Đông, Hoàng Sa, Trường Sa) → **dừng ở Cổng 2**, Lucas duyệt cách vẽ. Mặc định: chỉ tô màu các nước trong câu chuyện, nước khác màu đất trung tính, không nhãn.
+8. **Chủ đề có tranh luận** (dự án lớn, chính sách): đặt **2 câu hai phe** cạnh nhau, mỗi vế có nguồn riêng; không để lời dẫn đứng về một phía.
+9. **Lãnh thổ / biên giới tranh chấp** (đặc biệt Biển Đông, Hoàng Sa, Trường Sa) → **dừng ở Cổng 2**, Lucas duyệt cách vẽ. Mặc định: chỉ tô màu các nước trong câu chuyện, nước khác màu đất trung tính, không nhãn.
    - **Bản đồ toàn lãnh thổ Việt Nam** (vd. tuyến Bắc–Nam): theo quy định của Việt Nam phải thể hiện **quần đảo Hoàng Sa và Trường Sa thuộc Việt Nam**. Dữ liệu Natural Earth không bảo đảm điều này → **không dùng nguyên dữ liệu gốc** cho khung có Biển Đông; Lucas duyệt cách vẽ ở Cổng 2 (vẽ bổ sung hai quần đảo cùng màu Việt Nam + nhãn, hoặc cắt khung chỉ còn đất liền khi câu chuyện không cần biển).
-   - **Cách hiển thị chuẩn (Lucas 2026-10-14):** `VnIslands` kiểu "callout" — vài chấm nhỏ trong quầng màu Việt Nam nhạt; nhãn "HOÀNG SA", "TRƯỜNG SA" (42 px, viên thuốc nền tối viền đỏ) căn **lề phải vùng an toàn**, nối về cụm đảo bằng đường mảnh; tự tránh dải chữ trên cùng, vùng phụ đề và nhau. Khi khung có Biển Đông, **cột lề phải giữa khung dành cho hai nhãn này** — hình và chữ khác tránh ra.
+   - **Cách hiển thị chuẩn (Lucas 2026-10-14, kiểu ghim bản đồ):** chấm nhỏ màu Việt Nam cho các đảo, luôn có khi khung có cả bờ biển Việt Nam. Tên "Hoàng Sa", "Trường Sa" (42 px, chữ trắng viền tối) cạnh **một chấm đỏ viền trắng** mỗi quần đảo, gắn vào bản đồ (đi theo camera); **chỉ hiện ở cảnh camera tới đó** — tự hiện khi ghim nằm trong vùng an toàn và đủ gần để phân biệt hai quần đảo, cảnh châu Á rộng chỉ còn chấm.
    - **Địa giới tỉnh sau sáp nhập (1/7/2025):** dữ liệu tỉnh cũ đã lỗi thời → không vẽ ranh giới tỉnh trừ khi có nguồn hình học mới; số liệu theo tỉnh phải ghi rõ "trước / sau sáp nhập".
-9. Không bịa toạ độ, ranh giới, tuyến đường, ngày, trích dẫn, số liệu, URL, tên nguồn.
-10. Người thật trong lịch sử: hình chibi tôn trọng, không biếm hoạ xúc phạm; không gọi tên cá nhân/tổ chức ngoài nguồn trong chủ đề nhạy cảm.
-11. Giữ attribution bản đồ khi giấy phép yêu cầu (Natural Earth là public domain — không bắt buộc, vẫn ghi trong description).
-12. Một tập chỉ được đăng khi **cả 5 cổng = duyệt**.
+10. Không bịa toạ độ, ranh giới, tuyến đường, ngày, trích dẫn, số liệu, URL, tên nguồn.
+11. Người thật trong lịch sử: hình chibi tôn trọng, không biếm hoạ xúc phạm; không gọi tên cá nhân/tổ chức ngoài nguồn trong chủ đề nhạy cảm.
+12. Giữ attribution bản đồ khi giấy phép yêu cầu (Natural Earth là public domain — không bắt buộc, vẫn ghi trong description).
+13. Một tập chỉ được đăng khi **cả 5 cổng = duyệt**.
 
 ## 9. Học sau khi đăng
 
@@ -136,5 +159,11 @@ Ghi số liệu ở **24 h · 7 ngày · 30 ngày** cho YouTube / Facebook / Ins
 | 2026-10-12 | 5 pillar cân bằng (30/30/20/10/10); Engine V2 chỉ lấy quy trình; người duyệt Lucas, tên kênh chốt sau | Lucas |
 | 2026-10-13 | Sau phân tích 20 video đối thủ: camera đẩy chậm mỗi beat; giọng kể vui vừa phải; giữ phụ đề karaoke; Standard 60–75 s, ~220 wpm; hook mẫu F + 5 kỹ thuật kịch bản; tiêu đề hook vẫn ≤ 5 chữ | Lucas |
 | 2026-10-13 | Tempo mặc định trở lại 1.1 (tập ĐBSCL: 1.0 → 1.1, 217 → 238 wpm) | Lucas |
+| 2026-10-14 | Nhạc nền Pixabay theo pillar (10 bài, mỗi pillar 1 chính + 1 dự phòng), −28 LUFS | Lucas |
 | 2026-10-14 | Hoàng Sa, Trường Sa hiển thị kiểu nhãn chỉ dẫn lề phải, chữ 42 px (ngoại lệ luật 48 px cho nhãn nền bản đồ) | Lucas |
+| 2026-10-14 | Thay bằng kiểu ghim bản đồ (chấm đỏ + tên trắng), tên chỉ hiện ở cảnh camera tới; bỏ cột lề phải | Lucas |
+| 2026-10-14 | Tên kênh: **Atlas Tí Hon** (tiếng Anh sau: Tiny Atlas); nhận diện ở `06_NHAN-DIEN-KENH.md` | Lucas |
+| 2026-10-14 | Nối vòng mềm: bỏ vế bỏ lửng cuối kịch bản, kết bằng câu trọn vẹn; hình vẫn lặp liền (áp dụng lại cho cả 5 tập) | Lucas |
+| 2026-10-14 | Tên nước + cờ + viền sáng cho mọi nước được gọi tên / tô màu (`CountryTag`) | Lucas |
+| 2026-10-14 | 7 luật kịch bản sau so sánh đối thủ: đáp câu hỏi treo 1–3 chữ, ≥ 1 khoảnh khắc người, 1–2 câu đùa, hai phe, 1 số/câu, twist là nhịp cuối, kho câu thay thế | Lucas |
 | 2026-10-13 | Phụ đề tối đa 4 chữ/dòng; từ khoá + con số vàng nhạt, chữ đang đọc vàng đậm + to 10 % | Lucas |
