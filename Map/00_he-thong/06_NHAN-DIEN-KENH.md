@@ -97,3 +97,7 @@ Nếu app tạo ảnh không ra đúng 16:9: tạo bản rộng nhất có thể
 | Địa danh (theo tập) | vd. `#Brunei #Malaysia`, `#MienTay #Mekong`, `#TrungQuoc #MuiGio` |
 
 Kênh tiếng Anh sau này (Tiny Atlas): `#TinyAtlas #Maps #Geography #MapExplained`.
+
+## 6. Caption mạng xã hội (TikTok / Facebook Reels / Instagram, Lucas 2026-10-15)
+
+Mỗi tập có caption riêng trong `xuat-ban.md` mục 6. Công thức 3 dòng: **hook** (dòng 1, khớp hook ảnh bìa, có emoji) → **một câu bối cảnh có số liệu đã kiểm chứng** → **câu hỏi mời bình luận** + 👇. Hashtag: `#AtlasTiHon #BanDo #DiaLy` + 3 tag theo tập (tối đa ~6; TikTok có thể thêm `#HocCungTikTok`). Không dùng `#Shorts` ngoài YouTube.

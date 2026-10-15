@@ -181,7 +181,7 @@ const VoteButton: React.FC<{ x: number; y: number; f: number; at: number; press:
   );
 };
 
-const Scene: React.FC = () => {
+export const Scene: React.FC = () => {
   const f = useCurrentFrame();
   const cam = camAt(KEYS, f, PUSH, PUSH_CAP);
   const route = pts(cam, ROUTE);

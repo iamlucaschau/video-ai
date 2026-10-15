@@ -38,6 +38,7 @@ import { ISingapore, iSingaporeDuration } from "../Map/i-singapore/Video";
 import { P2DuongSatCaoToc, p2DuongSatCaoTocDuration } from "../Map/p2-duong-sat-cao-toc/Video";
 import { P3DbsclSutLun, p3DbsclSutLunDuration } from "../Map/p3-dbscl-sut-lun/Video";
 import { P1BruneiChiaDoi, p1BruneiChiaDoiDuration } from "../Map/p1-brunei-chia-doi/Video";
+import { Cover, COVERS } from "../Map/covers";
 import { P4MalaccaKra, p4MalaccaKraDuration } from "../Map/p4-malacca-kra/Video";
 import { P5TrungQuocMuiGio, p5TrungQuocMuiGioDuration } from "../Map/p5-trung-quoc-mui-gio/Video";
 import { PriceTheirWork } from "./compositions/PriceTheirWork/PriceTheirWork";
@@ -140,6 +141,12 @@ export const RemotionRoot: React.FC = () => {
           fps={PVR.fps}
           durationInFrames={p5TrungQuocMuiGioDuration(PVR.fps)}
         />
+      </Folder>
+      <Folder name="Map-Covers">
+        {COVERS.map((spec) => (
+          <Composition key={spec.slug} id={`Cover-${spec.slug}`} component={Cover} defaultProps={{ slug: spec.slug }}
+            width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
+        ))}
       </Folder>
       <Folder name="PoorVsRich-Ep03">
         <Composition

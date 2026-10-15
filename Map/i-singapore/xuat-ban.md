@@ -29,11 +29,25 @@
 
 ## 4. Ảnh bìa
 
-Khung bản đồ đầu video (Malaysia xanh, Singapore đỏ, hai nhân vật), chữ **"GIÀU GẤP 7?"** (Luis ghép chữ).
+`cover.jpg` (1080×1920, < 2 MB; render: `npx remotion still Cover-i-singapore out/cover.png` rồi đổi sang JPG; khung + tiêu đề trong `Map/covers.tsx`). Tải lên làm ảnh bìa Shorts trong ứng dụng YouTube.
 
 ## 5. Bình luận ghim
 
 > Nếu là Singapore năm 1965, bạn sẽ làm gì đầu tiên? 👇
+
+## 6. Caption + hashtag (TikTok / Facebook Reels / Instagram)
+
+*Dòng đầu là hook (chỉ 1–2 dòng hiện trước khi bấm "xem thêm"); dòng cuối là câu hỏi mời bình luận. YouTube Shorts dùng tiêu đề + mô tả ở mục 1–3.*
+
+```text
+Bị Malaysia đuổi ra khỏi đất nước… vậy mà giờ giàu gấp 7 lần 🤯
+Một hòn đảo không tài nguyên, phải mua cả nước ngọt. Họ đã làm thế nào?
+Theo bạn, bí quyết nằm ở đâu? 👇
+
+#AtlasTiHon #BanDo #DiaLy #LichSu #Singapore #Malaysia
+```
+
+TikTok có thể thêm `#HocCungTikTok`. Tối đa ~6 hashtag trên các nền tảng này.
 
 ## Trước khi đăng (còn mở)
 

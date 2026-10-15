@@ -137,7 +137,7 @@ const SoilCard: React.FC<{ f: number; at: number; out: number; squeeze: number }
   );
 };
 
-const Scene: React.FC = () => {
+export const Scene: React.FC = () => {
   const f = useCurrentFrame();
   const cam = camAt(KEYS, f, PUSH, PUSH_CAP);
   const islandsO = interpolate(cam.zoom, [22, 30], [1, 0], CLAMP);

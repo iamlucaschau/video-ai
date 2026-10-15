@@ -32,11 +32,25 @@
 
 ## 4. Ảnh bìa
 
-Chữ **"+1 GIỜ"** trên khung cửa khẩu Lào Cai, có cầu và hai đồng hồ (still ~ frame 70). Biến thể: khung toàn Trung Quốc với 5 dải màu (still ~ frame 290).
+`cover.jpg` (1080×1920, < 2 MB; render: `npx remotion still Cover-p5-trung-quoc-mui-gio out/cover.png` rồi đổi sang JPG; khung + tiêu đề trong `Map/covers.tsx`). Tải lên làm ảnh bìa Shorts trong ứng dụng YouTube.
 
 ## 5. Bình luận ghim
 
 > Nếu được chọn: cả nước một giờ cho tiện, hay mỗi vùng một giờ theo Mặt Trời? 👇
+
+## 6. Caption + hashtag (TikTok / Facebook Reels / Instagram)
+
+*Dòng đầu là hook (chỉ 1–2 dòng hiện trước khi bấm "xem thêm"); dòng cuối là câu hỏi mời bình luận. YouTube Shorts dùng tiêu đề + mô tả ở mục 1–3.*
+
+```text
+10 giờ sáng, mặt trời mới mọc ☀️⏰
+Trung Quốc trải gần 5 múi giờ theo Mặt Trời, nhưng cả nước dùng chung một chiếc đồng hồ.
+Bạn chịu nổi báo thức lúc trời còn tối không? 👇
+
+#AtlasTiHon #BanDo #DiaLy #KyLa #TrungQuoc #MuiGio
+```
+
+TikTok có thể thêm `#HocCungTikTok`. Tối đa ~6 hashtag trên các nền tảng này.
 
 ## Trước khi đăng (còn mở)
 

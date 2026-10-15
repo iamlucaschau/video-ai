@@ -34,11 +34,25 @@
 
 ## 4. Ảnh bìa
 
-Chữ **"LỐI TẮT?"** trên khung Đông Nam Á, có nét đứt vàng cắt qua eo Kra và dòng tàu nối đuôi ở Malacca (still ~ frame 200).
+`cover.jpg` (1080×1920, < 2 MB; render: `npx remotion still Cover-p4-malacca-kra out/cover.png` rồi đổi sang JPG; khung + tiêu đề trong `Map/covers.tsx`). Tải lên làm ảnh bìa Shorts trong ứng dụng YouTube.
 
 ## 5. Bình luận ghim
 
 > Nếu bạn là Thái Lan: đào kênh, xây cầu đất liền, hay để yên? 👇
+
+## 6. Caption + hashtag (TikTok / Facebook Reels / Instagram)
+
+*Dòng đầu là hook (chỉ 1–2 dòng hiện trước khi bấm "xem thêm"); dòng cuối là câu hỏi mời bình luận. YouTube Shorts dùng tiêu đề + mô tả ở mục 1–3.*
+
+```text
+Gần 1/3 dầu đi biển của thế giới chen qua một khe hẹp 🛢️🚢
+Ngay phía trên có một lối tắt hơn 300 năm chưa ai đào. Vì sao?
+Nếu là Thái Lan, bạn có đào không? 👇
+
+#AtlasTiHon #BanDo #DiaLy #HangHai #Malacca #ThaiLan
+```
+
+TikTok có thể thêm `#HocCungTikTok`. Tối đa ~6 hashtag trên các nền tảng này.
 
 ## Trước khi đăng (còn mở)
 

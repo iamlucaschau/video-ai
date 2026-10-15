@@ -35,11 +35,25 @@
 
 ## 4. Ảnh bìa
 
-Chữ **"67 TỶ ĐÔ / MUA 1 NGÀY?"** trên khung toàn Việt Nam, có tuyến vàng và hai đoàn tàu ở Hà Nội (still ~ frame 200).
+`cover.jpg` (1080×1920, < 2 MB; render: `npx remotion still Cover-p2-duong-sat-cao-toc out/cover.png` rồi đổi sang JPG; khung + tiêu đề trong `Map/covers.tsx`). Tải lên làm ảnh bìa Shorts trong ứng dụng YouTube.
 
 ## 5. Bình luận ghim
 
 > Nếu có tuyến này: bạn chọn **5 tiếng rưỡi** với vé tàu cao tốc, hay **hơn 30 tiếng** với vé rẻ? 👇
+
+## 6. Caption + hashtag (TikTok / Facebook Reels / Instagram)
+
+*Dòng đầu là hook (chỉ 1–2 dòng hiện trước khi bấm "xem thêm"); dòng cuối là câu hỏi mời bình luận. YouTube Shorts dùng tiêu đề + mô tả ở mục 1–3.*
+
+```text
+67 tỷ đô… để mua 1 ngày? 🚄
+Hà Nội → Sài Gòn: hơn 30 tiếng bằng tàu Thống Nhất, dự kiến khoảng 5,5 tiếng nếu có tàu cao tốc.
+Theo bạn, có đáng không? 👇
+
+#AtlasTiHon #BanDo #DiaLy #KinhTe #DuongSatCaoToc #VietNam
+```
+
+TikTok có thể thêm `#HocCungTikTok`. Tối đa ~6 hashtag trên các nền tảng này.
 
 ## Trước khi đăng (còn mở)
 

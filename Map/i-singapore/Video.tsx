@@ -86,7 +86,7 @@ const Bubble: React.FC<{ x: number; y: number; f: number; at: number; out?: numb
   </Sticker>
 );
 
-const Scene: React.FC = () => {
+export const Scene: React.FC = () => {
   const f = useCurrentFrame();
   const cam = camAt(KEYS, f);
   const sg = toScreen(cam, SG[0], SG[1]);

@@ -77,7 +77,7 @@ const CHECKS = [0.31, 0.38, 0.72, 0.79]; // two at each border
 const BRIDGE: [number, number][] = [[114.965, 4.905], [115.0, 4.895], [115.04, 4.875], [115.075, 4.85]];
 const BOAT: [number, number] = [115.015, 4.835];
 
-const Scene: React.FC = () => {
+export const Scene: React.FC = () => {
   const f = useCurrentFrame();
   const cam = camAt(KEYS, f, PUSH, PUSH_CAP);
   const islandsO = interpolate(cam.zoom, [12, 16], [1, 0], CLAMP);

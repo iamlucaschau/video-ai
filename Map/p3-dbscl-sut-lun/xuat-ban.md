@@ -34,11 +34,25 @@
 
 ## 4. Ảnh bìa
 
-Chữ **"LÚN CÒN NHANH HƠN"** + khung đồng bằng có hai cây thước (still ~ câu 12, frame ~970).
+`cover.jpg` (1080×1920, < 2 MB; render: `npx remotion still Cover-p3-dbscl-sut-lun out/cover.png` rồi đổi sang JPG; khung + tiêu đề trong `Map/covers.tsx`). Tải lên làm ảnh bìa Shorts trong ứng dụng YouTube.
 
 ## 5. Bình luận ghim
 
 > Nhà bạn ở miền Tây có dùng giếng khoan không? Theo bạn, nên làm gì trước: hạn chế nước ngầm hay giữ phù sa? 👇
+
+## 6. Caption + hashtag (TikTok / Facebook Reels / Instagram)
+
+*Dòng đầu là hook (chỉ 1–2 dòng hiện trước khi bấm "xem thêm"); dòng cuối là câu hỏi mời bình luận. YouTube Shorts dùng tiêu đề + mô tả ở mục 1–3.*
+
+```text
+Miền Tây chỉ cao hơn mặt biển khoảng 80 cm… và đang lún 😟
+Đất lún nhanh gấp khoảng 3 lần nước biển dâng. Thủ phạm lớn nhất nằm ngay dưới chân.
+Nhà bạn có dùng giếng khoan không? 👇
+
+#AtlasTiHon #BanDo #DiaLy #MoiTruong #MienTay #Mekong
+```
+
+TikTok có thể thêm `#HocCungTikTok`. Tối đa ~6 hashtag trên các nền tảng này.
 
 ## Trước khi đăng (còn mở)
 

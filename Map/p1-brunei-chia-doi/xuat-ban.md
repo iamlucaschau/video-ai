@@ -33,11 +33,25 @@
 
 ## 4. Ảnh bìa
 
-Khung Borneo đầu video: dải vàng ven biển + Brunei tí hon, chữ **"BỊ CẮT LÀM ĐÔI?"** (Luis ghép chữ), hoặc khung cuối `17/3/1890` – `17/3/2020`.
+`cover.jpg` (1080×1920, < 2 MB; render: `npx remotion still Cover-p1-brunei-chia-doi out/cover.png` rồi đổi sang JPG; khung + tiêu đề trong `Map/covers.tsx`). Tải lên làm ảnh bìa Shorts trong ứng dụng YouTube.
 
 ## 5. Bình luận ghim
 
 > Nếu bạn là Sultan năm 1963: vào Malaysia hay giữ dầu? 👇
+
+## 6. Caption + hashtag (TikTok / Facebook Reels / Instagram)
+
+*Dòng đầu là hook (chỉ 1–2 dòng hiện trước khi bấm "xem thêm"); dòng cuối là câu hỏi mời bình luận. YouTube Shorts dùng tiêu đề + mô tả ở mục 1–3.*
+
+```text
+Đất nước bị chính hàng xóm cắt làm đôi ✂️🗺️
+Cây cầu nối lại hai nửa mở cửa đúng 130 năm sau, tính tới từng ngày.
+Bạn còn biết nước nào bị chia làm hai mảnh không? 👇
+
+#AtlasTiHon #BanDo #DiaLy #LichSu #Brunei #Malaysia
+```
+
+TikTok có thể thêm `#HocCungTikTok`. Tối đa ~6 hashtag trên các nền tảng này.
 
 ## Trước khi đăng (còn mở)
 

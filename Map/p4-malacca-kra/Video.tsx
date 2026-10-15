@@ -112,7 +112,7 @@ const Measure: React.FC<{ a: [number, number]; b: [number, number]; o: number; p
   );
 };
 
-const Scene: React.FC = () => {
+export const Scene: React.FC = () => {
   const f = useCurrentFrame();
   const cam = camAt(KEYS, f, PUSH, PUSH_CAP);
   const islandsO = interpolate(cam.zoom, [14, 20], [1, 0], CLAMP);

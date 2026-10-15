@@ -92,7 +92,7 @@ const SunIcon: React.FC<{ x: number; y: number; r?: number; o?: number; f: numbe
   </svg>
 );
 
-const Scene: React.FC = () => {
+export const Scene: React.FC = () => {
   const f = useCurrentFrame();
   const cam = camAt(KEYS, f, PUSH, PUSH_CAP);
   const islandsO = interpolate(cam.zoom, [8, 14], [1, 0], CLAMP);
