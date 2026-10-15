@@ -1,17 +1,19 @@
-# Ảnh nhân vật & đạo cụ — "Trung Quốc 1 múi giờ" (style I Toy Atlas)
+# Ảnh mới cho bản v2 — p5-trung-quoc-mui-gio (style I Toy Atlas)
 
-*Lucas tạo trong app, lưu PNG vào `public/images/p5-trung-quoc-mui-gio/` đúng tên file. Luis tách nền. Dùng lại: đồng hồ `p-06` (tập đường sắt), TV `i-09` (tập Singapore). Đồng hồ kim, mặt trời, mặt trăng, dải múi giờ vẽ vector.*
+*2026-10-15. Chỉ liệt kê ảnh **mới** của bản v2; ảnh cũ dùng lại (danh sách đầy đủ của bản trước: `v1/image-prompts.md`). Lucas tạo trong app, lưu PNG vào `public/images/p5-trung-quoc-mui-gio/` đúng tên file; Luis tách nền bằng `scripts/cutout.py`.*
 
-## STYLE (dán đầu tiên, cùng một chat)
+## Cách tạo
 
-> Cute chibi toy in the style of a wooden board-game piece: rounded chunky shapes, flat vector illustration with soft shading, thick dark outline, friendly and simple. Plain flat cream background, centered, whole object visible, no shadow on the background. No text, no letters, no numbers, no flags, no logos.
+Nên tạo trong cùng chat đã làm ảnh của tập này (cùng nét). Nếu chat mới: dán STYLE trước. Tỉ lệ 1:1, nền kem phẳng.
 
-## Danh sách
+## STYLE (dán đầu tiên nếu chat mới)
 
-| File | Prompt (sau STYLE) | Câu |
+> Cute chibi toy in the style of a wooden board-game piece / peg doll: big round head, short rounded body, no legs, rounded chunky shapes, flat vector illustration with soft shading, thick dark outline, friendly simple face (dot eyes). Plain flat cream background, centered, whole figure or object visible, no shadow on the background. No text, no letters, no numbers, no flags, no logos.
+
+## Ảnh mới
+
+| File | Prompt (sau STYLE) | Dùng ở |
 |---|---|---|
-| `k-01-kid-dark.png` | A sleepy schoolchild pawn in a warm winter coat and woolly hat, wearing a school backpack, holding a small flashlight that shines a beam forward, yawning, walking to the right; generic friendly face (not any specific ethnicity). | 11 |
-| `k-02-mountain-gate.png` | A snowy high mountain pass with a closed red-and-white striped barrier gate across a small dirt road, a few rocks, toy diorama tile; no signs, no text. | 17 |
-| `k-03-border-bridge.png` | A short concrete road bridge over a small river with a simple border checkpoint gatehouse at one end, toy diorama tile, three-quarter view; no flags, no text. | 01 |
+| `k-04-alarm-clock.png` | A classic red twin-bell alarm clock ringing (small motion marks around the bells) on a bedside table, next to a window showing a dark night sky with a crescent moon and stars. | câu 11 (báo thức 7 giờ, tưởng nửa đêm) |
 
-Ưu tiên: k-01 (khoảnh khắc đời thường), k-03 (mở đầu). k-02 có thể thay bằng thanh chắn vector nếu chưa có.
+Dùng lại: k-01 học sinh trời tối, k-02 cổng núi biên giới, k-03 cầu biên giới Lào Cai; đồng hồ, mặt trời vẽ vector.

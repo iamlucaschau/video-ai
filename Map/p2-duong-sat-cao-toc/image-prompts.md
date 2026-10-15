@@ -1,40 +1,19 @@
-# Ảnh nhân vật & đạo cụ — Đường sắt tốc độ cao Bắc–Nam (style I Toy Atlas)
+# Ảnh mới cho bản v3 — p2-duong-sat-cao-toc (style I Toy Atlas)
 
-*Lucas tạo trong app (Gemini / ChatGPT), lưu PNG vào `public/images/p2-duong-sat-cao-toc/` đúng tên file. Claude tách nền (`python -P scripts/cutout.py public/images/p2-duong-sat-cao-toc public/images/p2-duong-sat-cao-toc/cut 38 <file>`). Bản đồ, tuyến, cờ, số, nhãn, cột thời gian vẫn là vector.*
+*2026-10-15. Chỉ liệt kê ảnh **mới** của bản v3; ảnh cũ dùng lại (danh sách đầy đủ của bản trước: `v2/image-prompts.md`). Lucas tạo trong app, lưu PNG vào `public/images/p2-duong-sat-cao-toc/` đúng tên file; Luis tách nền bằng `scripts/cutout.py`.*
 
 ## Cách tạo
 
-1. Mở **một** cuộc chat mới, dán **STYLE** trước. Tạo ảnh 1, rồi các ảnh sau **trong cùng chat**, nói "same toy style" để giữ đồng nhất.
-2. Tỉ lệ **1:1**, nền **kem phẳng một màu**, vật thể ở giữa, nhìn rõ toàn bộ. Không chữ, không logo, không cờ (cờ do Claude vẽ).
-3. Lưu PNG đúng tên dưới đây.
+Nên tạo trong cùng chat đã làm ảnh của tập này (cùng nét). Nếu chat mới: dán STYLE trước. Tỉ lệ 1:1, nền kem phẳng.
 
-## STYLE (dán đầu tiên)
+## STYLE (dán đầu tiên nếu chat mới)
 
-> Cute chibi toy in the style of a wooden board-game piece: rounded chunky shapes, flat vector illustration with soft shading, thick dark outline, friendly and simple. Plain flat cream background, centered, whole object visible, no shadow on the background. No text, no letters, no numbers, no flags, no logos.
+> Cute chibi toy in the style of a wooden board-game piece / peg doll: big round head, short rounded body, no legs, rounded chunky shapes, flat vector illustration with soft shading, thick dark outline, friendly simple face (dot eyes). Plain flat cream background, centered, whole figure or object visible, no shadow on the background. No text, no letters, no numbers, no flags, no logos.
 
-## Danh sách
+## Ảnh mới
 
-| File | Prompt (sau STYLE) | Dùng ở câu |
+| File | Prompt (sau STYLE) | Dùng ở |
 |---|---|---|
-| `p-01-hsr-train.png` | A sleek modern high-speed bullet train, short toy version with one rounded nose car and one carriage, three-quarter side view facing right, white body with a gold stripe and dark windows. | 06, 09, 16 |
-| `p-02-old-train.png` | An old diesel passenger train, toy version: boxy blue-and-yellow locomotive pulling one boxy blue carriage, side view facing right, slightly worn. | 15 |
-| `p-03-money-bags.png` | Three fat cloth money bags tied at the top, each with a dollar sign, stacked in a small pile, with a few gold coins at the base. | 01, 08, 10 |
-| `p-04-excavator.png` | A small yellow excavator next to a short straight piece of railway track (rails on wooden sleepers), toy-like. | 05 |
-| `p-05-assembly.png` | A small semicircle of identical simple pawn figures in suits, seen from the front, all raising one hand, generic faces with dot eyes (not real people). | 03–04 |
-| `p-06-clock.png` | A round red twin-bell alarm clock, front view. | 15 |
-| `p-07-scale.png` | An old-fashioned brass balance scale with two empty round pans, front view, perfectly level. | 02, 12 |
-| `p-08-worker.png` | A railway maintenance worker pawn: orange safety vest, white hard hat, holding a big wrench, friendly smile (generic person). | 14 |
+| `p-12-governor-family.png` | A 1930s French colonial governor-general in a white uniform with gold buttons and a white pith helmet, standing with his wife (1930s cloche hat, light dress) and a small child, waving happily as first train passengers. Respectful, not a caricature. | câu 22 (chuyến đầu tiên 1936) |
 
-### Bổ sung cho v2 (2026-10-13) — cùng cuộc chat, "same toy style"
-
-| File | Prompt (sau STYLE) | Dùng ở câu (v2) |
-|---|---|---|
-| `p-09-pho.png` | A steaming bowl of Vietnamese pho noodle soup, toy version: white bowl with blue rim, noodles, beef slices, herbs, a pair of chopsticks resting on top, three-quarter view. | 06 |
-| `p-10-com-tam.png` | A plate of Vietnamese broken rice (com tam), toy version: round white plate, broken rice, a grilled pork chop, a fried egg, cucumber slices, a small bowl of fish sauce, three-quarter view. | 06 |
-| `p-11-steam-train.png` | An old 1930s steam locomotive with a black boiler, tall chimney with a puff of smoke and red wheels, pulling one small wooden carriage, side view facing right, toy-like, vintage. | 20 |
-
-*Chưa có ảnh thì Luis dùng hình vector tạm; Lucas thêm ảnh lúc nào Luis thay lúc đó.*
-
-Ưu tiên: p-01, p-03, p-07 (xuất hiện nhiều nhất), rồi p-02, p-05. p-04, p-06, p-08 có thể thay bằng vector nếu chưa có.
-
-*Cân (p-07) tạo với hai đĩa trống — Claude đặt túi tiền và tàu lên đĩa, và cho cân nghiêng bằng code.*
+Dùng lại: p-01 tàu cao tốc, p-02 tàu Thống Nhất, p-03 túi tiền, p-09 phở, p-10 cơm tấm, p-11 tàu hơi nước (1936), p-06 đồng hồ.

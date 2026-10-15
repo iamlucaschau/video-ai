@@ -1,25 +1,24 @@
-# Spec v2 — "67 tỷ đô để mua một ngày" (P2 · style I Toy Atlas)
+# 01 · EPISODE SPEC v3 — p2-duong-sat-cao-toc
 
-## SCENE 1 — Hook: mua một ngày + mở cuộc đua
-- **VO:** "Việt Nam dự kiến chi khoảng sáu mươi bảy tỷ đô, chỉ để mua một ngày. Nghe vô lý? Thử cho hai đoàn tàu cùng rời Hà Nội."
+*Lời VO trùng từng chữ với `kich-ban-p2-duong-sat-cao-toc-FINAL.md` (v3, 2026-10-15). Hình chi tiết: `beat-sheet.md`.*
 
-## SCENE 2 — Luật chơi: hai đêm vs năm tiếng rưỡi
-- **VO:** "Tàu Thống Nhất hôm nay: lên tàu buổi tối, ngủ hai đêm, hơn ba mươi tiếng mới tới Sài Gòn. Tàu cao tốc nhanh nhất, chỉ dừng năm ga, dự kiến khoảng năm tiếng rưỡi. Ăn sáng phở Hà Nội, ăn trưa cơm tấm Sài Gòn."
+## SCENE 1 — Hook
+- **VO:** "Việt Nam dự kiến chi khoảng sáu mươi bảy tỷ đô, chỉ để mua một ngày. Nghe vô lý? Giả sử hai đoàn tàu cùng rời Hà Nội."
 
-## SCENE 3 — Cái giá: hơn một tỷ mỗi mét
-- **VO:** "Nhưng cái giá thì không hề nhẹ. Tuyến dài khoảng một nghìn năm trăm bốn mươi mốt cây số. Theo vốn sơ bộ, mỗi mét đường tốn hơn một tỷ đồng."
+## SCENE 2 — Cuộc đua
+- **VO:** "Tàu Thống Nhất hôm nay: lên tàu buổi tối, ngủ hai đêm mới tới Sài Gòn. Tàu cao tốc nhanh nhất dự kiến chỉ mất khoảng năm tiếng rưỡi. Ăn sáng phở Hà Nội, ăn trưa cơm tấm Sài Gòn."
 
-## SCENE 4 — Vì sao đắt: cầu cạn và hầm
-- **VO:** "Vì sao đắt vậy? Để chạy ba trăm năm mươi cây số một giờ, tuyến dự kiến có khoảng sáu mươi phần trăm là cầu, mười phần trăm là hầm. Phần lớn con đường được nhấc hẳn lên khỏi mặt đất."
+## SCENE 3 — Cái giá
+- **VO:** "Nhưng cái giá thì không hề nhẹ. Tuyến dài hơn một nghìn rưỡi cây số. Theo vốn sơ bộ, mỗi mét đường tốn hơn một tỷ đồng."
 
-## SCENE 5 — Quốc hội bấm nút
-- **VO:** "Dù vậy, cuối năm hai nghìn hai mươi tư, Quốc hội vẫn bấm nút. Bốn trăm bốn mươi ba trên bốn trăm năm mươi tư đại biểu tán thành."
+## SCENE 4 — Câu hỏi treo + đáp ngắn
+- **VO:** "Sao lại đắt thế? Vì toàn cầu. Khoảng sáu mươi phần trăm tuyến dự kiến đi trên cầu. Thêm khoảng mười phần trăm chui trong hầm. Để chạy ba trăm năm mươi cây số một giờ, phần lớn con đường được nhấc hẳn lên khỏi mặt đất."
 
-## SCENE 6 — Bao giờ hoàn vốn?
-- **VO:** "Câu hỏi lớn nhất vẫn còn đó: bao giờ hoàn vốn? Chính phủ thừa nhận, bốn năm đầu, doanh thu chỉ đủ bù chi phí vận hành. Phần bảo trì hạ tầng, Nhà nước vẫn phải lo."
+## SCENE 5 — Hai phe
+- **VO:** "Cuối năm hai nghìn hai mươi tư, Quốc hội vẫn bấm nút. Bốn trăm bốn mươi ba trên bốn trăm năm mươi tư đại biểu tán thành. Nhưng nhiều chuyên gia vẫn hỏi: bao giờ hoàn vốn? Chính phủ thừa nhận, bốn năm đầu, doanh thu chỉ đủ bù chi phí vận hành."
 
-## SCENE 7 — Cao trào: quay lại cuộc đua
+## SCENE 6 — Payoff
 - **VO:** "Giờ quay lại hai đoàn tàu. Khi tàu cao tốc đã tới Thủ Thiêm, tàu Thống Nhất còn chưa tới Vinh."
 
-## SCENE 8 — Twist 1936 + nối vòng
-- **VO:** "Mà oái oăm ở chỗ: tuyến Thống Nhất được nối liền từ năm một nghìn chín trăm ba mươi sáu. Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày."
+## SCENE 7 — Khoảnh khắc người + twist (nhịp cuối)
+- **VO:** "Trớ trêu là, tuyến Thống Nhất được nối liền từ năm một nghìn chín trăm ba mươi sáu. Chuyến đầu tiên chạy hết tuyến, Toàn quyền Đông Dương cùng gia đình ngồi trên tàu khoảng bốn mươi tiếng. Chín mươi năm trôi qua. Tàu chỉ nhanh hơn chưa tới mười tiếng."

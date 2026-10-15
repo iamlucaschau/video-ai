@@ -1,8 +1,9 @@
 /**
  * Map channel · P5 Kỳ lạ & kỷ lục · Region Reveal (style I Toy Atlas):
  * "Trung Quốc rộng gần 5 múi giờ, vì sao chỉ dùng một giờ?"
- * Script + sources: kich-ban-p5-trung-quoc-mui-gio-FINAL.md, cong-2_so-nguon.md. Beats: beat-sheet.md.
- * Every cue comes from the VO timing. Soft loop (Lucas 2026-10-14): the VO ends on line 17; the map flies home
+ * Script + sources: kich-ban-p5-trung-quoc-mui-gio-FINAL.md (v2), cong-2_so-nguon.md, kich-ban-v2-de-xuat.md §D.
+ * Beats: beat-sheet.md. v1 lives in ./v1. v2 (Lucas 2026-10-15): the 7 script rules.
+ * Every cue comes from the VO timing. Soft loop (Lucas 2026-10-14): the VO ends on line 18; the map flies home
  * from 80 % of that line and the last frame is the opening frame (Lào Cai border, map only).
  *
  * Map rules (Lucas 2026-10-13, option A): China filled from Natural Earth (de facto); Hoàng Sa +
@@ -25,7 +26,6 @@ import {
 
 const FPS = 30;
 const IMG = "images/p5-trung-quoc-mui-gio/cut";
-const TV = "images/i-singapore/cut/i-09-tv.png";
 const { at } = beats(timing, FPS);
 
 const VIEW = {
@@ -38,8 +38,8 @@ const KEYS0: GeoCam[] = [
   { at: 0, ...VIEW.laocai },
   { at: at("02", 0.05), ...VIEW.china },
   { at: at("08") - 4, ...VIEW.kashgar },
-  { at: at("15") - 4, ...VIEW.wakhan },
-  { at: at("17", 0.8), ...VIEW.laocai },
+  { at: at("16") - 4, ...VIEW.wakhan },
+  { at: at("18", 0.8), ...VIEW.laocai },
 ];
 const PUSH = 0.04;
 const PUSH_CAP = 0.08;
@@ -99,19 +99,19 @@ const Scene: React.FC = () => {
 
   // 1949: one colour floods China from Beijing; the solar bands fade under it
   // …and drains back during the flight home so the last frame matches the first
-  const merge = prog(f, at("05", 0.3), 45, Easing.inOut(Easing.cubic)) * (1 - prog(f, at("17", 0.75), 30, Easing.inOut(Easing.cubic)));
+  const merge = prog(f, at("05", 0.3), 45, Easing.inOut(Easing.cubic)) * (1 - prog(f, at("18", 0.75), 30, Easing.inOut(Easing.cubic)));
   const fills: Fill[] = [
     ...["Vietnam", "Paracel Is.", "Spratly Is."].map((name) => ({ name, color: ATLAS.c })),
     { name: "China", color: ONE_CLOCK, wipe: { from: CN_BASE, lon: BEIJING[0], lat: BEIJING[1], p: merge } },
-    { name: "Afghanistan", color: ATLAS.b, wipe: { from: ATLAS.land, lon: 71.5, lat: 37, p: prog(f, at("15", 0.15), 30) } },
+    { name: "Afghanistan", color: ATLAS.b, wipe: { from: ATLAS.land, lon: 71.5, lat: 37, p: prog(f, at("16", 0.15), 30) } },
   ];
   const bandsO = (f >= at("03") ? 1 : 0) * (1 - prog(f, at("05", 0.4), 30));
 
   // night sky over Kashgar (08–11): dark before the late sunrise, dark again after the late sunset, dark at 8 a.m.
-  const night = f < at("08") ? 0 : Math.max(
-    (1 - prog(f, at("08", 0.45), 30)) * show(f, at("08") - 2),
-    prog(f, at("10", 0.35), 20) * (1 - prog(f, at("11") - 4, 6)),
-    show(f, at("11"), at("12") - 2),
+  const night = f < at("09") ? 0 : Math.max(
+    (1 - prog(f, at("09", 0.45), 30)) * show(f, at("09") - 2),
+    prog(f, at("11", 0.35), 20) * (1 - prog(f, at("12") - 4, 6)),
+    show(f, at("12"), at("13") - 2),
   );
 
   const [kx, ky] = toScreen(cam, ...KASHGAR);
@@ -135,8 +135,8 @@ const Scene: React.FC = () => {
       {/* country names + flags where the VO names them (Lucas 2026-10-14) */}
       <CountryTag cam={cam} f={f} name="China" label="TRUNG QUỐC" flag="china" anchor={[101, 33]} from={at("02", 0.6)}
         o={show(f, at("02", 0.6), at("05"))} glow={[at("03", 0.25)]} />
-      <CountryTag cam={cam} f={f} name="Afghanistan" label="AFGHANISTAN" anchor={[73.3, 37.05]} from={at("15", 0.35)}
-        o={show(f, at("15", 0.35), at("16", 0.1))} glow={[at("15", 0.45)]} />
+      <CountryTag cam={cam} f={f} name="Afghanistan" label="AFGHANISTAN" anchor={[73.3, 37.05]} from={at("16", 0.35)}
+        o={show(f, at("16", 0.35), at("17", 0.1))} glow={[at("16", 0.45)]} />
       {night > 0 && <AbsoluteFill style={{ background: "linear-gradient(#0B1530 0%, #1B2A50 60%, rgba(27,42,80,0.4) 100%)", opacity: 0.72 * night }} />}
 
       {/* ── 01 Lào Cai – Hà Khẩu: +1 hour ── */}
@@ -172,56 +172,79 @@ const Scene: React.FC = () => {
       )}
       <BigGold text="1 NƯỚC · 1 GIỜ" f={f} at={at("06", 0.1)} out={at("07")} y={330} size={110} />
       <Question x={540} y={420} f={f} at={at("07")} out={at("08")} s={1.5} />
+      {/* 08 "Mặt trời đi trễ.": the sun trails behind, low over Kashgar */}
+      {f >= at("08") && f < at("09") && (
+        <SunIcon x={kx + 230} y={ky + 160 + 20 * Math.sin(f / 8)} r={40} f={f} o={show(f, at("08", 0.3), at("09") - 2)} />
+      )}
 
       {/* ── 08–11 Kashgar: late sunrise, late sunset, school in the dark ── */}
-      {f >= at("08") && f < at("12") && (
+      {f >= at("09") && f < at("13") && (
         <>
-          <SunIcon x={kx + 230} y={interpolate(f, [at("08", 0.2), at("08", 0.7)], [ky + 160, ky - 260], CLAMP)} r={46} f={f}
-            o={show(f, at("08", 0.2), at("10", 0.5))} />
-          <SunIcon x={kx - 230} y={interpolate(f, [at("10", 0.05), at("10", 0.6)], [ky - 260, ky + 160], CLAMP)} r={46} f={f}
-            o={show(f, at("10"), at("10", 0.7))} />
+          <SunIcon x={kx + 230} y={interpolate(f, [at("09", 0.2), at("09", 0.7)], [ky + 160, ky - 260], CLAMP)} r={46} f={f}
+            o={show(f, at("09", 0.2), at("11", 0.5))} />
+          <SunIcon x={kx - 230} y={interpolate(f, [at("11", 0.05), at("11", 0.6)], [ky - 260, ky + 160], CLAMP)} r={46} f={f}
+            o={show(f, at("11"), at("11", 0.7))} />
           <Pulse x={kx} y={ky} f={f} color={ATLAS.white} />
-          <MapLabel text="KASHGAR" x={kx} y={ky + 80} o={show(f, at("08", 0.3), at("11"))} />
+          <MapLabel text="KASHGAR" x={kx} y={ky + 80} o={show(f, at("09", 0.3), at("12"))} />
         </>
       )}
-      <Clock x={540} y={1120} r={90} hours={10.27} f={f} at={at("08", 0.4)} out={at("09")} />
-      <DataCard value="~10:00" label="MẶT TRỜI MỌC" x={540} y={330} f={f} at={at("08", 0.55)} out={at("09")} />
-      <DataCard value="~7:30" label="BẮC KINH" x={540} y={330} f={f} at={at("09", 0.25)} out={at("10")} color={ATLAS.white} />
-      <Clock x={540} y={1120} r={90} hours={22.43} f={f} at={at("10", 0.2)} out={at("11")} dark />
-      <BigGold text="22:00+" f={f} at={at("10", 0.35)} out={at("11")} y={330} size={130} />
-      {f >= at("11") && f < at("12") && (
+      <Clock x={540} y={1120} r={90} hours={10.27} f={f} at={at("09", 0.4)} out={at("10")} />
+      <DataCard value="~10:00" label="MẶT TRỜI MỌC" x={540} y={330} f={f} at={at("09", 0.55)} out={at("10")} />
+      <DataCard value="~7:30" label="BẮC KINH" x={540} y={330} f={f} at={at("10", 0.25)} out={at("11")} color={ATLAS.white} />
+      <Clock x={540} y={1120} r={90} hours={22.43} f={f} at={at("11", 0.2)} out={at("12")} dark />
+      <BigGold text="22:00+" f={f} at={at("11", 0.35)} out={at("12")} y={330} size={130} />
+      {f >= at("12") && f < at("13") && (
         <>
-          <ImgSticker src={`${IMG}/k-01-kid-dark.png`} x={interpolate(f, [at("11"), at("12")], [300, 620], CLAMP)} y={1080} w={330} f={f} at={at("11", 0.05)}
-            out={at("12") - 4} />
-          <Clock x={820} y={420} r={80} hours={8} f={f} at={at("11", 0.2)} out={at("12") - 4} dark />
+          <ImgSticker src={`${IMG}/k-04-alarm-clock.png`} x={540 + 6 * Math.sin(f * 1.7) * show(f, at("12", 0.2), at("12", 0.6))} y={1020} w={360} f={f}
+            at={at("12", 0.05)} out={at("13") - 4} />
+          <Clock x={820} y={420} r={80} hours={7} f={f} at={at("12", 0.2)} out={at("13") - 4} dark />
         </>
       )}
 
       {/* ── 12–14 two clocks in one region ── */}
-      <Clock x={330} y={1060} r={100} hours={10} f={f} at={at("12", 0.15)} out={at("13")} />
-      <Clock x={750} y={1060} r={100} hours={8} f={f} at={at("12", 0.3)} out={at("13")} />
-      <BigGold text="−2 GIỜ" f={f} at={at("12", 0.45)} out={at("13")} y={330} size={130} />
-      {f >= at("13") && f < at("15") && (
-        <>
-          <ImgSticker src={TV} x={540} y={980} w={520} f={f} at={at("13", 0.05)} out={at("15") - 4} />
-          <Clock x={440} y={930} r={60} hours={10} f={f} at={at("13", 0.25)} out={at("15") - 4} />
-          <Clock x={620} y={930} r={60} hours={8} f={f} at={at("13", 0.35)} out={at("15") - 4} />
-        </>
+      <Clock x={330} y={1060} r={100} hours={10} f={f} at={at("13", 0.15)} out={at("14")} />
+      <Clock x={750} y={1060} r={100} hours={8} f={f} at={at("13", 0.3)} out={at("14")} />
+      <BigGold text="−2 GIỜ" f={f} at={at("13", 0.45)} out={at("14")} y={330} size={130} />
+      {/* 14 [NGƯỜI] 1986: Beijing approves Xinjiang time for daily life; army, trains, planes stay on Beijing time */}
+      <YearRibbon text="1986" f={f} at={at("14", 0.05)} out={at("15")} />
+      {f >= at("14") && f < at("15") && (
+        <AbsoluteFill style={{ opacity: 1 - prog(f, at("15") - 4, 4) }}>
+          <Sticker x={330} y={1030} f={f} at={at("14", 0.15)} s={1.3}>
+            {/* train */}
+            <rect x={-80} y={-34} width={160} height={58} rx={14} fill="#C8322B" stroke={ATLAS.ink} strokeWidth={5} />
+            <rect x={-60} y={-22} width={34} height={22} rx={4} fill="#BFE3F2" stroke={ATLAS.ink} strokeWidth={3} />
+            <rect x={-14} y={-22} width={34} height={22} rx={4} fill="#BFE3F2" stroke={ATLAS.ink} strokeWidth={3} />
+            <circle cx={-46} cy={30} r={12} fill={ATLAS.ink} />
+            <circle cx={46} cy={30} r={12} fill={ATLAS.ink} />
+          </Sticker>
+          <Sticker x={750} y={1010} f={f} at={at("14", 0.25)} s={1.3}>
+            {/* plane */}
+            <path d="M -90 0 L 70 -10 Q 96 0 70 10 L -90 0 Z" fill={ATLAS.white} stroke={ATLAS.ink} strokeWidth={5} />
+            <path d="M -6 -6 L -40 -56 L -18 -56 L 26 -8 Z" fill="#3D6FD0" stroke={ATLAS.ink} strokeWidth={4} />
+            <path d="M -6 6 L -40 56 L -18 56 L 26 8 Z" fill="#3D6FD0" stroke={ATLAS.ink} strokeWidth={4} />
+          </Sticker>
+          <Clock x={330} y={850} r={60} hours={10} f={f} at={at("14", 0.55)} />
+          <Clock x={750} y={850} r={60} hours={10} f={f} at={at("14", 0.6)} />
+        </AbsoluteFill>
       )}
-      <BigGold text="1 VÙNG · 2 ĐỒNG HỒ" f={f} at={at("14", 0.05)} out={at("15") - 4} y={330} size={84} />
+      {/* 15 [ĐÙA] "Hẹn nhau tám giờ… tám giờ nào?" */}
+      <Clock x={330} y={1060} r={100} hours={8} f={f} at={at("15", 0.1)} out={at("16")} />
+      <Clock x={750} y={1060} r={100} hours={8} f={f} at={at("15", 0.2)} out={at("16")} dark />
+      <Question x={540} y={1060} f={f} at={at("15", 0.6)} out={at("16")} s={1.2} />
+      <BigGold text="8 GIỜ NÀO?" f={f} at={at("15", 0.65)} out={at("16")} y={330} size={110} />
 
-      {/* ── 15–17 the Afghan border: 3.5 hours, no way across ── */}
-      {f >= at("15") && f < at("17", 0.85) && (() => {
+      {/* ── 16–18 the Afghan border: 3.5 hours, no way across ── */}
+      {f >= at("16") && f < at("18", 0.85) && (() => {
         const [ax, ay] = toScreen(cam, 73.6, 37.0);
         const [cx, cy] = toScreen(cam, 75.4, 37.4);
         const [gx, gy] = toScreen(cam, ...WAKHJIR);
-        const o = 1 - prog(f, at("17", 0.75), 5);
+        const o = 1 - prog(f, at("18", 0.75), 5);
         return (
           <AbsoluteFill style={{ opacity: o }}>
-            <CountryShape cam={cam} name="China" stroke={ATLAS.gold} o={show(f, at("15", 0.5)) * (0.6 + 0.4 * Math.sin(f / 4))} />
-            <Clock x={ax - 40} y={ay - 330} r={85} hours={4.5} f={f} at={at("16", 0.1)} digital />
-            <Clock x={cx + 60} y={cy - 330} r={85} hours={8} f={f} at={at("16", 0.2)} digital />
-            {f >= at("17") && <ImgSticker src={`${IMG}/k-02-mountain-gate.png`} x={gx + 40} y={gy + 140} w={340} f={f} at={at("17", 0.1)} />}
+            <CountryShape cam={cam} name="China" stroke={ATLAS.gold} o={show(f, at("16", 0.5)) * (0.6 + 0.4 * Math.sin(f / 4))} />
+            <Clock x={ax - 40} y={ay - 330} r={85} hours={4.5} f={f} at={at("17", 0.1)} digital />
+            <Clock x={cx + 60} y={cy - 330} r={85} hours={8} f={f} at={at("17", 0.2)} digital />
+            {f >= at("18") && <ImgSticker src={`${IMG}/k-02-mountain-gate.png`} x={gx + 40} y={gy + 140} w={340} f={f} at={at("18", 0.1)} />}
           </AbsoluteFill>
         );
       })()}
@@ -234,14 +257,16 @@ const CAPTIONS: Record<string, string> = {
   "01": "Đi từ Lào Cai sang Hà Khẩu, đồng hồ nhảy *1 tiếng*.",
   "02": "Nhưng đi tiếp hơn *3.000 km* về phía tây, nó không nhảy thêm phút nào.",
   "03": "Nếu chia theo Mặt Trời, lãnh thổ Trung Quốc trải gần *5 múi giờ*.",
-  "04": "Cứ 15 độ kinh, mặt trời mọc chậm hơn 1 tiếng.",
   "05": "Vậy mà từ khoảng năm *1949*, cả nước dùng chung một chiếc đồng hồ: giờ Bắc Kinh.",
-  "08": "Ở Kashgar, cực tây Tân Cương, ngày đầu năm, gần *10 giờ sáng* mặt trời mới mọc.",
-  "09": "Cùng ngày ấy ở Bắc Kinh, mặt trời mọc từ khoảng *7 giờ rưỡi*.",
-  "10": "Mùa hè, hơn *10 giờ tối* trời mới tắt nắng.",
-  "11": "Thử tưởng tượng: *8 giờ sáng* đi học, ngoài trời vẫn tối om.",
-  "12": "Nên ở Tân Cương, nhiều người còn dùng thêm một giờ không chính thức, chậm hơn *2 tiếng*.",
-  "16": "Nếu bước qua được, đồng hồ lệch tới *3 tiếng rưỡi*, một trong những chỗ lệch giờ lớn nhất thế giới.",
+  "08": "Mặt trời *đi trễ*.",
+  "09": "Mùa đông ở Kashgar, gần *10 giờ sáng* trời mới sáng.",
+  "10": "Cùng lúc ấy ở Bắc Kinh, trời đã sáng từ *7 giờ rưỡi*.",
+  "11": "Mùa hè, hơn *10 giờ tối* trời mới tắt nắng.",
+  "12": "Thử tưởng tượng: báo thức reo lúc *7 giờ*, nhìn ra cửa sổ vẫn tưởng nửa đêm.",
+  "13": "Nên ở Tân Cương, nhiều người dùng thêm một giờ không chính thức, chậm hơn *2 tiếng*.",
+  "14": "Năm *1986*, Bắc Kinh còn duyệt cho giờ này dùng trong đời thường, còn quân đội, tàu hoả, máy bay vẫn theo giờ Bắc Kinh.",
+  "15": "Hẹn nhau *8 giờ*, nhiều khi phải hỏi lại: *8 giờ nào*?",
+  "17": "Nếu bước qua được, đồng hồ lệch tới *3 tiếng rưỡi*.",
 };
 
 const W = "whoosh/simple-whoosh-382724.mp3";
@@ -250,9 +275,9 @@ const CLICK = "click/mouse-click-351398.mp3";
 const THUD = "deephit/impact-thud-291047.mp3";
 const SFX: SfxCue[] = [
   [CLICK, "01", 0.5], [W, "02", 0.05],
-  [CLICK, "03", 0.3], [THUD, "05", 0.3, 0, -18], [CLICK, "06", 0.1], [CLICK, "07"],
-  [W2, "08", 0, -4], [CLICK, "08", 0.55], [CLICK, "09", 0.25], [CLICK, "10", 0.35], [CLICK, "11", 0.2],
-  [CLICK, "12", 0.45], [CLICK, "13", 0.25], [W, "15", 0, -4], [THUD, "16", 0.45, 0, -18], [CLICK, "17", 0.1], [W2, "17", 0.8],
+  [CLICK, "03", 0.3], [THUD, "05", 0.3, 0, -18], [CLICK, "06", 0.1], [CLICK, "07"], [CLICK, "08", 0.3],
+  [W2, "08", 0, -4], [CLICK, "09", 0.55], [CLICK, "10", 0.25], [CLICK, "11", 0.35], [CLICK, "12", 0.2],
+  [CLICK, "13", 0.45], [CLICK, "14", 0.05], [CLICK, "15", 0.6], [W, "16", 0, -4], [THUD, "17", 0.45, 0, -18], [CLICK, "18", 0.1], [W2, "18", 0.8],
 ];
 
 export const P5TrungQuocMuiGio: React.FC = () => (

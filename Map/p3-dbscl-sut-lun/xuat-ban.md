@@ -12,11 +12,9 @@
 
 ## 2. Mô tả
 
-> Đồng bằng sông Cửu Long trung bình chỉ cao hơn mặt biển khoảng 80 cm, và đang lún khoảng 1 cm mỗi năm, nhanh gấp khoảng 3 lần nước biển toàn cầu dâng. Thủ phạm lớn nhất lại là nước ngầm bơm lên mỗi ngày. Nhà bạn có dùng giếng khoan không?
+> Đồng bằng sông Cửu Long trung bình chỉ cao hơn mặt biển khoảng 80 cm — con số mới từ năm 2019, khi nhà nghiên cứu Philip Minderhoud tính lại bằng số đo thực địa (trước đó các bản đồ vệ tinh ước tính khoảng 2,6 m) — và đang lún khoảng 1 cm mỗi năm, nhanh gấp khoảng 3 lần nước biển toàn cầu dâng. Thủ phạm lớn nhất lại là nước ngầm bơm lên mỗi ngày. Nhà bạn có dùng giếng khoan không?
 >
-> #dongbangsongcuulong #mientay #sutlun #nuocngam #vietnam
->
-> *(giới thiệu kênh — điền khi có tên kênh)*
+> **Atlas Tí Hon** — bản đồ nhỏ, câu chuyện lớn.
 >
 > **Nguồn** (truy cập 13/10/2026):
 > - Minderhoud et al. (2019), *Nature Communications* 10:3847 — độ cao trung bình ~0,8 m; Đại học Utrecht (thông cáo); PreventionWeb (UNDRR)
@@ -24,15 +22,15 @@
 > - Đại học Utrecht — khai thác nước ngầm cho nước uống, nông nghiệp, ao nuôi tôm cá phần lớn gây ra mức lún tăng
 > - IPCC AR6 WGI — nước biển toàn cầu dâng 3,7 mm/năm (2006–2018)
 > - WWF (2018), UNESCO–SEI — phù sa sông Mekong giảm
-> - SGGP, VnEconomy — hạn mặn 2016, 2020; VnEconomy — sản lượng lúa ĐBSCL
+> - SGGP, VnEconomy — hạn mặn 2019–2020; VnEconomy — sản lượng lúa ĐBSCL
 > - "Nhanh gấp ~3 lần" = 11 mm ÷ 3,7 mm (phép tính).
 > - Bản đồ: Natural Earth. **Vùng đồng bằng, dòng sông và vệt nước mặn trên bản đồ là minh hoạ**, không phải bản đồ độ cao hay ranh giới chính thức.
 >
-> #bando #diali #moitruong #bienđoikhihau #mekong
+> #Shorts #AtlasTiHon #BanDo #DiaLy #MoiTruong #KhiHau #VietNam #MienTay #Mekong
 
-## 3. Hashtag (≤ 20)
+## 3. Hashtag (công thức kênh: `06_NHAN-DIEN-KENH.md` §5)
 
-#dongbangsongcuulong #mientay #sutlun #nuocngam #hanman #mekong #vietnam #diali #bando #moitruong #biendoikhihau #luagao #khoahoc #nuocbiendang #mekongdelta #landsubsidence #geography #maps #climate #shorts
+#Shorts #AtlasTiHon #BanDo #DiaLy #MoiTruong #KhiHau #VietNam #MienTay #Mekong
 
 ## 4. Ảnh bìa
 

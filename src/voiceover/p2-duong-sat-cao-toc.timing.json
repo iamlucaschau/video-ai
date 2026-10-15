@@ -1,5 +1,5 @@
 {
-  "durationInSeconds": 69.54708333333333,
+  "durationInSeconds": 70.70783333333334,
   "loop": true,
   "tail": 0.7,
   "lines": [
@@ -7,148 +7,169 @@
       "id": "01",
       "scene": "s1",
       "start": 0.05,
-      "end": 3.912,
+      "end": 3.884,
       "text": "Việt Nam dự kiến chi khoảng sáu mươi bảy tỷ đô, chỉ để mua một ngày."
     },
     {
       "id": "02",
       "scene": "s1",
-      "start": 3.9719583333333333,
-      "end": 5.095958333333334,
+      "start": 3.9441666666666664,
+      "end": 4.591166666666666,
       "text": "Nghe vô lý?"
     },
     {
       "id": "03",
       "scene": "s1",
-      "start": 5.155625,
-      "end": 7.264625,
-      "text": "Thử cho hai đoàn tàu cùng rời Hà Nội."
+      "start": 4.651249999999999,
+      "end": 6.738249999999999,
+      "text": "Giả sử hai đoàn tàu cùng rời Hà Nội."
     },
     {
       "id": "04",
       "scene": "s2",
-      "start": 7.5149583333333325,
-      "end": 12.720958333333332,
-      "text": "Tàu Thống Nhất hôm nay: lên tàu buổi tối, ngủ hai đêm, hơn ba mươi tiếng mới tới Sài Gòn."
+      "start": 6.988166666666666,
+      "end": 11.135166666666667,
+      "text": "Tàu Thống Nhất hôm nay: lên tàu buổi tối, ngủ hai đêm mới tới Sài Gòn."
     },
     {
       "id": "05",
       "scene": "s2",
-      "start": 12.780624999999999,
-      "end": 16.766624999999998,
-      "text": "Tàu cao tốc nhanh nhất, chỉ dừng năm ga, dự kiến khoảng năm tiếng rưỡi."
+      "start": 11.195416666666667,
+      "end": 14.339416666666667,
+      "text": "Tàu cao tốc nhanh nhất dự kiến chỉ mất khoảng năm tiếng rưỡi."
     },
     {
       "id": "06",
       "scene": "s2",
-      "start": 16.826208333333334,
-      "end": 19.667208333333335,
+      "start": 14.399750000000001,
+      "end": 17.57275,
       "text": "Ăn sáng phở Hà Nội, ăn trưa cơm tấm Sài Gòn."
     },
     {
       "id": "07",
       "scene": "s3",
-      "start": 19.91754166666667,
-      "end": 21.64254166666667,
+      "start": 17.82241666666667,
+      "end": 19.748416666666667,
       "text": "Nhưng cái giá thì không hề nhẹ."
     },
     {
       "id": "08",
       "scene": "s3",
-      "start": 21.702375000000004,
-      "end": 24.422375000000002,
-      "text": "Tuyến dài khoảng một nghìn năm trăm bốn mươi mốt cây số."
+      "start": 19.808750000000003,
+      "end": 22.104750000000003,
+      "text": "Tuyến dài hơn một nghìn rưỡi cây số."
     },
     {
       "id": "09",
       "scene": "s3",
-      "start": 24.48204166666667,
-      "end": 27.864041666666672,
+      "start": 22.165000000000003,
+      "end": 25.624000000000002,
       "text": "Theo vốn sơ bộ, mỗi mét đường tốn hơn một tỷ đồng."
     },
     {
       "id": "10",
       "scene": "s4",
-      "start": 28.114375000000003,
-      "end": 29.021375000000003,
-      "text": "Vì sao đắt vậy?"
+      "start": 25.8745,
+      "end": 26.933500000000002,
+      "text": "Sao lại đắt thế?"
     },
     {
       "id": "11",
       "scene": "s4",
-      "start": 29.08141666666667,
-      "end": 35.12641666666667,
-      "text": "Để chạy ba trăm năm mươi cây số một giờ, tuyến dự kiến có khoảng sáu mươi phần trăm là cầu, mười phần trăm là hầm."
+      "start": 27.083041666666666,
+      "end": 28.063041666666667,
+      "text": "Vì toàn cầu."
     },
     {
       "id": "12",
       "scene": "s4",
-      "start": 35.186125000000004,
-      "end": 37.403125,
-      "text": "Phần lớn con đường được nhấc hẳn lên khỏi mặt đất."
+      "start": 28.212666666666667,
+      "end": 30.564666666666668,
+      "text": "Khoảng sáu mươi phần trăm tuyến dự kiến đi trên cầu."
     },
     {
       "id": "13",
-      "scene": "s5",
-      "start": 37.65354166666667,
-      "end": 41.59154166666667,
-      "text": "Dù vậy, cuối năm hai nghìn hai mươi tư, Quốc hội vẫn bấm nút."
+      "scene": "s4",
+      "start": 30.624958333333332,
+      "end": 32.59095833333333,
+      "text": "Thêm khoảng mười phần trăm chui trong hầm."
     },
     {
       "id": "14",
-      "scene": "s5",
-      "start": 41.65204166666667,
-      "end": 44.84004166666667,
-      "text": "Bốn trăm bốn mươi ba trên bốn trăm năm mươi tư đại biểu tán thành."
+      "scene": "s4",
+      "start": 32.65116666666667,
+      "end": 37.24716666666667,
+      "text": "Để chạy ba trăm năm mươi cây số một giờ, phần lớn con đường được nhấc hẳn lên khỏi mặt đất."
     },
     {
       "id": "15",
-      "scene": "s6",
-      "start": 45.09029166666667,
-      "end": 47.96629166666667,
-      "text": "Câu hỏi lớn nhất vẫn còn đó: bao giờ hoàn vốn?"
+      "scene": "s5",
+      "start": 37.49725,
+      "end": 40.43625,
+      "text": "Cuối năm hai nghìn hai mươi tư, Quốc hội vẫn bấm nút."
     },
     {
       "id": "16",
-      "scene": "s6",
-      "start": 48.02629166666667,
-      "end": 52.64629166666667,
-      "text": "Chính phủ thừa nhận, bốn năm đầu, doanh thu chỉ đủ bù chi phí vận hành."
+      "scene": "s5",
+      "start": 40.49675,
+      "end": 43.71075,
+      "text": "Bốn trăm bốn mươi ba trên bốn trăm năm mươi tư đại biểu tán thành."
     },
     {
       "id": "17",
-      "scene": "s6",
-      "start": 52.70629166666667,
-      "end": 55.28629166666667,
-      "text": "Phần bảo trì hạ tầng, Nhà nước vẫn phải lo."
+      "scene": "s5",
+      "start": 43.771,
+      "end": 46.746,
+      "text": "Nhưng nhiều chuyên gia vẫn hỏi: bao giờ hoàn vốn?"
     },
     {
       "id": "18",
-      "scene": "s7",
-      "start": 55.53633333333334,
-      "end": 56.97533333333334,
-      "text": "Giờ quay lại hai đoàn tàu."
+      "scene": "s5",
+      "start": 46.8065,
+      "end": 51.1975,
+      "text": "Chính phủ thừa nhận, bốn năm đầu, doanh thu chỉ đủ bù chi phí vận hành."
     },
     {
       "id": "19",
-      "scene": "s7",
-      "start": 57.03541666666667,
-      "end": 60.61841666666667,
-      "text": "Khi tàu cao tốc đã tới Thủ Thiêm, tàu Thống Nhất còn chưa tới Vinh."
+      "scene": "s6",
+      "start": 51.447208333333336,
+      "end": 52.83020833333334,
+      "text": "Giờ quay lại hai đoàn tàu."
     },
     {
       "id": "20",
-      "scene": "s8",
-      "start": 60.86804166666667,
-      "end": 65.86204166666667,
-      "text": "Mà oái oăm ở chỗ: tuyến Thống Nhất được nối liền từ năm một nghìn chín trăm ba mươi sáu."
+      "scene": "s6",
+      "start": 52.88975,
+      "end": 57.04675,
+      "text": "Khi tàu cao tốc đã tới Thủ Thiêm, tàu Thống Nhất còn chưa tới Vinh."
     },
     {
       "id": "21",
-      "scene": "s8",
-      "start": 65.92175,
-      "end": 69.29675,
-      "text": "Chín mươi năm sau, đi hết tuyến vẫn mất hơn một ngày."
+      "scene": "s7",
+      "start": 57.297125,
+      "end": 61.662125,
+      "text": "Trớ trêu là, tuyến Thống Nhất được nối liền từ năm một nghìn chín trăm ba mươi sáu."
+    },
+    {
+      "id": "22",
+      "scene": "s7",
+      "start": 61.722375,
+      "end": 67.048375,
+      "text": "Chuyến đầu tiên chạy hết tuyến, Toàn quyền Đông Dương cùng gia đình ngồi trên tàu khoảng bốn mươi tiếng."
+    },
+    {
+      "id": "23",
+      "scene": "s7",
+      "start": 67.10879166666666,
+      "end": 68.24679166666667,
+      "text": "Chín mươi năm trôi qua."
+    },
+    {
+      "id": "24",
+      "scene": "s7",
+      "start": 68.54674999999999,
+      "end": 70.45774999999999,
+      "text": "Tàu chỉ nhanh hơn chưa tới mười tiếng."
     }
   ]
 }

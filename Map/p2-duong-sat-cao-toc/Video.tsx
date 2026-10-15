@@ -1,10 +1,12 @@
 /**
- * Map channel · P2 Tiền & bản đồ · v2 "67 tỷ đô để mua một ngày" (style I Toy Atlas).
- * Script + sources: kich-ban-p2-duong-sat-cao-toc-FINAL.md, cong-2_so-nguon.md; v1 lives in ./v1.
+ * Map channel · P2 Tiền & bản đồ · v3 "67 tỷ đô để mua một ngày" (style I Toy Atlas).
+ * Script + sources: kich-ban-p2-duong-sat-cao-toc-FINAL.md (v3), cong-2_so-nguon.md, kich-ban-v3-de-xuat.md §D;
+ * v1 and v2 live in ./v1 and ./v2. v3 (Lucas 2026-10-15): the 7 script rules (short answer "Vì toàn cầu.",
+ * the governor-general's family on the first 1936 train, 40 h → 34 h payoff).
  * v2 (Lucas 2026-10-13, after the 20-video competitor study): the story is a race between
  * two trains (opened in scene 1, paid off in scene 7); slow camera push inside every beat;
  * data cards; glowing route; profile card for bridges/tunnels; music dips at the climax.
- * Every cue comes from the VO timing. Soft loop (Lucas 2026-10-14): the VO ends on line 21; in the 0.7 s tail the picture returns to the first frame.
+ * Every cue comes from the VO timing. Soft loop (Lucas 2026-10-14): the VO ends on line 24; in the 0.7 s tail the picture returns to the first frame.
  *
  * Map rules (Lucas 2026-10-12): Hoàng Sa + Trường Sa in Vietnam's colour with labels whenever
  * the whole coast is in frame; the route is a SCHEMATIC (not the official alignment).
@@ -19,7 +21,7 @@ import { MusicBed, PILLAR_MUSIC, SfxCues, type SfxCue } from "../../src/series/p
 import { CLAMP, FONT, prog } from "../../Style Library/kit-common";
 import { KaraokeSubs } from "../../Style Library/subs";
 import {
-  ATLAS, Atlas, AtlasSub, beats, BigGold, camAt, count, DataCard, type Fill, Flag, type GeoCam, ImgSticker, MapLabel, PegImg, pts, Pulse, Question, Route, routeHead, seamKeys, show, Sticker, toScreen, Track, vertexP, VnIslands, YearRibbon,
+  ATLAS, Atlas, AtlasSub, beats, BigGold, camAt, count, DataCard, type Fill, Flag, type GeoCam, ImgSticker, MapLabel, pts, Pulse, Question, Route, routeHead, seamKeys, show, Sticker, toScreen, Track, vertexP, VnIslands, YearRibbon,
 } from "../../Style Library/I-toy-atlas/toy-atlas";
 
 const FPS = 30;
@@ -37,10 +39,8 @@ const VIEW = {
 const KEYS0: GeoCam[] = [
   { at: 0, ...VIEW.vn },
   { at: at("09") - 2, ...VIEW.coast },
-  { at: at("13") - 4, ...VIEW.hanoi },
-  { at: at("15") - 4, ...VIEW.vn },
-  // settle back to the exact opening view so the loop joins
-  { at: at("21", 0.5), ...VIEW.vn },
+  { at: at("15") - 4, ...VIEW.hanoi },
+  { at: at("17") - 4, ...VIEW.vn },
 ];
 /** Slow push inside each beat: 4 % per 3 s, at most +8 % (keeps the islands and bottom rows clear). */
 const PUSH = 0.04;
@@ -188,23 +188,23 @@ const Scene: React.FC = () => {
   const [hx, hy] = toScreen(cam, ...HANOI);
   const [sx, sy] = toScreen(cam, ...HCM);
   // islands whenever the whole coast is in frame (not during the coast / Hà Nội zooms)
-  const islandsO = 1 - (prog(f, at("09") - 4, 4) - prog(f, at("15") + 6, 6));
+  const islandsO = 1 - (prog(f, at("09") - 4, 4) - prog(f, at("17") + 6, 6));
   const stops = STOPS5.map((i) => vertexP(route, i));
   const pVinh = vertexP(route, VINH);
 
   // the gold route glows once the race starts and is gone again for the loop frame
-  const goldO = Math.min(prog(f, at("03", 0.2), 8), 1 - prog(f, at("21", 1), 20));
+  const goldO = Math.min(prog(f, at("03", 0.2), 8), 1 - prog(f, at("24", 1), 20));
 
   // scene 2: new train runs the whole line in ~2 s
   const runP = prog(f, at("05", 0.1), 60, Easing.inOut(Easing.quad));
   // scene 7 (climax): race clock — 5.5 h of "race time" over 80 frames
-  const raceA = at("19");
+  const raceA = at("20");
   const hours = interpolate(f, [raceA, raceA + 80], [0, 5.5], CLAMP);
-  const oldHours = interpolate(f, [raceA, raceA + 80, at("20")], [0, 5.5, 6.2], CLAMP);
+  const oldHours = interpolate(f, [raceA, raceA + 80, at("21")], [0, 5.5, 6.2], CLAMP);
   const newRace = hours / 5.5;
   // Hà Nội → Vinh takes the Thống Nhất > 6.5 h (C16): at 5.5 h it is still ~5.5/6.7 of the way there
   const oldRace = pVinh * (oldHours / 6.7);
-  const raceO = Math.min(prog(f, at("18"), 6), 1 - prog(f, at("20"), 8));
+  const raceO = Math.min(prog(f, at("19"), 6), 1 - prog(f, at("21"), 8));
 
   return (
     <AbsoluteFill>
@@ -273,7 +273,7 @@ const Scene: React.FC = () => {
       {/* ── 07–09 the price ── */}
       <ImgSticker src={`${IMG}/p-03-money-bags.png`} x={SEA[0]} y={SEA[1] + 50 * (1 - prog(f, at("07", 0.1), 8, Easing.in(Easing.quad)))}
         w={260} f={f} at={at("07", 0.1)} out={at("08")} />
-      <DataCard value="1.541 KM" label="SƠ ĐỒ MINH HOẠ" x={640} y={TOP_Y} f={f} at={at("08", 0.12)} out={at("09") - 4} />
+      <DataCard value="1.500+ KM" label="SƠ ĐỒ MINH HOẠ" x={640} y={TOP_Y} f={f} at={at("08", 0.12)} out={at("09") - 4} />
       {f >= at("09") - 2 && f < at("10") + 4 && (() => {
         // one metre of track and a pile of 500.000-đồng notes growing on it
         const [qx, qy] = toScreen(cam, 108.7, 15.08);
@@ -296,12 +296,23 @@ const Scene: React.FC = () => {
 
       {/* ── 10–12 why so expensive: bridges and tunnels ── */}
       <Question x={540} y={TOP_Y + 20} f={f} at={at("10")} out={at("11")} s={1.6} />
-      <BigGold text="350 KM/H" f={f} at={at("11", 0.05)} out={at("11", 0.35)} y={TOP_Y} size={120} />
-      <ProfileCard f={f} at={at("11", 0.3)} out={at("12")} />
-      {f >= at("12") - 2 && f < at("13") && (() => {
+      {/* [ĐÙA] "Vì toàn cầu." — the line becomes a chain of bridges */}
+      <BigGold text="TOÀN CẦU" f={f} at={at("11", 0.05)} out={at("12")} y={TOP_Y} size={120} />
+      {f >= at("11") && f < at("12") && (
+        <svg width={1080} height={1920} style={{ position: "absolute", opacity: 1 - prog(f, at("12") - 4, 4) }}>
+          {Array.from({ length: 14 }, (_, i) => {
+            const [x, y] = routeHead(route, 0.08 + i * 0.065);
+            const up = 14 * prog(f, at("11", 0.05) + i, 6, Easing.out(Easing.back(2)));
+            return <path key={i} d={`M ${x - 16} ${y} Q ${x} ${y - up * 2} ${x + 16} ${y}`} fill="none" stroke={ATLAS.white} strokeWidth={6} strokeLinecap="round" />;
+          })}
+        </svg>
+      )}
+      <ProfileCard f={f} at={at("12")} out={at("14")} />
+      <BigGold text="350 KM/H" f={f} at={at("14", 0.05)} out={at("14", 0.5)} y={TOP_Y} size={120} />
+      {f >= at("14") - 2 && f < at("15") && (() => {
         // the line lifts off the ground: shadow below, piers between, deck rising
-        const lift = 26 * prog(f, at("12", 0.1), 24, Easing.out(Easing.cubic));
-        const o = 1 - prog(f, at("13") - 6, 6);
+        const lift = 26 * prog(f, at("14", 0.3), 24, Easing.out(Easing.cubic));
+        const o = 1 - prog(f, at("15") - 6, 6);
         return (
           <>
             <Track ps={route} p={1} color={ATLAS.ink} w={10} dy={lift * 0.6} o={0.35 * o} />
@@ -316,67 +327,57 @@ const Scene: React.FC = () => {
         );
       })()}
 
-      {/* ── 13–14 Quốc hội bấm nút ── */}
-      {f >= at("13") - 4 && f < at("15") && (
+      {/* ── 15–16 [PHE 1] Quốc hội bấm nút ── */}
+      {f >= at("15") - 4 && f < at("17") && (
         <>
           <Pulse x={hx} y={hy} f={f} />
           <svg width={1080} height={1920} style={{ position: "absolute" }}>
-            <g style={{ translate: `${hx + 26}px ${hy - 170}px`, scale: 1.8 * prog(f, at("13", 0.2), 8) }}>
+            <g style={{ translate: `${hx + 26}px ${hy - 170}px`, scale: 1.8 * prog(f, at("15", 0.2), 8) }}>
               <Flag kind="vietnam" f={f} />
             </g>
           </svg>
           <ImgSticker src={`${IMG}/p-05-assembly.png`}
-            x={480} y={1090 - 10 * Math.abs(Math.sin((f - at("14")) / 5)) * show(f, at("14"), at("15"))} w={460} f={f} at={at("13", 0.15)} out={at("15") - 4} />
-          <VoteButton x={820} y={1010} f={f} at={at("13", 0.4)} press={at("13", 0.82)} out={at("15") - 4} />
+            x={480} y={1090 - 10 * Math.abs(Math.sin((f - at("16")) / 5)) * show(f, at("16"), at("17"))} w={460} f={f} at={at("15", 0.15)} out={at("17") - 4} />
+          <VoteButton x={820} y={1010} f={f} at={at("15", 0.4)} press={at("15", 0.82)} out={at("17") - 4} />
         </>
       )}
-      <YearRibbon text="2024" f={f} at={at("13", 0.2)} out={at("15") - 4} />
-      <BigGold text={`${count(f, at("14", 0.05), 40, 443)} / 454`} f={f} at={at("14", 0.05)} out={at("15") - 4} y={470} size={120} />
+      <YearRibbon text="2024" f={f} at={at("15", 0.2)} out={at("17") - 4} />
+      <BigGold text={`${count(f, at("16", 0.05), 40, 443)} / 454`} f={f} at={at("16", 0.05)} out={at("17") - 4} y={470} size={120} />
 
-      {/* ── 15–17 bao giờ hoàn vốn? (neutral) ── */}
-      {f >= at("15") && f < at("16") + 4 && (
+      {/* ── 17–18 [PHE 2] experts: when does it pay back? (neutral) ── */}
+      {f >= at("17") && f < at("18") + 4 && (
         <>
-          <ImgSticker src={`${IMG}/p-07-scale.png`} x={SEA[0]} y={SEA[1]} w={260} f={f} at={at("15", 0.1)} out={at("16")} />
-          <ImgSticker src={`${IMG}/p-03-money-bags.png`} x={SEA[0] - 83} y={SEA[1] - 10} w={120} f={f} at={at("15", 0.2)} out={at("16")} />
-          <ImgSticker src={`${IMG}/p-01-hsr-train.png`} x={SEA[0] + 83} y={SEA[1] + 4} w={110} f={f} at={at("15", 0.3)} out={at("16")} />
+          <ImgSticker src={`${IMG}/p-07-scale.png`} x={SEA[0]} y={SEA[1]} w={260} f={f} at={at("17", 0.1)} out={at("18")} />
+          <ImgSticker src={`${IMG}/p-03-money-bags.png`} x={SEA[0] - 83} y={SEA[1] - 10} w={120} f={f} at={at("17", 0.2)} out={at("18")} />
+          <ImgSticker src={`${IMG}/p-01-hsr-train.png`} x={SEA[0] + 83} y={SEA[1] + 4} w={110} f={f} at={at("17", 0.3)} out={at("18")} />
         </>
       )}
-      <BigGold text="HOÀN VỐN?" f={f} at={at("15", 0.55)} out={at("16")} y={TOP_Y - 20} size={110} />
-      <BigGold text="4 NĂM ĐẦU" f={f} at={at("16", 0.2)} out={at("17")} y={TOP_Y} size={110} />
-      <svg width={1080} height={1920} style={{ position: "absolute", opacity: Math.min(prog(f, at("16", 0.25), 6), 1 - prog(f, at("17"), 6)) }}>
-        <rect x={ROW.x0} y={ROW.r1 - ROW.h / 2} width={ROW.max * 0.7 * prog(f, at("16", 0.4), 20)} height={ROW.h} rx={10} fill={ATLAS.b} stroke={ATLAS.ink} strokeWidth={5} />
-        <rect x={ROW.x0} y={ROW.r2 - ROW.h / 2} width={ROW.max * 0.7 * prog(f, at("16", 0.55), 20)} height={ROW.h} rx={10} fill="#9AA3A6" stroke={ATLAS.ink} strokeWidth={5} />
+      <BigGold text="HOÀN VỐN?" f={f} at={at("17", 0.45)} out={at("18")} y={TOP_Y - 20} size={110} />
+      <BigGold text="4 NĂM ĐẦU" f={f} at={at("18", 0.2)} out={at("19")} y={TOP_Y} size={110} />
+      <svg width={1080} height={1920} style={{ position: "absolute", opacity: Math.min(prog(f, at("18", 0.25), 6), 1 - prog(f, at("19"), 6)) }}>
+        <rect x={ROW.x0} y={ROW.r1 - ROW.h / 2} width={ROW.max * 0.7 * prog(f, at("18", 0.4), 20)} height={ROW.h} rx={10} fill={ATLAS.b} stroke={ATLAS.ink} strokeWidth={5} />
+        <rect x={ROW.x0} y={ROW.r2 - ROW.h / 2} width={ROW.max * 0.7 * prog(f, at("18", 0.55), 20)} height={ROW.h} rx={10} fill="#9AA3A6" stroke={ATLAS.ink} strokeWidth={5} />
         <text x={ROW.x0 + ROW.max * 0.7 + 50} y={(ROW.r1 + ROW.r2) / 2 + 26} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={80}
-          fill={ATLAS.white} stroke={ATLAS.ink} strokeWidth={10} paintOrder="stroke" opacity={prog(f, at("16", 0.8), 6)}>=</text>
+          fill={ATLAS.white} stroke={ATLAS.ink} strokeWidth={10} paintOrder="stroke" opacity={prog(f, at("18", 0.8), 6)}>=</text>
       </svg>
-      <ImgSticker src={`${IMG}/p-03-money-bags.png`} x={ROW.icon} y={ROW.r1} w={100} f={f} at={at("16", 0.3)} out={at("17")} />
-      <ImgSticker src={`${IMG}/p-01-hsr-train.png`} x={ROW.icon} y={ROW.r2} w={120} f={f} at={at("16", 0.45)} out={at("17")} />
-      {f >= at("17") - 2 && f < at("18") + 4 && (() => {
-        const [dx, dy] = toScreen(cam, 108.1, 16.0);
-        return (
-          <>
-            <Track ps={route.slice(6, 11)} p={1} color={ATLAS.white} w={12} o={show(f, at("17"), at("18") - 2) * (0.55 + 0.45 * Math.sin(f / 4))} />
-            <PegImg src={`${IMG}/p-08-worker.png`} x={dx - 170} y={dy + 120} h={230} flag="vietnam" f={f} at={at("17", 0.1)} o={1 - prog(f, at("18") - 2, 4)} />
-          </>
-        );
-      })()}
-      <BigGold text="BẢO TRÌ HẠ TẦNG" f={f} at={at("17", 0.15)} out={at("18") - 2} y={TOP_Y} size={88} color={ATLAS.white} />
+      <ImgSticker src={`${IMG}/p-03-money-bags.png`} x={ROW.icon} y={ROW.r1} w={100} f={f} at={at("18", 0.3)} out={at("19")} />
+      <ImgSticker src={`${IMG}/p-01-hsr-train.png`} x={ROW.icon} y={ROW.r2} w={120} f={f} at={at("18", 0.45)} out={at("19")} />
 
-      {/* ── 18–19 climax: back to the race ── */}
-      {f >= at("18") && f < at("21") && (() => {
+      {/* ── 19–20 climax: back to the race ── */}
+      {f >= at("19") && f < at("22") && (() => {
         const [ox, oy] = routeHead(route, oldRace);
         const [nx, ny] = routeHead(route, newRace);
         const [vx, vy] = routeHead(route, pVinh);
         const arrived = hours >= 5.5;
         return (
           <>
-            {f >= raceA && <MapLabel text="VINH" x={vx + 130} y={vy + 18} o={show(f, raceA + 60, at("20") + 4)} />}
-            {f >= raceA + 70 && <Pulse x={vx} y={vy} f={f} color={ATLAS.white} period={30} o={1 - prog(f, at("20"), 6)} />}
+            {f >= raceA && <MapLabel text="VINH" x={vx + 130} y={vy + 18} o={show(f, raceA + 60, at("21") + 4)} />}
+            {f >= raceA + 70 && <Pulse x={vx} y={vy} f={f} color={ATLAS.white} period={30} o={1 - prog(f, at("21"), 6)} />}
             <ImgSticker src={`${IMG}/p-02-old-train.png`} x={f < raceA ? hx - 60 : ox - 70} y={f < raceA ? hy + 50 : oy - 34} w={150} f={f}
-              at={at("18", 0.1)} out={at("21")} />
+              at={at("19", 0.1)} out={at("21")} />
             <ImgSticker src={`${IMG}/p-01-hsr-train.png`} x={f < raceA ? hx + 110 : arrived ? sx + 30 : nx} y={f < raceA ? hy + 50 : (arrived ? sy : ny) - 30} w={160} f={f}
-              at={at("18", 0.2)} out={at("20")} />
-            {arrived && <Pulse x={sx} y={sy} f={f} color={ATLAS.gold} period={30} o={1 - prog(f, at("20"), 6)} />}
+              at={at("19", 0.2)} out={at("21")} />
+            {arrived && <Pulse x={sx} y={sy} f={f} color={ATLAS.gold} period={30} o={1 - prog(f, at("21"), 6)} />}
           </>
         );
       })()}
@@ -393,32 +394,52 @@ const Scene: React.FC = () => {
       </svg>
       {raceO > 0 && (
         <>
-          <ImgSticker src={`${IMG}/p-02-old-train.png`} x={ROW.icon} y={ROW.r1} w={120} f={f} at={at("18", 0.2)} out={at("20")} />
-          <ImgSticker src={`${IMG}/p-01-hsr-train.png`} x={ROW.icon} y={ROW.r2} w={120} f={f} at={at("18", 0.3)} out={at("20")} />
+          <ImgSticker src={`${IMG}/p-02-old-train.png`} x={ROW.icon} y={ROW.r1} w={120} f={f} at={at("19", 0.2)} out={at("21")} />
+          <ImgSticker src={`${IMG}/p-01-hsr-train.png`} x={ROW.icon} y={ROW.r2} w={120} f={f} at={at("19", 0.3)} out={at("21")} />
         </>
       )}
 
-      {/* ── 20–21 twist: the line was joined in 1936 ── */}
-      <YearRibbon text="1936" f={f} at={at("20", 0.3)} out={at("21", 0.4)} />
-      {f >= at("20") && f < at("21", 0.6) + 8 && (() => {
+      {/* ── 21–24 twist: joined in 1936; the first through train ~40 h; 90 years on, < 10 h faster ── */}
+      <YearRibbon text="1936" f={f} at={at("21", 0.3)} out={at("22", 0.35)} />
+      {f >= at("21") && f < at("23") && (() => {
         const [kx, ky] = routeHead(route, vertexP(route, KM1221));
+        // [NGƯỜI] line 22: the steam train runs the whole line with the governor-general's family aboard
+        const run = prog(f, at("22", 0.1), at("22", 0.95) - at("22", 0.1), Easing.inOut(Easing.quad));
+        const [tx, ty] = routeHead(route, run);
         return (
-          <>
-            <Pulse x={kx} y={ky} f={f} color={ATLAS.gold} period={36} o={show(f, at("20", 0.55), at("21", 0.6))} />
-            {HAS.steam ? (
-              <ImgSticker src={`${IMG}/p-11-steam-train.png`} x={kx + 150} y={ky - 40} w={190} f={f} at={at("20", 0.45)} out={at("21", 0.6)} />
+          <AbsoluteFill style={{ opacity: 1 - prog(f, at("23") - 6, 5) }}>
+            <Pulse x={kx} y={ky} f={f} color={ATLAS.gold} period={36} o={show(f, at("21", 0.55), at("22"))} />
+            {f < at("22") ? (
+              <ImgSticker src={`${IMG}/p-11-steam-train.png`} x={kx + 150} y={ky - 40} w={190} f={f} at={at("21", 0.45)} />
             ) : (
-              <Img src={staticFile(`${IMG}/p-02-old-train.png`)} style={{
-                position: "absolute", left: kx + 150, top: ky - 40 + 5 * Math.sin(f / 12), width: 190, translate: "-50% -50%",
-                filter: "sepia(1) saturate(0.6)", scale: prog(f, at("20", 0.45), 8, Easing.out(Easing.back(2))),
-                opacity: 1 - prog(f, at("21", 0.6), 5),
-              }} />
+              <ImgSticker src={`${IMG}/p-11-steam-train.png`} x={tx} y={ty - 30} w={170} f={f} at={at("22")} />
             )}
-          </>
+            <ImgSticker src={`${IMG}/p-12-governor-family.png`} x={760} y={830} w={300} f={f} at={at("22", 0.05)} />
+          </AbsoluteFill>
         );
       })()}
-      <BigGold text="90 NĂM SAU" f={f} at={at("21", 0.05)} out={at("21", 1)} y={470} size={110} />
-      <DataCard value="> 1 NGÀY" label="TÀU THỐNG NHẤT" x={540} y={1230} f={f} at={at("21", 0.4)} out={at("21", 1)} color={ATLAS.white} size={80} />
+      <DataCard value="~40 GIỜ" label="CHUYẾN ĐẦU · 1936" x={540} y={TOP_Y} f={f} at={at("22", 0.45)} out={at("23")} />
+      <BigGold text="90 NĂM" f={f} at={at("23", 0.05)} out={at("24")} y={TOP_Y} size={130} />
+      <ImgSticker src={`${IMG}/p-06-clock.png`} x={760} y={830} w={220} f={f} at={at("23", 0.05)} out={at("24")} />
+      {/* line 24: same scale — 1936 ~40 h vs today ~34 h: under 10 h faster in 90 years */}
+      <svg width={1080} height={1920} style={{ position: "absolute", opacity: Math.min(prog(f, at("24"), 5), 1 - prog(f, at("24", 1), 6)) }}>
+        {([[ROW.r1, 40, "#B08A5B", "~40 GIỜ"], [ROW.r2, 34, "#9AA3A6", "~34 GIỜ"]] as const).map(([y, h, c, t], i) => (
+          <g key={i}>
+            <rect x={ROW.x0} y={y - ROW.h / 2} width={ROW.max * (h / 40) * prog(f, at("24", 0.05 + i * 0.15), 14)} height={ROW.h} rx={10} fill={c} stroke={ATLAS.ink} strokeWidth={5} />
+            <text x={ROW.x0 + 24} y={y + 20} fontFamily={FONT} fontWeight={800} fontSize={52} fill={ATLAS.white} stroke={ATLAS.ink} strokeWidth={9} paintOrder="stroke"
+              opacity={prog(f, at("24", 0.2 + i * 0.15), 5)}>{t}</text>
+          </g>
+        ))}
+        {/* the gap: what 90 years bought */}
+        <rect x={ROW.x0 + ROW.max * (34 / 40)} y={ROW.r2 - ROW.h / 2} width={ROW.max * (6 / 40)} height={ROW.h} rx={6} fill="none" stroke={ATLAS.gold}
+          strokeWidth={6} strokeDasharray="10 6" opacity={prog(f, at("24", 0.55), 6)} />
+      </svg>
+      {f >= at("24") && f < at("24", 1) + 6 && (
+        <>
+          <ImgSticker src={`${IMG}/p-11-steam-train.png`} x={ROW.icon} y={ROW.r1} w={120} f={f} at={at("24")} out={at("24", 1)} />
+          <ImgSticker src={`${IMG}/p-02-old-train.png`} x={ROW.icon} y={ROW.r2} w={120} f={f} at={at("24", 0.15)} out={at("24", 1)} />
+        </>
+      )}
       <SafeGuide />
     </AbsoluteFill>
   );
@@ -426,16 +447,22 @@ const Scene: React.FC = () => {
 
 const CAPTIONS: Record<string, string> = {
   "01": "Việt Nam dự kiến chi khoảng *67 tỷ đô*, chỉ để mua *một ngày*.",
-  "04": "Tàu Thống Nhất hôm nay: lên tàu buổi tối, ngủ *hai đêm*, *hơn 30 tiếng* mới tới Sài Gòn.",
-  "05": "Tàu cao tốc nhanh nhất, chỉ dừng 5 ga, dự kiến khoảng *5,5 tiếng*.",
-  "08": "Tuyến dài khoảng 1.541 km.",
+  "04": "Tàu Thống Nhất hôm nay: lên tàu buổi tối, ngủ *hai đêm* mới tới Sài Gòn.",
+  "05": "Tàu cao tốc nhanh nhất dự kiến chỉ mất khoảng *5,5 tiếng*.",
+  "08": "Tuyến dài hơn *1.500 km*.",
   "09": "Theo vốn sơ bộ, mỗi mét đường tốn *hơn 1 tỷ đồng*.",
-  "11": "Để chạy 350 km/h, tuyến dự kiến có khoảng *60%* là cầu, *10%* là hầm.",
-  "13": "Dù vậy, cuối năm 2024, Quốc hội vẫn bấm nút.",
-  "14": "443/454 đại biểu tán thành.",
-  "16": "Chính phủ thừa nhận, 4 năm đầu, doanh thu chỉ đủ bù chi phí vận hành.",
-  "20": "Mà oái oăm ở chỗ: tuyến Thống Nhất được nối liền từ năm *1936*.",
-  "21": "*90 năm* sau, đi hết tuyến vẫn mất *hơn một ngày*.",
+  "11": "Vì *toàn cầu*.",
+  "12": "Khoảng *60%* tuyến dự kiến đi trên cầu.",
+  "13": "Thêm khoảng *10%* chui trong hầm.",
+  "14": "Để chạy *350 km/h*, phần lớn con đường được nhấc hẳn lên khỏi mặt đất.",
+  "15": "Cuối năm *2024*, Quốc hội vẫn bấm nút.",
+  "16": "*443/454* đại biểu tán thành.",
+  "17": "Nhưng nhiều chuyên gia vẫn hỏi: bao giờ *hoàn vốn*?",
+  "18": "Chính phủ thừa nhận, *4 năm đầu*, doanh thu chỉ đủ bù chi phí vận hành.",
+  "21": "Trớ trêu là, tuyến Thống Nhất được nối liền từ năm *1936*.",
+  "22": "Chuyến đầu tiên chạy hết tuyến, Toàn quyền Đông Dương cùng gia đình ngồi trên tàu khoảng *40 tiếng*.",
+  "23": "*90 năm* trôi qua.",
+  "24": "Tàu chỉ nhanh hơn *chưa tới 10 tiếng*.",
 };
 
 const W = "whoosh/simple-whoosh-382724.mp3";
@@ -444,21 +471,21 @@ const CLICK = "click/mouse-click-351398.mp3";
 const THUD = "deephit/impact-thud-291047.mp3";
 const SHUTTER = "shutter/shutter-click-3-494029.mp3";
 const TICK = "click/pen-click-411629.mp3";
-const raceTicks: SfxCue[] = Array.from({ length: 9 }, (_, i) => [TICK, "19", 0, i * 12, -24]);
+const raceTicks: SfxCue[] = Array.from({ length: 9 }, (_, i) => [TICK, "20", 0, i * 12, -24]);
 const SFX: SfxCue[] = [
   [THUD, "01", 0.12, 0, -18], [CLICK, "02", 0.1],
   [CLICK, "03", 0.3], [CLICK, "04", 0.4], [W2, "05", 0.1], [CLICK, "06", 0.05], [CLICK, "06", 0.55],
   [THUD, "07", 0.12, 0, -18], [CLICK, "08", 0.1], [W, "09", 0, -2], [CLICK, "09", 0.4],
-  [CLICK, "10", 0], [W2, "11", 0.32], [CLICK, "12", 0.1],
-  [W, "13", 0, -4], [SHUTTER, "13", 0.82], [CLICK, "14", 0.05],
-  [W, "15", 0, -4], [CLICK, "16", 0.2], [CLICK, "17", 0.15],
-  [CLICK, "18", 0.1], ...raceTicks, [THUD, "19", 0.75, 0, -16],
-  [SHUTTER, "20", 0.3], [CLICK, "21", 0.4],
+  [CLICK, "10", 0], [CLICK, "11", 0.05], [W2, "12", 0], [CLICK, "13", 0.1], [W, "14", 0.3],
+  [W, "15", 0, -4], [SHUTTER, "15", 0.82], [CLICK, "16", 0.05],
+  [CLICK, "17", 0.45], [CLICK, "18", 0.2],
+  [CLICK, "19", 0.1], ...raceTicks, [THUD, "20", 0.75, 0, -16],
+  [SHUTTER, "21", 0.3], [W2, "22", 0.1], [CLICK, "22", 0.45], [CLICK, "23", 0.05], [THUD, "24", 0.55, 0, -18],
 ];
 
 /** Music duck: the pillar bed dips under the climax so the race clock carries it. */
 const musicDuck = (f: number) =>
-  interpolate(f, [at("18") - 6, at("18") + 6, at("20") - 4, at("20") + 10], [1, 0.3, 0.3, 1], CLAMP);
+  interpolate(f, [at("19") - 6, at("19") + 6, at("21") - 4, at("21") + 10], [1, 0.3, 0.3, 1], CLAMP);
 
 export const P2DuongSatCaoToc: React.FC = () => (
   <AbsoluteFill style={{ backgroundColor: ATLAS.deep }}>

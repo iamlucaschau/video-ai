@@ -12,11 +12,9 @@
 
 ## 2. Mô tả
 
-> Tàu Thống Nhất hôm nay: hơn 30 tiếng từ Hà Nội vào Sài Gòn. Tàu cao tốc 350 km/h: dự kiến khoảng 5 tiếng rưỡi, với vốn sơ bộ khoảng 67 tỷ đô, tính ra hơn 1 tỷ đồng mỗi mét đường. Theo bạn, có đáng không?
+> Tàu Thống Nhất hôm nay: hơn 30 tiếng từ Hà Nội vào Sài Gòn. Tàu cao tốc 350 km/h: dự kiến khoảng 5 tiếng rưỡi, với vốn sơ bộ khoảng 67 tỷ đô, tính ra hơn 1 tỷ đồng mỗi mét đường. Chuyến tàu đầu tiên chạy hết tuyến năm 1936 mất khoảng 40 tiếng — 90 năm sau, tàu chỉ nhanh hơn chưa tới 10 tiếng. Theo bạn, có đáng không?
 >
-> #duongsattocdocao #duongsatbacnam #tauthongnhat #vietnam
->
-> *(giới thiệu kênh — điền khi có tên kênh)*
+> **Atlas Tí Hon** — bản đồ nhỏ, câu chuyện lớn.
 >
 > **Nguồn** (truy cập 12–13/10/2026):
 > - Nghị quyết 172/2024/QH15 (30/11/2024): Báo Luật sư VN, SGGP, Nhà Đầu tư, Thị trường Tài chính Tiền tệ, VOH
@@ -25,14 +23,15 @@
 > - Hoàn vốn, chi phí vận hành: Thị trường Tài chính Tiền tệ, Pháp Luật TP.HCM, Cổng TTĐT Hà Tĩnh
 > - Lịch tàu Thống Nhất: Báo Đấu thầu (2/2023), Bộ Xây dựng / SGGP (hè 2026), Pháp Luật TP.HCM
 > - Mối nối ray cuối cùng năm 1936 (Km1221, Phú Yên): Tuổi Trẻ, SGGP, Nhân Dân
+> - Chuyến đầu tiên chạy trọn tuyến (1/10/1936), Toàn quyền René Robin và gia đình, ~40–42 giờ: Saigoneer (BackHeritage), Historic Vietnam
 > - "Mỗi mét hơn 1 tỷ đồng" = 1.713.548 tỷ đồng ÷ 1.541 km (vốn sơ bộ).
 > - Bản đồ: Natural Earth. **Tuyến trên bản đồ là sơ đồ minh hoạ, không phải hướng tuyến chính xác.** Vị trí ga là minh hoạ.
 >
-> #bando #diali #kinhte #hatang #giaothong
+> #Shorts #AtlasTiHon #BanDo #DiaLy #KinhTe #HaTang #VietNam #DuongSatCaoToc #TauThongNhat
 
-## 3. Hashtag (≤ 20)
+## 3. Hashtag (công thức kênh: `06_NHAN-DIEN-KENH.md` §5)
 
-#duongsattocdocao #duongsatbacnam #tauthongnhat #vietnam #kinhte #hatang #giaothong #bando #diali #quochoi #hanoi #saigon #dautucong #highspeedrail #vietnamrailway #maps #geography #economy #infrastructure #shorts
+#Shorts #AtlasTiHon #BanDo #DiaLy #KinhTe #HaTang #VietNam #DuongSatCaoToc #TauThongNhat
 
 ## 4. Ảnh bìa
 

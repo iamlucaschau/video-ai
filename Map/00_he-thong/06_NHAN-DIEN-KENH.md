@@ -49,25 +49,51 @@ Nếu app tạo ảnh không ra đúng 16:9: tạo bản rộng nhất có thể
 2. Hiểu thế giới qua những tấm bản đồ tí hon.
 3. Vì sao bản đồ lại như thế này?
 
-## 4. Mô tả kênh (YouTube "Giới thiệu", ≤ 1.000 ký tự)
+## 4. Mô tả kênh (viết lại 2026-10-15)
 
-> **Atlas Tí Hon — Bản đồ nhỏ, câu chuyện lớn.**
+*YouTube chỉ hiện ~150 ký tự đầu ở trang kênh và kết quả tìm kiếm, nên 2 dòng đầu phải tự đứng được: kênh là gì + vì sao nên xem. Không hứa lịch đăng cố định cho tới khi có lịch thật.*
+
+### Bản chính — YouTube "Giới thiệu" (≈ 450 ký tự)
+
+> Mỗi tấm bản đồ giấu một câu chuyện. Atlas Tí Hon kể nó trong chưa đầy một phút.
 >
-> Vì sao Việt Nam chi hàng chục tỷ đô cho một tuyến tàu? Vì sao miền Tây đang lún nhanh hơn nước biển dâng? Vì sao một nước rộng như Trung Quốc chỉ dùng một múi giờ?
->
-> Mỗi video dưới 75 giây, Atlas Tí Hon dùng những tấm bản đồ đồ chơi để giải thích một câu hỏi về thế giới quanh ta:
-> 🗺️ Vì sao bản đồ lại như thế này
+> Ở đây có:
+> 🗺️ Biên giới và lãnh thổ: vì sao bản đồ lại như thế này
 > 💰 Tiền và bản đồ: hạ tầng, giao thương, kinh tế
-> 🌏 Địa lý giải thích hiện tượng
-> 🚢 Những tuyến đường và hành trình
-> 🧭 Chuyện kỳ lạ và kỷ lục
+> 🌏 Địa lý giải thích chuyện quanh ta
+> 🚢 Những tuyến đường đổi cả thế giới
+> 🧭 Chuyện lạ và kỷ lục trên bản đồ
 >
-> Mọi con số trong video đều có nguồn, ghi ở phần mô tả từng video. Bản đồ dùng dữ liệu Natural Earth; các tuyến đường, vùng minh hoạ được ghi rõ là sơ đồ.
+> Mỗi con số đều có nguồn, ghi ở phần mô tả từng video.
 >
-> Đăng ký để mỗi tuần hiểu thêm một tấm bản đồ. Có câu hỏi muốn Atlas Tí Hon giải thích? Để lại bình luận nhé!
+> Có nơi nào bạn muốn hiểu? Để lại câu hỏi ở phần bình luận nhé!
 >
 > 📩 Hợp tác: *(email — điền sau)*
 
-*(≈ 800 ký tự. Lịch đăng "mỗi tuần" là giả định — sửa theo lịch thật.)*
+### Bản ngắn — TikTok / Facebook / Instagram (≤ 80 ký tự)
+
+> Bản đồ nhỏ, câu chuyện lớn. Mỗi video một câu hỏi "vì sao" 🗺️
+
+### Ghi chú
+
+- Lucas bỏ đoạn 4 câu hỏi mẫu (2026-10-15): mô tả không gắn với tập cụ thể nào.
+- Bỏ câu "mỗi tuần" ở bản cũ (chưa có lịch thật) và câu về Natural Earth (đã có trong mô tả từng video).
 
 **Từ khoá kênh** (Cài đặt → Kênh → Từ khoá): `bản đồ, địa lý, giải thích, kinh tế, lịch sử, Việt Nam, Đông Nam Á, bản đồ giải thích, vì sao, atlas tí hon, tiny atlas, shorts`
+
+## 5. Hashtag (Lucas duyệt 2026-10-15)
+
+**Công thức mỗi video (~10 tag, luôn dưới 15):** `#Shorts` + 3 tag cố định + 2 tag pillar + 1–2 tag vùng + 1–3 tag địa danh. Viết không dấu, viết hoa chữ đầu mỗi từ. YouTube hiện 3 tag đầu trên tiêu đề, nên 3 tag cố định luôn đứng đầu (sau `#Shorts`). Dán một lần ở cuối mô tả.
+
+| Nhóm | Tag |
+|---|---|
+| Cố định | `#Shorts #AtlasTiHon #BanDo #DiaLy` |
+| P1 Biên giới & lãnh thổ | `#LichSu #BienGioi #LanhTho` |
+| P2 Tiền & bản đồ | `#KinhTe #HaTang #GiaoThong` |
+| P3 Địa lý giải thích | `#MoiTruong #KhiHau #KhoaHoc` |
+| P4 Tuyến đường | `#HangHai #GiaoThuong #Logistics` |
+| P5 Kỳ lạ & kỷ lục | `#KyLa #KyLuc #CoTheBanChuaBiet` |
+| Vùng | `#VietNam #DongNamA #ChauA` |
+| Địa danh (theo tập) | vd. `#Brunei #Malaysia`, `#MienTay #Mekong`, `#TrungQuoc #MuiGio` |
+
+Kênh tiếng Anh sau này (Tiny Atlas): `#TinyAtlas #Maps #Geography #MapExplained`.

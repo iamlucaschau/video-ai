@@ -12,25 +12,23 @@
 
 ## 2. Mô tả
 
-> Qua cửa khẩu Lào Cai – Hà Khẩu, đồng hồ nhảy 1 tiếng. Nhưng đi tiếp hơn 3.000 km về phía tây, nó không nhảy thêm. Từ khoảng năm 1949, Trung Quốc dùng chung giờ Bắc Kinh dù lãnh thổ trải gần 5 múi giờ theo Mặt Trời. Bạn có muốn đi học lúc trời còn tối om không?
+> Qua cửa khẩu Lào Cai – Hà Khẩu, đồng hồ nhảy 1 tiếng. Nhưng đi tiếp hơn 3.000 km về phía tây, nó không nhảy thêm. Từ khoảng năm 1949, Trung Quốc dùng chung giờ Bắc Kinh dù lãnh thổ trải gần 5 múi giờ theo Mặt Trời. Ở Tân Cương còn có giờ địa phương chậm hơn 2 tiếng, nên hẹn nhau đôi khi phải hỏi lại: giờ nào? Bạn có muốn dậy lúc trời còn tối om không?
 >
-> #muigio #trungquoc #laocai #diali #kyla
->
-> *(giới thiệu kênh — điền khi có tên kênh)*
+> **Atlas Tí Hon** — bản đồ nhỏ, câu chuyện lớn.
 >
 > **Nguồn** (truy cập 13/10/2026):
 > - Wikipedia: Time in China; Time in Vietnam; Afghanistan–China border; Wakhjir Pass
 > - timeanddate.com: Why does China have only one time zone?
 > - Al Jazeera (09/08/2023): Conflict over the clock
-> - IANA tz database: Xinjiang Time
+> - IANA tz database: Xinjiang Time; Wikipedia: Xinjiang Time (quyết định tháng 2/1986)
 > - Giờ mặt trời mọc / lặn ở Kashgar và Bắc Kinh: tính theo công thức NOAA (khớp bảng trên Wikipedia)
 > - Bản đồ: Natural Earth (ranh giới theo thực tế quản lý; **không thể hiện quan điểm về các tranh chấp lãnh thổ**). Dải múi giờ theo kinh độ là minh hoạ.
 >
-> #bando #diali #thoigian #timezone #china
+> #Shorts #AtlasTiHon #BanDo #DiaLy #KyLa #KyLuc #ChauA #TrungQuoc #MuiGio
 
-## 3. Hashtag (≤ 20)
+## 3. Hashtag (công thức kênh: `06_NHAN-DIEN-KENH.md` §5)
 
-#muigio #trungquoc #laocai #hakhau #tancuong #afghanistan #diali #bando #kyla #kyluc #thoigian #giobackinh #timezone #china #geography #maps #funfacts #asia #learnontiktok #shorts
+#Shorts #AtlasTiHon #BanDo #DiaLy #KyLa #KyLuc #ChauA #TrungQuoc #MuiGio
 
 ## 4. Ảnh bìa
 

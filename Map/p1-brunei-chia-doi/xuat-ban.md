@@ -13,7 +13,7 @@
 
 > Brunei từng làm chủ gần cả đảo Borneo. Hôm nay nước này nhỏ hơn cả TP.HCM và bị chia làm hai mảnh. Năm 1890, vùng Limbang ở giữa về tay Sarawak. Năm 1963, Brunei không vào Malaysia, chủ yếu vì tiền dầu. Năm 2020, một cây cầu vượt biển nối lại hai nửa — đúng 130 năm, tính tới từng ngày. Bạn có biết nước nào khác bị chia làm hai mảnh không?
 >
-> #brunei #malaysia #borneo #bando #lichsu
+> **Atlas Tí Hon** — bản đồ nhỏ, câu chuyện lớn.
 >
 > **Nguồn** (truy cập 14/10/2026):
 > - Encyclopaedia Britannica (Brunei — History; Sarawak); Encyclopedia.com: Brunei thế kỷ 16, James Brooke 1841, mất phía bắc Borneo
@@ -25,11 +25,11 @@
 > - The Scoop (17/3/2020), Structurae, BIMP-EAGA, Daily Express: cầu Temburong, 4 trạm xuất nhập cảnh trên đường cũ
 > - Bản đồ: Natural Earth. **Vùng ảnh hưởng cũ của Brunei, các mảng Sarawak, vùng Limbang, đường xe và tuyến cầu là sơ đồ minh hoạ.**
 >
-> #dongnama #diali #kinhte #dau #shorts
+> #Shorts #AtlasTiHon #BanDo #DiaLy #LichSu #BienGioi #DongNamA #Brunei #Malaysia
 
-## 3. Hashtag (≤ 20)
+## 3. Hashtag (công thức kênh: `06_NHAN-DIEN-KENH.md` §5)
 
-#brunei #malaysia #borneo #sarawak #limbang #bando #lichsu #diali #dongnama #kinhte #dau #cautemburong #atlastihon #maps #history #geography #southeastasia #asean #shorts #vietnam
+#Shorts #AtlasTiHon #BanDo #DiaLy #LichSu #BienGioi #DongNamA #Brunei #Malaysia
 
 ## 4. Ảnh bìa
 

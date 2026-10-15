@@ -2,7 +2,7 @@
   "name": "p5-trung-quoc-mui-gio",
   "model": "gemini-3.8-flash-tts",
   "voice": "Orus",
-  "style": "Giọng nam Việt Nam trưởng thành, giọng miền Bắc chuẩn, trầm vừa, thân thiện và đáng tin, như người kể chuyện địa lý kỳ lạ, có chút dí dỏm. Nhịp vừa phải: đọc giờ, con số và địa danh chậm hơn một nhịp. \"Hệ quả?\" và \"Thử tưởng tượng\" đọc có ý cười nhẹ. Đọc Kashgar là \"Cát-ga\", Afghanistan là \"Áp-ga-ni-xtan\". Trung tính, không cường điệu. Câu cuối cùng chưa kết thúc: giữ giọng treo lên như câu còn tiếp, không hạ giọng kết câu.",
+  "style": "Giọng nam Việt Nam trưởng thành, giọng miền Bắc chuẩn, trầm vừa, thân thiện và đáng tin, như người kể chuyện địa lý kỳ lạ, có chút dí dỏm. Nhịp vừa phải: đọc giờ, con số và địa danh chậm hơn một nhịp. \"Hệ quả?\" hỏi nhẹ, \"Mặt trời đi trễ.\" ngắn; \"Thử tưởng tượng…\" và \"tám giờ nào?\" đọc có ý cười nhẹ. Đọc Kashgar là \"Cát-ga\", Afghanistan là \"Áp-ga-ni-xtan\", Tân Cương rõ ràng. Trung tính. Không cường điệu. Câu cuối cùng là câu trọn vẹn: chậm lại một chút và hạ giọng kết câu.",
   "trimSilence": true,
   "tempo": 1.1,
   "gaps": {
@@ -38,7 +38,7 @@
       "scene": "s2",
       "take": "t02",
       "gapAfter": 0.25,
-      "text": "Cứ mười lăm độ kinh, mặt trời mọc chậm hơn một tiếng."
+      "text": "Càng đi về tây, mặt trời mọc càng muộn."
     },
     {
       "id": "05",
@@ -58,76 +58,83 @@
       "id": "07",
       "scene": "s4",
       "take": "t04",
-      "gapAfter": 0.06,
+      "gapAfter": 0.15,
       "text": "Hệ quả?"
     },
     {
       "id": "08",
       "scene": "s4",
       "take": "t04",
-      "gapAfter": 0.06,
-      "text": "Ở Kashgar, cực tây Tân Cương, ngày đầu năm, gần mười giờ sáng mặt trời mới mọc."
+      "gapAfter": 0.12,
+      "text": "Mặt trời đi trễ."
     },
     {
       "id": "09",
       "scene": "s4",
       "take": "t04",
       "gapAfter": 0.06,
-      "text": "Cùng ngày ấy ở Bắc Kinh, mặt trời mọc từ khoảng bảy giờ rưỡi."
+      "text": "Mùa đông ở Kashgar, gần mười giờ sáng trời mới sáng."
     },
     {
       "id": "10",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.06,
+      "text": "Cùng lúc ấy ở Bắc Kinh, trời đã sáng từ bảy giờ rưỡi."
+    },
+    {
+      "id": "11",
       "scene": "s4",
       "take": "t04",
       "gapAfter": 0.25,
       "text": "Mùa hè, hơn mười giờ tối trời mới tắt nắng."
     },
     {
-      "id": "11",
+      "id": "12",
       "scene": "s5",
       "take": "t05",
       "gapAfter": 0.25,
-      "text": "Thử tưởng tượng: tám giờ sáng đi học, ngoài trời vẫn tối om."
-    },
-    {
-      "id": "12",
-      "scene": "s6",
-      "take": "t06",
-      "gapAfter": 0.06,
-      "text": "Nên ở Tân Cương, nhiều người còn dùng thêm một giờ không chính thức, chậm hơn hai tiếng."
+      "text": "Thử tưởng tượng: báo thức reo lúc bảy giờ, nhìn ra cửa sổ vẫn tưởng nửa đêm."
     },
     {
       "id": "13",
       "scene": "s6",
       "take": "t06",
       "gapAfter": 0.06,
-      "text": "Đài truyền hình ở đây còn xếp lịch theo cả hai giờ."
+      "text": "Nên ở Tân Cương, nhiều người dùng thêm một giờ không chính thức, chậm hơn hai tiếng."
     },
     {
       "id": "14",
       "scene": "s6",
       "take": "t06",
-      "gapAfter": 0.25,
-      "text": "Một vùng đất, hai chiếc đồng hồ."
+      "gapAfter": 0.06,
+      "text": "Năm một nghìn chín trăm tám mươi sáu, Bắc Kinh còn duyệt cho giờ này dùng trong đời thường, còn quân đội, tàu hoả, máy bay vẫn theo giờ Bắc Kinh."
     },
     {
       "id": "15",
-      "scene": "s7",
-      "take": "t07",
-      "gapAfter": 0.06,
-      "text": "Nhưng chỗ kỳ lạ nhất nằm ở biên giới với Afghanistan, nước dùng múi giờ lẻ nửa tiếng."
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "Hẹn nhau tám giờ, nhiều khi phải hỏi lại: tám giờ nào?"
     },
     {
       "id": "16",
       "scene": "s7",
       "take": "t07",
-      "gapAfter": 0.25,
-      "text": "Nếu bước qua được, đồng hồ lệch tới ba tiếng rưỡi, một trong những chỗ lệch giờ lớn nhất thế giới."
+      "gapAfter": 0.06,
+      "text": "Nhưng chi tiết lạ nhất nằm ở biên giới với Afghanistan, nước dùng múi giờ lẻ nửa tiếng."
     },
     {
       "id": "17",
-      "scene": "s8",
-      "take": "t08",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.06,
+      "text": "Nếu bước qua được, đồng hồ lệch tới ba tiếng rưỡi."
+    },
+    {
+      "id": "18",
+      "scene": "s7",
+      "take": "t07",
       "gapAfter": 0.25,
       "text": "Chỉ có điều, ở đó chẳng có cửa khẩu nào để bước qua."
     }

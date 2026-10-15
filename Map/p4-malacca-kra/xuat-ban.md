@@ -14,9 +14,7 @@
 
 > Gần một phần ba lượng dầu chở bằng đường biển của thế giới đi qua eo Malacca, nơi hẹp nhất chỉ khoảng 2–3 km. Ngay phía trên, eo đất Kra của Thái Lan chỉ rộng hơn 40 km, nhưng con kênh được bàn từ thời vua Narai (thế kỷ 17) vẫn chưa bao giờ được đào. Năm 1883 một đoàn kỹ sư Pháp còn tới tận nơi đo đạc. Theo bạn, vì sao?
 >
-> #eomalacca #kenhkra #thailan #singapore #hanghai
->
-> *(giới thiệu kênh — điền khi có tên kênh)*
+> **Atlas Tí Hon** — bản đồ nhỏ, câu chuyện lớn.
 >
 > **Nguồn** (truy cập 13/10/2026):
 > - U.S. EIA — World Oil Transit Chokepoints (cập nhật 3/2026): 24,0 triệu thùng/ngày qua Malacca năm 2023; 80,2 triệu thùng/ngày dầu đi biển
@@ -28,11 +26,11 @@
 > - Bangkok Post, Thai PBS World, Pattaya Mail: đề xuất cầu đất liền 2023, quan điểm Chính phủ Thái và phản đối của người dân Chumphon, Ranong (2023–2024)
 > - Bản đồ: Natural Earth. **Tuyến tàu, tuyến kênh và đường sắt cầu đất liền là sơ đồ minh hoạ.**
 >
-> #bando #diali #kinhte #dauthegioi #logistics
+> #Shorts #AtlasTiHon #BanDo #DiaLy #HangHai #GiaoThuong #DongNamA #Malacca #ThaiLan #Singapore
 
-## 3. Hashtag (≤ 20)
+## 3. Hashtag (công thức kênh: `06_NHAN-DIEN-KENH.md` §5)
 
-#eomalacca #kenhkra #thailan #singapore #hanghai #dau #logistics #bando #diali #kinhte #dongnama #bienđong #straitofmalacca #kracanal #shipping #geography #maps #economy #asia #shorts
+#Shorts #AtlasTiHon #BanDo #DiaLy #HangHai #GiaoThuong #DongNamA #Malacca #ThaiLan #Singapore
 
 ## 4. Ảnh bìa
 

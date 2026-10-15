@@ -1,51 +1,21 @@
-# Cổng 4 · Beat sheet — "Trung Quốc rộng gần 5 múi giờ, vì sao chỉ dùng một giờ?"
+# Cổng 4 · Beat sheet v2 — "Cả Trung Quốc chung một chiếc đồng hồ"
 
-*2026-10-13. Giọng đọc: 63,4 s, 231 wpm, tempo 1.1. Style I + luật 2026-10-13. Bản đồ phương án A (Lucas): Trung Quốc tô theo Natural Earth; Hoàng Sa, Trường Sa màu Việt Nam có nhãn; Đài Loan không tô; không nhãn vùng tranh chấp Trung – Ấn. Dải múi giờ vẽ theo kinh độ (minh hoạ), cắt theo hình Trung Quốc, chỉ từ vĩ độ 18,2°N trở lên (để không tô lên Hoàng Sa).*
+*2026-10-15. Giọng đọc v2: 64,6 s, 228 wpm, tempo 1.1 (`vo-timestamps.md`); nối vòng mềm (+0,7 s nhạc). Giữ khung camera, màu, tên + cờ và hình của v1 (`v1/beat-sheet.md`); bảng dưới chỉ ghi các nhịp **mới hoặc đổi**, theo số câu v2.*
 
-## Camera
+| Câu v2 | Lời | Hình | Chữ trên màn |
+|---|---|---|---|
+| 04 | Càng đi về tây, mặt trời mọc càng muộn | mặt trời chạy từ đông sang tây trên các dải (như v1 câu 04) | — |
+| 07 | Hệ quả? | dấu "?" | — |
+| 08 | Mặt trời đi trễ. | mặt trời chibi lững thững tụt sau | — |
+| 09–11 | Kashgar ~10 giờ · Bắc Kinh ~7 giờ 30 · mùa hè > 22 giờ | như v1 câu 08–10 | `~10:00` · `~7:30` · `22:00+` |
+| 12 `[ĐÙA]` | Báo thức 7 giờ, tưởng nửa đêm | đồng hồ báo thức (`k-04`, ảnh mới) rung, cửa sổ trời đêm | — |
+| 13 | Giờ không chính thức, chậm 2 tiếng | hai đồng hồ (như v1 câu 12) | `−2 GIỜ` |
+| 14 `[NGƯỜI]` | 1986 Bắc Kinh duyệt; quân đội, tàu hoả, máy bay theo giờ Bắc Kinh | ruy băng `1986`; tàu hoả + máy bay vector mang mặt đồng hồ giờ Bắc Kinh | ruy băng `1986` |
+| 15 `[ĐÙA]` | Hẹn tám giờ… tám giờ nào? | hai đồng hồ cùng chỉ 8 nhưng khác màu, dấu "?" | `8 GIỜ NÀO?` |
+| 16–18 | Biên giới Afghanistan → không có cửa khẩu | như v1 câu 15–17; rồi bay về Lào Cai, khung cuối = khung đầu | — |
 
-| Khung | Tâm | Dùng ở câu |
-|---|---|---|
-| `laocai` (cửa khẩu Lào Cai – Hà Khẩu) | 103,95E 22,5N z70 | 01, 18 (khung nối vòng) |
-| `china` (toàn Trung Quốc + Việt Nam + Biển Đông) | 104,2E 37N z4,8 | 02–07 |
-| `kashgar` | 76E 39,5N z40 | 08–14 |
-| `wakhan` (biên giới Afghanistan – Trung Quốc) | 74,6E 37,1N z60 | 15–17 |
-
-Câu 02: cú bay dài từ Lào Cai ra toàn Trung Quốc (đồng hồ "đi" theo về phía tây). Câu 18: bay về `laocai` để khung cuối trùng khung đầu.
-
-## Màu khoá
-
-| Vật | Màu |
-|---|---|
-| Việt Nam + Hoàng Sa, Trường Sa | `ATLAS.c` (đỏ Việt Nam) |
-| Trung Quốc (nền) | `ATLAS.d` vàng cam nhạt |
-| 5 dải múi giờ theo Mặt Trời (UTC+5 → +9) | 5 màu: tím, xanh dương, xanh lá, vàng, cam; khi "gộp" → tất cả thành **một màu đỏ son** loang từ Bắc Kinh |
-| Afghanistan | `ATLAS.b` xanh lá |
-| Đài Loan, nước khác | màu đất trung tính |
-
-## Beat
-
-| Câu | Thời gian | Hình | Chữ trên màn | SFX |
-|---|---|---|---|---|
-| 01 | 0,0–3,1 | khung `laocai`; cầu cửa khẩu (k-03); đồng hồ hai bên: 8:00 → 9:00 (nhảy) | `+1 GIỜ` | click |
-| 02 | 3,1–6,8 | **bay dài** về phía tây ra khung `china`; đồng hồ bay theo, kim đứng yên | thẻ `3.000+ KM · VẪN 1 GIỜ` | whoosh |
-| 03 | 7,1–10,4 | 5 dải múi giờ hiện lần lượt từ đông sang tây, cắt theo hình Trung Quốc | `GẦN 5 MÚI GIỜ` | click ×5 (nhẹ) |
-| 04 | 10,5–13,4 | mặt trời nhỏ trượt từ đông sang tây trên các dải | — | — |
-| 05 | 13,6–18,8 | ruy băng `1949`; một màu đỏ son loang từ Bắc Kinh phủ hết 5 dải | ruy băng `1949` · nhãn `BẮC KINH` | deep hit |
-| 06 | 18,9–21,3 | viền Trung Quốc phát sáng | `1 NƯỚC · 1 GIỜ` | click |
-| 07 | 21,6–22,4 | dấu "?" | — | click |
-| 08 | 22,5–27,3 | **bay** → `kashgar`; bầu trời tối, mặt trời nhô lên muộn; đồng hồ 10:16 | thẻ `~10:00 · MẶT TRỜI MỌC` | whoosh |
-| 09 | 27,4–30,4 | thẻ nhỏ "Bắc Kinh 7:30" bật cạnh | thẻ `BẮC KINH ~7:30` | click |
-| 10 | 30,4–32,9 | mặt trời lặn muộn, đồng hồ 22:26 | `22:00+` | click |
-| 11 | 33,2–36,4 | bạn nhỏ đeo cặp (k-01) đi học, trời tối om, đèn pin; đồng hồ 8:00 | — | click |
-| 12 | 36,7–41,3 | hai đồng hồ cạnh nhau: giờ Bắc Kinh và giờ địa phương (−2) | `−2 GIỜ` | click |
-| 13 | 41,3–44,1 | chiếc TV (i-09, tập Singapore) với hai đồng hồ trên màn hình | — | click |
-| 14 | 44,2–46,0 | — | `1 VÙNG · 2 ĐỒNG HỒ` | — |
-| 15 | 46,2–51,6 | **bay** → `wakhan`; Afghanistan tô xanh, dải đất Wakhan | nhãn `AFGHANISTAN` | whoosh |
-| 16 | 51,6–57,4 | hai đồng hồ hai bên biên giới, lệch 3,5 tiếng | thẻ `3,5 GIỜ` | deep hit |
-| 17 | 57,6–60,4 | đèo núi tuyết có thanh chắn đóng (k-02) | — | click |
-| 18 | 60,5–63,1 | **bay** về `laocai`; mọi lớp tắt = khung đầu | — | whoosh |
+Bỏ: thẻ "một trong những chỗ lệch giờ lớn nhất"; nhịp đài truyền hình hai giờ.
 
 ## Ảnh
 
-Dùng lại: đồng hồ báo thức `p-06` (tập đường sắt), TV `i-09` (tập Singapore). Mới: xem `image-prompts.md` (3 ảnh). Đồng hồ kim, mặt trời, mặt trăng vẽ vector.
+Mới: `k-04-alarm-clock.png` (`image-prompts.md`). Dùng lại toàn bộ ảnh v1.
