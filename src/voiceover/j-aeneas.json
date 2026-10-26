@@ -1,0 +1,103 @@
+{
+  "name": "j-aeneas",
+  "model": "gemini-3.8-flash-tts",
+  "totalSeconds": 24.923,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.25,
+      "text": "Why did Aeneas wander for seven years, when Italy was only a few weeks' sail from Troy?",
+      "voice": "Charon",
+      "src": "voiceover/j-aeneas/01.wav",
+      "durationInSeconds": 5.643,
+      "tempo": 1.05,
+      "hash": "86802da8bbc1"
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.4,
+      "text": "The answer is on this route.",
+      "voice": "Charon",
+      "src": "voiceover/j-aeneas/02.wav",
+      "durationInSeconds": 1.748,
+      "tempo": 1.05,
+      "hash": "86802da8bbc1"
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "It begins in Troy, in flames, on the coast of modern Turkey.",
+      "voice": "Charon",
+      "src": "voiceover/j-aeneas/03.wav",
+      "durationInSeconds": 4.001,
+      "tempo": 1.05,
+      "hash": "e044efc503e7"
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "First stop: Thrace, where a bleeding myrtle warns him to leave.",
+      "voice": "Charon",
+      "src": "voiceover/j-aeneas/04.wav",
+      "durationInSeconds": 4.056,
+      "tempo": 1.05,
+      "hash": "e044efc503e7"
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "On Delos, Apollo's oracle tells him: seek your ancient mother.",
+      "voice": "Charon",
+      "src": "voiceover/j-aeneas/05.wav",
+      "durationInSeconds": 4.119,
+      "tempo": 1.05,
+      "hash": "e044efc503e7"
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "His father reads it as Crete.",
+      "voice": "Charon",
+      "src": "voiceover/j-aeneas/06.wav",
+      "durationInSeconds": 1.66,
+      "tempo": 1.05,
+      "hash": "e044efc503e7"
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.4,
+      "text": "Then a plague drives them out.",
+      "voice": "Charon",
+      "src": "voiceover/j-aeneas/07.wav",
+      "durationInSeconds": 1.585,
+      "tempo": 1.05,
+      "hash": "e044efc503e7"
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.4,
+      "text": "So which mother did the god mean?",
+      "voice": "Charon",
+      "src": "voiceover/j-aeneas/08.wav",
+      "durationInSeconds": 2.111,
+      "tempo": 1.05,
+      "hash": "5167967ae76d"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "durationInSeconds": 27.54475,
+  "tail": 0.8,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 5.943,
+      "text": "Why did Aeneas wander for seven years, when Italy was only a few weeks' sail from Troy?"
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 6.193208333333333,
+      "end": 7.941208333333333,
+      "text": "The answer is on this route."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 8.341708333333333,
+      "end": 12.342708333333334,
+      "text": "It begins in Troy, in flames, on the coast of modern Turkey."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 12.593041666666666,
+      "end": 16.649041666666665,
+      "text": "First stop: Thrace, where a bleeding myrtle warns him to leave."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 16.89875,
+      "end": 21.01775,
+      "text": "On Delos, Apollo's oracle tells him: seek your ancient mother."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 21.267416666666666,
+      "end": 22.927416666666666,
+      "text": "His father reads it as Crete."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "start": 23.047833333333333,
+      "end": 24.632833333333334,
+      "text": "Then a plague drives them out."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "start": 25.03325,
+      "end": 27.14425,
+      "text": "So which mother did the god mean?"
+    }
+  ]
+}

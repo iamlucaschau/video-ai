@@ -60,7 +60,7 @@ src/
       schema.ts            Zod props schema + showcaseDefaults (Studio-editable props)
       scenes/*.tsx         one file per scene
     _template/             SceneTemplate.tsx, a copyable starter (not registered)
-Style Library/              shared visual styles A–I for every project (one folder per style; README = index + picker)
+Style Library/              shared visual styles A–J for every project (one folder per style; README = index + picker)
 scripts/tts.mjs            Gemini TTS generator (check / say / build), multi-key rotation
 scripts/make-audio.mjs     synthesizes music beds + SFX into public/audio/
 voiceover/*.json           voiceover scripts (input for npm run voiceover)

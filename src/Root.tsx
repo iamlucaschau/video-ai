@@ -35,6 +35,8 @@ import {
   hRadiumGirlsDuration,
 } from "../Style Library/H-paper-dossier/h-radium-girls/Video";
 import { ISingapore, iSingaporeDuration } from "../Map/i-singapore/Video";
+import { JAeneas, jAeneasDuration } from "../Style Library/J-satellite-journey/j-aeneas/Video";
+import { JAeneasFull, jAeneasFullDuration } from "../Style Library/J-satellite-journey/j-aeneas-full/Video";
 import { P2DuongSatCaoToc, p2DuongSatCaoTocDuration } from "../Map/p2-duong-sat-cao-toc/Video";
 import { P3DbsclSutLun, p3DbsclSutLunDuration } from "../Map/p3-dbscl-sut-lun/Video";
 import { P1BruneiChiaDoi, p1BruneiChiaDoiDuration } from "../Map/p1-brunei-chia-doi/Video";
@@ -98,6 +100,22 @@ export const RemotionRoot: React.FC = () => {
           height={PVR.height}
           fps={PVR.fps}
           durationInFrames={iSingaporeDuration(PVR.fps)}
+        />
+        <Composition
+          id="Style-J-SatelliteJourney-Aeneas"
+          component={JAeneas}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={jAeneasDuration(PVR.fps)}
+        />
+        <Composition
+          id="Style-J-SatelliteJourney-AeneasFull"
+          component={JAeneasFull}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={jAeneasFullDuration(PVR.fps)}
         />
       </Folder>
       <Folder name="Map">

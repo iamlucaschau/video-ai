@@ -1,0 +1,247 @@
+{
+  "name": "j-aeneas-full",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Adult male documentary narrator, warm and grounded, American English. Curious and quick on the opening question, clear and steady through the journey; place names and numbers a beat slower. When the father dies, slow down and soften, almost quiet. No hype, no shouting. The last line lands with quiet weight.",
+  "trimSilence": true,
+  "tempo": 1.05,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.25,
+    "scene": 0.4
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.25,
+      "text": "Why did Aeneas, the hero Rome called its founder, wander for seven years, when Italy was three weeks' sail from Troy?"
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.4,
+      "text": "The answer is on this route, and in one goddess's grudge."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "It begins in burning Troy, in modern Turkey."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "Aeneas carries his old father out on his back."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "First stop: Thrace, where a bleeding myrtle warns him to leave."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "On Delos, Apollo's oracle tells him: seek your ancient mother."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "His father reads it as Crete."
+    },
+    {
+      "id": "08",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "Then a plague drives them out."
+    },
+    {
+      "id": "09",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "In a dream, the gods correct him."
+    },
+    {
+      "id": "10",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.4,
+      "text": "The mother is Italy, where his ancestors came from."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "take": "t03a",
+      "gapAfter": 0.12,
+      "text": "A storm throws them onto the islands of the Harpies."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "Their curse: one day, you will be hungry enough to eat your tables."
+    },
+    {
+      "id": "13",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "At Buthrotum, a prophet warns him: don't take the short way."
+    },
+    {
+      "id": "14",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "Scylla and Charybdis guard the strait."
+    },
+    {
+      "id": "15",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "So they see Italy for the very first time, and have to sail on."
+    },
+    {
+      "id": "16",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.4,
+      "text": "They circle Sicily, past the Cyclops under Mount Etna."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.5,
+      "text": "At Drepanum, his father dies."
+    },
+    {
+      "id": "18",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 2.0,
+      "text": "The man he carried out of burning Troy never sees Italy."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "Now the goddess strikes."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "Juno loves one city above all, Carthage, and a prophecy says Aeneas' descendants will destroy it."
+    },
+    {
+      "id": "21",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "Her storm throws the fleet to Africa, right into Carthage."
+    },
+    {
+      "id": "22",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "Queen Dido tells him: this is your seventh summer at sea."
+    },
+    {
+      "id": "23",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "He stays, until the gods order him to leave."
+    },
+    {
+      "id": "24",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "Dido curses his people: our nations will be enemies forever."
+    },
+    {
+      "id": "25",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "That is how Virgil explains why Rome and Carthage later fought three wars."
+    },
+    {
+      "id": "26",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.4,
+      "text": "At Cumae, the Sibyl leads him into the underworld, where his father shows him Rome."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "At last, at the mouth of the Tiber, they use flat bread as plates, and eat them."
+    },
+    {
+      "id": "28",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "His son laughs: we're eating our tables."
+    },
+    {
+      "id": "29",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "The curse was a joke."
+    },
+    {
+      "id": "30",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.4,
+      "text": "They had arrived."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "Three weeks of sailing became seven years and more than three thousand kilometres."
+    },
+    {
+      "id": "32",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "A misread oracle, a strait he couldn't take, and a goddess who wanted him lost."
+    },
+    {
+      "id": "33",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.4,
+      "text": "And his descendants, Romulus and Remus, would found Rome."
+    }
+  ]
+}

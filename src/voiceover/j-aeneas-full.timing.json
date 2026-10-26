@@ -1,0 +1,236 @@
+{
+  "durationInSeconds": 132.97704166666668,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 8.018,
+      "text": "Why did Aeneas, the hero Rome called its founder, wander for seven years, when Italy was three weeks' sail from Troy?"
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 8.268208333333334,
+      "end": 12.567208333333333,
+      "text": "The answer is on this route, and in one goddess's grudge."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 12.966875000000002,
+      "end": 16.193875000000002,
+      "text": "It begins in burning Troy, in modern Turkey."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 16.313750000000002,
+      "end": 19.28375,
+      "text": "Aeneas carries his old father out on his back."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 19.533500000000004,
+      "end": 23.592500000000005,
+      "text": "First stop: Thrace, where a bleeding myrtle warns him to leave."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 23.842875000000003,
+      "end": 28.007875000000002,
+      "text": "On Delos, Apollo's oracle tells him: seek your ancient mother."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "start": 28.257458333333336,
+      "end": 29.724458333333335,
+      "text": "His father reads it as Crete."
+    },
+    {
+      "id": "08",
+      "scene": "s2",
+      "start": 29.844625,
+      "end": 31.685625,
+      "text": "Then a plague drives them out."
+    },
+    {
+      "id": "09",
+      "scene": "s2",
+      "start": 31.935125,
+      "end": 34.059125,
+      "text": "In a dream, the gods correct him."
+    },
+    {
+      "id": "10",
+      "scene": "s2",
+      "start": 34.179541666666665,
+      "end": 37.27354166666667,
+      "text": "The mother is Italy, where his ancestors came from."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "start": 37.67358333333333,
+      "end": 41.30858333333333,
+      "text": "A storm throws them onto the islands of the Harpies."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "start": 41.42829166666667,
+      "end": 46.185291666666664,
+      "text": "Their curse: one day, you will be hungry enough to eat your tables."
+    },
+    {
+      "id": "13",
+      "scene": "s3",
+      "start": 46.435583333333334,
+      "end": 50.08658333333334,
+      "text": "At Buthrotum, a prophet warns him: don't take the short way."
+    },
+    {
+      "id": "14",
+      "scene": "s3",
+      "start": 50.207,
+      "end": 52.347,
+      "text": "Scylla and Charybdis guard the strait."
+    },
+    {
+      "id": "15",
+      "scene": "s3",
+      "start": 52.597500000000004,
+      "end": 56.7505,
+      "text": "So they see Italy for the very first time, and have to sail on."
+    },
+    {
+      "id": "16",
+      "scene": "s3",
+      "start": 57.00091666666667,
+      "end": 60.53091666666667,
+      "text": "They circle Sicily, past the Cyclops under Mount Etna."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "start": 60.93079166666667,
+      "end": 63.47879166666667,
+      "text": "At Drepanum, his father dies."
+    },
+    {
+      "id": "18",
+      "scene": "s4",
+      "start": 63.97916666666667,
+      "end": 67.79116666666667,
+      "text": "The man he carried out of burning Troy never sees Italy."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "start": 69.79112500000001,
+      "end": 71.73812500000001,
+      "text": "Now the goddess strikes."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "start": 71.85779166666667,
+      "end": 79.26679166666668,
+      "text": "Juno loves one city above all, Carthage, and a prophecy says Aeneas' descendants will destroy it."
+    },
+    {
+      "id": "21",
+      "scene": "s5",
+      "start": 79.51670833333334,
+      "end": 83.33070833333335,
+      "text": "Her storm throws the fleet to Africa, right into Carthage."
+    },
+    {
+      "id": "22",
+      "scene": "s5",
+      "start": 83.58062500000001,
+      "end": 87.406625,
+      "text": "Queen Dido tells him: this is your seventh summer at sea."
+    },
+    {
+      "id": "23",
+      "scene": "s5",
+      "start": 87.65666666666668,
+      "end": 90.89766666666668,
+      "text": "He stays, until the gods order him to leave."
+    },
+    {
+      "id": "24",
+      "scene": "s5",
+      "start": 91.01779166666668,
+      "end": 95.09779166666668,
+      "text": "Dido curses his people: our nations will be enemies forever."
+    },
+    {
+      "id": "25",
+      "scene": "s5",
+      "start": 95.34754166666669,
+      "end": 100.28754166666668,
+      "text": "That is how Virgil explains why Rome and Carthage later fought three wars."
+    },
+    {
+      "id": "26",
+      "scene": "s5",
+      "start": 100.53708333333336,
+      "end": 106.02008333333336,
+      "text": "At Cumae, the Sibyl leads him into the underworld, where his father shows him Rome."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "start": 106.41962500000002,
+      "end": 111.61462500000002,
+      "text": "At last, at the mouth of the Tiber, they use flat bread as plates, and eat them."
+    },
+    {
+      "id": "28",
+      "scene": "s6",
+      "start": 111.73470833333336,
+      "end": 114.28770833333336,
+      "text": "His son laughs: we're eating our tables."
+    },
+    {
+      "id": "29",
+      "scene": "s6",
+      "start": 114.53775000000003,
+      "end": 115.95875000000004,
+      "text": "The curse was a joke."
+    },
+    {
+      "id": "30",
+      "scene": "s6",
+      "start": 116.07858333333337,
+      "end": 117.17058333333337,
+      "text": "They had arrived."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "start": 117.57079166666671,
+      "end": 122.71779166666671,
+      "text": "Three weeks of sailing became seven years and more than three thousand kilometres."
+    },
+    {
+      "id": "32",
+      "scene": "s7",
+      "start": 122.9682916666667,
+      "end": 128.3882916666667,
+      "text": "A misread oracle, a strait he couldn't take, and a goddess who wanted him lost."
+    },
+    {
+      "id": "33",
+      "scene": "s7",
+      "start": 128.63825000000003,
+      "end": 132.57725000000002,
+      "text": "And his descendants, Romulus and Remus, would found Rome."
+    }
+  ]
+}

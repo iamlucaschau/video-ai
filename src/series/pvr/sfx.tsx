@@ -9,18 +9,31 @@ import catalog from "../../../public/sfx/catalog.json";
  * the VO (−14 LUFS). Default −15 (Lucas 2026-10-08: −26 and −18 were too quiet): an accent at about voice level.
  *
  *   <Sfx file="sfx/whoosh/clean-whoosh-382726.mp3" at={at("12")} />
+ *
+ * `seconds` plays only the first part of a long file (e.g. a storm ambience) with a short
+ * fade in and a 0.6 s fade out.
  */
-export const Sfx: React.FC<{ file: string; at: number; level?: number }> = ({
+export const Sfx: React.FC<{ file: string; at: number; level?: number; seconds?: number }> = ({
   file,
   at,
   level = -15,
+  seconds,
 }) => {
+  const { fps } = useVideoConfig();
   const entry = catalog.find((c) => c.file === file);
   if (!entry) throw new Error(`SFX not in public/sfx/catalog.json: ${file}`);
   const gain = Math.min(4, 10 ** ((level - (entry.lufs ?? level)) / 20));
+  const len = seconds ? Math.round(seconds * fps) : undefined;
   return (
-    <Sequence from={Math.round(at)} name={`SFX ${entry.title}`} layout="none">
-      <Audio src={staticFile(file)} volume={gain} />
+    <Sequence from={Math.round(at)} durationInFrames={len} name={`SFX ${entry.title}`} layout="none">
+      <Audio
+        src={staticFile(file)}
+        volume={
+          len
+            ? (f) => gain * interpolate(f, [0, 0.15 * fps, len - 0.6 * fps, len], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })
+            : gain
+        }
+      />
     </Sequence>
   );
 };

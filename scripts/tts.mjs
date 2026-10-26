@@ -145,6 +145,9 @@ const synthesize = async (keys, { text, voice, style, model, key }) => {
   nextKey = (nextKey + 1) % keys.length;
 
   let lastError;
+  // a bare "400 Bad Request" can be a broken key (2026-10-26: key #6 failed a take that way)
+  // or a broken request: try one other key before giving up
+  let bare400 = 0;
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
     const usable = order.filter((i) => !exhausted.has(`${model}|${i}`));
     if (!usable.length) {
@@ -193,7 +196,9 @@ const synthesize = async (keys, { text, voice, style, model, key }) => {
 
     const msg = json.error?.message ?? res.statusText;
     lastError = `key #${i + 1}: HTTP ${res.status} ${msg}`;
-    const badKey = res.status === 400 && /api.?key/i.test(msg);
+    const keyHint = res.status === 400 && /api.?key/i.test(msg);
+    const unexplained400 = res.status === 400 && !keyHint && !json.error?.message && bare400++ === 0;
+    const badKey = keyHint || unexplained400;
     if (!isRetryable(res.status) && !badKey) throw new Error(lastError);
 
     if (res.status === 429) {

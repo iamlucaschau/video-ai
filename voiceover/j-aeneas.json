@@ -1,0 +1,72 @@
+{
+  "name": "j-aeneas",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Adult male documentary narrator, warm and grounded, American English. Curious and quick on the opening question, clear and steady through the journey; place names and numbers a beat slower. No hype, no shouting. The last line is a real question, left hanging.",
+  "trimSilence": true,
+  "tempo": 1.05,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.25,
+    "scene": 0.4
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.25,
+      "text": "Why did Aeneas wander for seven years, when Italy was only a few weeks' sail from Troy?"
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.4,
+      "text": "The answer is on this route."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "It begins in Troy, in flames, on the coast of modern Turkey."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "First stop: Thrace, where a bleeding myrtle warns him to leave."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "On Delos, Apollo's oracle tells him: seek your ancient mother."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "His father reads it as Crete."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.4,
+      "text": "Then a plague drives them out."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.4,
+      "text": "So which mother did the god mean?"
+    }
+  ]
+}
