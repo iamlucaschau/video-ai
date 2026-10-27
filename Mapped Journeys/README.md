@@ -1,4 +1,6 @@
-# Route Chronicles
+# Mapped Journeys
+
+**@MappedJourneys** · *Legendary journeys, mapped.*
 
 Kênh tiếng Anh (Shorts / Reels / TikTok, 9:16): **"vì sao hành trình này lại dài đến thế?"**, kể bằng tuyến đường trên bản đồ vệ tinh thật. Style J "Satellite Journey".
 

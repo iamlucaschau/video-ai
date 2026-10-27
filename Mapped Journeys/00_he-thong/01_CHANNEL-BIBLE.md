@@ -1,6 +1,6 @@
-# 01 — CHANNEL BIBLE · Route Chronicles
+# 01 — CHANNEL BIBLE · Mapped Journeys
 
-*Chốt 2026-10-26. Người duyệt mọi cổng: **Lucas**. Tên kênh: **Route Chronicles**, handle YouTube **@RouteChronicles** (còn trống khi kiểm 2026-10-26; cần đăng ký giữ chỗ trên YouTube, TikTok, Instagram trước khi đăng tập đầu).*
+*Chốt 2026-10-26, đổi tên 2026-10-27. Người duyệt mọi cổng: **Lucas**. Tên kênh: **Mapped Journeys**, handle **@MappedJourneys** (tên, số ít, số nhiều và bản có "The" đều còn trống khi kiểm 2026-10-27; giữ cùng handle trên YouTube, TikTok, Instagram trước khi đăng tập đầu). Slogan: *Legendary journeys, mapped.**
 *Đây là **nguồn gốc duy nhất** cho luật của kênh. Khi tài liệu khác mâu thuẫn, file này đúng (riêng luật hình ảnh chi tiết: `Style Library/J-satellite-journey/README.md`).*
 
 **Tài liệu nền:** phân tích đối thủ `Test/doi-thu/BAO-CAO.md` (định dạng, đối chiếu luật), `Test/doi-thu/BOC-TACH-KICH-BAN.md` (cấu trúc 3 kịch bản mẫu); tập mẫu Ep01 Aeneas (§11).
@@ -115,7 +115,7 @@ Chi tiết + code: `Style Library/J-satellite-journey/README.md`. Tóm tắt:
 | 4 · Test | Nền bản đồ (`make-plates.py`), tranh, dựng composition; stills có `safeGuide` | stills QA |
 | 5 · Final | Render crf 18, master −14 LUFS; contact sheet; bảng nguồn ảnh | MP4 + mô tả + nguồn |
 
-Tập mới nằm ở `Route Chronicles/episodes/epNN-<slug>/` (Ep01 là ngoại lệ, xem §11). Mẫu code: `Style Library/J-satellite-journey/j-aeneas-full/Video.tsx` (dữ liệu địa lý `P`, `LEGS`, `SAIL`, `KEYS` ở đầu file; mọi mốc gắn vào chữ trong giọng đọc).
+Tập mới nằm ở `Mapped Journeys/episodes/epNN-<slug>/` (Ep01 là ngoại lệ, xem §11). Mẫu code: `Style Library/J-satellite-journey/j-aeneas-full/Video.tsx` (dữ liệu địa lý `P`, `LEGS`, `SAIL`, `KEYS` ở đầu file; mọi mốc gắn vào chữ trong giọng đọc).
 
 ## 10. Học sau khi đăng
 
@@ -140,3 +140,4 @@ Ghi **24 h · 7 ngày · 30 ngày** cho YouTube Shorts / TikTok / Reels: views, 
 | 2026-10-26 | Kịch bản Aeneas v2 (5 điểm sửa) → FINAL, dựng Ep01 | Lucas |
 | 2026-10-26 | Thêm SFX; dùng 2 ảnh AI Lucas tạo; giữ chất lượng cao (crf 18) | Lucas |
 | 2026-10-26 | Tên kênh **Route Chronicles** (@RouteChronicles); 5 pillar giữ nguyên | Lucas |
+| 2026-10-27 | YouTube không cho tạo Route Chronicles → đổi tên kênh thành **Mapped Journeys** (@MappedJourneys); slogan *Legendary journeys, mapped.*; 5 pillar giữ nguyên | Lucas |

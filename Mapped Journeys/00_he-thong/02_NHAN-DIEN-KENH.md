@@ -1,6 +1,6 @@
-# 02 — NHẬN DIỆN KÊNH · Route Chronicles
+# 02 — NHẬN DIỆN KÊNH · Mapped Journeys (@MappedJourneys)
 
-*2026-10-27. Prompt tạo ảnh đại diện + ảnh bìa. Nhận diện lấy từ style J: nền navy tối, tuyến nét đứt trắng phát sáng, con thuyền buồm đỏ, điểm nhấn vàng. Lucas tạo ảnh bằng công cụ AI, chọn bản ưng nhất, lưu vào `Route Chronicles/00_he-thong/brand/`.*
+*2026-10-27. Prompt tạo ảnh đại diện + ảnh bìa. Nhận diện lấy từ style J: nền navy tối, tuyến nét đứt trắng phát sáng, con thuyền buồm đỏ, điểm nhấn vàng. Lucas tạo ảnh bằng công cụ AI, chọn bản ưng nhất, lưu vào `Mapped Journeys/00_he-thong/brand/`.*
 
 ## 1. Bảng màu & chữ
 
@@ -43,15 +43,14 @@ Chữ: **Bricolage Grotesque 800** (cùng font trong video).
 
 ## 4. Chữ ghép lên banner
 
-- **Tên:** ROUTE CHRONICLES (trắng, Bricolage 800, có nét đứt phát sáng gạch dưới).
-- **Slogan (chọn 1):**
-  1. *Why did the journey take so long?* — đúng câu hook của mọi tập
-  2. *Legendary journeys, mapped.*
-  3. *History's longest detours, on a real map.*
+- **Tên:** MAPPED JOURNEYS (trắng, Bricolage 800, có nét đứt phát sáng gạch dưới). Trên avatar quá nhỏ để đặt chữ; nếu cần, chỉ dùng monogram **MJ**.
+- **Slogan (chốt):** *Legendary journeys, mapped.* (đọc vần với tên kênh)
+  - Dự phòng: *Why did the journey take so long?* (đúng câu hook của mọi tập) · *History's longest detours, on a real map.*
+- **Mô tả kênh (YouTube About, gợi ý):** *Legendary journeys, mapped. Myths, explorers, armies and pilgrims, traced step by step on a real satellite map, so you can see why the journey took so long.*
 - Dòng nhỏ tuỳ chọn: *New journey every week* (chỉ khi chắc lịch đăng).
 
 ## 5. Quy trình
 
-1. Lucas tạo 2–4 ảnh mỗi loại theo prompt, lưu vào `Route Chronicles/00_he-thong/brand/` (`avatar-*.png`, `banner-*.png`).
+1. Lucas tạo 2–4 ảnh mỗi loại theo prompt, lưu vào `Mapped Journeys/00_he-thong/brand/` (`avatar-*.png`, `banner-*.png`).
 2. Luis kiểm vùng an toàn (avatar cắt tròn, banner 1546×423), ghép chữ bằng font thật, xuất bản cuối: `avatar.png` 800×800, `banner.png` 2560×1440 (< 6 MB).
 3. Lucas duyệt, cập nhật nhật ký quyết định trong `01_CHANNEL-BIBLE.md`.

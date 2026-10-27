@@ -36,8 +36,8 @@ Map/**/*.mp4
 Map/phan-tich/*.jpg
 Map/phan-tich-doi-thu/_work/
 
-# Route Chronicles episode renders (regenerable; delivered from the episode folder)
-Route Chronicles/episodes/**/*.mp4
+# Mapped Journeys episode renders (regenerable; delivered from the episode folder)
+Mapped Journeys/episodes/**/*.mp4
 
 # episode-folder vo.mp3 is a local listening copy of public/voiceover/<slug>/vo.mp3 (tracked there)
 Map/**/vo.mp3
