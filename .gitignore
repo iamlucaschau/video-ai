@@ -42,6 +42,7 @@ Mapped Journeys/episodes/**/*.mp4
 # episode-folder vo.mp3 is a local listening copy of public/voiceover/<slug>/vo.mp3 (tracked there)
 Map/**/vo.mp3
 Poor vs Rich Daily/episodes/**/vo.mp3
+Mapped Journeys/episodes/**/vo.mp3
 
 # third-party reference videos + captions for study (Lucas 2026-10-15): never commit
 Test/**/*.mp4

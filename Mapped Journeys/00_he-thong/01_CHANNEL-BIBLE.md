@@ -3,7 +3,7 @@
 *Chốt 2026-10-26, đổi tên 2026-10-27. Người duyệt mọi cổng: **Lucas**. Tên kênh: **Mapped Journeys**, handle **@MappedJourneys** (tên, số ít, số nhiều và bản có "The" đều còn trống khi kiểm 2026-10-27; giữ cùng handle trên YouTube, TikTok, Instagram trước khi đăng tập đầu). Slogan: *Legendary journeys, mapped.**
 *Đây là **nguồn gốc duy nhất** cho luật của kênh. Khi tài liệu khác mâu thuẫn, file này đúng (riêng luật hình ảnh chi tiết: `Style Library/J-satellite-journey/README.md`).*
 
-**Tài liệu nền:** phân tích đối thủ `Test/doi-thu/BAO-CAO.md` (định dạng, đối chiếu luật), `Test/doi-thu/BOC-TACH-KICH-BAN.md` (cấu trúc 3 kịch bản mẫu); tập mẫu Ep01 Aeneas (§11).
+**Tài liệu nền:** phân tích đối thủ `Test/doi-thu/BAO-CAO.md` (định dạng, đối chiếu luật), `Test/doi-thu/BOC-TACH-KICH-BAN.md` (cấu trúc 3 kịch bản mẫu); tập mẫu Ep01 Aeneas (§11); tự đánh giá + nâng cấp `03_DANH-GIA-NANG-CAP.md`; bàn giao `04_BAN-GIAO.md`.
 
 ---
 
@@ -84,7 +84,7 @@ Chi tiết + code: `Style Library/J-satellite-journey/README.md`. Tóm tắt:
 - **Chỉ dẫn giọng mặc định:** *"Adult male documentary narrator, warm and grounded, American English. Curious and quick on the opening question, clear and steady through the journey; place names and numbers a beat slower. When [the quiet beat], slow down and soften, almost quiet. No hype, no shouting. The last line lands with quiet weight."*
 - **Nhạc nền theo pillar** (§2), `<MusicBed>` −28 LUFS trước trim; `duck` hạ ~9 dB ở nhịp lặng.
 - **SFX (thật, Pixabay + Mixkit ambience):** tối đa 1 mỗi nhịp; whoosh ở các cú bay dài; cinematic hit ở con số hook / payoff và tên nhân vật phản diện; ambience (bão, gió) cho cảnh thời tiết; trống / tiếng chiến tranh cho đoạn chiến tranh; **nhịp lặng không có SFX**. Tiếng thud ngắn để thấp (−22 LUFS) vì đỉnh cao.
-- **Mix:** giọng đỉnh −2 dBFS → cả mix hạ **3 dB** trong composition (`TRIM_DB`), rồi master **−14 LUFS / −1,5 dBTP**: `ffmpeg … -af "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000" -c:a aac -b:a 192k`.
+- **Mix:** giọng đỉnh −2 dBFS → cả mix hạ **3 dB** trong composition (`TRIM_DB`), rồi master **−14 LUFS / −1,5 dBTP**: `npm run render:j` (bên trong: `ffmpeg … -af "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000" -c:a aac -b:a 192k`).
 - **Chất lượng xuất:** h264, **crf 18** (Lucas 2026-10-26: giữ chất lượng cao), AAC 192k, `+faststart`.
 
 ## 7. Cấu trúc bắt buộc mọi tập
@@ -113,9 +113,9 @@ Chi tiết + code: `Style Library/J-satellite-journey/README.md`. Tóm tắt:
 | 2 · Kịch bản | Viết theo §3; bảng kiểm chứng; kế hoạch hình; bản dịch VN để duyệt | `kich-ban-<slug>-FINAL.md` |
 | 3 · Giọng đọc | Spec + `node scripts/episode.mjs prep` → `npm run voiceover` → `episode.mjs export` → `python -P scripts/words.py <slug> en` (kiểm tách câu) | `vo.mp3`, timing, words |
 | 4 · Test | Nền bản đồ (`make-plates.py`), tranh, dựng composition; stills có `safeGuide` | stills QA |
-| 5 · Final | Render crf 18, master −14 LUFS; contact sheet; bảng nguồn ảnh | MP4 + mô tả + nguồn |
+| 5 · Final | `npm run render:j -- <id> --to <mp4>` (crf 18 + master −14 LUFS + tự kiểm LUFS / true peak); contact sheet; bảng nguồn ảnh; gói đăng | MP4 + `xuat-ban.md` |
 
-Tập mới nằm ở `Mapped Journeys/episodes/epNN-<slug>/` (Ep01 là ngoại lệ, xem §11). Mẫu code: `Style Library/J-satellite-journey/j-aeneas-full/Video.tsx` (dữ liệu địa lý `P`, `LEGS`, `SAIL`, `KEYS` ở đầu file; mọi mốc gắn vào chữ trong giọng đọc).
+Tập mới nằm ở `Mapped Journeys/episodes/epNN-<slug>/`, **bắt đầu bằng cách copy `episodes/_template/`** (README trong đó có từng bước). Ep01 là ngoại lệ, xem §11. Mẫu code: `Style Library/J-satellite-journey/j-aeneas-full/Video.tsx` (dữ liệu địa lý `P`, `LEGS`, `SAIL`, `KEYS` ở đầu file; mọi mốc gắn vào chữ trong giọng đọc).
 
 ## 10. Học sau khi đăng
 
@@ -127,7 +127,7 @@ Ghi **24 h · 7 ngày · 30 ngày** cho YouTube Shorts / TikTok / Reels: views, 
 |---|---|---|---|---|---|---|
 | 01 | P1 | Why did Aeneas wander for seven years? | FINAL ✓ (v2) | ✓ 133 s | ✓ (SFX + 2 ảnh AI) | — |
 
-*Ep01 nằm ở `Style Library/J-satellite-journey/j-aeneas-full/` (vừa là tập 1, vừa là video mẫu của style J), composition `Style-J-SatelliteJourney-AeneasFull`.*
+*Ep01 nằm ở `Style Library/J-satellite-journey/j-aeneas-full/` (vừa là tập 1, vừa là video mẫu của style J), composition `Style-J-SatelliteJourney-AeneasFull`; gói đăng `xuat-ban.md` (chưa có ảnh bìa).*
 
 ## 12. Nhật ký quyết định
 

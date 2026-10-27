@@ -20,7 +20,7 @@
 
 ## SCENE 5 — HỒI 3 — cơn giận của Juno
 - **VO:** "Now the goddess strikes. Juno loves one city above all, Carthage, and a prophecy says Aeneas' descendants will destroy it. Her storm throws the fleet to Africa, right into Carthage. Queen Dido tells him: this is your seventh summer at sea. He stays, until the gods order him to leave. Dido curses his people: our nations will be enemies forever. That is how Virgil explains why Rome and Carthage later fought three wars. At Cumae, the Sibyl leads him into the underworld, where his father shows him Rome."
-- **Hình:** Kéo ra rộng: chữ "JUNO", ghim Carthage loé đỏ → bay xuống châu Phi (Rubens, Quos Ego) → Carthage (Turner, Dido building Carthage; chữ "7TH SUMMER") → lời nguyền (ảnh toàn khung #2) → đường đỏ Carthage ↔ Rome, chữ "3 PUNIC WARS" → bay lên Cumae (Turner, Lake Avernus; chữ "THE UNDERWORLD").
+- **Hình:** Kéo ra rộng: chữ "JUNO", ghim Carthage loé đỏ → bay xuống châu Phi (Boucher, Juno Asking Aeolus to Release the Winds) → Carthage (Turner, Dido building Carthage; chữ "7TH SUMMER") → lời nguyền (ảnh toàn khung #2) → đường đỏ Carthage ↔ Rome, chữ "3 PUNIC WARS" → bay lên Cumae (Turner, Lake Avernus; chữ "THE UNDERWORLD").
 
 ## SCENE 6 — TỚI NƠI
 - **VO:** "At last, at the mouth of the Tiber, they use flat bread as plates, and eat them. His son laughs: we're eating our tables. The curse was a joke. They had arrived."
