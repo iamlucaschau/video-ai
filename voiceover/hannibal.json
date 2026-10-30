@@ -1,0 +1,247 @@
+{
+  "name": "hannibal",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Adult male documentary narrator, warm and grounded, American English. Curious and quick on the opening question, clear and steady through the journey; place names and numbers a beat slower. When the men stand freezing on the pass and Hannibal shows them Italy, slow down and soften, almost quiet. No hype, no shouting. The last line lands with quiet weight.",
+  "trimSilence": true,
+  "tempo": 1.05,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.25,
+    "scene": 0.4
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.25,
+      "text": "Why did Hannibal, Carthage's greatest general, march for five months over the Alps, when Italy was two weeks' sail away?"
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.4,
+      "text": "The answer is on this route, and in the one thing Carthage had lost: the sea."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "Spain, 218 BC."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "Hannibal leads his army north from New Carthage."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "At nine, he had sworn to his father never to be a friend of Rome."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "He crosses the Ebro and the Pyrenees, leaving troops behind to hold Spain."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "About forty-six thousand men cross the Rhône."
+    },
+    {
+      "id": "08",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.4,
+      "text": "Thirty-seven elephants follow, ferried over on rafts."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "But a Roman army has already landed at the river's mouth."
+    },
+    {
+      "id": "10",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "It came by sea."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "Rome had won the last war, and taken Sicily and Sardinia."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "That year, Rome put two hundred and twenty ships to sea."
+    },
+    {
+      "id": "13",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "The sea belonged to Rome."
+    },
+    {
+      "id": "14",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "So the only way into Italy was over the mountains, where Celtic tribes were ready to join him."
+    },
+    {
+      "id": "15",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.4,
+      "text": "At a place called the Island, where two rivers meet, he turns toward the Alps."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "In a narrow gorge, mountain tribes ambush the column."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.5,
+      "text": "The climb to the pass takes nine days."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "At the top, snow already covers the pass."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "His men are exhausted, and losing heart."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "So Hannibal shows them the plains of Italy, far below."
+    },
+    {
+      "id": "21",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 2.0,
+      "text": "The boy who swore that oath was finally looking at Italy."
+    },
+    {
+      "id": "22",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "Going down is worse."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "Fresh snow lies on old ice, and men and animals slide off the path."
+    },
+    {
+      "id": "24",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "A landslide has swept the trail away."
+    },
+    {
+      "id": "25",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "It takes three days to rebuild it for the starving elephants."
+    },
+    {
+      "id": "26",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "In the plain of the Po, he counts what is left."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "About twenty-six thousand men."
+    },
+    {
+      "id": "28",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.4,
+      "text": "Hannibal later had that number engraved in bronze."
+    },
+    {
+      "id": "29",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "In Virgil's Aeneid, Queen Dido prays for an avenger to rise from her bones."
+    },
+    {
+      "id": "30",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "Many readers take that avenger to be Hannibal."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "Two weeks of sailing became five months, sixteen hundred kilometres, and half an army."
+    },
+    {
+      "id": "32",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "Rome held the sea, so Hannibal took the mountains."
+    },
+    {
+      "id": "33",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.4,
+      "text": "Dido's avenger had come, not by sea, but over the Alps."
+    }
+  ]
+}

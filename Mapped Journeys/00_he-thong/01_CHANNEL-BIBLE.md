@@ -27,7 +27,7 @@
 
 **Quy tắc lịch đăng:**
 - Không quá **2 tập liên tiếp** cùng pillar. Mỗi 10 tập: ≥ 4 P2, ≥ 2 P1, ≥ 2 P3, ≥ 1 P4, ≥ 1 P5.
-- **5 tập đầu trải đủ pillar** để đo pillar nào giữ chân tốt nhất: Aeneas (P1, xong) → Magellan (P2) → Hannibal (P3) → Huyền Trang (P4) → Franklin (P5).
+- **5 tập đầu trải đủ pillar** để đo pillar nào giữ chân tốt nhất: Aeneas (P1, xong) → **Hannibal (P3)** → Magellan (P2) → Huyền Trang (P4) → Franklin (P5). *(Lucas 2026-10-27: đổi chỗ Hannibal lên trước Magellan để nối từ lời nguyền Dido; Magellan chờ nâng cấp B1.)*
 - **Không mở kênh bằng Odysseus hay Moses** (đối thủ vừa làm). Để sau, với góc kể khác.
 - **Tập nối tập:** mỗi tập gài một sợi dây sang tập sau khi có thể (Aeneas → lời nguyền của Dido → chiến tranh Punic → **Hannibal**).
 - Pillar thắng (§10) được tăng tỉ lệ ở chu kỳ sau, chỉ khi Lucas duyệt.
@@ -126,6 +126,7 @@ Ghi **24 h · 7 ngày · 30 ngày** cho YouTube Shorts / TikTok / Reels: views, 
 | EP | Pillar | Tiêu đề | Kịch bản | VO | Final | Ngày đăng |
 |---|---|---|---|---|---|---|
 | 01 | P1 | Why did Aeneas wander for seven years? | FINAL ✓ (v2) | ✓ 133 s | ✓ (SFX + 2 ảnh AI) | — |
+| 02 | P3 | Why did Hannibal march five months over the Alps? | FINAL ✓ (Cổng 2, 2026-10-27) | ✓ 130 s | ✓ 130,7 s, −14,1 LUFS, −1,6 dBTP (3 tranh + 2 ảnh AI) | — |
 
 *Ep01 nằm ở `Style Library/J-satellite-journey/j-aeneas-full/` (vừa là tập 1, vừa là video mẫu của style J), composition `Style-J-SatelliteJourney-AeneasFull`; gói đăng `xuat-ban.md` (chưa có ảnh bìa).*
 
@@ -141,3 +142,5 @@ Ghi **24 h · 7 ngày · 30 ngày** cho YouTube Shorts / TikTok / Reels: views, 
 | 2026-10-26 | Thêm SFX; dùng 2 ảnh AI Lucas tạo; giữ chất lượng cao (crf 18) | Lucas |
 | 2026-10-26 | Tên kênh **Route Chronicles** (@RouteChronicles); 5 pillar giữ nguyên | Lucas |
 | 2026-10-27 | YouTube không cho tạo Route Chronicles → đổi tên kênh thành **Mapped Journeys** (@MappedJourneys); slogan *Legendary journeys, mapped.*; 5 pillar giữ nguyên | Lucas |
+| 2026-10-27 | Ep02 = **Hannibal (P3)** (nối lời nguyền Dido), Magellan dời sau; thư mục `episodes/ep02-hannibal/` | Lucas |
+| 2026-10-27 | Ep02: hook A; tuyến theo đèo **Col de la Traversette**, qua Rhône ở vùng Beaucaire–Tarascon (ghi "One leading theory") | Lucas |

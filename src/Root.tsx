@@ -37,6 +37,8 @@ import {
 import { ISingapore, iSingaporeDuration } from "../Map/i-singapore/Video";
 import { JAeneas, jAeneasDuration } from "../Style Library/J-satellite-journey/j-aeneas/Video";
 import { JAeneasFull, jAeneasFullDuration } from "../Style Library/J-satellite-journey/j-aeneas-full/Video";
+import { ArmyTest, armyTestDuration } from "../Style Library/J-satellite-journey/kit-army-test";
+import { Hannibal, hannibalDuration } from "../Mapped Journeys/episodes/ep02-hannibal/Video";
 import { P2DuongSatCaoToc, p2DuongSatCaoTocDuration } from "../Map/p2-duong-sat-cao-toc/Video";
 import { P3DbsclSutLun, p3DbsclSutLunDuration } from "../Map/p3-dbscl-sut-lun/Video";
 import { P1BruneiChiaDoi, p1BruneiChiaDoiDuration } from "../Map/p1-brunei-chia-doi/Video";
@@ -116,6 +118,22 @@ export const RemotionRoot: React.FC = () => {
           height={PVR.height}
           fps={PVR.fps}
           durationInFrames={jAeneasFullDuration(PVR.fps)}
+        />
+        <Composition
+          id="Style-J-Kit-ArmyTest"
+          component={ArmyTest}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={armyTestDuration}
+        />
+        <Composition
+          id="MJ-ep02-hannibal"
+          component={Hannibal}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={hannibalDuration(PVR.fps)}
         />
       </Folder>
       <Folder name="Map">

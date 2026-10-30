@@ -49,6 +49,20 @@ Chữ: **Bricolage Grotesque 800** (cùng font trong video).
 - **Mô tả kênh (YouTube About, gợi ý):** *Legendary journeys, mapped. Myths, explorers, armies and pilgrims, traced step by step on a real satellite map, so you can see why the journey took so long.*
 - Dòng nhỏ tuỳ chọn: *New journey every week* (chỉ khi chắc lịch đăng).
 
+## 4b. Từ khoá kênh (2026-10-30)
+
+**YouTube Studio → Settings → Channel → Basic info → Keywords** (giới hạn 500 ký tự, cụm nhiều từ đặt trong ngoặc kép; chuỗi dưới 368 ký tự). Bao đủ 5 pillar (Bible §2) và tên các tập đã / sắp làm. **Không** dùng tên kênh đối thủ (YouTube coi là gây hiểu lầm).
+
+```text
+"Mapped Journeys" "history map" "animated map" "map animation" "satellite map" "historical journeys" "ancient history" mythology "Greek mythology" "Roman history" "ancient Rome" Carthage Hannibal Aeneas "Punic Wars" explorers "age of exploration" Magellan "military history" "ancient armies" pilgrimage "lost expeditions" "history shorts" "history explained" geography
+```
+
+Cập nhật dần khi có tập mới (thêm tên nhân vật / hành trình, bỏ cụm ít liên quan khi chạm 500 ký tự).
+
+**Cài đặt mặc định cho video tải lên** (Settings → Upload defaults): danh mục **Education**, ngôn ngữ video **English**, ngôn ngữ tiêu đề / mô tả **English**. Quốc gia kênh: Lucas chọn (ảnh hưởng kiếm tiền và thuế, Luis không đề xuất).
+
+**TikTok / Instagram bio (≤ 80 ký tự):** `Legendary journeys, mapped. 🗺️ Why did the journey take so long?`
+
 ## 5. Quy trình
 
 1. Lucas tạo 2–4 ảnh mỗi loại theo prompt, lưu vào `Mapped Journeys/00_he-thong/brand/` (`avatar-*.png`, `banner-*.png`).

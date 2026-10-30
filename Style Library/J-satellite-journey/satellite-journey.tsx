@@ -204,9 +204,16 @@ export const along = (pts: [number, number][], p: number) => {
 
 /**
  * Glowing dashed route: every finished leg stays on screen (the journey visibly piles up),
- * the current leg draws on with p. `legs` are screen polylines in travel order.
+ * the current leg draws on with p. `legs` are screen polylines in travel order. Legs from
+ * index `theoryFrom` on are a disputed reconstruction (Ep02: the Alpine pass), drawn with
+ * sparser, fainter dashes.
  */
-export const GlowRoute: React.FC<{ legs: [number, number][][]; current: number; p: number }> = ({ legs, current, p }) => {
+export const GlowRoute: React.FC<{ legs: [number, number][][]; current: number; p: number; theoryFrom?: number }> = ({
+  legs,
+  current,
+  p,
+  theoryFrom = Infinity,
+}) => {
   const paths = legs.slice(0, current + 1).map((leg, i) => (i < current ? leg : along(leg, p).done));
   const d = paths.filter((x) => x.length > 1).map((x) => x.map(([a, b], i) => `${i ? "L" : "M"}${a.toFixed(1)} ${b.toFixed(1)}`).join(" "));
   return (
@@ -216,12 +223,15 @@ export const GlowRoute: React.FC<{ legs: [number, number][][]; current: number; 
           <feGaussianBlur stdDeviation="7" />
         </filter>
       </defs>
-      {d.map((path, i) => (
-        <g key={i}>
-          <path d={path} fill="none" stroke={J.route} strokeOpacity={0.55} strokeWidth={12} strokeLinecap="round" filter="url(#jglow)" />
-          <path d={path} fill="none" stroke={J.route} strokeWidth={6} strokeLinecap="round" strokeDasharray="16 14" />
-        </g>
-      ))}
+      {d.map((path, i) => {
+        const theory = i >= theoryFrom;
+        return (
+          <g key={i} opacity={theory ? 0.8 : 1}>
+            <path d={path} fill="none" stroke={J.route} strokeOpacity={theory ? 0.3 : 0.55} strokeWidth={12} strokeLinecap="round" filter="url(#jglow)" />
+            <path d={path} fill="none" stroke={J.route} strokeWidth={theory ? 5 : 6} strokeLinecap="round" strokeDasharray={theory ? "6 22" : "16 14"} />
+          </g>
+        );
+      })}
     </svg>
   );
 };
@@ -238,6 +248,46 @@ export const Vessel: React.FC<{ x: number; y: number; heading: number; f: number
         <line x1={0} y1={6} x2={0} y2={-46} stroke={J.ink} strokeWidth={4} />
         <path d="M 2 -44 C 26 -36, 30 -14, 26 0 L 2 0 Z" fill={J.vessel} stroke={J.ink} strokeWidth={3} strokeLinejoin="round" />
         <path d="M -2 -38 C -20 -30, -22 -14, -20 0 L -2 0 Z" fill="#B42320" stroke={J.ink} strokeWidth={3} strokeLinejoin="round" />
+      </g>
+    </svg>
+  );
+};
+
+/**
+ * Land traveller (kit C1, Ep02 Hannibal): three soldiers with red shields marching under a
+ * red banner, same footprint as `Vessel` (centre = (x, y)). Legs swing in step; no bob of the
+ * whole icon, so it never reads as camera shake.
+ */
+export const Army: React.FC<{ x: number; y: number; heading: number; f: number }> = ({ x, y, heading, f }) => {
+  const flip = Math.cos(heading) < 0 ? -1 : 1; // march left or right, never upside down
+  const wave = Math.sin(f / 5) * 4;
+  return (
+    <svg width={156} height={156} viewBox="-60 -60 120 120" style={{ position: "absolute", left: x - 78, top: y - 78, overflow: "visible" }}>
+      <ellipse cx={0} cy={22} rx={46} ry={8} fill="rgba(0,0,0,0.35)" />
+      <g style={{ scale: `${flip} 1` }}>
+        <line x1={-38} y1={20} x2={-38} y2={-52} stroke={J.ink} strokeWidth={4} strokeLinecap="round" />
+        <path
+          d={`M -36 -52 C -24 ${-56 + wave}, -12 ${-44 - wave}, 0 ${-48 + wave} L -8 -36 C -18 ${-32 - wave}, -28 ${-40 + wave}, -36 -34 Z`}
+          fill={J.vessel}
+          stroke={J.ink}
+          strokeWidth={3}
+          strokeLinejoin="round"
+        />
+        {[-20, 2, 24].map((dx, i) => {
+          const s = Math.sin(f / 3.5 + i * 2.1); // stride phase, staggered per soldier
+          const lift = Math.max(0, s) * 2;
+          return (
+            <g key={dx} transform={`translate(0 ${-lift})`}>
+              <line x1={dx} y1={4} x2={dx + s * 6} y2={20} stroke={J.ink} strokeWidth={4} strokeLinecap="round" />
+              <line x1={dx} y1={4} x2={dx - s * 6} y2={20} stroke={J.ink} strokeWidth={4} strokeLinecap="round" />
+              <rect x={dx - 6} y={-14} width={12} height={19} rx={4} fill="#3B2416" stroke={J.ink} strokeWidth={2.5} />
+              <line x1={dx + 3} y1={10} x2={dx + 12} y2={-40} stroke="#6B4A2A" strokeWidth={3} strokeLinecap="round" />
+              <circle cx={dx} cy={-21} r={6} fill="#B8862F" stroke={J.ink} strokeWidth={2.5} />
+              <circle cx={dx + 7} cy={-4} r={9} fill={J.vessel} stroke={J.ink} strokeWidth={3} />
+              <circle cx={dx + 7} cy={-4} r={2.5} fill={J.gold} />
+            </g>
+          );
+        })}
       </g>
     </svg>
   );
@@ -264,7 +314,8 @@ export const StopLabel: React.FC<{
 }> = ({ name, x, y, f, at, out = Infinity, side = "right", size = 56 }) => {
   // map-anchored, so the camera can carry a label toward the platform UI: it fades out
   // before any part of it leaves the safe zone (short-form rule 1)
-  const w = name.length * size * 0.62 + 30;
+  // Bricolage 800 caps run ~0.66 em per char (measured on Ep02 "NEW CARTHAGE"); 0.62 let it poke out
+  const w = name.length * size * 0.68 + 30;
   const room = Math.min(
     y - size * 1.3 - SAFE.top,
     CANVAS.height - SAFE.bottom - 40 - y,

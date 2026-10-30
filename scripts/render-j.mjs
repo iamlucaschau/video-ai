@@ -20,7 +20,12 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CLI = path.join(ROOT, "node_modules/@remotion/cli/remotion-cli.js");
 const FFMPEG = process.env.FFMPEG_PATH ?? "ffmpeg";
 const FFPROBE = process.env.FFPROBE_PATH ?? "ffprobe";
-const MASTER = "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000";
+/**
+ * loudnorm aims 0.5 dB under the −1.5 dBTP ceiling: the AAC encode after it adds ~0.3 dB of
+ * true peak (Ep02 2026-10-27: TP=-1.5 measured −1.2 dBFS after encoding).
+ */
+const MASTER = "loudnorm=I=-14:TP=-2:LRA=11,aresample=48000";
+const MAX_TP = -1.5;
 
 const args = process.argv.slice(2);
 const id = args.find((a) => !a.startsWith("--"));
@@ -68,8 +73,8 @@ const peak = summary.match(/Peak:\s+(-?[\d.]+) dBFS/)?.[1];
 
 console.log(`\n✓ ${path.relative(ROOT, to)}`);
 console.log(`  video ${video.width}×${video.height} @ ${video.r_frame_rate} · ${video.nb_frames} frames · ${(+probe.format.duration).toFixed(1)} s · ${(probe.format.bit_rate / 1e6).toFixed(1)} Mbps`);
-console.log(`  audio ${audio ? "yes" : "MISSING"} · ${lufs ?? "?"} LUFS (target -14) · true peak ${peak ?? "?"} dBFS (max -1.5)`);
-if (!audio || (lufs && Math.abs(+lufs + 14) > 1) || (peak && +peak > -1)) {
+console.log(`  audio ${audio ? "yes" : "MISSING"} · ${lufs ?? "?"} LUFS (target -14) · true peak ${peak ?? "?"} dBFS (max ${MAX_TP})`);
+if (!audio || (lufs && Math.abs(+lufs + 14) > 1) || (peak && +peak > MAX_TP)) {
   console.error("  ⚠ audio check failed: listen before publishing");
   process.exitCode = 2;
 }

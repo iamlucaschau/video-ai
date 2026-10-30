@@ -6,7 +6,9 @@ this repo. Videos here are **React components rendered frame by frame** with
 
 Remotion Agent Skills are installed in `.claude/skills/` and `.agents/skills/`.
 Also installed: `.claude/skills/motion-design/` (LottieFiles, MIT) for timing,
-easing and choreography. Third-party repos pulled for study, and which Remocn
+easing and choreography, and `.claude/skills/review-loop/` (adapted from
+whaleyxbt/claude-motion, MIT): contact sheets of safe-guide stills
+(`npm run sheet:j`) checked before a video is called done. Third-party repos pulled for study, and which Remocn
 components fit our rules, are listed in `reference/README.md`.
 **Load `remotion-best-practices` before writing Remotion code**. It routes to
 topic guides for markup, timing, transitions, audio, fonts, captions,

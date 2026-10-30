@@ -62,7 +62,9 @@ PYTHONIOENCODING=utf-8 python -P scripts/words.py <slug> en
 npx remotion bundle --out-dir out/bundle
 npx remotion still out/bundle <id> out/check.png --frame=<n> --props='{"safeGuide":true}'
 npm run lint
+npm run sheet:j -- <id> --slug <slug>     # contact sheet có safeGuide, mỗi câu VO một ô (skill review-loop)
 npm run render:j -- <id> --to "Mapped Journeys/episodes/epNN-<slug>/<slug>.mp4"
+npm run sheet:j -- --video "<mp4>" --slug <slug>   # soi lại bản đã render
 ```
 
 ## 5. Việc tiếp theo
@@ -70,6 +72,8 @@ npm run render:j -- <id> --to "Mapped Journeys/episodes/epNN-<slug>/<slug>.mp4"
 **Quyết định đầu tiên (Lucas):** tập 2 là gì?
 - **Hannibal (P3)** *(Luis đề xuất)*: nối thẳng từ lời nguyền Dido ở Ep01 (Bible §2 "tập nối tập"). Vẫn ở vùng Địa Trung Hải (Carthage → Tây Ban Nha → dãy Alps → Italy). Kit chỉ cần thêm **biểu tượng đoàn quân** (C1). Cần tấm bản đồ phía tây kinh tuyến 0° (tile B1).
 - **Magellan (P2)**: đúng thứ tự trong Bible §2, nhưng phải làm trước **B1** (tuyến qua kinh tuyến 180°, bản đồ toàn cầu, tải thêm tile). Việc nặng hơn.
+
+**Trước khi viết Ep03:** đọc `03_DANH-GIA-NANG-CAP.md` mục **E. Bài học từ Ep02** (hook có chữ từ frame 0, không chữ khoá trùng phụ đề, không quá ~8 s đứng yên, mật độ điểm dừng, nguyên nhân gốc ở 40–60 %).
 
 **Nâng cấp** (chi tiết trong `03_DANH-GIA-NANG-CAP.md`):
 
@@ -105,6 +109,7 @@ npm run render:j -- <id> --to "Mapped Journeys/episodes/epNN-<slug>/<slug>.mp4"
 
 **Âm thanh**
 - Mix thô từng chạm gần 0 dBFS: giữ `TRIM_DB = -3`; tiếng thud để thấp (−22 / −23). VO mono đo ra +3 dB khi thành stereo.
+- Mã hoá AAC đẩy true peak lên ~0,3 dB sau loudnorm (Ep02 lần đầu: −1,2 dBTP). Từ 2026-10-27 `render:j` nhắm TP −2 và báo lỗi khi vượt −1,5. Thêm `--keep-raw` để master lại mà không phải render lại.
 - Không SFX tổng hợp, không âm thanh hoạt hình; tối đa 1 SFX / nhịp; nhịp lặng không có SFX.
 
 **Kênh**

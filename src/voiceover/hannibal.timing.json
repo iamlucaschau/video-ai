@@ -1,0 +1,236 @@
+{
+  "durationInSeconds": 130.22675,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 8.385000000000002,
+      "text": "Why did Hannibal, Carthage's greatest general, march for five months over the Alps, when Italy was two weeks' sail away?"
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 8.635041666666668,
+      "end": 13.821041666666668,
+      "text": "The answer is on this route, and in the one thing Carthage had lost: the sea."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 14.221000000000002,
+      "end": 16.473000000000003,
+      "text": "Spain, 218 BC."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 16.592583333333337,
+      "end": 19.469583333333336,
+      "text": "Hannibal leads his army north from New Carthage."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 19.71954166666667,
+      "end": 24.04954166666667,
+      "text": "At nine, he had sworn to his father never to be a friend of Rome."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 24.29904166666667,
+      "end": 29.01904166666667,
+      "text": "He crosses the Ebro and the Pyrenees, leaving troops behind to hold Spain."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "start": 29.269083333333338,
+      "end": 32.69108333333334,
+      "text": "About forty-six thousand men cross the Rhône."
+    },
+    {
+      "id": "08",
+      "scene": "s2",
+      "start": 32.941250000000004,
+      "end": 36.254250000000006,
+      "text": "Thirty-seven elephants follow, ferried over on rafts."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "start": 36.65408333333334,
+      "end": 39.79908333333334,
+      "text": "But a Roman army has already landed at the river's mouth."
+    },
+    {
+      "id": "10",
+      "scene": "s3",
+      "start": 39.91904166666667,
+      "end": 40.778041666666674,
+      "text": "It came by sea."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "start": 41.02787500000001,
+      "end": 44.03687500000001,
+      "text": "Rome had won the last war, and taken Sicily and Sardinia."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "start": 44.28725000000001,
+      "end": 47.78925000000001,
+      "text": "That year, Rome put two hundred and twenty ships to sea."
+    },
+    {
+      "id": "13",
+      "scene": "s3",
+      "start": 48.038875000000004,
+      "end": 50.013875000000006,
+      "text": "The sea belonged to Rome."
+    },
+    {
+      "id": "14",
+      "scene": "s3",
+      "start": 50.26358333333334,
+      "end": 55.422583333333336,
+      "text": "So the only way into Italy was over the mountains, where Celtic tribes were ready to join him."
+    },
+    {
+      "id": "15",
+      "scene": "s3",
+      "start": 55.6725,
+      "end": 61.155499999999996,
+      "text": "At a place called the Island, where two rivers meet, he turns toward the Alps."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "start": 61.555958333333336,
+      "end": 65.11195833333333,
+      "text": "In a narrow gorge, mountain tribes ambush the column."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "start": 65.36233333333334,
+      "end": 67.94033333333334,
+      "text": "The climb to the pass takes nine days."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "start": 68.44070833333333,
+      "end": 71.29870833333334,
+      "text": "At the top, snow already covers the pass."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "start": 71.54875,
+      "end": 73.69975,
+      "text": "His men are exhausted, and losing heart."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "start": 73.94987499999999,
+      "end": 78.10087499999999,
+      "text": "So Hannibal shows them the plains of Italy, far below."
+    },
+    {
+      "id": "21",
+      "scene": "s5",
+      "start": 78.35104166666666,
+      "end": 82.86504166666666,
+      "text": "The boy who swore that oath was finally looking at Italy."
+    },
+    {
+      "id": "22",
+      "scene": "s6",
+      "start": 84.86504166666666,
+      "end": 86.56604166666665,
+      "text": "Going down is worse."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "start": 86.81608333333332,
+      "end": 91.72708333333333,
+      "text": "Fresh snow lies on old ice, and men and animals slide off the path."
+    },
+    {
+      "id": "24",
+      "scene": "s6",
+      "start": 91.97691666666665,
+      "end": 94.13091666666665,
+      "text": "A landslide has swept the trail away."
+    },
+    {
+      "id": "25",
+      "scene": "s6",
+      "start": 94.250875,
+      "end": 97.99687499999999,
+      "text": "It takes three days to rebuild it for the starving elephants."
+    },
+    {
+      "id": "26",
+      "scene": "s6",
+      "start": 98.24729166666665,
+      "end": 101.14529166666665,
+      "text": "In the plain of the Po, he counts what is left."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "start": 101.39520833333331,
+      "end": 103.24320833333331,
+      "text": "About twenty-six thousand men."
+    },
+    {
+      "id": "28",
+      "scene": "s6",
+      "start": 103.36333333333332,
+      "end": 106.63133333333332,
+      "text": "Hannibal later had that number engraved in bronze."
+    },
+    {
+      "id": "29",
+      "scene": "s7",
+      "start": 107.03108333333331,
+      "end": 112.37108333333332,
+      "text": "In Virgil's Aeneid, Queen Dido prays for an avenger to rise from her bones."
+    },
+    {
+      "id": "30",
+      "scene": "s7",
+      "start": 112.62124999999997,
+      "end": 114.90124999999998,
+      "text": "Many readers take that avenger to be Hannibal."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "start": 115.15112499999998,
+      "end": 121.17312499999998,
+      "text": "Two weeks of sailing became five months, sixteen hundred kilometres, and half an army."
+    },
+    {
+      "id": "32",
+      "scene": "s7",
+      "start": 121.42274999999998,
+      "end": 124.96274999999999,
+      "text": "Rome held the sea, so Hannibal took the mountains."
+    },
+    {
+      "id": "33",
+      "scene": "s7",
+      "start": 125.21316666666665,
+      "end": 129.82716666666664,
+      "text": "Dido's avenger had come, not by sea, but over the Alps."
+    }
+  ]
+}
