@@ -120,6 +120,8 @@ Chi tiết + code: `Style Library/J-satellite-journey/README.md`. Tóm tắt:
 | 4 · Test | Nền bản đồ (`make-plates.py`), tranh, dựng composition; stills có `safeGuide` | stills QA |
 | 5 · Final | `npm run render:j -- <id> --to <mp4>` (**4K 2160×3840 mặc định**, Lucas 2026-10-31; crf 18 + master −14 LUFS + tự kiểm LUFS / true peak); contact sheet; bảng nguồn ảnh; gói đăng | MP4 + `xuat-ban.md` |
 
+**Bằng chứng + bàn giao (Lucas 2026-11-01):** mỗi cổng ghi các yêu cầu đã kiểm vào `checks.md` của tập (pass / fail / unresolved + bằng chứng thật); một cổng không qua khi còn `fail`. `progress.md` cập nhật sau mỗi cổng, có bảng **bấm giờ** từng khâu (baseline cho tập sau). Cổng 4–5 dùng skill `review-loop` có **critic mắt mới** (subagent không làm video), sửa 3 lỗi tệ nhất mỗi vòng, tối đa 3 lần cho một lỗi rồi hỏi Lucas. Cổng 5 có thêm bước **Lucas xem trên điện thoại, có tiếng, rồi nghe một lần không nhìn** trước khi duyệt.
+
 Tập mới nằm ở `Mapped Journeys/episodes/epNN-<slug>/`, **bắt đầu bằng cách copy `episodes/_template/`** (README trong đó có từng bước). Ep01 là ngoại lệ, xem §11. Mẫu code: `Style Library/J-satellite-journey/j-aeneas-full/Video.tsx` (dữ liệu địa lý `P`, `LEGS`, `SAIL`, `KEYS` ở đầu file; mọi mốc gắn vào chữ trong giọng đọc).
 
 ## 10. Học sau khi đăng
@@ -152,4 +154,5 @@ Ghi **24 h · 7 ngày · 30 ngày** cho YouTube Shorts / TikTok / Reels: views, 
 | 2026-10-27 | Ep02 = **Hannibal (P3)** (nối lời nguyền Dido), Magellan dời sau; thư mục `episodes/ep02-hannibal/` | Lucas |
 | 2026-10-30 | Bỏ phụ đề cho style J (như video mẫu); ghi ngoại lệ trong `AGENTS.md` | Lucas |
 | 2026-10-30 | Đổi luật SFX (§6): mỗi sự kiện hình 1 tiếng nhỏ + lớp ambience suốt bài; tiếng nhấn vẫn ≤ 1 / nhịp. Lý do: đo 3 video mẫu, đối thủ ~30 tiếng / phút, mình ~5 | Lucas |
+| 2026-11-01 | Nâng cấp quy trình nhóm A (`Style Library/DE-XUAT-NANG-CAP-QUY-TRINH.md` A1–A11): `checks.md` + `progress.md` mỗi tập, critic mắt mới, sửa 4 trường, tối đa 3 lần, effort, danh sách "AI slop" cấm, bấm giờ, Lucas xem trên điện thoại. Luật SFX §6 giữ nguyên chờ quyết D-SFX | Lucas |
 | 2026-10-27 | Ep02: hook A; tuyến theo đèo **Col de la Traversette**, qua Rhône ở vùng Beaucaire–Tarascon (ghi "One leading theory") | Lucas |

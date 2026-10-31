@@ -49,3 +49,5 @@ Test/**/*.mp4
 Test/**/*_CAPTION.txt
 # frames + transcripts cut from third-party videos for analysis (study only; findings are in the .md reports)
 Test/doi-thu/_work/
+
+Test/**/_work/

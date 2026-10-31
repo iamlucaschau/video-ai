@@ -136,6 +136,10 @@ Most vertical videos ignore these. Ours may not. Check every one at QA.
    - One clean sans family, weight 700–800, ≥ 48 px on 1080 wide. No
      cinematic/display serif fonts for text blocks or quotes.
 4. **Real SFX only** (see Sound design).
+5. **Banned "AI slop" tells** (Lucas 2026-11-01): every element entering
+   the same way (all fades); a number or claim on screen that is not in the
+   episode's verification table / sources; a new shot or element on a timer
+   instead of on a new idea in the VO.
 
 ## Studio-editable markup
 
@@ -209,6 +213,18 @@ these conventions (see the `remotion-interactivity` skill):
 - For music-driven cuts, get the duration with `parseMedia` or `ffprobe` and
   set `calculateMetadata` on the composition (see the `calculate-metadata` guide).
 - Voiceover / captions: see the `voiceover.md` guide and the `remotion-captions` skill.
+
+## Episode workflow (Lucas 2026-11-01)
+
+- **Effort:** xhigh for a new episode, a script, or a style / channel
+  analysis; medium for small fixes and re-renders.
+- **Handoff:** each episode folder has `progress.md` (gate status, current
+  files, decisions, open issues, next step, time log) and `checks.md` (one
+  row per check: requirement · pass / fail / unresolved · evidence). Read
+  both before touching an episode; update them after each gate.
+- **Review:** `review-loop` skill: your own pass, then a fresh-eyes critic
+  subagent, fix the 3 worst per pass, each fix scoped as WHERE / PROBLEM /
+  CHANGE / KEEP, max 3 attempts per failing check before asking Lucas.
 
 ## Verifying your work
 
