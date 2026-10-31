@@ -30,6 +30,7 @@
 | `JKey`, `camAt(keys, f)`, `camSpeed` | đường bay: mỗi key là một cú bay bắt đầu ở `at`; giữa các key camera tự đẩy chậm + xoay (`push`, `orbit`); `camSpeed` quyết định bật motion blur |
 | `SatMap` | các tấm vệ tinh trong một mặt phẳng nghiêng + xoay, viền tối 4 góc |
 | `GlowRoute`, `along`, `Vessel` | tuyến nét đứt phát sáng (chặng đã đi giữ lại), điểm đầu tuyến + hướng, thuyền buồm đỏ nhấp nhô |
+| `Pilgrim` | người đi bộ: nhà sư dắt ngựa thồ (Ep04), cùng cỡ `Vessel` / `Army` |
 | `RoutePreview` | cả tuyến loé lên ~1 s trong câu hook rồi tắt (T4) |
 | `RegionFill`, `CONDENSED` | tô cả vùng / đảo / biển từ đa giác Natural Earth (`scripts/ne-regions.py` → `regions.json` của từng tập): tô vàng (`land`), làm sáng đất (`glow`), tô biển (`sea`), viền trắng vẽ dần, `spotlight` làm tối phần còn lại, tên vùng chữ Bebas Neue cỡ lớn xoay theo dáng vùng (`nameAt`, `angle`). Biên giới hiện đại: chỉ dùng nơi không tranh chấp (Bible §8.5) |
 | `Scribble`, `Handle` | nét vàng khoanh vẽ tay quanh 1 nơi then chốt / nhịp (2–3 lần / tập); tên kênh mờ dưới phụ đề (watermark, cố ý nằm dưới vùng an toàn) |

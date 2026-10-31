@@ -118,7 +118,7 @@ Chi tiết + code: `Style Library/J-satellite-journey/README.md`. Tóm tắt:
 | 2 · Kịch bản | Viết theo §3; bảng kiểm chứng; kế hoạch hình; bản dịch VN để duyệt | `kich-ban-<slug>-FINAL.md` |
 | 3 · Giọng đọc | Spec + `node scripts/episode.mjs prep` → `npm run voiceover` → `episode.mjs export` → `python -P scripts/words.py <slug> en` (kiểm tách câu) | `vo.mp3`, timing, words |
 | 4 · Test | Nền bản đồ (`make-plates.py`), tranh, dựng composition; stills có `safeGuide` | stills QA |
-| 5 · Final | `npm run render:j -- <id> --to <mp4>` (crf 18 + master −14 LUFS + tự kiểm LUFS / true peak); contact sheet; bảng nguồn ảnh; gói đăng | MP4 + `xuat-ban.md` |
+| 5 · Final | `npm run render:j -- <id> --to <mp4>` (**4K 2160×3840 mặc định**, Lucas 2026-10-31; crf 18 + master −14 LUFS + tự kiểm LUFS / true peak); contact sheet; bảng nguồn ảnh; gói đăng | MP4 + `xuat-ban.md` |
 
 Tập mới nằm ở `Mapped Journeys/episodes/epNN-<slug>/`, **bắt đầu bằng cách copy `episodes/_template/`** (README trong đó có từng bước). Ep01 là ngoại lệ, xem §11. Mẫu code: `Style Library/J-satellite-journey/j-aeneas-full/Video.tsx` (dữ liệu địa lý `P`, `LEGS`, `SAIL`, `KEYS` ở đầu file; mọi mốc gắn vào chữ trong giọng đọc).
 
@@ -133,6 +133,7 @@ Ghi **24 h · 7 ngày · 30 ngày** cho YouTube Shorts / TikTok / Reels: views, 
 | 01 | P1 | Why did Aeneas wander for seven years? | FINAL ✓ (v2) | ✓ 133 s | ✓ render lại 2026-10-30: 133,4 s, −14,2 LUFS, −2,8 dBTP (không phụ đề, Bebas, tô vùng, SFX + 2 ảnh AI) | — |
 | 02 | P3 | Why did Hannibal march five months over the Alps? | FINAL ✓ (Cổng 2, 2026-10-27) | ✓ 130 s | ✓ render lại 2026-10-30: 130,7 s, −14,1 LUFS, −2,7 dBTP (không phụ đề, Bebas, tô vùng; 3 tranh + 2 ảnh AI) | — |
 | 03 | P2 | Why did Magellan's shortcut take three years? | FINAL ✓ (Cổng 2, 2026-10-30) | ✓ 129 s (Lucas duyệt 2026-10-31) | ✓ 2026-10-31: 129,7 s, −14,2 LUFS, −2,8 dBTP (3 tranh + 2 ảnh AI, tô SPAIN / PACIFIC / PHILIPPINES) | — |
+| 04 | P4 | Why did the monk behind Journey to the West need seventeen years? | FINAL ✓ (Cổng 2, 2026-10-31) | ✓ 123 s (Lucas duyệt 2026-10-31) | ✓ 2026-10-31, 4K 2160×3840: 123,2 s, −14,2 LUFS, −2,9 dBTP (4 tranh + 2 ảnh AI, tô HIMALAYAS / GOBI / TIAN SHAN / HINDU KUSH, sông Ấn); gói đăng `xuat-ban.md` + bìa A / C | — |
 
 *Ep01 nằm ở `Style Library/J-satellite-journey/j-aeneas-full/` (vừa là tập 1, vừa là video mẫu của style J), composition `Style-J-SatelliteJourney-AeneasFull`; gói đăng `xuat-ban.md` (chưa có ảnh bìa).*
 

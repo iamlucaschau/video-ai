@@ -40,6 +40,7 @@ import { JAeneasFull, jAeneasFullDuration } from "../Style Library/J-satellite-j
 import { ArmyTest, armyTestDuration } from "../Style Library/J-satellite-journey/kit-army-test";
 import { Hannibal, hannibalDuration } from "../Mapped Journeys/episodes/ep02-hannibal/Video";
 import { Magellan, magellanDuration } from "../Mapped Journeys/episodes/ep03-magellan/Video";
+import { Xuanzang, xuanzangDuration } from "../Mapped Journeys/episodes/ep04-xuanzang/Video";
 import { MJ_COVERS, MJCover } from "../Mapped Journeys/covers";
 import { P2DuongSatCaoToc, p2DuongSatCaoTocDuration } from "../Map/p2-duong-sat-cao-toc/Video";
 import { P3DbsclSutLun, p3DbsclSutLunDuration } from "../Map/p3-dbscl-sut-lun/Video";
@@ -144,6 +145,14 @@ export const RemotionRoot: React.FC = () => {
           height={PVR.height}
           fps={PVR.fps}
           durationInFrames={magellanDuration(PVR.fps)}
+        />
+        <Composition
+          id="MJ-ep04-xuanzang"
+          component={Xuanzang}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={xuanzangDuration(PVR.fps)}
         />
       </Folder>
       <Folder name="Map">

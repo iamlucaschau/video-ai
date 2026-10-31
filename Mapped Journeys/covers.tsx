@@ -14,6 +14,7 @@ import { FONT } from "../Style Library/kit-common";
 import { GeoLine, GlowRoute, J, type JCam, type Plate, project, projectLine, Ring, SatMap } from "../Style Library/J-satellite-journey/satellite-journey";
 import * as Ep02 from "./episodes/ep02-hannibal/Video";
 import * as Ep03 from "./episodes/ep03-magellan/Video";
+import * as Ep04 from "./episodes/ep04-xuanzang/Video";
 
 export type Variant = "A" | "B" | "C";
 type Line = { text: string; punch?: boolean };
@@ -60,6 +61,20 @@ export const MJ_COVERS: CoverSpec[] = [
     hook: [{ text: "A FEW DAYS?" }, { text: "3 YEARS", punch: true }, { text: "AROUND THE WORLD" }],
     seam: ["A FEW DAYS", "3 YEARS"],
     name: "MAGELLAN",
+  },
+  // ledger X2 (Chang'an → Nalanda 2,479 km, our great-circle sum) vs X1 (17 years, his own words)
+  {
+    slug: "ep04-xuanzang",
+    plates: Ep04.PLATES,
+    legs: Ep04.LEGS,
+    direct: Ep04.STRAIGHT,
+    theoryFrom: Infinity,
+    focus: Ep04.P.nalanda,
+    cam: { lon: 88, lat: 31, zoom: 17, tilt: 10, bearing: 0 },
+    peak: "images/xuanzang/full-desert.jpg",
+    hook: [{ text: "2,500 KM?" }, { text: "17 YEARS", punch: true }, { text: "TO INDIA AND BACK" }],
+    seam: ["2,500 KM", "17 YEARS"],
+    name: "XUANZANG",
   },
 ];
 

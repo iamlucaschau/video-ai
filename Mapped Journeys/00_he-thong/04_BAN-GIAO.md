@@ -31,7 +31,7 @@ Việc đầu tiên: [chọn Ep02 theo mục 5 của file bàn giao].
 | Tên kênh | **Mapped Journeys**, @MappedJourneys, slogan *Legendary journeys, mapped.* ("Route Chronicles" bị YouTube từ chối, đã bỏ) |
 | Style J kit v1 | Xong: `Style Library/J-satellite-journey/satellite-journey.tsx` |
 | Ep01 Aeneas (P1) | **Final xong**: 133,4 s, crf 18, −14 LUFS, SFX + 2 ảnh AI. Gói đăng `xuat-ban.md` xong, **chưa có ảnh bìa**, **chưa đăng** |
-| Lệnh render | `npm run render:j -- <id> [--to <mp4>]` (`scripts/render-j.mjs`) |
+| Lệnh render | `npm run render:j -- <id> [--to <mp4>]` (`scripts/render-j.mjs`); **mặc định 4K** 2160×3840 (Lucas 2026-10-31), ~3 giờ và ~450 MB / tập (Ep04: 174 phút); `--scale=1` cho bản 1080p xem nhanh |
 | Mẫu tập | `Mapped Journeys/episodes/_template/` |
 | Nhận diện | Prompt avatar / banner xong (`02_NHAN-DIEN-KENH.md`); **Lucas chưa tạo ảnh** |
 | Git | Nhánh `route-chronicles-style-j` (tên cũ, giữ nguyên), các commit chỉ ở máy. **Chưa push, chưa gộp vào `master`.** Git chưa có identity: commit bằng `git -c user.name="Lucas" -c user.email=<email của Lucas> commit …` |
@@ -105,6 +105,8 @@ npm run sheet:j -- --video "<mp4>" --slug <slug>   # soi lại bản đã render
 - Mỗi SVG filter phải có **id riêng** (`jglow`, `jglow-line`); trùng id thì đường biến mất.
 - `Ring` cần prop `out`, nếu không vòng sóng ở lại mãi.
 - Tranh cổ điển có khoả thân (Ep01: Polyphemus): cắt lại trước khi dùng.
+- `key` của `StopLabel` / `PhotoCard` phải khác nhau kể cả khi cùng một nơi xuất hiện hai lần (Ep04: hai nhãn CHANG'AN cùng key, video render ra vệt nhãn chồng nhau; still thì vẫn sạch). Các tập dùng `${key}-${name}-${from}`.
+- Render báo 404 một file trong `public/` dù file vẫn còn (Ep04 2026-10-31): bản sao tạm trên ổ C bị thiếu; chạy lại với `TMP` / `TEMP` trỏ sang `out/tmp` trên ổ B.
 - Remotion 4.0.532: `--frames=20,96,212` (danh sách cách nhau bằng dấu phẩy) có thể crash khi frame trùng `<Audio>`. Dùng `still` từng frame hoặc dải liên tục. Bundle một lần (`out/bundle`) rồi chụp nhiều still.
 
 **Âm thanh**

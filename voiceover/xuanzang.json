@@ -1,0 +1,261 @@
+{
+  "name": "xuanzang",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Adult male documentary narrator, warm and grounded, American English. Curious and quick on the opening question, clear and steady through the journey; place names and numbers a beat slower. When the monk is alone in the desert without water, slow down and soften, almost quiet. Chinese and Indian place names (Chang'an, Xuanzang, Turpan, Nalanda, Khotan) said clearly and evenly. No hype, no shouting. The last line lands with quiet weight.",
+  "trimSilence": true,
+  "tempo": 1.05,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.25,
+    "scene": 0.4
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.25,
+      "text": "Why did the monk behind Journey to the West need seventeen years to bring books back from India, just beyond the Himalayas?"
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.4,
+      "text": "The answer is on this route, and in one emperor's ban."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "Chang'an, China's capital."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "A young monk, Xuanzang, wants the original Buddhist texts of India."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "But the emperor has closed the borders."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "No one may leave."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.4,
+      "text": "So he slips past the frontier watchtowers at night."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "His guide turns back."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "He crosses the desert alone, on one old horse."
+    },
+    {
+      "id": "10",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "His water bag slips from his hands."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.5,
+      "text": "Four nights and five days, without a drop of water."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "He turns toward China, then stops."
+    },
+    {
+      "id": "13",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.8,
+      "text": "Better to die going west, he said, than to live by returning east."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "At Turpan, a king tries to keep him at his court."
+    },
+    {
+      "id": "15",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "Xuanzang refuses to eat for three days, until the king lets him go."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "The straight road south is blocked by the Himalayas, so he goes around them."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Seven days over the glaciers of the Tian Shan."
+    },
+    {
+      "id": "18",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "More than a dozen of his party die of cold and hunger."
+    },
+    {
+      "id": "19",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.4,
+      "text": "Then Samarkand, Bamiyan, and over the Hindu Kush into India."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.4,
+      "text": "And here is the twist."
+    },
+    {
+      "id": "21",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "He doesn't just collect the books and leave."
+    },
+    {
+      "id": "22",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.4,
+      "text": "He stays more than ten years, studying at Nalanda and travelling across India."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "Going home, his boat nearly sinks on the Indus."
+    },
+    {
+      "id": "24",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "Fifty manuscripts are lost."
+    },
+    {
+      "id": "25",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "From Khotan he writes to the emperor: \"I have passed seventeen years.\""
+    },
+    {
+      "id": "26",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "The emperor writes back, overjoyed."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "He enters Chang'an with six hundred and fifty-seven books."
+    },
+    {
+      "id": "28",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.4,
+      "text": "They fill twenty horses."
+    },
+    {
+      "id": "29",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "A pagoda was built to hold them."
+    },
+    {
+      "id": "30",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "It still stands in Xi'an."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.4,
+      "text": "Nine centuries later, his journey became a novel, Journey to the West, with the Monkey King at his side."
+    },
+    {
+      "id": "32",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.25,
+      "text": "Twenty-five hundred kilometres became seventeen years."
+    },
+    {
+      "id": "33",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "He crossed the desert with one horse."
+    },
+    {
+      "id": "34",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.25,
+      "text": "He came home with twenty."
+    },
+    {
+      "id": "35",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.4,
+      "text": "The monk who fled the empire came home its hero."
+    }
+  ]
+}

@@ -952,5 +952,41 @@
     "seconds": 1.74,
     "lufs": -19.8,
     "source": "https://mixkit.co/free-sound-effects/download/1198/"
+  },
+  {
+    "file": "sfx/horse/horse-fast-walking-on-dirt-ground-78.mp3",
+    "category": "horse",
+    "title": "Horse fast walking on dirt ground",
+    "author": "Mixkit",
+    "seconds": 13.2,
+    "lufs": -31.3,
+    "source": "https://mixkit.co/free-sound-effects/download/78/"
+  },
+  {
+    "file": "sfx/amb-wind/wind-in-the-top-of-the-mountain-1267.mp3",
+    "category": "amb-wind",
+    "title": "Wind in the top of the mountain",
+    "author": "Mixkit",
+    "seconds": 31.8,
+    "lufs": -18.1,
+    "source": "https://mixkit.co/free-sound-effects/download/1267/"
+  },
+  {
+    "file": "sfx/amb-river/river-in-the-forest-with-birds-1216.mp3",
+    "category": "amb-river",
+    "title": "River in the forest with birds",
+    "author": "Mixkit",
+    "seconds": 95.0,
+    "lufs": -30.6,
+    "source": "https://mixkit.co/free-sound-effects/download/1216/"
+  },
+  {
+    "file": "sfx/ping/bell-of-promise-930.mp3",
+    "category": "ping",
+    "title": "Bell of promise",
+    "author": "Mixkit",
+    "seconds": 8.01,
+    "lufs": -11.2,
+    "source": "https://mixkit.co/free-sound-effects/download/930/"
   }
 ]

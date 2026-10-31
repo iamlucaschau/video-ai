@@ -225,7 +225,7 @@ export const Scene: React.FC = () => {
 
   /** A place label anchored to P[key]. */
   const label = (key: keyof typeof P, name: string, from: number, to: number) => (
-    <StopLabel key={`${key}-${name}`} name={name} x={pt[key][0]} y={pt[key][1]} f={f} at={from} out={to} side={side(pt[key][0])} />
+    <StopLabel key={`${key}-${name}-${from}`} name={name} x={pt[key][0]} y={pt[key][1]} f={f} at={from} out={to} side={side(pt[key][0])} />
   );
   /** A painting card on a leader line from P[key] (only once its file is in public/). */
   const card = (key: keyof typeof P, src: keyof typeof HAVE, from: number, to: number, extra: { lean?: number; mono?: number } = {}) =>

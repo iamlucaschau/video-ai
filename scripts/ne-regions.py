@@ -3,8 +3,9 @@ Natural Earth (public domain) → small region JSON for the style J kit's <Regio
 
   python -P scripts/ne-regions.py <ne dir> <out.json> name=<source>:<match> ...
 
-<source> is countries | land | marine | rivers (ne_10m_admin_0_countries, ne_10m_land,
-ne_10m_geography_marine_polys, ne_10m_rivers_lake_centerlines unzipped into <ne dir>).
+<source> is countries | land | marine | rivers | regions | lakes (ne_10m_admin_0_countries, ne_10m_land,
+ne_10m_geography_marine_polys, ne_10m_rivers_lake_centerlines, ne_10m_geography_regions_polys,
+ne_10m_lakes unzipped into <ne dir>).
 <match> is a feature name (NAME / name field, "_" for spaces), or for land "@lon,lat": the polygon containing that point.
 Optional "~tol" after the match: simplification tolerance in degrees (default 0.02).
 Rings smaller than 1 % of the largest one are dropped. Output: { name: [[[lon, lat], ...], ...] }.
@@ -20,6 +21,8 @@ FILES = {
     "land": ("ne_10m_land", []),
     "marine": ("ne_10m_geography_marine_polys", ["name", "NAME"]),
     "rivers": ("ne_10m_rivers_lake_centerlines", ["name", "NAME"]),
+    "regions": ("ne_10m_geography_regions_polys", ["NAME", "NAMEALT"]),  # mountain ranges, deserts, plateaus
+    "lakes": ("ne_10m_lakes", ["name", "NAME"]),
 }
 
 

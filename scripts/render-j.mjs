@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Style J (Mapped Journeys) render: Remotion render at crf 18 → ffmpeg master to
+ * Style J (Mapped Journeys) render: Remotion render at crf 18, 4K (scale 2) → ffmpeg master to
  * -14 LUFS / -1.5 dBTP (AAC 192k, 48 kHz, +faststart) → ffprobe + ebur128 check.
  *
  *   npm run render:j -- <compositionId> [--to <file.mp4>] [--frames=0-89] [--keep-raw]
@@ -51,8 +51,10 @@ const run = (cmd, cmdArgs, opts = {}) => {
 fs.mkdirSync(path.dirname(raw), { recursive: true });
 fs.mkdirSync(path.dirname(to), { recursive: true });
 
-console.log(`\n▶ render ${id} (crf 18)`);
-run(process.execPath, [CLI, "render", id, raw, "--crf=18", ...passthrough]);
+// 4K by default (Lucas 2026-10-31): the 1080×1920 compositions render at scale 2 → 2160×3840; --scale=1 for a quick 1080p
+const scale = passthrough.some((a) => a.startsWith("--scale")) ? [] : ["--scale=2"];
+console.log(`\n▶ render ${id} (crf 18${scale.length ? ", 4K" : ""})`);
+run(process.execPath, [CLI, "render", id, raw, "--crf=18", ...scale, ...passthrough]);
 
 console.log(`\n▶ master → ${path.relative(ROOT, to)}`);
 run(FFMPEG, ["-y", "-v", "error", "-i", raw, "-c:v", "copy", "-af", MASTER, "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", to]);

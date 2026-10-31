@@ -341,6 +341,42 @@ export const Army: React.FC<{ x: number; y: number; heading: number; f: number }
   );
 };
 
+/**
+ * Pilgrim on foot (kit C1, Ep04 Xuanzang): a monk in a brown robe with a book pack, leading a
+ * red horse loaded with bundles. Same footprint as `Vessel`; legs swing, no bob.
+ */
+export const Pilgrim: React.FC<{ x: number; y: number; heading: number; f: number }> = ({ x, y, heading, f }) => {
+  const flip = Math.cos(heading) < 0 ? -1 : 1;
+  const s = Math.sin(f / 3.5);
+  const leg = (x0: number, y0: number, ph: number, len = 18) => (
+    <line x1={x0} y1={y0} x2={x0 + Math.sin(f / 3.5 + ph) * 5} y2={y0 + len} stroke={J.ink} strokeWidth={4} strokeLinecap="round" />
+  );
+  return (
+    <svg width={TRAVELLER} height={TRAVELLER} viewBox="-60 -60 120 120" style={{ position: "absolute", left: x - TRAVELLER / 2, top: y - TRAVELLER / 2, overflow: "visible" }}>
+      <ellipse cx={0} cy={24} rx={48} ry={8} fill="rgba(0,0,0,0.35)" />
+      <g style={{ scale: `${flip} 1` }}>
+        {/* horse behind the monk */}
+        {leg(-36, 4, 0)}
+        {leg(-26, 4, Math.PI)}
+        {leg(-6, 4, Math.PI / 2)}
+        {leg(4, 4, -Math.PI / 2)}
+        <path d="M -42 -6 C -42 -16, -32 -18, -18 -18 L 4 -18 C 12 -18, 14 -24, 18 -32 L 26 -30 L 22 -16 C 20 -8, 12 4, 2 6 L -36 6 C -42 6, -44 0, -42 -6 Z" fill="#9C3B22" stroke={J.ink} strokeWidth={3} strokeLinejoin="round" />
+        <rect x={-34} y={-30} width={30} height={14} rx={4} fill="#C9A76A" stroke={J.ink} strokeWidth={2.5} />
+        <rect x={-30} y={-40} width={22} height={11} rx={3} fill="#8A6A3A" stroke={J.ink} strokeWidth={2.5} />
+        {/* monk in front, walking */}
+        <g transform="translate(28 0)">
+          <line x1={-4} y1={6} x2={-4 + s * 6} y2={22} stroke={J.ink} strokeWidth={4} strokeLinecap="round" />
+          <line x1={4} y1={6} x2={4 - s * 6} y2={22} stroke={J.ink} strokeWidth={4} strokeLinecap="round" />
+          <path d="M -10 8 L -7 -16 C -6 -22, 6 -22, 7 -16 L 10 8 Z" fill="#7A5534" stroke={J.ink} strokeWidth={3} strokeLinejoin="round" />
+          <rect x={-17} y={-22} width={10} height={22} rx={2} fill="#B8862F" stroke={J.ink} strokeWidth={2.5} />
+          <circle cx={0} cy={-27} r={7} fill="#E2B98C" stroke={J.ink} strokeWidth={2.5} />
+          <line x1={-6} y1={-10} x2={-30} y2={-14} stroke={J.ink} strokeWidth={2} />
+        </g>
+      </g>
+    </svg>
+  );
+};
+
 // ------------------------------------------------------------------ stop label + card
 
 const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&*";

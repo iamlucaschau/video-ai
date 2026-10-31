@@ -1,0 +1,250 @@
+{
+  "durationInSeconds": 122.81529166666667,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 7.366,
+      "text": "Why did the monk behind Journey to the West need seventeen years to bring books back from India, just beyond the Himalayas?"
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 7.615583333333333,
+      "end": 11.058583333333333,
+      "text": "The answer is on this route, and in one emperor's ban."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 11.458208333333333,
+      "end": 13.381208333333333,
+      "text": "Chang'an, China's capital."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 13.501041666666666,
+      "end": 17.882041666666666,
+      "text": "A young monk, Xuanzang, wants the original Buddhist texts of India."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 18.132041666666666,
+      "end": 20.284041666666667,
+      "text": "But the emperor has closed the borders."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 20.404125,
+      "end": 21.569125,
+      "text": "No one may leave."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "start": 21.818958333333335,
+      "end": 24.824958333333335,
+      "text": "So he slips past the frontier watchtowers at night."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "start": 25.224458333333335,
+      "end": 26.683458333333334,
+      "text": "His guide turns back."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "start": 26.803250000000002,
+      "end": 30.17125,
+      "text": "He crosses the desert alone, on one old horse."
+    },
+    {
+      "id": "10",
+      "scene": "s3",
+      "start": 30.420958333333335,
+      "end": 32.488958333333336,
+      "text": "His water bag slips from his hands."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "start": 32.738958333333336,
+      "end": 36.44795833333334,
+      "text": "Four nights and five days, without a drop of water."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "start": 36.94820833333333,
+      "end": 39.79920833333333,
+      "text": "He turns toward China, then stops."
+    },
+    {
+      "id": "13",
+      "scene": "s3",
+      "start": 39.919625,
+      "end": 44.507625000000004,
+      "text": "Better to die going west, he said, than to live by returning east."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "start": 45.307375,
+      "end": 48.125375,
+      "text": "At Turpan, a king tries to keep him at his court."
+    },
+    {
+      "id": "15",
+      "scene": "s4",
+      "start": 48.3755,
+      "end": 52.971500000000006,
+      "text": "Xuanzang refuses to eat for three days, until the king lets him go."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "start": 53.22179166666667,
+      "end": 57.359791666666666,
+      "text": "The straight road south is blocked by the Himalayas, so he goes around them."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "start": 57.61004166666667,
+      "end": 60.71904166666667,
+      "text": "Seven days over the glaciers of the Tian Shan."
+    },
+    {
+      "id": "18",
+      "scene": "s4",
+      "start": 60.839333333333336,
+      "end": 64.49933333333334,
+      "text": "More than a dozen of his party die of cold and hunger."
+    },
+    {
+      "id": "19",
+      "scene": "s4",
+      "start": 64.749125,
+      "end": 69.65112500000001,
+      "text": "Then Samarkand, Bamiyan, and over the Hindu Kush into India."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "start": 70.05095833333334,
+      "end": 71.66095833333334,
+      "text": "And here is the twist."
+    },
+    {
+      "id": "21",
+      "scene": "s5",
+      "start": 72.06083333333333,
+      "end": 74.24483333333333,
+      "text": "He doesn't just collect the books and leave."
+    },
+    {
+      "id": "22",
+      "scene": "s5",
+      "start": 74.49520833333334,
+      "end": 79.98220833333333,
+      "text": "He stays more than ten years, studying at Nalanda and travelling across India."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "start": 80.38183333333333,
+      "end": 83.67983333333333,
+      "text": "Going home, his boat nearly sinks on the Indus."
+    },
+    {
+      "id": "24",
+      "scene": "s6",
+      "start": 83.8,
+      "end": 85.393,
+      "text": "Fifty manuscripts are lost."
+    },
+    {
+      "id": "25",
+      "scene": "s6",
+      "start": 85.643125,
+      "end": 90.440125,
+      "text": "From Khotan he writes to the emperor: \"I have passed seventeen years.\""
+    },
+    {
+      "id": "26",
+      "scene": "s6",
+      "start": 90.69041666666666,
+      "end": 92.56141666666666,
+      "text": "The emperor writes back, overjoyed."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "start": 92.81095833333333,
+      "end": 96.31695833333333,
+      "text": "He enters Chang'an with six hundred and fifty-seven books."
+    },
+    {
+      "id": "28",
+      "scene": "s6",
+      "start": 96.43741666666666,
+      "end": 97.97441666666667,
+      "text": "They fill twenty horses."
+    },
+    {
+      "id": "29",
+      "scene": "s7",
+      "start": 98.37479166666667,
+      "end": 100.16579166666666,
+      "text": "A pagoda was built to hold them."
+    },
+    {
+      "id": "30",
+      "scene": "s7",
+      "start": 100.285875,
+      "end": 101.796875,
+      "text": "It still stands in Xi'an."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "start": 102.04700000000001,
+      "end": 109.12200000000001,
+      "text": "Nine centuries later, his journey became a novel, Journey to the West, with the Monkey King at his side."
+    },
+    {
+      "id": "32",
+      "scene": "s8",
+      "start": 109.52216666666668,
+      "end": 113.63716666666667,
+      "text": "Twenty-five hundred kilometres became seventeen years."
+    },
+    {
+      "id": "33",
+      "scene": "s8",
+      "start": 113.88683333333334,
+      "end": 116.24983333333334,
+      "text": "He crossed the desert with one horse."
+    },
+    {
+      "id": "34",
+      "scene": "s8",
+      "start": 116.36991666666668,
+      "end": 117.97191666666669,
+      "text": "He came home with twenty."
+    },
+    {
+      "id": "35",
+      "scene": "s8",
+      "start": 118.22166666666668,
+      "end": 122.41566666666668,
+      "text": "The monk who fled the empire came home its hero."
+    }
+  ]
+}

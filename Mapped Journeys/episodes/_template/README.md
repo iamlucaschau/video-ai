@@ -22,7 +22,7 @@ Bắt đầu một tập mới từ thư mục này. Luật: `../../00_he-thong/
 
 1. **Tấm bản đồ:** `python -P scripts/make-plates.py` (cách dùng ở đầu script) → `public/images/<slug>/map/` + `plates.json`. Thô trước, nét sau (world → vùng → chi tiết).
    - ⚠ Kit chưa xử lý tuyến cắt **kinh tuyến 180°** và vùng **gần cực** (> ~75°). Tập đi qua đó phải nâng cấp kit trước (`03_DANH-GIA-NANG-CAP.md` B1, C2).
-2. **Tranh:** tải bản public domain, cắt 4:3 → `public/images/<slug>/<stop>.jpg`; ghi nguồn vào FINAL. Ảnh AI toàn khung 1080×1920 → `full-*.jpg`.
+2. **Tranh:** tải bản public domain, cắt 4:3 → `public/images/<slug>/<stop>.jpg`; ghi nguồn vào FINAL. Ảnh AI toàn khung **2160×3840** (video render 4K; 1080×1920 vẫn chạy nhưng mềm hơn) → `full-*.jpg`.
 3. **Code:** copy `Style Library/J-satellite-journey/j-aeneas-full/Video.tsx` vào thư mục tập, rồi thay:
    - import manifest / timing / words: `src/voiceover/<slug>.json`, `.timing.json`, `.words.json`;
    - `P` (toạ độ điểm dừng), `LEGS` (chặng + waypoint trên biển), `DIRECT` (đường "lẽ ra"), `SAIL`, `KEYS` (cú bay camera), `CAPTIONS`, `SFX`, cards, chữ khoá;
