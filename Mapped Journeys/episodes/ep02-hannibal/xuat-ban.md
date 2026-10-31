@@ -40,7 +40,11 @@ Video có 2 khung ảnh AI (`full-fleet.jpg`, `full-summit.jpg`). Cả hai theo 
 
 ## 5. Ảnh bìa
 
-**Chưa có** (nâng cấp B6: cover xuất từ chính composition, chưa làm). Tạm thời: chọn khung hook "5 MONTHS" (có từ giây 0 tới ~8) trong ứng dụng YouTube khi đăng.
+Hai mẫu Lucas đang cân nhắc (2026-10-30), xuất từ `Mapped Journeys/covers.tsx` (`MJ-Cover-ep02-hannibal-A` / `-C`):
+- `cover-A.jpg`: **bản đồ**: hook "2 WEEKS BY SEA? / 5 MONTHS / OVER THE ALPS" trên cả tuyến + đường biển "lẽ ra".
+- `cover-C.jpg`: **chia đôi**: cảnh AI đỉnh đèo + "HANNIBAL" ở trên, dải "2 WEEKS → 5 MONTHS", tuyến bản đồ ở dưới.
+
+Chọn một mẫu khi đăng; mẫu còn lại dùng cho tập sau (hoặc cho TikTok / Reels) để so số liệu thật (Bible §10), rồi mới chốt phong cách kênh. Nếu không tải ảnh bìa riêng được, chọn khung "5 MONTHS" (giây 0–8) trong app.
 
 ## 6. Bình luận ghim
 
@@ -61,5 +65,5 @@ Would you have risked Rome's sea instead? 👇
 ## Trước khi đăng (còn mở)
 
 - [ ] **Đăng Ep01 trước.** Ep02 nối từ lời nguyền của Dido (Bible §2 "tập nối tập"); khi Ep01 đã lên, điền link vào dòng "Previous episode" trong mô tả.
-- [ ] Ảnh bìa (B6, hoặc chọn khung trong app).
+- [ ] Chọn ảnh bìa: `cover-A.jpg` hoặc `cover-C.jpg`; ghi mẫu đã dùng vào bảng số liệu để so.
 - [ ] Đăng xong: điền ngày vào nhật ký tập (Bible §11) và mở bảng số liệu 24 h / 7 ngày / 30 ngày (§10).

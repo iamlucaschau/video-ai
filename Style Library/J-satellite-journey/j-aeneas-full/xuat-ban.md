@@ -1,6 +1,6 @@
 # Gói xuất bản — Ep01 "Why did Aeneas wander for seven years?"
 
-*Cổng 5 (2026-10-27). Kênh **Mapped Journeys** (@MappedJourneys). Video: `j-aeneas-full.mp4` (9:16, 133,4 s, −14 LUFS, crf 18; render lại bằng `npm run render:j -- Style-J-SatelliteJourney-AeneasFull --to "Style Library/J-satellite-journey/j-aeneas-full/j-aeneas-full.mp4"`). Pillar P1 Myths & Epics.*
+*Cổng 5 (2026-10-27; render lại 2026-10-30: "7 YEARS" từ frame 0, camera đẩy về Rome rồi bay về Troy từ giây 9, thẻ "dream" không còn lấn mép trên; −14,2 LUFS, −2,2 dBTP; render lại 2026-10-30 lần 2 với F4–F7 + tiếng sự kiện, ambience biển / tàu gỗ, nhạc −25 LUFS: −14,2 LUFS, −2,2 dBTP). Kênh **Mapped Journeys** (@MappedJourneys). Video: `j-aeneas-full.mp4` (9:16, 133,4 s, −14 LUFS, crf 18; render lại bằng `npm run render:j -- Style-J-SatelliteJourney-AeneasFull --to "Style Library/J-satellite-journey/j-aeneas-full/j-aeneas-full.mp4"`). Pillar P1 Myths & Epics.*
 
 ## 1. Tiêu đề (thử A/B)
 

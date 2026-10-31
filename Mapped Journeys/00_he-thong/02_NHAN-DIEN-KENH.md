@@ -49,6 +49,18 @@ Chữ: **Bricolage Grotesque 800** (cùng font trong video).
 - **Mô tả kênh (YouTube About, gợi ý):** *Legendary journeys, mapped. Myths, explorers, armies and pilgrims, traced step by step on a real satellite map, so you can see why the journey took so long.*
 - Dòng nhỏ tuỳ chọn: *New journey every week* (chỉ khi chắc lịch đăng).
 
+## 4a. Ảnh bìa Shorts (2026-10-30, đang thử)
+
+Xuất từ code: `Mapped Journeys/covers.tsx` (thêm tập = thêm một mục vào `MJ_COVERS`), `npx remotion still MJ-Cover-<slug>-<A|B|C> …`, rồi JPG < 2 MB vào thư mục tập. Chữ trong dải y 220–1300, chỉ dùng con số đã có nguồn.
+
+| Mẫu | Mô tả | Trạng thái |
+|---|---|---|
+| **A · Bản đồ** | Hook 3 dòng (câu "lẽ ra" nhỏ, con số thật to màu vàng, câu ngắn) trên bản đồ có cả tuyến + đường biển "lẽ ra" + vòng vàng ở điểm then chốt | Lucas nghiêng về, chờ số liệu |
+| B · Cảnh + thẻ | Ảnh AI toàn khung, hook trên, thẻ bản đồ nhỏ góc phải | Không chọn |
+| **C · Chia đôi** | Ảnh AI nửa trên + tên nhân vật, dải giữa "X → Y", tuyến bản đồ nửa dưới | Lucas nghiêng về, chờ số liệu |
+
+Ep02 có cả `cover-A.jpg` và `cover-C.jpg`. Chốt mẫu kênh khi đã có số liệu thật của ≥ 2 tập (Bible §10), Lucas duyệt.
+
 ## 4b. Từ khoá kênh (2026-10-30)
 
 **YouTube Studio → Settings → Channel → Basic info → Keywords** (giới hạn 500 ký tự, cụm nhiều từ đặt trong ngoặc kép; chuỗi dưới 368 ký tự). Bao đủ 5 pillar (Bible §2) và tên các tập đã / sắp làm. **Không** dùng tên kênh đối thủ (YouTube coi là gây hiểu lầm).

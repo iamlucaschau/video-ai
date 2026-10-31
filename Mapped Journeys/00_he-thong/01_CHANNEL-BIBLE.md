@@ -72,7 +72,7 @@ Chi tiết + code: `Style Library/J-satellite-journey/README.md`. Tóm tắt:
 - **Tuyến:** nét đứt trắng phát sáng, các chặng đã đi giữ lại; **vật di chuyển hợp với nhân vật** (thuyền buồm cho hành trình biển; tập đường bộ cần thêm biểu tượng đoàn quân / đoàn lạc đà / người đi bộ vào kit).
 - **Nhãn** in hoa giải mã ký tự, ≥ 48 px, tự mờ khi ra khỏi vùng an toàn. **Không toạ độ** trên màn hình.
 - **Thẻ tranh** public domain trên dây nối (~1 thẻ / 6 s); **1–2 khung toàn màn hình** ở khoảnh khắc đỉnh (ảnh AI theo bộ prompt chung hoặc tranh).
-- **Chữ khoá** ≤ 5 từ, tối đa 2 khối ngoài phụ đề; phụ đề karaoke 1 dòng ≤ 3 từ / 18 ký tự (`JourneySub`).
+- **Chữ khoá** ≤ 5 từ, tối đa 2 khối cùng lúc. **Không phụ đề** (Lucas 2026-10-30, như video mẫu).
 - **Máy quay (ngoại lệ chỉ của J):** không bao giờ đứng yên; bay giữa các điểm, đẩy chậm + xoay, nghiêng 3D, motion blur khi bay; không rung, không lắc.
 - Vùng an toàn x 60–940, y 220–1440; QA bằng `--props='{"safeGuide":true}'`.
 
@@ -83,7 +83,12 @@ Chi tiết + code: `Style Library/J-satellite-journey/README.md`. Tóm tắt:
 - **Giọng:** Gemini TTS `gemini-3.8-flash-tts`, **Charon**, tempo **1.05**, khoảng nghỉ `{sentence 0.12, paragraph 0.25, scene 0.4}`; nhịp lặng nới tay (Ep01: 0,5 s + 2 s).
 - **Chỉ dẫn giọng mặc định:** *"Adult male documentary narrator, warm and grounded, American English. Curious and quick on the opening question, clear and steady through the journey; place names and numbers a beat slower. When [the quiet beat], slow down and soften, almost quiet. No hype, no shouting. The last line lands with quiet weight."*
 - **Nhạc nền theo pillar** (§2), `<MusicBed>` −28 LUFS trước trim; `duck` hạ ~9 dB ở nhịp lặng.
-- **SFX (thật, Pixabay + Mixkit ambience):** tối đa 1 mỗi nhịp; whoosh ở các cú bay dài; cinematic hit ở con số hook / payoff và tên nhân vật phản diện; ambience (bão, gió) cho cảnh thời tiết; trống / tiếng chiến tranh cho đoạn chiến tranh; **nhịp lặng không có SFX**. Tiếng thud ngắn để thấp (−22 LUFS) vì đỉnh cao.
+- **SFX (thư viện Pixabay + Mixkit, không tự tổng hợp bằng code, không tiếng hoạt hình). Đổi 2026-10-30 (Lucas, theo đo đối thủ `03_DANH-GIA-NANG-CAP.md` §F):**
+  - **Mỗi sự kiện hình có 1 tiếng nhỏ**: nhãn giải mã = tick / glitch ngắn; thẻ ảnh vào = pop / swish, ra = swish nhẹ; cú bay = whoosh (dài theo quãng bay); nét vẽ / khoanh = tiếng bút; ghim = ping nhẹ. Mục tiêu ~20–30 tiếng / phút như đối thủ, để thấp (−24 đến −30 LUFS) để không lấn giọng.
+  - **Tiếng nhấn** (cinematic hit, boom, riser) vẫn **tối đa 1 mỗi nhịp**: con số hook / payoff, tên phản diện, bước ngoặt.
+  - **Lớp ambience chạy suốt bài** theo nơi chốn (biển, gió núi, đoàn quân, thành phố), −30 đến −34 LUFS, đổi êm khi đổi nơi. Bão / chiến tranh vẫn như cũ.
+  - **Nhịp lặng:** không tiếng nhấn, không tiếng sự kiện; chỉ giữ ambience nhẹ (gió) và nhạc đã hạ.
+  - Danh sách cần tải: `05_SFX-CAN-TAI.md`. Tiếng thud ngắn để thấp (−22 LUFS) vì đỉnh cao.
 - **Mix:** giọng đỉnh −2 dBFS → cả mix hạ **3 dB** trong composition (`TRIM_DB`), rồi master **−14 LUFS / −1,5 dBTP**: `npm run render:j` (bên trong: `ffmpeg … -af "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000" -c:a aac -b:a 192k`).
 - **Chất lượng xuất:** h264, **crf 18** (Lucas 2026-10-26: giữ chất lượng cao), AAC 192k, `+faststart`.
 
@@ -93,7 +98,7 @@ Chi tiết + code: `Style Library/J-satellite-journey/README.md`. Tóm tắt:
 2. Bản đồ mở rộng cho thấy cả vùng + **đường "lẽ ra"** (mờ, vàng); cuối video hiện lại cạnh tuyến thật.
 3. Các điểm dừng có nhân quả; ≥ 1 nhịp lặng; ≥ 1 "vì sao quan trọng".
 4. Trả giá bằng số + câu kết trọn vẹn.
-5. Phụ đề karaoke toàn bài; mọi chữ trong vùng an toàn.
+5. Không phụ đề (từ 2026-10-30); mọi chữ trong vùng an toàn.
 
 ## 8. Nguyên tắc nguồn & an toàn
 
@@ -125,8 +130,9 @@ Ghi **24 h · 7 ngày · 30 ngày** cho YouTube Shorts / TikTok / Reels: views, 
 
 | EP | Pillar | Tiêu đề | Kịch bản | VO | Final | Ngày đăng |
 |---|---|---|---|---|---|---|
-| 01 | P1 | Why did Aeneas wander for seven years? | FINAL ✓ (v2) | ✓ 133 s | ✓ (SFX + 2 ảnh AI) | — |
-| 02 | P3 | Why did Hannibal march five months over the Alps? | FINAL ✓ (Cổng 2, 2026-10-27) | ✓ 130 s | ✓ 130,7 s, −14,1 LUFS, −1,6 dBTP (3 tranh + 2 ảnh AI) | — |
+| 01 | P1 | Why did Aeneas wander for seven years? | FINAL ✓ (v2) | ✓ 133 s | ✓ render lại 2026-10-30: 133,4 s, −14,2 LUFS, −2,8 dBTP (không phụ đề, Bebas, tô vùng, SFX + 2 ảnh AI) | — |
+| 02 | P3 | Why did Hannibal march five months over the Alps? | FINAL ✓ (Cổng 2, 2026-10-27) | ✓ 130 s | ✓ render lại 2026-10-30: 130,7 s, −14,1 LUFS, −2,7 dBTP (không phụ đề, Bebas, tô vùng; 3 tranh + 2 ảnh AI) | — |
+| 03 | P2 | Why did Magellan's shortcut take three years? | FINAL ✓ (Cổng 2, 2026-10-30) | ✓ 129 s (Lucas duyệt 2026-10-31) | ✓ 2026-10-31: 129,7 s, −14,2 LUFS, −2,8 dBTP (3 tranh + 2 ảnh AI, tô SPAIN / PACIFIC / PHILIPPINES) | — |
 
 *Ep01 nằm ở `Style Library/J-satellite-journey/j-aeneas-full/` (vừa là tập 1, vừa là video mẫu của style J), composition `Style-J-SatelliteJourney-AeneasFull`; gói đăng `xuat-ban.md` (chưa có ảnh bìa).*
 
@@ -143,4 +149,6 @@ Ghi **24 h · 7 ngày · 30 ngày** cho YouTube Shorts / TikTok / Reels: views, 
 | 2026-10-26 | Tên kênh **Route Chronicles** (@RouteChronicles); 5 pillar giữ nguyên | Lucas |
 | 2026-10-27 | YouTube không cho tạo Route Chronicles → đổi tên kênh thành **Mapped Journeys** (@MappedJourneys); slogan *Legendary journeys, mapped.*; 5 pillar giữ nguyên | Lucas |
 | 2026-10-27 | Ep02 = **Hannibal (P3)** (nối lời nguyền Dido), Magellan dời sau; thư mục `episodes/ep02-hannibal/` | Lucas |
+| 2026-10-30 | Bỏ phụ đề cho style J (như video mẫu); ghi ngoại lệ trong `AGENTS.md` | Lucas |
+| 2026-10-30 | Đổi luật SFX (§6): mỗi sự kiện hình 1 tiếng nhỏ + lớp ambience suốt bài; tiếng nhấn vẫn ≤ 1 / nhịp. Lý do: đo 3 video mẫu, đối thủ ~30 tiếng / phút, mình ~5 | Lucas |
 | 2026-10-27 | Ep02: hook A; tuyến theo đèo **Col de la Traversette**, qua Rhône ở vùng Beaucaire–Tarascon (ghi "One leading theory") | Lucas |

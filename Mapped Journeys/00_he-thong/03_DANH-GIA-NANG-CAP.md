@@ -122,7 +122,7 @@
 
 | # | Việc | Vì sao |
 |---|---|---|
-| B1 | **Bản đồ toàn cầu + tuyến qua kinh tuyến 180°** (mở rộng kinh độ trong `project` và tấm bản đồ) | Magellan vượt Thái Bình Dương |
+| B1 | **Bản đồ toàn cầu + tuyến qua kinh tuyến 180°** (mở rộng kinh độ trong `project` và tấm bản đồ) | Magellan vượt Thái Bình Dương. ✅ 2026-10-30: toạ độ viết liền mạch (qua −180 thì trừ tiếp) + `shiftPlates(plates, −360)` trong kit; `project` không cần đổi |
 | B2 | **Script kiểm tuyến cắt đất liền** (mặt nạ biển lấy từ chính ảnh Blue Marble) | Bắt lỗi kiểu Gallipoli trước khi render |
 | B3 | **Sinh key camera tự động** từ danh sách điểm dừng + mốc chữ, chỉnh tay khi cần | Ep01 có 22 key viết tay |
 | B4 | **QA tự động**: still có SafeGuide tại mỗi điểm dừng, ghép thành contact sheet | Lỗi thẻ / nhãn lộ ra sớm. ✅ 2026-10-29: `npm run sheet:j` + skill `review-loop` (lấy từ whaleyxbt/claude-motion, MIT, sửa cho style J) |
@@ -162,6 +162,40 @@
 | E6 | **Vật di chuyển to theo zoom**: `Army` / `Vessel` scale ~1,3× khi zoom < 150 | Ở zoom ~110 đoàn quân chỉ còn mấy chấm đỏ trên điện thoại | Đề xuất (sửa kit) |
 | E7 | **Không đặt nhãn / vòng sóng dưới khung toàn màn hình**: cái gì cần thấy thì cho hiện trước hoặc sau `FullFrame` | Nhãn ITALY ở Ep02 bị ảnh AI đỉnh đèo che kín, không bao giờ hiện | Đề xuất (thêm vào checklist `review-loop`) |
 | E8 | **Chạy `npm run sheet:j` trước mỗi lần render**, không chỉ chụp vài still tay | Lượt `review-loop` đầu tiên bắt được nhãn NEW CARTHAGE lấn mép 11 px mà 16 still tay đã bỏ sót | ✅ Có skill + lệnh (B4); giữ thành thói quen |
+| E10 | **Mở đầu không đứng một góc bản đồ quá ~4 s; hành trình bắt đầu chạy trước giây ~9.** Trong câu hook: camera đẩy vào nơi khó khăn (vd. dãy Alps) khi giọng đọc nhắc tới, rồi kéo ra cho đường "lẽ ra" vẽ; câu bắc cầu đã bay về điểm xuất phát | VidIQ (2026-10-30) về Ep02: "first 15 seconds are spent on a single map view with slow text reveals". Code xác nhận: Ep02 đứng yên 0–13,6 s, Ep01 0–~13 s | ✅ Ep01 + Ep02 (2026-10-30): 3 cú camera trong 14 s đầu, bay về điểm xuất phát từ giây 9; áp dụng từ Ep03 |
 | E9 | **Nghe + xem bản render trên điện thoại** trước khi chốt | Luis không nghe được nhạc / SFX, không xem được chuyển động; chỉ Lucas kiểm được | Việc của Lucas mỗi tập |
+
+### F. Trình bày: mình kém đối thủ ở đâu (đo lại 2026-10-30)
+
+*Lucas chấm phần trình bày Ep01 / Ep02 **7 / 10**, kém 3 video mẫu. Luis đo lại bằng số (trước đây `Test/doi-thu/BAO-CAO.md` §4 ghi "SFX chưa tách được"). Cách đo âm thanh: V01 (EN) và V02 (PT) cùng hình, khác giọng → lấy phần **chung** của hai bản (min phổ theo từng ô thời gian–tần số) = nhạc + SFX + ambience. Script: `scratchpad/bed.py`, `analyze.py` (không lưu vào repo).*
+
+| Đo | Đối thủ (V01) | Ep02 | Ep01 |
+|---|---|---|---|
+| Tiếng "vút / lướt" (năng lượng 2–8 kHz dâng nhanh) | **~62 / 126 s ≈ 30 / phút** | 11 SFX cả bài ≈ **5 / phút** (5 whoosh) | 15 ≈ 7 / phút |
+| Nền không phải giọng, so với cả bản mix | **chỉ thấp hơn ~7 dB**, suốt bài | nhạc thấp hơn giọng **~16 dB** (khoảng lặng) | ~20 dB |
+| Độ "nhiễu" của nền (spectral flatness: gió / ambience cao, nhạc thấp) | **0,31**, đều suốt bài | **0,06**: chỉ có nhạc | 0,30 (có bão) nhưng chỉ vài đoạn |
+| Độ bão hoà màu bản đồ (trung bình khung) | **0,75** (vàng cam, nóng) | 0,64 (xanh, nhạt) | 0,62 |
+| Tương phản độ sáng (độ lệch chuẩn) | 0,18 | 0,16 | 0,17 |
+
+Khung hình tại các tiếng "vút" của V01 (56–78 s) cho thấy **mỗi sự kiện hình đều có tiếng**: nhãn giải mã (có **dải sáng vàng quét qua chữ**), thẻ ảnh **bung ra** từ một dải hẹp, thẻ rời đi bằng nhoè, camera bay, và **nét vẽ tay xoáy** quanh địa danh (Ithaca).
+
+**Kém cụ thể (xếp theo mức người xem cảm thấy):**
+
+| # | Kém | Đối thủ làm | Mình đang làm | Sửa |
+|---|---|---|---|---|
+| F1 | **Chữ / thẻ / nhãn không có tiếng** | Mỗi nhãn, thẻ, cú bay có 1 tiếng nhỏ (~30 / phút) | Chỉ ~5 SFX / phút, nhãn và thẻ im lặng | Mỗi sự kiện hình 1 tiếng nhỏ: nhãn giải mã = tick / glitch ngắn, thẻ vào = pop / swish, thẻ ra = swish ngược, bay = whoosh theo độ dài. Tiếng **nhấn** (hit) vẫn ≤ 1 / nhịp. **Cần Lucas duyệt đổi Bible §6** ("tối đa 1 SFX / nhịp") |
+| F2 | **Không có lớp ambience** | Luôn có nền "khí" (gió, biển, không khí) dưới giọng | Chỉ nhạc, ngoài 2–3 đoạn bão | Một lớp ambience theo nơi chốn chạy suốt bài: biển (chặng biển), gió (núi / đèo), đám đông / bước quân (đoàn quân), −30 đến −34 LUFS; nhịp lặng giữ gió nhẹ |
+| F3 | **Nền quá nhỏ so với giọng** | Nhạc + SFX + ambience đầy, ~7 dB dưới mix | Nhạc ~16 dB dưới giọng | Nâng nền lên ~10–12 dB dưới giọng (nhạc ~−25 LUFS trước trim) và kiểm lại bằng tai |
+| F4 | **Nhãn giải mã "nhạt"** | Dải sáng vàng quét qua chữ khi giải mã, chữ condensed, có dòng chữ nhỏ bên dưới | Ký tự vàng nhảy rồi thành trắng, không dải sáng | Thêm dải sáng vàng quét trong `StopLabel` (≈ 8 frame), đi cùng tiếng tick ở F1 |
+| F5 | **Tuyến kém nổi** | Nét dày, phát sáng mạnh, đầu tuyến vẽ liền rồi mới thành nét đứt | Nét đứt mảnh, glow nhẹ | `GlowRoute`: glow dày hơn, đầu tuyến liền ~1 s rồi chuyển nét đứt |
+| F6 | **Màu bản đồ nhạt, lạnh** | Cấp màu nóng, vàng cam, bão hoà cao | Blue Marble gốc, xanh nhạt | Tăng bão hoà ~15 %, ấm hoá đất liền trong `make-plates.py` (cắt lại tấm, không render lại cả kit) |
+| F7 | **Thiếu chi tiết nhỏ** | Nét vẽ tay khoanh địa danh quan trọng; tàu to có vệt nước; handle cố định trên màn hình | Không có | Thêm `Scribble` (nét khoanh vẽ dần) cho 2–3 nơi then chốt / tập; `Vessel` / `Army` to hơn + vệt; handle `@MappedJourneys` mờ ở dải dưới |
+| F8 | Ảnh vệ tinh gần kém nét | Nguồn ảnh nét hơn khi zoom gần | Blue Marble chỉ nét tới ~300 km | Đã có trong C3 (Sentinel-2, kiểm giấy phép) |
+
+**Đã làm 2026-10-30 (kit, cả Ep01 + Ep02, chưa render):** F4 dải sáng vàng quét sau chữ khi nhãn giải mã (chữ trắng ấm để đọc được trên dải) · F5 tuyến glow dày hơn, đoạn đang vẽ là nét liền sáng ("đầu bút") rồi mới thành nét đứt · F6 cấp màu bản đồ `saturate 1.25 / contrast 1.06 / sepia 0.08` trong `SatMap`: độ bão hoà 0,658 → **0,775** (đối thủ 0,748) · F7 `Scribble` (nét vàng khoanh vẽ tay: Ep01 Troy, Tiber; Ep02 Rhône, đèo), `Vessel` / `Army` 156 → 196 px, thuyền có vệt nước, `Handle` "@MappedJourneys" mờ ngay dưới phụ đề. Còn F1–F3 (âm thanh): chờ SFX theo `05_SFX-CAN-TAI.md`.
+
+**Không chép:** clip phim (luật kênh), toạ độ chữ nhỏ dưới nhãn (luật ≥ 48 px; có thể thay bằng một dòng nhỏ có ích như "218 BC").
+
+**Việc cần Lucas:** (1) ✅ duyệt đổi Bible §6 cho F1 (2026-10-30); (2) tải tay bộ SFX theo danh sách `05_SFX-CAN-TAI.md` (≈ 46 file, Pixabay chặn tải tự động).
 
 Đã sửa trong kit / script trong lúc làm Ep02 (không cần làm lại): `render:j` nhắm TP −2 và báo lỗi khi vượt −1,5 dBTP; `StopLabel` ước lượng bề rộng 0,68 em; `GlowRoute` có `theoryFrom` (nét đứt thưa cho đoạn giả thuyết); `Army` (C1).

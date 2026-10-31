@@ -39,6 +39,8 @@ import { JAeneas, jAeneasDuration } from "../Style Library/J-satellite-journey/j
 import { JAeneasFull, jAeneasFullDuration } from "../Style Library/J-satellite-journey/j-aeneas-full/Video";
 import { ArmyTest, armyTestDuration } from "../Style Library/J-satellite-journey/kit-army-test";
 import { Hannibal, hannibalDuration } from "../Mapped Journeys/episodes/ep02-hannibal/Video";
+import { Magellan, magellanDuration } from "../Mapped Journeys/episodes/ep03-magellan/Video";
+import { MJ_COVERS, MJCover } from "../Mapped Journeys/covers";
 import { P2DuongSatCaoToc, p2DuongSatCaoTocDuration } from "../Map/p2-duong-sat-cao-toc/Video";
 import { P3DbsclSutLun, p3DbsclSutLunDuration } from "../Map/p3-dbscl-sut-lun/Video";
 import { P1BruneiChiaDoi, p1BruneiChiaDoiDuration } from "../Map/p1-brunei-chia-doi/Video";
@@ -135,6 +137,14 @@ export const RemotionRoot: React.FC = () => {
           fps={PVR.fps}
           durationInFrames={hannibalDuration(PVR.fps)}
         />
+        <Composition
+          id="MJ-ep03-magellan"
+          component={Magellan}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={magellanDuration(PVR.fps)}
+        />
       </Folder>
       <Folder name="Map">
         <Composition
@@ -177,6 +187,14 @@ export const RemotionRoot: React.FC = () => {
           fps={PVR.fps}
           durationInFrames={p5TrungQuocMuiGioDuration(PVR.fps)}
         />
+      </Folder>
+      <Folder name="MJ-Covers">
+        {MJ_COVERS.flatMap((spec) =>
+          (["A", "B", "C"] as const).map((v) => (
+            <Composition key={`${spec.slug}-${v}`} id={`MJ-Cover-${spec.slug}-${v}`} component={MJCover} defaultProps={{ slug: spec.slug, variant: v }}
+              width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
+          )),
+        )}
       </Folder>
       <Folder name="Map-Covers">
         {COVERS.map((spec) => (

@@ -7,7 +7,7 @@
 - **Yếu:** cần **tuyến đường có nguồn** (học giả nào đặt điểm nào; ghi rõ khi các truyền thống khác nhau); cần tranh public domain cho mỗi điểm chính; ảnh Blue Marble chỉ đủ nét tới khung ~300 km (zoom gần hơn cần nguồn ảnh khác, xem "Nền bản đồ").
 - **Giới hạn kit v1 (chưa xử lý):** tuyến cắt **kinh tuyến 180°** (vd. Magellan qua Thái Bình Dương); vùng **gần cực** (Mercator kéo giãn, cắt ~85°); vật di chuyển có **thuyền** (`Vessel`) và **đoàn quân** (`Army`, 2026-10-27), chưa có lạc đà / người đi bộ; `LEGS` và `KEYS` viết tay, chưa có kiểm tra tuyến cắt đất liền.
 - **Máy quay (ngoại lệ chỉ của J, Lucas 2026-10-26):** **không bao giờ đứng yên**. Bay giữa các điểm (ease in-out, ≥ 24 frame, chặng xa thì "cất cánh" zoom ra giữa đường), **đẩy chậm + xoay quanh** điểm dừng khi đứng (mặc định 1,2 % zoom / s, 0,8° / s), **nghiêng 3D** 14–28°, **motion blur** khi bay nhanh (`CameraMotionBlur`, 7 mẫu, chỉ bật khi camera bay). Vẫn **không rung, không lắc, không zoom-giật**. Các style A–I **không** được dùng ngoại lệ này.
-- **Phụ đề:** karaoke **1 dòng ≤ 3 từ / 18 ký tự** (tiếng Anh), trắng; từ khoá + số vàng nhạt, từ đang đọc vàng đậm và to hơn 10 % (`JourneySub`). Bản gốc tiếng Anh của đối thủ không có phụ đề; mình giữ phụ đề vì người xem hay tắt tiếng.
+- **Phụ đề: không dùng** (Lucas 2026-10-30, giống video mẫu; ngoại lệ chỉ của J, ghi trong `AGENTS.md`). Chữ trên màn hình chỉ còn nhãn địa danh, chữ khoá con số, chữ lớn đánh dấu vùng. `JourneySub` giữ trong kit cho bản đa ngôn ngữ sau này nếu cần.
 - **Chữ:** Bricolage Grotesque 800 cho mọi chữ (nhãn 56 px, phụ đề 70 px, hook 150 px). Đối thủ dùng chữ condensed + toạ độ chữ rất nhỏ: **không dùng toạ độ** (dưới 48 px, và không phải thông tin).
 - **Vùng an toàn:** nhãn bám theo bản đồ nên camera có thể mang nhãn ra mép; `StopLabel` **tự mờ** trước khi chạm vùng nguy hiểm. Thẻ tranh luôn đặt ở dải trên (tâm y = 470, x 380–660), ghim ở dải giữa (`MAP_CY` = 860), phụ đề ở đáy vùng an toàn.
 - **Hình ảnh (Lucas duyệt 2026-10-26, `Test/doi-thu/BAO-CAO.md` §9):** thẻ ở điểm dừng = **tranh / tranh khắc public domain** (Met, Rijksmuseum, Art Institute of Chicago, NGA, Wikimedia Commons PD-Art), cắt 4:3, phủ chung một lớp màu. **Khoảnh khắc đỉnh** (1–2 lần / video, toàn khung) = ảnh AI tự tạo theo bộ prompt chung của kênh; ảnh AI trông như thật thì bật khai báo "altered or synthetic content" khi đăng YouTube. **Không dùng** clip phim, trailer, ảnh Google, stock video. Ghi nguồn từng ảnh trong kịch bản tập.
@@ -18,6 +18,8 @@
 
 - Nguồn: **NASA Blue Marble Next Generation** (public domain; credit "NASA Earth Observatory" trong mô tả video). Bản tháng 7/2004 có địa hình + độ sâu biển: tile 21600×21600 (463 m/pixel) cho cảnh gần, bản 5400×2700 cho nền toàn cầu.
 - Cắt bằng `python -P scripts/make-plates.py` (link tải và cách dùng ở đầu script): mỗi tập 2–3 tấm, thô trước, nét sau (vd. world 15 px/độ → vùng 60 → chi tiết 240). Ảnh nguồn không đưa vào repo, chỉ đưa các tấm đã cắt (`public/images/<tập>/map/`) + `plates.json`.
+- Khung nhìn cả thế giới (9:16): tấm `world` nên cắt rộng về hai cực (Ep03: 76°S–80°N) và đặt zoom ≥ ~4,4, nếu không trên và dưới còn dải đen. Mép trên và dưới của mọi tấm tự mờ dần (`SatMap`, 2026-10-31).
+- `project` giới hạn phối cảnh và kẹp các điểm ở xa ngoài khung: ở zoom ≥ ~150 mà tuyến dài (vòng quanh thế giới), không có giới hạn này điểm bị đẩy ra ±1e9 px và nét đứt treo Chrome (Ep03, Mactan zoom 220).
 - Cần zoom gần hơn khung ~300 km (một thành phố, một eo biển nhỏ) thì cần nguồn nét hơn, vd. Sentinel-2 cloudless của EOX. **Phải kiểm tra giấy phép theo năm dữ liệu** trước khi dùng. Không dùng tile Google/Mapbox/Bing (điều khoản cấm dùng ngoài app).
 
 ## Code (`satellite-journey.tsx`)
@@ -28,6 +30,9 @@
 | `JKey`, `camAt(keys, f)`, `camSpeed` | đường bay: mỗi key là một cú bay bắt đầu ở `at`; giữa các key camera tự đẩy chậm + xoay (`push`, `orbit`); `camSpeed` quyết định bật motion blur |
 | `SatMap` | các tấm vệ tinh trong một mặt phẳng nghiêng + xoay, viền tối 4 góc |
 | `GlowRoute`, `along`, `Vessel` | tuyến nét đứt phát sáng (chặng đã đi giữ lại), điểm đầu tuyến + hướng, thuyền buồm đỏ nhấp nhô |
+| `RoutePreview` | cả tuyến loé lên ~1 s trong câu hook rồi tắt (T4) |
+| `RegionFill`, `CONDENSED` | tô cả vùng / đảo / biển từ đa giác Natural Earth (`scripts/ne-regions.py` → `regions.json` của từng tập): tô vàng (`land`), làm sáng đất (`glow`), tô biển (`sea`), viền trắng vẽ dần, `spotlight` làm tối phần còn lại, tên vùng chữ Bebas Neue cỡ lớn xoay theo dáng vùng (`nameAt`, `angle`). Biên giới hiện đại: chỉ dùng nơi không tranh chấp (Bible §8.5) |
+| `Scribble`, `Handle` | nét vàng khoanh vẽ tay quanh 1 nơi then chốt / nhịp (2–3 lần / tập); tên kênh mờ dưới phụ đề (watermark, cố ý nằm dưới vùng an toàn) |
 | `Army` | đoàn quân cho tuyến đường bộ (kit C1): 3 người lính khiên đỏ dưới cờ đỏ, chân bước so le, cùng kích thước với `Vessel`. Kiểm: `Style-J-Kit-ArmyTest` (`kit-army-test.tsx`) |
 | `StopLabel` | ghim + chữ in hoa giải mã + gạch chân vẽ dần; tự mờ khi ra khỏi vùng an toàn |
 | `PhotoCard` | thẻ tranh trên dây nối; vào bằng scale (vượt ≤ 4 %), tranh bên trong zoom chậm + vệt sáng quét, ra bằng mờ + nhoè |

@@ -13,6 +13,7 @@
  * sit in one CSS-3D plane (bearing, tilt, perspective); every overlay is drawn flat in
  * screen space at `project()`, which applies the same maths, so labels stay upright.
  */
+import { loadFont as loadBebas } from "@remotion/google-fonts/BebasNeue";
 import { AbsoluteFill, Easing, Img, interpolate, interpolateColors, random, staticFile } from "remotion";
 import { CANVAS, CLAMP, FONT, SAFE, SUB_BOTTOM, prog } from "../kit-common";
 import type { SubSkin } from "../subs";
@@ -26,7 +27,10 @@ export const J = {
   vessel: "#D8332F",
 } as const;
 
-/** Screen point the camera looks at (centre of the map "stage", above the subtitles). */
+/** Condensed display face for big region names (Bebas Neue, OFL), like the reference videos (BOC-TACH-HINH.md T1, T15). */
+export const CONDENSED = loadBebas().fontFamily;
+
+/** Screen point the camera looks at (centre of the map "stage"). */
 export const MAP_CX = CANVAS.width / 2;
 export const MAP_CY = 860;
 /** CSS perspective of the tilted map plane, px. */
@@ -51,8 +55,11 @@ export const project = (cam: JCam, lon: number, lat: number): [number, number, n
   const rx = dx * Math.cos(b) - dy * Math.sin(b);
   const ry = dx * Math.sin(b) + dy * Math.cos(b);
   const t = (cam.tilt * Math.PI) / 180;
-  const k = PERSP / (PERSP - ry * Math.sin(t));
-  return [MAP_CX + rx * k, MAP_CY + ry * Math.cos(t) * k, k];
+  // far below the frame at high zoom the denominator reaches 0 and points fly to ±1e9: a dashed route
+  // then has billions of dashes and hangs Chrome (Ep03 at zoom 220). Cap k and clamp far off-screen points.
+  const k = PERSP / Math.max(PERSP * 0.2, PERSP - ry * Math.sin(t));
+  const lim = (v: number) => Math.min(20000, Math.max(-20000, v));
+  return [lim(MAP_CX + rx * k), lim(MAP_CY + ry * Math.cos(t) * k), k];
 };
 
 /** Lon/lat polyline → screen points, densified so long legs bend correctly under perspective. */
@@ -144,17 +151,27 @@ export const camSpeed = (keys: JKey[], f: number, fps = 30) => {
 
 export type Plate = { src: string; lon0: number; lon1: number; yTop: number; yBottom: number };
 
+/**
+ * Upgrade B1, routes across the 180° meridian or right round the world: write the route's
+ * longitudes unwrapped (keep going west past −180: Guam 144.7°E becomes −215.3) and add the
+ * plates again shifted by −360 (or +360) so the map continues under them.
+ *   [...plates, ...shiftPlates(plates, -360)]
+ */
+export const shiftPlates = (plates: Plate[], dLon: number): Plate[] =>
+  plates.map((p) => ({ ...p, lon0: p.lon0 + dLon, lon1: p.lon1 + dLon }));
+
 /** Satellite plates (coarse first, finest last) in one tilted, rotated plane + vignette. */
 export const SatMap: React.FC<{ cam: JCam; plates: Plate[] }> = ({ cam, plates }) => {
   const cy = mercY(cam.lat);
   const origin = `${MAP_CX}px ${MAP_CY}px`;
   return (
-    <AbsoluteFill style={{ background: J.ink, overflow: "hidden", perspective: PERSP, perspectiveOrigin: origin }}>
+    // warmer, richer grade than raw Blue Marble (lesson F6: competitor map saturation ≈ 0.75 vs our 0.64)
+    <AbsoluteFill style={{ background: J.ink, overflow: "hidden", perspective: PERSP, perspectiveOrigin: origin, filter: "saturate(1.5) contrast(1.18) brightness(1.08) sepia(0.06)" }}>
       <AbsoluteFill style={{ transformOrigin: origin, rotate: `x ${cam.tilt}deg`, transformStyle: "preserve-3d" }}>
         <AbsoluteFill style={{ transformOrigin: origin, rotate: `${cam.bearing}deg` }}>
           {plates.map((p) => (
             <Img
-              key={p.src}
+              key={`${p.src}@${p.lon0}`} // shiftPlates copies share a src
               src={staticFile(p.src)}
               style={{
                 position: "absolute",
@@ -163,6 +180,8 @@ export const SatMap: React.FC<{ cam: JCam; plates: Plate[] }> = ({ cam, plates }
                 width: (p.lon1 - p.lon0) * cam.zoom,
                 height: (p.yTop - p.yBottom) * cam.zoom,
                 maxWidth: "none",
+                // top and bottom edges fade out: the world plate's polar cut is no hard line, region plates blend in
+                maskImage: "linear-gradient(transparent, #000 6%, #000 94%, transparent)",
               }}
             />
           ))}
@@ -171,7 +190,11 @@ export const SatMap: React.FC<{ cam: JCam; plates: Plate[] }> = ({ cam, plates }
       {/* vignette: dark corners pull the eye to the stage */}
       <AbsoluteFill
         style={{
-          background: `radial-gradient(ellipse 75% 60% at 50% ${(MAP_CY / CANVAS.height) * 100}%, rgba(0,0,0,0) 45%, rgba(4,8,16,0.72) 100%)`,
+          // T6: dark sea, deep corners and a dark band top and bottom, like the reference videos
+          background: [
+            "linear-gradient(rgba(2,5,12,0.75) 0%, rgba(2,5,12,0) 20%, rgba(2,5,12,0) 72%, rgba(2,5,12,0.8) 100%)",
+            `radial-gradient(ellipse 75% 60% at 50% ${(MAP_CY / CANVAS.height) * 100}%, rgba(0,0,0,0) 45%, rgba(4,8,16,0.78) 100%)`,
+          ].join(", "),
         }}
       />
     </AbsoluteFill>
@@ -206,7 +229,8 @@ export const along = (pts: [number, number][], p: number) => {
  * Glowing dashed route: every finished leg stays on screen (the journey visibly piles up),
  * the current leg draws on with p. `legs` are screen polylines in travel order. Legs from
  * index `theoryFrom` on are a disputed reconstruction (Ep02: the Alpine pass), drawn with
- * sparser, fainter dashes.
+ * sparser, fainter dashes. While a leg draws, its newest stretch is a solid bright stroke
+ * (the "pen"), which then settles into dashes (lesson F5).
  */
 export const GlowRoute: React.FC<{ legs: [number, number][][]; current: number; p: number; theoryFrom?: number }> = ({
   legs,
@@ -214,35 +238,59 @@ export const GlowRoute: React.FC<{ legs: [number, number][][]; current: number; 
   p,
   theoryFrom = Infinity,
 }) => {
+  const toD = (x: [number, number][]) => x.map(([a, b], i) => `${i ? "L" : "M"}${a.toFixed(1)} ${b.toFixed(1)}`).join(" ");
   const paths = legs.slice(0, current + 1).map((leg, i) => (i < current ? leg : along(leg, p).done));
-  const d = paths.filter((x) => x.length > 1).map((x) => x.map(([a, b], i) => `${i ? "L" : "M"}${a.toFixed(1)} ${b.toFixed(1)}`).join(" "));
+  const d = paths.filter((x) => x.length > 1).map(toD);
+  // the pen: the last 15 % of the leg being drawn, solid
+  const leg = legs[current];
+  let pen: string | null = null;
+  if (leg && p > 0 && p < 1) {
+    const tail = along(leg, Math.max(0, p - 0.15)).done;
+    const head = along(leg, p).done;
+    pen = toD([tail[tail.length - 1], ...head.slice(tail.length - 1)]);
+  }
   return (
     <svg width={CANVAS.width} height={CANVAS.height} style={{ position: "absolute", inset: 0 }}>
       <defs>
-        <filter id="jglow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="7" />
+        <filter id="jglow" filterUnits="userSpaceOnUse" x={-100} y={-100} width={CANVAS.width + 200} height={CANVAS.height + 200}>
+          <feGaussianBlur stdDeviation="9" />
         </filter>
       </defs>
       {d.map((path, i) => {
         const theory = i >= theoryFrom;
         return (
           <g key={i} opacity={theory ? 0.8 : 1}>
-            <path d={path} fill="none" stroke={J.route} strokeOpacity={theory ? 0.3 : 0.55} strokeWidth={12} strokeLinecap="round" filter="url(#jglow)" />
-            <path d={path} fill="none" stroke={J.route} strokeWidth={theory ? 5 : 6} strokeLinecap="round" strokeDasharray={theory ? "6 22" : "16 14"} />
+            <path d={path} fill="none" stroke={J.route} strokeOpacity={theory ? 0.35 : 0.7} strokeWidth={16} strokeLinecap="round" filter="url(#jglow)" />
+            <path d={path} fill="none" stroke={J.route} strokeWidth={theory ? 5 : 7} strokeLinecap="round" strokeDasharray={theory ? "6 22" : "20 12"} />
           </g>
         );
       })}
+      {pen && (
+        <g opacity={current >= theoryFrom ? 0.75 : 1}>
+          <path d={pen} fill="none" stroke={J.route} strokeOpacity={0.9} strokeWidth={22} strokeLinecap="round" filter="url(#jglow)" />
+          <path d={pen} fill="none" stroke={J.route} strokeWidth={8} strokeLinecap="round" />
+        </g>
+      )}
     </svg>
   );
 };
 
-/** The traveller: a small red-sailed ship pointing along the route (centre = (x, y)). */
+/** Traveller icon size, px (was 156; lesson F7: read better on a phone). */
+const TRAVELLER = 196;
+
+/** The traveller: a red-sailed ship pointing along the route, with a short wake (centre = (x, y)). */
 export const Vessel: React.FC<{ x: number; y: number; heading: number; f: number }> = ({ x, y, heading, f }) => {
   const bob = Math.sin(f / 6) * 2;
   const flip = Math.cos(heading) < 0 ? -1 : 1; // keep the sail upright: face left or right
+  const ripple = (f % 24) / 24;
   return (
-    <svg width={156} height={156} viewBox="-60 -60 120 120" style={{ position: "absolute", left: x - 78, top: y - 78 + bob, overflow: "visible" }}>
+    <svg width={TRAVELLER} height={TRAVELLER} viewBox="-60 -60 120 120" style={{ position: "absolute", left: x - TRAVELLER / 2, top: y - TRAVELLER / 2 + bob, overflow: "visible" }}>
       <ellipse cx={0} cy={22} rx={40} ry={8} fill="rgba(0,0,0,0.35)" />
+      <g style={{ scale: `${flip} 1` }}>
+        {/* wake: two white streaks trailing the stern, drifting back */}
+        <path d={`M -30 20 Q ${-52 - ripple * 6} 15 ${-74 - ripple * 10} 21`} fill="none" stroke={J.white} strokeOpacity={0.55 * (1 - ripple * 0.5)} strokeWidth={3} strokeLinecap="round" />
+        <path d={`M -28 24 Q ${-46 - ripple * 6} 28 ${-64 - ripple * 10} 26`} fill="none" stroke={J.white} strokeOpacity={0.4 * (1 - ripple * 0.5)} strokeWidth={2.5} strokeLinecap="round" />
+      </g>
       <g style={{ scale: `${flip} 1` }}>
         <path d="M -38 6 L 38 6 L 26 22 L -26 22 Z" fill="#3B2416" stroke={J.ink} strokeWidth={3} strokeLinejoin="round" />
         <line x1={0} y1={6} x2={0} y2={-46} stroke={J.ink} strokeWidth={4} />
@@ -262,7 +310,7 @@ export const Army: React.FC<{ x: number; y: number; heading: number; f: number }
   const flip = Math.cos(heading) < 0 ? -1 : 1; // march left or right, never upside down
   const wave = Math.sin(f / 5) * 4;
   return (
-    <svg width={156} height={156} viewBox="-60 -60 120 120" style={{ position: "absolute", left: x - 78, top: y - 78, overflow: "visible" }}>
+    <svg width={TRAVELLER} height={TRAVELLER} viewBox="-60 -60 120 120" style={{ position: "absolute", left: x - TRAVELLER / 2, top: y - TRAVELLER / 2, overflow: "visible" }}>
       <ellipse cx={0} cy={22} rx={46} ry={8} fill="rgba(0,0,0,0.35)" />
       <g style={{ scale: `${flip} 1` }}>
         <line x1={-38} y1={20} x2={-38} y2={-52} stroke={J.ink} strokeWidth={4} strokeLinecap="round" />
@@ -311,11 +359,11 @@ export const StopLabel: React.FC<{
   out?: number;
   side?: "left" | "right";
   size?: number;
-}> = ({ name, x, y, f, at, out = Infinity, side = "right", size = 56 }) => {
+}> = ({ name, x, y, f, at, out = Infinity, side = "right", size = 76 }) => {
   // map-anchored, so the camera can carry a label toward the platform UI: it fades out
   // before any part of it leaves the safe zone (short-form rule 1)
-  // Bricolage 800 caps run ~0.66 em per char (measured on Ep02 "NEW CARTHAGE"); 0.62 let it poke out
-  const w = name.length * size * 0.68 + 30;
+  // Bebas Neue caps run ~0.42 em per char (condensed face since 2026-10-30, BOC-TACH-HINH.md T15)
+  const w = name.length * size * 0.46 + 30;
   const room = Math.min(
     y - size * 1.3 - SAFE.top,
     CANVAS.height - SAFE.bottom - 40 - y,
@@ -341,16 +389,31 @@ export const StopLabel: React.FC<{
         style={{
           position: "absolute",
           [side === "right" ? "left" : "right"]: 18,
-          top: -size * 1.2,
-          fontFamily: FONT,
-          fontWeight: 800,
+          top: -size * 1.1,
+          fontFamily: CONDENSED,
           fontSize: size,
-          letterSpacing: 1,
+          letterSpacing: 2,
           whiteSpace: "nowrap",
-          color: interpolateColors(whiten, [0, 1], [J.gold, J.white]),
+          // the gold now lives in the scan bar; letters stay light so they read on top of it
+          color: interpolateColors(whiten, [0, 1], ["#FFF3D6", J.white]),
           textShadow: "0 3px 10px rgba(0,0,0,0.75), 0 0 2px rgba(0,0,0,0.9)",
+          isolation: "isolate",
         }}
       >
+        {/* gold scan bar sweeping behind the letters while they decode (lesson F4) */}
+        <div style={{ position: "absolute", inset: `${size * 0.06}px -8px ${size * 0.18}px -8px`, overflow: "hidden", zIndex: -1, opacity: 1 - prog(f, settled, 10) }}>
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              width: "55%",
+              left: `${-55 + prog(f, at, settled - at + 4) * 155}%`,
+              background: `linear-gradient(90deg, rgba(242,193,78,0), ${J.gold} 35%, ${J.goldDeep} 65%, rgba(227,155,27,0))`,
+              opacity: 0.9,
+            }}
+          />
+        </div>
         {text}
         <div style={{ height: 5, marginTop: 2, width: `${line * 100}%`, background: J.white, borderRadius: 3, boxShadow: "0 2px 8px rgba(0,0,0,0.6)" }} />
       </div>
@@ -459,6 +522,148 @@ export const Cross: React.FC<{ x: number; y: number; f: number; at: number; out?
 };
 
 /**
+ * Hand-drawn loop around the one place that matters in a beat, drawn on like a pen stroke
+ * (lesson F7, after the competitor's scribble around Ithaca). 1.15 turns of a wobbly ellipse.
+ */
+export const Scribble: React.FC<{ x: number; y: number; f: number; at: number; out?: number; r?: number; seed: string; color?: string }> = ({
+  x,
+  y,
+  f,
+  at,
+  out = Infinity,
+  r = 90,
+  seed,
+  color = J.gold,
+}) => {
+  const draw = interpolate(f, [at, at + 18], [0, 1], { ...CLAMP, easing: Easing.out(Easing.cubic) });
+  const o = out === Infinity ? 1 : 1 - prog(f, out, 8);
+  if (draw <= 0 || o <= 0) return null;
+  const phase = random(seed) * 6;
+  const d = Array.from({ length: 61 }, (_, i) => {
+    const t = (i / 60) * Math.PI * 2 * 1.15 - 0.6;
+    const k = 1 + 0.07 * Math.sin(i * 0.45 + phase) + 0.04 * (i / 60); // wobble, and the pen drifts outward on the overlap
+    return [x + Math.cos(t) * r * 1.3 * k, y + Math.sin(t) * r * 0.8 * k];
+  })
+    .map(([a, b], i) => `${i ? "L" : "M"}${a.toFixed(1)} ${b.toFixed(1)}`)
+    .join(" ");
+  return (
+    <svg width={CANVAS.width} height={CANVAS.height} style={{ position: "absolute", inset: 0, opacity: o }}>
+      <path d={d} pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - draw} fill="none" stroke={J.ink} strokeOpacity={0.5} strokeWidth={11} strokeLinecap="round" strokeLinejoin="round" />
+      <path d={d} pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - draw} fill="none" stroke={color} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+};
+
+/**
+ * The whole journey drawn fast inside the hook, then gone (BOC-TACH-HINH.md T4, reference V01 6–8 s):
+ * the viewer sees how tangled the route is before the story starts. `legs` are screen polylines.
+ */
+export const RoutePreview: React.FC<{ legs: [number, number][][]; f: number; at: number; out: number }> = ({ legs, f, at, out }) => {
+  const p = interpolate(f, [at, at + 30], [0, 1], { ...CLAMP, easing: Easing.inOut(Easing.cubic) });
+  const o = interpolate(f, [at, at + 4], [0, 1], CLAMP) * (1 - prog(f, out, 10));
+  if (o <= 0) return null;
+  const d = along(legs.flat(), p).done.map(([a, b], i) => `${i ? "L" : "M"}${a.toFixed(1)} ${b.toFixed(1)}`).join(" ");
+  return (
+    <svg width={CANVAS.width} height={CANVAS.height} style={{ position: "absolute", inset: 0, opacity: o }}>
+      <defs>
+        <filter id="jpreview-glow" filterUnits="userSpaceOnUse" x={-100} y={-100} width={CANVAS.width + 200} height={CANVAS.height + 200}>
+          <feGaussianBlur stdDeviation="8" />
+        </filter>
+      </defs>
+      <path d={d} fill="none" stroke={J.route} strokeOpacity={0.7} strokeWidth={14} strokeLinecap="round" filter="url(#jpreview-glow)" />
+      <path d={d} fill="none" stroke={J.route} strokeWidth={5} strokeLinecap="round" strokeDasharray="14 12" />
+    </svg>
+  );
+};
+
+/**
+ * Highlight a whole region (country, island, sea) from Natural Earth rings (scripts/ne-regions.py),
+ * after the reference videos (BOC-TACH-HINH.md T1–T3): fill, glowing white outline that draws on,
+ * optional spotlight that dims everything else, and a huge condensed name set at an angle.
+ *   kind "land": solid gold ~70 % (EGYPT) · "glow": the land itself brightened (ITHACA) · "sea": pale blue
+ */
+export const RegionFill: React.FC<{
+  cam: JCam;
+  rings: number[][][];
+  f: number;
+  at: number;
+  out?: number;
+  kind?: "land" | "glow" | "sea";
+  color?: string;
+  name?: string;
+  /** degrees; the name follows the shape (e.g. −30 for Italy's boot) */
+  angle?: number;
+  size?: number;
+  /** where the name sits (lon, lat); default: centre of the largest ring, which can be off screen for a big sea */
+  nameAt?: [number, number];
+  spotlight?: boolean;
+  /** false for a sea made of several Natural Earth pieces: their shared edges would show as lines */
+  outline?: boolean;
+  /** longitude shift for unwrapped routes (B1): −360 on the far side */
+  dLon?: number;
+}> = ({ cam, rings, f, at, out = Infinity, kind = "land", color, name, angle = 0, size = 190, nameAt, spotlight = false, outline = true, dLon = 0 }) => {
+  const inP = interpolate(f, [at, at + 12], [0, 1], { ...CLAMP, easing: Easing.out(Easing.cubic) });
+  const o = inP * (out === Infinity ? 1 : 1 - prog(f, out, 10));
+  if (o <= 0) return null;
+  const pts = rings.map((r) => projectLine(cam, r.map(([x, y]) => [x + dLon, y] as [number, number]), 0.5));
+  const d = pts.map((r) => r.map(([a, b], i) => `${i ? "L" : "M"}${a.toFixed(1)} ${b.toFixed(1)}`).join(" ") + "Z").join(" ");
+  const big = pts.reduce((a, b) => (b.length > a.length ? b : a), pts[0]);
+  const [cx, cy] = nameAt
+    ? project(cam, nameAt[0] + dLon, nameAt[1])
+    : [(Math.min(...big.map((p) => p[0])) + Math.max(...big.map((p) => p[0]))) / 2, (Math.min(...big.map((p) => p[1])) + Math.max(...big.map((p) => p[1]))) / 2];
+  const fill = color ?? (kind === "sea" ? "#5DB3E8" : J.gold);
+  const fillO = kind === "land" ? 0.7 : kind === "sea" ? 0.32 : 0.42;
+  const draw = interpolate(f, [at, at + 20], [0, 1], { ...CLAMP, easing: Easing.inOut(Easing.cubic) });
+  const textP = interpolate(f, [at + 6, at + 16], [0, 1], { ...CLAMP, easing: Easing.out(Easing.back(1.4)) });
+  return (
+    <>
+      <svg width={CANVAS.width} height={CANVAS.height} style={{ position: "absolute", inset: 0, opacity: o }}>
+        <defs>
+          <filter id="jregion-glow" filterUnits="userSpaceOnUse" x={-100} y={-100} width={CANVAS.width + 200} height={CANVAS.height + 200}>
+            <feGaussianBlur stdDeviation="6" />
+          </filter>
+        </defs>
+        {spotlight && <path d={`M0 0H${CANVAS.width}V${CANVAS.height}H0Z ${d}`} fill="rgba(2,6,14,0.55)" fillRule="evenodd" />}
+        <path d={d} fill={fill} fillOpacity={fillO * inP} fillRule="evenodd" style={kind === "glow" ? { mixBlendMode: "screen" } : undefined} />
+        {outline && (
+          <>
+            <path d={d} pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - draw} fill="none" stroke={J.white} strokeWidth={10} strokeOpacity={0.7} filter="url(#jregion-glow)" />
+            <path d={d} pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - draw} fill="none" stroke={J.white} strokeWidth={3.5} strokeLinejoin="round" />
+          </>
+        )}
+      </svg>
+      {name && (
+        <div
+          style={{
+            position: "absolute", left: cx, top: cy, translate: "-50% -50%", rotate: `${angle}deg`, scale: 0.85 + textP * 0.15, opacity: o * textP,
+            fontFamily: CONDENSED, fontSize: size, lineHeight: 0.9, letterSpacing: 2, color: J.white, whiteSpace: "nowrap", textAlign: "center",
+            textShadow: "0 0 24px rgba(255,255,255,0.55), 0 6px 18px rgba(0,0,0,0.5)",
+          }}
+        >
+          {name}
+        </div>
+      )}
+    </>
+  );
+};
+
+/**
+ * Channel handle, faint, low in the frame like the competitor's watermark (lesson F7).
+ * Deliberately below the safe line: it is a watermark, not content, so losing it under the
+ * platform UI costs nothing.
+ */
+export const Handle: React.FC<{ text?: string }> = ({ text = "@MappedJourneys" }) => (
+  <div
+    style={{
+      position: "absolute", left: 0, right: 0, top: SUB_BOTTOM + 30, textAlign: "center",
+      fontFamily: FONT, fontWeight: 800, fontSize: 48, letterSpacing: 2, color: J.white, opacity: 0.35, textShadow: "0 2px 8px rgba(0,0,0,0.6)",
+    }}
+  >
+    {text}
+  </div>
+);
+
+/**
  * A line on the map that is not the journey: drawn on with p, dashed, glowing in `color`
  * (e.g. the faint "direct route" of the hook, or a red rivalry line between two cities).
  */
@@ -471,7 +676,7 @@ export const GeoLine: React.FC<{ pts: [number, number][]; p: number; color: stri
     <svg width={CANVAS.width} height={CANVAS.height} style={{ position: "absolute", inset: 0, opacity: o }}>
       {/* own filter: a missing filter reference would hide the path */}
       <defs>
-        <filter id="jglow-line" x="-20%" y="-20%" width="140%" height="140%">
+        <filter id="jglow-line" filterUnits="userSpaceOnUse" x={-100} y={-100} width={CANVAS.width + 200} height={CANVAS.height + 200}>
           <feGaussianBlur stdDeviation="6" />
         </filter>
       </defs>
@@ -514,7 +719,7 @@ export const SourceLine: React.FC<{ text: string; f: number; at: number; out: nu
  * pops in, holds, fades. One element, ≤ 5 words (short-form rule 3).
  */
 export const BigWord: React.FC<{ text: string; f: number; at: number; out?: number; y: number; size?: number; color?: string }> = ({
-  text, f, at, out = Infinity, y, size = 150, color = J.gold,
+  text, f, at, out = Infinity, y, size = 210, color = J.gold,
 }) => {
   const s = interpolate(f, [at, at + 6, at + 11], [0.6, 1.04, 1], { ...CLAMP, easing: Easing.out(Easing.cubic) });
   const o = Math.min(prog(f, at, 5), out === Infinity ? 1 : 1 - prog(f, out, 7));
@@ -525,10 +730,10 @@ export const BigWord: React.FC<{ text: string; f: number; at: number; out?: numb
       <span
         style={{
           display: "inline-block",
-          fontFamily: FONT,
-          fontWeight: 800,
+          fontFamily: CONDENSED,
           fontSize: size,
-          lineHeight: 1,
+          lineHeight: 0.95,
+          letterSpacing: 3,
           color,
           scale: s,
           textShadow: `${depth}, 0 16px 30px rgba(0,0,0,0.65)`,
@@ -542,7 +747,7 @@ export const BigWord: React.FC<{ text: string; f: number; at: number; out?: numb
 
 /** Small caps line under the hook word (white, glow). */
 export const SubWord: React.FC<{ text: string; f: number; at: number; out?: number; y: number; size?: number; color?: string }> = ({
-  text, f, at, out = Infinity, y, size = 64, color = J.white,
+  text, f, at, out = Infinity, y, size = 84, color = J.white,
 }) => {
   const o = Math.min(prog(f, at, 6), out === Infinity ? 1 : 1 - prog(f, out, 7));
   if (o <= 0) return null;
@@ -554,9 +759,9 @@ export const SubWord: React.FC<{ text: string; f: number; at: number; out?: numb
         right: SAFE.right,
         top: y,
         textAlign: "center",
-        fontFamily: FONT,
-        fontWeight: 800,
+        fontFamily: CONDENSED,
         fontSize: size,
+        letterSpacing: 2,
         color,
         opacity: o,
         translate: `0 ${(1 - prog(f, at, 10)) * 18}px`,

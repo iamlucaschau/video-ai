@@ -12,9 +12,8 @@ import words from "../../../src/voiceover/j-aeneas.words.json";
 import plates from "../../../public/images/j-aeneas/map/plates.json";
 import { SafeGuide } from "../../../src/series/pvr/safe";
 import { MusicBed, PILLAR_MUSIC } from "../../../src/series/pvr/sfx";
-import { KaraokeSubs } from "../../subs";
 import {
-  BigWord, camAt, camSpeed, GlowRoute, type JKey, JourneySub, type Plate, PhotoCard, project, projectLine, Ring, SatMap, StopLabel, SubWord, Vessel, along,
+  BigWord, camAt, camSpeed, GlowRoute, type JKey, type Plate, PhotoCard, project, projectLine, Ring, SatMap, StopLabel, SubWord, Vessel, along,
 } from "../satellite-journey";
 
 const FPS = 30;
@@ -67,16 +66,6 @@ const KEYS: JKey[] = [
   { at: at("08"), lon: 19.5, lat: 38.6, zoom: 46, tilt: 14, bearing: 0, push: 0.03, orbit: 0.4 },
 ];
 
-/** Subtitle text per line (numerals; *keywords* in pale gold). */
-const CAPTIONS: Record<string, string> = {
-  "01": "Why did *Aeneas* wander for *7 years*, when *Italy* was only a few weeks' sail from *Troy*?",
-  "03": "It begins in *Troy*, in flames, on the coast of modern Turkey.",
-  "04": "First stop: *Thrace*, where a bleeding myrtle warns him to leave.",
-  "05": "On *Delos*, Apollo's oracle tells him: seek your *ancient mother*.",
-  "06": "His father reads it as *Crete*.",
-  "07": "Then a *plague* drives them out.",
-  "08": "So which *mother* did the god mean?",
-};
 
 /** Card centre: above the pin, kept inside the safe zone. */
 const cardX = (x: number) => Math.min(660, Math.max(380, x - 40));
@@ -150,7 +139,6 @@ export const Scene: React.FC = () => {
 export const JAeneas: React.FC = () => (
   <AbsoluteFill>
     <Scene />
-    <KaraokeSubs timing={timing} words={words} captions={CAPTIONS} Skin={JourneySub} oneLine maxWords={3} maxChars={18} />
     <Audio name="VO" src={staticFile("voiceover/j-aeneas/vo.mp3")} />
     {/* music bed (Pixabay), levelled to −28 LUFS under the voice */}
     <MusicBed file={PILLAR_MUSIC.P1} />

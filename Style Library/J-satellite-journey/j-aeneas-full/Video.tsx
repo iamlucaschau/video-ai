@@ -11,13 +11,14 @@ import { AbsoluteFill, interpolate, staticFile, useCurrentFrame } from "remotion
 import timing from "../../../src/voiceover/j-aeneas-full.timing.json";
 import words from "../../../src/voiceover/j-aeneas-full.words.json";
 import plates from "../../../public/images/j-aeneas-full/map/plates.json";
+import regions from "./regions.json";
 import { SafeGuide } from "../../../src/series/pvr/safe";
 import { MusicBed, PILLAR_MUSIC, Sfx } from "../../../src/series/pvr/sfx";
 import { CLAMP } from "../../kit-common";
-import { KaraokeSubs } from "../../subs";
+import { Ambience, type Bed, EventSounds, type EventKind } from "../journey-sound";
 import {
-  along, BigWord, camAt, camSpeed, Cross, FullFrame, GeoLine, GlowRoute, type JKey, JourneySub, type Plate, PhotoCard, project,
-  projectLine, Ring, SatMap, SourceLine, StopLabel, SubWord, Vessel,
+  along, BigWord, camAt, camSpeed, Cross, FullFrame, GeoLine, GlowRoute, type JKey, type Plate, PhotoCard, project,
+  Handle, projectLine, RegionFill, Ring, RoutePreview, SatMap, Scribble, SourceLine, StopLabel, SubWord, Vessel,
 } from "../satellite-journey";
 
 const FPS = 30;
@@ -99,16 +100,24 @@ const SAIL: [number, number][] = [
   [at("27") - 10, w("27", 7) + 10],
 ];
 
+/** Natural Earth (public domain): mainland Italy, and the seas of the voyage. */
+const ITALY = [regions.italy.reduce((a, b) => (b.length > a.length ? b : a))];
+const SEA = [...regions.mediterranean, ...regions.tyrrhenian, ...regions.ionian, ...regions.adriatic, ...regions.aegean];
+
 // ------------------------------------------------------------------ camera
 
 const KEYS: JKey[] = [
+  // hook: never one map view for more than ~4 s (lesson E10, VidIQ 2026-10-30)
   { at: 0, lon: 18.5, lat: 38.5, zoom: 34, tilt: 14, bearing: -3, push: 0.02, orbit: 0.5 },
-  { at: at("03") - 22, lon: 26.0, lat: 40.15, zoom: 300, tilt: 28, bearing: 6 },
+  { at: w("01", 5), lon: 12.8, lat: 41.6, zoom: 110, tilt: 22, bearing: 2, dur: 30 }, // "the hero Rome called its founder": push to Rome
+  { at: w("01", 9), lon: 18.5, lat: 38.5, zoom: 34, tilt: 14, bearing: 0, dur: 30 }, // "wander…": back out for the whole sea
+  // the journey starts with the bridge line, not after it
+  { at: at("02") + 4, lon: 26.0, lat: 40.15, zoom: 300, tilt: 28, bearing: 6, dur: 40 },
   { at: at("05"), lon: 26.1, lat: 40.42, zoom: 300, tilt: 26, bearing: 2 },
   { at: SAIL[1][0], lon: 25.45, lat: 37.85, zoom: 240, tilt: 26, bearing: -3, dur: 40 },
   { at: SAIL[2][0], lon: 25.05, lat: 36.35, zoom: 215, tilt: 26, bearing: 3, dur: 36 },
   // the dream: pull out until Italy is in the frame
-  { at: at("09") + 10, lon: 20.5, lat: 38.4, zoom: 70, tilt: 18, bearing: 0, push: 0.015 },
+  { at: at("09") + 10, lon: 17.5, lat: 39.6, zoom: 60, tilt: 18, bearing: 0, push: 0.015 }, // all of Italy in frame for the region glow
   { at: SAIL[3][0], lon: 22.4, lat: 36.6, zoom: 170, tilt: 24, bearing: -2, dur: 40 },
   { at: SAIL[4][0], lon: 20.4, lat: 38.7, zoom: 170, tilt: 24, bearing: -4 },
   // the forbidden strait, with Buthrotum still in the frame
@@ -134,34 +143,6 @@ const KEYS: JKey[] = [
 
 // ------------------------------------------------------------------ text
 
-/** Subtitle text per line (numerals; *keywords* in pale gold). */
-const CAPTIONS: Record<string, string> = {
-  "01": "Why did *Aeneas*, the hero *Rome* called its founder, wander for *7 years*, when *Italy* was *3 weeks'* sail from *Troy*?",
-  "02": "The answer is on this route, and in one *goddess's grudge*.",
-  "03": "It begins in burning *Troy*, in modern Turkey.",
-  "05": "First stop: *Thrace*, where a bleeding myrtle warns him to leave.",
-  "06": "On *Delos*, Apollo's oracle tells him: seek your *ancient mother*.",
-  "07": "His father reads it as *Crete*.",
-  "10": "The mother is *Italy*, where his ancestors came from.",
-  "11": "A storm throws them onto the islands of the *Harpies*.",
-  "12": "Their curse: one day, you will be hungry enough to *eat your tables*.",
-  "13": "At *Buthrotum*, a prophet warns him: don't take the *short way*.",
-  "14": "*Scylla* and *Charybdis* guard the strait.",
-  "15": "So they see *Italy* for the very first time, and have to sail on.",
-  "16": "They circle *Sicily*, past the *Cyclops* under Mount *Etna*.",
-  "17": "At *Drepanum*, his father dies.",
-  "19": "Now the *goddess* strikes.",
-  "20": "*Juno* loves one city above all, *Carthage*, and a prophecy says Aeneas' descendants will destroy it.",
-  "21": "Her storm throws the fleet to *Africa*, right into *Carthage*.",
-  "22": "Queen *Dido* tells him: this is your *7th summer* at sea.",
-  "24": "*Dido* curses his people: our nations will be *enemies forever*.",
-  "25": "That is how Virgil explains why *Rome* and *Carthage* later fought *3 wars*.",
-  "26": "At *Cumae*, the Sibyl leads him into the *underworld*, where his father shows him *Rome*.",
-  "27": "At last, at the mouth of the *Tiber*, they use flat bread as plates, and eat them.",
-  "28": "His son laughs: we're *eating our tables*.",
-  "31": "*3 weeks* of sailing became *7 years* and more than *3,000 km*.",
-  "33": "And his descendants, *Romulus* and *Remus*, would found *Rome*.",
-};
 
 /** Card centre: above the pin, kept inside the safe zone. */
 const cardX = (x: number) => Math.min(660, Math.max(380, x - 40));
@@ -199,6 +180,8 @@ const MapLayer: React.FC = () => {
         o={1 - interpolate(f, [at("26") - 10, at("26") + 6], [0, 1], CLAMP)}
         width={7}
       />
+      {/* T4: the whole seven-year tangle flashes up on "wander" */}
+      <RoutePreview legs={LEGS.map((leg) => projectLine(cam, leg))} f={f} at={w("01", 9)} out={at("02") + 6} />
       {sailing && <GlowRoute legs={LEGS.map((leg) => projectLine(cam, leg))} current={current} p={p} />}
     </AbsoluteFill>
   );
@@ -233,12 +216,14 @@ export const Scene: React.FC = () => {
 
       {/* ---- hook ---- */}
       <SourceLine text="According to Virgil's Aeneid" f={f} at={6} out={w("01", 11) - 6} />
-      <BigWord text="7 YEARS" f={f} at={w("01", 11)} out={w("02", 8) - 4} y={300} />
-      <SubWord text="vs. 3 weeks" f={f} at={w("01", 16)} out={w("02", 8) - 4} y={480} />
-      <SubWord text="ONE GODDESS'S GRUDGE" f={f} at={w("02", 8)} out={at("03") - 8} y={330} size={72} color="#F2C14E" />
+      {/* on screen from the first frame: the hook number has to land inside the first 3 s (lesson E1) */}
+      <BigWord text="7 YEARS" f={f} at={0} out={w("02", 8) - 4} y={300} />
+      <SubWord text="vs. 3 weeks" f={f} at={w("01", 16)} out={w("02", 8) - 4} y={525} />
+      <SubWord text="ONE GODDESS'S GRUDGE" f={f} at={w("02", 8)} out={at("03") - 8} y={330} size={96} color="#F2C14E" />
 
       {/* ---- act 1: the wrong mother ---- */}
       {label("troy", "TROY", w("03", 4), at("06"))}
+      <Scribble x={pt.troy[0]} y={pt.troy[1]} f={f} at={w("03", 4)} out={at("05") - 4} seed="troy" />
       {card("troy", "troy", w("04", 1), at("05") - 4)}
       {label("thrace", "THRACE", w("05", 2), at("07"))}
       {card("thrace", "thrace", w("05", 6), SAIL[1][0] + 4, { lean: 3 })}
@@ -246,16 +231,17 @@ export const Scene: React.FC = () => {
       {card("delos", "delos", w("06", 3), SAIL[2][0] + 2)}
       {label("crete", "CRETE", w("07", 5), at("10"))}
       {card("crete", "crete", w("08", 2), at("09") - 2, { lean: 3 })}
-      {card("italyDream", "dream", w("09", 1), at("11") - 4)}
-      {label("italyDream", "ITALY", w("10", 3), at("11") + 6)}
-      <Ring x={pt.italyDream[0]} y={pt.italyDream[1]} f={f} at={w("10", 3)} out={at("11") + 6} />
+      {/* waits for the pull-out to land: earlier, Italy's pin is off screen and the card sits over the top edge */}
+      {card("italyDream", "dream", w("09", 4), w("10", 2))}
+      {/* BOC-TACH-HINH.md T2: the "ancient mother" lights up, everything else dims */}
+      <RegionFill cam={cam} rings={ITALY} f={f} at={w("10", 3)} out={at("11") + 6} kind="glow" name="ITALY" size={160} angle={-48} nameAt={[14.2, 42.2]} spotlight />
 
       {/* ---- act 2: the long way round ---- */}
       {label("strophades", "STROPHADES", w("11", 6), at("13"))}
       {card("strophades", "harpies", w("11", 9), at("13") - 6)}
-      <SubWord text="EAT YOUR TABLES" f={f} at={w("12", 10)} out={at("13") - 2} y={KEY_Y} size={72} color="#F2C14E" />
+      <SubWord text="EAT YOUR TABLES" f={f} at={w("12", 10)} out={at("13") - 2} y={KEY_Y} size={96} color="#F2C14E" />
       {label("buthrotum", "BUTHROTUM", w("13", 1), at("15"))}
-      <SubWord text="NO SHORTCUT" f={f} at={w("13", 9)} out={at("15") - 4} y={KEY_Y} size={72} color="#F2C14E" />
+      <SubWord text="NO SHORTCUT" f={f} at={w("13", 9)} out={at("15") - 4} y={KEY_Y} size={96} color="#F2C14E" />
       <Cross x={pt.messina[0]} y={pt.messina[1]} f={f} at={w("14", 0)} out={at("16")} />
       {label("castrum", "ITALY", at("16") - 6, at("16") + 50)}
       {label("etna", "MOUNT ETNA", w("16", 7), at("17") + 10)}
@@ -273,21 +259,24 @@ export const Scene: React.FC = () => {
       <Ring x={pt.carthage[0]} y={pt.carthage[1]} f={f} at={w("20", 6)} out={at("26")} color="#E5383B" />
       {card("carthage", "storm", w("21", 1), at("22") - 4)}
       {card("carthage", "carthage", w("22", 1), w("24", 1) - 2, { lean: 3 })}
-      <SubWord text="7TH SUMMER" f={f} at={w("22", 7)} out={at("23") + 30} y={KEY_Y} size={72} color="#F2C14E" />
+      <SubWord text="7TH SUMMER" f={f} at={w("22", 7)} out={at("23") + 30} y={KEY_Y} size={96} color="#F2C14E" />
       {label("rome", "ROME", w("25", 6), at("26"))}
-      <SubWord text="3 PUNIC WARS" f={f} at={w("25", 11)} out={at("26")} y={KEY_Y} size={72} color="#E5383B" />
+      <SubWord text="3 PUNIC WARS" f={f} at={w("25", 11)} out={at("26")} y={KEY_Y} size={96} color="#E5383B" />
       {label("cumae", "CUMAE", w("26", 1), at("27"))}
       {card("cumae", "cumae", w("26", 3), at("27") - 6)}
-      <SubWord text="THE UNDERWORLD" f={f} at={w("26", 8)} out={at("27") - 4} y={KEY_Y} size={72} color="#F2C14E" />
+      <SubWord text="THE UNDERWORLD" f={f} at={w("26", 8)} out={at("27") - 4} y={KEY_Y} size={96} color="#F2C14E" />
 
       {/* ---- arrival ---- */}
       {label("tiber", "TIBER", w("27", 7), at("31") - 6)}
+      <Scribble x={pt.tiber[0]} y={pt.tiber[1]} f={f} at={w("27", 7)} out={at("29")} seed="tiber" />
       {card("tiber", "tiber", w("27", 10), at("30") + 10)}
-      <SubWord text="THEY ARRIVED" f={f} at={w("30", 0)} out={at("31") - 4} y={KEY_Y} size={72} color="#F2C14E" />
+      <SubWord text="THEY ARRIVED" f={f} at={w("30", 0)} out={at("31") - 4} y={KEY_Y} size={96} color="#F2C14E" />
 
       {/* ---- payoff ---- */}
+      {/* T3: the whole sea he wandered, outlined behind the payoff */}
+      <RegionFill cam={cam} rings={SEA} f={f} at={w("31", 0)} out={at("33") - 4} kind="sea" outline={false} />
       <BigWord text="7 YEARS" f={f} at={w("31", 5)} out={at("33") - 4} y={300} />
-      <SubWord text="3,000+ KM" f={f} at={w("31", 10)} out={at("33") - 4} y={480} size={72} />
+      <SubWord text="3,000+ KM" f={f} at={w("31", 10)} out={at("33") - 4} y={525} size={96} />
       {label("rome", "ROME", w("33", 8), Infinity)}
       <Ring x={pt.rome[0]} y={pt.rome[1]} f={f} at={w("33", 8)} />
 
@@ -305,7 +294,7 @@ export const Scene: React.FC = () => {
  */
 const SFX: { file: string; at: number; level?: number; seconds?: number }[] = [
   { file: "sfx/hit/cinematic-piano-hit-567216.mp3", at: w("01", 11), level: -17 },
-  { file: "sfx/whoosh/whoosh-cinematic-376875.mp3", at: KEYS[1].at, level: -17 },
+  { file: "sfx/whoosh/whoosh-cinematic-376875.mp3", at: KEYS[3].at, level: -17 }, // the flight to Troy
   { file: "sfx/whoosh/simple-whoosh-382724.mp3", at: at("09") + 8, level: -20 },
   { file: "sfx/ambience/mixkit-calm-thunderstorm-jungle-2415.mp3", at: at("11") - 6, level: -23, seconds: 4.5 },
   { file: "sfx/deephit/impact-thud-291047.mp3", at: w("14", 0), level: -22 },
@@ -319,6 +308,68 @@ const SFX: { file: string; at: number; level?: number; seconds?: number }[] = [
   { file: "sfx/whoosh/epic-whoosh-478371.mp3", at: KEYS[KEYS.length - 2].at, level: -17 },
   { file: "sfx/hit/cinematic-piano-hit-567216.mp3", at: w("31", 5), level: -16 },
   { file: "sfx/deephit/impact-thud-291047.mp3", at: w("33", 8), level: -23 },
+];
+
+/** Small flight whooshes skip frames that already carry a cinematic whoosh, and the quiet beat. */
+const BIG_WHOOSH = SFX.filter((s) => s.file.includes("whoosh")).map((s) => s.at);
+const QUIET = [at("17") - 6, at("19") - 12];
+
+/**
+ * One small sound per visual event (Bible §6, 2026-10-30), same cue expressions as the Scene.
+ * Nothing in the quiet beat (Drepanum).
+ * shortcut: cues are listed beside the JSX, not derived from it; see ep02-hannibal/Video.tsx.
+ */
+const EVENTS: [EventKind, number][] = [
+  ["chip", w("01", 16)],
+  ["chip", w("02", 8)],
+  ["label", w("03", 4)],
+  ["pen", w("03", 4) + 6],
+  ["card", w("04", 1)],
+  ["cardOut", at("05") - 4],
+  ["label", w("05", 2)],
+  ["card", w("05", 6)],
+  ["label", w("06", 1)],
+  ["card", w("06", 3) + 4],
+  ["label", w("07", 5)],
+  ["card", w("08", 2)],
+  ["card", w("09", 4)],
+  ["label", w("10", 3)],
+  ["ping", w("10", 3) + 8],
+  ["label", w("11", 6)],
+  ["card", w("11", 9)],
+  ["chip", w("12", 10)],
+  ["label", w("13", 1)],
+  ["chip", w("13", 9)],
+  ["label", at("16") - 6],
+  ["card", w("16", 5)],
+  ["label", w("16", 7)],
+  ["label", w("20", 6)],
+  ["card", w("21", 1)],
+  ["card", w("22", 1)],
+  ["chip", w("22", 7)],
+  ["label", w("25", 6)],
+  ["label", w("26", 1)],
+  ["card", w("26", 3) + 4],
+  ["chip", w("26", 8)],
+  ["label", w("27", 7)],
+  ["pen", w("27", 7) + 6],
+  ["card", w("27", 10)],
+  ["chip", w("30", 0)],
+  ["chip", w("31", 10)],
+  ["ping", w("33", 8) + 8],
+  ...KEYS.map((k): [EventKind, number] => ["fly", k.at]).filter(
+    ([, a], i) => i > 0 && BIG_WHOOSH.every((b) => Math.abs(b - a) > 6) && (a < QUIET[0] || a > QUIET[1]),
+  ),
+];
+
+/** Ambience by place: open air → the sea voyage (+ creaking ship) → Drepanum (wind only) → Juno's sea → the Tiber. */
+const BEDS: Bed[] = [
+  { file: "amb-air/meadow-wind-light-1166.mp3", from: 0, to: at("03") + 15 },
+  { file: "amb-sea/sea-waves-ambience-1189.mp3", from: at("03"), to: at("17") + 15, level: -33 },
+  { file: "amb-ship/wooden-ship-on-the-sea-1187.mp3", from: at("05"), to: at("17"), level: -36 },
+  { file: "amb-wind/light-wind-1165.mp3", from: at("17"), to: at("19") + 15, level: -33 },
+  { file: "amb-sea/distant-sea-humming-ambiance-1191.mp3", from: at("19"), to: at("27") + 15, level: -32 },
+  { file: "amb-air/meadow-wind-light-1166.mp3", from: at("27"), to: end("33") + 24, level: -33 },
 ];
 
 /**
@@ -335,10 +386,12 @@ const duck = (f: number) =>
 export const JAeneasFull: React.FC = () => (
   <AbsoluteFill>
     <Scene />
-    <KaraokeSubs timing={timing} words={words} captions={CAPTIONS} Skin={JourneySub} oneLine maxWords={3} maxChars={18} />
+    <Handle />
     <Audio name="VO" src={staticFile("voiceover/j-aeneas-full/vo.mp3")} volume={10 ** (TRIM_DB / 20)} />
-    {/* music bed (Pixabay), −28 LUFS under the voice before the headroom trim */}
-    <MusicBed file={PILLAR_MUSIC.P1} duck={duck} level={-28 + TRIM_DB} />
+    {/* music bed (Pixabay), −25 LUFS before the trim (was −28; lesson F3) */}
+    <MusicBed file={PILLAR_MUSIC.P1} duck={duck} level={-25 + TRIM_DB} />
+    <Ambience beds={BEDS} trim={TRIM_DB} />
+    <EventSounds events={EVENTS} trim={TRIM_DB} />
     {SFX.map((s, i) => (
       <Sfx key={i} {...s} level={(s.level ?? -15) + TRIM_DB} />
     ))}

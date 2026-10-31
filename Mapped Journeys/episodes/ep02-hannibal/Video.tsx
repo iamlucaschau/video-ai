@@ -12,13 +12,14 @@ import { AbsoluteFill, interpolate, staticFile, useCurrentFrame } from "remotion
 import timing from "../../../src/voiceover/hannibal.timing.json";
 import words from "../../../src/voiceover/hannibal.words.json";
 import plates from "../../../public/images/hannibal/map/plates.json";
+import regions from "./regions.json";
 import { SafeGuide } from "../../../src/series/pvr/safe";
 import { MusicBed, Sfx } from "../../../src/series/pvr/sfx";
 import { CLAMP } from "../../../Style Library/kit-common";
-import { KaraokeSubs } from "../../../Style Library/subs";
+import { Ambience, type Bed, EventSounds, type EventKind } from "../../../Style Library/J-satellite-journey/journey-sound";
 import {
-  along, Army, BigWord, camAt, camSpeed, Cross, FullFrame, GeoLine, GlowRoute, type JKey, JourneySub, type Plate, PhotoCard,
-  project, projectLine, Ring, SatMap, SourceLine, StopLabel, SubWord,
+  along, Army, BigWord, camAt, camSpeed, Cross, FullFrame, GeoLine, GlowRoute, type JKey, type Plate, PhotoCard,
+  Handle, project, projectLine, RegionFill, Ring, RoutePreview, SatMap, Scribble, SourceLine, StopLabel, SubWord,
 } from "../../../Style Library/J-satellite-journey/satellite-journey";
 
 const FPS = 30;
@@ -60,11 +61,11 @@ const w = (id: string, k: number) => {
 // ------------------------------------------------------------------ geography
 
 /** Coarse first, finest last: world + mid reused from Ep01; midwest, cartagena, alps cut from tiles B1 / C1. */
-const PLATES: Plate[] = (["world", "mid", "midwest", "cartagena", "alps"] as const).map((k) => ({ src: `${IMG}/map/${k}.jpg`, ...plates[k] }));
+export const PLATES: Plate[] = (["world", "mid", "midwest", "cartagena", "alps"] as const).map((k) => ({ src: `${IMG}/map/${k}.jpg`, ...plates[k] }));
 
 type LL = [number, number];
 /** Coordinates from each place's Wikipedia page (2026-10-27); Traversette and the Guil from FINAL, Gate 4. */
-const P = {
+export const P = {
   cartagena: [-0.9842, 37.6019],
   ebro: [0.5808, 40.7106], // Amposta, on the lower Ebro (Polybius names no crossing point)
   emporium: [3.1206, 42.1347], // Empúries
@@ -87,7 +88,7 @@ const P = {
 } satisfies Record<string, LL>;
 
 /** Land legs in marching order (waypoints keep the road on land; checked on stills). */
-const LEGS: LL[][] = [
+export const LEGS: LL[][] = [
   [P.cartagena, [-1.13, 37.98], [-0.9, 38.6], [-0.6, 39.4], [-0.2, 39.95], [0.3, 40.45], P.ebro],
   [P.ebro, [1.0, 41.1], [1.6, 41.45], [2.2, 41.6], [2.75, 41.95], P.emporium],
   [P.emporium, [2.95, 42.4], [2.8956, 42.6986], [2.85, 42.95], P.narbo],
@@ -98,10 +99,14 @@ const LEGS: LL[][] = [
   [P.guillestre, [6.8, 44.73], P.ristolas, P.pass],
   [P.pass, P.crissolo, [7.4, 44.75], P.turin],
 ];
-const THEORY_FROM = 5;
+export const THEORY_FROM = 5;
+/** Natural Earth marine polygons (public domain) that make up the sea Rome held. */
+/** Mainland Italy only: the Natural Earth country also carries Sicily and Sardinia (Rome's already). */
+const ITALY = [regions.italy.reduce((a, b) => (b.length > a.length ? b : a))];
+const SEA = [...regions.mediterranean, ...regions.tyrrhenian, ...regions.ionian, ...regions.adriatic, ...regions.aegean];
 
 /** The "two weeks' sail" of the hook: New Carthage → south of Sardinia → the Tiber (ledger #G3). */
-const DIRECT: LL[] = [[-0.98, 37.55], [1.5, 37.6], [5.0, 37.8], [8.6, 38.7], [10.5, 39.8], P.ostia];
+export const DIRECT: LL[] = [[-0.98, 37.55], [1.5, 37.6], [5.0, 37.8], [8.6, 38.7], [10.5, 39.8], P.ostia];
 /** Publius Scipio's fleet: Pisa → along Liguria → the mouth of the Rhône (Polybius 3.41.4–6). */
 const FLEET: LL[] = [P.pisa, [9.6, 43.6], [8.4, 43.6], [7.2, 43.4], [6.0, 43.0], [5.3, 43.15], P.rhoneMouth];
 
@@ -120,8 +125,12 @@ const MARCH: [number, number][] = [
 // ------------------------------------------------------------------ camera
 
 const KEYS: JKey[] = [
+  // hook: never one map view for more than ~4 s (lesson E10, VidIQ 2026-10-30)
   { at: 0, lon: 6, lat: 40.3, zoom: 55, tilt: 14, bearing: -3, push: 0.02, orbit: 0.5 },
-  { at: at("03") - 20, lon: -0.9, lat: 37.85, zoom: 220, tilt: 26, bearing: 4 },
+  { at: w("01", 8), lon: 6.8, lat: 44.8, zoom: 130, tilt: 24, bearing: 2, dur: 24 }, // "five months over the Alps": push into the snow
+  { at: w("01", 14), lon: 6, lat: 40.3, zoom: 55, tilt: 14, bearing: 0, dur: 28 }, // "when Italy…": back out for the sea route
+  // the journey starts with the bridge line, not after it
+  { at: at("02") + 4, lon: -0.9, lat: 37.85, zoom: 220, tilt: 26, bearing: 4, dur: 40 },
   // centred a little east so "NEW CARTHAGE" (right of its pin) clears the safe zone's right edge
   { at: at("04") + 10, lon: 0.1, lat: 39.0, zoom: 110, tilt: 22, bearing: 0, dur: 60 },
   { at: w("06", 1), lon: 1.6, lat: 41.5, zoom: 110, tilt: 22, bearing: -2 },
@@ -133,7 +142,8 @@ const KEYS: JKey[] = [
   { at: at("11"), lon: 9, lat: 39.5, zoom: 52, tilt: 16, bearing: 0, push: 0.015 },
   { at: at("13"), lon: 6, lat: 40, zoom: 52, tilt: 14, bearing: 0, push: 0.015 },
   // the only way left: the Alps rise
-  { at: at("14") + 4, lon: 6.2, lat: 44.4, zoom: 120, tilt: 26, bearing: 0 },
+  // pulled out far enough to show all of Italy on "Italy", the Alps between it and the army
+  { at: at("14") + 4, lon: 9.4, lat: 43.2, zoom: 62, tilt: 20, bearing: 0 },
   { at: at("15"), lon: 4.9, lat: 44.5, zoom: 200, tilt: 26, bearing: 3 },
   { at: w("15", 11), lon: 5.8, lat: 44.8, zoom: 180, tilt: 26, bearing: 0 },
   { at: at("16"), lon: 6.6, lat: 44.7, zoom: 260, tilt: 28, bearing: -3 },
@@ -151,35 +161,6 @@ const KEYS: JKey[] = [
 
 // ------------------------------------------------------------------ text
 
-/** Subtitle text per line (numerals; *keywords* in pale gold). */
-const CAPTIONS: Record<string, string> = {
-  "01": "Why did *Hannibal*, Carthage's greatest general, march for *5 months* over the *Alps*, when *Italy* was *2 weeks'* sail away?",
-  "02": "The answer is on this route, and in the one thing *Carthage* had lost: the *sea*.",
-  "03": "*Spain*, *218 BC*.",
-  "04": "*Hannibal* leads his army north from *New Carthage*.",
-  "05": "At *9*, he had sworn to his father never to be a friend of *Rome*.",
-  "06": "He crosses the *Ebro* and the *Pyrenees*, leaving troops behind to hold *Spain*.",
-  "07": "About *46,000* men cross the *Rhône*.",
-  "08": "*37 elephants* follow, ferried over on rafts.",
-  "09": "But a *Roman army* has already landed at the river's mouth.",
-  "10": "It came by *sea*.",
-  "11": "*Rome* had won the last war, and taken *Sicily* and *Sardinia*.",
-  "12": "That year, *Rome* put *220 ships* to sea.",
-  "13": "The *sea* belonged to *Rome*.",
-  "14": "So the only way into *Italy* was over the *mountains*, where *Celtic* tribes were ready to join him.",
-  "15": "At a place called the *Island*, where two rivers meet, he turns toward the *Alps*.",
-  "17": "The climb to the pass takes *9 days*.",
-  "20": "So *Hannibal* shows them the plains of *Italy*, far below.",
-  "25": "It takes *3 days* to rebuild it for the starving elephants.",
-  "26": "In the plain of the *Po*, he counts what is left.",
-  "27": "About *26,000* men.",
-  "28": "*Hannibal* later had that number engraved in *bronze*.",
-  "29": "In Virgil's *Aeneid*, Queen *Dido* prays for an *avenger* to rise from her bones.",
-  "30": "Many readers take that *avenger* to be *Hannibal*.",
-  "31": "*2 weeks* of sailing became *5 months*, *1,600 km*, and *half an army*.",
-  "32": "*Rome* held the *sea*, so *Hannibal* took the *mountains*.",
-  "33": "*Dido's avenger* had come, not by sea, but over the *Alps*.",
-};
 
 /** Card centre: above the pin, kept inside the safe zone. */
 const cardX = (x: number) => Math.min(660, Math.max(380, x - 40));
@@ -218,6 +199,8 @@ const MapLayer: React.FC = () => {
         o={1 - interpolate(f, [at("31") - 10, at("31") + 6], [0, 1], CLAMP)}
         width={7}
       />
+      {/* T4: the whole march flashes up on "when Italy", next to the two-week sea route */}
+      <RoutePreview legs={LEGS.map((leg) => projectLine(cam, leg))} f={f} at={w("01", 14)} out={at("02") + 6} />
       {marching && <GlowRoute legs={LEGS.map((leg) => projectLine(cam, leg))} current={current} p={p} theoryFrom={THEORY_FROM} />}
     </AbsoluteFill>
   );
@@ -255,29 +238,32 @@ export const Scene: React.FC = () => {
       <SourceLine text="According to Polybius, Histories" f={f} at={6} out={w("01", 8) - 6} />
       {/* on screen from the first frame: the hook number has to land inside the first 3 s */}
       <BigWord text="5 MONTHS" f={f} at={0} out={w("02", 14) - 4} y={300} />
-      <SubWord text="vs. 2 weeks" f={f} at={w("01", 16)} out={w("02", 14) - 4} y={480} />
-      <SubWord text="THE SEA" f={f} at={w("02", 14)} out={at("03") - 8} y={330} size={72} color="#F2C14E" />
+      <SubWord text="vs. 2 weeks" f={f} at={w("01", 16)} out={w("02", 14) - 4} y={525} />
+      <SubWord text="THE SEA" f={f} at={w("02", 14)} out={at("03") - 8} y={330} size={96} color="#F2C14E" />
 
       {/* ---- act 1: Spain to the Rhône ---- */}
       {label("cartagena", "NEW CARTHAGE", w("04", 6), w("06", 1))}
-      <SubWord text="AGE 9" f={f} at={w("05", 1)} out={at("06")} y={330} size={72} color="#F2C14E" />
+      <SubWord text="AGE 9" f={f} at={w("05", 1)} out={at("06")} y={330} size={96} color="#F2C14E" />
       {label("ebro", "EBRO", w("06", 3), at("07"))}
       {label("pyrenees", "PYRENEES", w("06", 6), at("07") + 10)}
       {label("rhone", "RHÔNE", w("07", 6), at("09"))}
+      <Scribble x={pt.rhone[0]} y={pt.rhone[1]} f={f} at={w("07", 6)} out={at("08") + 20} seed="rhone" />
       {card("rhone", "rhone", w("08", 1), at("09") - 4)}
 
       {/* ---- act 2: the root cause, Rome owns the sea ---- */}
-      {label("sicily", "SICILY", w("11", 8), at("13"))}
-      <Ring x={pt.sicily[0]} y={pt.sicily[1]} f={f} at={w("11", 8)} out={at("13")} color="#E5383B" />
-      {label("sardinia", "SARDINIA", w("11", 10), at("13"))}
-      <Ring x={pt.sardinia[0]} y={pt.sardinia[1]} f={f} at={w("11", 10)} out={at("13")} color="#E5383B" />
+      {/* BOC-TACH-HINH.md T1: the islands Rome took, filled red; then the whole sea */}
+      <RegionFill cam={cam} rings={regions.sicily} f={f} at={w("11", 8)} out={at("13")} color="#E5383B" name="SICILY" size={110} />
+      <RegionFill cam={cam} rings={regions.sardinia} f={f} at={w("11", 10)} out={at("13")} color="#E5383B" name="SARDINIA" size={96} angle={-80} />
+      <RegionFill cam={cam} rings={SEA} f={f} at={w("13", 1)} out={at("14") + 6} kind="sea" outline={false} color="#E5383B" name="ROME'S SEA" size={170} angle={-8} nameAt={[6.0, 40.4]} spotlight />
       {HAVE.fullFleet && <FullFrame src={`${IMG}/full-fleet.jpg`} f={f} at={at("12")} out={at("13") - 4} />}
       <BigWord text="220 SHIPS" f={f} at={w("12", 4)} out={at("13") - 2} y={300} />
       <Cross x={at2([5.0, 37.8])[0]} y={at2([5.0, 37.8])[1]} f={f} at={w("13", 1)} out={at("14") + 10} />
+      <RegionFill cam={cam} rings={ITALY} f={f} at={w("14", 5)} out={at("15") + 4} kind="glow" name="ITALY" size={170} angle={-48} nameAt={[13.2, 42.6]} spotlight />
       {label("island", "THE ISLAND", w("15", 5), at("17"))}
       <SourceLine text="One leading theory" f={f} at={w("15", 11)} out={at("17")} />
 
       {/* ---- act 3: the Alps ---- */}
+      <Scribble x={pt.pass[0]} y={pt.pass[1]} f={f} at={w("17", 4)} out={at("18") - 4} seed="pass" />
 
       {/* ---- quiet beat: the pass ---- */}
       {label("pass", "THE PASS", w("18", 2), at("22"))}
@@ -299,7 +285,7 @@ export const Scene: React.FC = () => {
 
       {/* ---- payoff ---- */}
       <BigWord text="5 MONTHS" f={f} at={w("31", 5)} out={at("33") - 4} y={300} />
-      <SubWord text="1,600 KM" f={f} at={w("31", 7)} out={at("33") - 4} y={480} size={72} />
+      <SubWord text="1,600 KM" f={f} at={w("31", 7)} out={at("33") - 4} y={525} size={96} />
       {label("pass", "ALPS", w("33", 10), Infinity)}
       <Ring x={pt.pass[0]} y={pt.pass[1]} f={f} at={w("33", 10)} />
     </AbsoluteFill>
@@ -313,16 +299,71 @@ export const Scene: React.FC = () => {
  */
 const SFX: { file: string; at: number; level?: number; seconds?: number }[] = [
   { file: "sfx/hit/cinematic-piano-hit-567216.mp3", at: w("01", 8), level: -17 },
-  { file: "sfx/whoosh/whoosh-cinematic-376875.mp3", at: KEYS[1].at, level: -17 },
+  // KEYS indices: 3 = flight to New Carthage, 9 = the sea war, 11 = the Alps rise
+  { file: "sfx/whoosh/whoosh-cinematic-376875.mp3", at: KEYS[3].at, level: -17 },
   { file: "sfx/drum/perc-military-snare-drum-sound-effect-502886.mp3", at: w("09", 2), level: -18 },
-  { file: "sfx/whoosh/simple-whoosh-382724.mp3", at: KEYS[7].at, level: -20 },
+  { file: "sfx/whoosh/simple-whoosh-382724.mp3", at: KEYS[9].at, level: -20 },
   { file: "sfx/deephit/impact-thud-291047.mp3", at: w("13", 1), level: -22 },
-  { file: "sfx/whoosh/whoosh-cinematic-5-376880.mp3", at: KEYS[9].at, level: -19 },
+  { file: "sfx/whoosh/whoosh-cinematic-5-376880.mp3", at: KEYS[11].at, level: -19 },
   { file: "sfx/ambience/mixkit-transition-windy-swoosh-1474.mp3", at: at("22") - 6, level: -19 },
   { file: "sfx/hit/cinematic-piano-hit-567216.mp3", at: w("27", 1), level: -16 },
   { file: "sfx/whoosh/epic-whoosh-478371.mp3", at: KEYS[KEYS.length - 2].at, level: -17 },
+  { file: "sfx/riser/cinematic-trailer-riser-790.mp3", at: w("31", 5) - 70, level: -22 }, // swells into the payoff number
   { file: "sfx/hit/cinematic-piano-hit-567216.mp3", at: w("31", 5), level: -16 },
+  { file: "sfx/water/sea-water-splash-1198.mp3", at: w("08", 3), level: -26 }, // "ferried": rafts on the river
   { file: "sfx/deephit/impact-thud-291047.mp3", at: w("33", 10), level: -23 },
+];
+
+/** KEYS that already carry a cinematic whoosh above, or sit in the quiet beat: no small flight whoosh. */
+const BIG_FLIGHTS = new Set([3, 9, 11, KEYS.length - 2]);
+const QUIET = [at("18"), at("22") - 12];
+
+/**
+ * One small sound per visual event (Bible §6, 2026-10-30). Cue frames are the same expressions as
+ * the Scene above; nothing in the quiet beat.
+ * shortcut: cues are listed beside the JSX, not derived from it; move labels / cards into data
+ * arrays (one list for picture and sound) when a third episode copies this.
+ */
+const EVENTS: [EventKind, number][] = [
+  ["chip", w("01", 16)],
+  ["chip", w("02", 14)],
+  ["label", w("04", 6)],
+  ["chip", w("05", 1)],
+  ["label", w("06", 3)],
+  ["label", w("06", 6)],
+  ["label", w("07", 6)],
+  ["pen", w("07", 6) + 6],
+  ["card", w("08", 1)],
+  ["cardOut", at("09") - 4],
+  ["label", w("11", 8)],
+  ["label", w("11", 10)],
+  ["chip", w("12", 4)],
+  ["label", w("15", 5)],
+  ["chip", w("15", 11)],
+  ["pen", w("17", 4)],
+  ["card", w("23", 0)],
+  ["cardOut", at("24")],
+  ["label", w("26", 5)],
+  ["label", w("29", 4)],
+  ["card", w("29", 4) + 6],
+  ["cardOut", at("30")],
+  ["label", at("30") + 6],
+  ["chip", w("31", 7)],
+  ["label", w("33", 10)],
+  ["ping", w("33", 10) + 8],
+  ...KEYS.map((k): [EventKind, number] => ["fly", k.at]).filter(([, a], i) => i > 0 && !BIG_FLIGHTS.has(i) && (a < QUIET[0] || a > QUIET[1])),
+];
+
+/** Ambience by place: air → the march → Rome's sea → the climb → the pass (wind only) → the descent → the plain. */
+const BEDS: Bed[] = [
+  { file: "amb-air/meadow-wind-light-1166.mp3", from: 0, to: at("04") + 15 },
+  { file: "amb-army/small-military-parade-marching-troops-630.mp3", from: at("04"), to: at("09") + 15, level: -33 },
+  { file: "amb-sea/distant-sea-humming-ambiance-1191.mp3", from: at("09"), to: at("14") + 15, level: -31 },
+  { file: "amb-army/small-military-parade-marching-troops-630.mp3", from: at("14"), to: at("18") + 15, level: -34 },
+  { file: "amb-wind/light-wind-1165.mp3", from: at("14"), to: at("18") + 15, level: -33 },
+  { file: "amb-wind/blizzard-cold-winds-1153.mp3", from: at("18"), to: at("22") + 15, level: -33 },
+  { file: "amb-wind/winter-wind-loop-1175.mp3", from: at("22"), to: at("26") + 15, level: -31 },
+  { file: "amb-air/meadow-wind-light-1166.mp3", from: at("26"), to: end("33") + 24, level: -33 },
 ];
 
 /** Same headroom as Ep01: the whole mix 3 dB down, mastered back to −14 LUFS by render:j. */
@@ -338,10 +379,12 @@ const MUSIC = "sfx/music/p1-history-history-music-569200.mp3";
 export const Hannibal: React.FC = () => (
   <AbsoluteFill>
     <Scene />
-    <KaraokeSubs timing={timing} words={words} captions={CAPTIONS} Skin={JourneySub} oneLine maxWords={3} maxChars={18} />
+    <Handle />
     <Audio name="VO" src={staticFile("voiceover/hannibal/vo.mp3")} volume={10 ** (TRIM_DB / 20)} />
-    {/* music bed (Pixabay), −28 LUFS under the voice before the headroom trim */}
-    <MusicBed file={MUSIC} duck={duck} level={-28 + TRIM_DB} />
+    {/* music bed (Pixabay), −25 LUFS before the trim (was −28; lesson F3: the bed sat ~16 dB under the voice) */}
+    <MusicBed file={MUSIC} duck={duck} level={-25 + TRIM_DB} />
+    <Ambience beds={BEDS} trim={TRIM_DB} />
+    <EventSounds events={EVENTS} trim={TRIM_DB} />
     {SFX.map((s, i) => (
       <Sfx key={i} {...s} level={(s.level ?? -15) + TRIM_DB} />
     ))}

@@ -131,6 +131,8 @@ Most vertical videos ignore these. Ours may not. Check every one at QA.
      2 text elements visible at once besides subtitles; no paragraph or
      2-line blocks; no dense grids of labels.
    - Subtitles: 1–3 words at a time (≤ 18 characters per chunk).
+     **Exception, style J only (Lucas 2026-10-30):** no subtitles, like the
+     reference videos; map labels, place names and number chips carry the text.
    - One clean sans family, weight 700–800, ≥ 48 px on 1080 wide. No
      cinematic/display serif fonts for text blocks or quotes.
 4. **Real SFX only** (see Sound design).

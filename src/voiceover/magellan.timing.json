@@ -1,0 +1,257 @@
+{
+  "durationInSeconds": 129.217875,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 7.059,
+      "text": "Why did Magellan's shortcut to the Spice Islands take three years, when he thought the Pacific was a few days wide?"
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 7.309041666666666,
+      "end": 12.211041666666667,
+      "text": "The answer is on this route, and in a map that made the world too small."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 12.611041666666667,
+      "end": 14.596041666666666,
+      "text": "Spain, 1519."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 14.716291666666667,
+      "end": 17.41229166666667,
+      "text": "Five ships sail for the Spice Islands."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 17.661875000000002,
+      "end": 19.884875,
+      "text": "About two hundred and seventy men are aboard."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 20.135333333333335,
+      "end": 21.800333333333334,
+      "text": "They carry food for two years."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "start": 22.049916666666668,
+      "end": 27.071916666666667,
+      "text": "In Brazil they turn south, and a wide river mouth turns out not to be a strait."
+    },
+    {
+      "id": "08",
+      "scene": "s2",
+      "start": 27.321916666666667,
+      "end": 31.55291666666667,
+      "text": "Winter traps them in a cold bay at San Julián, for five months."
+    },
+    {
+      "id": "09",
+      "scene": "s2",
+      "start": 31.80275,
+      "end": 34.52675,
+      "text": "Three captains mutiny, and Magellan crushes it."
+    },
+    {
+      "id": "10",
+      "scene": "s2",
+      "start": 34.777125,
+      "end": 36.623125,
+      "text": "A storm wrecks one of his ships."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "start": 37.023291666666665,
+      "end": 42.313291666666665,
+      "text": "Then, a hidden passage: thirty-eight days of cold, narrow channels."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "start": 42.563625,
+      "end": 44.506625,
+      "text": "One crew turns around and sails home."
+    },
+    {
+      "id": "13",
+      "scene": "s4",
+      "start": 44.90675,
+      "end": 48.68675,
+      "text": "Magellan expected the next sea to take three or four days."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "start": 48.937083333333334,
+      "end": 51.36708333333333,
+      "text": "He believed Asia lay just beyond America."
+    },
+    {
+      "id": "15",
+      "scene": "s4",
+      "start": 51.616625,
+      "end": 55.866625,
+      "text": "And the short way east, around Africa, belonged to Portugal by treaty."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "start": 56.116708333333335,
+      "end": 59.345708333333334,
+      "text": "So he sailed into the largest ocean on Earth."
+    },
+    {
+      "id": "17",
+      "scene": "s5",
+      "start": 59.845625,
+      "end": 63.022625,
+      "text": "Ninety-eight days without fresh food."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "start": 63.2725,
+      "end": 66.2715,
+      "text": "They ate biscuit turned to powder and full of worms."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "start": 66.52120833333333,
+      "end": 70.32220833333334,
+      "text": "They soaked the leather from the masts, grilled it, and ate it."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "start": 70.57179166666667,
+      "end": 72.37179166666667,
+      "text": "Even rats were sold for money."
+    },
+    {
+      "id": "21",
+      "scene": "s5",
+      "start": 72.621375,
+      "end": 75.514375,
+      "text": "Nineteen men died before they saw land again."
+    },
+    {
+      "id": "22",
+      "scene": "s6",
+      "start": 77.51475,
+      "end": 78.15375,
+      "text": "Guam."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "start": 78.273875,
+      "end": 79.80187500000001,
+      "text": "Then the Philippines."
+    },
+    {
+      "id": "24",
+      "scene": "s6",
+      "start": 80.05191666666667,
+      "end": 84.14791666666667,
+      "text": "On Mactan, the chief Lapu-Lapu refused to submit."
+    },
+    {
+      "id": "25",
+      "scene": "s6",
+      "start": 84.397625,
+      "end": 88.822625,
+      "text": "Magellan landed with forty-nine men, and died in the shallows."
+    },
+    {
+      "id": "26",
+      "scene": "s6",
+      "start": 89.07287500000001,
+      "end": 93.22487500000001,
+      "text": "With too few sailors left, the crew burned one of their own ships."
+    },
+    {
+      "id": "27",
+      "scene": "s7",
+      "start": 93.62483333333334,
+      "end": 98.26683333333334,
+      "text": "Six months later, they reached the Spice Islands, and filled the holds with cloves."
+    },
+    {
+      "id": "28",
+      "scene": "s7",
+      "start": 98.51658333333334,
+      "end": 101.77758333333334,
+      "text": "To get home, they had to sail through waters Portugal controlled."
+    },
+    {
+      "id": "29",
+      "scene": "s7",
+      "start": 102.02758333333334,
+      "end": 106.66158333333334,
+      "text": "Around Africa, with only rice and water left, twenty-one more died."
+    },
+    {
+      "id": "30",
+      "scene": "s7",
+      "start": 106.91195833333335,
+      "end": 109.06395833333335,
+      "text": "At Cape Verde, they asked what day it was."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "start": 109.183625,
+      "end": 111.391625,
+      "text": "Their logbook was one day behind."
+    },
+    {
+      "id": "32",
+      "scene": "s7",
+      "start": 111.64166666666668,
+      "end": 116.64166666666668,
+      "text": "They had sailed all the way around the world, the first to do it, and lost a day."
+    },
+    {
+      "id": "33",
+      "scene": "s8",
+      "start": 117.04175000000001,
+      "end": 119.21175000000001,
+      "text": "A few days became ninety-eight."
+    },
+    {
+      "id": "34",
+      "scene": "s8",
+      "start": 119.46125,
+      "end": 122.08125000000001,
+      "text": "A shortcut became three years."
+    },
+    {
+      "id": "35",
+      "scene": "s8",
+      "start": 122.33154166666668,
+      "end": 126.29254166666668,
+      "text": "Five ships became one, with eighteen men aboard."
+    },
+    {
+      "id": "36",
+      "scene": "s8",
+      "start": 126.54216666666667,
+      "end": 128.81816666666668,
+      "text": "And Magellan himself never came home."
+    }
+  ]
+}

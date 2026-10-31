@@ -21,10 +21,10 @@ const CLI = path.join(ROOT, "node_modules/@remotion/cli/remotion-cli.js");
 const FFMPEG = process.env.FFMPEG_PATH ?? "ffmpeg";
 const FFPROBE = process.env.FFPROBE_PATH ?? "ffprobe";
 /**
- * loudnorm aims 0.5 dB under the −1.5 dBTP ceiling: the AAC encode after it adds ~0.3 dB of
- * true peak (Ep02 2026-10-27: TP=-1.5 measured −1.2 dBFS after encoding).
+ * loudnorm aims 1.5 dB under the −1.5 dBTP ceiling: loudnorm and the AAC encode after it can land up to ~1 dB above the target
+ * true peak (Ep02 2026-10-27: TP=-1.5 → −1.2; Ep01 2026-10-30: TP=-2 → −1.4; Ep02 with event SFX 2026-10-30: TP=-2.5 → −1.4, TP=-3 → −2.7).
  */
-const MASTER = "loudnorm=I=-14:TP=-2:LRA=11,aresample=48000";
+const MASTER = "loudnorm=I=-14:TP=-3:LRA=11,aresample=48000";
 const MAX_TP = -1.5;
 
 const args = process.argv.slice(2);

@@ -1,0 +1,268 @@
+{
+  "name": "magellan",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Adult male documentary narrator, warm and grounded, American English. Curious and quick on the opening question, clear and steady through the journey; place names and numbers a beat slower. When the men starve on the empty Pacific, slow down and soften, almost quiet. No hype, no shouting. The last line lands with quiet weight.",
+  "trimSilence": true,
+  "tempo": 1.05,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.25,
+    "scene": 0.4
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.25,
+      "text": "Why did Magellan's shortcut to the Spice Islands take three years, when he thought the Pacific was a few days wide?"
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.4,
+      "text": "The answer is on this route, and in a map that made the world too small."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "Spain, 1519."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "Five ships sail for the Spice Islands."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "About two hundred and seventy men are aboard."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "They carry food for two years."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "In Brazil they turn south, and a wide river mouth turns out not to be a strait."
+    },
+    {
+      "id": "08",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "Winter traps them in a cold bay at San Julián, for five months."
+    },
+    {
+      "id": "09",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "Three captains mutiny, and Magellan crushes it."
+    },
+    {
+      "id": "10",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.4,
+      "text": "A storm wrecks one of his ships."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "Then, a hidden passage: thirty-eight days of cold, narrow channels."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.4,
+      "text": "One crew turns around and sails home."
+    },
+    {
+      "id": "13",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "Magellan expected the next sea to take three or four days."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "He believed Asia lay just beyond America."
+    },
+    {
+      "id": "15",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "And the short way east, around Africa, belonged to Portugal by treaty."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.5,
+      "text": "So he sailed into the largest ocean on Earth."
+    },
+    {
+      "id": "17",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "Ninety-eight days without fresh food."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "They ate biscuit turned to powder and full of worms."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "They soaked the leather from the masts, grilled it, and ate it."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "Even rats were sold for money."
+    },
+    {
+      "id": "21",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 2.0,
+      "text": "Nineteen men died before they saw land again."
+    },
+    {
+      "id": "22",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "Guam."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "Then the Philippines."
+    },
+    {
+      "id": "24",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "On Mactan, the chief Lapu-Lapu refused to submit."
+    },
+    {
+      "id": "25",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "Magellan landed with forty-nine men, and died in the shallows."
+    },
+    {
+      "id": "26",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.4,
+      "text": "With too few sailors left, the crew burned one of their own ships."
+    },
+    {
+      "id": "27",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "Six months later, they reached the Spice Islands, and filled the holds with cloves."
+    },
+    {
+      "id": "28",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "To get home, they had to sail through waters Portugal controlled."
+    },
+    {
+      "id": "29",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "Around Africa, with only rice and water left, twenty-one more died."
+    },
+    {
+      "id": "30",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "At Cape Verde, they asked what day it was."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "Their logbook was one day behind."
+    },
+    {
+      "id": "32",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.4,
+      "text": "They had sailed all the way around the world, the first to do it, and lost a day."
+    },
+    {
+      "id": "33",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.25,
+      "text": "A few days became ninety-eight."
+    },
+    {
+      "id": "34",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.25,
+      "text": "A shortcut became three years."
+    },
+    {
+      "id": "35",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.25,
+      "text": "Five ships became one, with eighteen men aboard."
+    },
+    {
+      "id": "36",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.4,
+      "text": "And Magellan himself never came home."
+    }
+  ]
+}

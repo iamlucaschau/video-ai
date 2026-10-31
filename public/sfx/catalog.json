@@ -405,150 +405,6 @@
     "source": "https://pixabay.com/sound-effects/36931/"
   },
   {
-    "file": "sfx/shutter/camera-burst-shutter-sound-fujifilm-xt30ii-258413.mp3",
-    "category": "shutter",
-    "title": "Camera Burst Shutter sound Fujifilm XT30ii",
-    "author": "Gaurav_Sinha",
-    "seconds": 4,
-    "lufs": -33.1,
-    "source": "https://pixabay.com/sound-effects/258413/"
-  },
-  {
-    "file": "sfx/shutter/camera-shutter-393057.mp3",
-    "category": "shutter",
-    "title": "Camera shutter",
-    "author": "spinopel",
-    "seconds": 1,
-    "lufs": -18.9,
-    "source": "https://pixabay.com/sound-effects/393057/"
-  },
-  {
-    "file": "sfx/progress/sharp-riser-407120.mp3",
-    "category": "progress",
-    "title": "Sharp riser",
-    "author": "Youssefmizani",
-    "seconds": 8,
-    "lufs": -12.2,
-    "source": "https://pixabay.com/sound-effects/407120/"
-  },
-  {
-    "file": "sfx/progress/level-up-chime-132474.mp3",
-    "category": "progress",
-    "title": "Level Up Chime",
-    "author": "Universfield",
-    "seconds": 3,
-    "lufs": -11.7,
-    "source": "https://pixabay.com/sound-effects/132474/"
-  },
-  {
-    "file": "sfx/progress/awesome-level-up-351714.mp3",
-    "category": "progress",
-    "title": "Awesome Level Up",
-    "author": "KoiRoylers",
-    "seconds": 2,
-    "lufs": -12.6,
-    "source": "https://pixabay.com/sound-effects/351714/"
-  },
-  {
-    "file": "sfx/progress/riser-intro-407123.mp3",
-    "category": "progress",
-    "title": "Riser intro",
-    "author": "Youssefmizani",
-    "seconds": 8,
-    "lufs": -14.2,
-    "source": "https://pixabay.com/sound-effects/407123/"
-  },
-  {
-    "file": "sfx/progress/xp-gain-magic-tone-453274.mp3",
-    "category": "progress",
-    "title": "XP Gain Magic Tone",
-    "author": "humordome",
-    "seconds": 6,
-    "lufs": -21.1,
-    "source": "https://pixabay.com/sound-effects/453274/"
-  },
-  {
-    "file": "sfx/progress/game-loading-sound-effect-380367.mp3",
-    "category": "progress",
-    "title": "game loading sound effect",
-    "author": "gargamel10",
-    "seconds": 6,
-    "lufs": -17.9,
-    "source": "https://pixabay.com/sound-effects/380367/"
-  },
-  {
-    "file": "sfx/progress/robot-broken-loading-206293.mp3",
-    "category": "progress",
-    "title": "Robot broken / loading",
-    "author": "Kuzu420",
-    "seconds": 2,
-    "lufs": -23.6,
-    "source": "https://pixabay.com/sound-effects/206293/"
-  },
-  {
-    "file": "sfx/deephit/riser-hit-sfx-001-289802.mp3",
-    "category": "deephit",
-    "title": "Riser Hit sfx 001",
-    "author": "AudioPapkin",
-    "seconds": 4,
-    "lufs": -12.7,
-    "source": "https://pixabay.com/sound-effects/289802/"
-  },
-  {
-    "file": "sfx/deephit/cinematic-impact-boom-05-352465.mp3",
-    "category": "deephit",
-    "title": "Cinematic Impact Boom 05",
-    "author": "Universfield",
-    "seconds": 2,
-    "lufs": -16.6,
-    "source": "https://pixabay.com/sound-effects/352465/"
-  },
-  {
-    "file": "sfx/deephit/deep-hit-175726.mp3",
-    "category": "deephit",
-    "title": "Deep Hit",
-    "author": "GregorQuendel",
-    "seconds": 4,
-    "lufs": -14.8,
-    "source": "https://pixabay.com/sound-effects/175726/"
-  },
-  {
-    "file": "sfx/deephit/cinematic-low-hit-291095.mp3",
-    "category": "deephit",
-    "title": "Cinematic Low Hit",
-    "author": "Universfield",
-    "seconds": 2,
-    "lufs": -16.6,
-    "source": "https://pixabay.com/sound-effects/291095/"
-  },
-  {
-    "file": "sfx/deephit/low-thumpy-kick-reverb-hit-494833.mp3",
-    "category": "deephit",
-    "title": "Low Thumpy Kick Reverb Hit",
-    "author": "Black_Kumizhi",
-    "seconds": 2,
-    "lufs": -13,
-    "source": "https://pixabay.com/sound-effects/494833/"
-  },
-  {
-    "file": "sfx/deephit/cinematic-impact-boom-03-294435.mp3",
-    "category": "deephit",
-    "title": "Cinematic Impact Boom 03",
-    "author": "Universfield",
-    "seconds": 3,
-    "lufs": -11.9,
-    "source": "https://pixabay.com/sound-effects/294435/"
-  },
-  {
-    "file": "sfx/deephit/deep-metal-clang-87901.mp3",
-    "category": "deephit",
-    "title": "Deep metal clang",
-    "author": "freesound_community",
-    "seconds": 1,
-    "lufs": -17.7,
-    "source": "https://pixabay.com/sound-effects/87901/"
-  },
-  {
     "file": "sfx/deephit/impact-thud-291047.mp3",
     "category": "deephit",
     "title": "Impact Thud",
@@ -556,15 +412,6 @@
     "seconds": 1,
     "lufs": -21.4,
     "source": "https://pixabay.com/sound-effects/291047/"
-  },
-  {
-    "file": "sfx/deephit/impact-cinematic-boom-02-487858.mp3",
-    "category": "deephit",
-    "title": "Impact – Cinematic Boom 02",
-    "author": "Universfield",
-    "seconds": 3,
-    "lufs": -14.4,
-    "source": "https://pixabay.com/sound-effects/487858/"
   },
   {
     "file": "sfx/hit/punch-impact-hit-567196.mp3",
@@ -583,78 +430,6 @@
     "seconds": 4,
     "lufs": -14.2,
     "source": "https://pixabay.com/sound-effects/567216/"
-  },
-  {
-    "file": "sfx/hit/ks-motion-metal-hit-351564.mp3",
-    "category": "hit",
-    "title": "KS MOTION METAL HIT",
-    "author": "ALEXIS_GAMING_CAM",
-    "seconds": 2,
-    "lufs": -24.5,
-    "source": "https://pixabay.com/sound-effects/351564/"
-  },
-  {
-    "file": "sfx/hit/heavy-cineamtic-hit-166888.mp3",
-    "category": "hit",
-    "title": "Heavy Cineamtic Hit",
-    "author": "LordSonny",
-    "seconds": 5,
-    "lufs": -8.8,
-    "source": "https://pixabay.com/sound-effects/166888/"
-  },
-  {
-    "file": "sfx/hit/cinematic-impact-hit-352702.mp3",
-    "category": "hit",
-    "title": "Cinematic Impact Hit",
-    "author": "Universfield",
-    "seconds": 3,
-    "lufs": -20.4,
-    "source": "https://pixabay.com/sound-effects/352702/"
-  },
-  {
-    "file": "sfx/hit/horror-hit-443980.mp3",
-    "category": "hit",
-    "title": "Horror Hit",
-    "author": "Universfield",
-    "seconds": 3,
-    "lufs": -15.5,
-    "source": "https://pixabay.com/sound-effects/443980/"
-  },
-  {
-    "file": "sfx/hit/powerful-impact-hit-567212.mp3",
-    "category": "hit",
-    "title": "Powerful Impact Hit",
-    "author": "Universfield",
-    "seconds": 3,
-    "lufs": -13.9,
-    "source": "https://pixabay.com/sound-effects/567212/"
-  },
-  {
-    "file": "sfx/hit/orchestra-hit-240475.mp3",
-    "category": "hit",
-    "title": "Orchestra Hit",
-    "author": "11325622",
-    "seconds": 2,
-    "lufs": -14.4,
-    "source": "https://pixabay.com/sound-effects/240475/"
-  },
-  {
-    "file": "sfx/hit/horror-impact-hit-567238.mp3",
-    "category": "hit",
-    "title": "Horror Impact Hit",
-    "author": "Universfield",
-    "seconds": 4,
-    "lufs": -11,
-    "source": "https://pixabay.com/sound-effects/567238/"
-  },
-  {
-    "file": "sfx/hit/powerful-cinematic-hit-454852.mp3",
-    "category": "hit",
-    "title": "Powerful Cinematic Hit",
-    "author": "Universfield",
-    "seconds": 3,
-    "lufs": -16.2,
-    "source": "https://pixabay.com/sound-effects/454852/"
   },
   {
     "file": "sfx/music/p1-historical-documentary-music-349042.mp3",
@@ -781,5 +556,401 @@
     "seconds": 3,
     "lufs": -10.2,
     "source": "https://mixkit.co/free-sound-effects/wind/ (Mixkit Sound Effects Free License, item 1474)"
+  },
+  {
+    "file": "sfx/tick/small-sci-fi-glitch-1030.mp3",
+    "category": "tick",
+    "title": "Small sci fi glitch",
+    "author": "Mixkit",
+    "seconds": 1.72,
+    "lufs": -20.3,
+    "source": "https://mixkit.co/free-sound-effects/download/1030/"
+  },
+  {
+    "file": "sfx/tick/cinematic-glitch-trailer-1021.mp3",
+    "category": "tick",
+    "title": "Cinematic glitch trailer",
+    "author": "Mixkit",
+    "seconds": 0.56,
+    "lufs": -12.9,
+    "source": "https://mixkit.co/free-sound-effects/download/1021/"
+  },
+  {
+    "file": "sfx/tick/cinematic-sci-fi-glitch-1022.mp3",
+    "category": "tick",
+    "title": "Cinematic sci fi glitch",
+    "author": "Mixkit",
+    "seconds": 0.83,
+    "lufs": -5.6,
+    "source": "https://mixkit.co/free-sound-effects/download/1022/"
+  },
+  {
+    "file": "sfx/tick/digital-typewriter-1363.mp3",
+    "category": "tick",
+    "title": "Digital typewriter",
+    "author": "Mixkit",
+    "seconds": 1.85,
+    "lufs": -20.6,
+    "source": "https://mixkit.co/free-sound-effects/download/1363/"
+  },
+  {
+    "file": "sfx/tick/typewriter-soft-hit-1366.mp3",
+    "category": "tick",
+    "title": "Typewriter soft hit",
+    "author": "Mixkit",
+    "seconds": 0.53,
+    "lufs": -26.9,
+    "source": "https://mixkit.co/free-sound-effects/download/1366/"
+  },
+  {
+    "file": "sfx/tick/typewriter-soft-click-1125.mp3",
+    "category": "tick",
+    "title": "Typewriter soft click",
+    "author": "Mixkit",
+    "seconds": 0.22,
+    "lufs": -35.0,
+    "source": "https://mixkit.co/free-sound-effects/download/1125/"
+  },
+  {
+    "file": "sfx/tick/data-short-input-on-typewriter-1379.mp3",
+    "category": "tick",
+    "title": "Data short input on typewriter",
+    "author": "Mixkit",
+    "seconds": 2.24,
+    "lufs": -24,
+    "source": "https://mixkit.co/free-sound-effects/download/1379/"
+  },
+  {
+    "file": "sfx/pop/quick-swoosh-1462.mp3",
+    "category": "pop",
+    "title": "Quick swoosh",
+    "author": "Mixkit",
+    "seconds": 1.25,
+    "lufs": -14.8,
+    "source": "https://mixkit.co/free-sound-effects/download/1462/"
+  },
+  {
+    "file": "sfx/pop/quick-swoosh-accent-1464.mp3",
+    "category": "pop",
+    "title": "Quick swoosh accent",
+    "author": "Mixkit",
+    "seconds": 1.1,
+    "lufs": -16.9,
+    "source": "https://mixkit.co/free-sound-effects/download/1464/"
+  },
+  {
+    "file": "sfx/pop/short-wind-swoosh-1461.mp3",
+    "category": "pop",
+    "title": "Short wind swoosh",
+    "author": "Mixkit",
+    "seconds": 1.39,
+    "lufs": -15.5,
+    "source": "https://mixkit.co/free-sound-effects/download/1461/"
+  },
+  {
+    "file": "sfx/pop/page-turn-single-1104.mp3",
+    "category": "pop",
+    "title": "Page turn single",
+    "author": "Mixkit",
+    "seconds": 0.45,
+    "lufs": -29.2,
+    "source": "https://mixkit.co/free-sound-effects/download/1104/"
+  },
+  {
+    "file": "sfx/pop/big-paper-page-turn-1105.mp3",
+    "category": "pop",
+    "title": "Big paper page turn",
+    "author": "Mixkit",
+    "seconds": 0.83,
+    "lufs": -21.8,
+    "source": "https://mixkit.co/free-sound-effects/download/1105/"
+  },
+  {
+    "file": "sfx/pop/fast-small-sweep-transition-166.mp3",
+    "category": "pop",
+    "title": "Fast small sweep transition",
+    "author": "Mixkit",
+    "seconds": 0.78,
+    "lufs": -14.6,
+    "source": "https://mixkit.co/free-sound-effects/download/166/"
+  },
+  {
+    "file": "sfx/swish/fast-air-sweep-transition-168.mp3",
+    "category": "swish",
+    "title": "Fast air sweep transition",
+    "author": "Mixkit",
+    "seconds": 0.86,
+    "lufs": -14,
+    "source": "https://mixkit.co/free-sound-effects/download/168/"
+  },
+  {
+    "file": "sfx/swish/fast-sweep-transition-174.mp3",
+    "category": "swish",
+    "title": "Fast sweep transition",
+    "author": "Mixkit",
+    "seconds": 1.0,
+    "lufs": -18.4,
+    "source": "https://mixkit.co/free-sound-effects/download/174/"
+  },
+  {
+    "file": "sfx/swish/elevating-swoosh-1466.mp3",
+    "category": "swish",
+    "title": "Elevating swoosh",
+    "author": "Mixkit",
+    "seconds": 1.03,
+    "lufs": -11.6,
+    "source": "https://mixkit.co/free-sound-effects/download/1466/"
+  },
+  {
+    "file": "sfx/swish/air-woosh-1489.mp3",
+    "category": "swish",
+    "title": "Air woosh",
+    "author": "Mixkit",
+    "seconds": 2.32,
+    "lufs": -18,
+    "source": "https://mixkit.co/free-sound-effects/download/1489/"
+  },
+  {
+    "file": "sfx/pen/writing-scribble-on-paper-2369.mp3",
+    "category": "pen",
+    "title": "Writing scribble on paper",
+    "author": "Mixkit",
+    "seconds": 1.19,
+    "lufs": -21.6,
+    "source": "https://mixkit.co/free-sound-effects/download/2369/"
+  },
+  {
+    "file": "sfx/pen/short-pencil-writing-2376.mp3",
+    "category": "pen",
+    "title": "Short pencil writing",
+    "author": "Mixkit",
+    "seconds": 0.92,
+    "lufs": -36.3,
+    "source": "https://mixkit.co/free-sound-effects/download/2376/"
+  },
+  {
+    "file": "sfx/pen/writing-pencil-3194.mp3",
+    "category": "pen",
+    "title": "Writing pencil",
+    "author": "Mixkit",
+    "seconds": 1.87,
+    "lufs": -17.5,
+    "source": "https://mixkit.co/free-sound-effects/download/3194/"
+  },
+  {
+    "file": "sfx/pen/fast-writing-3196.mp3",
+    "category": "pen",
+    "title": "Fast writing",
+    "author": "Mixkit",
+    "seconds": 0.79,
+    "lufs": -34,
+    "source": "https://mixkit.co/free-sound-effects/download/3196/"
+  },
+  {
+    "file": "sfx/ping/interface-hint-notification-911.mp3",
+    "category": "ping",
+    "title": "Interface hint notification",
+    "author": "Mixkit",
+    "seconds": 1.72,
+    "lufs": -23.4,
+    "source": "https://mixkit.co/free-sound-effects/download/911/"
+  },
+  {
+    "file": "sfx/ping/page-forward-single-chime-1107.mp3",
+    "category": "ping",
+    "title": "Page forward single chime",
+    "author": "Mixkit",
+    "seconds": 1.69,
+    "lufs": -15.8,
+    "source": "https://mixkit.co/free-sound-effects/download/1107/"
+  },
+  {
+    "file": "sfx/ping/page-turn-chime-1106.mp3",
+    "category": "ping",
+    "title": "Page turn chime",
+    "author": "Mixkit",
+    "seconds": 1.71,
+    "lufs": -21.1,
+    "source": "https://mixkit.co/free-sound-effects/download/1106/"
+  },
+  {
+    "file": "sfx/hit/cinematic-mystery-trailer-drum-hit-546.mp3",
+    "category": "hit",
+    "title": "Cinematic mystery trailer drum hit",
+    "author": "Mixkit",
+    "seconds": 5.63,
+    "lufs": -19.4,
+    "source": "https://mixkit.co/free-sound-effects/download/546/"
+  },
+  {
+    "file": "sfx/hit/deep-cinematic-subtle-drum-impact-549.mp3",
+    "category": "hit",
+    "title": "Deep cinematic subtle drum impact",
+    "author": "Mixkit",
+    "seconds": 4.5,
+    "lufs": -19.1,
+    "source": "https://mixkit.co/free-sound-effects/download/549/"
+  },
+  {
+    "file": "sfx/hit/drum-deep-impact-563.mp3",
+    "category": "hit",
+    "title": "Drum deep impact",
+    "author": "Mixkit",
+    "seconds": 5.5,
+    "lufs": -19.1,
+    "source": "https://mixkit.co/free-sound-effects/download/563/"
+  },
+  {
+    "file": "sfx/hit/cinematic-whoosh-deep-impact-1143.mp3",
+    "category": "hit",
+    "title": "Cinematic whoosh deep impact",
+    "author": "Mixkit",
+    "seconds": 4.06,
+    "lufs": -13.2,
+    "source": "https://mixkit.co/free-sound-effects/download/1143/"
+  },
+  {
+    "file": "sfx/riser/cinematic-trailer-riser-790.mp3",
+    "category": "riser",
+    "title": "Cinematic trailer riser",
+    "author": "Mixkit",
+    "seconds": 2.57,
+    "lufs": -22.3,
+    "source": "https://mixkit.co/free-sound-effects/download/790/"
+  },
+  {
+    "file": "sfx/riser/tension-and-suspense-drum-roll-577.mp3",
+    "category": "riser",
+    "title": "Tension and suspense drum roll",
+    "author": "Mixkit",
+    "seconds": 14.03,
+    "lufs": -18,
+    "source": "https://mixkit.co/free-sound-effects/download/577/"
+  },
+  {
+    "file": "sfx/riser/cinematic-wind-swell-1170.mp3",
+    "category": "riser",
+    "title": "Cinematic wind swell",
+    "author": "Mixkit",
+    "seconds": 9.72,
+    "lufs": -19.5,
+    "source": "https://mixkit.co/free-sound-effects/download/1170/"
+  },
+  {
+    "file": "sfx/deephit/deep-heartbeat-impact-498.mp3",
+    "category": "deephit",
+    "title": "Deep heartbeat impact",
+    "author": "Mixkit",
+    "seconds": 3.47,
+    "lufs": -16.2,
+    "source": "https://mixkit.co/free-sound-effects/download/498/"
+  },
+  {
+    "file": "sfx/deephit/big-cinematic-impact-788.mp3",
+    "category": "deephit",
+    "title": "Big cinematic impact",
+    "author": "Mixkit",
+    "seconds": 7.93,
+    "lufs": -15.8,
+    "source": "https://mixkit.co/free-sound-effects/download/788/"
+  },
+  {
+    "file": "sfx/amb-sea/sea-waves-ambience-1189.mp3",
+    "category": "amb-sea",
+    "title": "Sea waves ambience",
+    "author": "Mixkit",
+    "seconds": 151.67,
+    "lufs": -16.9,
+    "source": "https://mixkit.co/free-sound-effects/download/1189/"
+  },
+  {
+    "file": "sfx/amb-sea/distant-sea-humming-ambiance-1191.mp3",
+    "category": "amb-sea",
+    "title": "Distant sea humming ambiance",
+    "author": "Mixkit",
+    "seconds": 44.86,
+    "lufs": -20.8,
+    "source": "https://mixkit.co/free-sound-effects/download/1191/"
+  },
+  {
+    "file": "sfx/amb-wind/light-wind-1165.mp3",
+    "category": "amb-wind",
+    "title": "Light wind",
+    "author": "Mixkit",
+    "seconds": 18.05,
+    "lufs": -32.9,
+    "source": "https://mixkit.co/free-sound-effects/download/1165/"
+  },
+  {
+    "file": "sfx/amb-wind/blizzard-cold-winds-1153.mp3",
+    "category": "amb-wind",
+    "title": "Blizzard cold winds",
+    "author": "Mixkit",
+    "seconds": 130.55,
+    "lufs": -16.1,
+    "source": "https://mixkit.co/free-sound-effects/download/1153/"
+  },
+  {
+    "file": "sfx/amb-wind/winter-wind-loop-1175.mp3",
+    "category": "amb-wind",
+    "title": "Winter wind loop",
+    "author": "Mixkit",
+    "seconds": 13.28,
+    "lufs": -13.1,
+    "source": "https://mixkit.co/free-sound-effects/download/1175/"
+  },
+  {
+    "file": "sfx/amb-air/meadow-wind-light-1166.mp3",
+    "category": "amb-air",
+    "title": "Meadow wind light",
+    "author": "Mixkit",
+    "seconds": 23.77,
+    "lufs": -32.2,
+    "source": "https://mixkit.co/free-sound-effects/download/1166/"
+  },
+  {
+    "file": "sfx/amb-air/deep-cinematic-wind-hum-1177.mp3",
+    "category": "amb-air",
+    "title": "Deep cinematic wind hum",
+    "author": "Mixkit",
+    "seconds": 54.0,
+    "lufs": -18,
+    "source": "https://mixkit.co/free-sound-effects/download/1177/"
+  },
+  {
+    "file": "sfx/amb-army/big-army-crowd-marching-461.mp3",
+    "category": "amb-army",
+    "title": "Big army crowd marching",
+    "author": "Mixkit",
+    "seconds": 8.65,
+    "lufs": -13.8,
+    "source": "https://mixkit.co/free-sound-effects/download/461/"
+  },
+  {
+    "file": "sfx/amb-army/small-military-parade-marching-troops-630.mp3",
+    "category": "amb-army",
+    "title": "Small military parade marching troops",
+    "author": "Mixkit",
+    "seconds": 45.21,
+    "lufs": -21.7,
+    "source": "https://mixkit.co/free-sound-effects/download/630/"
+  },
+  {
+    "file": "sfx/amb-ship/wooden-ship-on-the-sea-1187.mp3",
+    "category": "amb-ship",
+    "title": "Wooden ship on the sea",
+    "author": "Mixkit",
+    "seconds": 33.35,
+    "lufs": -20.3,
+    "source": "https://mixkit.co/free-sound-effects/download/1187/"
+  },
+  {
+    "file": "sfx/water/sea-water-splash-1198.mp3",
+    "category": "water",
+    "title": "Sea water splash",
+    "author": "Mixkit",
+    "seconds": 1.74,
+    "lufs": -19.8,
+    "source": "https://mixkit.co/free-sound-effects/download/1198/"
   }
 ]
