@@ -28,7 +28,9 @@ Bắt đầu một tập mới từ thư mục này. Luật: `../../00_he-thong/
    - import manifest / timing / words: `src/voiceover/<slug>.json`, `.timing.json`, `.words.json`;
    - `P` (toạ độ điểm dừng), `LEGS` (chặng + waypoint trên biển), `DIRECT` (đường "lẽ ra"), `SAIL`, `KEYS` (cú bay camera), `CAPTIONS`, `SFX`, cards, chữ khoá;
    - đường dẫn ảnh `images/<slug>/…`, nhạc `PILLAR_MUSIC.<pillar>` (Bible §2);
-   - tên export (`<Name>`, `<name>Duration`).
+   - tên export (`<Name>`, `<name>Duration`);
+   - vật di chuyển nhận `zoom={cam.zoom}` (`<Vessel … zoom={cam.zoom} />`, cũng cho `Army`, `Pilgrim`): to 1,3× khi camera ở xa (E6).
+   Mật độ: 6–8 s / điểm, không quá ~8 s không điểm mới (Bible §4).
    Mọi mốc gắn vào chữ trong giọng đọc: `at(id)`, `end(id)`, `w(id, k)`.
 4. **Đăng ký** composition trong `src/Root.tsx` (cạnh `Style-J-SatelliteJourney-AeneasFull`), id `MJ-epNN-<slug>`.
 5. **QA:** skill `review-loop` (`npm run sheet:j -- <id> --slug <slug>`, critic mắt mới, sửa 3 lỗi tệ nhất mỗi vòng). Kiểm: tuyến không cắt đất liền, thẻ không che nhãn / ghim, dây nối nằm trong khung, chữ không chạm vùng đỏ. Ghi kết quả vào `checks.md`.

@@ -40,7 +40,7 @@ Rút từ 3 kịch bản đối thủ (`BOC-TACH-KICH-BAN.md`, "Mẫu chung") v�
 |---|---|---|
 | **Hook** (≤ 8 s) | Câu hỏi nghịch lý: **thời gian / quãng đường thật** so với **lẽ ra**. Có **định danh** nếu nhân vật chưa nổi tiếng với khán giả Mỹ | "Why did Aeneas, the hero Rome called its founder, wander for seven years, when Italy was three weeks' sail from Troy?" |
 | **Bắc cầu** | "Câu trả lời nằm trên tuyến đường này" + **gài nguyên nhân gốc** | "…and in one goddess's grudge." |
-| **Các điểm dừng** | Mỗi điểm 1–2 câu: **tới đâu, chuyện gì, hậu quả đẩy đi tiếp**. Nơi quan trọng 10–15 s, nơi phụ ~5 s | Delos → lời sấm → Crete → dịch bệnh → giấc mơ |
+| **Các điểm dừng** | Mỗi điểm 1–2 câu: **tới đâu, chuyện gì, hậu quả đẩy đi tiếp**. Nơi quan trọng 8–12 s, nơi phụ ~4–5 s (trung bình 6–8 s, §4) | Delos → lời sấm → Crete → dịch bệnh → giấc mơ |
 | **Nguyên nhân gốc / bước ngoặt** | Lộ rõ ở **40–60 %** video | Juno yêu Carthage, tiên tri con cháu Aeneas sẽ huỷ nó |
 | **Nhịp lặng** (≥ 1) | 8–10 s chậm lại cho một khoảnh khắc người; **cài từ đầu, trả ở đây** | Cõng cha ra khỏi Troy → cha mất, không bao giờ thấy Italy |
 | **"Vì sao quan trọng"** (≥ 1) | Nối hành trình với điều người xem đã biết | Lời nguyền của Dido = 3 cuộc chiến Punic |
@@ -59,9 +59,11 @@ Rút từ 3 kịch bản đối thủ (`BOC-TACH-KICH-BAN.md`, "Mẫu chung") v�
 
 | Preset | Thời lượng | Số điểm dừng | Số từ VO |
 |---|---|---|---|
-| Quick | 60–80 s | 5–7 | ~170–220 |
-| **Standard** (mặc định) | **110–135 s** | 10–15 | **~300–340** |
-| Deep | 140–180 s | 15+ | ~380–460 (chỉ khi câu chuyện cần, như đối thủ V03 177 s) |
+| Quick | 60–80 s | 8–12 | ~170–220 |
+| **Standard** (mặc định) | **110–135 s** | **15–18** | **~300–340** |
+| Deep | 140–180 s | 20+ | ~380–460 (chỉ khi câu chuyện cần, như đối thủ V03 177 s) |
+
+**Mật độ (Lucas duyệt 2026-11-01, bài học E3–E4):** trung bình **6–8 s một điểm dừng** (Ep01 ~10 s, Ep02 ~12 s, đối thủ ~6 s). "Điểm" là bất cứ gì mới trên bản đồ: ghim + nhãn mới, chặng tuyến mới, thẻ tranh, ảnh toàn khung. **Không quá ~8 s liền** mà tuyến không tiến hoặc không có điểm mới; đoạn giải thích (nguyên nhân gốc) phải gắn vào hình đang chạy (bay tới ghim mới, tuyến đỏ vẽ dần, tranh / ảnh AI). Thử bản Quick ~75 s cho cùng một tập khi có số liệu (nâng cấp B5).
 
 Giọng đo được ~150–170 wpm cả khoảng nghỉ (Ep01: 151 wpm, 133 s). Nhịp chậm hơn kênh Map (~238 wpm) là cố ý: bản đồ vệ tinh + tranh cần thời gian để nhìn.
 
@@ -115,9 +117,9 @@ Chi tiết + code: `Style Library/J-satellite-journey/README.md`. Tóm tắt:
 | Cổng | Việc | Đầu ra |
 |---|---|---|
 | 1 · Chủ đề | Chọn hành trình theo pillar; phác hook + 2 con số đối lập | 3–5 chủ đề xếp hạng |
-| 2 · Kịch bản | Viết theo §3; bảng kiểm chứng; kế hoạch hình; bản dịch VN để duyệt | `kich-ban-<slug>-FINAL.md` |
+| 2 · Kịch bản | Viết theo §3; bảng kiểm chứng; kế hoạch hình; bản dịch VN để duyệt. **Trước khi khoá, kiểm:** nguyên nhân gốc lộ ở **40–60 %** số từ VO (đếm vị trí từ, E5); kế hoạch hình đủ 15–18 điểm và không có khoảng > 8 s không điểm mới (§4, E3) | `kich-ban-<slug>-FINAL.md` |
 | 3 · Giọng đọc | Spec + `node scripts/episode.mjs prep` → `npm run voiceover` → `episode.mjs export` → `python -P scripts/words.py <slug> en` (kiểm tách câu) | `vo.mp3`, timing, words |
-| 4 · Test | Nền bản đồ (`make-plates.py`), tranh, dựng composition; stills có `safeGuide` | stills QA |
+| 4 · Test | Nền bản đồ (`make-plates.py`), tranh, dựng composition (truyền `zoom={cam.zoom}` cho `Vessel` / `Army` / `Pilgrim`, E6); stills có `safeGuide`; `review-loop` kiểm cả khoảng > 8 s không điểm mới (E3) và nhãn bị `FullFrame` che (E7) | stills QA |
 | 5 · Final | `npm run render:j -- <id> --to <mp4>` (**4K 2160×3840 mặc định**, Lucas 2026-10-31; crf 18 + master −14 LUFS + tự kiểm LUFS / true peak); contact sheet; bảng nguồn ảnh; gói đăng | MP4 + `xuat-ban.md` |
 
 **Bằng chứng + bàn giao (Lucas 2026-11-01):** mỗi cổng ghi các yêu cầu đã kiểm vào `checks.md` của tập (pass / fail / unresolved + bằng chứng thật); một cổng không qua khi còn `fail`. `progress.md` cập nhật sau mỗi cổng, có bảng **bấm giờ** từng khâu (baseline cho tập sau). Cổng 4–5 dùng skill `review-loop` có **critic mắt mới** (subagent không làm video), sửa 3 lỗi tệ nhất mỗi vòng, tối đa 3 lần cho một lỗi rồi hỏi Lucas. Cổng 5 có thêm bước **Lucas xem trên điện thoại, có tiếng, rồi nghe một lần không nhìn** trước khi duyệt.
@@ -155,4 +157,5 @@ Ghi **24 h · 7 ngày · 30 ngày** cho YouTube Shorts / TikTok / Reels: views, 
 | 2026-10-30 | Bỏ phụ đề cho style J (như video mẫu); ghi ngoại lệ trong `AGENTS.md` | Lucas |
 | 2026-10-30 | Đổi luật SFX (§6): mỗi sự kiện hình 1 tiếng nhỏ + lớp ambience suốt bài; tiếng nhấn vẫn ≤ 1 / nhịp. Lý do: đo 3 video mẫu, đối thủ ~30 tiếng / phút, mình ~5 | Lucas |
 | 2026-11-01 | Nâng cấp quy trình nhóm A (`Style Library/DE-XUAT-NANG-CAP-QUY-TRINH.md` A1–A11): `checks.md` + `progress.md` mỗi tập, critic mắt mới, sửa 4 trường, tối đa 3 lần, effort, danh sách "AI slop" cấm, bấm giờ, Lucas xem trên điện thoại. Luật SFX §6 giữ nguyên chờ quyết D-SFX | Lucas |
+| 2026-11-01 | Duyệt bài học E3–E7 (`03_DANH-GIA-NANG-CAP.md` §E): mật độ 6–8 s / điểm, Standard 15–18 điểm, không quá ~8 s không điểm mới (§4); nguyên nhân gốc 40–60 % kiểm ở Cổng 2; vật di chuyển to 1,3× khi zoom xa; không đặt nhãn dưới `FullFrame`. Áp dụng từ Ep05; Ep01–04 giữ bản đã render | Lucas |
 | 2026-10-27 | Ep02: hook A; tuyến theo đèo **Col de la Traversette**, qua Rhône ở vùng Beaucaire–Tarascon (ghi "One leading theory") | Lucas |

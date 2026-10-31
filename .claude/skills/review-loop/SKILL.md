@@ -64,7 +64,7 @@ Safe area and layout (`AGENTS.md`, README style J)
 
 Map and route
 - Land legs stay on land, sea legs stay at sea (Ep01 Gallipoli). Disputed stretches use `theoryFrom` and a "One leading theory" line.
-- The traveller (`Vessel` / `Army`) is on the head of the route and readable at the current zoom.
+- The traveller (`Vessel` / `Army` / `Pilgrim`) is on the head of the route and readable at the current zoom: it gets `zoom={cam.zoom}`, so it grows to 1.3× when the camera is far out. Ep02 lesson E6.
 - No coordinates on screen; place names in caps.
 
 Timing

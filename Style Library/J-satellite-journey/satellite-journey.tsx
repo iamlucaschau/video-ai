@@ -277,14 +277,18 @@ export const GlowRoute: React.FC<{ legs: [number, number][][]; current: number; 
 
 /** Traveller icon size, px (was 156; lesson F7: read better on a phone). */
 const TRAVELLER = 196;
+/** Lesson E6: pass `zoom={cam.zoom}` and the traveller grows to 1.3× when the camera is far out (zoom 150 → 100), where it was a few dots on a phone. */
+const travellerSize = (zoom?: number) => TRAVELLER * (zoom === undefined ? 1 : interpolate(zoom, [100, 150], [1.3, 1], CLAMP));
+type TravellerProps = { x: number; y: number; heading: number; f: number; zoom?: number };
 
 /** The traveller: a red-sailed ship pointing along the route, with a short wake (centre = (x, y)). */
-export const Vessel: React.FC<{ x: number; y: number; heading: number; f: number }> = ({ x, y, heading, f }) => {
+export const Vessel: React.FC<TravellerProps> = ({ x, y, heading, f, zoom }) => {
   const bob = Math.sin(f / 6) * 2;
   const flip = Math.cos(heading) < 0 ? -1 : 1; // keep the sail upright: face left or right
   const ripple = (f % 24) / 24;
+  const size = travellerSize(zoom);
   return (
-    <svg width={TRAVELLER} height={TRAVELLER} viewBox="-60 -60 120 120" style={{ position: "absolute", left: x - TRAVELLER / 2, top: y - TRAVELLER / 2 + bob, overflow: "visible" }}>
+    <svg width={size} height={size} viewBox="-60 -60 120 120" style={{ position: "absolute", left: x - size / 2, top: y - size / 2 + bob, overflow: "visible" }}>
       <ellipse cx={0} cy={22} rx={40} ry={8} fill="rgba(0,0,0,0.35)" />
       <g style={{ scale: `${flip} 1` }}>
         {/* wake: two white streaks trailing the stern, drifting back */}
@@ -306,11 +310,12 @@ export const Vessel: React.FC<{ x: number; y: number; heading: number; f: number
  * red banner, same footprint as `Vessel` (centre = (x, y)). Legs swing in step; no bob of the
  * whole icon, so it never reads as camera shake.
  */
-export const Army: React.FC<{ x: number; y: number; heading: number; f: number }> = ({ x, y, heading, f }) => {
+export const Army: React.FC<TravellerProps> = ({ x, y, heading, f, zoom }) => {
   const flip = Math.cos(heading) < 0 ? -1 : 1; // march left or right, never upside down
   const wave = Math.sin(f / 5) * 4;
+  const size = travellerSize(zoom);
   return (
-    <svg width={TRAVELLER} height={TRAVELLER} viewBox="-60 -60 120 120" style={{ position: "absolute", left: x - TRAVELLER / 2, top: y - TRAVELLER / 2, overflow: "visible" }}>
+    <svg width={size} height={size} viewBox="-60 -60 120 120" style={{ position: "absolute", left: x - size / 2, top: y - size / 2, overflow: "visible" }}>
       <ellipse cx={0} cy={22} rx={46} ry={8} fill="rgba(0,0,0,0.35)" />
       <g style={{ scale: `${flip} 1` }}>
         <line x1={-38} y1={20} x2={-38} y2={-52} stroke={J.ink} strokeWidth={4} strokeLinecap="round" />
@@ -345,14 +350,15 @@ export const Army: React.FC<{ x: number; y: number; heading: number; f: number }
  * Pilgrim on foot (kit C1, Ep04 Xuanzang): a monk in a brown robe with a book pack, leading a
  * red horse loaded with bundles. Same footprint as `Vessel`; legs swing, no bob.
  */
-export const Pilgrim: React.FC<{ x: number; y: number; heading: number; f: number }> = ({ x, y, heading, f }) => {
+export const Pilgrim: React.FC<TravellerProps> = ({ x, y, heading, f, zoom }) => {
   const flip = Math.cos(heading) < 0 ? -1 : 1;
   const s = Math.sin(f / 3.5);
   const leg = (x0: number, y0: number, ph: number, len = 18) => (
     <line x1={x0} y1={y0} x2={x0 + Math.sin(f / 3.5 + ph) * 5} y2={y0 + len} stroke={J.ink} strokeWidth={4} strokeLinecap="round" />
   );
+  const size = travellerSize(zoom);
   return (
-    <svg width={TRAVELLER} height={TRAVELLER} viewBox="-60 -60 120 120" style={{ position: "absolute", left: x - TRAVELLER / 2, top: y - TRAVELLER / 2, overflow: "visible" }}>
+    <svg width={size} height={size} viewBox="-60 -60 120 120" style={{ position: "absolute", left: x - size / 2, top: y - size / 2, overflow: "visible" }}>
       <ellipse cx={0} cy={24} rx={48} ry={8} fill="rgba(0,0,0,0.35)" />
       <g style={{ scale: `${flip} 1` }}>
         {/* horse behind the monk */}
