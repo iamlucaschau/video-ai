@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Contact sheets for the review loop (.claude/skills/review-loop), style J / Mapped Journeys.
+ * Contact sheets for the review loop (.claude/skills/review-loop), any style (`npm run sheet`, same script;
+ * written for style J / Mapped Journeys). Stills with the guide need a `safeGuide` prop (studio/KIT-CONTRACT.md §4).
  * Adapted from whaleyxbt/claude-motion scripts/sheet.mjs (MIT, © 2026 whaleyxbt).
  *
  *   npm run sheet:j -- <compositionId> --slug <slug>        one still per VO line (+0.6 s), safeGuide on

@@ -27,6 +27,12 @@ file wins. For anything else, the skill (and https://www.remotion.dev/docs) wins
 | Render any composition | `npx remotion render <id> out/<name>.mp4` |
 | Render a still | `npx remotion still <id> out/frame.png --frame=60` |
 | Typecheck + lint | `npm run lint` (run after every change) |
+| Ingest a reference channel / video / folder (Studio P1) | `npm run studio:ingest -- <url or folder>` → `INGEST.md` (see `studio/README.md`) |
+| Style / formula cards + feasibility table (Studio P2) | `npm run studio:cards -- init\|check <folder>` → `KHA-THI.md` |
+| New style kit from cards / check a kit (Studio P3) | `npm run studio:kit -- new <X>-<name> --from <folder>` · `check "Style Library/<X>-<name>"` (`studio/KIT-CONTRACT.md`) |
+| Channel package from cards / export a channel as its own project (Studio P4) | `npm run studio:channel -- new "<Name>" --style <X-name> --from <folder>` · `export "<channel folder>" --to <dir> [--install]` |
+| Our render vs the reference / numbers after publishing (Studio P5) | `npm run studio:compare -- <mp4> --ref <folder>` → `SO-SANH.md` · `npm run studio:stats -- init\|import\|report` → `SO-LIEU.md` |
+| Render / contact sheet, any style | `npm run render:style -- <id>` · `npm run sheet -- <id> …` (same as `render:j` / `sheet:j`) |
 | Add a Remotion package | `npx remotion add @remotion/<pkg>` (keeps versions in sync) |
 | Upgrade Remotion | `npx remotion upgrade` |
 

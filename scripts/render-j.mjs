@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Style J (Mapped Journeys) render: Remotion render at crf 18, 4K (scale 2) → ffmpeg master to
+ * Render for any style (`npm run render:style`, same script; written for style J / Mapped Journeys):
+ * Remotion render at crf 18, 4K (scale 2) → ffmpeg master to
  * -14 LUFS / -1.5 dBTP (AAC 192k, 48 kHz, +faststart) → ffprobe + ebur128 check.
  *
  *   npm run render:j -- <compositionId> [--to <file.mp4>] [--frames=0-89] [--keep-raw]

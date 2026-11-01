@@ -1,0 +1,67 @@
+{
+  "source": {
+    "channel": "History Maps Lore",
+    "url": "https://www.youtube.com/channel/UCFREyVa1PdzGJLugAZmnfcg",
+    "videos": ["GDMJDgUyLNk", "W1blLBpUeZ8", "VspwgSBqlGE", "B-TKxnbkezE"],
+    "analysed": "2026-11-01",
+    "report": "BAO-CAO.md"
+  },
+  "format": {
+    "aspect": "9:16",
+    "seconds": [51, 99],
+    "wpm": 164,
+    "lufs": -14.1,
+    "subtitles": "cháy cứng 2 dòng, sans đậm trắng có bóng ~44 px, cụm 3–9 từ, y ≈ 1250",
+    "ending": "end card TÊN NƠI · NĂM serif vàng ~2 s, 2,7–3,3 s nhạc sau lời cuối, không nối vòng, không CTA"
+  },
+  "palette": [
+    { "hex": "#122B35", "role": "biển sâu (nền)", "label": "ĐO" },
+    { "hex": "#29424E", "role": "biển nông / vùng tối", "label": "ĐO" },
+    { "hex": "#85836C", "role": "đất be xám (nền)", "label": "ĐO" },
+    { "hex": "#686551", "role": "bóng núi / đất tối", "label": "ĐO" },
+    { "hex": "#A79B83", "role": "đất sáng", "label": "ĐO" },
+    { "hex": "#BEC1BB", "role": "chữ, phụ đề, watermark", "label": "ĐO" }
+  ],
+  "type": {
+    "subtitle": "sans đậm kiểu DIN, trắng có bóng, ~44 px trên khung 1080",
+    "labels": "serif in hoa giãn kiểu Cinzel / Trajan ~20–25 px; chip ngày serif ~30 px; có lúc 6 nhãn cùng lúc",
+    "label": "ƯỚC"
+  },
+  "camera": {
+    "summary": "lia / đẩy / bay êm trên bản đồ, cú mở dài 13–33 s không cắt; dolly chậm trong diorama 3D; Ken Burns trên tranh; không xoay, không blur, không rung",
+    "label": "ƯỚC"
+  },
+  "rhythm": {
+    "shotMeanS": 7,
+    "openingShotS": 13,
+    "newInfoEveryS": 3.5,
+    "label": "ĐO"
+  },
+  "techniques": [
+    { "id": "T1", "name": "Tô lãnh thổ theo phe, biên giới đúng năm", "videos": "cả 4", "how": "đa giác biên giới năm sự kiện, tô bán trong suốt, mỗi phe một màu, lan / co theo lời", "signals": "mảng màu phe có biên khác bản đồ hiện đại", "feasibility": "yellow", "kit": "AtlasMap + dữ liệu OpenHistoricalMap (CC0), ghi credit (D8)", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T2", "name": "Cờ phe cắm trên cột", "videos": "cả 4", "how": "cờ nhỏ cắm lần lượt mỗi 0,2 s ở thủ đô / đạo quân", "signals": "icon cờ thật (lưỡi liềm, chữ thập Malta)", "feasibility": "yellow", "kit": "Flag + hình cờ public domain (Wikimedia)", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T3", "name": "Chân dung trên băng rôn / huy hiệu tròn", "videos": "cả 4", "how": "góc trên khi nhân vật được nhắc, giữ suốt câu, bảng tên serif", "signals": "tranh chân dung cổ trong khung băng rôn", "feasibility": "yellow", "kit": "Banner + Plaque + chân dung public domain", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T4", "name": "Chip mốc thời gian", "videos": "cả 4", "how": "bảng tối viền vàng, chữ in hoa giãn (18 MAY, JULY 1480)", "signals": "chip đổi theo mỗi mốc tháng trong lời", "feasibility": "green", "kit": "DateChip (Bebas ≥ 56 px theo D4)", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T5", "name": "Kính lúp phóng to nơi nhỏ", "videos": "cả 4", "how": "vòng tròn viền trắng, hai đường mảnh về điểm thật, bên trong phóng to", "signals": "vòng tròn có nội dung phóng to nối về bản đồ", "feasibility": "green", "kit": "Magnifier", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T6", "name": "Mũi tên chiến dịch / tuyến hạm đội", "videos": "cả 4", "how": "mũi tên cong màu phe vẽ dần, chuỗi icon tàu, tách nhánh", "signals": "đường cong vẽ dần có đầu mũi tên", "feasibility": "green", "kit": "CampaignArrow + Fleet + Trail", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T7", "name": "Diorama 3D (thành, pháo đài, quân, tàu)", "videos": "cả 4", "how": "mô hình 3D ánh sáng điện ảnh, máy dolly chậm", "signals": "bóng đổ và chiều sâu thật, ánh sáng nhất quán khi máy di chuyển", "feasibility": "orange", "kit": "thay bằng ảnh AI kiểu diorama tách lớp parallax (cutout.py), 2–3 cảnh / tập (D7)", "tool": "Blender", "decision": "thay", "label": "ƯỚC" },
+    { "id": "T8", "name": "Tranh / tiểu hoạ toàn khung", "videos": "cả 4", "how": "đẩy chậm hoặc lia, làm tối nửa dưới cho phụ đề", "signals": "tranh cổ có vân sơn", "feasibility": "yellow", "kit": "FullFrame (kit J) + tranh public domain", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T9", "name": "Cảnh giống quay thật", "videos": "V1 33–37 s", "how": "ngựa không người chạy trên thảo nguyên", "signals": "chuyển động tự nhiên không có khung tranh, chi tiết chảy (nhiều khả năng video AI)", "feasibility": "red", "kit": "không dựng; thay bằng tranh public domain + chuyển động bằng code", "decision": "bỏ", "label": "ƯỚC" },
+    { "id": "T10", "name": "Sơ đồ thành phố 2,5D / lưới phố vẽ dần", "videos": "V2, V3", "how": "thành nhìn nghiêng từ footprint OSM, tường viền đỏ; lưới ô vẽ dần", "signals": "khối nhà nhô lên đúng mặt bằng thật", "feasibility": "yellow", "kit": "footprint OpenStreetMap (ODbL, ghi credit) → SVG; nghiêng bằng CSS 3D như J", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T11", "name": "Nhãn serif in hoa nhỏ", "videos": "cả 4", "how": "serif ~20–25 px, có lúc 6 nhãn cùng lúc", "signals": "chữ serif nhỏ trên bản đồ", "feasibility": "green", "kit": "nhãn Bebas ≥ 48 px, ≤ 2 nhãn cùng lúc (D4)", "decision": "thay", "label": "ƯỚC" },
+    { "id": "T12", "name": "Phụ đề cháy cứng 2 dòng", "videos": "cả 4", "how": "sans đậm có bóng, cụm 3–9 từ", "signals": "phụ đề đổi theo cụm lời", "feasibility": "green", "kit": "AtlasSub, karaoke ≤ 4 từ / 26 ký tự (D3)", "decision": "thay", "label": "ƯỚC" },
+    { "id": "T13", "name": "Watermark giữa khung", "videos": "cả 4", "how": "tên kênh xám mờ ở ~55 % chiều cao suốt bài", "signals": "chữ mờ cố định", "feasibility": "green", "kit": "Handle (dưới vùng an toàn)", "decision": "thay", "label": "ĐO" },
+    { "id": "T14", "name": "End card TÊN NƠI · NĂM", "videos": "cả 4", "how": "serif vàng ánh kim + năm giữa hai gạch, ~2 s", "signals": "thẻ chữ cuối cố định", "feasibility": "green", "kit": "EndCard (ngoại lệ serif D5, cắt ≤ 0,5 s sau lời cuối D10)", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T15", "name": "Tuyến thương mại phát sáng", "videos": "V1", "how": "nét vàng Con đường Tơ lụa", "signals": "đường sáng vẽ dần", "feasibility": "green", "kit": "GlowRoute (kit J)", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T16", "name": "Dấu X từ chối", "videos": "V1", "how": "X đỏ trên mũi tên", "signals": "X đỏ bật lên", "feasibility": "green", "kit": "Cross (kit J)", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T17", "name": "Lãnh thổ co lại", "videos": "V1", "how": "vùng phe thu nhỏ còn quanh kinh đô", "signals": "biên vùng biến hình liên tục", "feasibility": "orange", "kit": "interpolatePath giữa hai đa giác; không cài thì cắt chéo hai vùng bằng crossfade ≤ 8 frame", "tool": "@remotion/paths", "decision": "chờ Lucas", "label": "ƯỚC" },
+    { "id": "T18", "name": "Vùng gạch chéo = đồng minh / chiếm đóng", "videos": "V4", "how": "sọc chéo cùng màu phe", "signals": "pattern sọc trong vùng", "feasibility": "green", "kit": "SVG <pattern> trong AtlasMap", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T19", "name": "Bản đồ giấy cổ", "videos": "V4", "how": "nền giấy kem, biển xanh nhạt, viền nét đứt kép, chữ biển nghiêng", "signals": "vân giấy, viền khung bản đồ", "feasibility": "yellow", "kit": "atlas-plates.py + atlas-terrain.py (nền giấy style L)", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T20", "name": "Tranh được làm động", "videos": "V4", "how": "người cử động, tên lửa / tia lửa bay trên tranh", "signals": "chỉ một phần tranh chuyển động, nền đứng yên", "feasibility": "yellow", "kit": "tách lớp (cutout.py) + parallax + hạt bằng code", "decision": "dùng", "label": "ƯỚC" },
+    { "id": "T21", "name": "Dán nhãn nguồn trên hình", "videos": "V1", "how": "chip SECRET HISTORY; chú thích nguồn tranh rất nhỏ", "signals": "chip tên nguồn khi trích", "feasibility": "green", "kit": "SourceLine (kit J) + NumberChip", "decision": "dùng", "label": "ƯỚC" }
+  ],
+  "tools": [
+    { "name": "Blender", "for": ["T7"], "license": "GPL, miễn phí; cài ~400 MB", "install": "winget install BlenderFoundation.Blender", "bridge": "render chuỗi PNG → public/ → <Img> theo frame", "fallback": "ảnh AI kiểu diorama tách lớp parallax (D7)", "status": "rejected" },
+    { "name": "@remotion/paths", "for": ["T17"], "license": "gói Remotion chính thức, cùng giấy phép Remotion", "install": "npx remotion add @remotion/paths", "bridge": "interpolatePath / evolvePath trong AtlasMap", "fallback": "crossfade ≤ 8 frame giữa hai vùng", "status": "proposed" }
+  ]
+}

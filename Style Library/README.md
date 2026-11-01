@@ -62,4 +62,4 @@ Chấm kịch bản theo tín hiệu, chọn style nhiều chấm nhất, ghi l�
 
 ## 5. Thêm phong cách mới
 
-Tạo thư mục `<chữ cái tiếp theo>-<tên>/` với `README.md` (theo mẫu F/G/H) + `ref.jpg`, thêm một dòng ở §1 và một cột ở §3. Series nào muốn dùng thì thêm vào tài liệu series của mình (PvR: `03_STYLE-LIBRARY.md`).
+Phân tích video mẫu / đối thủ trước, theo `QUY-TRINH-PHAN-TICH.md` (4 giai đoạn, Lucas duyệt từng giai đoạn). Sau đó tạo thư mục `<chữ cái tiếp theo>-<tên>/` bằng `npm run studio:kit -- new <X>-<tên> --from Test/<nguồn>` (đúng hợp đồng `studio/KIT-CONTRACT.md`; `studio:kit -- check` trước khi gọi là xong), thêm `ref.jpg` từ bản test của mình, một dòng ở §1 và một cột ở §3. Series nào muốn dùng thì thêm vào tài liệu series của mình (PvR: `03_STYLE-LIBRARY.md`).

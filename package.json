@@ -44,7 +44,15 @@
     "voiceover": "node scripts/tts.mjs build",
     "render:j": "node scripts/render-j.mjs",
     "sheet:j": "node scripts/sheet-j.mjs",
-    "render:ptw":"remotion render PriceTheirWork out/price-their-work-raw.mp4 --crf=18 && ffmpeg -y -i out/price-their-work-raw.mp4 -c:v copy -af loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000 -c:a aac -b:a 192k -movflags +faststart out/price-their-work.mp4",
-    "audio": "node scripts/make-audio.mjs"
+    "render:ptw": "remotion render PriceTheirWork out/price-their-work-raw.mp4 --crf=18 && ffmpeg -y -i out/price-their-work-raw.mp4 -c:v copy -af loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000 -c:a aac -b:a 192k -movflags +faststart out/price-their-work.mp4",
+    "audio": "node scripts/make-audio.mjs",
+    "studio:ingest": "node scripts/studio-ingest.mjs",
+    "studio:cards": "node scripts/studio-cards.mjs",
+    "render:style": "node scripts/render-j.mjs",
+    "sheet": "node scripts/sheet-j.mjs",
+    "studio:kit": "node scripts/studio-kit.mjs",
+    "studio:channel": "node scripts/studio-channel.mjs",
+    "studio:compare": "node scripts/studio-compare.mjs",
+    "studio:stats": "node scripts/studio-stats.mjs"
   }
 }

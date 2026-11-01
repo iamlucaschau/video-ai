@@ -10,6 +10,10 @@
 
 Đầu ra: `Test/<thư-mục>/BAO-CAO.md` (mục 1.1–1.6) + `BOC-TACH-KICH-BAN.md` (1.4) + `BOC-TACH-HINH.md` (1.3).
 
+**Bước đầu (Studio P1, 2026-11-01):** `npm run studio:ingest -- <url-kênh | url-video | Test/<thư-mục>>` tự làm phần đo của 1.1, 1.2 và khung bảng shot 1.3 (điểm cắt, sheet 0–1 s / 3 s cuối / mỗi giây, transcript có thời gian) → `Test/<thư-mục>/INGEST.md` + `_work/`. Các lệnh tay bên dưới giữ lại để kiểm hoặc đo thêm. Cách dùng: `studio/README.md` §3.
+
+**Card + khả thi (Studio P2, 2026-11-01):** sau ingest, `npm run studio:cards -- init Test/<thư-mục>` tạo `style-card.json`, `formula.json` và mẫu báo cáo. Mỗi kỹ thuật T# nhận một mức 🟢🟡🟠🔴 (`studio/KHA-THI.md`); công cụ 🟠 ghi vào card, Lucas duyệt rồi mới cài. Cuối Giai đoạn 1 chạy `npm run studio:cards -- check Test/<thư-mục>` (phải ✓ cả hai card) → `KHA-THI.md` đi kèm báo cáo cho Lucas duyệt.
+
 ### 1.1 Số liệu video + vị trí trong kênh *(bổ sung 2026-11-01)*
 
 Mỗi video một dòng; ghi **ngày lấy số** vì số liệu thay đổi.
@@ -80,7 +84,7 @@ Bảng "đối thủ làm gì ↔ luật của mình (`AGENTS.md`, `Style Librar
 
 ## Giai đoạn 2 — Dựng style + bản test
 
-1. `Style Library/<chữ cái tiếp theo>-<tên>/`: `README.md` (look, mạnh / yếu, luật riêng, bảng code), kit component, `ref.jpg`.
+1. `Style Library/<chữ cái tiếp theo>-<tên>/`: `README.md` (look, mạnh / yếu, luật riêng, bảng code), kit component, `ref.jpg`. Tạo khung bằng `npm run studio:kit -- new <X>-<tên> --from Test/<thư-mục>` (từ card của Giai đoạn 1); các bước theo `studio/KIT-CONTRACT.md` §5; kết thúc bằng `npm run studio:kit -- check` ✓.
 2. Bản test 20–30 s, đăng ký trong `src/Root.tsx`.
 3. QA: `npm run lint`; stills `safeGuide`; contact sheet (`review-loop` skill).
 4. Thêm style vào `Style Library/README.md` §1 (mục lục) và §3 (bảng chọn).
@@ -100,6 +104,8 @@ Bảng "đối thủ làm gì ↔ luật của mình (`AGENTS.md`, `Style Librar
 ## Giai đoạn 4 — Đóng gói kênh (khi style là kênh mới)
 
 Tên kênh (kiểm handle, Lucas thử tạo thật) · Channel Bible (định vị, pillar, công thức kịch bản, chuẩn hình / tiếng, luật nguồn, 5 cổng) · nhận diện (prompt avatar / banner) · gói đăng (`xuat-ban.md`) · thư mục mẫu tập · tự đánh giá + nâng cấp · bàn giao.
+
+**Studio P4 (2026-11-01):** `npm run studio:channel -- new "<Tên kênh>" --style <X-tên> --from Test/<thư-mục>` tạo đủ bộ trên, điền sẵn từ card (pillar, công thức nhịp, mẹo giữ chân, lỗi của đối thủ, màu); Luis viết các chỗ `[...]`, Lucas duyệt. Khi kênh chạy riêng: `npm run studio:channel -- export "<Tên kênh>" --to "<thư mục mới>" --install` → dự án đứng riêng như Atlas Tí Hon (có git, chưa có remote).
 
 ---
 

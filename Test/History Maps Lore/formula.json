@@ -1,0 +1,46 @@
+{
+  "question": "Làm sao bên nhỏ chặn được siêu cường?",
+  "length": { "seconds": [84, 99], "words": [225, 258] },
+  "hook": { "pattern": "năm + siêu cường + mục tiêu, câu khẳng định; video hit đặt nghịch lý kích thước ngay câu đầu", "quote": "In 1565, the most powerful empire of its time attacked a tiny island.", "atS": 0 },
+  "bridge": { "pattern": "biến bên nhỏ thành vị trí chiến lược (\"ở ngay giữa\"), hoặc câu hỏi \"vì sao\"", "quote": "The island of Malta was right in the middle.", "atShare": 0.17 },
+  "close": { "pattern": "di sản tra được, thấy được trên bản đồ (một thành phố, N năm, một thành ngữ), rồi end card NƠI · NĂM", "quote": "…the knights built a new city, Valletta.", "atS": 76 },
+  "beats": [
+    { "name": "H · hook", "from": 0, "to": 0.06, "does": "năm + siêu cường + mục tiêu, nghịch lý kích thước" },
+    { "name": "B · bản đồ địa chính trị", "from": 0.06, "to": 0.2, "does": "ai nắm vùng nào, bên nhỏ nằm ở đâu (câu bắc cầu)" },
+    { "name": "N · bên yếu có tên + tuổi", "from": 0.2, "to": 0.3, "does": "thủ lĩnh, tuổi, số quân ít" },
+    { "name": "X · khiêu khích", "from": 0.3, "to": 0.38, "does": "lý do siêu cường ra tay; có thể trích như thoại" },
+    { "name": "T · tấn công bằng số", "from": 0.38, "to": 0.48, "does": "số tàu / quân, mốc tháng đầu" },
+    { "name": "V · tưởng sập mà không sập", "from": 0.48, "to": 0.75, "does": "kỳ vọng vài ngày → thực tế một tháng, hai câu cực ngắn; mốc tháng nối tiếp" },
+    { "name": "Đ · đảo ngược", "from": 0.75, "to": 0.88, "does": "viện binh / kiệt sức / kế hoạch phản tác dụng" },
+    { "name": "K · di sản", "from": 0.88, "to": 1, "does": "thứ còn lại hôm nay, thấy được trên bản đồ" }
+  ],
+  "devices": [
+    "mốc tháng làm xương sống (May → July → September), chip ngày trên hình",
+    "kỳ vọng vs thực tế bằng hai câu cực ngắn đứng liền",
+    "một con số mỗi câu, câu TB ~12 từ",
+    "dán nhãn nguồn khi số tranh cãi (\"Some sources say…\")",
+    "không chào, không giới thiệu kênh, không CTA"
+  ],
+  "title": {
+    "pattern": "nghịch lý kích thước \"The Tiny X That Stopped Y\" + \" - NƠI NĂM\"",
+    "examples": [
+      "The Tiny Island That Stopped an Empire - Malta 1565",
+      "The Tiny Island That Stopped One of the Greatest Conquerors - Rhodes 1480",
+      "Britain's Most Ruthless Surprise Attack – Copenhagen 1807",
+      "Genghis Khan's Last Revenge: The Tangut Who Broke Their Oath"
+    ]
+  },
+  "facts": { "checked": 54, "ok": 42, "approx": 10, "wrong": 0, "unknown": 2 },
+  "pillars": [
+    { "name": "Vây hãm / bên nhỏ chặn siêu cường", "share": 0.5, "examples": ["Malta 1565", "Rhodes 1480"] },
+    { "name": "Đòn đánh gây tranh cãi đạo đức", "share": 0.25, "examples": ["Copenhagen 1807"] },
+    { "name": "Báo thù của kẻ chinh phục", "share": 0.25, "examples": ["Tây Hạ 1227"] }
+  ],
+  "weaknesses": [
+    "làm tròn có hướng (40 năm thật 43; ~100 tàu thật ~160)",
+    "thứ tự sự kiện lỏng, gọi tên theo hôm nay (\"cathedral\" năm 1807)",
+    "chữ dưới 48 px, có lúc 6 nhãn cùng lúc; end card V1 trong vùng UI",
+    "tranh xác chết toàn khung",
+    "Rhodes lặp cấu trúc Malta nên tụt; mỗi video một bộ 3D, khó giữ nhịp đăng"
+  ]
+}
