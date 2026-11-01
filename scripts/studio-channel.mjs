@@ -214,7 +214,7 @@ if (cmd === "new" && target && opt("style") && opt("from")) {
   const copyMd = sampleFiles.filter((f) => /(-FINAL|^01_EPISODE-SPEC|^checks|^progress|^SO-SANH).*\.md$/.test(f));
   copyMd.forEach((f) => fs.copyFileSync(path.join(sample, f), path.join(mau, f)));
   const video = sampleFiles.find((f) => f.endsWith(".mp4"));
-  fs.writeFileSync(path.join(mau, "mau.json"), JSON.stringify({ style: `Style Library/${style}`, sample: sample ? rel(sample) : null, video: sample && video ? rel(path.join(sample, video)) : null }, null, 2) + "\n");
+  fs.writeFileSync(path.join(mau, "mau.json"), JSON.stringify({ style: `Style Library/${style}`, source: rel(src), sample: sample ? rel(sample) : null, video: sample && video ? rel(path.join(sample, video)) : null }, null, 2) + "\n");
   const link = (p) => `[\`${p}\`](${encodeURI(posix(path.relative(mau, path.join(ROOT, p))))})`;
   fs.writeFileSync(
     path.join(mau, "README.md"),
@@ -272,6 +272,9 @@ if (mau?.style) {
   addDir(path.join(ROOT, mau.style));
 }
 if (mau?.video && fs.existsSync(path.join(ROOT, mau.video))) files.add(path.resolve(ROOT, mau.video));
+// the analysis the package cites: our reports + cards at the top level (no third-party video, captions or _work/)
+if (mau?.source && fs.existsSync(path.join(ROOT, mau.source)))
+  for (const f of fs.readdirSync(path.join(ROOT, mau.source))) if (/\.(md|json)$/.test(f)) addFile(path.join(ROOT, mau.source, f));
 const code = () => [...files].filter((f) => /\.tsx?$/.test(f));
 const seen = new Set();
 const closure = () => {
@@ -385,8 +388,13 @@ if (lock.packages?.[""]) lock.packages[""].name = slug;
 w("package-lock.json", JSON.stringify(lock, null, 2) + "\n");
 
 const gi = fs.readFileSync(path.join(ROOT, ".gitignore"), "utf8");
-w(".gitignore", `${gi.trimEnd()}\n\n# third-party study material and Studio analyses stay in the VIDEO AI repo\nTest/\n`);
-const note = `> Exported from VIDEO AI (Studio P4, ${TODAY}) as the standalone project of **${path.basename(chan)}**. Rules that name other series, styles or folders that are not in this project do not apply here.\n\n`;
+// Test/**: third-party videos, captions and _work/ are already ignored by these rules; our reports travel
+w(".gitignore", `${gi.trimEnd()}\n`);
+// display name: a format package's README heading ("# Gói format · Thế Trận"), else the folder name
+const pkgReadme = path.join(chan, "README.md");
+const isFormat = Boolean(mau);
+const title = (fs.existsSync(pkgReadme) && fs.readFileSync(pkgReadme, "utf8").match(/^#\s+(?:Gói format\s*·\s*)?(.+)$/m)?.[1]) || path.basename(chan);
+const note = `> Exported from VIDEO AI (Studio P4, ${TODAY}) as the standalone project of **${title}**. Rules that name other series, styles or folders that are not in this project do not apply here.\n\n`;
 w("AGENTS.md", note + fs.readFileSync(path.join(ROOT, "AGENTS.md"), "utf8"));
 w("CLAUDE.md", note + fs.readFileSync(path.join(ROOT, "CLAUDE.md"), "utf8"));
 
@@ -395,9 +403,9 @@ const prompt = handoff ? fs.readFileSync(handoff, "utf8").match(/```text\n([\s\S
 const compIds = [...blocks.map((b) => b.text.match(/id="([^"]+)"/)?.[1]).filter(Boolean)];
 w(
   "README.md",
-  `# ${path.basename(chan)}
+  `# ${title}
 
-Dự án riêng của kênh **${path.basename(chan)}**, xuất từ VIDEO AI (Studio P4) ngày ${TODAY}. Style: ${[...styles].map((s) => `\`Style Library/${s}/\``).join(", ")}.
+Dự án riêng của ${isFormat ? "gói format" : "kênh"} **${title}**, xuất từ VIDEO AI (Studio P4) ngày ${TODAY}.${isFormat ? " Tên kênh, thị trường, ngôn ngữ chưa chốt: AI ở chat mới hỏi Lucas (bàn giao §1)." : ""} Style: ${[...styles].map((s) => `\`Style Library/${s}/\``).join(", ")}.
 
 ## Bắt đầu
 
@@ -407,7 +415,7 @@ npm run dev
 \`\`\`
 
 ${prompt ? `Dán vào chat mới:\n\n\`\`\`text\n${prompt}\`\`\`\n` : ""}
-Kênh: [\`${path.basename(chan)}/\`](${encodeURI(path.basename(chan))}/) (bắt đầu từ \`00_he-thong/\`). Luật chung: \`AGENTS.md\`.
+${isFormat ? "Gói format" : "Kênh"}: [\`${rel(chan)}/\`](${encodeURI(rel(chan))}/) (bắt đầu từ \`00_he-thong/\`). Luật chung: \`AGENTS.md\`.
 
 ## Composition
 
