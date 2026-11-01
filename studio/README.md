@@ -37,7 +37,7 @@ Mỗi kết luận ghi **dấu hiệu nhận ra** (bóng đổ / ánh sáng th�
 |---|---|---|---|
 | **P0** | Bản yêu cầu này | yêu cầu | ✅ 2026-11-01 |
 | **P1 · Thu thập** | `npm run studio:ingest -- <url-kênh \| url-video \| thư-mục>` (mục 3) | chạy thử một kênh | ✅ 2026-11-01 |
-| **P2 · Bóc tách** | mẫu báo cáo (`studio/templates/`) + `style-card.json` / `formula.json` (`npm run studio:cards`) + bảng khả thi 4 mức (`KHA-THI.md`) + đo màu và chuyển động máy quay trong ingest. OCR chữ trên màn hình, tách giọng / nhạc: chờ Lucas duyệt công cụ (`KHA-THI.md` §3) | báo cáo + công cụ cần cài | ✅ 2026-11-01 (thử trên History Maps Lore) |
+| **P2 · Bóc tách** | mẫu báo cáo (`studio/templates/`) + `style-card.json` / `formula.json` (`npm run studio:cards`) + bảng khả thi 4 mức (`KHA-THI.md`) + đo màu và chuyển động máy quay trong ingest. OCR chữ trên màn hình (rapidocr) + tách giọng / nền (demucs): Lucas duyệt và đã nối vào ingest 2026-11-01 | báo cáo + công cụ cần cài | ✅ 2026-11-01 (thử trên History Maps Lore) |
 | **P3 · Dựng lại** | hợp đồng kit ([`KIT-CONTRACT.md`](KIT-CONTRACT.md)) + `npm run studio:kit -- new \| check` (kit + KitSheet + README nháp từ card); `render:style` / `sheet` dùng chung mọi style. Bản test 30 s và video đầy đủ làm theo từng nguồn (hợp đồng §5) | bản test, bản đầy đủ | ✅ công cụ 2026-11-01 (F–L qua `check`; thử `new` từ card History Maps Lore) |
 | **P4 · Đóng gói** | mẫu gói kênh (`studio/templates/channel/`, theo Mapped Journeys + Atlas Tí Hon) + `npm run studio:channel -- new \| export` | gói hoàn chỉnh | ✅ 2026-11-01 (thử `new` từ History Maps Lore; `export` Mapped Journeys chạy độc lập: lint, render) |
 | **P5 · Tốt hơn** | `npm run studio:compare` (bản mình vs đối thủ, cùng bộ đo → `SO-SANH.md`) + `npm run studio:stats` (sổ `so-lieu.csv`, nhập CSV YouTube Studio, trung vị theo pillar / biến thể, so với đối thủ → `SO-LIEU.md`). API YouTube Analytics: chưa (cần OAuth, Lucas duyệt) | bảng so | ✅ 2026-11-01 (compare Ep02 Hannibal vs Guilherme; stats thử bằng CSV giả trong thư mục tạm) |
@@ -63,6 +63,11 @@ Kết quả:
 Bước nào đã có file trong `_work/` thì bỏ qua (`--force` để làm lại, ví dụ lấy số view mới). Tùy chọn khác: `--lang en` (mặc định tự nhận ngôn ngữ), `--no-whisper`, `--no-sheets`, `--selftest`.
 
 Ingest còn đo **màu chủ đạo** (k-means 6 màu, 1 khung / giây) và **mức chuyển động từng shot** (đứng yên / chậm / nhanh, từ điểm scene), liệt kê **điểm cắt mềm** (crossfade) để tách shot trên sheet.
+
+Từ 2026-11-01 (Lucas duyệt công cụ) ingest đo thêm:
+- **Chữ trên màn hình** (`scripts/ocr.py`, rapidocr, 1 khung / giây): % khung có chữ, từ / khung, số khối chữ cùng lúc, cỡ chữ (px trên khung 1080), % khối chữ ngoài vùng an toàn. ~1 phút / video.
+- **Giọng và nền** (`scripts/stems.py`, demucs): độ to giọng, độ to nền (nhạc + SFX), nền − giọng, **tiếng nhấn ở nền / phút** (ngưỡng 8 dB, hiệu chỉnh trên Ep02 Hannibal: đếm 39, code đặt 41). ~1 phút / video.
+- Bỏ qua bằng `--no-ocr` / `--no-stems`. `studio:compare` so luôn các chỉ số này.
 
 ### Card + khả thi (P2)
 

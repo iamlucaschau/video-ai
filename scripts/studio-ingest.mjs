@@ -10,7 +10,7 @@
  *   npm run studio:ingest -- "<our render>.mp4" --out out/compare/<name>   one file (studio:compare does this)
  *
  * Options: --top 3 --latest 2 --tab shorts|videos (channel URL) · --out <dir> (URL: default Test/<channel>; folder / file: where INGEST.md + _work go)
- *          --lang en (default: auto) · --no-whisper · --no-sheets · --force (redo cached steps) · --selftest
+ *          --lang en (default: auto) · --no-whisper · --no-ocr · --no-stems · --no-sheets · --force (redo cached steps) · --selftest
  * Writes <dir>/INGEST.md (numbers only) and <dir>/_work/ (git-ignored: metadata, measures, transcripts, sheets).
  */
 import { spawnSync } from "node:child_process";
@@ -149,6 +149,35 @@ const speech = (segs, duration) => {
   };
 };
 
+/**
+ * On-screen text from scripts/ocr.py (boxes on a 1080-wide canvas): density, size, safe zone (x 60–940, y 220–1440).
+ * A box at the same spot (±30 px) in ≥ 40 % of the frames is a watermark / handle: reported apart, left out of the rest.
+ */
+const onScreen = (ocr) => {
+  const all = ocr.frames;
+  if (!all.length) return null;
+  const spot = (b) => `${Math.round(b.x / 30)},${Math.round(b.y / 30)}`;
+  const seen = {};
+  all.forEach((f) => new Set(f.items.map(spot)).forEach((k) => (seen[k] = (seen[k] ?? 0) + 1)));
+  const fixed = new Set(Object.keys(seen).filter((k) => seen[k] >= 0.4 * all.length));
+  const marks = all.flatMap((f) => f.items.filter((b) => fixed.has(spot(b))));
+  const frames = all.map((f) => ({ ...f, items: f.items.filter((b) => !fixed.has(spot(b))) }));
+  const withText = frames.filter((f) => f.items.length);
+  const boxes = frames.flatMap((f) => f.items);
+  const words = (f) => f.items.reduce((n, b) => n + b.text.split(/\s+/).filter(Boolean).length, 0);
+  const hs = boxes.map((b) => b.h).sort((a, b) => a - b);
+  const outside = boxes.filter((b) => b.x < 60 || b.y < 220 || b.x + b.w > 940 || b.y + b.h > 1440);
+  return {
+    textFrames: withText.length / frames.length,
+    wordsPerFrame: median(withText.map(words)),
+    maxBlocks: Math.max(0, ...frames.map((f) => f.items.length)),
+    textHeight: median(hs),
+    smallText: hs.length ? hs[Math.floor(hs.length * 0.1)] : null,
+    outsideSafe: boxes.length ? outside.length / boxes.length : null,
+    watermarkY: marks.length ? median(marks.map((b) => b.y)) : null,
+  };
+};
+
 if (flag("selftest")) {
   const ok = (c, m) => {
     if (!c) throw new Error(`selftest: ${m}`);
@@ -176,6 +205,12 @@ if (flag("selftest")) {
   const px = Buffer.from([250, 250, 250, 250, 250, 250, 250, 250, 250, 10, 20, 30]);
   const pal = kmeans(px, 2);
   ok(pal[0].hex === "#FAFAFA" && pal[0].share === 0.75 && pal[1].hex === "#0A141E", "kmeans");
+  const box = (text, x, y, h) => ({ text, x, y, w: 200, h, score: 0.9 });
+  const os = onScreen({ frames: [{ t: 0.5, items: [] }, { t: 1.5, items: [box("IN 1565", 100, 300, 60), box("tiny island now", 100, 1500, 40)] }, { t: 2.5, items: [box("MALTA", 100, 400, 80)] }, { t: 3.5, items: [] }, { t: 4.5, items: [] }] });
+  ok(os.textFrames === 2 / 5 && os.wordsPerFrame === 3 && os.maxBlocks === 2 && os.textHeight === 60 && os.smallText === 40 && os.outsideSafe === 1 / 3 && os.watermarkY === null, `onScreen ${JSON.stringify(os)}`);
+  const wm = (f) => ({ ...f, items: [...f.items, box("@HANDLE", 400, 1490, 40)] });
+  const os2 = onScreen({ frames: [{ t: 0.5, items: [] }, { t: 1.5, items: [box("MALTA", 100, 400, 80)] }, { t: 2.5, items: [] }].map(wm) });
+  ok(os2.watermarkY === 1490 && os2.outsideSafe === 0 && os2.maxBlocks === 1 && os2.textFrames === 1 / 3, `watermark ${JSON.stringify(os2)}`);
   console.log("selftest ok");
   process.exit(0);
 }
@@ -189,6 +224,8 @@ const outOpt = opt("out", null);
 const lang = opt("lang", null);
 const whisper = !flag("no-whisper");
 const sheets = !flag("no-sheets");
+const ocrOn = !flag("no-ocr");
+const stemsOn = !flag("no-stems");
 const force = flag("force");
 const input = argv.find((a) => !a.startsWith("--"));
 if (!input) {
@@ -292,14 +329,16 @@ const palette = (file) => {
   return kmeans(r.stdout, 6);
 };
 
-const transcribe = (file, out) => {
-  const r = run("python", ["-P", "scripts/transcribe.py", file, out, ...(lang ? [lang] : [])]);
+/** Run one of the Python analysis scripts (transcribe / ocr / stems): `<script> <video> <out.json> …`. */
+const pyStep = (script, file, out, extra = []) => {
+  const r = run("python", ["-P", `scripts/${script}`, file, out, ...extra]);
   if (r.status !== 0) {
-    warn(`transcribe failed: ${r.stderr.trim().split("\n").at(-1)}`);
+    warn(`${script} failed: ${r.stderr.trim().split("\n").at(-1)}`);
     return null;
   }
   return JSON.parse(fs.readFileSync(out, "utf8"));
 };
+const transcribe = (file, out) => pyStep("transcribe.py", file, out, lang ? [lang] : []);
 
 /** Contact sheets via sheet-j (--video mode), moved into _work/sheets/. */
 const contact = (file, key, duration, work) => {
@@ -397,9 +436,11 @@ const videos = files.map((f) => {
   const m = cached(w("measure.json"), () => measure(file), (v) => v.scores);
   const pal = cached(w("palette.json"), () => palette(file));
   const tx = whisper ? cached(w("transcript.json"), () => transcribe(file, w("transcript.json"))) : null;
+  const ocr = ocrOn ? cached(w("ocr.json"), () => pyStep("ocr.py", file, w("ocr.json"))) : null;
+  const stems = stemsOn ? cached(w("stems.json"), () => pyStep("stems.py", file, w("stems.json"))) : null;
   const sh = sheets ? contact(file, key, tech.duration, work) : [];
   const shots = m ? shotsFrom(m.cuts, tech.duration).map((s) => ({ ...s, motion: motion(m.scores, s.a, s.b) })) : [];
-  return { key, id, file: f, meta, tech, m, pal, shots, sp: tx ? speech(tx, tech.duration) : null, sheets: sh };
+  return { key, id, file: f, meta, tech, m, pal, shots, sp: tx ? speech(tx, tech.duration) : null, text: ocr ? onScreen(ocr) : null, stems, sheets: sh };
 });
 
 channelUrl ??= videos.find((v) => v.meta?.channel_url)?.meta.channel_url ?? null;
@@ -471,6 +512,25 @@ L.push("", "## Màu chủ đạo (k-means 6 màu trên 1 khung / giây, gồm c�
 L.push("| V | Màu (tỉ lệ diện tích) |", "|---|---|");
 for (const v of videos) L.push(`| ${v.label} | ${(v.pal ?? []).map((c) => `\`${c.hex}\` ${pct(c.share, 0)}`).join(" · ") || "—"} |`);
 
+if (videos.some((v) => v.text)) {
+  L.push("", "## Chữ trên màn hình (OCR rapidocr, 1 khung / giây, gồm phụ đề và watermark)", "");
+  L.push("| V | Khung có chữ | Từ / khung (trung vị) | Khối chữ cùng lúc (tối đa) | Cao chữ trung vị (px trên khung 1080) | Chữ nhỏ (10 % nhỏ nhất, px) | Khối chữ ngoài vùng an toàn | Watermark / handle cố định (y) |", "|---|---|---|---|---|---|---|---|");
+  for (const v of videos) {
+    const t = v.text ?? {};
+    L.push(`| ${v.label} | ${pct(t.textFrames, 0)} | ${n(t.wordsPerFrame)} | ${n(t.maxBlocks)} | ${n(t.textHeight)} | ${n(t.smallText)} | ${pct(t.outsideSafe, 0)} | ${t.watermarkY == null ? "không" : `có, y ≈ ${n(t.watermarkY)}`} |`);
+  }
+  L.push("", "Luật của mình: chữ ≥ 48 px, ≤ 2 khối ngoài phụ đề, mọi chữ trong vùng an toàn. OCR bỏ sót chữ cách điệu / nghiêng và tách một dòng thành nhiều khối: đọc là **ĐO có sai số**, kiểm lại trên sheet. Chữ đứng một chỗ ở ≥ 40 % số khung (watermark, handle) được tách riêng, không tính vào các cột khác. Chữ của từng khung: `_work/<id>.ocr.json`.");
+}
+if (videos.some((v) => v.stems)) {
+  L.push("", "## Giọng và nền (demucs tách 2 lớp)", "");
+  L.push("| V | Giọng (LUFS) | Nền: nhạc + SFX (LUFS) | Nền − giọng (dB) | Tiếng nhấn ở nền / phút |", "|---|---|---|---|---|");
+  for (const v of videos) {
+    const s = v.stems ?? {};
+    L.push(`| ${v.label} | ${n(s.voiceLufs, 1)} | ${n(s.bedLufs, 1)} | ${n(s.bedMinusVoice, 1)} | ${n(s.hitsPerMin, 1)} |`);
+  }
+  L.push("", "Tiếng nhấn = mức nền vọt ≥ 8 dB so với giây trước (`scripts/stems.py`): gồm SFX **và** nhịp nhạc mạnh, nên là **ƯỚC** độ \"bận\" của nền, không phải số SFX chính xác. Thời điểm từng tiếng: `_work/<id>.stems.json`.");
+}
+
 L.push("", "## 1.3 Khung bảng shot (điền phần còn trống vào `BOC-TACH-HINH.md`)", "");
 L.push("Cột **Máy quay** đã điền mức chuyển động **ĐO** (trung vị điểm scene trong shot, ‰): đứng yên < 0,6 · chậm < 4 · nhanh. Phụ đề, chữ hiện ra, vật di chuyển cũng tính là chuyển động; kiểu (lia, đẩy, bay) ghi bằng mắt (ƯỚC).", "");
 for (const v of videos) {
@@ -482,6 +542,6 @@ for (const v of videos) {
   L.push("");
 }
 L.push("## File làm việc (`_work/`, git-ignored)", "");
-L.push("`channel.json` (danh sách kênh) · `<id>.meta.json` · `<id>.probe.json` · `<id>.measure.json` (điểm cắt, đứng yên, độ to) · `<id>.transcript.json` (lời có thời gian từng từ) · `ingest.json` (gộp tất cả, cho bước P2) · `sheets/`.");
+L.push("`channel.json` (danh sách kênh) · `<id>.meta.json` · `<id>.probe.json` · `<id>.measure.json` (điểm cắt, đứng yên, độ to) · `<id>.transcript.json` (lời có thời gian từng từ) · `<id>.ocr.json` (chữ trên màn hình) · `<id>.stems.json` (giọng / nền) · `ingest.json` (gộp tất cả, cho bước P2) · `sheets/`.");
 fs.writeFileSync(path.join(outDir, "INGEST.md"), L.join("\n") + "\n");
 say(`✓ ${path.relative(ROOT, path.join(outDir, "INGEST.md"))}`);

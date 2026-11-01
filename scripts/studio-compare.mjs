@@ -50,6 +50,14 @@ const measures = (v) => {
     lufs: v.m?.lufs ?? null,
     truePeak: v.m?.truePeak ?? null,
     lra: v.m?.lra ?? null,
+    textFrames: v.text?.textFrames ?? null,
+    wordsPerFrame: v.text?.wordsPerFrame ?? null,
+    maxBlocks: v.text?.maxBlocks ?? null,
+    textHeight: v.text?.textHeight ?? null,
+    smallText: v.text?.smallText ?? null,
+    outsideSafe: v.text?.outsideSafe ?? null,
+    bedMinusVoice: v.stems?.bedMinusVoice ?? null,
+    hitsPerMin: v.stems?.hitsPerMin ?? null,
   };
 };
 
@@ -81,6 +89,14 @@ const ROWS = [
   ["lufs", "Độ to (LUFS)", 1, 1, "luật: −14 ±1"],
   ["truePeak", "True peak (dBTP)", 1, 1, "luật: ≤ −1,5"],
   ["lra", "Biên độ to nhỏ (LRA, LU)", 1, 1, ""],
+  ["textFrames", "Khung có chữ (%, OCR)", 0, 100, "gồm phụ đề và watermark"],
+  ["wordsPerFrame", "Từ trên màn hình / khung", 0, 1, "luật: ít chữ (phụ đề + ≤ 2 khối ≤ 5 từ)"],
+  ["maxBlocks", "Khối chữ cùng lúc (tối đa)", 0, 1, "luật: ≤ 2 ngoài phụ đề (OCR tách 1 dòng thành nhiều khối)"],
+  ["textHeight", "Cao chữ trung vị (px / 1080)", 0, 1, "luật: chữ ≥ 48 px"],
+  ["smallText", "Chữ nhỏ (10 % nhỏ nhất, px)", 0, 1, "dưới ~40 px là khó đọc trên điện thoại"],
+  ["outsideSafe", "Khối chữ ngoài vùng an toàn (%)", 0, 100, "luật: 0 (trừ watermark / handle ở mép)"],
+  ["bedMinusVoice", "Nền − giọng (dB, demucs)", 1, 1, "càng âm, giọng càng nổi trên nhạc + SFX"],
+  ["hitsPerMin", "Tiếng nhấn ở nền / phút (ƯỚC)", 1, 1, "SFX + nhịp nhạc mạnh; hiệu chỉnh trên Ep02: 39 đếm vs 41 đặt"],
 ];
 
 const verdict = (key, x, refs) => {
@@ -149,7 +165,7 @@ const fails = ROWS.filter(([key]) => verdict(key, mo[key], []).startsWith("✗")
 L.push("", "## Tóm tắt", "");
 L.push(`- Luật âm lượng: ${fails.length ? fails.map(([, l]) => `✗ ${l}`).join(", ") : "✓ đạt cả hai"}.`);
 L.push(`- Ngoài khoảng của họ (${outside.length}): ${outside.map(([key, l]) => `${l} (${verdict(key, mo[key], mr.map((m) => m[key])).replace(" khoảng của họ", "")})`).join(" · ") || "không có"}.`);
-L.push("- Không đo ở đây: chữ trên màn hình (cần OCR, chờ duyệt công cụ), SFX / nhạc (cần tách nguồn), giữ chân thật (`npm run studio:stats` sau khi đăng).");
+L.push("- Không đo ở đây: kiểu chữ / font, nội dung hình (bản đồ, tranh), giữ chân thật (`npm run studio:stats` sau khi đăng). Chữ (OCR) và tiếng nhấn (demucs) có sai số: kiểm lại trên sheet / tai.");
 const file = path.join(path.dirname(abs), "SO-SANH.md");
 fs.writeFileSync(file, L.join("\n") + "\n");
 console.log(`✓ ${path.relative(ROOT, file)}`);

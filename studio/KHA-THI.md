@@ -34,19 +34,16 @@ Mỗi kết luận có **dấu hiệu** (nhìn thấy gì trên khung, frame / g
 
 ## 3. Danh mục công cụ
 
-**Đã có trong repo** (dùng không cần hỏi): Remotion 4.0.532 + `@remotion/media`, `motion-blur`, `shapes`, `transitions`, `google-fonts`, `zod-types`; ffmpeg / ffprobe; Python numpy, Pillow, faster-whisper; yt-dlp; script `make-plates.py`, `atlas-plates.py`, `atlas-terrain.py`, `ne-regions.py`, `cutout.py`, `tts.mjs`, `words.py`, `studio-ingest.mjs`.
+**Đã có trong repo** (dùng không cần hỏi): Remotion 4.0.532 + `@remotion/media`, `motion-blur`, `shapes`, `transitions`, `google-fonts`, `zod-types`, **`paths`** (`evolvePath`, `interpolatePath`: lãnh thổ co / giãn, morph; Lucas duyệt 2026-11-01); ffmpeg / ffprobe; Python numpy, Pillow, faster-whisper, **rapidocr-onnxruntime** (Apache-2.0: chữ trên màn hình, `scripts/ocr.py`), **demucs** + PyTorch CPU (MIT: tách giọng / nền, `scripts/stems.py`; Lucas duyệt 2026-11-01); yt-dlp; script `make-plates.py`, `atlas-plates.py`, `atlas-terrain.py`, `ne-regions.py`, `cutout.py`, `tts.mjs`, `words.py`, `studio-*.mjs`.
 
 **Đề xuất khi cần** (🟠, Lucas duyệt từng cái; ghi vào `tools[]` của card):
 
 | Công cụ | Dùng cho | Giấy phép / giá | Cài | Nối vào Remotion |
 |---|---|---|---|---|
-| `@remotion/paths` | lãnh thổ co / giãn, vẽ dần đường phức tạp, morph | gói Remotion chính thức | `npx remotion add @remotion/paths` | `evolvePath`, `interpolatePath` |
 | `@remotion/three` | 3D low-poly trong code (thành, tàu, địa cầu) | gói Remotion chính thức | `npx remotion add @remotion/three` + three | `<ThreeCanvas>`; skill `remotion-markup` mục 3d |
 | `@remotion/lottie` | hoạt ảnh vector có sẵn | gói chính thức; file Lottie theo giấy phép từng file | `npx remotion add @remotion/lottie` | `<Lottie animationData>` |
 | Blender | diorama / mô hình 3D có ánh sáng thật | GPL, miễn phí; cài ~400 MB | winget / blender.org | render chuỗi PNG → `public/` → `<Img>` theo frame, hoặc MP4 → `<Video>`; Blender không chạy khi render Remotion |
 | Google Earth Studio | bay địa hình 3D thật | miễn phí, cần tài khoản Google, **bắt buộc ghi credit Google**; chạy trên web | không cài | xuất JPG sequence → `<Img>` |
 | Cesium ion / MapTiler | bản đồ 3D / vector theo code | free tier, cần token (giữ như key, không commit) | token trong `.env` | skill `remotion-maps` |
-| rapidocr-onnxruntime | **phân tích**: đọc chữ trên màn hình → đếm từ / mật độ chữ thay vì ƯỚC | Apache-2.0, pip ~20 MB | `pip install --user rapidocr-onnxruntime` | chỉ dùng trong `studio-ingest` |
-| demucs | **phân tích**: tách giọng / nhạc → đo nhạc nền, mật độ SFX | MIT, pip, model ~80 MB | `pip install --user demucs` | chỉ dùng khi phân tích |
 
 **Không dùng** (🔴 mặc định): video AI tạo cả cảnh, footage có bản quyền, stock video có người thật. Lucas đổi được luật này, nhưng phải ghi vào Bible của kênh.

@@ -4,8 +4,6 @@
 
 **21 kỹ thuật:** 🟢 11 · 🟡 7 · 🟠 2 · 🔴 1
 
-**Chờ Lucas duyệt:** @remotion/paths (T17)
-
 | T# | Kỹ thuật | Mức | Dấu hiệu | Cách của mình | Công cụ | Quyết định |
 |---|---|---|---|---|---|---|
 | T1 | Tô lãnh thổ theo phe, biên giới đúng năm | 🟡 | mảng màu phe có biên khác bản đồ hiện đại (ƯỚC) | AtlasMap + dữ liệu OpenHistoricalMap (CC0), ghi credit (D8) | — | dùng |
@@ -24,7 +22,7 @@
 | T14 | End card TÊN NƠI · NĂM | 🟢 | thẻ chữ cuối cố định (ƯỚC) | EndCard (ngoại lệ serif D5, cắt ≤ 0,5 s sau lời cuối D10) | — | dùng |
 | T15 | Tuyến thương mại phát sáng | 🟢 | đường sáng vẽ dần (ƯỚC) | GlowRoute (kit J) | — | dùng |
 | T16 | Dấu X từ chối | 🟢 | X đỏ bật lên (ƯỚC) | Cross (kit J) | — | dùng |
-| T17 | Lãnh thổ co lại | 🟠 | biên vùng biến hình liên tục (ƯỚC) | interpolatePath giữa hai đa giác; không cài thì cắt chéo hai vùng bằng crossfade ≤ 8 frame | @remotion/paths | chờ Lucas |
+| T17 | Lãnh thổ co lại | 🟠 | biên vùng biến hình liên tục (ƯỚC) | interpolatePath giữa hai đa giác (@remotion/paths, Lucas duyệt 2026-11-01) | @remotion/paths | dùng |
 | T18 | Vùng gạch chéo = đồng minh / chiếm đóng | 🟢 | pattern sọc trong vùng (ƯỚC) | SVG <pattern> trong AtlasMap | — | dùng |
 | T19 | Bản đồ giấy cổ | 🟡 | vân giấy, viền khung bản đồ (ƯỚC) | atlas-plates.py + atlas-terrain.py (nền giấy style L) | — | dùng |
 | T20 | Tranh được làm động | 🟡 | chỉ một phần tranh chuyển động, nền đứng yên (ƯỚC) | tách lớp (cutout.py) + parallax + hạt bằng code | — | dùng |
@@ -35,4 +33,4 @@
 | Công cụ | Cho | Giấy phép / giá | Cài | Nối vào Remotion | Không cài thì | Trạng thái |
 |---|---|---|---|---|---|---|
 | Blender | T7 | GPL, miễn phí; cài ~400 MB | winget install BlenderFoundation.Blender | render chuỗi PNG → public/ → <Img> theo frame | ảnh AI kiểu diorama tách lớp parallax (D7) | ✗ không dùng |
-| @remotion/paths | T17 | gói Remotion chính thức, cùng giấy phép Remotion | npx remotion add @remotion/paths | interpolatePath / evolvePath trong AtlasMap | crossfade ≤ 8 frame giữa hai vùng | chờ duyệt |
+| @remotion/paths | T17 | gói Remotion chính thức, cùng giấy phép Remotion | npx remotion add @remotion/paths | interpolatePath / evolvePath trong AtlasMap | crossfade ≤ 8 frame giữa hai vùng | ✅ duyệt |

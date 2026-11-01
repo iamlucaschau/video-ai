@@ -45,6 +45,26 @@ Shot = đoạn giữa hai điểm cắt (scene > 0,3). Crossfade dài máy dò k
 | V2 | `#04141D` 53 % · `#39361C` 25 % · `#D59D58` 8 % · `#9B6D32` 7 % · `#4D5D61` 5 % · `#BFB3A0` 3 % |
 | V3 | `#0C0C0F` 35 % · `#C7A165` 17 % · `#B1813F` 16 % · `#443324` 14 % · `#7B5934` 13 % · `#DAC29D` 5 % |
 
+## Chữ trên màn hình (OCR rapidocr, 1 khung / giây, gồm phụ đề và watermark)
+
+| V | Khung có chữ | Từ / khung (trung vị) | Khối chữ cùng lúc (tối đa) | Cao chữ trung vị (px trên khung 1080) | Chữ nhỏ (10 % nhỏ nhất, px) | Khối chữ ngoài vùng an toàn | Watermark / handle cố định (y) |
+|---|---|---|---|---|---|---|---|
+| V1 | 100 % | 6 | 7 | 44 | 24 | 42 % | có, y ≈ 1.690 |
+| V2 | 85 % | 2 | 6 | 45 | 24 | 12 % | có, y ≈ 1.690 |
+| V3 | 73 % | 3 | 10 | 44 | 21 | 27 % | có, y ≈ 1.692 |
+
+Luật của mình: chữ ≥ 48 px, ≤ 2 khối ngoài phụ đề, mọi chữ trong vùng an toàn. OCR bỏ sót chữ cách điệu / nghiêng và tách một dòng thành nhiều khối: đọc là **ĐO có sai số**, kiểm lại trên sheet. Chữ đứng một chỗ ở ≥ 40 % số khung (watermark, handle) được tách riêng, không tính vào các cột khác. Chữ của từng khung: `_work/<id>.ocr.json`.
+
+## Giọng và nền (demucs tách 2 lớp)
+
+| V | Giọng (LUFS) | Nền: nhạc + SFX (LUFS) | Nền − giọng (dB) | Tiếng nhấn ở nền / phút |
+|---|---|---|---|---|
+| V1 | -26,1 | -42,5 | -16,4 | 10,0 |
+| V2 | -25,3 | -41,8 | -16,5 | 12,9 |
+| V3 | -28,7 | -40,7 | -12,0 | 11,2 |
+
+Tiếng nhấn = mức nền vọt ≥ 8 dB so với giây trước (`scripts/stems.py`): gồm SFX **và** nhịp nhạc mạnh, nên là **ƯỚC** độ "bận" của nền, không phải số SFX chính xác. Thời điểm từng tiếng: `_work/<id>.stems.json`.
+
 ## 1.3 Khung bảng shot (điền phần còn trống vào `BOC-TACH-HINH.md`)
 
 Cột **Máy quay** đã điền mức chuyển động **ĐO** (trung vị điểm scene trong shot, ‰): đứng yên < 0,6 · chậm < 4 · nhanh. Phụ đề, chữ hiện ra, vật di chuyển cũng tính là chuyển động; kiểu (lia, đẩy, bay) ghi bằng mắt (ƯỚC).
@@ -78,4 +98,4 @@ Cột **Máy quay** đã điền mức chuyển động **ĐO** (trung vị đi�
 
 ## File làm việc (`_work/`, git-ignored)
 
-`channel.json` (danh sách kênh) · `<id>.meta.json` · `<id>.probe.json` · `<id>.measure.json` (điểm cắt, đứng yên, độ to) · `<id>.transcript.json` (lời có thời gian từng từ) · `ingest.json` (gộp tất cả, cho bước P2) · `sheets/`.
+`channel.json` (danh sách kênh) · `<id>.meta.json` · `<id>.probe.json` · `<id>.measure.json` (điểm cắt, đứng yên, độ to) · `<id>.transcript.json` (lời có thời gian từng từ) · `<id>.ocr.json` (chữ trên màn hình) · `<id>.stems.json` (giọng / nền) · `ingest.json` (gộp tất cả, cho bước P2) · `sheets/`.
