@@ -1,6 +1,6 @@
 # Gói xuất bản — EpNN "[tiêu đề]"
 
-*Cổng 5 (ngày). Kênh **{{NAME}}** ({{HANDLE}}). Video: `<slug>.mp4` (9:16, __ s, −14 LUFS, crf 18; `npm run render:style -- <CompositionId> --to "{{CHANNEL_DIR}}/episodes/epNN-<slug>/<slug>.mp4"`). Pillar P_. Mẫu đã điền: `Mapped Journeys/episodes/ep04-xuanzang/xuat-ban.md`.*
+*Cổng 5 (ngày). Kênh **[tên kênh]** ([handle]). Video: `<slug>.mp4` (9:16, __ s, −14 LUFS, crf 18; `npm run render:style -- <CompositionId> --to "<thư mục kênh>/episodes/epNN-<slug>/<slug>.mp4"`). Pillar P_. Mẫu đã điền: `Mapped Journeys/episodes/ep04-xuanzang/xuat-ban.md`.*
 
 ## 1. Tiêu đề (thử A/B)
 
@@ -12,7 +12,7 @@
 
 > [2–4 câu: nghịch lý → 2–3 nguyên nhân → câu hỏi mời bình luận.]
 >
-> **{{NAME}}** — [slogan]
+> **[tên kênh]** — [slogan]
 >
 > **Sources**
 > - [Văn bản gốc + quyển / dòng, hoặc nguồn lịch sử]
@@ -24,11 +24,11 @@
 > - Paintings (public domain): [Tác giả, *Tên* (năm)] · ...
 > - [Nếu có] N full-screen scenes are AI-generated illustrations.
 >
-> #Shorts #{{HASHTAG}} #[NhânVật] #[Chủ đề] #History #Maps
+> #Shorts #[TenKenh] #[NhânVật] #[Chủ đề] #History #Maps
 
 ## 3. Hashtag
 
-#Shorts #{{HASHTAG}} #... (≤ 9 trên YouTube)
+#Shorts #[TenKenh] #... (≤ 9 trên YouTube)
 
 ## 4. Khai báo nội dung AI
 
@@ -49,7 +49,7 @@
 [Một dòng có nguồn]
 [Câu hỏi] 👇
 
-#{{HASHTAG}} #... (≤ 6)
+#[TenKenh] #... (≤ 6)
 ```
 
 ## Trước khi đăng (còn mở)

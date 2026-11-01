@@ -1,0 +1,15 @@
+{
+  "name": "SLUG",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Adult documentary narrator, warm and grounded. Quick and curious on the opening line, clear and steady after; names and numbers a beat slower. On the quiet beat, slow down and soften. No hype, no shouting. The last line lands with quiet weight.",
+  "trimSilence": true,
+  "tempo": 1.05,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.25,
+    "scene": 0.4
+  },
+  "batchBy": "take",
+  "lines": []
+}

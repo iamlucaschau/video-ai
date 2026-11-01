@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 /**
- * Studio P4 — channel package (studio/README.md).
+ * Studio P4 — format package (studio/README.md; Lucas 2026-11-02: the package is the FORMAT, the channel's
+ * name / market / language are asked later by the AI in the new chat). `studio:format` and `studio:channel` run this.
  *
- *   npm run studio:channel -- new "<Channel Name>" --style <X-name> --from "Test/<source>" [--handle @x] [--lang "tiếng Anh"]
- *     Writes <Channel Name>/ at the repo root from studio/templates/channel/: Bible, brand kit, topic bank,
- *     handoff (with the paste-in prompt) and an episode template, prefilled from the source's
- *     style-card.json + formula.json. "[...]" marks what Luis still writes (QUY-TRINH Giai đoạn 4). Never overwrites.
+ *   npm run studio:format -- new "<Format name>" --style <X-name> --from "Test/<source>" [--sample "<test folder>"]
+ *     Writes Formats/<Format name>/ from studio/templates/format/: format Bible, 02_CONG-THUC (topic + title + script
+ *     formula, measured targets from the source), topic bank by angle, handoff (paste-in prompt + the questions the
+ *     AI must ask Lucas) and an episode template, prefilled from style-card.json, formula.json and _work/ingest.json;
+ *     mau/ gets the sample built during the analysis (script, spec, checks, comparison; code + demo video
+ *     referenced in mau/mau.json). "[...]" marks what Luis still writes (QUY-TRINH Giai đoạn 4). Never overwrites.
  *
- *   npm run studio:channel -- export "<channel folder>" --to "<new project folder>" [--install] [--no-git] [--no-key]
+ *   npm run studio:format -- export "<format or channel folder>" --to "<new project folder>" [--install] [--no-git] [--no-key]
  *     Copies everything the channel needs into a standalone Remotion project, like Atlas Tí Hon:
  *     channel folder, the style kit(s) its code reaches, every imported file (kit-common, subs, pvr helpers,
  *     voiceover manifests…), the public assets its code names, voiceover scripts + TTS cache, scripts,
@@ -23,7 +26,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const TODAY = new Date().toISOString().slice(0, 10);
+const TODAY = new Date().toLocaleDateString("sv-SE"); // local calendar day (UTC lags behind in Viet Nam mornings)
 const posix = (p) => p.replace(/\\/g, "/");
 const rel = (p) => posix(path.relative(ROOT, p));
 
@@ -98,9 +101,14 @@ const [cmd, target] = argv;
 // ---------- new
 
 if (cmd === "new" && target && opt("style") && opt("from")) {
-  const dir = path.join(ROOT, target);
+  const dir = path.join(ROOT, "Formats", target);
   if (fs.existsSync(dir)) {
-    console.error(`${target} already exists: not touching it.`);
+    console.error(`${rel(dir)} already exists: not touching it.`);
+    process.exit(1);
+  }
+  const sample = opt("sample") && path.resolve(ROOT, opt("sample"));
+  if (sample && !fs.existsSync(sample)) {
+    console.error(`No sample folder ${opt("sample")}`);
     process.exit(1);
   }
   const style = opt("style");
@@ -113,13 +121,62 @@ if (cmd === "new" && target && opt("style") && opt("from")) {
   const form = JSON.parse(fs.readFileSync(path.join(src, "formula.json"), "utf8"));
   const styleReadme = fs.readFileSync(path.join(ROOT, "Style Library", style, "README.md"), "utf8");
   const pct = (x) => (x == null ? "[…] %" : `${Math.round(x * 100)} %`);
-  const flat = target.replace(/[^A-Za-z0-9]/g, "");
+  // measured targets: the reference's medians and ranges for the measures studio:compare reports
+  const ing = JSON.parse(fs.readFileSync(path.join(src, "_work/ingest.json"), "utf8")).videos;
+  const med = (xs) => {
+    const s = xs.filter(Number.isFinite).sort((a, b) => a - b);
+    return s.length ? (s.length % 2 ? s[s.length >> 1] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2) : null;
+  };
+  const f1 = (x, d) => (x == null ? "—" : x.toLocaleString("vi-VN", { maximumFractionDigits: d }));
+  const MEASURES = [
+    ["Thời lượng (s)", (v) => v.tech.duration, 1],
+    ["Tốc độ đọc (wpm)", (v) => v.sp?.wpm, 0],
+    ["Từ / câu (trung vị)", (v) => v.script?.wordsPerSentence, 0],
+    ["Câu hook (từ)", (v) => v.script?.hookWords, 0],
+    ["Câu hook hết ở giây", (v) => v.script?.hookSeconds, 1],
+    ["Con số / mốc đầu tiên (giây)", (v) => v.script?.firstNumberAt, 1],
+    ["Con số / câu", (v) => v.script?.numbersPerSentence, 2],
+    ["Mốc thời gian / phút", (v) => v.script?.timeAnchorsPerMin, 1],
+    ["Câu dán nhãn nguồn", (v) => v.script?.sourced, 0],
+  ];
+  const share = (v, kind) => v.shots.filter((s) => s.motion?.kind === kind).reduce((t, s) => t + s.len, 0) / v.tech.duration * 100;
+  const VISUAL = [
+    ["Shot trung bình (s)", (v) => v.tech.duration / Math.max(1, v.shots.length), 1],
+    ["Shot mở đầu (s)", (v) => v.shots[0]?.len, 1],
+    ["Điểm cắt mềm / phút", (v) => (v.m?.soft?.length ?? 0) / (v.tech.duration / 60), 1],
+    ["Thời gian hình đứng yên (%)", (v) => share(v, "đứng yên"), 0],
+    ["Thời gian chuyển động chậm (%)", (v) => share(v, "chậm"), 0],
+    ["Từ trên màn hình / khung", (v) => v.text?.wordsPerFrame, 0],
+    ["Khối chữ cùng lúc (tối đa)", (v) => v.text?.maxBlocks, 0],
+    ["Cao chữ trung vị (px / 1080)", (v) => v.text?.textHeight, 0],
+    ["Chữ nhỏ (10 % nhỏ nhất, px)", (v) => v.text?.smallText, 0],
+    ["Khối chữ ngoài vùng an toàn (%)", (v) => (v.text?.outsideSafe ?? NaN) * 100, 0],
+    ["Nền − giọng (dB)", (v) => v.stems?.bedMinusVoice, 1],
+    ["Tiếng nhấn ở nền / phút", (v) => v.stems?.hitsPerMin, 1],
+    ["Độ to (LUFS)", (v) => v.m?.lufs, 1],
+  ];
+  const rows = (list) =>
+    list.map(([label, get, d]) => {
+      const xs = ing.map(get).filter(Number.isFinite);
+      return `| ${label} | ${f1(med(xs), d)} | ${xs.length ? `${f1(Math.min(...xs), d)}–${f1(Math.max(...xs), d)}` : "—"} | [...] |`;
+    });
+  const targets = rows(MEASURES);
+  const LEVEL = { green: "🟢", yellow: "🟡", orange: "🟠", red: "🔴" };
+  const cell = (s) => String(s ?? "").replace(/\|/g, "/");
   const T = {
     NAME: target,
-    CHANNEL_DIR: target,
-    HANDLE: opt("handle", `@${flat}`),
-    HASHTAG: flat,
+    FORMAT_DIR: rel(dir),
+    CHANNEL_DIR: "<thư mục kênh>",
+    CHANNEL_NAME: "[tên kênh]",
+    HANDLE: "[handle]",
+    HASHTAG: "[TenKenh]",
     ID_PREFIX: target.split(/\s+/).map((w) => w[0]).join("").toUpperCase(),
+    TARGETS: targets.join("\n"),
+    VIS_TARGETS: rows(VISUAL).join("\n"),
+    TECHNIQUES: card.techniques.map((t) => `| ${t.id} | ${cell(t.name)} | ${LEVEL[t.feasibility] ?? ""} | ${t.decision} | ${cell(t.kit)} |`).join("\n"),
+    PALETTE: card.palette.map((c) => `| \`${c.hex}\` | ${cell(c.role)} |`).join("\n"),
+    ANGLES: form.pillars.map((p) => `| ${p.name} | ${pct(p.share)} | ${p.examples.join(" · ")} |`).join("\n") || "| [...] | | |",
+    ANGLE_SECTIONS: form.pillars.map((p) => `## ${p.name}\n\n| # | Chủ đề | Hook phác | Con số chính | Nguồn sẽ kiểm | Điểm (§1) |\n|---|---|---|---|---|---|\n| 1 | | | | | |`).join("\n\n") || "## [...]",
     STYLE: style,
     STYLE_TITLE: (styleReadme.match(/^#\s+(.+)$/m)?.[1] ?? style).replace(/^[A-Z]\s*·\s*/, ""),
     LANG: opt("lang", "tiếng Anh"),
@@ -137,13 +194,10 @@ if (cmd === "new" && target && opt("style") && opt("from")) {
     BEATS: form.beats.map((b) => `| ${b.name} | ${Math.round(b.from * 100)}–${Math.round(b.to * 100)} % | ${b.does} |`).join("\n"),
     DEVICES: form.devices.map((d) => `- ${d}`).join("\n") || "- [...]",
     WEAKNESSES: form.weaknesses.map((w) => `   - ${w}`).join("\n") || "   - [...]",
-    PILLARS: form.pillars.map((p, i) => `| P${i + 1} | ${p.name} | ${pct(p.share)} | ${p.examples.join(" · ")} (của đối thủ, tìm góc khác) |`).join("\n") || "| P1 | [...] | | |",
-    PILLAR_SECTIONS: form.pillars.map((p, i) => `## P${i + 1} — ${p.name} (${pct(p.share)})\n\n| # | Chủ đề | Hook phác | Con số chính | Nguồn sẽ kiểm |\n|---|---|---|---|---|\n| 1 | | | | |`).join("\n\n") || "## P1 — [...]",
-    PALETTE: card.palette.map((c) => `| \`${c.hex}\` | ${c.role} |`).join("\n"),
     VOICE: "Charon",
     VOICE_STYLE: "Adult documentary narrator, warm and grounded. Quick and curious on the opening line, clear and steady after; names and numbers a beat slower. On the quiet beat, slow down and soften. No hype, no shouting. The last line lands with quiet weight.",
   };
-  const tpl = path.join(ROOT, "studio/templates/channel");
+  const tpl = path.join(ROOT, "studio/templates/format");
   const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
   const left = [];
   for (const f of walk(tpl)) {
@@ -153,9 +207,25 @@ if (cmd === "new" && target && opt("style") && opt("from")) {
     if (/\{\{[A-Z_]+\}\}/.test(text)) left.push(rel(out));
     fs.writeFileSync(out, text);
   }
-  console.log(`+ ${target}/ (${walk(dir).length} files) from ${rel(src)} + Style Library/${style}`);
+  // mau/: the sample built during the analysis (script, spec, checks, comparison copied; code + demo video referenced)
+  const mau = path.join(dir, "mau");
+  fs.mkdirSync(mau, { recursive: true });
+  const sampleFiles = sample ? fs.readdirSync(sample) : [];
+  const copyMd = sampleFiles.filter((f) => /(-FINAL|^01_EPISODE-SPEC|^checks|^progress|^SO-SANH).*\.md$/.test(f));
+  copyMd.forEach((f) => fs.copyFileSync(path.join(sample, f), path.join(mau, f)));
+  const video = sampleFiles.find((f) => f.endsWith(".mp4"));
+  fs.writeFileSync(path.join(mau, "mau.json"), JSON.stringify({ style: `Style Library/${style}`, sample: sample ? rel(sample) : null, video: sample && video ? rel(path.join(sample, video)) : null }, null, 2) + "\n");
+  const link = (p) => `[\`${p}\`](${encodeURI(posix(path.relative(mau, path.join(ROOT, p))))})`;
+  fs.writeFileSync(
+    path.join(mau, "README.md"),
+    `# Mẫu của format ${target}\n\n*Kịch bản + video demo dựng lúc phân tích (${TODAY}). Bản chép ở đây là ảnh chụp lúc tạo gói; bản gốc đang làm việc nằm ở thư mục mẫu bên dưới.*\n\n` +
+      (sample
+        ? `| | |\n|---|---|\n| Thư mục mẫu (code + dữ liệu) | ${link(rel(sample))} |\n| Video demo | ${video ? link(rel(path.join(sample, video))) + " (git-ignored, đi kèm khi `export`)" : "chưa render"} |\n| Code composition | ${sampleFiles.includes("Video.tsx") ? link(rel(path.join(sample, "Video.tsx"))) : "—"} |\n${copyMd.map((f) => `| ${f} | [\`${f}\`](${encodeURI(f)}) |`).join("\n")}\n\nTập mới chép khung code từ \`Video.tsx\` của mẫu (episode \`_template/README.md\` §3).\n`
+        : "Chưa có mẫu: chạy lại với `--sample <thư mục bản test>`.\n"),
+  );
+  console.log(`+ ${rel(dir)}/ (${walk(dir).length} files) from ${rel(src)} + Style Library/${style}${sample ? ` + sample ${rel(sample)}` : ""}`);
   if (left.length) console.warn(`  ⚠ unfilled tokens in: ${left.join(", ")}`);
-  console.log(`  Next: Luis fills the "[...]" (QUY-TRINH Giai đoạn 4), Lucas approves; export with npm run studio:channel -- export "${target}" --to <folder>`);
+  console.log(`  Next: Luis fills the "[...]" (QUY-TRINH Giai đoạn 4), Lucas approves; export with npm run studio:format -- export "${rel(dir)}" --to <folder>`);
   process.exit(0);
 }
 
@@ -191,9 +261,17 @@ const resolveImport = (from, spec) => {
   return ["", ".ts", ".tsx", ".json", "/index.ts", "/index.tsx"].map((x) => base + x).find((p) => fs.existsSync(p) && fs.statSync(p).isFile());
 };
 
-// 1. the channel folder, then the style kits its code reaches (whole kit folders)
+// 1. the channel / format folder, then the style kits its code reaches (whole kit folders)
 addDir(chan);
 const styles = new Set();
+// a format package names its style and its demo video in mau/mau.json (the video is the one mp4 that travels)
+const mauJson = path.join(chan, "mau/mau.json");
+const mau = fs.existsSync(mauJson) ? JSON.parse(fs.readFileSync(mauJson, "utf8")) : null;
+if (mau?.style) {
+  styles.add(path.basename(mau.style));
+  addDir(path.join(ROOT, mau.style));
+}
+if (mau?.video && fs.existsSync(path.join(ROOT, mau.video))) files.add(path.resolve(ROOT, mau.video));
 const code = () => [...files].filter((f) => /\.tsx?$/.test(f));
 const seen = new Set();
 const closure = () => {
@@ -312,7 +390,7 @@ const note = `> Exported from VIDEO AI (Studio P4, ${TODAY}) as the standalone p
 w("AGENTS.md", note + fs.readFileSync(path.join(ROOT, "AGENTS.md"), "utf8"));
 w("CLAUDE.md", note + fs.readFileSync(path.join(ROOT, "CLAUDE.md"), "utf8"));
 
-const handoff = [path.join(chan, "00_he-thong/04_BAN-GIAO.md")].find((p) => fs.existsSync(p));
+const handoff = ["05_BAN-GIAO.md", "04_BAN-GIAO.md"].map((f) => path.join(chan, "00_he-thong", f)).find((p) => fs.existsSync(p));
 const prompt = handoff ? fs.readFileSync(handoff, "utf8").match(/```text\n([\s\S]*?)```/)?.[1] : null;
 const compIds = [...blocks.map((b) => b.text.match(/id="([^"]+)"/)?.[1]).filter(Boolean)];
 w(

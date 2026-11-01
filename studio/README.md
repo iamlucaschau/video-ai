@@ -1,4 +1,4 @@
-# STUDIO — từ một kênh đối thủ ra một gói kênh của mình
+# STUDIO — từ một kênh đối thủ ra một gói format của mình
 
 *Lucas chốt yêu cầu 2026-11-01. File này là bản yêu cầu + lộ trình + trạng thái của Studio. Quy trình phân tích chi tiết: `Style Library/QUY-TRINH-PHAN-TICH.md`.*
 
@@ -23,11 +23,12 @@
 
 Mỗi kết luận ghi **dấu hiệu nhận ra** (bóng đổ / ánh sáng thật → 3D engine; hình chảy, tay biến dạng → video AI) và nhãn ĐO / ƯỚC / QUYẾT.
 
-**Đầu ra:** một **gói kênh đứng riêng**, như Atlas Tí Hon (`D:\Claude\Project\Atlas Ti Hon\`), chat mới mở ra là làm tập tiếp được:
-1. Tài liệu hệ thống: Channel Bible, prompt chủ đề, prompt nguồn + kịch bản, quy trình sản xuất, kho chủ đề theo pillar, nhận diện kênh, bàn giao (có prompt dán vào chat mới).
-2. Kit style (code Remotion) + script cần dùng + mẫu tập.
-3. Một video demo đã qua review-loop + một tập hoàn chỉnh.
-4. Bảng so với bản gốc: mình hơn ở đâu, còn thua ở đâu.
+**Đầu ra (Lucas chốt lại 2026-11-02): một GÓI FORMAT**, không phải gói kênh. Tên kênh, thị trường, ngôn ngữ, handle… **không quyết ở Studio**: AI ở chat mới đọc bàn giao rồi tự hỏi Lucas. Gói gồm:
+1. **Công thức** (phần lõi): chủ đề nào thắng / thua và vì sao, tiêu chí chấm chủ đề, mẫu tiêu đề, hook / bắc cầu / kết, nhịp kịch bản theo %, luật viết, **mục tiêu đo được** (so với kênh tham khảo).
+2. **Phong cách dựng** (từ bóc tách từng khung hình): khung 0–1 s và 3 s cuối, **hình theo từng nhịp kịch bản** (họ làm gì → mình dựng bằng component nào), kỹ thuật T# → component, các bước dựng một tập, số đo hình + âm thanh, chỗ khác họ có chủ đích.
+3. Format Bible (luật sản xuất 5 cổng), kho chủ đề theo góc kể, bàn giao có prompt dán vào chat mới + **danh sách câu hỏi AI phải hỏi Lucas**.
+4. **Mẫu dựng lúc phân tích**: kịch bản FINAL + video demo + bảng so với kênh tham khảo.
+5. Kit style (code Remotion), script, mẫu tập; xuất thành dự án đứng riêng như Atlas Tí Hon.
 
 **Luật giữ nguyên:** học cách làm, không chép kịch bản / tài sản của họ (trích nguyên văn chỉ hook, bắc cầu, câu kết, ~15 từ mỗi câu); video, khung hình, transcript của bên thứ ba không vào git; Lucas duyệt từng cổng; không lộ key; luật short-form của `AGENTS.md`.
 
@@ -39,7 +40,7 @@ Mỗi kết luận ghi **dấu hiệu nhận ra** (bóng đổ / ánh sáng th�
 | **P1 · Thu thập** | `npm run studio:ingest -- <url-kênh \| url-video \| thư-mục>` (mục 3) | chạy thử một kênh | ✅ 2026-11-01 |
 | **P2 · Bóc tách** | mẫu báo cáo (`studio/templates/`) + `style-card.json` / `formula.json` (`npm run studio:cards`) + bảng khả thi 4 mức (`KHA-THI.md`) + đo màu và chuyển động máy quay trong ingest. OCR chữ trên màn hình (rapidocr) + tách giọng / nền (demucs): Lucas duyệt và đã nối vào ingest 2026-11-01 | báo cáo + công cụ cần cài | ✅ 2026-11-01 (thử trên History Maps Lore) |
 | **P3 · Dựng lại** | hợp đồng kit ([`KIT-CONTRACT.md`](KIT-CONTRACT.md)) + `npm run studio:kit -- new \| check` (kit + KitSheet + README nháp từ card); `render:style` / `sheet` dùng chung mọi style. Bản test 30 s và video đầy đủ làm theo từng nguồn (hợp đồng §5) | bản test, bản đầy đủ | ✅ công cụ 2026-11-01 (F–L qua `check`; thử `new` từ card History Maps Lore) |
-| **P4 · Đóng gói** | mẫu gói kênh (`studio/templates/channel/`, theo Mapped Journeys + Atlas Tí Hon) + `npm run studio:channel -- new \| export` | gói hoàn chỉnh | ✅ 2026-11-01 (thử `new` từ History Maps Lore; `export` Mapped Journeys chạy độc lập: lint, render) |
+| **P4 · Đóng gói** | **gói format** (`studio/templates/format/`) + `npm run studio:format -- new \| export`; đo nội dung (kịch bản, tiêu đề) trong ingest + compare | gói hoàn chỉnh | ✅ 2026-11-02: gói `Formats/Siege Atlas/` (chờ Lucas xác minh, chưa xuất); xuất thử chạy độc lập (lint, render, kèm video demo) |
 | **P5 · Tốt hơn** | `npm run studio:compare` (bản mình vs đối thủ, cùng bộ đo → `SO-SANH.md`) + `npm run studio:stats` (sổ `so-lieu.csv`, nhập CSV YouTube Studio, trung vị theo pillar / biến thể, so với đối thủ → `SO-LIEU.md`). API YouTube Analytics: chưa (cần OAuth, Lucas duyệt) | bảng so | ✅ 2026-11-01 (compare Ep02 Hannibal vs Guilherme; stats thử bằng CSV giả trong thư mục tạm) |
 
 ## 3. Lệnh
@@ -69,6 +70,11 @@ Từ 2026-11-01 (Lucas duyệt công cụ) ingest đo thêm:
 - **Giọng và nền** (`scripts/stems.py`, demucs): độ to giọng, độ to nền (nhạc + SFX), nền − giọng, **tiếng nhấn ở nền / phút** (ngưỡng 8 dB, hiệu chỉnh trên Ep02 Hannibal: đếm 39, code đặt 41). ~1 phút / video.
 - Bỏ qua bằng `--no-ocr` / `--no-stems`. `studio:compare` so luôn các chỉ số này.
 
+**Đo nội dung (2026-11-02, từ transcript, không cần công cụ mới):**
+- **Kịch bản:** số câu, từ / câu, câu hook dài bao nhiêu từ và hết ở giây nào, con số / mốc đầu tiên ở giây nào, con số / câu, mốc thời gian / phút, câu hỏi, câu thoại, câu dán nhãn nguồn, số khẳng định cần kiểm. Bảng **bản đồ câu** (giây, % video, số, mốc, tên, dấu hiệu, cột Nhịp để Luis gán H · B · N · X · T · V · Đ · K).
+- **Khẳng định cần kiểm:** `_work/<id>.claims.md` (câu có số, mốc thời gian, tên riêng; nguyên câu chỉ ở máy) → nền cho bảng kiểm chứng.
+- **Tiêu đề cả kênh:** từ danh sách video của kênh, trung vị views khi tiêu đề có / không có từng mẫu (năm, đuôi "– Nơi Năm", so sánh nhất, "The X That…", câu hỏi, dấu hai chấm). Dưới ~20 video chỉ là gợi ý.
+
 ### Card + khả thi (P2)
 
 ```bash
@@ -78,7 +84,7 @@ npm run studio:cards -- check "Test/History Maps Lore"
 
 - `init`: viết `style-card.json` + `formula.json` (phần đo được đã điền, còn lại `TODO`) và chép mẫu `BAO-CAO.md`, `BOC-TACH-HINH.md`, `BOC-TACH-KICH-BAN.md` còn thiếu. File đã có thì giữ nguyên.
 - Luis điền card trong lúc phân tích: mỗi kỹ thuật T# một mục với mức 🟢🟡🟠🔴 theo [`KHA-THI.md`](KHA-THI.md); mỗi công cụ 🟠 một mục `tools[]` (`status: "proposed"` tới khi Lucas duyệt).
-- `check`: kiểm card (thiếu trường, còn `TODO`, 🟠 không có công cụ, 🔴 vẫn "dùng", câu trích nguyên văn quá 15 từ) và sinh `<thư mục>/KHA-THI.md`: bảng khả thi + công cụ chờ duyệt. Card là đầu vào của P3 (dựng lại) và P4 (gói kênh).
+- `check`: kiểm card (thiếu trường, còn `TODO`, 🟠 không có công cụ, 🔴 vẫn "dùng", câu trích nguyên văn quá 15 từ) và sinh `<thư mục>/KHA-THI.md`: bảng khả thi + công cụ chờ duyệt. Card là đầu vào của P3 (dựng lại) và P4 (gói format).
 - Mẫu đầy đủ: `Test/History Maps Lore/style-card.json`, `formula.json`, `KHA-THI.md`.
 
 ### Kit (P3)
@@ -95,16 +101,16 @@ npm run render:style -- <CompositionId> --to <file.mp4>
 - `render:style` / `sheet` là `render-j` / `sheet-j` (tên cũ vẫn chạy).
 - Vòng dựng đủ một style mới: `KIT-CONTRACT.md` §5.
 
-### Gói kênh (P4)
+### Gói format (P4)
 
 ```bash
-npm run studio:channel -- new "Siege Atlas Shorts" --style L-siege-atlas --from "Test/History Maps Lore" --handle @SiegeAtlas
-npm run studio:channel -- export "Mapped Journeys" --to "B:/Claude/Project/mapped-journeys" --install
+npm run studio:format -- new "Siege Atlas" --style L-siege-atlas --from "Test/History Maps Lore" --sample "Style Library/L-siege-atlas/l-thermopylae-full"
+npm run studio:format -- export "Formats/Siege Atlas" --to "B:/Claude/Project/siege-atlas" --install
 ```
 
-- `new` (không ghi đè): `<Tên kênh>/` ở gốc repo gồm `00_he-thong/` (01 Bible, 02 nhận diện, 03 kho chủ đề, 04 bàn giao có prompt dán vào chat mới) + `episodes/_template/` (README 5 cổng, FINAL, spec, header giọng, `progress.md`, `checks.md`, `xuat-ban.md`). Phần đo được và rút từ card đã điền (pillar, nhịp %, hook / bắc cầu / kết, mẹo giữ chân, lỗi của đối thủ, màu); `[...]` là phần Luis viết, Lucas duyệt.
-- `export` (thư mục đích phải trống): dự án Remotion đứng riêng chỉ chứa kênh đó: thư mục kênh, kit style mà code của nó dùng tới, mọi file được import (kit-common, subs, helper pvr, manifest giọng), tài sản `public/` mà code gọi tên, script giọng + cache TTS, `public/sfx`, scripts (trừ công cụ Studio), skills, config, `Root.tsx` chỉ gồm composition của kênh, README có prompt bắt đầu, `AGENTS.md` / `CLAUDE.md` kèm ghi chú. Bỏ `*.mp4`, `vo.mp3`, `_work/`. Chép `gemini_key.txt` (git-ignored ở đó; `--no-key` để bỏ). `git init` + commit đầu (không remote, `--no-git` để bỏ); `--install` chạy `npm ci`.
-- Đã thử: Mapped Journeys → 1.161 file, 158 MB, chỉ style J; trong dự án mới `npm run lint` sạch, 6 video + 9 bìa đăng ký, render khung Hannibal đủ ảnh; key không vào commit.
+- `new` (không ghi đè): `Formats/<tên format>/` gồm `00_he-thong/` (**01 Format Bible**, **02 Công thức** chủ đề · tiêu đề · kịch bản · mục tiêu đo, **03 Phong cách dựng** khung 0–1 s / 3 s cuối · hình theo nhịp · kỹ thuật → component · các bước dựng · số đo hình, 04 kho chủ đề theo góc kể, **05 bàn giao** có prompt dán vào chat mới + câu hỏi AI phải hỏi Lucas), `mau/` (kịch bản FINAL, spec, checks, progress, `SO-SANH.md` của bản demo; `mau.json` trỏ tới code và video demo) và `episodes/_template/`. Phần đo được (nhịp %, hook / bắc cầu / kết, mẹo giữ chân, lỗi của đối thủ, bảng mục tiêu với số đo của họ) điền tự động; phần viết là của Luis, Lucas duyệt.
+- `export` (thư mục đích phải trống): dự án Remotion đứng riêng: thư mục gói, kit style (từ `mau.json` và từ code), mọi file được import, tài sản `public/` mà code gọi tên, script giọng + cache TTS, `public/sfx`, scripts (trừ công cụ Studio), skills, config, `Root.tsx` chỉ gồm composition liên quan, README có prompt bắt đầu, **video demo** (git-ignored ở đó). Bỏ các `*.mp4` khác, `vo.mp3`, `_work/`. Chép `gemini_key.txt` (git-ignored; `--no-key` để bỏ). `git init` + commit đầu (không remote, `--no-git`); `--install` chạy `npm ci`. Cũng xuất được một thư mục kênh (vd. `Mapped Journeys`).
+- Đã thử: `Formats/Siege Atlas` → 1.019 file, 401 MB (style L + engine J, video demo 259 MB); trong dự án mới lint sạch, 5 composition, render khung Thermopylae; video không vào git. Mapped Journeys → 158 MB, lint, render.
 
 ### Tốt hơn (P5)
 
@@ -117,6 +123,6 @@ npm run studio:stats -- report "Mapped Journeys" --moc 30d --ref "Test/doi-thu"
 
 - `compare`: đo bản render của mình bằng đúng bộ đo của ingest (`out/compare/<tên>/`, không sheet), viết `SO-SANH.md` cạnh mp4: mỗi số đo của mình, trung vị + khoảng của đối thủ, mình ở đâu. Chỉ âm lượng là luật (đạt / trượt); khác biệt khác để đọc, giữ nếu là lựa chọn (QUYẾT), sửa nếu không có lý do. Cần `studio:ingest` của nguồn trước.
 - `stats` (theo sổ của Atlas Tí Hon): `init` tạo một dòng mỗi tập (pillar từ Bible §11, độ dài từ timing); `import` đọc CSV xuất từ YouTube Studio (Analytics → Advanced mode → Content → Export; tên cột tiếng Anh hoặc tiếng Việt), ghép theo `youtube_id` rồi theo tiêu đề, dòng không khớp thì liệt kê, không đoán; `report` → `SO-LIEU.md`: tập theo "% đã xem (so với vuốt đi)", trung vị theo pillar và theo `bien_the` (nhãn A/B mình đặt), so với đối thủ (views / video, like / view). Dưới 6 tập có số thì chỉ là gợi ý.
-- Mẫu kênh (P4) đã có bước này: Bible §9 Cổng 5 + §10, dòng mới trong `checks.md`.
+- Gói format (P4) đã có bước này: Bible §9 Cổng 5 + §10, dòng mới trong `checks.md`.
 
 Giới hạn: thư mục chỉ nhận ID YouTube trong tên file (TikTok chưa thử); số view ở danh sách kênh của yt-dlp đã làm tròn (đủ để xếp hạng, số chính xác lấy từ trang video); ngày đăng cả kênh (nhịp đăng) chưa lấy.

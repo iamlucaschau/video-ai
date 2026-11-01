@@ -58,6 +58,16 @@ const measures = (v) => {
     outsideSafe: v.text?.outsideSafe ?? null,
     bedMinusVoice: v.stems?.bedMinusVoice ?? null,
     hitsPerMin: v.stems?.hitsPerMin ?? null,
+    sentences: v.script?.sentences ?? null,
+    wordsPerSentence: v.script?.wordsPerSentence ?? null,
+    hookWords: v.script?.hookWords ?? null,
+    hookSeconds: v.script?.hookSeconds ?? null,
+    firstNumberAt: v.script?.firstNumberAt ?? null,
+    numbersPerSentence: v.script?.numbersPerSentence ?? null,
+    timeAnchorsPerMin: v.script?.timeAnchorsPerMin ?? null,
+    dialogue: v.script?.dialogue ?? null,
+    sourced: v.script?.sourced ?? null,
+    claims: v.script?.claims ?? null,
   };
 };
 
@@ -72,6 +82,16 @@ const place = (x, refs) => {
 
 const ROWS = [
   // key, label, decimals, scale, how to read
+  ["sentences", "Kịch bản: số câu", 0, 1, ""],
+  ["wordsPerSentence", "Kịch bản: từ / câu (trung vị)", 0, 1, "câu ngắn dễ nghe trên điện thoại"],
+  ["hookWords", "Kịch bản: câu hook (từ)", 0, 1, ""],
+  ["hookSeconds", "Kịch bản: câu hook hết ở giây", 1, 1, "người xem quyết định lướt trong 1–3 s đầu"],
+  ["firstNumberAt", "Kịch bản: con số / mốc đầu tiên (giây)", 1, 1, "công thức: năm ngay câu đầu"],
+  ["numbersPerSentence", "Kịch bản: con số / câu", 2, 1, "luật: ≤ 1 con số mới mỗi câu"],
+  ["timeAnchorsPerMin", "Kịch bản: mốc thời gian / phút", 1, 1, "mốc tháng / ngày làm xương sống (nhịp V)"],
+  ["dialogue", "Kịch bản: câu thoại", 0, 1, ""],
+  ["sourced", "Kịch bản: câu dán nhãn nguồn", 0, 1, "mình: mọi số tranh cãi đều dán nhãn"],
+  ["claims", "Kịch bản: khẳng định cần kiểm", 0, 1, "mỗi câu phải có dòng trong bảng kiểm chứng"],
   ["duration", "Thời lượng (s)", 1, 1, "khớp preset của kênh mình"],
   ["words", "Số từ lời đọc", 0, 1, ""],
   ["wpm", "Tốc độ đọc (wpm)", 0, 1, "chậm hơn nhiều → dễ lướt; nhanh hơn nhiều → khó theo hình"],

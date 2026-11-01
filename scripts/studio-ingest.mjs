@@ -149,6 +149,84 @@ const speech = (segs, duration) => {
   };
 };
 
+// ---------- script (from the transcript): sentence map, devices, claims to check
+
+const NUM_WORD = /^(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|fifteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundreds?|thousands?|millions?|billions?|dozens?|half)$/i;
+const MONTH = /^(january|february|march|april|may|june|july|august|september|october|november|december)$/i;
+const DURATION = /^(days?|weeks?|months?|years?|decades?|centuries|century|hours?|nights?)$/i;
+const DIALOGUE = /\b(said|says|replied|told|wrote|declared|shouted|asked|answered|ordered)\b|["“”]/i;
+const SOURCED = /\b(according to|some sources|sources say|historians?|chronicles?|records? show|claimed|estimates?|scholars?|it is said|legend says)\b/i;
+const clean = (w) => w.replace(/^[^\w']+|[^\w']+$/g, "");
+
+/** Transcript words → sentences with time, % position and the devices our formula counts. */
+const sentences = (segs, duration) => {
+  const out = [];
+  let cur = [];
+  for (const [s, e, w] of segs.flatMap((g) => g.words)) {
+    cur.push([s, e, w]);
+    if (/[.?!]["”']?$/.test(w)) out.push(cur), (cur = []);
+  }
+  if (cur.length) out.push(cur);
+  return out.map((ws, i) => {
+    const tokens = ws.map(([, , w]) => clean(w)).filter(Boolean);
+    const text = ws.map(([, , w]) => w).join(" ");
+    const numbers = tokens.filter((t) => /\d/.test(t) || NUM_WORD.test(t)).length;
+    const years = tokens.filter((t, k) => /^(1\d{3}|20\d\d)$/.test(t) || (/^(BC|AD|BCE|CE)$/.test(t) && k > 0)).length;
+    const time = years + tokens.filter((t) => MONTH.test(t) || DURATION.test(t)).length;
+    const names = tokens.filter((t, k) => k > 0 && /^[A-Z][a-z]/.test(t) && !MONTH.test(t)).length;
+    return {
+      n: i + 1,
+      t: ws[0][0],
+      pos: ws[0][0] / duration,
+      words: tokens.length,
+      text,
+      numbers,
+      time,
+      names,
+      question: /\?["”']?$/.test(text),
+      dialogue: DIALOGUE.test(text),
+      sourced: SOURCED.test(text),
+      claim: numbers + years > 0 || names > 0,
+    };
+  });
+};
+
+/** Script measures of one video (all ĐO from the transcript; Whisper may mishear names and split sentences oddly). */
+const scriptStats = (sents, duration) => {
+  if (!sents.length) return null;
+  const min = duration / 60;
+  const firstNum = sents.find((s) => s.numbers || s.time);
+  return {
+    sentences: sents.length,
+    wordsPerSentence: median(sents.map((s) => s.words)),
+    hookWords: sents[0].words,
+    hookSeconds: sents[1]?.t ?? duration,
+    firstNumberAt: firstNum ? firstNum.t : null,
+    numbersPerSentence: sents.reduce((t, s) => t + s.numbers, 0) / sents.length,
+    timeAnchorsPerMin: sents.reduce((t, s) => t + s.time, 0) / min,
+    questions: sents.filter((s) => s.question).length,
+    dialogue: sents.filter((s) => s.dialogue).length,
+    sourced: sents.filter((s) => s.sourced).length,
+    claims: sents.filter((s) => s.claim).length,
+  };
+};
+
+/** Title patterns of a whole channel list → median views with / without each pattern. */
+const TITLE_FEATURES = [
+  ["năm trong tiêu đề", (t) => /\b(1\d{3}|20\d\d)\b|\bBC\b/.test(t)],
+  ["đuôi \"– Nơi Năm\"", (t) => /[-–—]\s*[A-Z][\w' ]+\s\d{3,4}\s*$/.test(t)],
+  ["nghịch lý / so sánh nhất", (t) => /\b(tiny|small|smallest|most|greatest|largest|biggest|deadliest|ruthless|worst|best|only|last|first)\b/i.test(t)],
+  ["mẫu \"The X That / Who …\"", (t) => /\bThe\b[\w' ]+\b(That|Who)\b/.test(t)],
+  ["câu hỏi", (t) => /\?/.test(t)],
+  ["dấu hai chấm", (t) => /:/.test(t)],
+];
+const titleStats = (list) =>
+  TITLE_FEATURES.map(([label, test]) => {
+    const yes = list.filter((v) => test(v.title));
+    const no = list.filter((v) => !test(v.title));
+    return { label, n: yes.length, of: list.length, withMed: median(yes.map((v) => v.views)), withoutMed: median(no.map((v) => v.views)) };
+  });
+
 /**
  * On-screen text from scripts/ocr.py (boxes on a 1080-wide canvas): density, size, safe zone (x 60–940, y 220–1440).
  * A box at the same spot (±30 px) in ≥ 40 % of the frames is a watermark / handle: reported apart, left out of the rest.
@@ -208,6 +286,14 @@ if (flag("selftest")) {
   const box = (text, x, y, h) => ({ text, x, y, w: 200, h, score: 0.9 });
   const os = onScreen({ frames: [{ t: 0.5, items: [] }, { t: 1.5, items: [box("IN 1565", 100, 300, 60), box("tiny island now", 100, 1500, 40)] }, { t: 2.5, items: [box("MALTA", 100, 400, 80)] }, { t: 3.5, items: [] }, { t: 4.5, items: [] }] });
   ok(os.textFrames === 2 / 5 && os.wordsPerFrame === 3 && os.maxBlocks === 2 && os.textHeight === 60 && os.smallText === 40 && os.outsideSafe === 1 / 3 && os.watermarkY === null, `onScreen ${JSON.stringify(os)}`);
+  const W = (t, w) => [t, t + 0.3, w];
+  const segs = [{ start: 0, end: 9, words: [W(0, "In"), W(0.3, "1565,"), W(0.6, "the"), W(0.9, "Ottomans"), W(1.2, "attacked."), W(2, "Why?"), W(3, "According"), W(3.3, "to"), W(3.6, "Balbi,"), W(3.9, "he"), W(4.2, "replied:"), W(4.5, "never."), W(6, "It"), W(6.3, "held"), W(6.6, "for"), W(6.9, "three"), W(7.2, "months.")] }];
+  const ss = sentences(segs, 10);
+  ok(ss.length === 4 && ss[0].time === 1 && ss[0].names === 1 && ss[1].question && ss[2].sourced && ss[2].dialogue && ss[3].numbers === 1 && ss[3].time === 1 && !ss[1].claim, `sentences ${JSON.stringify(ss.map((s) => [s.words, s.numbers, s.time, s.names]))}`);
+  const st = scriptStats(ss, 10);
+  ok(st.sentences === 4 && st.hookWords === 5 && st.hookSeconds === 2 && st.firstNumberAt === 0 && st.questions === 1 && st.sourced === 1 && st.claims === 3, `scriptStats ${JSON.stringify(st)}`);
+  const tt = titleStats([{ title: "The Tiny Island That Stopped an Empire - Malta 1565", views: 100 }, { title: "Genghis Khan's Last Revenge: The Tangut", views: 1 }, { title: "Why Rome fell?", views: 10 }]);
+  ok(tt[0].n === 1 && tt[0].withMed === 100 && tt[0].withoutMed === 5.5 && tt[1].n === 1 && tt[4].n === 1 && tt[5].n === 1, `titleStats ${JSON.stringify(tt)}`);
   const wm = (f) => ({ ...f, items: [...f.items, box("@HANDLE", 400, 1490, 40)] });
   const os2 = onScreen({ frames: [{ t: 0.5, items: [] }, { t: 1.5, items: [box("MALTA", 100, 400, 80)] }, { t: 2.5, items: [] }].map(wm) });
   ok(os2.watermarkY === 1490 && os2.outsideSafe === 0 && os2.maxBlocks === 1 && os2.textFrames === 1 / 3, `watermark ${JSON.stringify(os2)}`);
@@ -440,7 +526,14 @@ const videos = files.map((f) => {
   const stems = stemsOn ? cached(w("stems.json"), () => pyStep("stems.py", file, w("stems.json"))) : null;
   const sh = sheets ? contact(file, key, tech.duration, work) : [];
   const shots = m ? shotsFrom(m.cuts, tech.duration).map((s) => ({ ...s, motion: motion(m.scores, s.a, s.b) })) : [];
-  return { key, id, file: f, meta, tech, m, pal, shots, sp: tx ? speech(tx, tech.duration) : null, text: ocr ? onScreen(ocr) : null, stems, sheets: sh };
+  const sents = tx ? sentences(tx, tech.duration) : [];
+  if (sents.length) {
+    fs.writeFileSync(w("script.json"), JSON.stringify(sents, null, 1));
+    // claims to check: the sentence itself stays in _work (third-party words, git-ignored)
+    const rows = sents.filter((s) => s.claim).map((s) => `| ${s.n} | ${s.t.toFixed(1)} | ${s.text.replace(/\|/g, "/")} | ${[s.numbers || s.time ? "số / thời gian" : "", s.names ? "tên" : "", s.sourced ? "có nhãn nguồn" : ""].filter(Boolean).join(", ")} | | |`);
+    fs.writeFileSync(w("claims.md"), `# Khẳng định cần kiểm — ${key}\n\n*Tự trích từ transcript (câu có số, mốc thời gian hoặc tên riêng). Chép kết quả (✓ / ≈ / ✗ / ?) sang bảng kiểm chứng của \`BOC-TACH-KICH-BAN.md\` bằng lời tóm tắt của mình, không chép nguyên câu.*\n\n| # câu | Giây | Câu (nguyên văn, chỉ ở máy) | Loại | Nguồn kiểm | Kết quả |\n|---|---|---|---|---|---|\n${rows.join("\n")}\n`);
+  }
+  return { key, id, file: f, meta, tech, m, pal, shots, sp: tx ? speech(tx, tech.duration) : null, script: scriptStats(sents, tech.duration), sents: sents.map(({ text, ...rest }) => rest), text: ocr ? onScreen(ocr) : null, stems, sheets: sh };
 });
 
 channelUrl ??= videos.find((v) => v.meta?.channel_url)?.meta.channel_url ?? null;
@@ -512,6 +605,28 @@ L.push("", "## Màu chủ đạo (k-means 6 màu trên 1 khung / giây, gồm c�
 L.push("| V | Màu (tỉ lệ diện tích) |", "|---|---|");
 for (const v of videos) L.push(`| ${v.label} | ${(v.pal ?? []).map((c) => `\`${c.hex}\` ${pct(c.share, 0)}`).join(" · ") || "—"} |`);
 
+if (videos.some((v) => v.script)) {
+  L.push("", "## Kịch bản (đo từ lời đọc)", "");
+  L.push("| V | Câu | Từ / câu (trung vị) | Câu hook: từ · hết ở giây | Con số / mốc đầu tiên (giây) | Con số / câu | Mốc thời gian / phút | Câu hỏi | Câu thoại | Câu dán nhãn nguồn | Khẳng định cần kiểm |", "|---|---|---|---|---|---|---|---|---|---|---|");
+  for (const v of videos) {
+    const s = v.script ?? {};
+    L.push(`| ${v.label} | ${n(s.sentences)} | ${n(s.wordsPerSentence)} | ${n(s.hookWords)} · ${n(s.hookSeconds, 1)} | ${n(s.firstNumberAt, 1)} | ${n(s.numbersPerSentence, 2)} | ${n(s.timeAnchorsPerMin, 1)} | ${n(s.questions)} | ${n(s.dialogue)} | ${n(s.sourced)} | ${n(s.claims)} |`);
+  }
+  L.push("", "Đếm tự động trên transcript Whisper (**ĐO**, sai số khi Whisper nghe nhầm tên hoặc tách câu khác người viết). Mốc thời gian = năm, tháng, \"days / weeks / years…\". Câu thoại = có \"said / replied / told…\" hoặc ngoặc kép. Nhãn nguồn = \"according to / some sources / historians…\". Danh sách khẳng định cần kiểm (nguyên câu, chỉ ở máy): `_work/<id>.claims.md`.");
+  L.push("", "### Bản đồ câu (điền cột Nhịp theo công thức: H · B · N · X · T · V · Đ · K)", "");
+  for (const v of videos.filter((x) => x.sents?.length)) {
+    L.push(`**${v.label} · ${v.id ?? v.key}**`, "", "| # | Giây | % video | Từ | Số | Mốc t.gian | Tên | Dấu hiệu | Nhịp |", "|---|---|---|---|---|---|---|---|---|");
+    for (const s of v.sents) L.push(`| ${s.n} | ${n(s.t, 1)} | ${pct(s.pos, 0)} | ${s.words} | ${s.numbers || ""} | ${s.time || ""} | ${s.names || ""} | ${[s.question ? "hỏi" : "", s.dialogue ? "thoại" : "", s.sourced ? "nguồn" : ""].filter(Boolean).join(", ")} | |`);
+    L.push("");
+  }
+}
+if (channel && channel[videos[0]?.tab ?? "shorts"]?.length >= 4) {
+  const list = channel[videos[0]?.tab ?? "shorts"].filter((v) => v.views != null);
+  L.push("", `## Tiêu đề và chủ đề cả kênh (${list.length} video ${videos[0]?.tab ?? "shorts"}, views làm tròn)`, "");
+  L.push("| Mẫu tiêu đề | Có / tổng | Views trung vị khi có | Khi không có |", "|---|---|---|---|");
+  for (const r of titleStats(list)) L.push(`| ${r.label} | ${r.n} / ${r.of} | ${n(r.withMed)} | ${n(r.withoutMed)} |`);
+  L.push("", "Dưới ~20 video thì mỗi dòng chỉ là gợi ý. Nhóm theo **góc kể** (vd. bên nhỏ vs siêu cường, đạo đức đảo ngược) do Luis gán ở `BAO-CAO.md` §1.1, rồi so trung vị views từng nhóm.");
+}
 if (videos.some((v) => v.text)) {
   L.push("", "## Chữ trên màn hình (OCR rapidocr, 1 khung / giây, gồm phụ đề và watermark)", "");
   L.push("| V | Khung có chữ | Từ / khung (trung vị) | Khối chữ cùng lúc (tối đa) | Cao chữ trung vị (px trên khung 1080) | Chữ nhỏ (10 % nhỏ nhất, px) | Khối chữ ngoài vùng an toàn | Watermark / handle cố định (y) |", "|---|---|---|---|---|---|---|---|");

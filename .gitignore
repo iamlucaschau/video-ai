@@ -51,3 +51,6 @@ Test/**/*_CAPTION.txt
 Test/doi-thu/_work/
 
 Test/**/_work/
+
+# Format packages: demo videos stay in their sample folder (git-ignored there), never copied here
+Formats/**/*.mp4

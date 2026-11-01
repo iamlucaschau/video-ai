@@ -101,11 +101,11 @@ Bảng "đối thủ làm gì ↔ luật của mình (`AGENTS.md`, `Style Librar
 
 **Lucas duyệt:** video cuối.
 
-## Giai đoạn 4 — Đóng gói kênh (khi style là kênh mới)
+## Giai đoạn 4 — Đóng gói FORMAT (Lucas 2026-11-02)
 
-Tên kênh (kiểm handle, Lucas thử tạo thật) · Channel Bible (định vị, pillar, công thức kịch bản, chuẩn hình / tiếng, luật nguồn, 5 cổng) · nhận diện (prompt avatar / banner) · gói đăng (`xuat-ban.md`) · thư mục mẫu tập · tự đánh giá + nâng cấp · bàn giao.
+Gói sản xuất là **gói format**, không phải gói kênh: công thức chủ đề · tiêu đề · kịch bản + mục tiêu đo (`02_CONG-THUC.md`), **phong cách dựng** rút từ bóc tách khung hình: hình theo từng nhịp, kỹ thuật → component, các bước dựng, số đo hình (`03_PHONG-CACH-DUNG.md`), Format Bible (chuẩn hình / tiếng, luật nguồn, 5 cổng), kho chủ đề theo góc kể, mẫu tập, **kịch bản + video demo dựng ở Giai đoạn 3** (`mau/`), bàn giao. **Tên kênh, handle, thị trường, ngôn ngữ, pillar, nhận diện không quyết ở đây:** bàn giao có danh sách câu hỏi để AI ở chat mới hỏi Lucas.
 
-**Studio P4 (2026-11-01):** `npm run studio:channel -- new "<Tên kênh>" --style <X-tên> --from Test/<thư-mục>` tạo đủ bộ trên, điền sẵn từ card (pillar, công thức nhịp, mẹo giữ chân, lỗi của đối thủ, màu); Luis viết các chỗ `[...]`, Lucas duyệt. Khi kênh chạy riêng: `npm run studio:channel -- export "<Tên kênh>" --to "<thư mục mới>" --install` → dự án đứng riêng như Atlas Tí Hon (có git, chưa có remote).
+**Studio P4:** `npm run studio:format -- new "<Tên format>" --style <X-tên> --from Test/<thư-mục> --sample "<thư mục bản test>"` → `Formats/<Tên format>/`, điền sẵn từ card và `_work/ingest.json` (nhịp %, hook / bắc cầu / kết, mẹo, lỗi của đối thủ, bảng số đo của họ); Luis viết phần chủ đề, tiêu đề, hình theo nhịp, các bước dựng, cột mục tiêu, kho chủ đề; Lucas duyệt. Xuất khi Lucas bảo: `npm run studio:format -- export "Formats/<Tên format>" --to "<thư mục mới>" --install` → dự án đứng riêng (có git, chưa remote, kèm video demo).
 
 ---
 
