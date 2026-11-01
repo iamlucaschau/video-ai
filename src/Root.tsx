@@ -34,7 +34,6 @@ import {
   HRadiumGirls,
   hRadiumGirlsDuration,
 } from "../Style Library/H-paper-dossier/h-radium-girls/Video";
-import { ISingapore, iSingaporeDuration } from "../Map/i-singapore/Video";
 import { JAeneas, jAeneasDuration } from "../Style Library/J-satellite-journey/j-aeneas/Video";
 import { JAeneasFull, jAeneasFullDuration } from "../Style Library/J-satellite-journey/j-aeneas-full/Video";
 import { ArmyTest, armyTestDuration } from "../Style Library/J-satellite-journey/kit-army-test";
@@ -42,12 +41,6 @@ import { Hannibal, hannibalDuration } from "../Mapped Journeys/episodes/ep02-han
 import { Magellan, magellanDuration } from "../Mapped Journeys/episodes/ep03-magellan/Video";
 import { Xuanzang, xuanzangDuration } from "../Mapped Journeys/episodes/ep04-xuanzang/Video";
 import { MJ_COVERS, MJCover } from "../Mapped Journeys/covers";
-import { P2DuongSatCaoToc, p2DuongSatCaoTocDuration } from "../Map/p2-duong-sat-cao-toc/Video";
-import { P3DbsclSutLun, p3DbsclSutLunDuration } from "../Map/p3-dbscl-sut-lun/Video";
-import { P1BruneiChiaDoi, p1BruneiChiaDoiDuration } from "../Map/p1-brunei-chia-doi/Video";
-import { Cover, COVERS } from "../Map/covers";
-import { P4MalaccaKra, p4MalaccaKraDuration } from "../Map/p4-malacca-kra/Video";
-import { P5TrungQuocMuiGio, p5TrungQuocMuiGioDuration } from "../Map/p5-trung-quoc-mui-gio/Video";
 import { PriceTheirWork } from "./compositions/PriceTheirWork/PriceTheirWork";
 import { buildTimeline } from "./compositions/PriceTheirWork/timeline";
 import {
@@ -99,14 +92,6 @@ export const RemotionRoot: React.FC = () => {
           durationInFrames={hRadiumGirlsDuration(PVR.fps)}
         />
         <Composition
-          id="Style-I-ToyAtlas-Singapore"
-          component={ISingapore}
-          width={PVR.width}
-          height={PVR.height}
-          fps={PVR.fps}
-          durationInFrames={iSingaporeDuration(PVR.fps)}
-        />
-        <Composition
           id="Style-J-SatelliteJourney-Aeneas"
           component={JAeneas}
           width={PVR.width}
@@ -155,48 +140,6 @@ export const RemotionRoot: React.FC = () => {
           durationInFrames={xuanzangDuration(PVR.fps)}
         />
       </Folder>
-      <Folder name="Map">
-        <Composition
-          id="Map-P1-BruneiChiaDoi"
-          component={P1BruneiChiaDoi}
-          width={PVR.width}
-          height={PVR.height}
-          fps={PVR.fps}
-          durationInFrames={p1BruneiChiaDoiDuration(PVR.fps)}
-        />
-        <Composition
-          id="Map-P2-DuongSatCaoToc"
-          component={P2DuongSatCaoToc}
-          width={PVR.width}
-          height={PVR.height}
-          fps={PVR.fps}
-          durationInFrames={p2DuongSatCaoTocDuration(PVR.fps)}
-        />
-        <Composition
-          id="Map-P3-DbsclSutLun"
-          component={P3DbsclSutLun}
-          width={PVR.width}
-          height={PVR.height}
-          fps={PVR.fps}
-          durationInFrames={p3DbsclSutLunDuration(PVR.fps)}
-        />
-        <Composition
-          id="Map-P4-MalaccaKra"
-          component={P4MalaccaKra}
-          width={PVR.width}
-          height={PVR.height}
-          fps={PVR.fps}
-          durationInFrames={p4MalaccaKraDuration(PVR.fps)}
-        />
-        <Composition
-          id="Map-P5-TrungQuocMuiGio"
-          component={P5TrungQuocMuiGio}
-          width={PVR.width}
-          height={PVR.height}
-          fps={PVR.fps}
-          durationInFrames={p5TrungQuocMuiGioDuration(PVR.fps)}
-        />
-      </Folder>
       <Folder name="MJ-Covers">
         {MJ_COVERS.flatMap((spec) =>
           (["A", "B", "C"] as const).map((v) => (
@@ -204,12 +147,6 @@ export const RemotionRoot: React.FC = () => {
               width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
           )),
         )}
-      </Folder>
-      <Folder name="Map-Covers">
-        {COVERS.map((spec) => (
-          <Composition key={spec.slug} id={`Cover-${spec.slug}`} component={Cover} defaultProps={{ slug: spec.slug }}
-            width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
-        ))}
       </Folder>
       <Folder name="PoorVsRich-Ep03">
         <Composition

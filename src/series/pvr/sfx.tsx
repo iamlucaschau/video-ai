@@ -91,7 +91,7 @@ export const MusicBed: React.FC<{ file: string; level?: number; duck?: (f: numbe
   );
 };
 
-/** Map channel: one music bed per pillar (Lucas 2026-10-14; alternates in Map/00_he-thong/01_CHANNEL-BIBLE.md §6). */
+/** Map channel: one music bed per pillar (Lucas 2026-10-14; alternates in the Atlas Tí Hon project: B:/Claude/Project/atlas ti hon, Map/00_he-thong/01_CHANNEL-BIBLE.md §6). */
 export const PILLAR_MUSIC = {
   P1: "sfx/music/p1-historical-documentary-music-349042.mp3",
   P2: "sfx/music/p2-explainer-explainer-music-576633.mp3",

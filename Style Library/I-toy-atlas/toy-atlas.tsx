@@ -1,6 +1,6 @@
 /**
  * I "TOY ATLAS": reusable Remotion kit, 9:16. Style guide: ./README.md.
- * Learned from EasyHistories (analysis: Map/phan-tich-V3-V4-EasyHistories.md).
+ * Learned from EasyHistories (analysis: Map/phan-tich-V3-V4-EasyHistories.md in the Atlas Tí Hon project, B:/Claude/Project/atlas ti hon).
  *
  * A real country map (Natural Earth via world-atlas, public domain) with a
  * relief texture, territories filled per side and taken over by a radial
