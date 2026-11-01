@@ -1,4 +1,4 @@
-# EPISODE SPEC — SLUG (Siege Atlas, style L — Siege Atlas)
+# EPISODE SPEC — SLUG (Thế Trận, style L — Thế Trận)
 
 *9:16, 30 fps, tiếng Anh. Lời đọc khớp **từng chữ** với `kich-ban-SLUG-FINAL.md` (`node scripts/episode.mjs prep` kiểm tra). Kế hoạch hình chi tiết: FINAL, mục "Kế hoạch hình".*
 

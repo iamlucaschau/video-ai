@@ -1,4 +1,4 @@
-# 03 — KHO CHỦ ĐỀ · Siege Atlas
+# 03 — KHO CHỦ ĐỀ · Thế Trận
 
 *Nháp 2026-11-02, Luis. Theo góc kể của format (pillar thật chốt với Lucas ở chat mới). **Ứng viên chưa kiểm chứng:** con số để trống tới Cổng 2 (kiểm nguồn), điểm chấm ở Cổng 1 theo `02_CONG-THUC.md` §1. Chủ đề kênh tham khảo đã làm (Malta 1565, Rhodes 1480, Copenhagen 1807, Tây Hạ 1227) chỉ làm lại khi có góc khác. Ngôn ngữ / thị trường đổi thì kho đổi theo (vd. thêm chủ đề gần khán giả Việt Nam).*
 

@@ -1,4 +1,4 @@
-# Mẫu của format Siege Atlas
+# Mẫu của format Thế Trận
 
 *Kịch bản + video demo dựng lúc phân tích (2026-11-01). Bản chép ở đây là ảnh chụp lúc tạo gói; bản gốc đang làm việc nằm ở thư mục mẫu bên dưới.*
 

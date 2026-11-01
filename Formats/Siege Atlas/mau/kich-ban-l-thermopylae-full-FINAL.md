@@ -1,4 +1,4 @@
-# Kịch bản test hoàn chỉnh style L "Siege Atlas" — Thermopylae, 480 TCN · FINAL
+# Kịch bản test hoàn chỉnh style L "Thế Trận" — Thermopylae, 480 TCN · FINAL
 
 > **FINAL: Lucas khoá 2026-11-01** (từ v2). Q1: giữ câu Immortals, tempo 1,1. Q2–Q5 theo đề xuất của Luis: giữ câu thoại Plutarch (đã dán nhãn), không hiện số "2 triệu" thành chip, kết bằng văn bia, tài nguyên ngoài (tranh, ảnh AI, DEM) Luis gửi chi tiết từng món để duyệt trước khi tải. Lời đọc bên dưới là bản khoá: `episode.mjs prep` kiểm từng chữ với spec.
 

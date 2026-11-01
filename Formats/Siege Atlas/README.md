@@ -1,4 +1,6 @@
-# Gói format · Siege Atlas
+# Gói format · Thế Trận
+
+*Thư mục giữ tên cũ `Formats/Siege Atlas` (tên tạm trước 2026-11-02).*
 
 *Style `Style Library/L-siege-atlas/`, tạo 2026-11-02 bằng Studio từ phân tích `Test/History Maps Lore`. Gói format chưa gắn với kênh nào: tên kênh, thị trường, ngôn ngữ chốt ở chat mới (`00_he-thong/05_BAN-GIAO.md` §1).*
 

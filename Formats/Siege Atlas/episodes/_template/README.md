@@ -1,4 +1,4 @@
-# Mẫu tập — Siege Atlas (style L — Siege Atlas)
+# Mẫu tập — Thế Trận (style L — Thế Trận)
 
 Bắt đầu một tập mới từ thư mục này. Luật: `../../00_he-thong/01_CHANNEL-BIBLE.md`. Video mẫu của style: `Style Library/L-siege-atlas/` (thư mục test có `Video.tsx`).
 

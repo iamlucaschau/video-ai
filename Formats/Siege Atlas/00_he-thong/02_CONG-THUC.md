@@ -1,4 +1,4 @@
-# 02 — CÔNG THỨC · Siege Atlas (chủ đề · tiêu đề · kịch bản)
+# 02 — CÔNG THỨC · Thế Trận (chủ đề · tiêu đề · kịch bản)
 
 *Phần lõi của format. Tạo 2026-11-02 bằng `npm run studio:format -- new`; phần đo điền tự động từ `Test/History Maps Lore` (`INGEST.md`, `formula.json`), phần còn lại Luis viết từ `BAO-CAO.md` + `BOC-TACH-KICH-BAN.md`. Mục tiêu §4 **Lucas duyệt 2026-11-02**. Nguyên văn của đối thủ chỉ ở 3 câu mẫu (hook, bắc cầu, kết), mỗi câu ≤ 15 từ.*
 

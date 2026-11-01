@@ -1,4 +1,4 @@
-# SPEC — l-thermopylae-full (style L "Siege Atlas", bản test hoàn chỉnh)
+# SPEC — l-thermopylae-full (style L "Thế Trận", bản test hoàn chỉnh)
 
 *9:16, 30 fps, tiếng Anh, phụ đề karaoke (D3). Mỗi cảnh = một đoạn của FINAL. Hình chi tiết: bảng "Kế hoạch hình" trong `kich-ban-l-thermopylae-full-FINAL.md`.*
 

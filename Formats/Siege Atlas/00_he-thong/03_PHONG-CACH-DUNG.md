@@ -1,4 +1,4 @@
-# 03 — PHONG CÁCH DỰNG · Siege Atlas (từ bóc tách khung hình tới cách dựng)
+# 03 — PHONG CÁCH DỰNG · Thế Trận (từ bóc tách khung hình tới cách dựng)
 
 *Tạo 2026-11-02 bằng `npm run studio:format -- new`. Bóc tách gốc: `Test/History Maps Lore/BOC-TACH-HINH.md` (dải 0–1 s, 3 s cuối, bảng shot từng video, kỹ thuật T#) + `INGEST.md` (số đo). Phần đo + bảng kỹ thuật điền tự động; phần "dựng thế nào" Luis viết, Lucas duyệt. Code: `Style Library/L-siege-atlas/README.md`. Mẫu dựng thật: `mau/`.*
 

@@ -1,11 +1,11 @@
-# 04 — BÀN GIAO · gói format Siege Atlas
+# 04 — BÀN GIAO · gói format Thế Trận
 
 *2026-11-02. Đọc file này trước tiên. Người duyệt mọi quyết định: **Lucas** (gọi trợ lý là "Luis", trao đổi bằng tiếng Việt).*
 
 ## 0. Dán vào chat mới
 
 ```text
-Luis ơi, mình bắt đầu một kênh mới bằng gói format Siege Atlas (style L — Siege Atlas).
+Luis ơi, mình bắt đầu một kênh mới bằng gói format Thế Trận (style L — Thế Trận).
 Đọc theo thứ tự: Formats/Siege Atlas/00_he-thong/05_BAN-GIAO.md → 01_FORMAT-BIBLE.md
 → 02_CONG-THUC.md → 03_PHONG-CACH-DUNG.md → Style Library/L-siege-atlas/README.md → mau/, rồi load skill
 remotion-best-practices. Hỏi mình các câu ở mục 1 trước khi làm gì khác.

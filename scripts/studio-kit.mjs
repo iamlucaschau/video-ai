@@ -2,7 +2,7 @@
 /**
  * Studio P3 — style kits that follow studio/KIT-CONTRACT.md.
  *
- *   npm run studio:kit -- new <X>-<name> --from "Test/<source>" [--title "Siege Atlas"]
+ *   npm run studio:kit -- new <X>-<name> --from "Test/<source>" [--title "Thế Trận"]
  *     Scaffolds Style Library/<X>-<name>/ from the source's style-card.json: <name>.tsx (palette roles,
  *     Base, Chip, <Name>Sub), <x>-kit/Video.tsx (KitSheet composition) and a README draft with the
  *     technique → component table. Prints the lines to paste into src/Root.tsx. Never overwrites.

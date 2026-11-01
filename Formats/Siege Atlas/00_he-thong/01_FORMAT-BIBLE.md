@@ -1,4 +1,4 @@
-# 01 — FORMAT BIBLE · Siege Atlas
+# 01 — FORMAT BIBLE · Thế Trận
 
 *Gói format do `npm run studio:format -- new` tạo 2026-11-02 từ phân tích `Test/History Maps Lore` (kênh tham khảo: History Maps Lore). Người duyệt mọi cổng: **Lucas**. Đây là **nguồn gốc duy nhất** cho luật sản xuất của format; công thức chủ đề + kịch bản ở `02_CONG-THUC.md`, luật hình chi tiết ở `Style Library/L-siege-atlas/README.md`.*
 
@@ -44,7 +44,7 @@
 
 Kênh tham khảo đọc ~164 wpm. Không quá ~8 s liền mà trên hình không có gì mới (lesson E3).
 
-## 5. Chuẩn hình ảnh — Style L — Siege Atlas
+## 5. Chuẩn hình ảnh — Style L — Thế Trận
 
 **Phong cách dựng** (khung 0–1 s, 3 s cuối, hình theo từng nhịp kịch bản, kỹ thuật → component, các bước dựng, số đo hình): `03_PHONG-CACH-DUNG.md`. Code: `Style Library/L-siege-atlas/README.md`; khả thi từng kỹ thuật: `Test/History Maps Lore/KHA-THI.md`. Vùng an toàn x 60–940, y 220–1440; QA bằng `--props='{"safeGuide":true}'`.
 
@@ -102,3 +102,4 @@ Ghi **24 h · 7 ngày · 30 ngày**: views, % đã xem (so với vuốt đi), th
 |---|---|---|
 | 2026-11-02 | Tạo gói format từ phân tích `Test/History Maps Lore`, style `L-siege-atlas`; tên kênh / thị trường chốt sau ở chat mới | Lucas |
 | 2026-11-02 | Duyệt mục tiêu đo: kịch bản (`02_CONG-THUC.md` §4: hook ≤ 14 từ / xong trước giây 6, mốc thời gian ≥ 5 / phút, 85–100 s, 150–165 wpm…) và hình + âm thanh (`03_PHONG-CACH-DUNG.md` §5: hình đứng yên ≤ 60 %, nền −8 đến −12 dB dưới giọng, chữ ≥ 48 px, ≤ 2 khối…). Áp dụng từ tập 1; bản demo giữ nguyên | Lucas |
+| 2026-11-02 | Tên style / format: **Thế Trận** (thay "Siege Atlas"); thư mục `Formats/Siege Atlas`, `Style Library/L-siege-atlas` và id composition giữ nguyên | Lucas |
