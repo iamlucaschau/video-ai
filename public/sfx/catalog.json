@@ -477,15 +477,6 @@
     "source": "https://pixabay.com/music/build-up-scenes-science-documentary-169621/"
   },
   {
-    "file": "sfx/music/p3-documentary-nature-516419.mp3",
-    "category": "music",
-    "title": "p3 Documentary Nature",
-    "author": "leberch",
-    "seconds": 92,
-    "lufs": -14.9,
-    "source": "https://pixabay.com/music/adventure-documentary-nature-516419/"
-  },
-  {
     "file": "sfx/music/p4-travel-adventure-586187.mp3",
     "category": "music",
     "title": "p4 Travel Adventure",
@@ -988,5 +979,14 @@
     "seconds": 8.01,
     "lufs": -11.2,
     "source": "https://mixkit.co/free-sound-effects/download/930/"
+  },
+  {
+    "file": "sfx/creak/ship-hull-creak-3076.mp3",
+    "category": "creak",
+    "title": "Ship hull creak",
+    "author": "Mixkit",
+    "seconds": 7.87,
+    "lufs": -19.5,
+    "source": "https://mixkit.co/free-sound-effects/download/3076/"
   }
 ]

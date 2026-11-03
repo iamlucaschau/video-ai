@@ -15,6 +15,7 @@ import { GeoLine, GlowRoute, J, type JCam, type Plate, project, projectLine, Rin
 import * as Ep02 from "./episodes/ep02-hannibal/Video";
 import * as Ep03 from "./episodes/ep03-magellan/Video";
 import * as Ep04 from "./episodes/ep04-xuanzang/Video";
+import * as Ep05 from "./episodes/ep05-franklin/Video";
 
 export type Variant = "A" | "B" | "C";
 type Line = { text: string; punch?: boolean };
@@ -75,6 +76,20 @@ export const MJ_COVERS: CoverSpec[] = [
     hook: [{ text: "2,500 KM?" }, { text: "17 YEARS", punch: true }, { text: "TO INDIA AND BACK" }],
     seam: ["2,500 KM", "17 YEARS"],
     name: "XUANZANG",
+  },
+  // ledger F2 (food for 3 years, Wikipedia + McClintock 1859) vs F9 (1845 → Erebus 2014 = 169 years)
+  {
+    slug: "ep05-franklin",
+    plates: Ep05.PLATES,
+    legs: Ep05.LEGS,
+    direct: Ep05.EAST,
+    theoryFrom: Infinity,
+    focus: Ep05.P.erebus,
+    cam: { lon: -72, lat: 71, zoom: 12, tilt: 10, bearing: 0 },
+    peak: "images/franklin/full-ice.jpg",
+    hook: [{ text: "3 YEARS OF FOOD" }, { text: "169 YEARS", punch: true }, { text: "TO FIND THEM" }],
+    seam: ["3 YEARS", "169 YEARS"],
+    name: "FRANKLIN",
   },
 ];
 

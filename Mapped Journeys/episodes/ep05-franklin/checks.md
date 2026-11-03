@@ -1,0 +1,19 @@
+# checks.md — ep05-franklin
+
+*Bằng chứng cho từng cổng (Lucas duyệt 2026-11-01, đề xuất A1). Mỗi yêu cầu một dòng. **Kết luận:** `pass` · `fail` · `unresolved`. **Bằng chứng:** đường dẫn file, output thật của lệnh, hoặc sheet + frame; không ghi "đã kiểm" suông. Tập chỉ được gọi là xong khi không còn `fail`, và mọi `unresolved` đã báo Lucas. Một dòng `fail` được sửa tối đa **3 lần**; lần thứ 3 vẫn trượt thì dừng và hỏi Lucas.*
+
+| Cổng / nút | Yêu cầu | Kết luận | Bằng chứng | Lần sửa |
+|---|---|---|---|---|
+| 2 · Kịch bản | mọi con số / ngày / khẳng định trong VO có dòng trong bảng kiểm chứng của FINAL | pass | FINAL bản khoá: cột Nguồn của 25 câu trỏ F1–F14; câu 16 không có claim. Nguồn gốc: McClintock 1859 tr. 283–288, Guardian 12/9/2016 | 0 |
+| 2 · Kịch bản | một con số nhất quán từ hook tới kết (Bible §3.1) | pass | "three years" + "169 years" ở câu 01 và câu 24, cùng mốc (1845 → 2014); không câu nào khác dùng số năm tìm kiếm | 1 (v1 "169 years of searching" sai mốc, sửa ở bản khoá) |
+| 2 · Kịch bản | mọi chữ / số trên màn hình có trong bảng kiểm chứng (AGENTS "Banned") | pass | cột Hình của bản khoá (3 YEARS, 169 YEARS, LAST SEEN, NO NOTE, 19 MONTHS, ALL WELL, < 150 km, 24 DEAD, 105, 1859, 2014, 2016) đều có dòng F; kiểm lại ở Cổng 4 khi dựng | |
+| 3 · Giọng | VO trong spec khớp từng chữ với FINAL; `words.py` tách câu đúng | pass | `episode.mjs prep`: "VO matches spec (8 scenes). 34 sentences, 323 words"; `words.py`: 34 dòng, cảnh báo ở câu 18 / 33 chỉ do số đọc thành chữ ("24", "169"), câu 11 "It was the wrong side." 1,12 s (ngắn, nhanh) | 0 |
+| 3 · Giọng | độ dài + wpm trong preset (Bible §4) | pass | `vo.mp3` 127,16 s, 152 wpm (`episode.mjs export`) | 1 (tempo 1,05 ra 112 s / 173 wpm, quá nhanh → tempo 1,0) |
+| 4 · Test | `npm run lint` sạch | pass | `npm run lint` (eslint src + tsc) exit 0, không dòng nào về ep05 | 0 |
+| 4 · Test | review loop: không chữ chạm vùng đỏ (sheet `safeGuide`) | pass | `out/sheets/ep05-1…5.png` (35 khung) → `ep05-fix1`, `ep05-fix2`: nhãn dài cỡ 60, chip 129 MEN / LAST SEEN xuống y 1250, thẻ tờ giấy cố định cy 1130 | 2 |
+| 4 · Test | critic mắt mới: 3 lỗi tệ nhất đã sửa và chụp lại | unresolved | chưa chạy critic riêng. Luis tự soi, đã sửa: nhãn trắng trên đảo tuyết (BEECHEY, EREBUS, TERROR sang phía biển; sheet `ep05-fix2`, `ep05-fix3`). Còn: PELLY BAY nằm trên đất trắng ~1 s trước khi bay về London | 1 |
+| 4 · Test | tuyến không cắt đất liền / biển sai; thẻ không che nhãn, ghim | pass | sheet `ep05-*`: tuyến đi trên biển (Biển Bắc, nam Greenland, eo Lancaster, eo Peel); thẻ Franklin vào sau khi camera tới (w(04,5)) | 1 |
+| 5 · Final | `render:j`: 2160×3840, 30 fps, −14 LUFS ±1, true peak ≤ −1,5 dBTP | pass | `render:j` 2026-11-03 (191 phút, TMP/TEMP = `out/tmp`): "video 2160×3840 @ 30/1 · 3827 frames · 127.6 s · 23.6 Mbps; audio −14.3 LUFS · true peak −2.9 dBFS"; `franklin.mp4` 376 MB | 0 |
+| 5 · Final | sheet từ MP4 (không guide) đã xem | pass | `out/sheets/ep05-video-1…5.png` (35 khung) + `ep05-edge-1.png` (f3520–3605): không nhãn ma, không vệt nhãn cũ. Lỗi nhỏ còn lại: f3550–3575 (~0,8 s, lúc kéo ra toàn tuyến, đang nhoè chuyển động) thấy mép trái của tấm `world`; f2807 / f2987 nhoè mạnh khi bay xa (chủ ý). Không render lại khi Lucas chưa bảo | 0 |
+| 5 · Final | **Lucas xem trên điện thoại, có tiếng, rồi nghe một lần không nhìn** (A11) | | ghi nhận xét của Lucas | |
+| 5 · Final | gói đăng `xuat-ban.md` đủ: tiêu đề, mô tả + nguồn ảnh, credit NASA, nhãn AI nếu cần | pass | `xuat-ban.md` 2026-11-03: 4 tiêu đề, mô tả (số liệu từ F1–F14, nguồn McClintock 1859 + Guardian 2016 + Wikipedia), credit NASA + Natural Earth, 5 ảnh PD, dòng ảnh AI; bìa `cover-A.jpg` / `cover-C.jpg` (`MJ-Cover-ep05-franklin-*`, đã xem: chữ không đè tuyến hay vòng vàng); `npm run lint` exit 0 | 1 (bìa: camera dời 2 lần để vòng vàng không lệch mép và không chạm nhãn MAPPED JOURNEYS) |

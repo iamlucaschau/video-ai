@@ -14,7 +14,7 @@ import words from "../../../src/voiceover/xuanzang.words.json";
 import plates from "../../../public/images/xuanzang/map/plates.json";
 import regions from "./regions.json";
 import { SafeGuide } from "../../../src/series/pvr/safe";
-import { MusicBed, Sfx } from "../../../src/series/pvr/sfx";
+import { MusicBed, PILLAR_MUSIC, Sfx } from "../../../src/series/pvr/sfx";
 import { CLAMP } from "../../../Style Library/kit-common";
 import { Ambience, type Bed, EventSounds, type EventKind } from "../../../Style Library/J-satellite-journey/journey-sound";
 import {
@@ -24,8 +24,8 @@ import {
 
 const FPS = 30;
 const IMG = "images/xuanzang";
-/** Bible §2: P4 Sacred Journeys → Documentary Nature (leberch), calm. */
-const MUSIC = "sfx/music/p3-documentary-nature-516419.mp3";
+/** Bible §2: P4 Sacred Journeys → Cinematic Documentary (Lexin_Music); Documentary Nature (leberch) got a Content ID claim on 2026-11-03. */
+const MUSIC = PILLAR_MUSIC.P4;
 
 /** Images in public/images/xuanzang. AI frames wait for Lucas (image-prompts.md); a false flag leaves the frame out. */
 const HAVE = {

@@ -112,6 +112,7 @@ npm run sheet:j -- --video "<mp4>" --slug <slug>   # soi lại bản đã render
 **Âm thanh**
 - Mix thô từng chạm gần 0 dBFS: giữ `TRIM_DB = -3`; tiếng thud để thấp (−22 / −23). VO mono đo ra +3 dB khi thành stereo.
 - Mã hoá AAC đẩy true peak lên tới ~0,6 dB sau loudnorm (Ep02 lần đầu: −1,2 dBTP; Ep01 2026-10-30 nhắm −2 ra −1,4). Từ 2026-10-30 `render:j` nhắm TP −2,5 và báo lỗi khi vượt −1,5; nếu báo lỗi, master lại từ bản raw (`out/j/<id>-raw.mp4`). Thêm `--keep-raw` để master lại mà không phải render lại.
+- Nhạc Pixabay vẫn có thể dính Content ID (Ep04 2026-11-03: Documentary Nature của leberch bị claim, đã loại). Bài mới: tải một video không công khai lên YouTube để thử trước khi đăng thật.
 - Không SFX tổng hợp, không âm thanh hoạt hình; tối đa 1 SFX / nhịp; nhịp lặng không có SFX.
 
 **Kênh**

@@ -22,8 +22,10 @@
 | **P1** | **Myths & Epics** — hành trình huyền thoại | Vì sao người anh hùng mất N năm cho một chuyến đi lẽ ra ngắn? | **20%** | `P1` Historical Documentary (Tunetank) | Aeneas (Ep01, xong) · Jason & Argonauts · Gilgamesh |
 | **P2** | **Explorers** — thám hiểm có thật | Vì sao chuyến đi kéo dài / mất nhiều người đến thế? | **40%** | `P4` Cinematic Documentary (Lexin_Music); dự phòng Travel Adventure (leberch) | Magellan (≈ 270 người đi, 18 về) · Marco Polo (24 năm) · Ibn Battuta (~30 năm) · Shackleton · Trịnh Hoà |
 | **P3** | **Armies & Marches** — hành quân | Vì sao đội quân này đi đường vòng / đi xa đến thế? | **20%** | `P1` bài dự phòng History (Tatamusic) hoặc `P4` | Hannibal vượt Alps · Xenophon và 10.000 lính · Alexander về từ Ấn Độ |
-| **P4** | **Sacred Journeys** — hành trình tôn giáo | Vì sao cuộc hành hương / truyền giáo này mất lâu đến thế? | **10%** | `P3` Documentary Nature (leberch), êm | Phao-lô đắm tàu ở Malta · Huyền Trang thỉnh kinh (~16–17 năm) |
+| **P4** | **Sacred Journeys** — hành trình tôn giáo | Vì sao cuộc hành hương / truyền giáo này mất lâu đến thế? | **10%** | `P4` Cinematic Documentary (Lexin_Music), như P2 *(2026-11-03: bỏ Documentary Nature của leberch, dính Content ID)* | Phao-lô đắm tàu ở Malta · Huyền Trang thỉnh kinh (~16–17 năm) |
 | **P5** | **Lost & Mysterious** — mất tích, bí ẩn | Họ đã đi đường nào, và vì sao không về / không ai biết? | **10%** | `P5` Mystery Quirky (leberch); dự phòng The Smallest Detective | Đoàn Franklin ở Bắc Cực · Viking tới Vinland · người Polynesia vượt Thái Bình Dương |
+
+**Nhạc bị loại:** Documentary Nature (Pixabay 516419, đăng bởi leberch): YouTube Content ID nhận là bài của Nikita Kondrashev / Mountain (We Are Era Music AB) và claim Ep04 (2026-11-03). Đã xoá khỏi `public/sfx` và `catalog.json`. Các bài khác của leberch (Travel Adventure, Mystery Quirky) có cùng rủi ro: trước khi dùng, thử bằng một video không công khai.
 
 **Quy tắc lịch đăng:**
 - Không quá **2 tập liên tiếp** cùng pillar. Mỗi 10 tập: ≥ 4 P2, ≥ 2 P1, ≥ 2 P3, ≥ 1 P4, ≥ 1 P5.
@@ -138,6 +140,7 @@ Ghi **24 h · 7 ngày · 30 ngày** cho YouTube Shorts / TikTok / Reels: views, 
 | 02 | P3 | Why did Hannibal march five months over the Alps? | FINAL ✓ (Cổng 2, 2026-10-27) | ✓ 130 s | ✓ render lại 2026-10-30: 130,7 s, −14,1 LUFS, −2,7 dBTP (không phụ đề, Bebas, tô vùng; 3 tranh + 2 ảnh AI) | — |
 | 03 | P2 | Why did Magellan's shortcut take three years? | FINAL ✓ (Cổng 2, 2026-10-30) | ✓ 129 s (Lucas duyệt 2026-10-31) | ✓ 2026-10-31: 129,7 s, −14,2 LUFS, −2,8 dBTP (3 tranh + 2 ảnh AI, tô SPAIN / PACIFIC / PHILIPPINES) | — |
 | 04 | P4 | Why did the monk behind Journey to the West need seventeen years? | FINAL ✓ (Cổng 2, 2026-10-31) | ✓ 123 s (Lucas duyệt 2026-10-31) | ✓ 2026-10-31, 4K 2160×3840: 123,2 s, −14,2 LUFS, −2,9 dBTP (4 tranh + 2 ảnh AI, tô HIMALAYAS / GOBI / TIAN SHAN / HINDU KUSH, sông Ấn); gói đăng `xuat-ban.md` + bìa A / C | — |
+| 05 | P5 | Why did it take 169 years to find Franklin's ships? | FINAL ✓ (Cổng 2, 2026-11-03) | ✓ 127 s (Lucas duyệt 2026-11-03) | ✓ 2026-11-03, 4K 2160×3840: 127,6 s, −14,3 LUFS, −2,9 dBTP (5 ảnh PD + 2 ảnh AI, tô đảo King William, đường đỏ phía tây / xanh phía đông); gói đăng `xuat-ban.md` + bìa A / C | — |
 
 *Ep01 nằm ở `Style Library/J-satellite-journey/j-aeneas-full/` (vừa là tập 1, vừa là video mẫu của style J), composition `Style-J-SatelliteJourney-AeneasFull`; gói đăng `xuat-ban.md` (chưa có ảnh bìa).*
 

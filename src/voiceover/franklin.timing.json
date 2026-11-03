@@ -1,0 +1,243 @@
+{
+  "durationInSeconds": 127.15841666666667,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 6.843,
+      "text": "In 1845, two British ships sailed into the Arctic with food for three years."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 6.963208333333333,
+      "end": 10.600208333333333,
+      "text": "Why did it take 169 years to find them?"
+    },
+    {
+      "id": "03",
+      "scene": "s1",
+      "start": 10.850125,
+      "end": 16.885125000000002,
+      "text": "The answer is on this route, and in a note no one found for eleven years."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 17.285,
+      "end": 24.295,
+      "text": "Sir John Franklin had 129 men, steam engines, and orders to finish the Northwest Passage."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 24.545,
+      "end": 29.017000000000003,
+      "text": "In the summer of 1845, whalers saw the ships in Baffin Bay."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 29.137333333333334,
+      "end": 30.789333333333335,
+      "text": "No European saw them again."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "start": 31.18925,
+      "end": 34.20525,
+      "text": "They spent their first winter in the harbour of Beechey Island."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "start": 34.45491666666667,
+      "end": 35.63691666666667,
+      "text": "Three men died there."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "start": 35.75691666666667,
+      "end": 39.46491666666667,
+      "text": "Searchers later found their graves, but no note saying where the ships went."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "start": 39.865,
+      "end": 45.369,
+      "text": "In 1846 they sailed south, and took the west side of King William Island."
+    },
+    {
+      "id": "11",
+      "scene": "s4",
+      "start": 45.61854166666667,
+      "end": 46.73854166666667,
+      "text": "It was the wrong side."
+    },
+    {
+      "id": "12",
+      "scene": "s4",
+      "start": 46.85883333333334,
+      "end": 49.011833333333335,
+      "text": "The ice there doesn't always melt in summer."
+    },
+    {
+      "id": "13",
+      "scene": "s4",
+      "start": 49.26141666666667,
+      "end": 54.81541666666667,
+      "text": "In September, the ice closed around both ships, and held them for nineteen months."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "start": 55.06516666666667,
+      "end": 58.98516666666667,
+      "text": "In May 1847, officers left a note on the shore."
+    },
+    {
+      "id": "15",
+      "scene": "s4",
+      "start": 59.105500000000006,
+      "end": 60.55250000000001,
+      "text": "It said: \"All well.\""
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "start": 61.05270833333334,
+      "end": 64.67370833333334,
+      "text": "They were less than 150 kilometres from waters already on the map."
+    },
+    {
+      "id": "17",
+      "scene": "s5",
+      "start": 65.07395833333334,
+      "end": 68.83795833333333,
+      "text": "A year later, someone wrote around the edges of that same note."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "start": 69.08820833333334,
+      "end": 71.98320833333334,
+      "text": "Twenty-four men were dead, Franklin among them."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "start": 72.23316666666668,
+      "end": 75.56716666666668,
+      "text": "The other 105 had left the ships, and would walk south."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "start": 75.81695833333335,
+      "end": 78.14695833333334,
+      "text": "Then the note went back under the stones."
+    },
+    {
+      "id": "21",
+      "scene": "s6",
+      "start": 79.14737500000001,
+      "end": 80.759375,
+      "text": "And here is the twist."
+    },
+    {
+      "id": "22",
+      "scene": "s6",
+      "start": 81.00912500000001,
+      "end": 87.92112500000002,
+      "text": "In 1854, Inuit told John Rae what they knew: men dragging a boat south, starving."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "start": 88.17066666666668,
+      "end": 90.49466666666667,
+      "text": "In London, the story was attacked."
+    },
+    {
+      "id": "24",
+      "scene": "s6",
+      "start": 90.61470833333334,
+      "end": 92.71870833333334,
+      "text": "Charles Dickens himself wrote against it."
+    },
+    {
+      "id": "25",
+      "scene": "s6",
+      "start": 92.96900000000001,
+      "end": 96.11000000000001,
+      "text": "One search ship, Resolute, was abandoned in the ice."
+    },
+    {
+      "id": "26",
+      "scene": "s6",
+      "start": 96.23041666666667,
+      "end": 98.71841666666667,
+      "text": "Its timber became the desk in the Oval Office."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "start": 98.96837500000001,
+      "end": 102.96237500000001,
+      "text": "The note was found in 1859, under those stones."
+    },
+    {
+      "id": "28",
+      "scene": "s6",
+      "start": 103.21283333333334,
+      "end": 105.14983333333333,
+      "text": "But the ships stayed lost."
+    },
+    {
+      "id": "29",
+      "scene": "s7",
+      "start": 105.6495,
+      "end": 112.06150000000001,
+      "text": "In 2014, Erebus was found in waters where Inuit stories had long said a big ship sank."
+    },
+    {
+      "id": "30",
+      "scene": "s7",
+      "start": 112.311,
+      "end": 115.97600000000001,
+      "text": "Two years later, an Inuk hunter remembered a mast in the ice."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "start": 116.09575000000001,
+      "end": 117.76975000000002,
+      "text": "Terror lay in that bay."
+    },
+    {
+      "id": "32",
+      "scene": "s8",
+      "start": 118.17020833333335,
+      "end": 119.97020833333335,
+      "text": "Food for three years."
+    },
+    {
+      "id": "33",
+      "scene": "s8",
+      "start": 120.09025000000001,
+      "end": 122.54925000000001,
+      "text": "A hundred and sixty-nine years to find them."
+    },
+    {
+      "id": "34",
+      "scene": "s8",
+      "start": 122.79904166666668,
+      "end": 126.75804166666668,
+      "text": "The Inuit had been telling the story since 1854."
+    }
+  ]
+}
