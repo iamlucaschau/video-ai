@@ -4,7 +4,10 @@
  * Remotion render at crf 18, 4K (scale 2) → ffmpeg master to
  * -14 LUFS / -1.5 dBTP (AAC 192k, 48 kHz, +faststart) → ffprobe + ebur128 check.
  *
- *   npm run render:j -- <compositionId> [--to <file.mp4>] [--frames=0-89] [--keep-raw]
+ *   npm run render:j -- <compositionId> [--to <file.mp4>] [--frames=0-89] [--keep-raw] [--audio-only]
+ *
+ * --audio-only: re-render the sound only (minutes, not hours) onto the picture of a kept raw render
+ * (out/j/<id>-raw.mp4 from an earlier --keep-raw). Only for sound changes (music swap, SFX levels).
  *
  *   npm run render:j -- Style-J-SatelliteJourney-AeneasFull --to "Style Library/J-satellite-journey/j-aeneas-full/j-aeneas-full.mp4"
  *
@@ -37,7 +40,8 @@ if (!id) {
 const toIdx = args.indexOf("--to");
 const to = path.resolve(ROOT, toIdx >= 0 ? args[toIdx + 1] : `out/j/${id}.mp4`);
 const keepRaw = args.includes("--keep-raw");
-const passthrough = args.filter((a, i) => a.startsWith("--") && a !== "--to" && a !== "--keep-raw" && i !== toIdx + 1);
+const audioOnly = args.includes("--audio-only");
+const passthrough = args.filter((a, i) => a.startsWith("--") && !["--to", "--keep-raw", "--audio-only"].includes(a) && i !== toIdx + 1);
 const raw = path.join(ROOT, "out/j", `${id}-raw.mp4`);
 
 const run = (cmd, cmdArgs, opts = {}) => {
@@ -54,12 +58,24 @@ fs.mkdirSync(path.dirname(to), { recursive: true });
 
 // 4K by default (Lucas 2026-10-31): the 1080×1920 compositions render at scale 2 → 2160×3840; --scale=1 for a quick 1080p
 const scale = passthrough.some((a) => a.startsWith("--scale")) ? [] : ["--scale=2"];
-console.log(`\n▶ render ${id} (crf 18${scale.length ? ", 4K" : ""})`);
-run(process.execPath, [CLI, "render", id, raw, "--crf=18", ...scale, ...passthrough]);
+const wav = path.join(ROOT, "out/j", `${id}-audio.wav`);
+if (audioOnly) {
+  if (!fs.existsSync(raw)) {
+    console.error(`✗ --audio-only needs ${path.relative(ROOT, raw)} (render once with --keep-raw)`);
+    process.exit(1);
+  }
+  console.log(`\n▶ render ${id} (sound only, picture from ${path.relative(ROOT, raw)})`);
+  run(process.execPath, [CLI, "render", id, wav, "--codec=wav", ...passthrough]);
+} else {
+  console.log(`\n▶ render ${id} (crf 18${scale.length ? ", 4K" : ""})`);
+  run(process.execPath, [CLI, "render", id, raw, "--crf=18", ...scale, ...passthrough]);
+}
 
 console.log(`\n▶ master → ${path.relative(ROOT, to)}`);
-run(FFMPEG, ["-y", "-v", "error", "-i", raw, "-c:v", "copy", "-af", MASTER, "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", to]);
-if (!keepRaw) fs.rmSync(raw);
+const input = audioOnly ? ["-i", raw, "-i", wav, "-map", "0:v", "-map", "1:a"] : ["-i", raw];
+run(FFMPEG, ["-y", "-v", "error", ...input, "-c:v", "copy", "-af", MASTER, "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", to]);
+if (audioOnly) fs.rmSync(wav);
+else if (!keepRaw) fs.rmSync(raw);
 
 // Check: size, fps, frames, duration, audio stream, loudness, true peak.
 const probe = JSON.parse(

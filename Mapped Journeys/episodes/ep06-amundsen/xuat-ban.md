@@ -1,6 +1,6 @@
 # Gói xuất bản — Ep06 "Why did Amundsen's voyage through the Northwest Passage take three years?"
 
-*Cổng 5 (2026-11-04). Kênh **Mapped Journeys** (@MappedJourneys). Video: `amundsen.mp4` (9:16, **4K 2160×3840**, 126,6 s, −14,3 LUFS, −1,9 dBTP; `npm run render:j -- MJ-ep06-amundsen --to "Mapped Journeys/episodes/ep06-amundsen/amundsen.mp4"`). Pillar P2. Mọi con số dưới đây lấy từ bảng kiểm chứng trong `kich-ban-amundsen-FINAL.md` (A1–A15) và Ep05 (F3: 129 người).*
+*Cổng 5 (2026-11-04). Kênh **Mapped Journeys** (@MappedJourneys). Video: `amundsen.mp4` (9:16, **4K 2160×3840**, 126,5 s, −14,3 LUFS, −2,2 dBTP, nhạc tự tạo; `npm run render:j -- MJ-ep06-amundsen --to "Mapped Journeys/episodes/ep06-amundsen/amundsen.mp4"`). Pillar P2. Mọi con số dưới đây lấy từ bảng kiểm chứng trong `kich-ban-amundsen-FINAL.md` (A1–A15) và Ep05 (F3: 129 người).*
 
 ## 1. Tiêu đề (thử A/B)
 
@@ -27,6 +27,8 @@
 > - Satellite map: NASA Earth Observatory, Blue Marble Next Generation (public domain). King William Island outline: Natural Earth (public domain).
 > - Public domain: portrait of Roald Amundsen (Hiffling Rasmussen, 1907) · visitors aboard the Gjøa at Nome (F. Howell, 1906, Library of Congress) · three photographs from Amundsen, *The North West Passage* (1908): Gjøa's first meeting with whalers, "Ahiva and Alo-Alo in hunting garb", Lindström learning to build a snow hut · Olav Bjaaland, the Amundsen party at the South Pole (1911)
 > - Two full-screen scenes (Gjøa frozen in the harbour, the ski journey to Eagle) are AI-generated illustrations.
+>
+> **Music:** original, made for Mapped Journeys.
 >
 > Previous episode: why it took 169 years to find Franklin's ships. [link Ep05]
 >
@@ -67,7 +69,7 @@ Would you have stopped for two winters? 👇
 ## Trước khi đăng (còn mở)
 
 - [ ] Điền link Ep05 vào dòng "Previous episode".
-- [ ] **Nhạc:** Cinematic Documentary (Lexin_Music) là nhạc Ep03. Tải lên ở chế độ **không công khai** trước, chờ YouTube kiểm Content ID rồi mới công khai (bài học Ep04).
+- [x] **Nhạc:** đã đổi sang nhạc kênh tự tạo `own/mj-p2-explorers.mp3` (2026-11-04; bản đầu dính Content ID "Seaside Morning", bị chặn toàn cầu). **Xoá bản tải lên cũ** trong Studio, tải `amundsen.mp4` mới ở chế độ **không công khai**, chờ bước kiểm tra bản quyền xong rồi mới công khai.
 - [ ] File 4K 370 MB: tải lên YouTube từ máy tính (app điện thoại có thể nén xuống).
 - [ ] Chọn ảnh bìa: `cover-A.jpg` hoặc `cover-C.jpg`; ghi mẫu đã dùng vào bảng số liệu.
 - [ ] Đăng xong: điền ngày vào nhật ký tập (Bible §11) và mở bảng số liệu 24 h / 7 ngày / 30 ngày (§10).

@@ -19,13 +19,25 @@
 
 | # | Pillar | Câu hỏi gốc | Tỉ lệ | Nhạc nền (`PILLAR_MUSIC`) | Ví dụ (cần kiểm chứng khi viết) |
 |---|---|---|---|---|---|
-| **P1** | **Myths & Epics** — hành trình huyền thoại | Vì sao người anh hùng mất N năm cho một chuyến đi lẽ ra ngắn? | **20%** | `P1` Historical Documentary (Tunetank) | Aeneas (Ep01, xong) · Jason & Argonauts · Gilgamesh |
-| **P2** | **Explorers** — thám hiểm có thật | Vì sao chuyến đi kéo dài / mất nhiều người đến thế? | **40%** | `P4` Cinematic Documentary (Lexin_Music); dự phòng Travel Adventure (leberch) | Magellan (≈ 270 người đi, 18 về) · Marco Polo (24 năm) · Ibn Battuta (~30 năm) · Shackleton · Trịnh Hoà |
-| **P3** | **Armies & Marches** — hành quân | Vì sao đội quân này đi đường vòng / đi xa đến thế? | **20%** | `P1` bài dự phòng History (Tatamusic) hoặc `P4` | Hannibal vượt Alps · Xenophon và 10.000 lính · Alexander về từ Ấn Độ |
-| **P4** | **Sacred Journeys** — hành trình tôn giáo | Vì sao cuộc hành hương / truyền giáo này mất lâu đến thế? | **10%** | `P4` Cinematic Documentary (Lexin_Music), như P2 *(2026-11-03: bỏ Documentary Nature của leberch, dính Content ID)* | Phao-lô đắm tàu ở Malta · Huyền Trang thỉnh kinh (~16–17 năm) |
-| **P5** | **Lost & Mysterious** — mất tích, bí ẩn | Họ đã đi đường nào, và vì sao không về / không ai biết? | **10%** | `P5` Mystery Quirky (leberch); dự phòng The Smallest Detective | Đoàn Franklin ở Bắc Cực · Viking tới Vinland · người Polynesia vượt Thái Bình Dương |
+| **P1** | **Myths & Epics** — hành trình huyền thoại | Vì sao người anh hùng mất N năm cho một chuyến đi lẽ ra ngắn? | **20%** | chờ preset nhạc tự tạo (luật nhạc bên dưới) | Aeneas (Ep01, xong) · Jason & Argonauts · Gilgamesh |
+| **P2** | **Explorers** — thám hiểm có thật | Vì sao chuyến đi kéo dài / mất nhiều người đến thế? | **40%** | `own/mj-p2-explorers.mp3` (tự tạo, preset `p2-explorers`) | Magellan (≈ 270 người đi, 18 về) · Marco Polo (24 năm) · Ibn Battuta (~30 năm) · Shackleton · Trịnh Hoà |
+| **P3** | **Armies & Marches** — hành quân | Vì sao đội quân này đi đường vòng / đi xa đến thế? | **20%** | chờ preset nhạc tự tạo (luật nhạc bên dưới) | Hannibal vượt Alps · Xenophon và 10.000 lính · Alexander về từ Ấn Độ |
+| **P4** | **Sacred Journeys** — hành trình tôn giáo | Vì sao cuộc hành hương / truyền giáo này mất lâu đến thế? | **10%** | chờ preset nhạc tự tạo (luật nhạc bên dưới) | Phao-lô đắm tàu ở Malta · Huyền Trang thỉnh kinh (~16–17 năm) |
+| **P5** | **Lost & Mysterious** — mất tích, bí ẩn | Họ đã đi đường nào, và vì sao không về / không ai biết? | **10%** | chờ preset nhạc tự tạo (luật nhạc bên dưới) | Đoàn Franklin ở Bắc Cực · Viking tới Vinland · người Polynesia vượt Thái Bình Dương |
 
-**Nhạc bị loại:** Documentary Nature (Pixabay 516419, đăng bởi leberch): YouTube Content ID nhận là bài của Nikita Kondrashev / Mountain (We Are Era Music AB) và claim Ep04 (2026-11-03). Đã xoá khỏi `public/sfx` và `catalog.json`. Các bài khác của leberch (Travel Adventure, Mystery Quirky) có cùng rủi ro: trước khi dùng, thử bằng một video không công khai.
+**Luật nhạc (Lucas 2026-11-04, sau 2 lần dính Content ID):**
+1. **Nhạc kênh tự tạo** (Lucas 2026-11-04): `python -P scripts/make-music.py <preset> public/sfx/music/own/<tên>.mp3`. Mọi âm thanh tổng hợp bằng code, không ai khác giữ bản ghi nên Content ID không có gì để khớp; dùng được cả trên TikTok / Reels. File MP3 không vào git (như mọi file trong `public/sfx`), tạo lại từ script (seed cố định, ra đúng bài cũ). Mỗi pillar một preset; bài mới Lucas nghe trước khi dùng.
+   **Dự phòng:** YouTube Audio Library (Lucas tải trong Studio, lọc "Không cần ghi công"; chỉ cho bản YouTube). **Không** dùng nhạc Pixabay, Mixkit hay thư viện "free" nào khác: ai cũng đăng lên được, và chủ bài có thể đăng ký Content ID bất cứ lúc nào, kể cả sau khi video đã đăng.
+2. **Thử trước khi render 4K** (bài Audio Library; nhạc tự tạo thì lần tải không công khai của tập đầu tiên dùng nó là bước thử). Bài mới: xuất video chỉ có nhạc (lệnh dưới), Lucas tải lên YouTube ở chế độ **không công khai**, chờ bước kiểm tra bản quyền xong và không có thông báo. Qua rồi mới ghi `"cleared": "<ngày>"` vào mục của bài trong `public/sfx/catalog.json` và đưa vào `PILLAR_MUSIC`. Bài chưa có `cleared` không dùng cho Mapped Journeys.
+   `ffmpeg -f lavfi -i color=black:s=360x640:r=30 -i public/sfx/music/<bài>.mp3 -shortest -c:v libx264 -c:a aac out/music-test-<bài>.mp4`
+3. **Vẫn tải lên không công khai trước** mỗi tập (lưới an toàn thứ hai).
+4. **TikTok / Reels:** nhạc tự tạo dùng được. Bài Audio Library: giấy phép ngoài YouTube chưa rõ → bản đăng ngoài YouTube dùng bản không nhạc, hoặc nhạc có sẵn trong app của nền tảng đó.
+5. **Bài bị claim:** thêm `"banned": "<lý do>"` vào catalog (`<MusicBed>` sẽ báo lỗi, không render được), ghi vào danh sách dưới.
+
+**Nhạc bị loại:**
+- Documentary Nature (Pixabay 516419, leberch): Content ID nhận là bài của Nikita Kondrashev / Mountain (We Are Era Music AB), claim Ep04 (2026-11-03). Đã xoá file.
+- Cinematic Documentary (Pixabay 115669, Lexin_Music): Content ID nhận là "Seaside Morning" (Aleksey Chistilin, Elite Alliance Music), **chặn toàn cầu** Ep06 (2026-11-04). Ep03, Ep04 dùng cùng bài.
+- Mọi bài Pixabay còn lại trong catalog (Tunetank, Tatamusic, moodmode, AtlasAudio, Lexin_Music, leberch, Tomas_Herudek): ngừng dùng cho tập mới (luật 1).
 
 **Quy tắc lịch đăng:**
 - Không quá **2 tập liên tiếp** cùng pillar. Mỗi 10 tập: ≥ 4 P2, ≥ 2 P1, ≥ 2 P3, ≥ 1 P4, ≥ 1 P5.

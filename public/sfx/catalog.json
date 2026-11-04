@@ -492,7 +492,8 @@
     "author": "Lexin_Music",
     "seconds": 132,
     "lufs": -11.1,
-    "source": "https://pixabay.com/music/beautiful-plays-cinematic-documentary-115669/"
+    "source": "https://pixabay.com/music/beautiful-plays-cinematic-documentary-115669/",
+    "banned": "YouTube Content ID: \"Seaside Morning\" (Aleksey Chistilin, Elite Alliance Music), blocked Ep06 worldwide 2026-11-04"
   },
   {
     "file": "sfx/music/p5-mystery-quirky-355604.mp3",
@@ -997,5 +998,14 @@
     "seconds": 12.17,
     "lufs": -18.1,
     "source": "https://mixkit.co/free-sound-effects/download/2399/"
+  },
+  {
+    "file": "sfx/music/own/mj-p2-explorers.mp3",
+    "category": "music",
+    "title": "MJ P2 Explorers (channel-made)",
+    "author": "Mapped Journeys",
+    "seconds": 150,
+    "lufs": -15.9,
+    "source": "own: python -P scripts/make-music.py p2-explorers public/sfx/music/own/mj-p2-explorers.mp3"
   }
 ]

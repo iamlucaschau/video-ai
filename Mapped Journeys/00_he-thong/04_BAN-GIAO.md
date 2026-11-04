@@ -111,8 +111,8 @@ npm run sheet:j -- --video "<mp4>" --slug <slug>   # soi lại bản đã render
 
 **Âm thanh**
 - Mix thô từng chạm gần 0 dBFS: giữ `TRIM_DB = -3`; tiếng thud để thấp (−22 / −23). VO mono đo ra +3 dB khi thành stereo.
-- Mã hoá AAC đẩy true peak lên tới ~0,6 dB sau loudnorm (Ep02 lần đầu: −1,2 dBTP; Ep01 2026-10-30 nhắm −2 ra −1,4). Từ 2026-10-30 `render:j` nhắm TP −2,5 và báo lỗi khi vượt −1,5; nếu báo lỗi, master lại từ bản raw (`out/j/<id>-raw.mp4`). Thêm `--keep-raw` để master lại mà không phải render lại.
-- Nhạc Pixabay vẫn có thể dính Content ID (Ep04 2026-11-03: Documentary Nature của leberch bị claim, đã loại). Bài mới: tải một video không công khai lên YouTube để thử trước khi đăng thật.
+- Mã hoá AAC đẩy true peak lên tới ~0,6 dB sau loudnorm (Ep02 lần đầu: −1,2 dBTP; Ep01 2026-10-30 nhắm −2 ra −1,4). Từ 2026-10-30 `render:j` nhắm TP −2,5 và báo lỗi khi vượt −1,5; nếu báo lỗi, master lại từ bản raw (`out/j/<id>-raw.mp4`). Thêm `--keep-raw` để master lại mà không phải render lại. Chỉ đổi tiếng (nhạc, mức SFX): `--audio-only` render lại phần tiếng rồi ghép vào hình của bản raw (Ep05 thử 2026-11-04: ~19 phút thay vì ~3 giờ, cùng −14,3 LUFS / −2,9 dBTP).
+- Nhạc: **kênh tự tạo** (`scripts/make-music.py`), dự phòng YouTube Audio Library; bài nào cũng qua một lần tải không công khai trước khi đăng (Bible §2, luật nhạc). Nhạc Pixabay dính Content ID 2 lần (Ep04 2026-11-03 leberch; Ep06 2026-11-04 Lexin_Music, chặn toàn cầu).
 - Không SFX tổng hợp, không âm thanh hoạt hình; tối đa 1 SFX / nhịp; nhịp lặng không có SFX.
 
 **Kênh**

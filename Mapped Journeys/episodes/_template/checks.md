@@ -9,6 +9,7 @@
 | 2 · Kịch bản | mọi chữ / số trên màn hình có trong bảng kiểm chứng (AGENTS "Banned") | | | |
 | 3 · Giọng | VO trong spec khớp từng chữ với FINAL; `words.py` tách câu đúng | | | |
 | 3 · Giọng | độ dài + wpm trong preset (Bible §4) | | | |
+| 4 · Test | nhạc tự tạo (`scripts/make-music.py`) hoặc YouTube Audio Library có `cleared` trong catalog; không nhạc Pixabay (Bible §2) | | | |
 | 4 · Test | `npm run lint` sạch | | | |
 | 4 · Test | review loop: không chữ chạm vùng đỏ (sheet `safeGuide`) | | | |
 | 4 · Test | critic mắt mới: 3 lỗi tệ nhất đã sửa và chụp lại | | | |

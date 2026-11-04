@@ -75,6 +75,8 @@ export const MusicBed: React.FC<{ file: string; level?: number; duck?: (f: numbe
   const { durationInFrames, fps } = useVideoConfig();
   const entry = catalog.find((c) => c.file === file);
   if (!entry) throw new Error(`Music not in public/sfx/catalog.json: ${file}`);
+  // a Content ID claim on this track: rendering it again would get the video blocked
+  if ("banned" in entry) throw new Error(`Music banned (Content ID claim): ${file}: ${entry.banned}`);
   const gain = Math.min(4, 10 ** ((level - (entry.lufs ?? level)) / 20));
   const fade = Math.round(0.3 * fps);
   return (

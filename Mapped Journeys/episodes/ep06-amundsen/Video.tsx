@@ -14,7 +14,7 @@ import words from "../../../src/voiceover/amundsen.words.json";
 import plates from "../../../public/images/amundsen/map/plates.json";
 import regions from "./regions.json";
 import { SafeGuide } from "../../../src/series/pvr/safe";
-import { MusicBed, PILLAR_MUSIC, Sfx } from "../../../src/series/pvr/sfx";
+import { MusicBed, Sfx } from "../../../src/series/pvr/sfx";
 import { CLAMP } from "../../../Style Library/kit-common";
 import { Ambience, type Bed, EventSounds, type EventKind } from "../../../Style Library/J-satellite-journey/journey-sound";
 import {
@@ -25,7 +25,8 @@ import {
 const FPS = 30;
 const IMG = "images/amundsen";
 /** Bible §2: P2 Explorers → Cinematic Documentary (Lexin_Music). */
-const MUSIC = PILLAR_MUSIC.P4;
+// channel-made (scripts/make-music.py): P4 Cinematic Documentary got Ep06 blocked by Content ID (2026-11-04)
+const MUSIC = "sfx/music/own/mj-p2-explorers.mp3";
 export const RED = "#E5383B";
 const ICE_BLUE = "#7FD3FF";
 
