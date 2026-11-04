@@ -141,6 +141,7 @@ Ghi **24 h · 7 ngày · 30 ngày** cho YouTube Shorts / TikTok / Reels: views, 
 | 03 | P2 | Why did Magellan's shortcut take three years? | FINAL ✓ (Cổng 2, 2026-10-30) | ✓ 129 s (Lucas duyệt 2026-10-31) | ✓ 2026-10-31: 129,7 s, −14,2 LUFS, −2,8 dBTP (3 tranh + 2 ảnh AI, tô SPAIN / PACIFIC / PHILIPPINES) | — |
 | 04 | P4 | Why did the monk behind Journey to the West need seventeen years? | FINAL ✓ (Cổng 2, 2026-10-31) | ✓ 123 s (Lucas duyệt 2026-10-31) | ✓ 2026-10-31, 4K 2160×3840: 123,2 s, −14,2 LUFS, −2,9 dBTP (4 tranh + 2 ảnh AI, tô HIMALAYAS / GOBI / TIAN SHAN / HINDU KUSH, sông Ấn); gói đăng `xuat-ban.md` + bìa A / C | — |
 | 05 | P5 | Why did it take 169 years to find Franklin's ships? | FINAL ✓ (Cổng 2, 2026-11-03) | ✓ 127 s (Lucas duyệt 2026-11-03) | ✓ 2026-11-03, 4K 2160×3840: 127,6 s, −14,3 LUFS, −2,9 dBTP (5 ảnh PD + 2 ảnh AI, tô đảo King William, đường đỏ phía tây / xanh phía đông); gói đăng `xuat-ban.md` + bìa A / C | — |
+| 06 | P2 | Why did Amundsen's voyage through the Northwest Passage take three years? | FINAL ✓ (Cổng 2, 2026-11-04) | ✓ 126 s (Lucas duyệt 2026-11-04) | ✓ 2026-11-04, 4K 2160×3840: 126,6 s, −14,3 LUFS, −1,9 dBTP (6 ảnh PD + 2 ảnh AI, tuyến Oslo → Gjoa Haven → Nome, chặng trượt tuyết tới Eagle); gói đăng `xuat-ban.md` + bìa A / C | — |
 
 *Ep01 nằm ở `Style Library/J-satellite-journey/j-aeneas-full/` (vừa là tập 1, vừa là video mẫu của style J), composition `Style-J-SatelliteJourney-AeneasFull`; gói đăng `xuat-ban.md` (chưa có ảnh bìa).*
 

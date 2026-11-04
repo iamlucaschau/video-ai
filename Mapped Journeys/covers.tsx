@@ -16,6 +16,7 @@ import * as Ep02 from "./episodes/ep02-hannibal/Video";
 import * as Ep03 from "./episodes/ep03-magellan/Video";
 import * as Ep04 from "./episodes/ep04-xuanzang/Video";
 import * as Ep05 from "./episodes/ep05-franklin/Video";
+import * as Ep06 from "./episodes/ep06-amundsen/Video";
 
 export type Variant = "A" | "B" | "C";
 type Line = { text: string; punch?: boolean };
@@ -24,6 +25,8 @@ type CoverSpec = {
   plates: Plate[];
   legs: [number, number][][];
   direct: [number, number][];
+  /** default gold ("should have" route); Ep06 draws Franklin's route in red */
+  directColor?: string;
   theoryFrom: number;
   /** the one place to look at: a gold ring */
   focus: [number, number];
@@ -91,6 +94,21 @@ export const MJ_COVERS: CoverSpec[] = [
     seam: ["3 YEARS", "169 YEARS"],
     name: "FRANKLIN",
   },
+  // ledger A3 (seven men, Amundsen 1908) and A5 (a herring boat) vs A1 (Oslo 1903 → Nome 1906); Ep05 F3 (129 men)
+  {
+    slug: "ep06-amundsen",
+    plates: Ep06.PLATES,
+    legs: Ep06.LEGS,
+    direct: Ep06.FRANKLIN,
+    directColor: Ep06.RED,
+    theoryFrom: Infinity,
+    focus: Ep06.P.gjoa,
+    cam: { lon: -100, lat: 70.5, zoom: 12, tilt: 10, bearing: 0 },
+    peak: "images/amundsen/full-harbour.jpg",
+    hook: [{ text: "7 MEN, 1 BOAT" }, { text: "3 YEARS", punch: true }, { text: "NORTHWEST PASSAGE" }],
+    seam: ["129 MEN", "7 MEN"],
+    name: "AMUNDSEN",
+  },
 ];
 
 /** Largest size ≤ max that fits a 940 px column (Bricolage 800 caps ≈ 0.62 em per character). */
@@ -120,7 +138,7 @@ const RouteMap: React.FC<{ spec: CoverSpec }> = ({ spec }) => {
   return (
     <AbsoluteFill>
       <SatMap cam={cam} plates={spec.plates} />
-      <GeoLine pts={projectLine(cam, spec.direct)} p={1} color={J.gold} o={0.85} width={5} />
+      <GeoLine pts={projectLine(cam, spec.direct)} p={1} color={spec.directColor ?? J.gold} o={0.85} width={5} />
       <GlowRoute legs={spec.legs.map((leg) => projectLine(cam, leg))} current={spec.legs.length} p={1} theoryFrom={spec.theoryFrom} />
       <Ring x={fx} y={fy} f={60} at={0} color={J.gold} />
     </AbsoluteFill>

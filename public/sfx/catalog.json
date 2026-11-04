@@ -988,5 +988,14 @@
     "seconds": 7.87,
     "lufs": -19.5,
     "source": "https://mixkit.co/free-sound-effects/download/3076/"
+  },
+  {
+    "file": "sfx/amb-rain/heavy-rain-drops-2399.mp3",
+    "category": "amb-rain",
+    "title": "Heavy rain drops",
+    "author": "Mixkit",
+    "seconds": 12.17,
+    "lufs": -18.1,
+    "source": "https://mixkit.co/free-sound-effects/download/2399/"
   }
 ]

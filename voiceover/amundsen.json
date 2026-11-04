@@ -1,0 +1,233 @@
+{
+  "name": "amundsen",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Adult male documentary narrator, warm and grounded, American English. Curious and quick on the opening question, clear and steady through the journey; place names, dates and numbers a beat slower. When the first officer shouts \"Vessel in sight, sir!\", let it ring with relief, then slow down and soften for the line about tears, almost quiet. Say \"Gjøa\" as YUR-ah, \"Amundsen\" as AH-mun-sun, \"Netsilik\" as NET-sih-lik, \"Inuit\" as IN-oo-it. No hype, no shouting. The last line lands with quiet weight.",
+  "trimSilence": true,
+  "tempo": 1,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.25,
+    "scene": 0.4
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.12,
+      "text": "Franklin's 129 men never came back."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.12,
+      "text": "Amundsen had seven men and a herring boat."
+    },
+    {
+      "id": "03",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.25,
+      "text": "Why did it take him three years?"
+    },
+    {
+      "id": "04",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.4,
+      "text": "The answer is on this route, and in one harbour where he chose to stay for two winters."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "Roald Amundsen first read about Franklin as a boy of eight or nine."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "On a rainy night in June 1903, Gjøa slipped out of Oslo, away from his creditors."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "She was an old herring boat, carrying food for five years."
+    },
+    {
+      "id": "08",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.4,
+      "text": "In August they anchored at Beechey Island, where Franklin had spent his last safe winter."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "Then they sailed south, down the same strait as Franklin."
+    },
+    {
+      "id": "10",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "At King William Island, Franklin had taken the west side."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "Amundsen took the east."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.4,
+      "text": "When the weather turned, he steered into a small harbour, and by October the ice had locked them in."
+    },
+    {
+      "id": "13",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "He stayed almost two years."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "Part of the reason was science: his men sledged out to locate the north magnetic pole."
+    },
+    {
+      "id": "15",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "And next door lived the Netsilik Inuit."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "They taught the newcomers to dress in animal skins, because wet wool stops keeping you warm."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "They showed them how to build snow houses, and how to travel with dogs."
+    },
+    {
+      "id": "18",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.4,
+      "text": "Franklin's naval crews had not been trained for this."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "In August 1905, Gjøa left the harbour and sailed west."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "Two weeks later, his first officer came running into the cabin."
+    },
+    {
+      "id": "21",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.5,
+      "text": "\"Vessel in sight, sir!\""
+    },
+    {
+      "id": "22",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "It was an American whaler from San Francisco."
+    },
+    {
+      "id": "23",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.35,
+      "text": "They had made it through."
+    },
+    {
+      "id": "24",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 1.2,
+      "text": "Amundsen wrote that he could feel tears coming to his eyes."
+    },
+    {
+      "id": "25",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "But the ice closed once more, off the coast of the Yukon."
+    },
+    {
+      "id": "26",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "So he skied about 800 kilometres to Eagle, Alaska, to send a telegram."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.4,
+      "text": "He reached Nome in August 1906, three years after Oslo."
+    },
+    {
+      "id": "28",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "Five years later, he reached the South Pole first, in clothing modelled on the Netsilik's."
+    },
+    {
+      "id": "29",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "It took three years, and he spent nearly two of them learning."
+    },
+    {
+      "id": "30",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "The Inuit had lived there all along."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.4,
+      "text": "This time, the visitors learned from them."
+    }
+  ]
+}

@@ -41,6 +41,7 @@ import { Hannibal, hannibalDuration } from "../Mapped Journeys/episodes/ep02-han
 import { Magellan, magellanDuration } from "../Mapped Journeys/episodes/ep03-magellan/Video";
 import { Xuanzang, xuanzangDuration } from "../Mapped Journeys/episodes/ep04-xuanzang/Video";
 import { Franklin, franklinDuration } from "../Mapped Journeys/episodes/ep05-franklin/Video";
+import { Amundsen, amundsenDuration } from "../Mapped Journeys/episodes/ep06-amundsen/Video";
 import { MJ_COVERS, MJCover } from "../Mapped Journeys/covers";
 import { PriceTheirWork } from "./compositions/PriceTheirWork/PriceTheirWork";
 import { buildTimeline } from "./compositions/PriceTheirWork/timeline";
@@ -147,6 +148,14 @@ export const RemotionRoot: React.FC = () => {
           height={PVR.height}
           fps={PVR.fps}
           durationInFrames={franklinDuration(PVR.fps)}
+        />
+        <Composition
+          id="MJ-ep06-amundsen"
+          component={Amundsen}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={amundsenDuration(PVR.fps)}
         />
       </Folder>
       <Folder name="MJ-Covers">

@@ -10,6 +10,7 @@
  *   npm run sheet:j -- --video "<file>.mp4" --slug <slug>   frames from a render (final check, no guide)
  *
  * Options: --offset 0.6 (s after each line starts) · --no-guide · --no-bundle (reuse out/bundle)
+ *          --bundle-dir out/bundle-<x> (own bundle: two sessions sharing out/bundle overwrite each other)
  *          --cols 4 --rows 2 --size 360 --name <sheet name>
  * Stills: one `remotion still` per frame (Remotion 4.0.532 can crash on a comma list of frames).
  * Writes out/sheets/<name>-N.png, each tile labelled with its frame and time.
@@ -50,6 +51,7 @@ const size = Number(opt("size", "360"));
 let name = opt("name", null);
 const guide = !flag("no-guide") && !video;
 const bundle = !flag("no-bundle");
+const bundleDir = opt("bundle-dir", "out/bundle");
 const id = argv.find((a) => !a.startsWith("--")); // every option and its value is spliced out above
 
 if (!video && !id) {
@@ -88,8 +90,8 @@ const ffmpeg = (args) => execFileSync(FFMPEG, ["-loglevel", "error", "-y", ...ar
 
 // ---- grab the frames
 if (!video && bundle) {
-  console.log("▶ bundle → out/bundle");
-  const res = spawnSync(process.execPath, [CLI, "bundle", "--out-dir", "out/bundle"], { cwd: ROOT, stdio: "ignore" });
+  console.log(`▶ bundle → ${bundleDir}`);
+  const res = spawnSync(process.execPath, [CLI, "bundle", "--out-dir", bundleDir], { cwd: ROOT, stdio: "ignore" });
   if (res.status !== 0) process.exit(1);
 }
 const raw = (i) => path.join(dir, `raw-${String(i).padStart(3, "0")}.png`);
@@ -98,7 +100,7 @@ frames.forEach((f, i) => {
     ffmpeg(["-ss", String(f / FPS), "-i", path.resolve(ROOT, video), "-frames:v", "1", raw(i)]);
   } else {
     const props = guide ? ["--props", JSON.stringify({ safeGuide: true })] : [];
-    const res = spawnSync(process.execPath, [CLI, "still", "out/bundle", id, raw(i), `--frame=${f}`, ...props], { cwd: ROOT, stdio: "pipe" });
+    const res = spawnSync(process.execPath, [CLI, "still", bundleDir, id, raw(i), `--frame=${f}`, ...props], { cwd: ROOT, stdio: "pipe" });
     if (res.status !== 0) {
       console.error(`✗ frame ${f}:\n${res.stderr.toString().slice(-800)}`);
       process.exit(1);
