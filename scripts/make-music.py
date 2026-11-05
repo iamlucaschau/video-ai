@@ -18,6 +18,13 @@ SR = 48000
 
 # chord = (bass midi, pad voicing); each chord lasts `bar` seconds
 PRESETS = {
+    # carrier-watch (Test/carrier, 2026-11-05): E minor i – VI – III – VII, slow, open fifths over the sea
+    "carrier-watch": {
+        "bar": 7.5,
+        "chords": [(28, [47, 52, 55, 59]), (24, [48, 52, 55, 60]), (31, [47, 50, 55, 59]), (26, [50, 54, 57, 62])],
+        "arp": [12, 19, 24, 19, 12, 19, 24, 31],
+        "seed": 12,
+    },
     # ambush-tension (Test/ambush, 2026-11-05): A minor i – VI – iv – V, slow, dark military explainer bed
     "ambush-tension": {
         "bar": 8.0,

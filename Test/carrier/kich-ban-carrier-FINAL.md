@@ -1,0 +1,73 @@
+# How an Aircraft Carrier Defends Itself — FINAL
+
+## VOICEOVER (English)
+
+One ship carries 65 planes, and every enemy in range wants it sunk. So why is it almost impossible to kill?
+
+Because the carrier you see is only the middle of the target. Around it, spread across the sea, sits an entire defensive system: fighters in the sky, missile ships on every side, and a gun that fires 4,500 rounds a minute as the very last resort. The ship itself is not armoured like a battleship. It does not survive by being hard. It survives by being surrounded.
+
+And the record says it works: no American aircraft carrier has been sunk since the Second World War.
+
+So how does an aircraft carrier actually defend itself? In this video, we go through the three rings that protect it, ring by ring. We look at the night in the Red Sea when a missile got through almost all of them. And we finish with the deadly mistakes that can break the rings open, mistakes real navies have actually made.
+
+Start with the most important fact: a carrier on its own is nearly defenceless. Its own weapons are only short-range, last-ditch systems. The real defence is the group around it.
+
+A carrier strike group is roughly 7,500 people. In the centre, the carrier, with an air wing of 65 to 70 aircraft. Around it, a guided-missile cruiser and three or more guided-missile destroyers. Usually an attack submarine somewhere underneath. And a supply ship keeping the whole city fed and fuelled. The carrier itself can make over 30 knots, which means the entire formation moves, and a moving target is a much harder target.
+
+The ships are not bunched together. They spread across tens of kilometres of ocean, each one watching its own sector, so an attacker approaching from any direction runs into somebody's radar and somebody's missiles. The submarine works further out still, hunting enemy submarines before they ever get within torpedo range of the group.
+
+Notice the shape. Everything is arranged in rings around one ship. That is not decoration. It is the oldest idea in warfare: defence in depth. The attacker does not have to beat one weapon. He has to beat every layer, one after another, on the same day, in the same few minutes. The defence only needs one layer to work.
+
+But rings are useless if nobody sees the attack coming. And at sea, seeing is a physics problem.
+
+A missile flying just above the waves hides below the horizon. A ship's own radar, mounted maybe 30 metres up, cannot see it until it pops over that horizon, roughly 30 kilometres out. A fast missile covers that in one to two minutes. That is all the warning a ship gets on its own.
+
+So the group lifts its eyes into the sky. The E-2 Hawkeye, the aircraft with the radar dome on its back, orbits high above the fleet and looks down. From up there, the horizon stretches hundreds of kilometres. It spots the missile, the aircraft, the ship, and it talks to everyone at once: fighters, destroyers, the carrier. Every ring you are about to see is aimed by this picture. Blind the picture, and the rings fire late or fire at the wrong thing. Remember that. It comes back in the mistakes.
+
+The modern attacker knows all this, which is why the new threat is not just fast. It is small. Cheap drones fly low and slow, with a radar picture closer to a bird than a bomber. Finding them is hard. Finding them early enough is the whole game.
+
+The outer ring is made of jets. Combat air patrols, Super Hornets and F-35s, sit on station far from the fleet, along the directions an attack is most likely to come from.
+
+Their job follows a simple rule: kill the archer, not the arrow. It is far easier to destroy a bomber before it launches than to chase the missile it already fired. So the fighters push out, guided by the Hawkeye, and try to end the attack before it begins.
+
+Helping them is the Growler, an electronic attack jet that jams enemy radars. An attacker who cannot see clearly launches late, aims badly, or turns away. Some raids die here without a single shot. The first ring is partly invisible.
+
+Keeping this ring up is a logistics battle of its own. Jets burn fuel fast, so tankers orbit to refill them, patrols rotate in shifts around the clock, and more fighters sit on the carrier's deck at alert, engines ready, launched within minutes when the Hawkeye's picture turns red.
+
+But no screen stops everything. Fast, low missiles leak through. And whatever leaks now meets the wall.
+
+The second ring is the escorts, the cruiser and destroyers, positioned tens of kilometres out, each one a floating missile battery tied into one system called Aegis. Because they share the Hawkeye's picture, a destroyer can fire on a target it cannot even see itself yet.
+
+The wall's long arm is the SM-6, publicly credited with a range beyond 240 kilometres. Behind it, ranks of SM-2s. A single destroyer carries around ninety vertical launch cells; the cruiser, over a hundred. In theory, the group can put a storm of interceptors into the sky.
+
+The system can track hundreds of contacts at once and share them between ships, so two destroyers do not waste missiles on the same target while another one slips by. And against an important target, the wall often fires twice, two interceptors per missile, because one miss is all the attacker needs.
+
+In theory, the wall is overwhelming. In practice, every cell is a one-shot deal, and there is no crane at sea to reload an empty tube in the middle of a fight. The wall is extremely strong, and it is finite. Hold that thought, because every serious plan to kill a carrier is really a plan to empty this wall.
+
+What gets past it enters the last few kilometres. And there, the fight changes completely, from minutes to seconds.
+
+Inside roughly 50 kilometres, shorter, cheaper interceptors take over: the ESSM, packed four to a cell, built for exactly this: many targets, close together, arriving at once.
+
+Inside the last ten kilometres, SeaRAM missiles guard the ship itself. And inside the final seconds, there is the Phalanx: a radar-guided Gatling gun that thinks for itself, spraying 4,500 rounds a minute into whatever is still coming. Its drum holds about 1,550 rounds, roughly twenty seconds of fire. That is how thin the last ring is. Alongside the hardware sits the soft layer: jammers and decoys that try to seduce the missile into chasing a ghost instead of the ship. And the ship itself is not passive either: it turns hard, makes full speed, and tries to be somewhere the missile is not.
+
+This is not theory. On 30 January 2024, in the Red Sea, a Houthi cruise missile slipped past every outer layer of the destroyer USS Gravely. The Phalanx destroyed it about a mile from the ship, seconds from impact. One study later reported that a missile came within roughly 200 metres of a carrier, the USS Eisenhower, in the same campaign.
+
+The rings held. But notice how close the last one came to being the story.
+
+So the system works. Which means carriers are not killed by weapons. They are killed by mistakes. Here are the deadly ones.
+
+Mistake one: rings that exist, but are asleep. In April 2022, the Russian cruiser Moskva, a ship built around air defence, with three layers of her own, was hit by two Neptune anti-ship missiles. US officials confirmed the hits. Reports suggest her defences never engaged. Layers only protect a ship whose crews are alert, positioned and ready. She sank the next day.
+
+Mistake two: shooting the wrong target. In December 2024, over the Red Sea, the cruiser USS Gettysburg mistook a returning American Super Hornet for an incoming cruise missile and shot it down. Both pilots ejected and survived. The Navy's investigation blamed misidentification under pressure. Three rings of weapons are only as good as the picture that aims them.
+
+Mistake three: doing the magazine maths too late. Every interceptor in that wall costs far more than the drones it often kills. An SM-2 runs to roughly two million dollars a shot by public estimates. Attackers know this. Cheap drones and missiles, fired in waves, are not always trying to get through. They are trying to make the wall spend itself.
+
+And mistake four: sailing a predictable route through narrow water. In open ocean, the rings stretch for hundreds of kilometres. In a strait, geography crushes them flat, and launchers on the shore sit well inside what should be the outer ring.
+
+Different ships, different oceans, same lesson underneath all four: the hardware almost never fails first. People stop believing the attack can really happen, and the rings quietly stop being rings.
+
+So a carrier is not hard to kill because it is one strong ship. The blueprint is centuries old: fortress rings, rebuilt in steel and radar. It is hard to kill because you must beat the eyes, the fighters, the wall and the gun, in that order, in a few minutes, all on the same day. The rings only need one good moment. The attacker needs all of them to fail.
+
+If you want the full ring diagram from this video as a printable guide, it is linked below. And the one opponent built to sneak underneath all three rings is the subject of the next video: how submarines actually fight.
+
+---

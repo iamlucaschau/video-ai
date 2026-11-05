@@ -1241,5 +1241,77 @@
     "seconds": 20,
     "file": "sfx/synth/heartbeat-low.wav",
     "lufs": -19
+  },
+  {
+    "category": "synth",
+    "title": "Jet pass (roar + Doppler)",
+    "author": "code",
+    "source": "scripts/make-sfx-carrier.py",
+    "seconds": 3.2,
+    "file": "sfx/synth/jet-pass.wav",
+    "lufs": -15
+  },
+  {
+    "category": "synth",
+    "title": "Missile launch",
+    "author": "code",
+    "source": "scripts/make-sfx-carrier.py",
+    "seconds": 2.6,
+    "file": "sfx/synth/missile-launch.wav",
+    "lufs": -23.5
+  },
+  {
+    "category": "synth",
+    "title": "Phalanx CIWS burst",
+    "author": "code",
+    "source": "scripts/make-sfx-carrier.py",
+    "seconds": 1.6,
+    "file": "sfx/synth/ciws-burst.wav",
+    "lufs": -15.3
+  },
+  {
+    "category": "synth",
+    "title": "Radar contact ping",
+    "author": "code",
+    "source": "scripts/make-sfx-carrier.py",
+    "seconds": 0.7,
+    "file": "sfx/synth/radar-ping.wav",
+    "lufs": -14.9
+  },
+  {
+    "category": "synth",
+    "title": "Sonar ping with echo",
+    "author": "code",
+    "source": "scripts/make-sfx-carrier.py",
+    "seconds": 2.8,
+    "file": "sfx/synth/sonar-ping.wav",
+    "lufs": -11.5
+  },
+  {
+    "category": "synth",
+    "title": "Radar jamming static",
+    "author": "code",
+    "source": "scripts/make-sfx-carrier.py",
+    "seconds": 2,
+    "file": "sfx/synth/jam-static.wav",
+    "lufs": -13.2
+  },
+  {
+    "category": "synth",
+    "title": "Shipboard two-tone alarm",
+    "author": "code",
+    "source": "scripts/make-sfx-carrier.py",
+    "seconds": 2.4,
+    "file": "sfx/synth/alarm.wav",
+    "lufs": -4.2
+  },
+  {
+    "file": "sfx/music/own/carrier-watch.mp3",
+    "category": "music",
+    "title": "Carrier Watch (channel-made)",
+    "author": "code",
+    "seconds": 672,
+    "source": "own: python -P scripts/make-music.py carrier-watch --seconds 340, x2 acrossfade 8 s",
+    "lufs": -15.7
   }
 ]

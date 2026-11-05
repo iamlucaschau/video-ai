@@ -62,6 +62,7 @@ import { IntroScene } from "./compositions/Showcase/scenes/IntroScene";
 import { OutroScene } from "./compositions/Showcase/scenes/OutroScene";
 import { Ambush, ambushDuration } from "./compositions/Ambush/Ambush";
 import { AmbushThumbnail, type ThumbVariant } from "./compositions/Ambush/Thumbnail";
+import { CarrierVideo, carrierDuration } from "./compositions/Carrier/Carrier";
 
 /**
  * Every renderable video is registered here. The `id` is what you pass to
@@ -258,6 +259,8 @@ export const RemotionRoot: React.FC = () => {
       {/* One-off 16:9 tactical explainer (Test/ambush) */}
       <Composition id="Ambush-HowAmbushesWork" component={Ambush} width={1920} height={1080} fps={30} durationInFrames={ambushDuration} defaultProps={{ subtitles: true }} />
       <Composition id="Ambush-Thumbnail" component={AmbushThumbnail} width={1920} height={1080} fps={30} durationInFrames={1} defaultProps={{ variant: "a" as ThumbVariant }} />
+      {/* One-off 16:9 naval explainer (Test/carrier) */}
+      <Composition id="Carrier-HowACarrierDefends" component={CarrierVideo} width={1920} height={1080} fps={30} durationInFrames={carrierDuration} defaultProps={{ subtitles: true }} />
 
       {/* 9:16 explainer, timed by its Gemini TTS voiceover */}
       <Composition
