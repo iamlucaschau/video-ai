@@ -1,0 +1,1077 @@
+{
+  "durationInSeconds": 598.12425,
+  "tail": 1.5,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 3.876,
+      "text": "By the time you know you're in an ambush, it's already too late."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 5.67625,
+      "end": 9.42125,
+      "text": "Teutoburg Forest, the Winter War, Vietnam."
+    },
+    {
+      "id": "03",
+      "scene": "s1",
+      "start": 9.6015,
+      "end": 13.0555,
+      "text": "Ambushes have shaped battles across centuries."
+    },
+    {
+      "id": "04",
+      "scene": "s1",
+      "start": 13.505083333333333,
+      "end": 24.333083333333335,
+      "text": "We'll examine how an ambush is constructed, how it unfolds, how a trained unit reacts when caught in one, and how drones are changing the way these engagements play out."
+    },
+    {
+      "id": "05",
+      "scene": "s1",
+      "start": 24.783541666666665,
+      "end": 31.675541666666664,
+      "text": "Three things make an ambush work: surprise, concealment, and the enemy being on the move."
+    },
+    {
+      "id": "06",
+      "scene": "s1",
+      "start": 31.85545833333333,
+      "end": 35.14245833333333,
+      "text": "Take away any one of them and the advantage disappears."
+    },
+    {
+      "id": "07",
+      "scene": "s1",
+      "start": 35.592083333333335,
+      "end": 38.10608333333334,
+      "text": "Now, something most people haven't thought about."
+    },
+    {
+      "id": "08",
+      "scene": "s1",
+      "start": 38.28629166666667,
+      "end": 41.29029166666667,
+      "text": "An ambush looks passive."
+    },
+    {
+      "id": "09",
+      "scene": "s1",
+      "start": 41.470041666666674,
+      "end": 44.50804166666667,
+      "text": "You're hiding, but it's classified as an offensive action."
+    },
+    {
+      "id": "10",
+      "scene": "s1",
+      "start": 44.688166666666675,
+      "end": 52.285166666666676,
+      "text": "The ambushing force decides where the fight happens, when it starts, and what conditions the enemy faces the moment it does."
+    },
+    {
+      "id": "11",
+      "scene": "s1",
+      "start": 52.464875000000006,
+      "end": 54.416875000000005,
+      "text": "The enemy decides none of that."
+    },
+    {
+      "id": "12",
+      "scene": "s1",
+      "start": 54.866375000000005,
+      "end": 58.827375,
+      "text": "Everything in an ambush is built around this: the kill zone."
+    },
+    {
+      "id": "13",
+      "scene": "s1",
+      "start": 59.00708333333334,
+      "end": 59.92408333333334,
+      "text": "Where do we position?"
+    },
+    {
+      "id": "14",
+      "scene": "s1",
+      "start": 60.10408333333334,
+      "end": 61.79908333333334,
+      "text": "To cover this box."
+    },
+    {
+      "id": "15",
+      "scene": "s1",
+      "start": 61.97937500000001,
+      "end": 62.92837500000001,
+      "text": "When do we fire?"
+    },
+    {
+      "id": "16",
+      "scene": "s1",
+      "start": 63.10825000000001,
+      "end": 65.57925000000002,
+      "text": "When the enemy is inside this box."
+    },
+    {
+      "id": "17",
+      "scene": "s1",
+      "start": 65.75908333333335,
+      "end": 66.56708333333336,
+      "text": "When do we leave?"
+    },
+    {
+      "id": "18",
+      "scene": "s1",
+      "start": 66.74758333333335,
+      "end": 68.45558333333335,
+      "text": "When we're done with what's in this box."
+    },
+    {
+      "id": "19",
+      "scene": "s1",
+      "start": 68.63583333333335,
+      "end": 70.53583333333336,
+      "text": "Everything serves the kill zone."
+    },
+    {
+      "id": "20",
+      "scene": "s1",
+      "start": 70.71608333333336,
+      "end": 71.74808333333335,
+      "text": "Keep that in mind."
+    },
+    {
+      "id": "21",
+      "scene": "s2",
+      "start": 73.94783333333336,
+      "end": 80.26483333333337,
+      "text": "Before anyone gets into position, the most important decision has already been made: location."
+    },
+    {
+      "id": "22",
+      "scene": "s2",
+      "start": 80.4449166666667,
+      "end": 83.5159166666667,
+      "text": "Site selection accounts for most of the outcome."
+    },
+    {
+      "id": "23",
+      "scene": "s2",
+      "start": 83.6962916666667,
+      "end": 87.1282916666667,
+      "text": "The execution is almost secondary if the ground is right."
+    },
+    {
+      "id": "24",
+      "scene": "s2",
+      "start": 87.57800000000003,
+      "end": 90.19500000000004,
+      "text": "Open ground is out immediately."
+    },
+    {
+      "id": "25",
+      "scene": "s2",
+      "start": 90.37520833333336,
+      "end": 93.97620833333336,
+      "text": "A straight road gives the lead vehicle a clear line of sight ahead."
+    },
+    {
+      "id": "26",
+      "scene": "s2",
+      "start": 94.1559166666667,
+      "end": 96.3439166666667,
+      "text": "Something looks wrong, they just drive through."
+    },
+    {
+      "id": "27",
+      "scene": "s2",
+      "start": 96.52408333333337,
+      "end": 99.62708333333336,
+      "text": "A sharp bend behind a hill is ideal."
+    },
+    {
+      "id": "28",
+      "scene": "s2",
+      "start": 99.80687500000003,
+      "end": 102.67387500000004,
+      "text": "They can't see what's past the corner until they're already on it."
+    },
+    {
+      "id": "29",
+      "scene": "s2",
+      "start": 103.12370833333337,
+      "end": 104.00370833333336,
+      "text": "And the bridge?"
+    },
+    {
+      "id": "30",
+      "scene": "s2",
+      "start": 104.1835416666667,
+      "end": 106.3395416666667,
+      "text": "There is no other way across."
+    },
+    {
+      "id": "31",
+      "scene": "s2",
+      "start": 106.5197916666667,
+      "end": 110.82979166666671,
+      "text": "A choke point removes the enemy's choices before the fight starts."
+    },
+    {
+      "id": "32",
+      "scene": "s2",
+      "start": 111.0095416666667,
+      "end": 112.5305416666667,
+      "text": "You know exactly where they'll be."
+    },
+    {
+      "id": "33",
+      "scene": "s2",
+      "start": 112.71062500000004,
+      "end": 114.90662500000003,
+      "text": "The ambush stops being a probability."
+    },
+    {
+      "id": "34",
+      "scene": "s2",
+      "start": 115.08625000000004,
+      "end": 116.45625000000004,
+      "text": "It becomes a near certainty."
+    },
+    {
+      "id": "35",
+      "scene": "s2",
+      "start": 116.90645833333336,
+      "end": 121.73145833333336,
+      "text": "Two more things the site needs to give you: cover and concealment for your own force."
+    },
+    {
+      "id": "36",
+      "scene": "s2",
+      "start": 121.9112916666667,
+      "end": 123.3382916666667,
+      "text": "Concealment hides you."
+    },
+    {
+      "id": "37",
+      "scene": "s2",
+      "start": 123.5181666666667,
+      "end": 125.0921666666667,
+      "text": "Cover stops bullets."
+    },
+    {
+      "id": "38",
+      "scene": "s2",
+      "start": 125.2722916666667,
+      "end": 129.5332916666667,
+      "text": "Good ground gives you both, and a clear way out, which we'll come to."
+    },
+    {
+      "id": "39",
+      "scene": "s3",
+      "start": 131.7334166666667,
+      "end": 132.4844166666667,
+      "text": "Positioning."
+    },
+    {
+      "id": "40",
+      "scene": "s3",
+      "start": 132.66470833333335,
+      "end": 136.33170833333335,
+      "text": "And here's where most people's instinct gets them into serious trouble."
+    },
+    {
+      "id": "41",
+      "scene": "s3",
+      "start": 136.51179166666668,
+      "end": 138.5797916666667,
+      "text": "Both sides of the road feels right."
+    },
+    {
+      "id": "42",
+      "scene": "s3",
+      "start": 138.75933333333336,
+      "end": 139.80833333333337,
+      "text": "Maximum coverage."
+    },
+    {
+      "id": "43",
+      "scene": "s3",
+      "start": 139.9885416666667,
+      "end": 142.7255416666667,
+      "text": "The problem is what happens at that crossing point."
+    },
+    {
+      "id": "44",
+      "scene": "s3",
+      "start": 142.90587500000004,
+      "end": 148.22587500000003,
+      "text": "At close ambush range, your fire paths cross directly through your own positions."
+    },
+    {
+      "id": "45",
+      "scene": "s3",
+      "start": 148.4062916666667,
+      "end": 152.9812916666667,
+      "text": "It's not a theoretical risk, but at least this is a mistake you only make once."
+    },
+    {
+      "id": "46",
+      "scene": "s3",
+      "start": 153.4311666666667,
+      "end": 156.37916666666672,
+      "text": "So, the formation itself has to solve this."
+    },
+    {
+      "id": "47",
+      "scene": "s3",
+      "start": 156.55895833333338,
+      "end": 159.19695833333338,
+      "text": "The long leg runs parallel to the patrol's route."
+    },
+    {
+      "id": "48",
+      "scene": "s3",
+      "start": 159.3770833333334,
+      "end": 162.9010833333334,
+      "text": "This is the support element, your highest volume of fire."
+    },
+    {
+      "id": "49",
+      "scene": "s3",
+      "start": 163.08079166666673,
+      "end": 164.3397916666667,
+      "text": "Notice the angle."
+    },
+    {
+      "id": "50",
+      "scene": "s3",
+      "start": 164.51987500000007,
+      "end": 168.48687500000008,
+      "text": "Fire runs along the length of the kill zone, not across it."
+    },
+    {
+      "id": "51",
+      "scene": "s3",
+      "start": 168.66700000000006,
+      "end": 171.91600000000005,
+      "text": "One burst covers the entire depth of the formation."
+    },
+    {
+      "id": "52",
+      "scene": "s3",
+      "start": 172.09562500000007,
+      "end": 173.72162500000007,
+      "text": "That's called enfilade fire."
+    },
+    {
+      "id": "53",
+      "scene": "s3",
+      "start": 174.17162500000006,
+      "end": 177.12062500000008,
+      "text": "The short leg sits perpendicular at the far end."
+    },
+    {
+      "id": "54",
+      "scene": "s3",
+      "start": 177.3005833333334,
+      "end": 184.02858333333342,
+      "text": "Their job is to stop the patrol from walking forward out of the kill zone, and later, to move into it."
+    },
+    {
+      "id": "55",
+      "scene": "s3",
+      "start": 184.2082083333334,
+      "end": 189.4752083333334,
+      "text": "There's still a risk of friendly fire, but as long as the squad avoids this area, it's mitigated."
+    },
+    {
+      "id": "56",
+      "scene": "s3",
+      "start": 189.6553333333334,
+      "end": 193.2873333333334,
+      "text": "It's where the fire paths from both elements come closest to intersecting."
+    },
+    {
+      "id": "57",
+      "scene": "s3",
+      "start": 193.7375833333334,
+      "end": 197.64558333333338,
+      "text": "Machine guns along the support element, and anti-armor at the ends."
+    },
+    {
+      "id": "58",
+      "scene": "s3",
+      "start": 197.82512500000007,
+      "end": 204.86412500000006,
+      "text": "Their one job at initiation is to stop the column moving, usually aiming for the front and back vehicles to trap in the rest."
+    },
+    {
+      "id": "59",
+      "scene": "s3",
+      "start": 205.04420833333342,
+      "end": 209.1032083333334,
+      "text": "Ideally, there should also be security elements blocking both ends of the kill zone."
+    },
+    {
+      "id": "60",
+      "scene": "s3",
+      "start": 209.55370833333342,
+      "end": 210.91670833333342,
+      "text": "Everything is in place."
+    },
+    {
+      "id": "61",
+      "scene": "s3",
+      "start": 211.09670833333342,
+      "end": 214.3917083333334,
+      "text": "Now, it comes down to one thing: discipline."
+    },
+    {
+      "id": "62",
+      "scene": "s3",
+      "start": 214.5719583333334,
+      "end": 216.44795833333342,
+      "text": "The patrol enters the kill zone."
+    },
+    {
+      "id": "63",
+      "scene": "s3",
+      "start": 216.62766666666676,
+      "end": 217.58366666666674,
+      "text": "Nobody fires."
+    },
+    {
+      "id": "64",
+      "scene": "s3",
+      "start": 217.76341666666676,
+      "end": 219.16741666666675,
+      "text": "This is harder than it sounds."
+    },
+    {
+      "id": "65",
+      "scene": "s3",
+      "start": 219.34750000000008,
+      "end": 221.9515000000001,
+      "text": "The target is right there, twenty meters."
+    },
+    {
+      "id": "66",
+      "scene": "s3",
+      "start": 222.1312083333334,
+      "end": 229.2282083333334,
+      "text": "The instinct is to shoot, but if one person fires now, they risk the coordination that makes the system lethal."
+    },
+    {
+      "id": "67",
+      "scene": "s3",
+      "start": 229.40816666666674,
+      "end": 233.54016666666675,
+      "text": "Everyone waits for the commander's signal, and nothing fires before it."
+    },
+    {
+      "id": "68",
+      "scene": "s3",
+      "start": 233.99004166666674,
+      "end": 235.71304166666675,
+      "text": "The anti-armor fires first."
+    },
+    {
+      "id": "69",
+      "scene": "s3",
+      "start": 235.8928333333334,
+      "end": 238.68583333333342,
+      "text": "Immediately after, the machine guns do their work."
+    },
+    {
+      "id": "70",
+      "scene": "s3",
+      "start": 238.86608333333342,
+      "end": 242.00208333333342,
+      "text": "Think about what's happening inside this box right now."
+    },
+    {
+      "id": "71",
+      "scene": "s3",
+      "start": 242.18195833333343,
+      "end": 246.16495833333343,
+      "text": "They're trying to process fire coming from multiple directions simultaneously."
+    },
+    {
+      "id": "72",
+      "scene": "s3",
+      "start": 246.34508333333343,
+      "end": 247.80208333333343,
+      "text": "There's no single thing to look at."
+    },
+    {
+      "id": "73",
+      "scene": "s3",
+      "start": 247.9823750000001,
+      "end": 253.3333750000001,
+      "text": "The mental cycle taught to them is to observe, orient, decide, act."
+    },
+    {
+      "id": "74",
+      "scene": "s3",
+      "start": 253.51333333333343,
+      "end": 258.00033333333346,
+      "text": "But that collapses entirely in an ambush, and that's why it is so lethal."
+    },
+    {
+      "id": "75",
+      "scene": "s3",
+      "start": 258.45033333333345,
+      "end": 262.02233333333345,
+      "text": "After the opening burst, sustained suppression is the aim."
+    },
+    {
+      "id": "76",
+      "scene": "s3",
+      "start": 262.20220833333343,
+      "end": 265.16520833333345,
+      "text": "The goal isn't to hit every target with every round."
+    },
+    {
+      "id": "77",
+      "scene": "s3",
+      "start": 265.34483333333344,
+      "end": 268.97883333333345,
+      "text": "It's to make any movement inside that box impossible."
+    },
+    {
+      "id": "78",
+      "scene": "s3",
+      "start": 269.15916666666675,
+      "end": 270.38816666666673,
+      "text": "The patrol stays down."
+    },
+    {
+      "id": "79",
+      "scene": "s3",
+      "start": 270.56816666666674,
+      "end": 271.9561666666667,
+      "text": "Assault element moves in."
+    },
+    {
+      "id": "80",
+      "scene": "s3",
+      "start": 272.13587500000006,
+      "end": 277.24587500000007,
+      "text": "Complete the action, collect anything useful: documents, radios, maps."
+    },
+    {
+      "id": "81",
+      "scene": "s3",
+      "start": 277.6958333333334,
+      "end": 279.4258333333334,
+      "text": "And then, the withdrawal."
+    },
+    {
+      "id": "82",
+      "scene": "s3",
+      "start": 279.60579166666673,
+      "end": 283.1257916666667,
+      "text": "From the moment the ambush triggers, that clock is running."
+    },
+    {
+      "id": "83",
+      "scene": "s3",
+      "start": 283.30566666666675,
+      "end": 287.18166666666673,
+      "text": "Reinforcements will arrive, and the tactical situation reverses."
+    },
+    {
+      "id": "84",
+      "scene": "s3",
+      "start": 287.3621250000001,
+      "end": 292.2521250000001,
+      "text": "The ambush site goes from an asset to a liability the moment it's been used."
+    },
+    {
+      "id": "85",
+      "scene": "s3",
+      "start": 292.4319166666668,
+      "end": 293.18291666666676,
+      "text": "You leave."
+    },
+    {
+      "id": "86",
+      "scene": "s4",
+      "start": 295.38304166666677,
+      "end": 296.1280416666668,
+      "text": "Now flip it."
+    },
+    {
+      "id": "87",
+      "scene": "s4",
+      "start": 296.3082083333334,
+      "end": 297.54520833333345,
+      "text": "You're in the patrol."
+    },
+    {
+      "id": "88",
+      "scene": "s4",
+      "start": 297.7253333333334,
+      "end": 303.8173333333334,
+      "text": "And to be honest, if the enemy has planned it out well, the odds are most certainly not in your favor."
+    },
+    {
+      "id": "89",
+      "scene": "s4",
+      "start": 303.9971250000001,
+      "end": 308.2491250000001,
+      "text": "But there are some things that minimize or increase your likelihood of making it out."
+    },
+    {
+      "id": "90",
+      "scene": "s4",
+      "start": 308.6988750000001,
+      "end": 310.7988750000001,
+      "text": "Contact, multiple directions!"
+    },
+    {
+      "id": "91",
+      "scene": "s4",
+      "start": 310.97845833333344,
+      "end": 311.74545833333343,
+      "text": "People are down."
+    },
+    {
+      "id": "92",
+      "scene": "s4",
+      "start": 311.9253750000001,
+      "end": 315.15237500000006,
+      "text": "You have seconds before confusion turns into hesitation."
+    },
+    {
+      "id": "93",
+      "scene": "s4",
+      "start": 315.3325000000001,
+      "end": 317.6295000000001,
+      "text": "Your first instinct is to go back the way you came."
+    },
+    {
+      "id": "94",
+      "scene": "s4",
+      "start": 317.80995833333344,
+      "end": 321.94495833333343,
+      "text": "It feels logical, it's familiar, and it seems like the fastest way out."
+    },
+    {
+      "id": "95",
+      "scene": "s4",
+      "start": 322.1250416666668,
+      "end": 323.8970416666668,
+      "text": "But that route is already covered."
+    },
+    {
+      "id": "96",
+      "scene": "s4",
+      "start": 324.0765833333335,
+      "end": 328.3165833333335,
+      "text": "Ambushes are set up with security elements watching the entry and exit."
+    },
+    {
+      "id": "97",
+      "scene": "s4",
+      "start": 328.49620833333347,
+      "end": 331.20320833333346,
+      "text": "Moving back puts you right where they expect you."
+    },
+    {
+      "id": "98",
+      "scene": "s4",
+      "start": 331.6536666666668,
+      "end": 334.17966666666683,
+      "text": "Second instinct: take cover where you are."
+    },
+    {
+      "id": "99",
+      "scene": "s4",
+      "start": 334.35925000000015,
+      "end": 336.90925000000016,
+      "text": "Drop low, find anything solid."
+    },
+    {
+      "id": "100",
+      "scene": "s4",
+      "start": 337.08975000000015,
+      "end": 340.54575000000017,
+      "text": "But the kill zone was chosen for a reason."
+    },
+    {
+      "id": "101",
+      "scene": "s4",
+      "start": 340.7259166666668,
+      "end": 344.2689166666668,
+      "text": "What blocks one direction often leaves you exposed to another."
+    },
+    {
+      "id": "102",
+      "scene": "s4",
+      "start": 344.4485416666668,
+      "end": 346.4725416666668,
+      "text": "There isn't a truly safe spot."
+    },
+    {
+      "id": "103",
+      "scene": "s4",
+      "start": 348.07254166666684,
+      "end": 353.5635416666668,
+      "text": "The response that works has to be trained in advance, because it goes against instinct."
+    },
+    {
+      "id": "104",
+      "scene": "s4",
+      "start": 353.7436250000002,
+      "end": 358.48462500000016,
+      "text": "The correct move is to actually push toward the ambushing force."
+    },
+    {
+      "id": "105",
+      "scene": "s4",
+      "start": 358.66487500000017,
+      "end": 360.31887500000016,
+      "text": "Fast and aggressive."
+    },
+    {
+      "id": "106",
+      "scene": "s4",
+      "start": 360.4992083333335,
+      "end": 366.2682083333335,
+      "text": "It sounds wrong, and yes, it can go wrong, but that is your only real chance."
+    },
+    {
+      "id": "107",
+      "scene": "s4",
+      "start": 366.7185833333335,
+      "end": 369.01858333333354,
+      "text": "Ambushes are built around distance."
+    },
+    {
+      "id": "108",
+      "scene": "s4",
+      "start": 369.19879166666686,
+      "end": 375.10279166666686,
+      "text": "Positions, fire lanes, coordination, everything assumes you stay where you are."
+    },
+    {
+      "id": "109",
+      "scene": "s4",
+      "start": 375.2826250000002,
+      "end": 379.2416250000002,
+      "text": "The moment you move directly at them, that setup starts to fall apart."
+    },
+    {
+      "id": "110",
+      "scene": "s4",
+      "start": 379.4220000000002,
+      "end": 384.6620000000002,
+      "text": "Their angles don't line up the same way, and they're forced to react instead of follow a plan."
+    },
+    {
+      "id": "111",
+      "scene": "s4",
+      "start": 384.8424583333335,
+      "end": 388.5694583333335,
+      "text": "You turn a one-sided situation into something more even."
+    },
+    {
+      "id": "112",
+      "scene": "s4",
+      "start": 389.01954166666684,
+      "end": 391.77454166666683,
+      "text": "This only works if it's automatic."
+    },
+    {
+      "id": "113",
+      "scene": "s4",
+      "start": 391.95491666666686,
+      "end": 394.6609166666669,
+      "text": "Under that kind of stress, people don't stop to think."
+    },
+    {
+      "id": "114",
+      "scene": "s4",
+      "start": 394.8406250000002,
+      "end": 396.7896250000002,
+      "text": "They fall back on what they've practiced."
+    },
+    {
+      "id": "115",
+      "scene": "s4",
+      "start": 396.96987500000023,
+      "end": 399.9608750000002,
+      "text": "If this isn't drilled in, it won't happen when it matters."
+    },
+    {
+      "id": "116",
+      "scene": "s4",
+      "start": 400.41050000000024,
+      "end": 405.4375000000002,
+      "text": "For a far ambush, beyond, let's say, fifty meters, the response changes."
+    },
+    {
+      "id": "117",
+      "scene": "s4",
+      "start": 405.61725000000024,
+      "end": 411.84525000000025,
+      "text": "Return fire right away to reduce incoming pressure, then break contact by moving in small groups."
+    },
+    {
+      "id": "118",
+      "scene": "s4",
+      "start": 412.0247916666669,
+      "end": 417.02579166666686,
+      "text": "One element covers while another moves, repeating that process until you're out of danger."
+    },
+    {
+      "id": "119",
+      "scene": "s4",
+      "start": 417.20625000000024,
+      "end": 423.35525000000024,
+      "text": "It's slower and still risky, but closing the distance from that far away would leave you exposed too long."
+    },
+    {
+      "id": "120",
+      "scene": "s4",
+      "start": 423.80520833333355,
+      "end": 426.11820833333354,
+      "text": "Distance decides the response."
+    },
+    {
+      "id": "121",
+      "scene": "s4",
+      "start": 426.2985000000002,
+      "end": 430.5085000000002,
+      "text": "And in both cases, speed and clarity matter more than anything else."
+    },
+    {
+      "id": "122",
+      "scene": "s5",
+      "start": 432.7081666666669,
+      "end": 436.2791666666669,
+      "text": "Everything up to this point describes a classic ambush."
+    },
+    {
+      "id": "123",
+      "scene": "s5",
+      "start": 436.45895833333356,
+      "end": 443.05595833333354,
+      "text": "But as you know, drones have changed the battlefield forever, and that includes how these engagements are carried out."
+    },
+    {
+      "id": "124",
+      "scene": "s5",
+      "start": 443.2357916666669,
+      "end": 447.3387916666669,
+      "text": "I will show you three main ways a drone can operate in a modern setup."
+    },
+    {
+      "id": "125",
+      "scene": "s5",
+      "start": 447.7886666666669,
+      "end": 450.16766666666695,
+      "text": "The first is the sitting drone."
+    },
+    {
+      "id": "126",
+      "scene": "s5",
+      "start": 450.3478333333336,
+      "end": 453.5798333333336,
+      "text": "This has been seen in Ukraine, on both sides."
+    },
+    {
+      "id": "127",
+      "scene": "s5",
+      "start": 453.76025000000027,
+      "end": 461.2762500000003,
+      "text": "Instead of soldiers lying in wait, a single drone, often a fiber-optic FPV, is placed directly on the road."
+    },
+    {
+      "id": "128",
+      "scene": "s5",
+      "start": 461.4562916666669,
+      "end": 465.6302916666669,
+      "text": "It can remain there for hours, effectively blending in as debris."
+    },
+    {
+      "id": "129",
+      "scene": "s5",
+      "start": 465.81016666666693,
+      "end": 471.90616666666693,
+      "text": "There's no need for troops in the tree line, no visible heat signature, and far less exposure for the attacker."
+    },
+    {
+      "id": "130",
+      "scene": "s5",
+      "start": 472.3559583333336,
+      "end": 477.8439583333336,
+      "text": "Its purpose is simple: wait for a vehicle to pass, then strike at the optimal moment."
+    },
+    {
+      "id": "131",
+      "scene": "s5",
+      "start": 478.0240833333336,
+      "end": 480.3650833333336,
+      "text": "Even well-used supply routes can be disrupted."
+    },
+    {
+      "id": "132",
+      "scene": "s5",
+      "start": 480.5450833333336,
+      "end": 488.6740833333336,
+      "text": "Surprise is the core principle here, and a stationary drone delivers it with a level of precision and concealment that's difficult to match."
+    },
+    {
+      "id": "133",
+      "scene": "s5",
+      "start": 488.8539583333336,
+      "end": 491.0359583333336,
+      "text": "It appears only at the moment of impact."
+    },
+    {
+      "id": "134",
+      "scene": "s5",
+      "start": 491.48637500000024,
+      "end": 494.44537500000024,
+      "text": "The second change comes when drones operate together."
+    },
+    {
+      "id": "135",
+      "scene": "s5",
+      "start": 494.62495833333355,
+      "end": 502.01495833333354,
+      "text": "One acts as a reconnaissance platform, circling above and searching for targets, while the other is the FPV strike drone."
+    },
+    {
+      "id": "136",
+      "scene": "s5",
+      "start": 502.19470833333355,
+      "end": 510.14170833333355,
+      "text": "Once the scout identifies a target, it relays the location to the operator, who can launch the FPV and guide it in with little to no warning."
+    },
+    {
+      "id": "137",
+      "scene": "s5",
+      "start": 510.59170833333354,
+      "end": 514.4917083333336,
+      "text": "What stands out here is that the kill zone is no longer fixed."
+    },
+    {
+      "id": "138",
+      "scene": "s5",
+      "start": 514.6721250000002,
+      "end": 518.0551250000002,
+      "text": "It doesn't depend on the enemy entering a pre-selected area."
+    },
+    {
+      "id": "139",
+      "scene": "s5",
+      "start": 518.2352083333335,
+      "end": 522.1252083333335,
+      "text": "It can be created on demand, anywhere the target is found."
+    },
+    {
+      "id": "140",
+      "scene": "s5",
+      "start": 522.3056250000002,
+      "end": 528.0696250000002,
+      "text": "That could be a road, an open field, or even a dug-in position assumed to be secure."
+    },
+    {
+      "id": "141",
+      "scene": "s5",
+      "start": 528.5199583333335,
+      "end": 533.1129583333335,
+      "text": "As a result, these attacks are no longer limited to movement or patrols."
+    },
+    {
+      "id": "142",
+      "scene": "s5",
+      "start": 533.2931666666668,
+      "end": 539.1911666666668,
+      "text": "They can happen during routine activity, even within areas that would normally be considered relatively safe."
+    },
+    {
+      "id": "143",
+      "scene": "s5",
+      "start": 539.6408333333335,
+      "end": 541.8118333333335,
+      "text": "The third way is defensive."
+    },
+    {
+      "id": "144",
+      "scene": "s5",
+      "start": 541.9918750000002,
+      "end": 546.2208750000002,
+      "text": "Modern units, down to the squad level, often carry their own drone."
+    },
+    {
+      "id": "145",
+      "scene": "s5",
+      "start": 546.4003750000002,
+      "end": 552.8733750000001,
+      "text": "On patrol, if the terrain ahead looks unfavorable, there's no need to send a pair forward to check it."
+    },
+    {
+      "id": "146",
+      "scene": "s5",
+      "start": 553.0530833333335,
+      "end": 559.2890833333335,
+      "text": "A reconnaissance drone can be launched instead, scanning the exact ground the squad is about to move through."
+    },
+    {
+      "id": "147",
+      "scene": "s5",
+      "start": 559.7387916666668,
+      "end": 562.1627916666667,
+      "text": "That tree line near a bend in the road."
+    },
+    {
+      "id": "148",
+      "scene": "s5",
+      "start": 562.3424166666667,
+      "end": 567.3704166666668,
+      "text": "Something that would normally rely on instinct and caution can now be observed from above."
+    },
+    {
+      "id": "149",
+      "scene": "s5",
+      "start": 567.5501666666668,
+      "end": 572.7861666666668,
+      "text": "Subtle movement, difficult to detect from the ground, becomes much easier to pick up."
+    },
+    {
+      "id": "150",
+      "scene": "s5",
+      "start": 572.9663750000001,
+      "end": 577.4853750000001,
+      "text": "Even dense foliage is less of a barrier, especially with thermal sensors."
+    },
+    {
+      "id": "151",
+      "scene": "s5",
+      "start": 577.9350833333334,
+      "end": 582.2310833333335,
+      "text": "If a threat is identified early, the situation can shift quickly."
+    },
+    {
+      "id": "152",
+      "scene": "s5",
+      "start": 582.4115416666667,
+      "end": 589.3995416666668,
+      "text": "What might have been a successful setup can be disrupted, avoided, or even turned into a counter action."
+    },
+    {
+      "id": "153",
+      "scene": "s5",
+      "start": 589.5792083333334,
+      "end": 597.2242083333334,
+      "text": "Drones don't guarantee safety, but they significantly change the balance, making them increasingly standard at the small unit level."
+    }
+  ]
+}

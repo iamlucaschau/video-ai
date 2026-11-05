@@ -600,7 +600,7 @@
     "title": "Typewriter soft click",
     "author": "Mixkit",
     "seconds": 0.22,
-    "lufs": -35.0,
+    "lufs": -35,
     "source": "https://mixkit.co/free-sound-effects/download/1125/"
   },
   {
@@ -680,7 +680,7 @@
     "category": "swish",
     "title": "Fast sweep transition",
     "author": "Mixkit",
-    "seconds": 1.0,
+    "seconds": 1,
     "lufs": -18.4,
     "source": "https://mixkit.co/free-sound-effects/download/174/"
   },
@@ -905,7 +905,7 @@
     "category": "amb-air",
     "title": "Deep cinematic wind hum",
     "author": "Mixkit",
-    "seconds": 54.0,
+    "seconds": 54,
     "lufs": -18,
     "source": "https://mixkit.co/free-sound-effects/download/1177/"
   },
@@ -968,7 +968,7 @@
     "category": "amb-river",
     "title": "River in the forest with birds",
     "author": "Mixkit",
-    "seconds": 95.0,
+    "seconds": 95,
     "lufs": -30.6,
     "source": "https://mixkit.co/free-sound-effects/download/1216/"
   },
@@ -1000,6 +1000,114 @@
     "source": "https://mixkit.co/free-sound-effects/download/2399/"
   },
   {
+    "file": "sfx/bagpipe/bagpipes-lone-piper-auld-lang-syne-237759.mp3",
+    "category": "bagpipe",
+    "title": "Bagpipes Lone Piper Auld Lang Syne",
+    "author": "ScottishPerson",
+    "seconds": 48,
+    "lufs": -24.1,
+    "source": "https://pixabay.com/sound-effects/musical-sound-effect-bagpipes-lone-piper-auld-lang-syne-01-237759/"
+  },
+  {
+    "file": "sfx/bagpipe/bagpipe-victory-28720.mp3",
+    "category": "bagpipe",
+    "title": "Bagpipe Victory",
+    "author": "freesound_community",
+    "seconds": 24,
+    "lufs": -17.7,
+    "source": "https://pixabay.com/sound-effects/musical-bagpipe-victory-28720/"
+  },
+  {
+    "file": "sfx/sword/metallic-sword-scrape-2799.mp3",
+    "category": "sword",
+    "title": "Metallic sword scrape",
+    "author": "Mixkit",
+    "seconds": 1,
+    "lufs": -15.5,
+    "source": "https://mixkit.co/free-sound-effects/sword/ (Mixkit Sound Effects Free License, item 2799)"
+  },
+  {
+    "file": "sfx/arrow/arrow-shot-through-air-2771.mp3",
+    "category": "arrow",
+    "title": "Arrow shot through air",
+    "author": "Mixkit",
+    "seconds": 1,
+    "lufs": -16.3,
+    "source": "https://mixkit.co/free-sound-effects/medieval-battle/ (Mixkit Sound Effects Free License, item 2771)"
+  },
+  {
+    "file": "sfx/arrow/metal-arrow-hit-2769.mp3",
+    "category": "arrow",
+    "title": "Metal arrow hit",
+    "author": "Mixkit",
+    "seconds": 1,
+    "lufs": -18.5,
+    "source": "https://mixkit.co/free-sound-effects/medieval-battle/ (Mixkit Sound Effects Free License, item 2769)"
+  },
+  {
+    "file": "sfx/explosion/bomb-explosion-in-battle-2800.mp3",
+    "category": "explosion",
+    "title": "Bomb explosion in battle",
+    "author": "Mixkit",
+    "seconds": 3,
+    "lufs": -14.1,
+    "source": "https://mixkit.co/free-sound-effects/explosion/ (Mixkit Sound Effects Free License, item 2800)"
+  },
+  {
+    "file": "sfx/explosion/short-explosion-1694.mp3",
+    "category": "explosion",
+    "title": "Short explosion",
+    "author": "Mixkit",
+    "seconds": 1,
+    "lufs": -18.5,
+    "source": "https://mixkit.co/free-sound-effects/explosion/ (Mixkit Sound Effects Free License, item 1694)"
+  },
+  {
+    "file": "sfx/explosion/explosive-impact-from-afar-2758.mp3",
+    "category": "explosion",
+    "title": "Explosive impact from afar",
+    "author": "Mixkit",
+    "seconds": 5,
+    "lufs": -11.6,
+    "source": "https://mixkit.co/free-sound-effects/explosion/ (Mixkit Sound Effects Free License, item 2758)"
+  },
+  {
+    "file": "sfx/wood/tree-branch-brake-2943.mp3",
+    "category": "wood",
+    "title": "Tree branch brake",
+    "author": "Mixkit",
+    "seconds": 1,
+    "lufs": -23.5,
+    "source": "https://mixkit.co/free-sound-effects/wood/ (Mixkit Sound Effects Free License, item 2943)"
+  },
+  {
+    "file": "sfx/vehicle/truck-driving-steady-1621.mp3",
+    "category": "vehicle",
+    "title": "Truck driving steady",
+    "author": "Mixkit",
+    "seconds": 9,
+    "lufs": -14.1,
+    "source": "https://mixkit.co/free-sound-effects/truck/ (Mixkit Sound Effects Free License, item 1621)"
+  },
+  {
+    "file": "sfx/explosion/war-explosions-2773.mp3",
+    "category": "explosion",
+    "title": "War explosions",
+    "author": "Mixkit",
+    "seconds": 2,
+    "lufs": -17.5,
+    "source": "https://mixkit.co/free-sound-effects/explosion/ (Mixkit Sound Effects Free License, item 2773)"
+  },
+  {
+    "file": "sfx/explosion/war-field-explosion-1702.mp3",
+    "category": "explosion",
+    "title": "War field explosion",
+    "author": "Mixkit",
+    "seconds": 7,
+    "lufs": -13.7,
+    "source": "https://mixkit.co/free-sound-effects/explosion/ (Mixkit Sound Effects Free License, item 1702)"
+  },
+  {
     "file": "sfx/music/own/mj-p2-explorers.mp3",
     "category": "music",
     "title": "MJ P2 Explorers (channel-made)",
@@ -1007,5 +1115,131 @@
     "seconds": 150,
     "lufs": -15.9,
     "source": "own: python -P scripts/make-music.py p2-explorers public/sfx/music/own/mj-p2-explorers.mp3"
+  },
+  {
+    "file": "sfx/music/own/m-quirky.mp3",
+    "category": "music",
+    "title": "M Quirky (channel-made)",
+    "author": "code",
+    "seconds": 100,
+    "lufs": -15.4,
+    "source": "own: python -P scripts/make-music.py m-quirky public/sfx/music/own/m-quirky.mp3 --seconds 100"
+  },
+  {
+    "file": "sfx/music/own/m-resolve.mp3",
+    "category": "music",
+    "title": "M Resolve (channel-made)",
+    "author": "code",
+    "seconds": 100,
+    "lufs": -15.8,
+    "source": "own: python -P scripts/make-music.py m-resolve public/sfx/music/own/m-resolve.mp3 --seconds 100"
+  },
+  {
+    "file": "sfx/music/own/ambush-tension.mp3",
+    "category": "music",
+    "title": "Ambush Tension (channel-made)",
+    "author": "code",
+    "seconds": 1176,
+    "source": "own: python -P scripts/make-music.py ambush-tension (300 s) x4 via two self-acrossfades of 8 s",
+    "lufs": -15.7
+  },
+  {
+    "category": "synth",
+    "title": "Machine gun burst, long",
+    "author": "code",
+    "source": "scripts/make-sfx-ambush.py",
+    "seconds": 1.79,
+    "file": "sfx/synth/mg-burst-long.wav",
+    "lufs": -18.9
+  },
+  {
+    "category": "synth",
+    "title": "Machine gun burst, short",
+    "author": "code",
+    "source": "scripts/make-sfx-ambush.py",
+    "seconds": 1.05,
+    "file": "sfx/synth/mg-burst-short.wav",
+    "lufs": -21.1
+  },
+  {
+    "category": "synth",
+    "title": "Machine gun sustained fire",
+    "author": "code",
+    "source": "scripts/make-sfx-ambush.py",
+    "seconds": 4.75,
+    "file": "sfx/synth/mg-sustained.wav",
+    "lufs": -20.9
+  },
+  {
+    "category": "synth",
+    "title": "Rifle double tap",
+    "author": "code",
+    "source": "scripts/make-sfx-ambush.py",
+    "seconds": 0.9,
+    "file": "sfx/synth/rifle-double.wav",
+    "lufs": -23.1
+  },
+  {
+    "category": "synth",
+    "title": "Distant rifle fire",
+    "author": "code",
+    "source": "scripts/make-sfx-ambush.py",
+    "seconds": 5.41,
+    "file": "sfx/synth/rifles-distant.wav",
+    "lufs": -22.9
+  },
+  {
+    "category": "synth",
+    "title": "Quadcopter drone buzz",
+    "author": "code",
+    "source": "scripts/make-sfx-ambush.py",
+    "seconds": 6,
+    "file": "sfx/synth/drone-buzz.wav",
+    "lufs": -12.1
+  },
+  {
+    "category": "synth",
+    "title": "FPV drone dive",
+    "author": "code",
+    "source": "scripts/make-sfx-ambush.py",
+    "seconds": 2.5,
+    "file": "sfx/synth/fpv-dive.wav",
+    "lufs": -13.6
+  },
+  {
+    "category": "synth",
+    "title": "Radio squelch and static",
+    "author": "code",
+    "source": "scripts/make-sfx-ambush.py",
+    "seconds": 1.2,
+    "file": "sfx/synth/radio-static.wav",
+    "lufs": -26.7
+  },
+  {
+    "category": "synth",
+    "title": "Sub bass hit (chapter card)",
+    "author": "code",
+    "source": "scripts/make-sfx-ambush.py",
+    "seconds": 1.6,
+    "file": "sfx/synth/sub-hit.wav",
+    "lufs": -18.6
+  },
+  {
+    "category": "synth",
+    "title": "Ringing ears after a blast",
+    "author": "code",
+    "source": "scripts/make-sfx-ambush.py",
+    "seconds": 2.2,
+    "file": "sfx/synth/ear-ring.wav",
+    "lufs": -15.2
+  },
+  {
+    "category": "synth",
+    "title": "Low heartbeat pulse, speeding up",
+    "author": "code",
+    "source": "scripts/make-sfx-ambush.py",
+    "seconds": 20,
+    "file": "sfx/synth/heartbeat-low.wav",
+    "lufs": -19
   }
 ]

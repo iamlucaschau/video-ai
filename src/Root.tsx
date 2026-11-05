@@ -60,6 +60,8 @@ import { Showcase } from "./compositions/Showcase/Showcase";
 import { FeaturesScene } from "./compositions/Showcase/scenes/FeaturesScene";
 import { IntroScene } from "./compositions/Showcase/scenes/IntroScene";
 import { OutroScene } from "./compositions/Showcase/scenes/OutroScene";
+import { Ambush, ambushDuration } from "./compositions/Ambush/Ambush";
+import { AmbushThumbnail, type ThumbVariant } from "./compositions/Ambush/Thumbnail";
 
 /**
  * Every renderable video is registered here. The `id` is what you pass to
@@ -252,6 +254,10 @@ export const RemotionRoot: React.FC = () => {
           durationInFrames={sceneRange("s3", PVR.fps).durationInFrames}
         />
       </Folder>
+
+      {/* One-off 16:9 tactical explainer (Test/ambush) */}
+      <Composition id="Ambush-HowAmbushesWork" component={Ambush} width={1920} height={1080} fps={30} durationInFrames={ambushDuration} defaultProps={{ subtitles: true }} />
+      <Composition id="Ambush-Thumbnail" component={AmbushThumbnail} width={1920} height={1080} fps={30} durationInFrames={1} defaultProps={{ variant: "a" as ThumbVariant }} />
 
       {/* 9:16 explainer, timed by its Gemini TTS voiceover */}
       <Composition

@@ -1,6 +1,7 @@
 import { Audio } from "@remotion/media";
 import { interpolate, Sequence, staticFile, useVideoConfig } from "remotion";
 import catalog from "../../../public/sfx/catalog.json";
+import onsets from "../../../public/sfx/onsets.json";
 
 /**
  * One real sound effect from the curated Pixabay library (public/sfx,
@@ -12,20 +13,29 @@ import catalog from "../../../public/sfx/catalog.json";
  *
  * `seconds` plays only the first part of a long file (e.g. a storm ambience) with a short
  * fade in and a 0.6 s fade out.
+ *
+ * `align` (W6, 2026-11-03): "start" (default, the file's first sample on `at`), "onset" (the moment
+ * it starts sounding lands on `at`: hits, clicks, steps) or "peak" (its loudest moment lands on
+ * `at`: whooshes, booms). Times from public/sfx/onsets.json (scripts/sfx-onsets.mjs); most files
+ * open with ~0.14 s of near-silence, so "start" sounds ~4 frames late. New work: "onset" / "peak".
  */
-export const Sfx: React.FC<{ file: string; at: number; level?: number; seconds?: number }> = ({
+export const Sfx: React.FC<{ file: string; at: number; level?: number; seconds?: number; align?: "start" | "onset" | "peak" }> = ({
   file,
   at,
   level = -15,
   seconds,
+  align = "start",
 }) => {
   const { fps } = useVideoConfig();
   const entry = catalog.find((c) => c.file === file);
   if (!entry) throw new Error(`SFX not in public/sfx/catalog.json: ${file}`);
+  const times = (onsets as Record<string, { onset: number; peak: number }>)[file];
+  if (align !== "start" && !times) throw new Error(`SFX not measured (node scripts/sfx-onsets.mjs): ${file}`);
+  const shift = align === "start" ? 0 : Math.round(times[align] * fps);
   const gain = Math.min(4, 10 ** ((level - (entry.lufs ?? level)) / 20));
   const len = seconds ? Math.round(seconds * fps) : undefined;
   return (
-    <Sequence from={Math.round(at)} durationInFrames={len} name={`SFX ${entry.title}`} layout="none">
+    <Sequence from={Math.round(at) - shift} durationInFrames={len} name={`SFX ${entry.title}`} layout="none">
       <Audio
         src={staticFile(file)}
         volume={

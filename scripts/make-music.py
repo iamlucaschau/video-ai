@@ -18,6 +18,13 @@ SR = 48000
 
 # chord = (bass midi, pad voicing); each chord lasts `bar` seconds
 PRESETS = {
+    # ambush-tension (Test/ambush, 2026-11-05): A minor i – VI – iv – V, slow, dark military explainer bed
+    "ambush-tension": {
+        "bar": 8.0,
+        "chords": [(33, [45, 52, 57, 60]), (29, [45, 53, 57, 60]), (38, [50, 53, 57, 62]), (28, [47, 52, 56, 59])],
+        "arp": [12, 19, 15, 19, 12, 24, 15, 19],
+        "seed": 9,
+    },
     # P2 Explorers: D minor, i – VI – III – VII, slow and wide (cold sea, long voyage)
     "p2-explorers": {
         "bar": 8.0,

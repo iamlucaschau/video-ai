@@ -1,0 +1,542 @@
+{
+ "sfx/amb-air/deep-cinematic-wind-hum-1177.mp3": {
+  "onset": 0.17,
+  "peak": 36.64
+ },
+ "sfx/amb-air/meadow-wind-light-1166.mp3": {
+  "onset": 0.18,
+  "peak": 9.61
+ },
+ "sfx/amb-army/big-army-crowd-marching-461.mp3": {
+  "onset": 0.1,
+  "peak": 2.51
+ },
+ "sfx/amb-army/small-military-parade-marching-troops-630.mp3": {
+  "onset": 0,
+  "peak": 30.97
+ },
+ "sfx/amb-rain/heavy-rain-drops-2399.mp3": {
+  "onset": 0,
+  "peak": 5.77
+ },
+ "sfx/amb-river/river-in-the-forest-with-birds-1216.mp3": {
+  "onset": 0,
+  "peak": 16.17
+ },
+ "sfx/amb-sea/distant-sea-humming-ambiance-1191.mp3": {
+  "onset": 0,
+  "peak": 2.96
+ },
+ "sfx/amb-sea/sea-waves-ambience-1189.mp3": {
+  "onset": 0,
+  "peak": 32.47
+ },
+ "sfx/amb-ship/wooden-ship-on-the-sea-1187.mp3": {
+  "onset": 0.33,
+  "peak": 2.36
+ },
+ "sfx/amb-wind/blizzard-cold-winds-1153.mp3": {
+  "onset": 1.42,
+  "peak": 63.83
+ },
+ "sfx/amb-wind/light-wind-1165.mp3": {
+  "onset": 0.07,
+  "peak": 6.42
+ },
+ "sfx/amb-wind/wind-in-the-top-of-the-mountain-1267.mp3": {
+  "onset": 0.11,
+  "peak": 12.36
+ },
+ "sfx/amb-wind/winter-wind-loop-1175.mp3": {
+  "onset": 0,
+  "peak": 3.92
+ },
+ "sfx/ambience/mixkit-calm-thunderstorm-jungle-2415.mp3": {
+  "onset": 0.27,
+  "peak": 0.78
+ },
+ "sfx/ambience/mixkit-transition-windy-swoosh-1474.mp3": {
+  "onset": 0.45,
+  "peak": 1.16
+ },
+ "sfx/ambience/mixkit-water-drop-cave-3179.mp3": {
+  "onset": 0.03,
+  "peak": 0.06
+ },
+ "sfx/arrow/arrow-shot-through-air-2771.mp3": {
+  "onset": 0.11,
+  "peak": 0.13
+ },
+ "sfx/arrow/metal-arrow-hit-2769.mp3": {
+  "onset": 0.04,
+  "peak": 0.07
+ },
+ "sfx/bagpipe/bagpipe-victory-28720.mp3": {
+  "onset": 0.04,
+  "peak": 14.05
+ },
+ "sfx/bagpipe/bagpipes-lone-piper-auld-lang-syne-237759.mp3": {
+  "onset": 0.2,
+  "peak": 1.41
+ },
+ "sfx/click/click-409642.mp3": {
+  "onset": 0.11,
+  "peak": 0.41
+ },
+ "sfx/click/computer-mouse-click-02-383961.mp3": {
+  "onset": 0.06,
+  "peak": 0.06
+ },
+ "sfx/click/computer-mouse-click-352734.mp3": {
+  "onset": 0.16,
+  "peak": 0.16
+ },
+ "sfx/click/digital-click-357350.mp3": {
+  "onset": 0.02,
+  "peak": 0.04
+ },
+ "sfx/click/keyboard-click-327728.mp3": {
+  "onset": 0.02,
+  "peak": 0.03
+ },
+ "sfx/click/mouse-click-104737.mp3": {
+  "onset": 0.44,
+  "peak": 0.62
+ },
+ "sfx/click/mouse-click-351398.mp3": {
+  "onset": 0.14,
+  "peak": 0.26
+ },
+ "sfx/click/mouse-click-398644.mp3": {
+  "onset": 0.47,
+  "peak": 0.89
+ },
+ "sfx/click/mouse-click-sfx-444806.mp3": {
+  "onset": 0.11,
+  "peak": 0.3
+ },
+ "sfx/click/pen-click-411629.mp3": {
+  "onset": 0.07,
+  "peak": 0.24
+ },
+ "sfx/click/sound-of-mouse-click-4-478760.mp3": {
+  "onset": 0.08,
+  "peak": 0.11
+ },
+ "sfx/creak/ship-hull-creak-3076.mp3": {
+  "onset": 0.52,
+  "peak": 4.97
+ },
+ "sfx/deephit/big-cinematic-impact-788.mp3": {
+  "onset": 1.39,
+  "peak": 2.17
+ },
+ "sfx/deephit/deep-heartbeat-impact-498.mp3": {
+  "onset": 0.04,
+  "peak": 0.09
+ },
+ "sfx/deephit/impact-thud-291047.mp3": {
+  "onset": 0.12,
+  "peak": 0.16
+ },
+ "sfx/drum/perc-military-snare-drum-sound-effect-502886.mp3": {
+  "onset": 0.05,
+  "peak": 0.33
+ },
+ "sfx/explosion/bomb-explosion-in-battle-2800.mp3": {
+  "onset": 0,
+  "peak": 0.33
+ },
+ "sfx/explosion/explosive-impact-from-afar-2758.mp3": {
+  "onset": 0,
+  "peak": 0.1
+ },
+ "sfx/explosion/short-explosion-1694.mp3": {
+  "onset": 0.01,
+  "peak": 0.05
+ },
+ "sfx/explosion/war-explosions-2773.mp3": {
+  "onset": 0.07,
+  "peak": 0.08
+ },
+ "sfx/explosion/war-field-explosion-1702.mp3": {
+  "onset": 0.01,
+  "peak": 0.94
+ },
+ "sfx/flash/camera-flash-204151.mp3": {
+  "onset": 0.19,
+  "peak": 0.25
+ },
+ "sfx/flash/camera-flash-494027.mp3": {
+  "onset": 0.14,
+  "peak": 0.2
+ },
+ "sfx/flash/camera-flash-classic-clear-hd-380053.mp3": {
+  "onset": 0.1,
+  "peak": 0.76
+ },
+ "sfx/flash/camera-shutter-and-flash-combined-6827.mp3": {
+  "onset": 0.92,
+  "peak": 1.28
+ },
+ "sfx/flash/flash-329364.mp3": {
+  "onset": 0.21,
+  "peak": 0.68
+ },
+ "sfx/flash/flash-363544.mp3": {
+  "onset": 0.18,
+  "peak": 0.21
+ },
+ "sfx/flash/flash-363550.mp3": {
+  "onset": 0.1,
+  "peak": 0.17
+ },
+ "sfx/flash/flash-397859.mp3": {
+  "onset": 0.23,
+  "peak": 0.42
+ },
+ "sfx/flash/flash-90604.mp3": {
+  "onset": 2,
+  "peak": 2.35
+ },
+ "sfx/flash/flash-and-quicksilver-103357.mp3": {
+  "onset": 1.11,
+  "peak": 1.23
+ },
+ "sfx/flash/flash-speed-zoom-sound-effect-322955.mp3": {
+  "onset": 0.18,
+  "peak": 0.28
+ },
+ "sfx/flash/old-camera-flash-6800.mp3": {
+  "onset": 0.05,
+  "peak": 0.05
+ },
+ "sfx/hit/cinematic-mystery-trailer-drum-hit-546.mp3": {
+  "onset": 0.01,
+  "peak": 0.08
+ },
+ "sfx/hit/cinematic-piano-hit-567216.mp3": {
+  "onset": 0.23,
+  "peak": 0.47
+ },
+ "sfx/hit/cinematic-whoosh-deep-impact-1143.mp3": {
+  "onset": 0.27,
+  "peak": 0.55
+ },
+ "sfx/hit/deep-cinematic-subtle-drum-impact-549.mp3": {
+  "onset": 0.56,
+  "peak": 1.75
+ },
+ "sfx/hit/drum-deep-impact-563.mp3": {
+  "onset": 0.15,
+  "peak": 0.16
+ },
+ "sfx/hit/punch-impact-hit-567196.mp3": {
+  "onset": 0.06,
+  "peak": 0.14
+ },
+ "sfx/horse/horse-fast-walking-on-dirt-ground-78.mp3": {
+  "onset": 0.26,
+  "peak": 1.41
+ },
+ "sfx/music/own/ambush-tension.mp3": {
+  "onset": 2.26,
+  "peak": 140.17
+ },
+ "sfx/music/own/m-quirky.mp3": {
+  "onset": 0.01,
+  "peak": 66.13
+ },
+ "sfx/music/own/m-resolve.mp3": {
+  "onset": 0.01,
+  "peak": 2.75
+ },
+ "sfx/music/own/mj-p2-explorers.mp3": {
+  "onset": 2.27,
+  "peak": 32.26
+ },
+ "sfx/music/p1-historical-documentary-music-349042.mp3": {
+  "onset": 0.03,
+  "peak": 75.69
+ },
+ "sfx/music/p1-history-history-music-569200.mp3": {
+  "onset": 0.63,
+  "peak": 76.54
+ },
+ "sfx/music/p2-explainer-explainer-music-576633.mp3": {
+  "onset": 0.36,
+  "peak": 78.7
+ },
+ "sfx/music/p2-this-light-inspiration-217984.mp3": {
+  "onset": 1.51,
+  "peak": 62.05
+ },
+ "sfx/music/p3-science-documentary-169621.mp3": {
+  "onset": 0.15,
+  "peak": 39.71
+ },
+ "sfx/music/p4-cinematic-documentary-115669.mp3": {
+  "onset": 3.29,
+  "peak": 93.66
+ },
+ "sfx/music/p4-travel-adventure-586187.mp3": {
+  "onset": 1.05,
+  "peak": 59.97
+ },
+ "sfx/music/p5-mystery-quirky-355604.mp3": {
+  "onset": 0.21,
+  "peak": 113.22
+ },
+ "sfx/music/p5-the-smallest-detective-495789.mp3": {
+  "onset": 0.45,
+  "peak": 12.01
+ },
+ "sfx/pen/fast-writing-3196.mp3": {
+  "onset": 0.01,
+  "peak": 0.46
+ },
+ "sfx/pen/short-pencil-writing-2376.mp3": {
+  "onset": 0,
+  "peak": 0.81
+ },
+ "sfx/pen/writing-pencil-3194.mp3": {
+  "onset": 0.01,
+  "peak": 1.57
+ },
+ "sfx/pen/writing-scribble-on-paper-2369.mp3": {
+  "onset": 0.03,
+  "peak": 0.14
+ },
+ "sfx/ping/bell-of-promise-930.mp3": {
+  "onset": 0,
+  "peak": 2.04
+ },
+ "sfx/ping/interface-hint-notification-911.mp3": {
+  "onset": 0.14,
+  "peak": 0.3
+ },
+ "sfx/ping/page-forward-single-chime-1107.mp3": {
+  "onset": 0.16,
+  "peak": 0.3
+ },
+ "sfx/ping/page-turn-chime-1106.mp3": {
+  "onset": 0.02,
+  "peak": 0.17
+ },
+ "sfx/pop/big-paper-page-turn-1105.mp3": {
+  "onset": 0.12,
+  "peak": 0.32
+ },
+ "sfx/pop/fast-small-sweep-transition-166.mp3": {
+  "onset": 0.13,
+  "peak": 0.33
+ },
+ "sfx/pop/page-turn-single-1104.mp3": {
+  "onset": 0.11,
+  "peak": 0.21
+ },
+ "sfx/pop/quick-swoosh-1462.mp3": {
+  "onset": 0.01,
+  "peak": 0.2
+ },
+ "sfx/pop/quick-swoosh-accent-1464.mp3": {
+  "onset": 0.02,
+  "peak": 0.11
+ },
+ "sfx/pop/short-wind-swoosh-1461.mp3": {
+  "onset": 0.09,
+  "peak": 0.16
+ },
+ "sfx/riser/cinematic-trailer-riser-790.mp3": {
+  "onset": 1.35,
+  "peak": 2.53
+ },
+ "sfx/riser/cinematic-wind-swell-1170.mp3": {
+  "onset": 1.68,
+  "peak": 7.95
+ },
+ "sfx/riser/tension-and-suspense-drum-roll-577.mp3": {
+  "onset": 0.04,
+  "peak": 5.3
+ },
+ "sfx/shutter/camera-shutter-107889.mp3": {
+  "onset": 0.64,
+  "peak": 0.65
+ },
+ "sfx/shutter/camera-shutter-199580.mp3": {
+  "onset": 0.06,
+  "peak": 0.19
+ },
+ "sfx/shutter/camera-shutter-314056.mp3": {
+  "onset": 0.04,
+  "peak": 0.12
+ },
+ "sfx/shutter/camera-shutter-36931.mp3": {
+  "onset": 0.29,
+  "peak": 0.57
+ },
+ "sfx/shutter/camera-shutter-390292.mp3": {
+  "onset": 0.07,
+  "peak": 1
+ },
+ "sfx/shutter/camera-shutter-effect-390310.mp3": {
+  "onset": 1.76,
+  "peak": 1.77
+ },
+ "sfx/shutter/canon-40d-camera-shutter-85733.mp3": {
+  "onset": 0.25,
+  "peak": 1.63
+ },
+ "sfx/shutter/shutter-click-3-494029.mp3": {
+  "onset": 0.14,
+  "peak": 0.16
+ },
+ "sfx/swish/air-woosh-1489.mp3": {
+  "onset": 0.31,
+  "peak": 0.71
+ },
+ "sfx/swish/elevating-swoosh-1466.mp3": {
+  "onset": 0.02,
+  "peak": 0.14
+ },
+ "sfx/swish/fast-air-sweep-transition-168.mp3": {
+  "onset": 0.11,
+  "peak": 0.32
+ },
+ "sfx/swish/fast-sweep-transition-174.mp3": {
+  "onset": 0.32,
+  "peak": 0.49
+ },
+ "sfx/sword/metallic-sword-scrape-2799.mp3": {
+  "onset": 0.04,
+  "peak": 0.18
+ },
+ "sfx/synth/drone-buzz.wav": {
+  "onset": 0.04,
+  "peak": 1
+ },
+ "sfx/synth/fpv-dive.wav": {
+  "onset": 0.07,
+  "peak": 2.16
+ },
+ "sfx/synth/mg-burst-long.wav": {
+  "onset": 0,
+  "peak": 0.55
+ },
+ "sfx/synth/mg-burst-short.wav": {
+  "onset": 0,
+  "peak": 0.18
+ },
+ "sfx/synth/mg-sustained.wav": {
+  "onset": 0,
+  "peak": 3.85
+ },
+ "sfx/synth/radio-static.wav": {
+  "onset": 0,
+  "peak": 0.09
+ },
+ "sfx/synth/rifle-double.wav": {
+  "onset": 0,
+  "peak": 0.01
+ },
+ "sfx/synth/rifles-distant.wav": {
+  "onset": 0,
+  "peak": 2.09
+ },
+ "sfx/tick/cinematic-glitch-trailer-1021.mp3": {
+  "onset": 0.12,
+  "peak": 0.25
+ },
+ "sfx/tick/cinematic-sci-fi-glitch-1022.mp3": {
+  "onset": 0.1,
+  "peak": 0.11
+ },
+ "sfx/tick/data-short-input-on-typewriter-1379.mp3": {
+  "onset": 0.02,
+  "peak": 0.36
+ },
+ "sfx/tick/digital-typewriter-1363.mp3": {
+  "onset": 0,
+  "peak": 0
+ },
+ "sfx/tick/small-sci-fi-glitch-1030.mp3": {
+  "onset": 0.78,
+  "peak": 1.05
+ },
+ "sfx/tick/typewriter-soft-click-1125.mp3": {
+  "onset": 0.1,
+  "peak": 0.1
+ },
+ "sfx/tick/typewriter-soft-hit-1366.mp3": {
+  "onset": 0.1,
+  "peak": 0.31
+ },
+ "sfx/vehicle/truck-driving-steady-1621.mp3": {
+  "onset": 0.16,
+  "peak": 8.76
+ },
+ "sfx/water/sea-water-splash-1198.mp3": {
+  "onset": 0.06,
+  "peak": 0.6
+ },
+ "sfx/whoosh/clean-whoosh-382726.mp3": {
+  "onset": 0.13,
+  "peak": 0.23
+ },
+ "sfx/whoosh/dramatic-whoosh-swing-487667.mp3": {
+  "onset": 0.05,
+  "peak": 0.42
+ },
+ "sfx/whoosh/epic-whoosh-478371.mp3": {
+  "onset": 0.17,
+  "peak": 0.64
+ },
+ "sfx/whoosh/simple-whoosh-02-433006.mp3": {
+  "onset": 0.65,
+  "peak": 1.23
+ },
+ "sfx/whoosh/simple-whoosh-03-433005.mp3": {
+  "onset": 0.69,
+  "peak": 1.16
+ },
+ "sfx/whoosh/simple-whoosh-382724.mp3": {
+  "onset": 0.09,
+  "peak": 0.16
+ },
+ "sfx/whoosh/whoosh-cinematic-161021.mp3": {
+  "onset": 0.12,
+  "peak": 0.47
+ },
+ "sfx/whoosh/whoosh-cinematic-376875.mp3": {
+  "onset": 0.57,
+  "peak": 0.89
+ },
+ "sfx/whoosh/whoosh-cinematic-5-376880.mp3": {
+  "onset": 0.21,
+  "peak": 0.69
+ },
+ "sfx/whoosh/whoosh-cinematic-sound-effect-376889.mp3": {
+  "onset": 0.23,
+  "peak": 0.7
+ },
+ "sfx/whoosh/whoosh-effect-382717.mp3": {
+  "onset": 0.13,
+  "peak": 0.15
+ },
+ "sfx/whoosh/whoosh-effect-405447.mp3": {
+  "onset": 0.19,
+  "peak": 0.35
+ },
+ "sfx/whoosh/whoosh-motion-405445.mp3": {
+  "onset": 0.14,
+  "peak": 0.32
+ },
+ "sfx/whoosh/whoosh-short-realistic-379079.mp3": {
+  "onset": 0.27,
+  "peak": 0.83
+ },
+ "sfx/wood/tree-branch-brake-2943.mp3": {
+  "onset": 0.01,
+  "peak": 0.01
+ }
+}
