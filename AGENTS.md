@@ -33,6 +33,7 @@ file wins. For anything else, the skill (and https://www.remotion.dev/docs) wins
 | Format package from cards (formula + sample script + demo; channel name / market asked later) / export as its own project (Studio P4) | `npm run studio:format -- new "<Format>" --style <X-name> --from <folder> --sample <test folder>` · `export "Formats/<Format>" --to <dir> [--install]` |
 | Our render vs the reference / numbers after publishing (Studio P5) | `npm run studio:compare -- <mp4> --ref <folder>` → `SO-SANH.md` · `npm run studio:stats -- init\|import\|report` → `SO-LIEU.md` |
 | Render / contact sheet, any style | `npm run render:style -- <id>` · `npm run sheet -- <id> …` (same as `render:j` / `sheet:j`) |
+| Clear Remotion's temp bundles (~700 MB per render / still, never removed by Remotion) | `node scripts/clean-temp.mjs [hours]` (default 6 h; `render:style` runs it at the end) |
 | Add a Remotion package | `npx remotion add @remotion/<pkg>` (keeps versions in sync) |
 | Upgrade Remotion | `npx remotion upgrade` |
 

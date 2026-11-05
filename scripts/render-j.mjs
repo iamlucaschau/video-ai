@@ -19,6 +19,7 @@ import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { cleanRemotionBundles } from "./clean-temp.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CLI = path.join(ROOT, "node_modules/@remotion/cli/remotion-cli.js");
@@ -97,3 +98,7 @@ if (!audio || (lufs && Math.abs(+lufs + 14) > 1) || (peak && +peak > MAX_TP)) {
   console.error("  ⚠ audio check failed: listen before publishing");
   process.exitCode = 2;
 }
+
+// Remotion's temp bundles (~700 MB each) pile up otherwise; younger than 6 h ones may be another session's render.
+const { removed, bytes } = cleanRemotionBundles();
+if (removed) console.log(`  temp: cleared ${removed} old Remotion bundle(s), ${(bytes / 1e9).toFixed(2)} GB`);
