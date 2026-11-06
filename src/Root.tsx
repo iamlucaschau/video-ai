@@ -63,6 +63,9 @@ import { OutroScene } from "./compositions/Showcase/scenes/OutroScene";
 import { Ambush, ambushDuration } from "./compositions/Ambush/Ambush";
 import { AmbushThumbnail, type ThumbVariant } from "./compositions/Ambush/Thumbnail";
 import { CarrierVideo, carrierDuration } from "./compositions/Carrier/Carrier";
+import { NSetsPreview, N_SETS_FRAMES } from "../Style Library/N-low-poly/n-kit/Preview";
+import { NeonOddsBanner, NeonOddsLogo } from "../Style Library/N-low-poly/n-brand/Brand";
+import { NMandel, nMandelDuration } from "../Style Library/N-low-poly/n-mandel/Video";
 
 /**
  * Every renderable video is registered here. The `id` is what you pass to
@@ -120,6 +123,10 @@ export const RemotionRoot: React.FC = () => {
           fps={PVR.fps}
           durationInFrames={armyTestDuration}
         />
+        <Composition id="Style-N-LowPoly-Mandel" component={NMandel} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={nMandelDuration()} />
+        <Composition id="Style-N-LowPoly-Sets" component={NSetsPreview} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={N_SETS_FRAMES} />
+        <Composition id="Neon-Odds-Logo" component={NeonOddsLogo} width={1024} height={1024} fps={PVR.fps} durationInFrames={1} />
+        <Composition id="Neon-Odds-Banner" component={NeonOddsBanner} width={2560} height={1440} fps={PVR.fps} durationInFrames={1} />
         <Composition
           id="MJ-ep02-hannibal"
           component={Hannibal}

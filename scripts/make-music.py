@@ -18,6 +18,13 @@ SR = 48000
 
 # chord = (bass midi, pad voicing); each chord lasts `bar` seconds
 PRESETS = {
+    # P2 Explorers: D minor, i – VI – III – VII, slow and wide (cold sea, long voyage)
+    "p2-explorers": {
+        "bar": 8.0,
+        "chords": [(38, [50, 57, 62, 65]), (34, [53, 58, 62, 65]), (41, [53, 57, 60, 65]), (36, [52, 55, 60, 64])],
+        "arp": [12, 19, 24, 15, 19, 12, 24, 19],  # semitones over the bass, octave up
+        "seed": 6,
+    },
     # carrier-watch (Test/carrier, 2026-11-05): E minor i – VI – III – VII, slow, open fifths over the sea
     "carrier-watch": {
         "bar": 7.5,
@@ -32,12 +39,40 @@ PRESETS = {
         "arp": [12, 19, 15, 19, 12, 24, 15, 19],
         "seed": 9,
     },
-    # P2 Explorers: D minor, i – VI – III – VII, slow and wide (cold sea, long voyage)
-    "p2-explorers": {
-        "bar": 8.0,
-        "chords": [(38, [50, 57, 62, 65]), (34, [53, 58, 62, 65]), (41, [53, 57, 60, 65]), (36, [52, 55, 60, 64])],
-        "arp": [12, 19, 24, 15, 19, 12, 24, 19],  # semitones over the bass, octave up
-        "seed": 6,
+    # Style M (Hoạt Sử, 2D history cartoon): light pizzicato bass + offbeat stabs + a celesta motif that follows the
+    # chords, a soft brush, a quiet string pad. Any length (arrangement is in bars, not seconds).
+    # m-quirky: D minor i – VI – iv – V, sneaky and playful (a mad-but-true story)
+    "m-quirky": {
+        "kind": "pizz",
+        "bpm": 108,
+        "chords": [(38, [62, 65, 69]), (46, [62, 65, 70]), (43, [62, 67, 70]), (45, [61, 64, 67])],
+        "pad": 0.35,
+        "seed": 11,
+    },
+    # n-heist (Style N, n-mandel 2026-11-05): A minor i – VI – III – VII, sneaky and brisk (a math heist)
+    "n-heist": {
+        "kind": "pizz",
+        "bpm": 112,
+        "chords": [(45, [64, 69, 72]), (41, [65, 69, 72]), (48, [64, 67, 72]), (43, [62, 67, 71])],
+        "pad": 0.45,
+        "seed": 21,
+        # layer gains over the 92 s VO: quiet hook, full under the rule, a driving race, stripped for the fear, back at the win
+        "arc": {
+            "bass": [(0.0, 0.7), (61.43, 1), (61.73, 0.6), (63.23, 0), (70.23, 0), (70.63, 0.8), (89.53, 1), (89.83, 0.4)],
+            "stab": [(0.0, 0), (8.4, 0), (8.7, 1), (61.43, 1), (61.73, 0), (73.43, 0), (73.73, 0.8), (84.23, 0.8), (84.53, 1), (89.53, 1), (89.83, 0)],
+            "mel": [(0.0, 0), (8.4, 0), (8.8, 1), (47.23, 1), (54.23, 0.5), (61.43, 0.5), (61.73, 0), (73.43, 0), (73.73, 1), (89.53, 1), (89.83, 0.5)],
+            "pad": [(0.0, 1), (61.43, 1), (61.73, 1.8), (73.43, 1.8), (73.73, 1), (89.53, 1), (89.83, 1.6)],
+            "brush": [(0.0, 0.4), (8.6, 1), (47.23, 1), (54.53, 3), (61.43, 3), (61.73, 0), (73.73, 0), (73.93, 1), (89.53, 1), (89.83, 0)],
+            "drive": [(0.0, 0), (47.43, 0), (49.23, 0.3), (54.53, 0.9), (61.43, 1), (61.73, 0), (70.53, 0), (73.23, 0.7), (73.43, 0)],
+        },
+    },
+    # m-resolve: F major I – vi – IV – V, slower and warmer (a quiet-courage story)
+    "m-resolve": {
+        "kind": "pizz",
+        "bpm": 88,
+        "chords": [(41, [60, 65, 69]), (38, [62, 65, 69]), (46, [62, 65, 70]), (48, [60, 64, 67])],
+        "pad": 0.8,
+        "seed": 4,
     },
 }
 
@@ -72,9 +107,85 @@ def ramp(t, pts):
     return np.interp(t, [p[0] for p in pts], [p[1] for p in pts])
 
 
+def pizz(p, seconds, rng):
+    """Style M bed: bars of 4 beats; pluck bass on 1 and 3, chord stabs on 2 and 4, celesta motif from bar 2."""
+    n = int(seconds * SR)
+    t = np.arange(n) / SR
+    beat = 60 / p["bpm"]
+    bar = 4 * beat
+    bass, stab, mel, pad, brush = (np.zeros((n, 2)) for _ in range(5))
+
+    def put(buf, at, sig, pan):
+        s0 = int(at * SR)
+        L = min(len(sig), n - s0)
+        if L > 0:
+            buf[s0:s0 + L, 0] += sig[:L] * (1 - pan)
+            buf[s0:s0 + L, 1] += sig[:L] * pan
+
+    def pluck(f0, dur, decay, harm=5):
+        tt = np.arange(int(dur * SR)) / SR
+        x = sum((1 / h) * np.sin(2 * np.pi * f0 * h * tt) * np.exp(-tt * decay * (1 + 0.7 * h)) for h in range(1, harm + 1))
+        return x * np.minimum(1, tt / 0.003)
+
+    def bell(f0, dur=1.6):
+        tt = np.arange(int(dur * SR)) / SR
+        x = np.sin(2 * np.pi * f0 * tt) * np.exp(-tt * 2.4) + 0.3 * np.sin(2 * np.pi * f0 * 4 * tt) * np.exp(-tt * 7)
+        return (x + 0.12 * np.sin(2 * np.pi * f0 * 2.76 * tt) * np.exp(-tt * 5)) * np.minimum(1, tt / 0.002)
+
+    # two 2-bar motifs of (eighth slot 0–15, chord-tone index 0–5); played A A B A over 8 bars, on the current chord
+    def motif():
+        slots = sorted(rng.choice(16, size=int(rng.integers(5, 8)), replace=False))
+        return [(int(k), int(rng.integers(0, 6))) for k in slots]
+
+    A, B = motif(), motif()
+    bars = int(np.ceil(seconds / bar))
+    for i in range(bars):
+        root, triad = p["chords"][i % len(p["chords"])]
+        t0 = i * bar
+        put(bass, t0, pluck(hz(root), 1.2, 3.0), 0.5)
+        put(bass, t0 + 2 * beat, pluck(hz(root + 7), 1.2, 3.0) * 0.8, 0.5)
+        if i % 4 == 3:  # walk-up pickup into the next bar
+            put(bass, t0 + 3.5 * beat, pluck(hz(root + 5), 0.6, 4.0) * 0.6, 0.5)
+        for b in (1, 3):
+            for k, note in enumerate(triad):
+                put(stab, t0 + b * beat + 0.006 * k, pluck(hz(note), 0.35, 9.0, 3) * 0.35, 0.3 + 0.2 * k)
+        for e in range(8):
+            put(brush, t0 + e * beat / 2, rng.standard_normal(int(0.05 * SR)) * np.exp(-np.arange(int(0.05 * SR)) / SR * 90) * (0.5 if e % 2 else 0.25), 0.6)
+        # quiet string pad on the triad, an octave down
+        L = int((bar + 0.6) * SR)
+        tt = np.arange(L) / SR
+        e = env(L, 0.4, 0.6)
+        for k, note in enumerate(triad):
+            saw = 2 * ((hz(note - 12) * tt + rng.random()) % 1) - 1
+            put(pad, t0, saw * e * 0.05 * p["pad"], 0.3 + 0.2 * k)
+        # celesta motif from bar 2; bar 7 of every 8 rests so it breathes
+        if i >= 2 and i % 8 != 7:
+            m = (A, A, B, A)[(i // 2) % 4]
+            half = i % 2
+            tones = [triad[0] + 12, triad[1] + 12, triad[2] + 12, triad[0] + 24, triad[1] + 24, triad[2] + 24]
+            for slot, idx in m:
+                if slot // 8 == half:
+                    put(mel, t0 + (slot % 8) * beat / 2, bell(hz(tones[idx])) * 0.22, 0.35 + 0.3 * (slot % 2))
+
+    pad = lowpass(pad, 1400)
+    brush = highpass(brush, 5000)
+    stab = lowpass(stab, 3000)
+    fade = ramp(t, [(0, 0), (0.05, 1), (seconds - 3, 1), (seconds, 0)])[:, None]
+    if "arc" in p:
+        drive = np.zeros((n, 2))
+        for b in range(int(seconds / beat)):  # a soft kick on every beat: only the race opens it
+            tq = np.arange(int(0.22 * SR)) / SR
+            put(drive, b * beat, np.sin(2 * np.pi * np.cumsum(55 + 70 * np.exp(-tq * 30)) / SR) * np.exp(-tq * 16) * 0.9, 0.5)
+        gain = lambda k: ramp(t, p["arc"][k])[:, None]
+        return (bass * 0.5 * gain("bass") + stab * gain("stab") + mel * gain("mel") + pad * gain("pad") + brush * 0.04 * gain("brush") + drive * 0.5 * gain("drive")) * fade
+    return (bass * 0.5 + stab + mel + pad + brush * 0.04) * fade
+
+
 def make(preset, seconds):
     p = PRESETS[preset]
     rng = np.random.default_rng(p["seed"])
+    if p.get("kind") == "pizz":
+        return hall(pizz(p, seconds, rng), rng, int(seconds * SR), 1.8)
     n = int(seconds * SR)
     t = np.arange(n) / SR
     pad, bass, keys, pulse, shimmer = (np.zeros((n, 2)) for _ in range(5))
@@ -141,15 +252,19 @@ def make(preset, seconds):
         + shimmer * ramp(t, [(0, 0), (92, 0), (100, 1), (130, 1), (140, 0)])[:, None]
     )
 
-    # synthetic hall: decorrelated decaying noise per channel, darkened
-    L = int(3.2 * SR)
+    return hall(mix, rng, n, 2.8)
+
+
+def hall(mix, rng, n, rt):
+    """Synthetic hall: decorrelated decaying noise per channel, darkened; peak −1 dBFS."""
+    L = int((rt + 0.4) * SR)
     ti = np.arange(L) / SR
-    ir = rng.standard_normal((L, 2)) * np.exp(-6.9 * ti / 2.8)[:, None]
+    ir = rng.standard_normal((L, 2)) * np.exp(-6.9 * ti / rt)[:, None]
     ir = lowpass(ir, 3500)
     ir /= np.sqrt((ir ** 2).sum(axis=0))
     N = 1 << int(np.ceil(np.log2(n + L)))
     wet = np.fft.irfft(np.fft.rfft(mix, N, axis=0) * np.fft.rfft(ir, N, axis=0), N, axis=0)[:n]
-    out = 0.65 * mix + 0.6 * wet
+    out = 0.65 * mix + (0.6 if rt > 2 else 0.35) * wet
     out = highpass(out, 45)  # nothing under ~45 Hz: phones can't play it and it only eats headroom
     out *= 10 ** (-1 / 20) / np.abs(out).max()  # peak −1 dBFS; MusicBed levels it from the measured LUFS
     return out

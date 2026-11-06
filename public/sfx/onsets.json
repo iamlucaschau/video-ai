@@ -243,6 +243,10 @@
   "onset": 2.26,
   "peak": 140.17
  },
+ "sfx/music/own/carrier-watch.mp3": {
+  "onset": 1.96,
+  "peak": 455.84
+ },
  "sfx/music/own/m-quirky.mp3": {
   "onset": 0.01,
   "peak": 66.13
@@ -254,6 +258,10 @@
  "sfx/music/own/mj-p2-explorers.mp3": {
   "onset": 2.27,
   "peak": 32.26
+ },
+ "sfx/music/own/n-heist.mp3": {
+  "onset": 0.01,
+  "peak": 70.8
  },
  "sfx/music/p1-historical-documentary-music-349042.mp3": {
   "onset": 0.03,
@@ -411,13 +419,57 @@
   "onset": 0.04,
   "peak": 0.18
  },
+ "sfx/synth/alarm.wav": {
+  "onset": 0,
+  "peak": 0.59
+ },
+ "sfx/synth/ball-drop.wav": {
+  "onset": 0,
+  "peak": 0.46
+ },
+ "sfx/synth/ball-rattle.wav": {
+  "onset": 0.01,
+  "peak": 0.58
+ },
+ "sfx/synth/balls-fall.wav": {
+  "onset": 0,
+  "peak": 0.08
+ },
+ "sfx/synth/ciws-burst.wav": {
+  "onset": 0,
+  "peak": 0.17
+ },
+ "sfx/synth/clock-tick.wav": {
+  "onset": 0,
+  "peak": 0
+ },
+ "sfx/synth/dot-matrix.wav": {
+  "onset": 0,
+  "peak": 1.01
+ },
  "sfx/synth/drone-buzz.wav": {
   "onset": 0.04,
   "peak": 1
  },
+ "sfx/synth/ear-ring.wav": {
+  "onset": 0,
+  "peak": 0.07
+ },
  "sfx/synth/fpv-dive.wav": {
   "onset": 0.07,
   "peak": 2.16
+ },
+ "sfx/synth/heartbeat-low.wav": {
+  "onset": 0.1,
+  "peak": 19.37
+ },
+ "sfx/synth/jam-static.wav": {
+  "onset": 0.01,
+  "peak": 1.32
+ },
+ "sfx/synth/jet-pass.wav": {
+  "onset": 0.27,
+  "peak": 1.51
  },
  "sfx/synth/mg-burst-long.wav": {
   "onset": 0,
@@ -431,6 +483,18 @@
   "onset": 0,
   "peak": 3.85
  },
+ "sfx/synth/missile-launch.wav": {
+  "onset": 0,
+  "peak": 0
+ },
+ "sfx/synth/paper-rush.wav": {
+  "onset": 0.02,
+  "peak": 0.61
+ },
+ "sfx/synth/radar-ping.wav": {
+  "onset": 0,
+  "peak": 0
+ },
  "sfx/synth/radio-static.wav": {
   "onset": 0,
   "peak": 0.09
@@ -442,6 +506,38 @@
  "sfx/synth/rifles-distant.wav": {
   "onset": 0,
   "peak": 2.09
+ },
+ "sfx/synth/room-chamber.wav": {
+  "onset": 0.06,
+  "peak": 4.99
+ },
+ "sfx/synth/room-interview.wav": {
+  "onset": 0.04,
+  "peak": 6.04
+ },
+ "sfx/synth/room-office.wav": {
+  "onset": 0.05,
+  "peak": 8.01
+ },
+ "sfx/synth/room-shop.wav": {
+  "onset": 0.04,
+  "peak": 2.71
+ },
+ "sfx/synth/room-warehouse.wav": {
+  "onset": 0.04,
+  "peak": 0.78
+ },
+ "sfx/synth/shutter-down.wav": {
+  "onset": 0.21,
+  "peak": 1.05
+ },
+ "sfx/synth/sonar-ping.wav": {
+  "onset": 0,
+  "peak": 0.01
+ },
+ "sfx/synth/sub-hit.wav": {
+  "onset": 0,
+  "peak": 0.02
  },
  "sfx/tick/cinematic-glitch-trailer-1021.mp3": {
   "onset": 0.12,

@@ -1,0 +1,289 @@
+{
+  "name": "n-mandel",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "American male documentary narrator telling a true math-heist story to a friend. Calm, confident, a little amused, brisk pace around 200 words per minute, clear on every word. Numbers are crisp and land. 'Every. Single. Ticket.' is three slow separate beats. The last question is quiet, direct and dry. No hype, no shouting.",
+  "trimSilence": true,
+  "tempo": 1.15,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.2,
+    "scene": 0.3
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.12,
+      "text": "You cannot predict the lottery."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.12,
+      "text": "But there is one way to guarantee you win it."
+    },
+    {
+      "id": "03",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.12,
+      "text": "Buy every single combination."
+    },
+    {
+      "id": "04",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.3,
+      "text": "It sounds like a joke, until you do the math."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "Meet Stefan Mandel, a Romanian economist who treated the lottery not as luck, but as a shopping problem."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "His rule was simple."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "Count every possible combination."
+    },
+    {
+      "id": "08",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.35,
+      "text": "Then wait."
+    },
+    {
+      "id": "09",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "Only play when the jackpot grows to at least three times what it would cost to buy all of them."
+    },
+    {
+      "id": "10",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "Then raise an army of investors, and buy."
+    },
+    {
+      "id": "11",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "Every."
+    },
+    {
+      "id": "12",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "Single."
+    },
+    {
+      "id": "13",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.4,
+      "text": "Ticket."
+    },
+    {
+      "id": "14",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "He tested it in Romania, and won."
+    },
+    {
+      "id": "15",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.3,
+      "text": "Then he scaled it in Australia, where his syndicate won twelve jackpots and around four hundred thousand smaller prizes, until Australia changed its laws specifically to stop him."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "So in 1992, he found a bigger target."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Virginia."
+    },
+    {
+      "id": "18",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Just six numbers, from one to forty-four."
+    },
+    {
+      "id": "19",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "That is seven million, fifty-nine thousand and fifty-two possible combinations, at one dollar each."
+    },
+    {
+      "id": "20",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.3,
+      "text": "And the jackpot would climb to twenty-seven million dollars."
+    },
+    {
+      "id": "21",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "The tickets had been printed over months in a Melbourne warehouse: sixteen workers, thirty computers, twelve printers, funded by twenty-five hundred investors."
+    },
+    {
+      "id": "22",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "Now came the buying race."
+    },
+    {
+      "id": "23",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "Couriers flooded one hundred and twenty-five shops across Virginia."
+    },
+    {
+      "id": "24",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.3,
+      "text": "They had seventy-two hours to process seven million combinations."
+    },
+    {
+      "id": "25",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "And here is the terrifying part."
+    },
+    {
+      "id": "26",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.8,
+      "text": "They ran out of time."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "Around seven hundred thousand combinations never got bought."
+    },
+    {
+      "id": "28",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.3,
+      "text": "After spending millions, it was still a gamble."
+    },
+    {
+      "id": "29",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "Then the draw came."
+    },
+    {
+      "id": "30",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.85,
+      "text": "The winning ticket was in their pile."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "The FBI and the CIA investigated him for fraud."
+    },
+    {
+      "id": "32",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "They found nothing."
+    },
+    {
+      "id": "33",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.3,
+      "text": "No law said you could not simply buy the lottery itself."
+    },
+    {
+      "id": "34",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "So the states wrote new laws to stop anyone from buying every combination."
+    },
+    {
+      "id": "35",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "Mandel did not beat the odds."
+    },
+    {
+      "id": "36",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.8,
+      "text": "He deleted them."
+    },
+    {
+      "id": "37",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "Fourteen jackpots, and not one of them was luck."
+    },
+    {
+      "id": "38",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.45,
+      "text": "So tell me."
+    },
+    {
+      "id": "39",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.3,
+      "text": "Is that cheating, or is it just math?"
+    }
+  ]
+}

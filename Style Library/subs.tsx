@@ -44,7 +44,9 @@ export const KaraokeSubs: React.FC<{
   maxWords?: number;
   maxChars?: number;
   oneLine?: boolean;
-}> = ({ timing, words = {}, captions = {}, Skin, maxWords = MAX_WORDS, maxChars = MAX_CHARS, oneLine = false }) => {
+  /** seconds a line stays after its last word; default: until the next line */
+  hold?: number;
+}> = ({ timing, words = {}, captions = {}, Skin, maxWords = MAX_WORDS, maxChars = MAX_CHARS, oneLine = false, hold }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = f / fps;
@@ -52,6 +54,7 @@ export const KaraokeSubs: React.FC<{
   const i = lines.findIndex((l, k) => t >= l.start - 0.05 && t < (lines[k + 1]?.start ?? l.end + 0.6) - 0.05);
   if (i < 0) return null;
   const line = lines[i];
+  if (hold !== undefined && t > line.end + hold) return null;
   const ws = parse(captions[line.id] ?? line.text);
   const heard = words[line.id] ?? [];
   // displayed word k → spoken word at the same relative position

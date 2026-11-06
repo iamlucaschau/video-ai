@@ -1313,5 +1313,122 @@
     "seconds": 672,
     "source": "own: python -P scripts/make-music.py carrier-watch --seconds 340, x2 acrossfade 8 s",
     "lufs": -15.7
+  },
+  {
+    "file": "sfx/music/own/n-heist.mp3",
+    "category": "music",
+    "title": "N Heist (channel-made)",
+    "author": "code",
+    "seconds": 106,
+    "source": "own: python -P scripts/make-music.py n-heist public/sfx/music/own/n-heist.mp3 --seconds 106",
+    "lufs": -16.6
+  },
+  {
+    "category": "synth",
+    "title": "Lottery balls tumbling in a globe",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 3,
+    "file": "sfx/synth/ball-rattle.wav",
+    "lufs": -18.2
+  },
+  {
+    "category": "synth",
+    "title": "Clock ticking (4 ticks, 0.5 s apart)",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 2,
+    "file": "sfx/synth/clock-tick.wav",
+    "lufs": -27
+  },
+  {
+    "category": "synth",
+    "title": "Dot-matrix printer burst",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 2,
+    "file": "sfx/synth/dot-matrix.wav",
+    "lufs": -11.5
+  },
+  {
+    "category": "synth",
+    "title": "Roller shutter let go, slams at 1.05 s",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 2,
+    "file": "sfx/synth/shutter-down.wav",
+    "lufs": -22.3
+  },
+  {
+    "category": "synth",
+    "title": "A heap of tickets pouring out",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 3,
+    "file": "sfx/synth/paper-rush.wav",
+    "lufs": -14.6
+  },
+  {
+    "category": "synth",
+    "title": "One lottery ball down the chute",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 0.8,
+    "file": "sfx/synth/ball-drop.wav",
+    "lufs": -22.2
+  },
+  {
+    "category": "synth",
+    "title": "Blower cut: all balls drop at once",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 1.6,
+    "file": "sfx/synth/balls-fall.wav",
+    "lufs": -17.3
+  },
+  {
+    "category": "synth",
+    "title": "Room tone: small shop, strip-light hum",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 12,
+    "file": "sfx/synth/room-shop.wav",
+    "lufs": -14.1
+  },
+  {
+    "category": "synth",
+    "title": "Room tone: quiet office",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 12,
+    "file": "sfx/synth/room-office.wav",
+    "lufs": -15.8
+  },
+  {
+    "category": "synth",
+    "title": "Room tone: big warehouse",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 12,
+    "file": "sfx/synth/room-warehouse.wav",
+    "lufs": -14.6
+  },
+  {
+    "category": "synth",
+    "title": "Room tone: large stone hall",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 12,
+    "file": "sfx/synth/room-chamber.wav",
+    "lufs": -14.3
+  },
+  {
+    "category": "synth",
+    "title": "Room tone: small room, tube-light buzz",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 12,
+    "file": "sfx/synth/room-interview.wav",
+    "lufs": -12.5
   }
 ]

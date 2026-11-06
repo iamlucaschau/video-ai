@@ -1,0 +1,323 @@
+{
+  "vo": "n-mandel",
+  "fps": 30,
+  "lead": 2,
+  "end": 93.0,
+  "shots": [
+    {
+      "id": "S1",
+      "at": "01",
+      "size": "rộng",
+      "note": "qua lồng cầu: Mandel bắt một quả bóng số 14 giữa không trung, nhìn người xem",
+      "key": 0.5
+    },
+    {
+      "id": "S2",
+      "at": "02",
+      "size": "cận",
+      "note": "POV tay cầm 1 tờ vé trước quầy",
+      "key": 0.6
+    },
+    {
+      "id": "S3",
+      "at": "03",
+      "size": "rộng",
+      "note": "núi vé mọc lên giữa tiệm, máy lùi ra",
+      "key": 0.8
+    },
+    {
+      "id": "S4",
+      "at": "04",
+      "size": "vừa",
+      "note": "người bán vé bật cười sau quầy",
+      "key": 0.5
+    },
+    {
+      "id": "S5",
+      "at": "04:math",
+      "size": "cận",
+      "note": "máy tính bấm số chạy",
+      "key": 0.6
+    },
+    {
+      "id": "S6",
+      "at": "05",
+      "size": "vừa",
+      "note": "một take: viết, ngẩng lên, giơ tay, lắc đầu ở \"not\"; máy đẩy dần vào gần",
+      "key": 0.4
+    },
+    {
+      "id": "S7",
+      "at": "05:but",
+      "size": "vừa",
+      "note": "Mandel ở quầy, chồng vé như đi chợ",
+      "key": 0.6
+    },
+    {
+      "id": "S8",
+      "at": "06",
+      "size": "cận",
+      "note": "bảng phấn: 1. COUNT",
+      "key": 0.8
+    },
+    {
+      "id": "S9",
+      "at": "07",
+      "size": "từ trên",
+      "note": "lưới vé tự xếp kín (đếm mọi tổ hợp)",
+      "key": 0.8
+    },
+    {
+      "id": "S10",
+      "at": "08",
+      "size": "vừa",
+      "note": "Mandel khoanh tay chờ, đồng hồ quay nhanh, bảng 2. WAIT",
+      "key": 0.6
+    },
+    {
+      "id": "S11",
+      "at": "09",
+      "size": "rộng",
+      "note": "tháp vé (chi phí) và tháp xu (jackpot) cao gấp 3",
+      "key": 0.85
+    },
+    {
+      "id": "S12",
+      "at": "10",
+      "size": "rộng",
+      "note": "đội quân nhà đầu tư sau lưng Mandel",
+      "key": 0.6
+    },
+    {
+      "id": "S13",
+      "at": "10:buy",
+      "size": "cận",
+      "note": "máy in nhả vé",
+      "key": 0.5
+    },
+    {
+      "id": "S14",
+      "at": "11",
+      "size": "cận",
+      "note": "Every: một tờ vé",
+      "key": 0.5
+    },
+    {
+      "id": "S15",
+      "at": "12",
+      "size": "vừa",
+      "note": "Single: thùng vé",
+      "key": 0.5
+    },
+    {
+      "id": "S16",
+      "at": "13",
+      "size": "rộng",
+      "note": "Ticket: núi vé khổng lồ",
+      "key": 0.6
+    },
+    {
+      "id": "S17",
+      "at": "14",
+      "size": "vừa",
+      "note": "tiệm LOTO ở Romania, Mandel giơ vé thắng",
+      "key": 0.7
+    },
+    {
+      "id": "S18",
+      "at": "15",
+      "size": "từ trên",
+      "note": "một take: bản đồ Úc nổi lên, tay Mandel lướt qua, 12 ghim vàng",
+      "key": 0.6
+    },
+    {
+      "id": "S20",
+      "at": "15:four",
+      "size": "rộng",
+      "note": "mưa vé trúng nhỏ, đếm 400,000",
+      "key": 0.8
+    },
+    {
+      "id": "S21",
+      "at": "15:changed",
+      "size": "cận",
+      "note": "một take: búa gõ ở laws, dấu NEW LAW ở stop",
+      "key": 0.5
+    },
+    {
+      "id": "S23",
+      "at": "16",
+      "size": "vừa",
+      "note": "Mandel đứng nhìn tấm bản đồ nhỏ trên bàn, 1992",
+      "key": 0.6
+    },
+    {
+      "id": "S24",
+      "at": "17",
+      "size": "từ trên",
+      "note": "Virginia nổi lên, sáng",
+      "key": 0.7
+    },
+    {
+      "id": "S25",
+      "at": "18",
+      "size": "cận",
+      "note": "6 bóng ra khay, 6 OF 44",
+      "key": 0.8
+    },
+    {
+      "id": "S26",
+      "at": "19",
+      "size": "rộng",
+      "note": "núi vé + đếm 7,059,052",
+      "key": 0.85
+    },
+    {
+      "id": "S27",
+      "at": "19:one",
+      "size": "cận",
+      "note": "tờ vé + tờ 1 đô, $1 EACH",
+      "key": 0.6
+    },
+    {
+      "id": "S28",
+      "at": "20",
+      "size": "vừa",
+      "note": "bảng jackpot chạy lên $27,000,000",
+      "key": 0.9
+    },
+    {
+      "id": "S29",
+      "at": "21",
+      "size": "rộng",
+      "note": "kho Melbourne, biển MELBOURNE",
+      "key": 0.5
+    },
+    {
+      "id": "S30",
+      "at": "21:sixteen",
+      "size": "vừa",
+      "note": "một lần lướt dọc xưởng; bảng LED đổi 16 WORKERS / 30 COMPUTERS / 12 PRINTERS theo lời",
+      "key": 0.6
+    },
+    {
+      "id": "S33",
+      "at": "21:funded",
+      "size": "rộng",
+      "note": "đám đông nhà đầu tư, 2,500",
+      "key": 0.7
+    },
+    {
+      "id": "S34",
+      "at": "22",
+      "size": "rộng",
+      "note": "phố đêm, cửa xe tải mở, người đưa vé ôm thùng",
+      "key": 0.6
+    },
+    {
+      "id": "S35",
+      "at": "23",
+      "size": "từ trên",
+      "note": "Virginia: xe chạy, 125 ghim bật lên",
+      "key": 0.85
+    },
+    {
+      "id": "S36",
+      "at": "24",
+      "size": "CCTV",
+      "note": "một take CCTV: thùng chất dần, người bán vé không kịp, 72 HOURS",
+      "key": 0.6
+    },
+    {
+      "id": "S38",
+      "at": "25",
+      "size": "cận",
+      "note": "bảng đếm ngược đỏ 00:00:03 → 0, Mandel quay lưng",
+      "key": 0.6
+    },
+    {
+      "id": "S39",
+      "at": "26",
+      "size": "rộng",
+      "note": "cửa cuốn sập xuống, đèn tắt đúng khoảng lặng sau time, biển CLOSED",
+      "key": 0.6
+    },
+    {
+      "id": "S40",
+      "at": "27",
+      "size": "vừa",
+      "note": "một take: người đưa vé ngồi phịch xuống thùng vé, ~700,000",
+      "key": 0.7
+    },
+    {
+      "id": "S41",
+      "at": "28",
+      "size": "cận",
+      "note": "Mandel lo lắng, đêm",
+      "key": 0.6
+    },
+    {
+      "id": "S42",
+      "at": "29",
+      "size": "rộng",
+      "note": "một take vào khay: quay số, 6 bóng rơi",
+      "key": 0.6
+    },
+    {
+      "id": "S44",
+      "at": "30:was",
+      "size": "vừa",
+      "note": "phòng tắt dần, tờ vé trồi lên, hàng 08 11 13 15 19 20 sáng từng số",
+      "key": 0.7
+    },
+    {
+      "id": "S45",
+      "at": "31",
+      "size": "CCTV",
+      "note": "một take: đặc vụ đập tay xuống bàn, Mandel không nhúc nhích",
+      "key": 0.6
+    },
+    {
+      "id": "S47",
+      "at": "32",
+      "size": "vừa",
+      "note": "mở hồ sơ trống, nhún vai",
+      "key": 0.7
+    },
+    {
+      "id": "S48",
+      "at": "33",
+      "size": "cận",
+      "note": "một take: đọc luật, ngẩng lên ở buy, nhếch môi, gập sách",
+      "key": 0.5
+    },
+    {
+      "id": "S50",
+      "at": "34",
+      "size": "vừa",
+      "note": "một take: búa ở wrote, dấu NEW LAW ở stop",
+      "key": 0.5
+    },
+    {
+      "id": "S52",
+      "at": "35",
+      "size": "vừa",
+      "note": "một take: chip 1 IN 7,059,052, kéo cần ở deleted, bóng rút hết, số tự xoá",
+      "key": 0.7
+    },
+    {
+      "id": "S54",
+      "at": "37",
+      "size": "vừa",
+      "note": "tường 14 vé vàng sáng dần",
+      "key": 0.85
+    },
+    {
+      "id": "S56",
+      "at": "38",
+      "size": "rộng",
+      "note": "một take: câu hỏi nhìn thẳng, bóng 14 trong tay, thả bóng, frame cuối = frame 0",
+      "key": 0.5
+    }
+  ]
+}
