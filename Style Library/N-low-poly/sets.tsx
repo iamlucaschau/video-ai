@@ -4,7 +4,7 @@
  */
 import React from "react";
 import { Box, ctex, cyl, D, ico, type Look, N, P, Panel, Person, plate as plateGeo, PLANE, type Pose, rng, signTex, SIGN_FONT, useLiveTex, type V3 } from "./lowpoly";
-import { Chair, Chalkboard, Clock, Crate, Crt, Desk, DeskLamp, Frame, Pile, Printer, scatter, Ticket, Van } from "./props";
+import { Chair, Chalkboard, Clock, Crate, Crt, Desk, DeskLamp, Frame, LedBoard, Pile, Printer, scatter, Ticket, Van } from "./props";
 import { cone, torus } from "./lowpoly";
 
 // ---------------- cast ----------------
@@ -16,6 +16,13 @@ export const CAST = {
   agent2: { skin: "#8E5C3E", hair: "#141012", hairStyle: "short", top: "#22222A", shirt: "#F3EFE6", tie: "#5A1E22", pants: "#22222A", build: 1.05 } as Look,
   courier: { skin: "#D8A27C", hair: "#3A2A1E", hairStyle: "cap", capColor: N.blue, top: "#2F5D9A", pants: "#3A3A44" } as Look,
   lawmaker: { skin: "#D9A47E", hair: "#3A2E2A", hairStyle: "short", top: "#2C3A5A", shirt: "#F3EFE6", tie: N.red, pants: "#2C3A5A", build: 1.15 } as Look,
+  /** casino staff */
+  dealer: { skin: "#D9A47E", hair: "#2A1A14", hairStyle: "long", top: "#17171E", shirt: "#F3EFE6", tie: N.gold, pants: "#17171E" } as Look,
+  pitboss: { skin: "#E2A882", hair: "#5A4632", hairStyle: "short", top: "#2A2E3A", shirt: "#F3EFE6", tie: "#8A2A34", pants: "#2A2E3A", build: 1.08 } as Look,
+  /** Phil Ivey: close-cropped hair, dark jacket (no photo face) */
+  ivey: { skin: "#6E4630", hair: "#141012", hairStyle: "short", top: "#20242C", shirt: "#3A4048", pants: "#191A20", eye: "#2A1A14", lip: "#6E3A34", build: 1.04 } as Look,
+  /** his partner at the table */
+  partner: { skin: "#E6BE9C", hair: "#15100F", hairStyle: "long", top: "#7A2434", pants: "#20202A" } as Look,
 };
 const SKINS = ["#F0C8A8", "#E2A882", "#C98E6A", "#9C6644", "#6E4630", "#F5D2B8"];
 const HAIRS = ["#2A1A14", "#5A3A22", "#C9A15A", "#1A1416", "#8A5A3A", "#D8D2C8"];
@@ -525,6 +532,107 @@ export const CoinTower: React.FC<{ p?: V3; h: number }> = ({ p = [0, 0, 0], h })
       {Array.from({ length: n }, (_, i) => (
         <P key={i} g={cyl(0.38, 0.38, 0.07, 12)} c={N.gold} p={[Math.sin(i * 1.7) * 0.02, i * 0.08, Math.cos(i * 1.3) * 0.02]} o={{ metal: 0.15, rough: 0.4 }} />
       ))}
+    </group>
+  );
+};
+// ---------------- 10 · casino ----------------
+export const TABLE_Y = 0.82;
+const carpet = () =>
+  ctex("carpet", 512, 512, (c) => {
+    c.fillStyle = "#10262A";
+    c.fillRect(0, 0, 512, 512);
+    c.strokeStyle = "rgba(242,193,78,.2)";
+    c.lineWidth = 5;
+    for (let i = -4; i < 8; i++) {
+      c.beginPath();
+      c.moveTo(i * 96, 0);
+      c.lineTo(i * 96 + 512, 512);
+      c.moveTo(i * 96 + 512, 0);
+      c.lineTo(i * 96, 512);
+      c.stroke();
+    }
+  }, [5, 5]);
+const feltMarks = () =>
+  ctex("feltmarks", 1024, 576, (c) => {
+    c.clearRect(0, 0, 1024, 576);
+    c.strokeStyle = "rgba(242,226,180,.55)";
+    c.fillStyle = "rgba(242,226,180,.6)";
+    c.lineWidth = 6;
+    c.textAlign = "center";
+    c.textBaseline = "middle";
+    c.font = `900 56px ${SIGN_FONT}`;
+    ([["PUNTO", 300], ["BANCO", 724]] as const).forEach(([word, x]) => {
+      c.strokeRect(x - 170, 300, 340, 150);
+      c.fillText(word, x, 375);
+    });
+  });
+/** the baccarat table: oval, centred on the origin, felt at TABLE_Y; players on −z, the dealer on +z */
+export const BaccaratTable: React.FC<{ felt?: string }> = ({ felt = "#114A4C" }) => (
+  <group>
+    <P g={cyl(0.34, 0.44, TABLE_Y - 0.05, 10)} c="#1A1214" />
+    <P g={cyl(1, 0.96, 0.06, 28)} c="#3A2216" p={[0, TABLE_Y - 0.06, 0]} s={[1.36, 1, 0.8]} o={{ rough: 0.35 }} />
+    <P g={cyl(1, 1, 0.006, 28)} c={N.gold} p={[0, TABLE_Y - 0.004, 0]} s={[1.33, 1, 0.77]} o={{ metal: 0.6, rough: 0.35 }} shadow={false} />
+    <P g={cyl(1, 1, 0.006, 28)} c={felt} p={[0, TABLE_Y, 0]} s={[1.28, 1, 0.73]} o={{ rough: 0.95 }} />
+    <Panel map={feltMarks()} w={1.9} h={1.05} p={[0, TABLE_Y + 0.007, 0.02]} r={[-Math.PI / 2, 0, 0]} alpha glow={0.75} />
+  </group>
+);
+/** the gaming floor: slots and a lit sign on the back wall, an LED board, two pendants over the table at the origin */
+export const Casino: React.FC<{ f: number; sign?: string; board?: string | null; boardC?: string; neon?: string; dim?: number; table?: boolean; lamp?: number; children?: React.ReactNode }> = ({ f, sign = "CASINO", board = null, boardC = "#FFB347", neon = "#62D2DC", dim = 1, table = true, lamp = 9, children }) => {
+  const flick = (i: number) => 0.55 + 0.45 * Math.sin(f * 0.13 + i * 1.9) * Math.sin(f * 0.041 + i);
+  return (
+    <group>
+      <Floor w={18} d={18} c="#FFFFFF" map={carpet()} p={[0, 0, 2]} />
+      <Box w={13} h={4.4} d={0.2} c="#FFFFFF" p={[0, 0, -3.7]} o={{ map: panelWall("#16343A", "#0C2024", "casino") }} />
+      {[-1, 1].map((s) => <Box key={s} w={0.2} h={4.4} d={10} c="#FFFFFF" p={[s * 6.5, 0, 1.3]} o={{ map: panelWall("#143036", "#0C2024", "casinoS") }} />)}
+      <Box w={13} h={0.9} d={0.24} c="#FFFFFF" p={[0, 0, -3.64]} o={{ map: woodTex("casino", "#3C2216") }} />
+      <Box w={13} h={0.05} d={0.26} c={N.gold} p={[0, 0.9, -3.64]} o={{ metal: 0.6, rough: 0.35 }} shadow={false} />
+      <Neon p={[0, 4.02, -3.55]} w={12.6} c={neon} />
+      {/* narrow on purpose: a 9:16 frame only sees about 3 m of this wall */}
+      <Box w={2.3} h={0.52} d={0.1} c="#0C0C12" p={[0, 2.86, -3.56]} />
+      <Panel map={signTex(sign, "#0B0B10", N.gold, 1024, 200, Math.min(130, 1440 / sign.length))} w={2.14} h={0.42} p={[0, 3.12, -3.5]} glow={1.2 * dim} />
+      {board ? <LedBoard p={[0, 2.42, -3.45]} text={board} w={2.1} c={boardC} glow={1.5} /> : null}
+      {/* slots along the back wall: only colour, no numbers */}
+      {[-5.4, -4.4, -3.4, 3.4, 4.4, 5.4].map((x, i) => (
+        <group key={x} position={[x, 0, -3.1]}>
+          <Box w={0.78} h={1.72} d={0.6} c="#26222C" o={{ metal: 0.3, rough: 0.5 }} />
+          <Box w={0.56} h={0.44} d={0.02} c="#0E0A12" p={[0, 1.06, 0.3]} o={{ e: i % 2 ? "#FFB347" : "#62D2DC", ei: flick(i) * 1.1 * dim }} shadow={false} />
+          <Box w={0.56} h={0.05} d={0.02} c={N.gold} p={[0, 1.58, 0.3]} o={{ e: N.gold, ei: 0.9 * dim }} shadow={false} />
+        </group>
+      ))}
+      {table ? <BaccaratTable /> : null}
+      <Pendant p={[-0.7, 3.5, 0]} i={lamp * dim} />
+      <Pendant p={[0.7, 3.5, 0]} i={lamp * dim} />
+      <pointLight position={[0, 2.4, 3]} intensity={7 * dim} distance={9} color="#FFD6A0" />
+      {children}
+    </group>
+  );
+};
+/** the cashier's window, its counter front at z = 0: bars, a cashier's lamp behind, a roller shutter `shutter` 0→1, `lit` for the room behind */
+export const CashCage: React.FC<{ sign?: string; shutter?: number; lit?: number; children?: React.ReactNode }> = ({ sign = "CASHIER", shutter = 0, lit = 1, children }) => {
+  const H = 1.25;
+  const y0 = 1.02;
+  return (
+    <group>
+      <Floor w={14} d={14} c="#FFFFFF" map={carpet()} p={[0, 0, 3]} />
+      <Box w={10} h={4} d={0.2} c="#FFFFFF" p={[0, 0, -2.4]} o={{ map: panelWall("#101E22", "#0A1418", "cageback") }} />
+      {/* the wall the window is cut into */}
+      {[-1, 1].map((s) => <Box key={s} w={3.4} h={4} d={0.16} c="#FFFFFF" p={[s * 2.3, 0, -0.5]} o={{ map: panelWall("#16343A", "#0C2024", "casino") }} />)}
+      <Box w={1.3} h={4 - y0 - H} d={0.16} c="#FFFFFF" p={[0, y0 + H, -0.5]} o={{ map: panelWall("#16343A", "#0C2024", "casino") }} />
+      <Box w={1.3} h={y0} d={0.5} c="#FFFFFF" p={[0, 0, -0.3]} o={{ map: woodTex("cage", "#3C2216") }} />
+      <Box w={1.42} h={0.05} d={0.62} c="#2A1A12" p={[0, y0, -0.3]} o={{ rough: 0.35 }} />
+      <Box w={1.42} h={0.02} d={0.02} c={N.gold} p={[0, y0 + 0.04, 0.02]} o={{ metal: 0.6, rough: 0.35 }} shadow={false} />
+      {Array.from({ length: 7 }, (_, i) => <P key={i} g={cyl(0.012, 0.012, H, 6)} c={N.gold} p={[-0.54 + i * 0.18, y0 + (i === 3 ? 0.42 : 0.05), -0.46]} s={[1, i === 3 ? 0.66 : 1, 1]} o={{ metal: 0.6, rough: 0.35 }} />)}
+      <Panel map={signTex(sign, "#0B0B10", N.gold, 1024, 200, 120)} w={1.5} h={0.3} p={[0, y0 + H + 0.32, -0.41]} glow={0.7 + 0.5 * lit} />
+      <Neon p={[0, y0 + H + 0.1, -0.41]} w={1.3} c="#FFB347" />
+      {/* the shutter comes down in front of the bars, slat by slat behind its bottom bar */}
+      {shutter > 0 ? Array.from({ length: 11 }, (_, i) => {
+        const y = y0 + 0.05 + H - (i + 1) * 0.115;
+        return y >= y0 + 0.05 + (H - 0.05) * (1 - shutter) - 0.115 ? <Box key={i} w={1.3} h={0.11} d={0.04} c={i % 2 ? "#5C6266" : "#6A7074"} p={[0, Math.max(y, y0 + 0.05), -0.4]} o={{ metal: 0.5, rough: 0.5 }} /> : null;
+      }) : null}
+      {shutter > 0 ? <Box w={1.34} h={0.06} d={0.06} c="#2A2D30" p={[0, y0 + 0.05 + (H - 0.05) * (1 - shutter), -0.39]} /> : null}
+      <pointLight position={[0, 2.1, -1.3]} intensity={4 * lit} distance={4.5} color="#FFD6A0" />
+      <Pendant p={[0, 3.3, 1.1]} i={6 * (0.25 + 0.75 * lit)} />
+      {children}
     </group>
   );
 };

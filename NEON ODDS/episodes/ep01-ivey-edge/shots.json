@@ -1,0 +1,274 @@
+{
+  "vo": "ivey-edge",
+  "fps": 30,
+  "lead": 2,
+  "end": 105.1,
+  "shots": [
+    {
+      "id": "S1",
+      "at": "01",
+      "size": "rộng",
+      "note": "Ivey khoanh tay, người chia lật bài, phỉnh cao lên, bảng £7.7M; khung 0",
+      "key": 0.3
+    },
+    {
+      "id": "S2",
+      "at": "01:without",
+      "size": "trung",
+      "note": "tay Ivey khoanh, không chạm; lá bài lật ngay trước mặt",
+      "key": 0.5
+    },
+    {
+      "id": "S3",
+      "at": "02",
+      "size": "rộng",
+      "note": "bàn nhìn cao, người chia phát bài, bảng HOUSE 1%",
+      "key": 0.6
+    },
+    {
+      "id": "S4",
+      "at": "03",
+      "size": "cận",
+      "note": "mặt lưng lá bài trên nỉ, hoa văn trượt lệch, chip < 1 MM",
+      "key": 0.8
+    },
+    {
+      "id": "S5",
+      "at": "04",
+      "size": "cận",
+      "note": "hai lá cạnh nhau, cạnh dài rộng / hẹp sáng",
+      "key": 0.7
+    },
+    {
+      "id": "S6",
+      "at": "05",
+      "size": "cận",
+      "note": "cả hàng bài cùng vết lỗi, sáng rồi tắt",
+      "key": 0.7
+    },
+    {
+      "id": "S7",
+      "at": "06",
+      "size": "trung",
+      "note": "Ivey nhìn xuống, hai đống bài tách màu, tên PHIL IVEY",
+      "key": 0.6
+    },
+    {
+      "id": "S8",
+      "at": "07",
+      "size": "trung",
+      "note": "người chia chạm bài, nhìn từ phía người chơi",
+      "key": 0.5
+    },
+    {
+      "id": "S9",
+      "at": "08",
+      "size": "trung",
+      "note": "bạn chơi ngả tới nói, người chia nghe",
+      "key": 0.5
+    },
+    {
+      "id": "S10",
+      "at": "09",
+      "size": "cận",
+      "note": "lá tốt xoay một kiểu, lá xấu xoay kiểu khác; khoảnh khắc đắt giá",
+      "key": 0.7
+    },
+    {
+      "id": "S11",
+      "at": "10",
+      "size": "cận",
+      "note": "bạn chơi cười, Ivey gật",
+      "key": 0.5
+    },
+    {
+      "id": "S12",
+      "at": "11",
+      "size": "trung",
+      "note": "quản lý bàn nhún vai, cười",
+      "key": 0.5
+    },
+    {
+      "id": "S13",
+      "at": "12",
+      "size": "cận",
+      "note": "mặt người chia, không biết gì",
+      "key": 0.6
+    },
+    {
+      "id": "S14",
+      "at": "13",
+      "size": "trung",
+      "note": "Ivey nói, chỉ bộ bài, ôm về phía mình",
+      "key": 0.6
+    },
+    {
+      "id": "S15",
+      "at": "14",
+      "size": "trung",
+      "note": "quản lý gật",
+      "key": 0.5
+    },
+    {
+      "id": "S16",
+      "at": "15",
+      "size": "cận",
+      "note": "máy xáo, bài ra đúng chiều",
+      "key": 0.6
+    },
+    {
+      "id": "S17",
+      "at": "16",
+      "size": "cận",
+      "note": "shoe sáng cạnh lá kế, Ivey liếc phía sau",
+      "key": 0.7
+    },
+    {
+      "id": "S18",
+      "at": "17",
+      "size": "trung",
+      "note": "cân lật từ nhà cái sang Ivey, 1% và 6.5%; khoảnh khắc đắt giá",
+      "key": 0.8
+    },
+    {
+      "id": "S19",
+      "at": "18",
+      "size": "cận",
+      "note": "Ivey đẩy chồng phỉnh thấp, bảng £4,000",
+      "key": 0.6
+    },
+    {
+      "id": "S20",
+      "at": "19",
+      "size": "trung",
+      "note": "chồng phỉnh cao, bảng tới £150,000, quản lý nhìn",
+      "key": 0.7
+    },
+    {
+      "id": "S21",
+      "at": "20",
+      "size": "cận",
+      "note": "19 lá lật, 17 lá sáng",
+      "key": 0.9
+    },
+    {
+      "id": "S22",
+      "at": "21",
+      "size": "rộng",
+      "note": "núi phỉnh, Ivey ngả ra sau, bảng £7.7M",
+      "key": 0.8
+    },
+    {
+      "id": "S23",
+      "at": "22",
+      "size": "rộng",
+      "note": "casino Mỹ, bảng $9.6M",
+      "key": 0.6
+    },
+    {
+      "id": "S24",
+      "at": "23",
+      "size": "trung",
+      "note": "thu ngân đẩy tiền qua quầy, Ivey nhận",
+      "key": 0.7
+    },
+    {
+      "id": "S25",
+      "at": "24",
+      "size": "trung",
+      "note": "London: cửa cuốn sập trước mặt Ivey, tối đi; khoảnh khắc đắt giá",
+      "key": 0.9
+    },
+    {
+      "id": "S26",
+      "at": "25",
+      "size": "trung",
+      "note": "phòng giám đốc, lắc đầu, chip 9 DAYS",
+      "key": 0.6
+    },
+    {
+      "id": "S27",
+      "at": "26",
+      "size": "cận",
+      "note": "một xấp tiền đẩy qua quầy, chip £1M",
+      "key": 0.7
+    },
+    {
+      "id": "S28",
+      "at": "27",
+      "size": "trung",
+      "note": "Ivey ở toà, xoè tay nói",
+      "key": 0.5
+    },
+    {
+      "id": "S29",
+      "at": "28",
+      "size": "cận",
+      "note": "thẩm phán nhìn, gật khẽ",
+      "key": 0.6
+    },
+    {
+      "id": "S30",
+      "at": "29",
+      "size": "rộng",
+      "note": "Toà tối cao, năm thẩm phán, biển SUPREME COURT",
+      "key": 0.5
+    },
+    {
+      "id": "S31",
+      "at": "30",
+      "size": "trung",
+      "note": "năm búa gõ nối nhau, 5–0; khoảnh khắc đắt giá",
+      "key": 0.95
+    },
+    {
+      "id": "S32",
+      "at": "31",
+      "size": "trung",
+      "note": "Ivey giật dây, người chia xoay bài theo tay ông",
+      "key": 0.6
+    },
+    {
+      "id": "S33",
+      "at": "32",
+      "size": "cận",
+      "note": "CLEVER, SKILLFUL, rồi dấu CHEATING đóng lên lá bài",
+      "key": 0.9
+    },
+    {
+      "id": "S34",
+      "at": "33",
+      "size": "trung",
+      "note": "toà Mỹ, NO FRAUD, $10.1M",
+      "key": 0.8
+    },
+    {
+      "id": "S35",
+      "at": "34",
+      "size": "cận",
+      "note": "bàn tay gập tập hồ sơ lại",
+      "key": 0.8
+    },
+    {
+      "id": "S36",
+      "at": "35",
+      "size": "cận",
+      "note": "lá bài trên cả bộ của casino, cạnh sáng",
+      "key": 0.6
+    },
+    {
+      "id": "S37",
+      "at": "36",
+      "size": "trung",
+      "note": "Ivey nhìn thẳng vào người xem",
+      "key": 0.6
+    },
+    {
+      "id": "S38",
+      "at": "37",
+      "size": "rộng",
+      "note": "về đúng khung 0, chờ câu trả lời",
+      "key": 0.5
+    }
+  ]
+}

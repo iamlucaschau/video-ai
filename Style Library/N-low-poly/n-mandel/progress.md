@@ -33,4 +33,6 @@
 
 **Chưa làm:** `studio:kit -- check` cho kit N; cột style N ở §3 của `Style Library/README.md`.
 
-**Bước tiếp:** không còn việc mở cho tập này. Muốn đăng thì render 4K (`npm run render:style -- Style-N-LowPoly-Mandel --to <mp4> --keep-raw --timeout=240000 --concurrency=4 --gl=angle`), vì `n-mandel.mp4` trong thư mục vẫn là bản cũ. Bản nháp mới nhất: `out/n-draft-full.mp4`.
+**Bản cuối (2026-11-07):** `n-mandel.mp4` 2160×3840 (1 tab, card 4 GB tràn bộ nhớ từ 2 tab), `n-mandel-1080.mp4` thu nhỏ từ đó, cùng −14,0 LUFS, true peak −2,0 dBTP; `thumb.jpg` (composition `Style-N-LowPoly-Mandel-Thumb`). Lucas chốt 1080 là đủ cho kênh; âm thanh vẫn chưa ai nghe.
+
+**Bước tiếp:** Lucas nghe rồi đăng; gói sản xuất chưa làm. Quy trình tập mới: skill `/neon-odds`.

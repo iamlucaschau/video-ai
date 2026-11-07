@@ -545,3 +545,128 @@ export const scatter = (pts: [number, number][], n: number, seed: number) => {
   return out;
 };
 export { BOX0, ico, cone, cyl };
+
+// ---------------- casino ----------------
+const cardPatternTex = () =>
+  ctex("cardpattern", 256, 384, (c) => {
+    c.fillStyle = "#1F4F8C";
+    c.fillRect(0, 0, 256, 384);
+    c.strokeStyle = "#F4EFE2";
+    c.lineWidth = 5;
+    for (let y = 0; y < 8; y++)
+      for (let x = 0; x < 5; x++) {
+        const cx = 26 + x * 51 + (y % 2) * 25;
+        const cy = 24 + y * 48;
+        c.beginPath();
+        c.arc(cx, cy, 15, 0, Math.PI * 2);
+        c.stroke();
+        c.beginPath();
+        c.moveTo(cx - 15, cy);
+        c.quadraticCurveTo(cx, cy - 12, cx + 15, cy);
+        c.moveTo(cx - 15, cy);
+        c.quadraticCurveTo(cx, cy + 12, cx + 15, cy);
+        c.stroke();
+      }
+  });
+const cardFaceTex = () =>
+  ctex("cardface", 256, 384, (c) => {
+    c.fillStyle = "#E4DCCA";
+    c.fillRect(0, 0, 256, 384);
+    c.fillStyle = "#B8342C";
+    const pip = (x: number, y: number, s: number) => {
+      c.beginPath();
+      c.moveTo(x, y - s * 1.3);
+      c.lineTo(x + s, y);
+      c.lineTo(x, y + s * 1.3);
+      c.lineTo(x - s, y);
+      c.fill();
+    };
+    pip(128, 192, 60);
+    pip(36, 50, 18);
+    pip(220, 334, 18);
+  });
+export const CARD = { w: 0.16, d: 0.24 };
+/**
+ * A playing card lying flat, back up, long edges on ±x. `shift` (0→1) slides the back pattern towards +x, so the white margin
+ * on −x grows: the flaw, far wider than the real sub-millimetre one or a phone could not show it. `flip` turns it side over
+ * side (1 = face up), `tumble` end over end. `edge` lights the wide long edge.
+ */
+export const Card: React.FC<{ p?: V3; r?: V3; s?: number; shift?: number; flip?: number; tumble?: number; edge?: string; glow?: number }> = ({ p = [0, 0, 0], r = [0, 0, 0], s = 1, shift = 1, flip = 0, tumble = 0, edge, glow = 1 }) => {
+  const { w, d } = CARD;
+  return (
+    <group position={p} rotation={r} scale={s}>
+      <group rotation={[tumble * Math.PI, 0, flip * Math.PI]}>
+        <Box w={w} h={0.002} d={d} c="#F4EFE2" p={[0, -0.001, 0]} shadow={false} />
+        <P g={PLANE} c="#FFFFFF" p={[shift * w * 0.05, 0.0012, 0]} r={[-Math.PI / 2, 0, 0]} s={[w * 0.84, d * 0.92, 1]} o={{ map: cardPatternTex() }} shadow={false} />
+        <P g={PLANE} c="#FFFFFF" p={[0, -0.0012, 0]} r={[Math.PI / 2, 0, 0]} s={[w, d, 1]} o={{ map: cardFaceTex() }} shadow={false} />
+        {edge && glow > 0 ? <Box w={0.011} h={0.004} d={d} c={edge} p={[-w / 2, -0.001, 0]} o={{ e: edge, ei: 1.3 * glow }} shadow={false} /> : null}
+      </group>
+    </group>
+  );
+};
+/** the card box on the table, mouth towards +z; `edge` lights the long edge of the next card */
+export const CardShoe: React.FC<{ p?: V3; ry?: number; edge?: string; glow?: number }> = ({ p = [0, 0, 0], ry = 0, edge, glow = 1 }) => (
+  <group position={p} rotation={[0, ry * D, 0]}>
+    <group rotation={[0.16, 0, 0]}>
+      <Box w={0.22} h={0.15} d={0.46} c="#17141A" o={{ rough: 0.4 }} />
+      <Box w={0.226} h={0.014} d={0.024} c={N.gold} p={[0, 0.142, 0.22]} o={{ metal: 0.6, rough: 0.35 }} shadow={false} />
+      <Card p={[0, 0.076, 0.27]} r={[-0.42, 0, 0]} />
+      {edge && glow > 0 ? <Box w={0.16} h={0.006} d={0.006} c={edge} p={[0, 0.03, 0.35]} o={{ e: edge, ei: 2.6 * glow }} shadow={false} /> : null}
+    </group>
+  </group>
+);
+/** a stack of `n` casino chips */
+export const ChipStack: React.FC<{ p?: V3; n: number; c?: string; r?: number; seed?: number }> = ({ p = [0, 0, 0], n, c = "#B8342C", r = 0.048, seed = 1 }) => {
+  const R = rng(seed * 31 + 7);
+  return (
+    <group position={p}>
+      {Array.from({ length: Math.max(0, Math.floor(n)) }, (_, i) => (
+        <P key={i} g={cyl(r, r, 0.015, 10)} c={i % 4 === 3 ? "#F3E9D2" : c} p={[(R() - 0.5) * 0.004, i * 0.0155, (R() - 0.5) * 0.004]} shadow={i % 4 === 0} />
+      ))}
+    </group>
+  );
+};
+/** a block of chip stacks that rises with `k`; the casino's colours in rows */
+export const ChipHill: React.FC<{ p?: V3; k: number; cols?: number; rows?: number; max?: number; seed?: number }> = ({ p = [0, 0, 0], k, cols = 4, rows = 3, max = 30, seed = 3 }) => {
+  const R = rng(seed);
+  const heights = Array.from({ length: cols * rows }, () => 0.5 + R() * 0.5);
+  return (
+    <group position={p}>
+      {heights.map((h, i) => (
+        <ChipStack key={i} p={[((i % cols) - (cols - 1) / 2) * 0.1, 0, (Math.floor(i / cols) - (rows - 1) / 2) * 0.1]} n={h * max * k} c={["#B8342C", "#1F4F8C", "#1E1A22", "#2E8B57"][i % 4]} seed={seed + i} />
+      ))}
+    </group>
+  );
+};
+/** the machine that shuffles without turning a card: cards in at the top, out at the front */
+export const ShuffleMachine: React.FC<{ p?: V3; on?: number; f?: number }> = ({ p = [0, 0, 0], on = 1, f = 0 }) => (
+  <group position={p}>
+    <Box w={0.42} h={0.3} d={0.44} c="#20252C" o={{ metal: 0.4, rough: 0.4 }} />
+    <Box w={0.26} h={0.012} d={0.3} c="#0A0A0E" p={[0, 0.3, 0]} shadow={false} />
+    <Box w={0.26} h={0.05} d={0.012} c="#0A0A0E" p={[0, 0.06, 0.222]} shadow={false} />
+    <P g={ico(0.016, 1)} c="#FFF2C8" p={[0.15, 0.24, 0.222]} o={{ e: Math.floor(f / 8) % 2 && on ? "#FFB347" : "#3A2A18", ei: 2.4 }} shadow={false} />
+    <Box w={0.3} h={0.008} d={0.008} c="#62D2DC" p={[0, 0.27, 0.222]} o={{ e: "#62D2DC", ei: 1.6 * on }} shadow={false} />
+  </group>
+);
+/** a beam balance for two amounts: `tilt` −1 (left pan down) → 1 (right pan down) */
+export const Balance: React.FC<{ p?: V3; tilt: number; left: React.ReactNode; right: React.ReactNode }> = ({ p = [0, 0, 0], tilt, left, right }) => {
+  const a = tilt * 0.26;
+  const arm = 0.42;
+  const dy = Math.sin(a) * arm;
+  return (
+    <group position={p}>
+      <P g={cyl(0.1, 0.14, 0.03, 10)} c="#2A2224" />
+      <P g={cyl(0.014, 0.018, 0.56, 6)} c={N.gold} o={{ metal: 0.6, rough: 0.35 }} />
+      <group position={[0, 0.56, 0]} rotation={[0, 0, -a]}>
+        <Box w={arm * 2} h={0.018} d={0.018} c={N.gold} p={[0, -0.009, 0]} o={{ metal: 0.6, rough: 0.35 }} />
+      </group>
+      {[-1, 1].map((s) => (
+        <group key={s} position={[s * Math.cos(a) * arm, 0.56 - s * dy - 0.24, 0]}>
+          <P g={cyl(0.003, 0.003, 0.24, 4)} c={N.gold} shadow={false} />
+          <P g={cyl(0.13, 0.11, 0.014, 10)} c="#7A5A2A" o={{ metal: 0.5, rough: 0.4 }} />
+          <group position={[0, 0.014, 0]}>{s < 0 ? left : right}</group>
+        </group>
+      ))}
+    </group>
+  );
+};

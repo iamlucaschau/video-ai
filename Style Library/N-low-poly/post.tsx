@@ -39,7 +39,7 @@ export const Post: React.FC<PostOpts> = ({ bloom = 0.55, ao = true, vignette = 0
   const camera = useThree((s) => s.camera);
   const composer = useMemo(() => {
     const size = gl.getDrawingBufferSize(new THREE.Vector2());
-    const target = new THREE.WebGLRenderTarget(size.x, size.y, { type: THREE.HalfFloatType, samples: 4 });
+    const target = new THREE.WebGLRenderTarget(size.x, size.y, { type: THREE.HalfFloatType, samples: size.x > 1500 ? 2 : 4 }  /* 4K: four samples on half-float targets ran the GPU out of memory */);
     const c = new EffectComposer(gl, target);
     c.addPass(new RenderPass(scene, camera));
     if (ao) {

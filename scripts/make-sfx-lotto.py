@@ -166,6 +166,37 @@ def balls_fall(sec=1.6):
     return fades(x + air, 0.002, 0.1)
 
 
+def card_flick(sec=0.9):
+    """one playing card snapped onto felt: a dry paper slap with a short airy tail"""
+    t = t_(sec)
+    slap = bandpass(rng.normal(0, 1, len(t)), 900, 6500) * np.exp(-t * 55)
+    thud = np.sin(2 * np.pi * 170 * t) * np.exp(-t * 70) * 0.35
+    y = slap + thud
+    return fades(y / np.abs(y).max(), 0.001, 0.03)
+
+
+def chip_stack(sec=0.7):
+    """clay chips set down on a stack: a short run of dull clicks"""
+    y = np.zeros(int(sec * SR))
+    at = 0.0
+    for i in range(7):
+        c = clack(2300 + rng.uniform(-260, 260), 0.03) * (0.55 + rng.uniform(0, 0.45))
+        k = int(at * SR)
+        y[k : k + len(c)] += c[: len(y) - k]
+        at += rng.uniform(0.035, 0.085)
+    y = bandpass(y, 500, 7000)
+    return fades(y / np.abs(y).max(), 0.001, 0.05)
+
+
+def card_shuffle(sec=3.0):
+    """an automatic shuffler: a low motor and a stream of cards riffling through it"""
+    t = t_(sec)
+    motor = np.sin(2 * np.pi * 92 * t) + 0.4 * np.sin(2 * np.pi * 184 * t)
+    riffle = bandpass(rng.normal(0, 1, len(t)), 1800, 8000) * (0.5 + 0.5 * (np.sin(2 * np.pi * 26 * t) > 0))
+    y = 0.22 * motor + riffle
+    return fades(y / np.abs(y).max(), 0.05, 0.12)
+
+
 def lufs(path):
     r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True)
     vals = re.findall(r"I:\s+(-?[\d.]+) LUFS", r.stderr)
@@ -197,6 +228,10 @@ if __name__ == "__main__":
         write("room-warehouse", room(60, 2600, 60, 0.25), "Room tone: big warehouse"),
         write("room-chamber", room(180, 3200), "Room tone: large stone hall"),
         write("room-interview", room(90, 900, 120, 0.55), "Room tone: small room, tube-light buzz"),
+        write("card-flick", card_flick(), "Playing card snapped onto felt"),
+        write("chip-stack", chip_stack(), "Clay casino chips set down on a stack"),
+        write("card-shuffle", card_shuffle(), "Automatic card shuffler running"),
+        write("room-casino", room(180, 2400, 60, 0.12), "Room tone: carpeted gaming floor, far murmur"),
     ]
     assert all(i["seconds"] > 0 for i in items)
     for i in items:

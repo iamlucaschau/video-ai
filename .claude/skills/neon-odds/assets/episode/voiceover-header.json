@@ -1,0 +1,15 @@
+{
+  "name": "SLUG",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "American male documentary narrator telling a true story to a friend. Calm, confident, a little amused, brisk pace around 200 words per minute, clear on every word. Numbers are crisp and land. The last line is quiet, direct and dry. No hype, no shouting.",
+  "trimSilence": true,
+  "tempo": 1.15,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.2,
+    "scene": 0.3
+  },
+  "batchBy": "take",
+  "lines": []
+}

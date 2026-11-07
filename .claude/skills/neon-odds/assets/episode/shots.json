@@ -1,0 +1,10 @@
+{
+  "vo": "SLUG",
+  "fps": 30,
+  "lead": 2,
+  "end": 0,
+  "shots": [
+    { "id": "S1", "at": "01", "size": "rộng", "note": "TODO", "key": 0.5 },
+    { "id": "S2", "at": "02", "size": "rộng", "note": "TODO: shot cuối dựng lại khung hình frame 0", "key": 0.5 }
+  ]
+}

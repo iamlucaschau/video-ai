@@ -56,3 +56,7 @@ Test/**/_work/
 
 # Format packages: demo videos stay in their sample folder (git-ignored there), never copied here
 Formats/**/*.mp4
+
+# NEON ODDS: renders and local listening copies stay out of git
+NEON ODDS/**/*.mp4
+NEON ODDS/episodes/**/vo.mp3

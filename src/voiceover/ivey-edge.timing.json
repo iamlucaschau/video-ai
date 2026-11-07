@@ -1,0 +1,264 @@
+{
+  "durationInSeconds": 104.45745833333334,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 6.0729999999999995,
+      "text": "This man won seven point seven million pounds at a London casino, without touching the cards that won it."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "start": 6.372875,
+      "end": 9.478874999999999,
+      "text": "This game is pure chance, and the house keeps about a one percent edge."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 9.5985,
+      "end": 13.189499999999999,
+      "text": "But the pattern on these cards sat less than a millimeter off center."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 13.309208333333332,
+      "end": 15.771208333333332,
+      "text": "So one long edge looked slightly different from the other."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 15.891666666666666,
+      "end": 19.136666666666667,
+      "text": "Alone, that was useless, because every card had the same flaw."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 19.256916666666665,
+      "end": 23.433916666666665,
+      "text": "Phil Ivey needed the good cards facing one way, and the rest facing the other."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "start": 23.734291666666664,
+      "end": 26.297291666666663,
+      "text": "But at this table, only the dealer touches the cards."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "start": 26.417624999999997,
+      "end": 28.245624999999997,
+      "text": "So his partner asked her for a small favor."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "start": 28.36545833333333,
+      "end": 30.681458333333328,
+      "text": "Turn the good ones this way, and the bad ones that way."
+    },
+    {
+      "id": "10",
+      "scene": "s3",
+      "start": 31.13104166666666,
+      "end": 32.47004166666666,
+      "text": "To change the luck, she said."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "start": 32.590041666666664,
+      "end": 33.858041666666665,
+      "text": "Casinos hear that all the time."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "start": 33.97754166666667,
+      "end": 35.36454166666667,
+      "text": "The dealer had no idea why."
+    },
+    {
+      "id": "13",
+      "scene": "s4",
+      "start": 35.86420833333334,
+      "end": 38.87220833333334,
+      "text": "Then Ivey said he had won with those cards, and wanted to keep them."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "start": 38.992291666666674,
+      "end": 39.89629166666668,
+      "text": "The casino agreed."
+    },
+    {
+      "id": "15",
+      "scene": "s4",
+      "start": 40.01583333333334,
+      "end": 43.11783333333334,
+      "text": "A shuffling machine mixed them without turning a single one."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "start": 43.23791666666667,
+      "end": 45.49091666666667,
+      "text": "Now the back of the next card gave it away."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "start": 45.61129166666667,
+      "end": 48.814291666666676,
+      "text": "One percent for the house could become six and a half for him."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "start": 49.11420833333334,
+      "end": 51.69920833333334,
+      "text": "His bets had started as low as four thousand pounds."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "start": 51.81954166666667,
+      "end": 54.84154166666667,
+      "text": "Now they hit one hundred and fifty thousand, the casino's limit."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "start": 54.961291666666675,
+      "end": 58.73629166666667,
+      "text": "In one stretch, he read the next card right seventeen times out of nineteen."
+    },
+    {
+      "id": "21",
+      "scene": "s5",
+      "start": 58.85637500000001,
+      "end": 62.17037500000001,
+      "text": "In two days, he was up seven point seven million pounds."
+    },
+    {
+      "id": "22",
+      "scene": "s5",
+      "start": 62.29016666666667,
+      "end": 66.62416666666667,
+      "text": "That same year, the pair took an American casino for nine point six million dollars."
+    },
+    {
+      "id": "23",
+      "scene": "s5",
+      "start": 66.74425000000001,
+      "end": 67.92125000000001,
+      "text": "That casino paid."
+    },
+    {
+      "id": "24",
+      "scene": "s6",
+      "start": 68.77095833333334,
+      "end": 70.14195833333333,
+      "text": "London did not."
+    },
+    {
+      "id": "25",
+      "scene": "s6",
+      "start": 70.74166666666667,
+      "end": 73.16166666666668,
+      "text": "Nine days later, they told him the game was compromised."
+    },
+    {
+      "id": "26",
+      "scene": "s6",
+      "start": 73.28145833333335,
+      "end": 76.29445833333335,
+      "text": "They handed back his one million pound stake, and nothing else."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "start": 76.41400000000002,
+      "end": 80.26200000000001,
+      "text": "Ivey sued, admitted everything, and insisted it was not cheating."
+    },
+    {
+      "id": "28",
+      "scene": "s6",
+      "start": 80.38191666666668,
+      "end": 81.43891666666669,
+      "text": "The judge believed he meant it."
+    },
+    {
+      "id": "29",
+      "scene": "s6",
+      "start": 81.55891666666669,
+      "end": 83.5929166666667,
+      "text": "Five years later, it reached the Supreme Court."
+    },
+    {
+      "id": "30",
+      "scene": "s6",
+      "start": 83.71291666666669,
+      "end": 85.32991666666669,
+      "text": "All five justices ruled against him."
+    },
+    {
+      "id": "31",
+      "scene": "s6",
+      "start": 86.12975000000002,
+      "end": 88.96575000000001,
+      "text": "He had fixed the deck, they said, using the dealer as his hands."
+    },
+    {
+      "id": "32",
+      "scene": "s6",
+      "start": 89.08575000000002,
+      "end": 91.86575000000002,
+      "text": "Clever, skillful, and still cheating."
+    },
+    {
+      "id": "33",
+      "scene": "s7",
+      "start": 92.46625000000002,
+      "end": 96.96425000000002,
+      "text": "In America, a judge found no fraud, but ordered ten point one million dollars back."
+    },
+    {
+      "id": "34",
+      "scene": "s7",
+      "start": 97.08462500000002,
+      "end": 99.10562500000002,
+      "text": "They later settled, terms undisclosed."
+    },
+    {
+      "id": "35",
+      "scene": "s8",
+      "start": 99.40604166666668,
+      "end": 101.25904166666668,
+      "text": "The flaw was in their own deck."
+    },
+    {
+      "id": "36",
+      "scene": "s8",
+      "start": 101.37904166666668,
+      "end": 102.63904166666669,
+      "text": "You own that casino."
+    },
+    {
+      "id": "37",
+      "scene": "s8",
+      "start": 103.08891666666668,
+      "end": 104.15791666666668,
+      "text": "Do you pay him?"
+    }
+  ]
+}

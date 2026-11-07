@@ -528,7 +528,7 @@ export const Shot3D: React.FC<{ cam: Cam; light: LightKind; target?: V3; box?: n
   return (
     <AbsoluteFill>
       <AbsoluteFill style={{ filter }}>
-        <ThreeCanvas width={W} height={H} shadows gl={{ antialias: true, preserveDrawingBuffer: true }} style={{ position: "absolute", inset: 0 }}>
+        <ThreeCanvas width={W} height={H} shadows gl={{ antialias: false, preserveDrawingBuffer: true }} style={{ position: "absolute", inset: 0 }}>
           <CamSync cam={k} />
           <Lights kind={light} target={target} box={box} />
           {children}

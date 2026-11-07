@@ -1324,11 +1324,20 @@
     "lufs": -16.6
   },
   {
+    "category": "music/own",
+    "title": "NEON ODDS bed: ivey-edge",
+    "author": "code",
+    "source": "scripts/make-music.py",
+    "seconds": 112,
+    "file": "sfx/music/own/ivey-edge.mp3",
+    "lufs": -19.4
+  },
+  {
     "category": "synth",
     "title": "Lottery balls tumbling in a globe",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 3,
+    "seconds": 3.0,
     "file": "sfx/synth/ball-rattle.wav",
     "lufs": -18.2
   },
@@ -1337,16 +1346,16 @@
     "title": "Clock ticking (4 ticks, 0.5 s apart)",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 2,
+    "seconds": 2.0,
     "file": "sfx/synth/clock-tick.wav",
-    "lufs": -27
+    "lufs": -27.0
   },
   {
     "category": "synth",
     "title": "Dot-matrix printer burst",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 2,
+    "seconds": 2.0,
     "file": "sfx/synth/dot-matrix.wav",
     "lufs": -11.5
   },
@@ -1355,7 +1364,7 @@
     "title": "Roller shutter let go, slams at 1.05 s",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 2,
+    "seconds": 2.0,
     "file": "sfx/synth/shutter-down.wav",
     "lufs": -22.3
   },
@@ -1364,7 +1373,7 @@
     "title": "A heap of tickets pouring out",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 3,
+    "seconds": 3.0,
     "file": "sfx/synth/paper-rush.wav",
     "lufs": -14.6
   },
@@ -1391,7 +1400,7 @@
     "title": "Room tone: small shop, strip-light hum",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 12,
+    "seconds": 12.0,
     "file": "sfx/synth/room-shop.wav",
     "lufs": -14.1
   },
@@ -1400,7 +1409,7 @@
     "title": "Room tone: quiet office",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 12,
+    "seconds": 12.0,
     "file": "sfx/synth/room-office.wav",
     "lufs": -15.8
   },
@@ -1409,7 +1418,7 @@
     "title": "Room tone: big warehouse",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 12,
+    "seconds": 12.0,
     "file": "sfx/synth/room-warehouse.wav",
     "lufs": -14.6
   },
@@ -1418,7 +1427,7 @@
     "title": "Room tone: large stone hall",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 12,
+    "seconds": 12.0,
     "file": "sfx/synth/room-chamber.wav",
     "lufs": -14.3
   },
@@ -1427,8 +1436,44 @@
     "title": "Room tone: small room, tube-light buzz",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 12,
+    "seconds": 12.0,
     "file": "sfx/synth/room-interview.wav",
     "lufs": -12.5
+  },
+  {
+    "category": "synth",
+    "title": "Playing card snapped onto felt",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 0.9,
+    "file": "sfx/synth/card-flick.wav",
+    "lufs": -23.7
+  },
+  {
+    "category": "synth",
+    "title": "Clay casino chips set down on a stack",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 0.7,
+    "file": "sfx/synth/chip-stack.wav",
+    "lufs": -20.1
+  },
+  {
+    "category": "synth",
+    "title": "Automatic card shuffler running",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 3.0,
+    "file": "sfx/synth/card-shuffle.wav",
+    "lufs": -13.2
+  },
+  {
+    "category": "synth",
+    "title": "Room tone: carpeted gaming floor, far murmur",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 12.0,
+    "file": "sfx/synth/room-casino.wav",
+    "lufs": -14.4
   }
 ]

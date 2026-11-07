@@ -247,6 +247,10 @@
   "onset": 1.96,
   "peak": 455.84
  },
+ "sfx/music/own/ivey-edge.mp3": {
+  "onset": 0.01,
+  "peak": 62.5
+ },
  "sfx/music/own/m-quirky.mp3": {
   "onset": 0.01,
   "peak": 66.13
@@ -435,6 +439,18 @@
   "onset": 0,
   "peak": 0.08
  },
+ "sfx/synth/card-flick.wav": {
+  "onset": 0,
+  "peak": 0
+ },
+ "sfx/synth/card-shuffle.wav": {
+  "onset": 0.01,
+  "peak": 1
+ },
+ "sfx/synth/chip-stack.wav": {
+  "onset": 0,
+  "peak": 0.17
+ },
  "sfx/synth/ciws-burst.wav": {
   "onset": 0,
   "peak": 0.17
@@ -506,6 +522,10 @@
  "sfx/synth/rifles-distant.wav": {
   "onset": 0,
   "peak": 2.09
+ },
+ "sfx/synth/room-casino.wav": {
+  "onset": 0.05,
+  "peak": 3.45
  },
  "sfx/synth/room-chamber.wav": {
   "onset": 0.06,
