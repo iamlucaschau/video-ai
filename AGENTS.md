@@ -379,3 +379,13 @@ inline, Studio can't save them back. To persist a change, edit
   Use `npx remotion add` / `npx remotion upgrade`, never a bare `npm i @remotion/x`.
 - Licensing: Remotion is free for individuals and companies of up to 3 people.
   Larger companies need a license (https://remotion.pro/license).
+- Render speed on this PC (measured 2026-11-07; 2 × Xeon E5-2680 v4, GTX 1050 Ti): keep Remotion's default
+  concurrency (8). More is slower even with CPU near 25% (first 40 s of Carrier: c=8 85 s, c=16 100 s, c=32 242 s;
+  c=36 failed with a frame-extraction timeout). Moving the bundle to the SSD gains about 5%. Blender: splitting into
+  several processes gains nothing (about 52 s/frame for 1×56, 2×28, 3×18 and 4×14 threads), so run one `-t 56` at a
+  time and never leave threads idle. Cycles stays on CPU until the card is replaced (1050 Ti took 343 s against 55 s).
+- Blender checklist (measured 2026-11-07, `scripts/blender/carrier3d.py`, usage in its header): render a `preview` first
+  and look at the sheet (under a minute per shot), then the full shot at 8 samples. 8 against 14 samples: 27–40% faster,
+  flicker up 1–11%, same look on stills. Transparent smoke is the real cost: halving Moskva's puffs (360, larger, denser)
+  took 54.6 → 21.6 s/frame together with 8 samples; a third shows sphere rings; `transparent_max_bounces` 32 cuts hard
+  edges into the smoke. `adaptive_threshold` 0.1 changes nothing.

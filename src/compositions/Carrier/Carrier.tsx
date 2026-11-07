@@ -3,7 +3,7 @@
  * Script by Lucas (fact-checked: Test/carrier/FACTS-carrier.md). Same pipeline as Test/ambush: every cue comes from
  * the VO, A(id) line start, E(id) line end, W(id, word) the frame a word is spoken (src/voiceover/carrier.words.json).
  */
-import { Audio } from "@remotion/media";
+import { Audio, Video } from "@remotion/media";
 import React from "react";
 import { AbsoluteFill, interpolate, Sequence, staticFile, useCurrentFrame } from "remotion";
 import timing from "../../voiceover/carrier.timing.json";
@@ -11,6 +11,7 @@ import WORDS from "../../voiceover/carrier.words.json";
 import { MusicBed, Sfx } from "../../series/pvr/sfx";
 import { Blast, C, CLAMP, COND, Check, ease, Heading, INTER, inOut, lin, Ring, Tag, Tracer, Vignette } from "../Ambush/kit";
 import MAPS from "./maps.json";
+import SHOTS3D from "./shots3d.json";
 import { Blip, Carrier, Chute, Ciws, DataLink, Jet, Land, Missile, mpos, N, RadarSweep, RangeRing, Sea, Sub, Vls, Warship } from "./navkit";
 
 export const FPS = 30;
@@ -1532,6 +1533,7 @@ const SoundTrack: React.FC = () => {
     [SX("jet-pass"), W("61", "launched"), -22],
     [SX("missile-launch"), W("66", "fire"), -22],
     ["sfx/explosion/explosive-impact-from-afar-2758.mp3", W("66", "fire") + 70, -22],
+    [SX("missile-launch"), A("69") + 29, -22], // first shot of the 3D launch (carrier3d.py: shot start + 40)
     [SX("missile-launch"), W("70", "storm"), -20],
     [SX("missile-launch"), W("72", "twice"), -22],
     [SX("missile-launch"), W("79", "many"), -24],
@@ -1543,7 +1545,7 @@ const SoundTrack: React.FC = () => {
     ["sfx/explosion/bomb-explosion-in-battle-2800.mp3", W("97", "hit"), -20],
     [SX("missile-launch"), W("103", "shot"), -22],
     ["sfx/explosion/explosive-impact-from-afar-2758.mp3", W("103", "shot") + 40, -20],
-    [SX("radar-ping"), W("115", "launchers"), -24],
+    [SX("missile-launch"), W("115", "launchers"), -24], // the launch in the 3D strait shot
   ];
   return (
     <>
@@ -1551,6 +1553,99 @@ const SoundTrack: React.FC = () => {
         <Sfx key={i} file={file} at={at} level={level} align={file.includes("/synth/") ? "start" : "onset"} />
       ))}
     </>
+  );
+};
+
+// ═════════════════════════ 3D hero shots (Blender: scripts/blender/carrier3d.py, cued on the same VO) ═════════════════════════
+const HERO_LABELS: Record<keyof typeof SHOTS3D, React.FC<{ g: number }>> = {
+  hook: ({ g }) => {
+    const enemy = W("01", "enemy");
+    const q = ease(g, W("02", "kill"), 12);
+    return (
+      <>
+        {[
+          [120, 130],
+          [1800, 170],
+          [1820, 900],
+          [90, 880],
+          [960, 60],
+        ].map(([x, y], i) => {
+          const k = inOut(g, enemy + i * 6, enemy + 90 + i * 6);
+          return <Blip key={i} x={mix(x, mix(x, 960, 0.45), k)} y={mix(y, mix(y, 540, 0.45), k)} p={ease(g, enemy + i * 6, 8) * (1 - q)} size={2.4} />;
+        })}
+        <Tag x={960} y={150} text="65 PLANES · 1 SHIP" p={ease(g, W("01", "planes"), 12)} out={ease(g, enemy + 20, 8)} size={56} kind="wipe" />
+        <rect x={0} y={0} width={1920} height={1080} fill="#05080c" opacity={0.5 * q} />
+        <Heading text="HARD TO KILL?" p={q} y={540} size={170} />
+      </>
+    );
+  },
+  fleet: ({ g }) => <Tag x={960} y={150} text="30+ KNOTS" p={ease(g, W("21", "knots"), 12)} size={64} color={C.tracer} kind="drop" />,
+  vls: ({ g }) => (
+    <>
+      <Tag x={960} y={150} text="DESTROYER · ~90 CELLS" p={ease(g, W("69", "cells") - 8, 10)} out={ease(g, W("69", "cruiser") - 4, 6)} size={56} color={C.tracer} />
+      <Tag x={960} y={150} text="CRUISER · 100+" p={ease(g, W("69", "cruiser"), 10)} out={ease(g, W("70", "storm") - 4, 6)} size={56} color={C.tracer} />
+      <Tag x={960} y={150} text="A STORM OF INTERCEPTORS" p={ease(g, W("70", "storm"), 10)} size={56} color={N.link} />
+    </>
+  ),
+  phalanx: ({ g }) => (
+    <>
+      <Tag x={960} y={150} text="PHALANX" p={ease(g, W("81", "phalanx"), 12)} out={ease(g, W("81", "spraying") - 4, 6)} size={60} color={C.tracer} />
+      <Tag x={960} y={150} text="4,500 ROUNDS / MIN" p={ease(g, W("81", "spraying"), 10)} size={56} color={C.tracer} />
+    </>
+  ),
+  hawkeye: ({ g }) => (
+    <>
+      <Tag x={960} y={150} text="E-2 HAWKEYE" p={ease(g, W("39", "hawkeye"), 12)} out={ease(g, W("40", "horizon") - 4, 6)} size={60} color={N.link} />
+      <Tag x={960} y={150} text="HUNDREDS OF KM" p={ease(g, W("40", "hundreds"), 10)} size={60} color={N.link} kind="drop" />
+    </>
+  ),
+  drones: ({ g }) => <Tag x={960} y={150} text="LOW · SLOW · CHEAP" p={ease(g, W("48", "cheap"), 10)} size={56} color={C.red} />,
+  cap: ({ g }) => <Tag x={960} y={150} text="COMBAT AIR PATROL" p={ease(g, W("52", "combat"), 12)} size={56} color={C.tracer} />,
+  escort: ({ g }) => (
+    <>
+      <Tag x={960} y={150} text="FLOATING MISSILE BATTERY" p={ease(g, W("65", "floating"), 10)} out={ease(g, W("65", "aegis") - 4, 6)} size={56} color={C.tracer} />
+      <Tag x={960} y={150} text="AEGIS: ONE NETWORK" p={ease(g, W("65", "aegis"), 10)} size={56} color={C.tracer} />
+    </>
+  ),
+  gravely: ({ g }) => {
+    const kill = W("88", "destroyed");
+    return (
+      <>
+        <Tag x={960} y={150} text="30 JAN 2024 · RED SEA" p={ease(g, W("87", "30"), 10)} out={ease(g, W("87", "gravely") - 4, 6)} size={56} />
+        <Tag x={960} y={150} text="USS GRAVELY" p={ease(g, W("87", "gravely"), 10)} out={ease(g, kill - 6, 6)} size={56} color={N.link} />
+        <Tag x={960} y={150} text="PHALANX · SECONDS FROM IMPACT" p={ease(g, kill, 10)} size={52} color={C.tracer} />
+      </>
+    );
+  },
+  moskva: ({ g }) => (
+    <>
+      <Tag x={960} y={150} text="DEFENCES NEVER ENGAGED?" p={ease(g, A("99"), 10)} out={ease(g, A("101") - 4, 6)} size={52} color={C.muted} />
+      <Tag x={960} y={150} text="SANK THE NEXT DAY" p={ease(g, W("101", "sank"), 10)} size={58} color={C.red} kind="drop" />
+      <Tag x={70} y={90} anchor="start" text="MISTAKE 01 · ASLEEP" p={1} size={44} color={C.red} />
+    </>
+  ),
+  strait: ({ g }) => (
+    <>
+      <Tag x={960} y={150} text="RINGS CRUSHED FLAT" p={ease(g, W("115", "crushes"), 10)} out={ease(g, W("115", "launchers") - 4, 6)} size={56} color={C.red} />
+      <Tag x={960} y={150} text="LAUNCHERS ON THE SHORE" p={ease(g, W("115", "launchers"), 10)} size={56} color={C.red} />
+      <Tag x={70} y={90} anchor="start" text="MISTAKE 04 · NARROW WATER" p={1} size={44} color={C.red} />
+    </>
+  ),
+  dusk: () => <Tag x={960} y={150} text="PEOPLE FAIL FIRST" p={1} size={58} color={C.tracer} />,
+};
+const HeroShot: React.FC<{ id: keyof typeof SHOTS3D }> = ({ id }) => {
+  const f = useCurrentFrame();
+  const { from, frames } = SHOTS3D[id];
+  const Labels = HERO_LABELS[id];
+  return (
+    <AbsoluteFill style={{ opacity: from === 0 ? interpolate(f, [frames - XF, frames], [1, 0], CLAMP) : interpolate(f, [0, XF, frames - XF, frames], [0, 1, 1, 0], CLAMP) }}>
+      <Video src={staticFile(`video/carrier/${id}.mp4`)} muted name={`3D ${id}`} />
+      <AbsoluteFill>
+        <svg viewBox="0 0 1920 1080" style={{ width: "100%", height: "100%" }}>
+          <Labels g={f + from} />
+        </svg>
+      </AbsoluteFill>
+    </AbsoluteFill>
   );
 };
 
@@ -1571,6 +1666,11 @@ export const CarrierVideo: React.FC<{ subtitles?: boolean }> = ({ subtitles = tr
           </Sequence>
         );
       })}
+      {(Object.keys(SHOTS3D) as (keyof typeof SHOTS3D)[]).map((id) => (
+        <Sequence key={id} from={SHOTS3D[id].from} durationInFrames={SHOTS3D[id].frames} name={`3D ${id}`}>
+          <HeroShot id={id} />
+        </Sequence>
+      ))}
       <ChapterCards />
       {subtitles ? <Subtitles /> : null}
       <Audio src={staticFile("voiceover/carrier/vo.mp3")} name="VO" />

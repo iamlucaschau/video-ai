@@ -14,3 +14,13 @@
 | Music Content ID | pass | code-made `carrier-watch.mp3` |
 | Motion round (v2) | better, not passing | sea streams past the fleet (mirrored texture, livelier swell, 460 whitecaps), ships station-keep, CAP jets orbit, side-view clouds/waves/bob, Phalanx slews, strait transit + shore launches, Moskva smoke, outro push-in + ring pulses, more camera float. QA near-static 351 s = 55% (v1 76%); holds ≥ 2 s 29 (v1 44); at 480×270 60% (v1 80%). Dark low-contrast sea measures as static even when it moves |
 | Final render v2 | pass | `how-a-carrier-defends-itself-v2.mp4`: 19 250 frames, 641.7 s, −14.1 LUFS, −4.0 dBTP |
+| 3D shots rendered and merged | pass | hook 283, fleet 285, VLS 309, Phalanx 325 frames at 1080p; `<Video>`, labels and subtitles seen in frames sampled from the v3 MP4 |
+| 3D looks (stills) | pass after 3 rounds | smoke, fire, Phalanx gun and VLS grid fixed; ship close-ups still untextured. Motion itself not watched in real time |
+| Final render v3 | pass | `how-a-carrier-defends-itself-v3.mp4`: 19 250 frames, 641.7 s, −14.1 LUFS, −4.0 dBTP |
+| Frame QA v3 (`QA-v3.md`) | fail (motion) | near-static 329 s = 51% (v2 55%); 0 s inside the 3D shots; one-frame jump at f9921 is the first launch flash (intended), two others outside the 3D shots |
+| Explosion on the SFX | pass | audio peak at 414.8 s, kill frame 12446 = 414.87 s |
+| 3D share of the runtime (Lucas: 20%) | pass | 12 shots, 3 861 / 19 250 frames = 20.06% (`shots3d.json`) |
+| New 3D shots rendered and merged | pass | all frame counts match; labels, subtitles and crossfades seen on boundary stills (`npm run sheet`) and on one frame per shot from the v4 MP4; black propeller blades fixed, Escort and Hawkeye paint graded |
+| Final render v4 | pass | `how-a-carrier-defends-itself-v4.mp4`: 1920×1080, 30 fps, 19 250 frames, 641.7 s, −14.1 LUFS, −4.0 dBTP |
+| Frame QA v4 (`QA-v4.md`) | fail (motion) | near-static 41% (v3 51%); no black or white frames; the 3 one-frame jumps are the same frames as v3 (f9921 = first launch flash, intended) |
+| Motion and audio in real time | unresolved | not watched or listened to end to end |

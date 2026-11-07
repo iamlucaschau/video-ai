@@ -43,6 +43,8 @@ Mapped Journeys/episodes/**/*.mp4
 Map/**/vo.mp3
 Poor vs Rich Daily/episodes/**/vo.mp3
 Mapped Journeys/episodes/**/vo.mp3
+# Blender shots (520 MB for Carrier): rebuild with scripts/blender/carrier3d.py + ffmpeg
+public/video/
 
 # third-party reference videos + captions for study (Lucas 2026-10-15): never commit
 Test/**/*.mp4
