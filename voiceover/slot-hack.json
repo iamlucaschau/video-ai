@@ -1,0 +1,291 @@
+{
+  "name": "slot-hack",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "American male documentary narrator telling a true story to a friend. Calm, confident, a little amused, brisk pace around 200 words per minute, clear on every word. Numbers are crisp and land. No hype, no shouting. \"No.\" is one flat word after a beat. \"The phone does.\" is short and dry.",
+  "trimSilence": true,
+  "tempo": 1.02,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.2,
+    "scene": 0.3
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.3,
+      "text": "Imagine a phone that tells you the exact moment to hit spin on a slot machine."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "In June twenty fourteen, a man in a St. Louis casino had one."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "He held it close to the screen."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "His finger hovered over the button, then jabbed it."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "He won just over twenty-one thousand dollars."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "The casino's machines had paid out more than they took in, with no big jackpot."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "take": "t02b",
+      "gapAfter": 0.8,
+      "text": "And nobody had touched them.",
+      "style": "American male documentary narrator, calm and dry. Say every word clearly: and nobody HAD TOUCHED them. Short, flat, a little ominous."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "The trail led to Russia."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "In twenty oh nine, Russia banned almost all gambling."
+    },
+    {
+      "id": "10",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "Casinos had to sell thousands of slot machines cheap."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "Some went to a team in St. Petersburg."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "Not to play."
+    },
+    {
+      "id": "13",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.3,
+      "text": "To study the code."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Every slot machine runs on a random number generator."
+    },
+    {
+      "id": "15",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "But it isn't truly random."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "It's a formula, fed by the machine's clock."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.3,
+      "text": "Learn it, and you only need to find the machine's place in it."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "So an agent films about two dozen spins and sends the video to St. Petersburg."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "The team works out the pattern."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "Then the phone buzzes, about a quarter of a second early, because that's how long a human needs to react."
+    },
+    {
+      "id": "21",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "He doesn't choose when to spin."
+    },
+    {
+      "id": "22",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.8,
+      "text": "The phone does."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "Agents kept each machine under a thousand dollars, so nobody would notice."
+    },
+    {
+      "id": "24",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "One security expert says an agent usually won over ten thousand dollars a day."
+    },
+    {
+      "id": "25",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "A small team?"
+    },
+    {
+      "id": "26",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "More than a quarter of a million a week."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.3,
+      "text": "Ninety percent went back to St. Petersburg."
+    },
+    {
+      "id": "28",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "That December, the man from St. Louis came back."
+    },
+    {
+      "id": "29",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "He and three others were arrested in Missouri."
+    },
+    {
+      "id": "30",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "The Russians each got two years in prison."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.3,
+      "text": "But the man behind it, a mathematician known only as Alex, stayed in Russia."
+    },
+    {
+      "id": "32",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "So casinos threw those machines out, right?"
+    },
+    {
+      "id": "33",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.6,
+      "text": "No."
+    },
+    {
+      "id": "34",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "There was no easy fix, and keeping them was cheaper than replacing them."
+    },
+    {
+      "id": "35",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "Alex even offered to sell the maker the fix."
+    },
+    {
+      "id": "36",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "His price ran to eight figures."
+    },
+    {
+      "id": "37",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.8,
+      "text": "The company said no."
+    },
+    {
+      "id": "38",
+      "scene": "s9",
+      "take": "t09",
+      "gapAfter": 0.12,
+      "text": "Years later, more than a hundred thousand of that model were still on casino floors."
+    },
+    {
+      "id": "39",
+      "scene": "s9",
+      "take": "t99",
+      "gapAfter": 0.3,
+      "text": "So when a finger waits over the spin button, is it waiting for luck, or for a phone?",
+      "style": "American male documentary narrator, quiet, slow and dry. A plain question to a friend, about four seconds long, a small pause after \"luck\", no hype."
+    }
+  ]
+}

@@ -57,7 +57,8 @@ const finalParagraphs = (md) => {
     .filter((p) => p && !p.startsWith("**[") && !p.startsWith("["));
 };
 
-const sentences = (p) => p.split(/(?<=[.!?])\s+/).filter(Boolean);
+// don't split after short title abbreviations ("St. Louis", "Mr. Ivey", "Dr. Thorp")
+const sentences = (p) => p.split(/(?<![\s"(](?:St|Mr|Mrs|Ms|Dr|Jr|Sr|vs)\.)(?<=[.!?])\s+/).filter(Boolean);
 
 const prep = (dir) => {
   const ep = episode(dir);

@@ -1,0 +1,278 @@
+{
+  "durationInSeconds": 103.56875,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 4.104,
+      "text": "Imagine a phone that tells you the exact moment to hit spin on a slot machine."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "start": 4.4035,
+      "end": 7.6625,
+      "text": "In June twenty fourteen, a man in a St. Louis casino had one."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 7.782,
+      "end": 8.945,
+      "text": "He held it close to the screen."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 9.065208333333334,
+      "end": 11.456208333333334,
+      "text": "His finger hovered over the button, then jabbed it."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 11.576541666666667,
+      "end": 13.674541666666666,
+      "text": "He won just over twenty-one thousand dollars."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 13.794291666666668,
+      "end": 17.568291666666667,
+      "text": "The casino's machines had paid out more than they took in, with no big jackpot."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "start": 17.6885,
+      "end": 19.9235,
+      "text": "And nobody had touched them."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "start": 20.72325,
+      "end": 21.92125,
+      "text": "The trail led to Russia."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "start": 22.041166666666665,
+      "end": 24.719166666666666,
+      "text": "In twenty oh nine, Russia banned almost all gambling."
+    },
+    {
+      "id": "10",
+      "scene": "s3",
+      "start": 24.839125,
+      "end": 27.741125,
+      "text": "Casinos had to sell thousands of slot machines cheap."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "start": 27.861541666666668,
+      "end": 30.570541666666667,
+      "text": "Some went to a team in St. Petersburg."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "start": 30.690125000000002,
+      "end": 31.344125000000002,
+      "text": "Not to play."
+    },
+    {
+      "id": "13",
+      "scene": "s3",
+      "start": 31.463708333333336,
+      "end": 32.616708333333335,
+      "text": "To study the code."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "start": 32.91708333333334,
+      "end": 35.452083333333334,
+      "text": "Every slot machine runs on a random number generator."
+    },
+    {
+      "id": "15",
+      "scene": "s4",
+      "start": 35.572,
+      "end": 37.150000000000006,
+      "text": "But it isn't truly random."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "start": 37.27004166666667,
+      "end": 39.42704166666667,
+      "text": "It's a formula, fed by the machine's clock."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "start": 39.54716666666667,
+      "end": 41.86916666666667,
+      "text": "Learn it, and you only need to find the machine's place in it."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "start": 42.169625,
+      "end": 45.967625000000005,
+      "text": "So an agent films about two dozen spins and sends the video to St. Petersburg."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "start": 46.08779166666667,
+      "end": 47.533791666666666,
+      "text": "The team works out the pattern."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "start": 47.65404166666667,
+      "end": 52.464041666666674,
+      "text": "Then the phone buzzes, about a quarter of a second early, because that's how long a human needs to react."
+    },
+    {
+      "id": "21",
+      "scene": "s5",
+      "start": 52.58404166666667,
+      "end": 53.92304166666667,
+      "text": "He doesn't choose when to spin."
+    },
+    {
+      "id": "22",
+      "scene": "s5",
+      "start": 54.04279166666667,
+      "end": 54.84479166666667,
+      "text": "The phone does."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "start": 55.64512500000001,
+      "end": 59.60212500000001,
+      "text": "Agents kept each machine under a thousand dollars, so nobody would notice."
+    },
+    {
+      "id": "24",
+      "scene": "s6",
+      "start": 59.72170833333334,
+      "end": 63.86870833333334,
+      "text": "One security expert says an agent usually won over ten thousand dollars a day."
+    },
+    {
+      "id": "25",
+      "scene": "s6",
+      "start": 63.98854166666667,
+      "end": 64.68154166666667,
+      "text": "A small team?"
+    },
+    {
+      "id": "26",
+      "scene": "s6",
+      "start": 64.80170833333334,
+      "end": 66.36570833333334,
+      "text": "More than a quarter of a million a week."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "start": 66.48587500000001,
+      "end": 68.42487500000001,
+      "text": "Ninety percent went back to St. Petersburg."
+    },
+    {
+      "id": "28",
+      "scene": "s7",
+      "start": 68.72466666666668,
+      "end": 70.95266666666667,
+      "text": "That December, the man from St. Louis came back."
+    },
+    {
+      "id": "29",
+      "scene": "s7",
+      "start": 71.07220833333335,
+      "end": 73.20120833333335,
+      "text": "He and three others were arrested in Missouri."
+    },
+    {
+      "id": "30",
+      "scene": "s7",
+      "start": 73.32116666666668,
+      "end": 75.27816666666668,
+      "text": "The Russians each got two years in prison."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "start": 75.39804166666669,
+      "end": 79.37704166666668,
+      "text": "But the man behind it, a mathematician known only as Alex, stayed in Russia."
+    },
+    {
+      "id": "32",
+      "scene": "s8",
+      "start": 79.67658333333335,
+      "end": 81.48958333333336,
+      "text": "So casinos threw those machines out, right?"
+    },
+    {
+      "id": "33",
+      "scene": "s8",
+      "start": 81.60950000000003,
+      "end": 82.08050000000003,
+      "text": "No."
+    },
+    {
+      "id": "34",
+      "scene": "s8",
+      "start": 82.68025000000003,
+      "end": 85.95525000000004,
+      "text": "There was no easy fix, and keeping them was cheaper than replacing them."
+    },
+    {
+      "id": "35",
+      "scene": "s8",
+      "start": 86.07487500000003,
+      "end": 88.50687500000004,
+      "text": "Alex even offered to sell the maker the fix."
+    },
+    {
+      "id": "36",
+      "scene": "s8",
+      "start": 88.62658333333337,
+      "end": 90.24358333333338,
+      "text": "His price ran to eight figures."
+    },
+    {
+      "id": "37",
+      "scene": "s8",
+      "start": 90.36370833333338,
+      "end": 91.48470833333337,
+      "text": "The company said no."
+    },
+    {
+      "id": "38",
+      "scene": "s9",
+      "start": 92.28441666666671,
+      "end": 96.27941666666672,
+      "text": "Years later, more than a hundred thousand of that model were still on casino floors."
+    },
+    {
+      "id": "39",
+      "scene": "s9",
+      "start": 96.39950000000005,
+      "end": 103.26850000000005,
+      "text": "So when a finger waits over the spin button, is it waiting for luck, or for a phone?"
+    }
+  ]
+}

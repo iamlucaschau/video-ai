@@ -722,3 +722,180 @@ export const WallCalendar: React.FC<{ p?: V3; s?: number; lit?: number[] }> = ({
     })}
   </group>
 );
+// ---------------- slot machines and phones ----------------
+/** reel symbols: drawn shapes and short marks, no real game's art */
+const SYM: { t: string; c: string }[] = [
+  { t: "7", c: "#FF4A3A" },
+  { t: "BAR", c: "#F3EFE6" },
+  { t: "★", c: "#FFB347" },
+  { t: "♦", c: "#62D2DC" },
+  { t: "●", c: "#5CFF8A" },
+  { t: "♣", c: "#C9A0FF" },
+];
+const drawReels = (c: CanvasRenderingContext2D, pos: number[], win: number) => {
+  c.fillStyle = "#0A0810";
+  c.fillRect(0, 0, 512, 384);
+  c.textAlign = "center";
+  c.textBaseline = "middle";
+  pos.forEach((p, i) => {
+    const x = 18 + i * 162;
+    c.fillStyle = "#F7F1E4";
+    c.fillRect(x, 24, 150, 300);
+    c.save();
+    c.beginPath();
+    c.rect(x, 24, 150, 300);
+    c.clip();
+    const base = Math.floor(p);
+    for (let k = -2; k <= 2; k++) {
+      const s = SYM[(((base + k) % SYM.length) + SYM.length) % SYM.length];
+      const y = 174 + (k - (p - base)) * 100;
+      c.fillStyle = s.c === "#F3EFE6" ? "#3A3030" : s.c;
+      c.font = `900 ${s.t.length > 1 ? 52 : 82}px Arial Black, Arial, sans-serif`;
+      c.fillText(s.t, x + 75, y);
+    }
+    c.restore();
+    c.fillStyle = "rgba(0,0,0,.28)";
+    c.fillRect(x, 24, 150, 46);
+    c.fillRect(x, 278, 150, 46);
+  });
+  c.fillStyle = win > 0 ? `rgba(255,179,71,${0.4 + 0.6 * win})` : "rgba(255,74,58,.55)";
+  c.fillRect(0, 170, 512, 8);
+  c.fillStyle = "#14101A";
+  c.fillRect(0, 336, 512, 48);
+  c.fillStyle = win > 0 ? "#FFB347" : "#62D2DC";
+  c.font = "900 34px Arial Black, Arial, sans-serif";
+  c.fillText(win > 0 ? "WIN" : "PLAY", 256, 361);
+};
+/** where reel i stands during a spin (`spin` 0→1): fast, then each reel stops on `land[i]`, left to right */
+const reelPos = (land: number[], spin: number) => land.map((l, i) => (spin <= 0 || spin >= 0.55 + i * 0.2 ? l : l - (0.55 + i * 0.2 - spin) * 40));
+/** the screen of a hero machine, redrawn each frame */
+const LiveReels: React.FC<{ land: number[]; spin: number; win: number; glow: number }> = ({ land, spin, win, glow }) => {
+  const tex = useLiveTex(512, 384, (c) => drawReels(c, reelPos(land, spin), win));
+  return <Panel map={tex} w={0.52} h={0.39} p={[0, 0, 0.012]} glow={glow} />;
+};
+/** the screen of a background machine: one cached picture per `land` */
+const StillReels: React.FC<{ land: number[]; glow: number }> = ({ land, glow }) => (
+  <Panel map={ctex(`reels|${land.join(",")}`, 512, 384, (c) => drawReels(c, land, 0))} w={0.52} h={0.39} p={[0, 0, 0.012]} glow={glow} />
+);
+export const SLOT = { w: 0.72, screenY: 1.22, deckY: 0.84, front: 0.25, button: [0.2, 0.875, 0.27] as V3 };
+/**
+ * A slot machine facing +z, its foot on the floor at `p`. `spin` 0→1 runs one spin that lands on `land`; `win` 0→1 lights
+ * it up; `press` 0→1 pushes the spin button; `lit` 0→1 is the power (0 = dark). `open` 0→1 swings the front door off its
+ * left hinge to show the board. `live` false draws a cached screen (use it for the rows behind the hero machine).
+ */
+export const SlotMachine: React.FC<{
+  p?: V3;
+  ry?: number;
+  f?: number;
+  land?: number[];
+  spin?: number;
+  win?: number;
+  press?: number;
+  lit?: number;
+  open?: number;
+  live?: boolean;
+  name?: string;
+  c?: string;
+}> = ({ p = [0, 0, 0], ry = 0, f = 0, land = [1, 2, 3], spin = 0, win = 0, press = 0, lit = 1, open = 0, live = true, name = "STAR RUN", c = "#2C2236" }) => {
+  const glow = (0.9 + 0.1 * Math.sin(f * 0.3)) * lit + win * 0.5 * Math.abs(Math.sin(f * 0.5));
+  const btn = lit > 0 ? 1.2 + win * 2 : 0;
+  return (
+    <group position={p} rotation={[0, ry * D, 0]}>
+      <Box w={SLOT.w} h={0.8} d={0.6} c="#17141C" o={{ rough: 0.5 }} />
+      <Box w={SLOT.w} h={0.04} d={0.6} c={N.gold} p={[0, 0.8, 0]} o={{ metal: 0.6, rough: 0.35 }} shadow={false} />
+      {/* the deck: spin button on the right, two small buttons */}
+      <Box w={SLOT.w} h={0.05} d={0.26} c="#2A2630" p={[0, 0.8, 0.18]} r={[0.18, 0, 0]} />
+      <group position={[SLOT.button[0], SLOT.button[1] - press * 0.012, SLOT.button[2]]} rotation={[0.18, 0, 0]}>
+        <P g={cyl(0.048, 0.052, 0.03, 14)} c="#B8742C" o={{ e: "#FFB347", ei: btn }} />
+      </group>
+      {[-0.2, -0.08].map((x) => <Box key={x} w={0.07} h={0.02} d={0.05} c="#3A3440" p={[x, 0.86, 0.24]} r={[0.18, 0, 0]} o={{ e: "#62D2DC", ei: 0.4 * lit }} shadow={false} />)}
+      {/* the cabinet behind the door */}
+      <Box w={SLOT.w} h={1.0} d={0.48} c={c} p={[0, 0.86, -0.06]} o={{ metal: 0.3, rough: 0.45 }} />
+      {open > 0 ? (
+        <group>
+          <Box w={0.58} h={0.62} d={0.02} c="#1E4A2E" p={[0, 0.94, 0.18]} />
+          {Array.from({ length: 6 }, (_, i) => <Box key={i} w={0.08 + (i % 3) * 0.03} h={0.05} d={0.03} c={i === 2 ? "#14161C" : "#2A2E36"} p={[-0.18 + (i % 3) * 0.18, 1.06 + Math.floor(i / 3) * 0.2, 0.19]} shadow={false} />)}
+          <Box w={0.1} h={0.08} d={0.035} c="#14161C" p={[0.02, 1.0, 0.195]} shadow={false} />
+          <P g={ico(0.01, 1)} c="#5CFF8A" p={[0.2, 1.4, 0.2]} o={{ e: "#5CFF8A", ei: 2 }} shadow={false} />
+        </group>
+      ) : null}
+      {/* the door: screen and bezel, hinged on the left edge */}
+      <group position={[-SLOT.w / 2, 0, SLOT.front - 0.06]} rotation={[0, -open * 1.7, 0]}>
+        <group position={[SLOT.w / 2, 0, 0]}>
+          <Box w={SLOT.w} h={0.62} d={0.04} c="#1C1822" p={[0, 0.91, 0]} />
+          <group position={[0, SLOT.screenY, 0.02]}>{live ? <LiveReels land={land} spin={spin} win={win} glow={glow} /> : <StillReels land={land} glow={glow} />}</group>
+        </group>
+      </group>
+      {/* the topper: a made-up game name */}
+      <Box w={SLOT.w} h={0.3} d={0.4} c="#1C1822" p={[0, 1.86, -0.08]} />
+      <Panel map={signTex(name, "#140E1E", N.gold, 1024, 300, Math.min(190, 1500 / name.length))} w={0.66} h={0.2} p={[0, 2.01, 0.125]} glow={(0.95 + win * 0.6) * Math.max(lit, 0.04)} />
+      <Box w={SLOT.w} h={0.03} d={0.03} c="#62D2DC" p={[0, 2.16, 0.11]} o={{ e: win > 0 ? "#FFB347" : "#62D2DC", ei: 1.8 * lit }} shadow={false} />
+      {win > 0 ? <pointLight position={[0, 1.5, 0.95]} intensity={1.3 * win} distance={2.2} color="#FFB347" /> : null}
+    </group>
+  );
+};
+/** a round stool in front of a machine */
+export const SlotStool: React.FC<{ p?: V3 }> = ({ p = [0, 0, 0] }) => (
+  <group position={p}>
+    <P g={cyl(0.03, 0.05, 0.6, 6)} c="#2A2A30" o={{ metal: 0.5, rough: 0.4 }} />
+    <P g={cyl(0.19, 0.18, 0.08, 12)} c="#7A2434" p={[0, 0.58, 0]} o={{ rough: 0.6 }} />
+  </group>
+);
+/** phone screens: a recording frame, the timing app (a bar and its cue at `k`), the cue firing, or off */
+export type PhoneScreen = "rec" | "app" | "go" | "off" | "upload";
+/**
+ * A phone, screen on +z, centred on `p`. `buzz` 0→1 shakes it a little (the phone, never the camera) and sends rings out;
+ * `k` 0→1 is where the cue is on the app's bar.
+ */
+export const Phone: React.FC<{ p?: V3; r?: V3; s?: number; f?: number; screen?: PhoneScreen; buzz?: number; k?: number }> = ({ p = [0, 0, 0], r, s = 1, f = 0, screen = "app", buzz = 0, k = 0 }) => {
+  const tex = useLiveTex(256, 512, (c) => {
+    c.fillStyle = screen === "go" ? "#FFB347" : screen === "off" ? "#06080C" : "#14222A";
+    c.fillRect(0, 0, 256, 512);
+    if (screen === "rec") {
+      c.strokeStyle = "#F3EFE6";
+      c.lineWidth = 6;
+      c.strokeRect(24, 120, 208, 272);
+      c.fillStyle = Math.floor(f / 15) % 2 ? "#5A1A18" : "#FF3B30";
+      c.beginPath();
+      c.arc(128, 448, 26, 0, 7);
+      c.fill();
+    } else if (screen === "upload") {
+      c.fillStyle = "#1A2C30";
+      c.fillRect(30, 240, 196, 26);
+      c.fillStyle = "#62D2DC";
+      c.fillRect(30, 240, 196 * k, 26);
+      c.beginPath();
+      c.moveTo(128, 120);
+      c.lineTo(84, 176);
+      c.lineTo(172, 176);
+      c.fill();
+      c.fillRect(114, 170, 28, 50);
+    } else if (screen === "app") {
+      c.fillStyle = "#2E4650";
+      c.fillRect(110, 60, 36, 392);
+      c.fillStyle = "#62D2DC";
+      c.fillRect(92, 420, 72, 8);
+      c.fillStyle = buzz > 0.5 ? "#FFB347" : "#F3EFE6";
+      c.fillRect(100, 72 + k * 348, 56, 16);
+    } else if (screen === "go") {
+      c.fillStyle = "#06080C";
+      c.fillRect(100, 236, 56, 40);
+    }
+  });
+  const j = buzz > 0 ? Math.sin(f * 2.9) * 0.0025 * buzz : 0;
+  const ring = (f % 10) / 10;
+  return (
+    <group position={p} rotation={r} scale={s}>
+      <group position={[j, 0, 0]}>
+        <Box w={0.075} h={0.155} d={0.009} c="#101216" p={[0, -0.0775, -0.0045]} o={{ metal: 0.4, rough: 0.3 }} />
+        <Panel map={tex} w={0.067} h={0.14} p={[0, 0, 0.0005]} glow={screen === "off" ? 0.05 : 1} />
+      </group>
+      {buzz > 0
+        ? [0, 0.5].map((o) => {
+            const q = (ring + o) % 1;
+            return <P key={o} g={torus(1, 0.012, 24)} c="#FFB347" s={[0.06 + q * 0.07, 0.1 + q * 0.07, 1]} o={{ e: "#FFB347", ei: 2 * buzz * (1 - q), op: buzz * (1 - q) }} shadow={false} />;
+          })
+        : null}
+    </group>
+  );
+};

@@ -1502,5 +1502,23 @@
     "seconds": 103,
     "file": "sfx/music/own/tipton-lottery.mp3",
     "lufs": -17
+  },
+  {
+    "category": "synth",
+    "title": "A phone on vibrate, one double buzz",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 0.9,
+    "file": "sfx/synth/phone-buzz.wav",
+    "lufs": -10
+  },
+  {
+    "category": "music/own",
+    "title": "NEON ODDS bed: slot-hack",
+    "author": "code",
+    "source": "scripts/make-music.py",
+    "seconds": 111,
+    "file": "sfx/music/own/slot-hack.mp3",
+    "lufs": -17.8
   }
 ]

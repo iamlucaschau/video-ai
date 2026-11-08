@@ -214,6 +214,15 @@ def phone_ring(sec=2.4):
     return fades(y / np.abs(y).max(), 0.01, 0.05)
 
 
+def phone_buzz(sec=0.9):
+    """a phone on vibrate, one short double buzz (motor hum with a rattle), then quiet"""
+    t = t_(sec)
+    motor = np.sign(np.sin(2 * np.pi * 165 * t)) * 0.5 + np.sin(2 * np.pi * 330 * t) * 0.3
+    gate = (((t > 0.02) & (t < 0.2)) | ((t > 0.28) & (t < 0.46))).astype(float)
+    y = motor * gate * (0.8 + 0.2 * np.sin(2 * np.pi * 31 * t))
+    return fades(y / np.abs(y).max(), 0.005, 0.02)
+
+
 def lufs(path):
     r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True)
     vals = re.findall(r"I:\s+(-?[\d.]+) LUFS", r.stderr)
@@ -251,6 +260,7 @@ if __name__ == "__main__":
         write("room-casino", room(180, 2400, 60, 0.12), "Room tone: carpeted gaming floor, far murmur"),
         write("coin-flip", coin_flip(), "A coin flicked off a thumb"),
         write("phone-ring", phone_ring(), "Office desk phone, two rings"),
+        write("phone-buzz", phone_buzz(), "A phone on vibrate, one double buzz"),
     ]
     assert all(i["seconds"] > 0 for i in items)
     for i in items:

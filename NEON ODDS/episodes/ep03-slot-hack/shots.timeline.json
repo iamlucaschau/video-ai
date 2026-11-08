@@ -1,0 +1,330 @@
+[
+ {
+  "id": "S1",
+  "from": 0,
+  "len": 130,
+  "key": 65,
+  "size": "cận",
+  "note": "tay cầm điện thoại sát màn hình slot, điện thoại rung, ngón tay bấm nút quay; khung 0"
+ },
+ {
+  "id": "S2",
+  "from": 130,
+  "len": 101,
+  "key": 191,
+  "size": "rộng",
+  "note": "sàn slot St. Louis, người đàn ông ngồi một máy; JUNE 2014"
+ },
+ {
+  "id": "S3",
+  "from": 231,
+  "len": 39,
+  "key": 254,
+  "size": "trung",
+  "note": "anh ta giơ điện thoại sát màn hình"
+ },
+ {
+  "id": "S4",
+  "from": 270,
+  "len": 75,
+  "key": 323,
+  "size": "cận",
+  "note": "ngón tay lơ lửng trên nút rất lâu, rồi bấm vội"
+ },
+ {
+  "id": "S5",
+  "from": 345,
+  "len": 67,
+  "key": 392,
+  "size": "trung",
+  "note": "máy loé, đồng hồ tiền đếm lên; $21,000"
+ },
+ {
+  "id": "S6",
+  "from": 412,
+  "len": 117,
+  "key": 482,
+  "size": "trung",
+  "note": "phòng kế toán: biểu đồ tiền ra cao hơn tiền vào"
+ },
+ {
+  "id": "S7",
+  "from": 529,
+  "len": 91,
+  "key": 584,
+  "size": "rộng",
+  "note": "CCTV: anh ta chỉ chơi, không ai mở máy; khoảng lặng"
+ },
+ {
+  "id": "S8",
+  "from": 620,
+  "len": 39,
+  "key": 643,
+  "size": "trung",
+  "note": "sân bay, bảng MOSCOW, anh ta đi với túi nâu"
+ },
+ {
+  "id": "S9",
+  "from": 659,
+  "len": 84,
+  "key": 718,
+  "size": "rộng",
+  "note": "casino tắt biển, máy tắt từng cái; 2009"
+ },
+ {
+  "id": "S10",
+  "from": 743,
+  "len": 91,
+  "key": 798,
+  "size": "rộng",
+  "note": "kho: hàng dãy máy slot thanh lý, công nhân đẩy đi"
+ },
+ {
+  "id": "S11",
+  "from": 834,
+  "len": 85,
+  "key": 885,
+  "size": "trung",
+  "note": "phòng ở St. Petersburg, một nhóm quanh máy slot; ST. PETERSBURG"
+ },
+ {
+  "id": "S12",
+  "from": 919,
+  "len": 23,
+  "key": 933,
+  "size": "cận",
+  "note": "tay đến gần nút quay rồi rút lại"
+ },
+ {
+  "id": "S13",
+  "from": 942,
+  "len": 44,
+  "key": 968,
+  "size": "trung",
+  "note": "máy mở nắp, màn hình mã, lập trình viên cúi xem"
+ },
+ {
+  "id": "S14",
+  "from": 986,
+  "len": 79,
+  "key": 1026,
+  "size": "trung",
+  "note": "màn hình máy: số ngẫu nhiên chạy"
+ },
+ {
+  "id": "S15",
+  "from": 1065,
+  "len": 51,
+  "key": 1101,
+  "size": "trung",
+  "note": "các số dừng lại thành một chuỗi lặp, sáng hổ phách"
+ },
+ {
+  "id": "S16",
+  "from": 1116,
+  "len": 68,
+  "key": 1157,
+  "size": "trung",
+  "note": "đồng hồ của máy nhịp theo từng bước số"
+ },
+ {
+  "id": "S17",
+  "from": 1184,
+  "len": 79,
+  "key": 1239,
+  "size": "trung",
+  "note": "băng số dài, con trỏ trượt rồi dừng đúng chỗ"
+ },
+ {
+  "id": "S18",
+  "from": 1263,
+  "len": 58,
+  "key": 1298,
+  "size": "trung",
+  "note": "anh ta quay video máy bằng điện thoại; ~24 SPINS"
+ },
+ {
+  "id": "S19",
+  "from": 1321,
+  "len": 60,
+  "key": 1357,
+  "size": "trung",
+  "note": "St. Petersburg nhận video trên màn hình"
+ },
+ {
+  "id": "S20",
+  "from": 1381,
+  "len": 47,
+  "key": 1414,
+  "size": "trung",
+  "note": "lập trình viên gõ, băng số khoá thành nhịp"
+ },
+ {
+  "id": "S21",
+  "from": 1428,
+  "len": 148,
+  "key": 1517,
+  "size": "cận",
+  "note": "điện thoại rung, thanh thời gian; 0.25 s; ngón tay bấm đúng lúc"
+ },
+ {
+  "id": "S22",
+  "from": 1576,
+  "len": 43,
+  "key": 1602,
+  "size": "trung",
+  "note": "mặt anh ta: mắt nhìn điện thoại, không nhìn máy"
+ },
+ {
+  "id": "S23",
+  "from": 1619,
+  "len": 48,
+  "key": 1648,
+  "size": "cận",
+  "note": "rung, bấm, máy sáng thắng; khoảng lặng"
+ },
+ {
+  "id": "S24",
+  "from": 1667,
+  "len": 123,
+  "key": 1741,
+  "size": "trung",
+  "note": "đồng hồ tiền dừng dưới 1.000, anh ta đứng dậy sang máy khác; < $1,000"
+ },
+ {
+  "id": "S25",
+  "from": 1790,
+  "len": 128,
+  "key": 1867,
+  "size": "trung",
+  "note": "chuyên gia an ninh nói; $10,000 / DAY"
+ },
+ {
+  "id": "S26",
+  "from": 1918,
+  "len": 24,
+  "key": 1932,
+  "size": "rộng",
+  "note": "bốn người ở bốn máy cạnh nhau"
+ },
+ {
+  "id": "S27",
+  "from": 1942,
+  "len": 51,
+  "key": 1978,
+  "size": "trung",
+  "note": "chồng tiền lớn dần; $250,000 / WEEK"
+ },
+ {
+  "id": "S28",
+  "from": 1993,
+  "len": 67,
+  "key": 2040,
+  "size": "trung",
+  "note": "9 phần tiền trượt đi, 1 phần ở lại; 90%"
+ },
+ {
+  "id": "S29",
+  "from": 2060,
+  "len": 70,
+  "key": 2102,
+  "size": "trung",
+  "note": "sân bay đến, anh ta quay lại; DEC 2014"
+ },
+ {
+  "id": "S30",
+  "from": 2130,
+  "len": 68,
+  "key": 2171,
+  "size": "rộng",
+  "note": "bốn người ở dãy máy, đặc vụ bước tới"
+ },
+ {
+  "id": "S31",
+  "from": 2198,
+  "len": 62,
+  "key": 2241,
+  "size": "trung",
+  "note": "song sắt trượt qua ba người; 2 YEARS"
+ },
+ {
+  "id": "S32",
+  "from": 2260,
+  "len": 128,
+  "key": 2337,
+  "size": "trung",
+  "note": "phòng tối nhiều màn hình, bóng người quay lưng; ALEX"
+ },
+ {
+  "id": "S33",
+  "from": 2388,
+  "len": 58,
+  "key": 2423,
+  "size": "rộng",
+  "note": "hai công nhân khiêng máy slot ra cửa"
+ },
+ {
+  "id": "S34",
+  "from": 2446,
+  "len": 32,
+  "key": 2468,
+  "size": "trung",
+  "note": "máy đặt lại chỗ cũ, đèn sáng lại; khoảng lặng"
+ },
+ {
+  "id": "S35",
+  "from": 2478,
+  "len": 102,
+  "key": 2549,
+  "size": "trung",
+  "note": "cân: THAY nặng hơn GIỮ"
+ },
+ {
+  "id": "S36",
+  "from": 2580,
+  "len": 77,
+  "key": 2626,
+  "size": "trung",
+  "note": "Alex quay lưng gõ thư bán cách vá"
+ },
+ {
+  "id": "S37",
+  "from": 2657,
+  "len": 52,
+  "key": 2693,
+  "size": "trung",
+  "note": "bảng số tám chữ số che kín; 8 FIGURES"
+ },
+ {
+  "id": "S38",
+  "from": 2709,
+  "len": 58,
+  "key": 2750,
+  "size": "cận",
+  "note": "dấu NO đóng xuống tờ thư; khoảng lặng"
+ },
+ {
+  "id": "S39",
+  "from": 2767,
+  "len": 123,
+  "key": 2841,
+  "size": "rộng",
+  "note": "dãy máy dài hút mắt; 100,000+"
+ },
+ {
+  "id": "S40",
+  "from": 2890,
+  "len": 131,
+  "key": 2969,
+  "size": "trung",
+  "note": "mặt người chờ, ngón tay trên nút"
+ },
+ {
+  "id": "S41",
+  "from": 3021,
+  "len": 63,
+  "key": 3059,
+  "size": "cận",
+  "note": "về cận tay và điện thoại trước màn hình, vòng lặp về khung 0"
+ }
+]

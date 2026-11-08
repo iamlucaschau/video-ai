@@ -4,7 +4,7 @@
  */
 import React from "react";
 import { Box, ctex, cyl, D, ico, type Look, N, P, Panel, Person, plate as plateGeo, PLANE, type Pose, rng, signTex, SIGN_FONT, useLiveTex, type V3 } from "./lowpoly";
-import { Chair, Chalkboard, Clock, Crate, Crt, Desk, DeskLamp, Frame, LedBoard, Pile, Printer, RngRack, CeilingCam, scatter, Ticket, Van } from "./props";
+import { Chair, Chalkboard, Clock, Crate, Crt, Desk, DeskLamp, Frame, LedBoard, Pile, Printer, RngRack, CeilingCam, scatter, SlotMachine, SlotStool, Ticket, Van } from "./props";
 import { cone, torus } from "./lowpoly";
 
 // ---------------- cast ----------------
@@ -27,6 +27,14 @@ export const CAST = {
   official: { skin: "#E6B693", hair: "#3A3028", hairStyle: "short", top: "#26303E", shirt: "#F3EFE6", tie: "#2E6E7A", pants: "#26303E" } as Look,
   /** his partner at the table */
   partner: { skin: "#E6BE9C", hair: "#15100F", hairStyle: "long", top: "#7A2434", pants: "#20202A" } as Look,
+  /** Murat Bliev at the slots: black hair, thirties, a dark zip-up (no photo face) */
+  bliev: { skin: "#E2B08C", hair: "#141012", hairStyle: "short", top: "#23303E", pants: "#2A2C34", eye: "#2A2420" } as Look,
+  /** "Alex" in St. Petersburg: only ever seen from behind */
+  alex: { skin: "#E6B693", hair: "#2A1A14", hairStyle: "short", top: "#34343E", pants: "#20202A", build: 1.04 } as Look,
+  /** a casino security consultant */
+  consultant: { skin: "#E6B693", hair: "#D8D2C8", hairStyle: "recede", glasses: true, top: "#4A4E58", shirt: "#F3EFE6", tie: "#2E6E7A", pants: "#4A4E58", build: 1.06 } as Look,
+  /** the maker's compliance head */
+  exec: { skin: "#F0C8A8", hair: "#C9A15A", hairStyle: "long", top: "#26303E", shirt: "#F3EFE6", pants: "#26303E" } as Look,
 };
 const SKINS = ["#F0C8A8", "#E2A882", "#C98E6A", "#9C6644", "#6E4630", "#F5D2B8"];
 const HAIRS = ["#2A1A14", "#5A3A22", "#C9A15A", "#1A1416", "#8A5A3A", "#D8D2C8"];
@@ -671,4 +679,38 @@ export const DrawRoom: React.FC<{ f: number; fixed?: number; glass?: boolean; do
     {children}
   </group>
 );
+// ---------------- 12 · slot floor ----------------
+/**
+ * A slot floor: rows of machines facing +z, row 0 at z = 0, the next rows every 2.4 m behind. `hero` leaves the slot at
+ * x = 0 of row 0 empty for the shot's own machine. `n` machines per row, `rows` rows; `dark` 0→1 powers the floor down
+ * machine by machine (from the far end). Stools stand in front of row 0.
+ */
+export const SlotFloor: React.FC<{ f: number; n?: number; rows?: number; hero?: boolean; dark?: number; sign?: string; stools?: boolean; children?: React.ReactNode }> = ({ f, n = 7, rows = 3, hero = true, dark = 0, sign = "CASINO", stools = true, children }) => {
+  const step = SLOT_STEP;
+  const all = n * rows;
+  const back = -2.4 * rows - 1.2;
+  return (
+    <group>
+      <Floor w={8 + n * step} d={4 - back + 6} c="#FFFFFF" map={carpet()} p={[0, 0, (back + 4) / 2]} />
+      <Box w={8 + n * step} h={4.6} d={0.2} c="#FFFFFF" p={[0, 0, back]} o={{ map: panelWall("#16343A", "#0C2024", "casino") }} />
+      <Neon p={[0, 4.2, back + 0.12]} w={6 + n * step} c="#62D2DC" />
+      <Box w={2.3} h={0.52} d={0.1} c="#0C0C12" p={[0, 3.1, back + 0.12]} />
+      <Panel map={signTex(sign, "#0B0B10", N.gold, 1024, 200, Math.min(130, 1440 / sign.length))} w={2.14} h={0.42} p={[0, 3.36, back + 0.18]} glow={1.2 * (1 - dark)} />
+      {Array.from({ length: rows }, (_, r) =>
+        Array.from({ length: n }, (_, i) => {
+          const x = (i - (n - 1) / 2) * step;
+          if (hero && r === 0 && Math.abs(x) < 0.01) return null;
+          const order = all - (r * n + i);
+          const lit = dark > 0 ? (dark * all < order ? 1 : 0) : 1;
+          return <SlotMachine key={`${r}-${i}`} p={[x, 0, -2.4 * r]} f={f + i * 7 + r * 3} land={[(i + r) % 6, (i * 2 + 1) % 6, (i + 3 * r + 2) % 6]} live={false} lit={lit} c={["#2C2236", "#22303A", "#3A2430"][(i + r) % 3]} name={["STAR RUN", "LUCKY RIVER", "GOLD TIDE"][(i + r) % 3]} />;
+        }),
+      )}
+      {stools ? Array.from({ length: n }, (_, i) => <SlotStool key={i} p={[(i - (n - 1) / 2) * step, 0, 0.72]} />) : null}
+      {[0, -2.4, -4.8].slice(0, rows).map((z) => <Pendant key={z} p={[0, 3.4, z + 0.9]} i={7 * (1 - dark * 0.7)} />)}
+      <pointLight position={[0, 2.6, 2.6]} intensity={6 * (1 - dark * 0.6)} distance={8} color="#FFD6A0" />
+      {children}
+    </group>
+  );
+};
+export const SLOT_STEP = 0.78;
 export { Ticket, Van, Pile, ico, D };

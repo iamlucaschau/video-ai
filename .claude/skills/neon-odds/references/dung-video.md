@@ -55,8 +55,10 @@ Luật chung của dự án: `AGENTS.md`, nhất là "Short-form rules" và "Sou
 
 ## Bộ kit
 
-`sets.tsx`: `Kiosk`, `Studio`, `Office`, `Warehouse`, `MapTable`, `Street`, `Interview`, `Chamber`, `Casino`, `BaccaratTable`, `CashCage`, `DrawRoom`, `Void`, `TicketTower`, `CoinTower`, `CAST`, `extra(seed)`.
-`props.tsx`: `Ticket`, `HeroTicket`, `Pile`, `Bundle`, `Crate`, `Ball`, `DrawMachine`, `Clock`, `Calculator`, `DeskLamp`, `Crt`, `Printer`, `Desk`, `Chair`, `Chalkboard`, `Frame`, `Bill`, `Van`, `GavelHeld`, `GavelBlock`, `Stamp`, `Book`, `Folder`, `Pin`, `LedBoard`, `PressHand`, `Card`, `CardShoe`, `ChipStack`, `ChipHill`, `ShuffleMachine`, `Balance`, `RngRack`, `CeilingCam`, `Coin`, `WallCalendar`.
+`sets.tsx`: `Kiosk`, `Studio`, `Office`, `Warehouse`, `MapTable`, `Street`, `Interview`, `Chamber`, `Casino`, `BaccaratTable`, `CashCage`, `DrawRoom`, `SlotFloor`, `Void`, `TicketTower`, `CoinTower`, `CAST`, `extra(seed)`.
+`props.tsx`: `Ticket`, `HeroTicket`, `Pile`, `Bundle`, `Crate`, `Ball`, `DrawMachine`, `Clock`, `Calculator`, `DeskLamp`, `Crt`, `Printer`, `Desk`, `Chair`, `Chalkboard`, `Frame`, `Bill`, `Van`, `GavelHeld`, `GavelBlock`, `Stamp`, `Book`, `Folder`, `Pin`, `LedBoard`, `PressHand`, `Card`, `CardShoe`, `ChipStack`, `ChipHill`, `ShuffleMachine`, `Balance`, `RngRack`, `CeilingCam`, `Coin`, `WallCalendar`, `SlotMachine`, `SlotStool`, `Phone`.
+
+Mặt người chơi slot: máy quay mặt về +z thì người ngồi quay lưng về máy quay. Muốn thấy mặt, xoay máy (`ry={180}`), cho người ngồi phía −z quay về +z, và đặt máy quay chếch bên cạnh máy slot chứ đừng nhìn xuyên qua nó (xem `FaceSet` trong ep03).
 `episode.tsx`: `Episode`, `epTools`, `cm`, `ramp`, `Rain`, `Crowd`, `ThumbText`.
 
 Đề tài cần bối cảnh mới thì **thêm vào kit** (`sets.tsx`, `props.tsx`) thay vì viết trong tập, để tập sau dùng lại. Set `Casino` đã có bàn baccarat, máy slot, biển, bảng LED và `CashCage`; mẫu dùng ở `NEON ODDS/episodes/ep01-ivey-edge/Video.tsx`. Chưa có bàn roulette: cần thì thêm vào đó.

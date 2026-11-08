@@ -267,6 +267,10 @@
   "onset": 0.01,
   "peak": 70.8
  },
+ "sfx/music/own/slot-hack.mp3": {
+  "onset": 0.01,
+  "peak": 60.14
+ },
  "sfx/music/own/tipton-lottery.mp3": {
   "onset": 0.02,
   "peak": 65.22
@@ -514,6 +518,10 @@
  "sfx/synth/paper-rush.wav": {
   "onset": 0.02,
   "peak": 0.61
+ },
+ "sfx/synth/phone-buzz.wav": {
+  "onset": 0.02,
+  "peak": 0.1
  },
  "sfx/synth/phone-ring.wav": {
   "onset": 0,
