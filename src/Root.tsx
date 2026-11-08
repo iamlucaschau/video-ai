@@ -68,6 +68,7 @@ import { NeonOddsBanner, NeonOddsLogo } from "../Style Library/N-low-poly/n-bran
 import { NMandel, nMandelDuration } from "../Style Library/N-low-poly/n-mandel/Video";
 import { NMandelThumb } from "../Style Library/N-low-poly/n-mandel/Thumb";
 import { duration as NOep01Duration, Thumb as NOep01Thumb, Video as NOep01 } from "../NEON ODDS/episodes/ep01-ivey-edge/Video";
+import { duration as NOep02Duration, Thumb as NOep02Thumb, Video as NOep02 } from "../NEON ODDS/episodes/ep02-tipton-lottery/Video";
 
 /**
  * Every renderable video is registered here. The `id` is what you pass to
@@ -129,6 +130,8 @@ export const RemotionRoot: React.FC = () => {
         <Composition id="Style-N-LowPoly-Mandel-Thumb" component={NMandelThumb} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
         <Composition id="NO-ep01-ivey-edge" component={NOep01} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={NOep01Duration()} />
         <Composition id="NO-ep01-ivey-edge-Thumb" component={NOep01Thumb} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
+        <Composition id="NO-ep02-tipton-lottery" component={NOep02} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={NOep02Duration()} />
+        <Composition id="NO-ep02-tipton-lottery-Thumb" component={NOep02Thumb} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
         <Composition id="Style-N-LowPoly-Sets" component={NSetsPreview} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={N_SETS_FRAMES} />
         <Composition id="Neon-Odds-Logo" component={NeonOddsLogo} width={1024} height={1024} fps={PVR.fps} durationInFrames={1} />
         <Composition id="Neon-Odds-Banner" component={NeonOddsBanner} width={2560} height={1440} fps={PVR.fps} durationInFrames={1} />

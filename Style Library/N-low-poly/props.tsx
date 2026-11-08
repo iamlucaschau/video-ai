@@ -670,3 +670,55 @@ export const Balance: React.FC<{ p?: V3; tilt: number; left: React.ReactNode; ri
     </group>
   );
 };
+
+// ---------------- draw room ----------------
+/** the number computer: a dark cabinet whose screen rolls numbers (illustration only); `fixed` 0→1 turns them amber and stops them */
+export const RngRack: React.FC<{ p?: V3; f?: number; fixed?: number; seed?: number; w?: number }> = ({ p = [0, 0, 0], f = 0, fixed = 0, seed = 1, w = 0.62 }) => {
+  const step = fixed >= 1 ? 0 : Math.floor(f / 5);
+  const tex = useLiveTex(512, 256, (c) => {
+    const R = rng(seed * 101 + step);
+    c.fillStyle = "#06120E";
+    c.fillRect(0, 0, 512, 256);
+    c.fillStyle = fixed > 0.5 ? "#FFB347" : "#5CFF8A";
+    c.font = "900 76px Consolas, monospace";
+    c.textAlign = "center";
+    c.textBaseline = "middle";
+    for (let i = 0; i < 6; i++) c.fillText(String(1 + Math.floor(R() * 47)).padStart(2, "0"), 86 + (i % 3) * 170, 72 + Math.floor(i / 3) * 112);
+  });
+  return (
+    <group position={p}>
+      <Box w={w} h={1.62} d={0.5} c="#14161C" o={{ metal: 0.4, rough: 0.45 }} />
+      <Panel map={tex} w={w * 0.84} h={w * 0.42} p={[0, 1.26, 0.255]} glow={1.1} />
+      {Array.from({ length: 6 }, (_, i) => <Box key={i} w={w * 0.8} h={0.014} d={0.01} c="#2A2E36" p={[0, 0.3 + i * 0.1, 0.252]} shadow={false} />)}
+      <P g={ico(0.016, 1)} c="#5CFF8A" p={[w * 0.36, 1.02, 0.256]} o={{ e: "#5CFF8A", ei: 2 }} shadow={false} />
+    </group>
+  );
+};
+/** a security camera on an arm, looking along +z (turn it with `ry`); the red light blinks with `f` */
+export const CeilingCam: React.FC<{ p?: V3; ry?: number; pitch?: number; f?: number; s?: number }> = ({ p = [0, 0, 0], ry = 0, pitch = 0.45, f = 0, s = 1 }) => (
+  <group position={p} rotation={[0, ry * D, 0]} scale={s}>
+    <P g={cyl(0.018, 0.018, 0.28, 6)} c="#2A2D34" />
+    <group rotation={[pitch, 0, 0]}>
+      <Box w={0.13} h={0.12} d={0.34} c="#8E9298" p={[0, -0.12, 0]} o={{ rough: 0.6 }} />
+      <P g={cyl(0.05, 0.05, 0.06, 12)} c="#14161C" p={[0, -0.06, 0.17]} r={[Math.PI / 2, 0, 0]} o={{ metal: 0.5, rough: 0.2 }} />
+      <P g={ico(0.012, 1)} c="#FF3B30" p={[0.045, -0.02, 0.172]} o={{ e: "#FF3B30", ei: Math.floor(f / 15) % 2 ? 0.4 : 3 }} shadow={false} />
+    </group>
+  </group>
+);
+/** a coin; `spin` in radians about its own axis */
+export const Coin: React.FC<{ p?: V3; spin?: number; s?: number }> = ({ p = [0, 0, 0], spin = 0, s = 1 }) => (
+  <group position={p} rotation={[spin, 0, 0]} scale={s}>
+    <P g={cyl(0.05, 0.05, 0.008, 16)} c={N.gold} p={[0, -0.004, 0]} o={{ metal: 0.6, rough: 0.3 }} />
+  </group>
+);
+/** a wall calendar with no dates, only squares; `lit` days glow amber */
+export const WallCalendar: React.FC<{ p?: V3; s?: number; lit?: number[] }> = ({ p = [0, 0, 0], s = 1, lit = [] }) => (
+  <group position={p} scale={s}>
+    <Box w={1.5} h={1.24} d={0.04} c="#E8E0CE" />
+    <Box w={1.5} h={0.2} d={0.05} c={N.red} p={[0, 1.04, 0]} />
+    {Array.from({ length: 28 }, (_, i) => {
+      const on = lit.includes(i);
+      return <Box key={i} w={0.17} h={0.17} d={0.01} c={on ? "#FFB347" : "#C8BFA8"} p={[-0.585 + (i % 7) * 0.195, 0.81 - Math.floor(i / 7) * 0.2, 0.024]} o={on ? { e: "#FFB347", ei: 1.6 } : undefined} shadow={false} />;
+    })}
+  </group>
+);

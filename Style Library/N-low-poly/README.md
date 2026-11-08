@@ -24,8 +24,8 @@
 | File | Có gì |
 |---|---|
 | `lowpoly.tsx` | `mat` / `P` / `Box` / hình học cache, `ctex` / `signTex` / `useLiveTex` / `Panel` (texture canvas, bảng sáng), `Person` + `Pose` + `walk` / `SIT` / `alive` / `talk`, `Lights` (`warm`, `studio`, `stage`, `night`, `day`, `cool`), `Shot3D`, `glide`, `Chip`, `Cctv`, `NSub` |
-| `props.tsx` | vé (`Ticket`, `Pile` instanced, `Bundle`, `Crate`), `Ball` + `DrawMachine`, `Clock`, `Calculator`, `DeskLamp`, `Crt`, `Printer`, `Desk`, `Chair`, `Card`, `CardShoe`, `ChipStack`, `ChipHill`, `ShuffleMachine`, `Balance`, `Chalkboard`, `Frame`, `Bill`, `Van`, `GavelHeld` + `GavelBlock` + `strike` / `strikeArm`, `Stamp`, `Book`, `Folder`, `Pin`, `scatter` / `inPoly` |
-| `sets.tsx` | `CAST` (Mandel, người bán vé, đặc vụ, người đưa vé, nghị sĩ) + `extra(seed)`, bối cảnh `Kiosk`, `Studio`, `Office`, `Warehouse`, `MapTable`, `Casino`, `BaccaratTable`, `CashCage` / `MiniMap` (Virginia, Úc), `Street`, `Interview`, `Chamber`, `Void` + `TicketTower` / `CoinTower` |
+| `props.tsx` | vé (`Ticket`, `Pile` instanced, `Bundle`, `Crate`), `Ball` + `DrawMachine`, `Clock`, `Calculator`, `DeskLamp`, `Crt`, `Printer`, `Desk`, `Chair`, `Card`, `CardShoe`, `ChipStack`, `ChipHill`, `ShuffleMachine`, `Balance`, `Chalkboard`, `Frame`, `Bill`, `Van`, `GavelHeld` + `GavelBlock` + `strike` / `strikeArm`, `Stamp`, `Book`, `Folder`, `Pin`, `RngRack`, `CeilingCam`, `Coin`, `WallCalendar`, `scatter` / `inPoly` |
+| `sets.tsx` | `CAST` (Mandel, người bán vé, đặc vụ, người đưa vé, nghị sĩ, Tipton, quan chức) + `extra(seed)`, bối cảnh `Kiosk`, `Studio`, `Office`, `Warehouse`, `MapTable`, `Casino`, `BaccaratTable`, `DrawRoom`, `CashCage` / `MiniMap` (Virginia, Úc), `Street`, `Interview`, `Chamber`, `Void` + `TicketTower` / `CoinTower` |
 | `n-kit/Preview.tsx` | composition `Style-N-LowPoly-Sets`: mỗi bối cảnh 10 frame |
 | `episode.tsx` | khung dùng chung cho mỗi tập NEON ODDS (`Episode`, `epTools`, `Rain`, `Crowd`, `ThumbText`); quy trình trọn tập ở skill `/neon-odds` (`.claude/skills/neon-odds/`) |
 | `n-brand/Brand.tsx` | logo và ảnh bìa kênh NEON ODDS: compositions `Neon-Odds-Logo`, `Neon-Odds-Banner` |

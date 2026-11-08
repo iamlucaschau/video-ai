@@ -1,0 +1,264 @@
+{
+  "durationInSeconds": 95.18908333333333,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 4.061,
+      "text": "You wrote the program that picks the lottery numbers, so what stops you from winning?"
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "start": 4.360916666666666,
+      "end": 6.0849166666666665,
+      "text": "Eddie Tipton's employer had an answer."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 6.205125,
+      "end": 10.656125,
+      "text": "The draw computers sat in a locked glass room, on camera, never on the internet."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 10.776333333333334,
+      "end": 13.570333333333334,
+      "text": "There were two of them, and officials flipped a coin to choose one."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 13.690708333333333,
+      "end": 16.323708333333332,
+      "text": "And staff like Tipton could not even collect a prize."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "start": 16.623833333333334,
+      "end": 18.664833333333334,
+      "text": "Tipton was the security expert."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "start": 18.784458333333333,
+      "end": 23.127458333333333,
+      "text": "He had warned a national conference about programs that secretly change how a computer works."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "start": 23.247374999999998,
+      "end": 26.411375,
+      "text": "In November twenty ten, he went into that room to change the clocks."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "start": 26.531125,
+      "end": 28.245124999999998,
+      "text": "That day, the camera was malfunctioning."
+    },
+    {
+      "id": "10",
+      "scene": "s3",
+      "start": 28.364625,
+      "end": 30.854625,
+      "text": "It recorded one second out of every minute."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "start": 31.454916666666666,
+      "end": 33.371916666666664,
+      "text": "Nobody in the room saw anything unusual."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "start": 33.492416666666664,
+      "end": 34.992416666666664,
+      "text": "They relied on his expertise."
+    },
+    {
+      "id": "13",
+      "scene": "s4",
+      "start": 35.291916666666665,
+      "end": 38.83891666666666,
+      "text": "Thirty-three days later, someone bought a ticket at a Des Moines convenience store."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "start": 38.95875,
+      "end": 41.021750000000004,
+      "text": "Six days after that, it hit the jackpot."
+    },
+    {
+      "id": "15",
+      "scene": "s4",
+      "start": 41.14183333333334,
+      "end": 42.97083333333334,
+      "text": "Sixteen and a half million dollars."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "start": 43.09041666666667,
+      "end": 43.82141666666667,
+      "text": "And nobody came."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "start": 44.621583333333334,
+      "end": 46.83358333333334,
+      "text": "Then, almost a year later, a man in Quebec called."
+    },
+    {
+      "id": "18",
+      "scene": "s4",
+      "start": 46.953875000000004,
+      "end": 48.704875,
+      "text": "He knew the ticket's fifteen-digit number."
+    },
+    {
+      "id": "19",
+      "scene": "s4",
+      "start": 48.825208333333336,
+      "end": 50.770208333333336,
+      "text": "But his story did not match the store's video."
+    },
+    {
+      "id": "20",
+      "scene": "s4",
+      "start": 50.89033333333334,
+      "end": 52.77133333333334,
+      "text": "Next came a blind trust in Belize."
+    },
+    {
+      "id": "21",
+      "scene": "s4",
+      "start": 52.89095833333334,
+      "end": 55.909958333333336,
+      "text": "Then, about an hour before the deadline, a lawyer walked in with the ticket."
+    },
+    {
+      "id": "22",
+      "scene": "s4",
+      "start": 56.03033333333334,
+      "end": 56.73633333333334,
+      "text": "Still no name."
+    },
+    {
+      "id": "23",
+      "scene": "s4",
+      "start": 56.85629166666667,
+      "end": 58.04329166666667,
+      "text": "The lottery refused to pay."
+    },
+    {
+      "id": "24",
+      "scene": "s5",
+      "start": 58.543625000000006,
+      "end": 60.53662500000001,
+      "text": "For almost three years, nobody had a name."
+    },
+    {
+      "id": "25",
+      "scene": "s5",
+      "start": 60.65654166666667,
+      "end": 62.52254166666667,
+      "text": "So investigators released the store's video."
+    },
+    {
+      "id": "26",
+      "scene": "s5",
+      "start": 62.642541666666666,
+      "end": 65.45454166666667,
+      "text": "Six days later, a lottery employee in Maine sent a tip."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "start": 65.574625,
+      "end": 68.676625,
+      "text": "The man buying that ticket, the tip said, was Eddie Tipton."
+    },
+    {
+      "id": "28",
+      "scene": "s6",
+      "start": 69.47670833333333,
+      "end": 70.70570833333333,
+      "text": "He said he had been in Houston."
+    },
+    {
+      "id": "29",
+      "scene": "s6",
+      "start": 70.82545833333333,
+      "end": 74.30145833333333,
+      "text": "Then in twenty seventeen, he told a court about his code."
+    },
+    {
+      "id": "30",
+      "scene": "s6",
+      "start": 74.42158333333333,
+      "end": 76.96758333333334,
+      "text": "On certain days, it made the numbers predictable."
+    },
+    {
+      "id": "31",
+      "scene": "s6",
+      "start": 77.08770833333332,
+      "end": 78.12970833333333,
+      "text": "It went back years."
+    },
+    {
+      "id": "32",
+      "scene": "s6",
+      "start": 78.24983333333333,
+      "end": 83.29983333333332,
+      "text": "His brother and a friend played those numbers in other states, for two point two million dollars."
+    },
+    {
+      "id": "33",
+      "scene": "s6",
+      "start": 83.41937499999999,
+      "end": 85.462375,
+      "text": "His sentence was up to twenty-five years."
+    },
+    {
+      "id": "34",
+      "scene": "s7",
+      "start": 85.76208333333332,
+      "end": 88.29908333333333,
+      "text": "The sixteen and a half million was never paid."
+    },
+    {
+      "id": "35",
+      "scene": "s7",
+      "start": 88.41929166666665,
+      "end": 89.87029166666665,
+      "text": "His code beat a locked room."
+    },
+    {
+      "id": "36",
+      "scene": "s7",
+      "start": 90.07054166666666,
+      "end": 91.39954166666665,
+      "text": "A store camera beat him."
+    },
+    {
+      "id": "37",
+      "scene": "s7",
+      "start": 91.99995833333332,
+      "end": 94.88895833333332,
+      "text": "So who checks the man who writes the numbers?"
+    }
+  ]
+}

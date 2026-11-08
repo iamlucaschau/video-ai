@@ -267,6 +267,10 @@
   "onset": 0.01,
   "peak": 70.8
  },
+ "sfx/music/own/tipton-lottery.mp3": {
+  "onset": 0.02,
+  "peak": 65.22
+ },
  "sfx/music/p1-historical-documentary-music-349042.mp3": {
   "onset": 0.03,
   "peak": 75.69
@@ -459,6 +463,10 @@
   "onset": 0,
   "peak": 0
  },
+ "sfx/synth/coin-flip.wav": {
+  "onset": 0,
+  "peak": 0
+ },
  "sfx/synth/dot-matrix.wav": {
   "onset": 0,
   "peak": 1.01
@@ -506,6 +514,10 @@
  "sfx/synth/paper-rush.wav": {
   "onset": 0.02,
   "peak": 0.61
+ },
+ "sfx/synth/phone-ring.wav": {
+  "onset": 0,
+  "peak": 0.02
  },
  "sfx/synth/radar-ping.wav": {
   "onset": 0,

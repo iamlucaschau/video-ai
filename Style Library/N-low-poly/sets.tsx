@@ -4,7 +4,7 @@
  */
 import React from "react";
 import { Box, ctex, cyl, D, ico, type Look, N, P, Panel, Person, plate as plateGeo, PLANE, type Pose, rng, signTex, SIGN_FONT, useLiveTex, type V3 } from "./lowpoly";
-import { Chair, Chalkboard, Clock, Crate, Crt, Desk, DeskLamp, Frame, LedBoard, Pile, Printer, scatter, Ticket, Van } from "./props";
+import { Chair, Chalkboard, Clock, Crate, Crt, Desk, DeskLamp, Frame, LedBoard, Pile, Printer, RngRack, CeilingCam, scatter, Ticket, Van } from "./props";
 import { cone, torus } from "./lowpoly";
 
 // ---------------- cast ----------------
@@ -21,6 +21,10 @@ export const CAST = {
   pitboss: { skin: "#E2A882", hair: "#5A4632", hairStyle: "short", top: "#2A2E3A", shirt: "#F3EFE6", tie: "#8A2A34", pants: "#2A2E3A", build: 1.08 } as Look,
   /** Phil Ivey: close-cropped hair, dark jacket (no photo face) */
   ivey: { skin: "#6E4630", hair: "#141012", hairStyle: "short", top: "#20242C", shirt: "#3A4048", pants: "#191A20", eye: "#2A1A14", lip: "#6E3A34", build: 1.04 } as Look,
+  /** Eddie Tipton: thinning grey-brown hair, plain work shirt (no photo face) */
+  tipton: { skin: "#E2B08C", hair: "#6E6052", hairStyle: "recede", top: "#3F4E5C", pants: "#2A2C34", eye: "#3A3A34", build: 1.08 } as Look,
+  /** a lottery official */
+  official: { skin: "#E6B693", hair: "#3A3028", hairStyle: "short", top: "#26303E", shirt: "#F3EFE6", tie: "#2E6E7A", pants: "#26303E" } as Look,
   /** his partner at the table */
   partner: { skin: "#E6BE9C", hair: "#15100F", hairStyle: "long", top: "#7A2434", pants: "#20202A" } as Look,
 };
@@ -636,4 +640,35 @@ export const CashCage: React.FC<{ sign?: string; shutter?: number; lit?: number;
     </group>
   );
 };
+// ---------------- 11 · draw room ----------------
+/** the room where the numbers are drawn: two number computers at the back, a console, a glass wall at z = GLASS_Z with a door; shoot through the glass from +z */
+export const GLASS_Z = 1.35;
+export const DrawRoom: React.FC<{ f: number; fixed?: number; glass?: boolean; door?: number; children?: React.ReactNode }> = ({ f, fixed = 0, glass = true, door = 0, children }) => (
+  <group>
+    <Floor w={14} d={14} c="#FFFFFF" map={tiles("#1A2C30", "#142226", 12)} p={[0, 0, 2]} />
+    <Box w={6} h={3.2} d={0.2} c="#FFFFFF" p={[0, 0, -1.7]} o={{ map: panelWall("#1A3238", "#0F2024", "drawroom") }} />
+    {[-1, 1].map((x) => <Box key={x} w={0.2} h={3.2} d={3.2} c="#FFFFFF" p={[x * 1.9, 0, -0.2]} o={{ map: panelWall("#16282E", "#0F2024", "drawroomS") }} />)}
+    <Neon p={[0, 3.0, -1.58]} w={3.6} c="#62D2DC" />
+    <RngRack p={[-0.42, 0, -1.3]} w={0.5} f={f} fixed={fixed} seed={3} />
+    <RngRack p={[0.42, 0, -1.3]} w={0.5} f={f + 2} seed={7} />
+    <Desk p={[0, 0, -0.3]} w={1.3} d={0.6} c="#3A3E46" />
+    <Chair p={[0, 0, -0.92]} ry={0} />
+    <Box w={0.36} h={0.018} d={0.14} c="#1A1C22" p={[0, 0.77, -0.16]} shadow={false} />
+    <Pendant p={[-0.5, 3.7, -0.3]} c="#E8F2FF" i={6} />
+    <Pendant p={[0.5, 3.7, -0.3]} c="#E8F2FF" i={6} />
+    <CeilingCam p={[-1.2, 2.72, 0.9]} ry={150} f={f} s={1.1} />
+    {glass ? (
+      <group>
+        {[-1.9, -1.25, 1.42, 1.9].map((x) => <Box key={x} w={0.05} h={3.1} d={0.05} c="#3A4048" p={[x, 0, GLASS_Z]} o={{ metal: 0.5, rough: 0.4 }} />)}
+        <Box w={3.8} h={0.05} d={0.05} c="#3A4048" p={[0, 3.08, GLASS_Z]} shadow={false} />
+        <Box w={3.8} h={0.05} d={0.05} c="#3A4048" p={[0, 2.3, GLASS_Z]} shadow={false} />
+        <Box w={1.75} h={3.1} d={0.012} c="#BFE6EC" p={[-0.38, 0, GLASS_Z]} o={{ op: 0.08, rough: 0.1 }} shadow={false} />
+        <group position={[1.42, 0, GLASS_Z]} rotation={[0, door * 1.2, 0]}>
+          <Box w={0.92} h={2.3} d={0.012} c="#BFE6EC" p={[-0.46, 0, 0]} o={{ op: 0.1, rough: 0.1 }} shadow={false} />
+        </group>
+      </group>
+    ) : null}
+    {children}
+  </group>
+);
 export { Ticket, Van, Pile, ico, D };

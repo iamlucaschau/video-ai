@@ -1,0 +1,276 @@
+{
+  "name": "tipton-lottery",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "American male documentary narrator telling a true story to a friend. Calm, confident, a little amused, brisk pace around 200 words per minute, clear on every word. Numbers are crisp and land. The last line is quiet, direct and dry. No hype, no shouting. 'And nobody came.' is short and flat.",
+  "trimSilence": true,
+  "tempo": 1.02,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.2,
+    "scene": 0.3
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.3,
+      "text": "You wrote the program that picks the lottery numbers, so what stops you from winning?"
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "Eddie Tipton's employer had an answer."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "The draw computers sat in a locked glass room, on camera, never on the internet."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "There were two of them, and officials flipped a coin to choose one."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.3,
+      "text": "And staff like Tipton could not even collect a prize."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "Tipton was the security expert."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "He had warned a national conference about programs that secretly change how a computer works."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "In November twenty ten, he went into that room to change the clocks."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "That day, the camera was malfunctioning."
+    },
+    {
+      "id": "10",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.6,
+      "text": "It recorded one second out of every minute."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "Nobody in the room saw anything unusual."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.3,
+      "text": "They relied on his expertise."
+    },
+    {
+      "id": "13",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Thirty-three days later, someone bought a ticket at a Des Moines convenience store."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Six days after that, it hit the jackpot."
+    },
+    {
+      "id": "15",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Sixteen and a half million dollars."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.8,
+      "text": "And nobody came."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Then, almost a year later, a man in Quebec called."
+    },
+    {
+      "id": "18",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "He knew the ticket's fifteen-digit number."
+    },
+    {
+      "id": "19",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "But his story did not match the store's video."
+    },
+    {
+      "id": "20",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Next came a blind trust in Belize."
+    },
+    {
+      "id": "21",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Then, about an hour before the deadline, a lawyer walked in with the ticket."
+    },
+    {
+      "id": "22",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Still no name."
+    },
+    {
+      "id": "23",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.5,
+      "text": "The lottery refused to pay."
+    },
+    {
+      "id": "24",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "For almost three years, nobody had a name."
+    },
+    {
+      "id": "25",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "So investigators released the store's video."
+    },
+    {
+      "id": "26",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "Six days later, a lottery employee in Maine sent a tip."
+    },
+    {
+      "id": "27",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.8,
+      "text": "The man buying that ticket, the tip said, was Eddie Tipton."
+    },
+    {
+      "id": "28",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "He said he had been in Houston."
+    },
+    {
+      "id": "29",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "Then in twenty seventeen, he told a court about his code."
+    },
+    {
+      "id": "30",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "On certain days, it made the numbers predictable."
+    },
+    {
+      "id": "31",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "It went back years."
+    },
+    {
+      "id": "32",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "His brother and a friend played those numbers in other states, for two point two million dollars."
+    },
+    {
+      "id": "33",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.3,
+      "text": "His sentence was up to twenty-five years."
+    },
+    {
+      "id": "34",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "The sixteen and a half million was never paid."
+    },
+    {
+      "id": "35",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.2,
+      "text": "His code beat a locked room."
+    },
+    {
+      "id": "36",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.6,
+      "text": "A store camera beat him."
+    },
+    {
+      "id": "37",
+      "scene": "s7",
+      "take": "t99",
+      "gapAfter": 0.3,
+      "text": "So who checks the man who writes the numbers?",
+      "style": "American male documentary narrator, quiet, slow and dry. A plain question to a friend, about two seconds long, no hype."
+    }
+  ]
+}

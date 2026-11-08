@@ -1,0 +1,298 @@
+[
+ {
+  "id": "S1",
+  "from": 0,
+  "len": 129,
+  "key": 65,
+  "size": "trung",
+  "note": "qua kính: Tipton ngồi gõ, số chạy trên hai máy, ngẩng lên nhìn thẳng; khung 0"
+ },
+ {
+  "id": "S2",
+  "from": 129,
+  "len": 55,
+  "key": 162,
+  "size": "rộng",
+  "note": "phòng kính nhìn rộng, tên EDDIE TIPTON"
+ },
+ {
+  "id": "S3",
+  "from": 184,
+  "len": 83,
+  "key": 242,
+  "size": "cận",
+  "note": "cửa kính đóng, khoá"
+ },
+ {
+  "id": "S4",
+  "from": 267,
+  "len": 17,
+  "key": 276,
+  "size": "cận",
+  "note": "camera trần, đèn đỏ"
+ },
+ {
+  "id": "S5",
+  "from": 284,
+  "len": 37,
+  "key": 310,
+  "size": "cận",
+  "note": "dây mạng rút khỏi máy"
+ },
+ {
+  "id": "S6",
+  "from": 321,
+  "len": 88,
+  "key": 378,
+  "size": "trung",
+  "note": "quan chức tung đồng xu giữa hai máy"
+ },
+ {
+  "id": "S7",
+  "from": 409,
+  "len": 88,
+  "key": 466,
+  "size": "trung",
+  "note": "Tipton cầm vé, nhún vai, chữ STAFF: NO PRIZE"
+ },
+ {
+  "id": "S8",
+  "from": 497,
+  "len": 65,
+  "key": 536,
+  "size": "trung",
+  "note": "Tipton ở bàn, chữ SECURITY EXPERT"
+ },
+ {
+  "id": "S9",
+  "from": 562,
+  "len": 133,
+  "key": 642,
+  "size": "rộng",
+  "note": "hội nghị, Tipton trên sân khấu, khán giả quay lưng"
+ },
+ {
+  "id": "S10",
+  "from": 695,
+  "len": 99,
+  "key": 764,
+  "size": "trung",
+  "note": "Tipton vào phòng, chỉnh đồng hồ, chữ NOV 2010"
+ },
+ {
+  "id": "S11",
+  "from": 794,
+  "len": 55,
+  "key": 827,
+  "size": "cận",
+  "note": "camera trần, đèn đỏ chập chờn"
+ },
+ {
+  "id": "S12",
+  "from": 849,
+  "len": 93,
+  "key": 914,
+  "size": "rộng",
+  "note": "hình CCTV giật từng bước, 1 SEC / MIN"
+ },
+ {
+  "id": "S13",
+  "from": 942,
+  "len": 115,
+  "key": 1011,
+  "size": "trung",
+  "note": "hai đồng nghiệp đứng nhìn, gật, Tipton làm phía sau"
+ },
+ {
+  "id": "S14",
+  "from": 1057,
+  "len": 110,
+  "key": 1123,
+  "size": "trung",
+  "note": "cửa hàng đêm, người mua quay lưng, 33 DAYS"
+ },
+ {
+  "id": "S15",
+  "from": 1167,
+  "len": 65,
+  "key": 1213,
+  "size": "trung",
+  "note": "số trên máy dừng lại, sáng hổ phách"
+ },
+ {
+  "id": "S16",
+  "from": 1232,
+  "len": 59,
+  "key": 1273,
+  "size": "rộng",
+  "note": "bảng jackpot $16,500,000"
+ },
+ {
+  "id": "S17",
+  "from": 1291,
+  "len": 46,
+  "key": 1323,
+  "size": "trung",
+  "note": "bàn lĩnh giải trống, đồng hồ quay nhanh; khoảng lặng"
+ },
+ {
+  "id": "S18",
+  "from": 1337,
+  "len": 70,
+  "key": 1379,
+  "size": "trung",
+  "note": "quan chức nghe điện thoại, QUEBEC"
+ },
+ {
+  "id": "S19",
+  "from": 1407,
+  "len": 56,
+  "key": 1441,
+  "size": "cận",
+  "note": "mặt sau vé, 15 ô che, 15 DIGITS"
+ },
+ {
+  "id": "S20",
+  "from": 1463,
+  "len": 62,
+  "key": 1500,
+  "size": "trung",
+  "note": "quan chức xem video, lắc đầu"
+ },
+ {
+  "id": "S21",
+  "from": 1525,
+  "len": 60,
+  "key": 1561,
+  "size": "cận",
+  "note": "hồ sơ mở, nhãn BLIND TRUST, BELIZE"
+ },
+ {
+  "id": "S22",
+  "from": 1585,
+  "len": 94,
+  "key": 1651,
+  "size": "trung",
+  "note": "luật sư đặt vé lên bàn, đồng hồ sát giờ, 1 HOUR"
+ },
+ {
+  "id": "S23",
+  "from": 1679,
+  "len": 75,
+  "key": 1739,
+  "size": "cận",
+  "note": "dấu REFUSED đóng lên hồ sơ"
+ },
+ {
+  "id": "S24",
+  "from": 1754,
+  "len": 64,
+  "key": 1792,
+  "size": "trung",
+  "note": "điều tra viên đêm, bảng dấu hỏi"
+ },
+ {
+  "id": "S25",
+  "from": 1818,
+  "len": 59,
+  "key": 1853,
+  "size": "rộng",
+  "note": "nhiều màn hình phát video cửa hàng"
+ },
+ {
+  "id": "S26",
+  "from": 1877,
+  "len": 88,
+  "key": 1939,
+  "size": "trung",
+  "note": "nhân viên ở Maine dừng lại, chỉ vào màn hình, 6 DAYS"
+ },
+ {
+  "id": "S27",
+  "from": 1965,
+  "len": 117,
+  "key": 2059,
+  "size": "trung",
+  "note": "CCTV cửa hàng: người mua quay lại, là Tipton, tên hiện ra; khoảnh khắc đắt giá"
+ },
+ {
+  "id": "S28",
+  "from": 2082,
+  "len": 41,
+  "key": 2107,
+  "size": "trung",
+  "note": "phòng thẩm vấn, Tipton nói, HOUSTON"
+ },
+ {
+  "id": "S29",
+  "from": 2123,
+  "len": 108,
+  "key": 2188,
+  "size": "trung",
+  "note": "Tipton trước toà, 2017"
+ },
+ {
+  "id": "S30",
+  "from": 2231,
+  "len": 80,
+  "key": 2287,
+  "size": "trung",
+  "note": "lịch, vài ngày sáng, số trên máy theo"
+ },
+ {
+  "id": "S31",
+  "from": 2311,
+  "len": 34,
+  "key": 2338,
+  "size": "rộng",
+  "note": "bảng năm lùi về 2005"
+ },
+ {
+  "id": "S32",
+  "from": 2345,
+  "len": 156,
+  "key": 2470,
+  "size": "trung",
+  "note": "em trai và bạn ở cửa hàng, tiền chồng lên, $2.2M"
+ },
+ {
+  "id": "S33",
+  "from": 2501,
+  "len": 70,
+  "key": 2550,
+  "size": "trung",
+  "note": "song sắt khép lại trước Tipton, UP TO 25 YEARS"
+ },
+ {
+  "id": "S34",
+  "from": 2571,
+  "len": 80,
+  "key": 2627,
+  "size": "cận",
+  "note": "tấm vé trong túi niêm phong, $16.5M gạch ngang"
+ },
+ {
+  "id": "S35",
+  "from": 2651,
+  "len": 49,
+  "key": 2680,
+  "size": "trung",
+  "note": "máy trong phòng khoá, số sáng hổ phách"
+ },
+ {
+  "id": "S36",
+  "from": 2700,
+  "len": 58,
+  "key": 2735,
+  "size": "trung",
+  "note": "camera cửa hàng cận, người mua nhỏ phía dưới"
+ },
+ {
+  "id": "S37",
+  "from": 2758,
+  "len": 107,
+  "key": 2812,
+  "size": "trung",
+  "note": "về khung 0, Tipton nhìn thẳng"
+ }
+]

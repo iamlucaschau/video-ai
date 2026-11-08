@@ -197,6 +197,23 @@ def card_shuffle(sec=3.0):
     return fades(y / np.abs(y).max(), 0.05, 0.12)
 
 
+def coin_flip(sec=0.9):
+    """a thumb flicks a coin: one bright ring that decays"""
+    t = t_(sec)
+    ring = sum(a * np.sin(2 * np.pi * f * t) for f, a in ((4200, 1.0), (6300, 0.6), (9100, 0.3)))
+    y = ring * np.exp(-t * 14) * (0.6 + 0.4 * np.sin(2 * np.pi * 34 * t))
+    return fades(y / np.abs(y).max(), 0.001, 0.05)
+
+
+def phone_ring(sec=2.4):
+    """an office desk phone, two rings"""
+    t = t_(sec)
+    tone = np.sin(2 * np.pi * 440 * t) + np.sin(2 * np.pi * 480 * t)
+    gate = ((t < 0.9) | ((t > 1.3) & (t < 2.2))).astype(float) * (0.7 + 0.3 * np.sin(2 * np.pi * 20 * t))
+    y = tone * gate
+    return fades(y / np.abs(y).max(), 0.01, 0.05)
+
+
 def lufs(path):
     r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True)
     vals = re.findall(r"I:\s+(-?[\d.]+) LUFS", r.stderr)
@@ -232,6 +249,8 @@ if __name__ == "__main__":
         write("chip-stack", chip_stack(), "Clay casino chips set down on a stack"),
         write("card-shuffle", card_shuffle(), "Automatic card shuffler running"),
         write("room-casino", room(180, 2400, 60, 0.12), "Room tone: carpeted gaming floor, far murmur"),
+        write("coin-flip", coin_flip(), "A coin flicked off a thumb"),
+        write("phone-ring", phone_ring(), "Office desk phone, two rings"),
     ]
     assert all(i["seconds"] > 0 for i in items)
     for i in items:

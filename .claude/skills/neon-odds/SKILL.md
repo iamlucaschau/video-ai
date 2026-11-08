@@ -67,7 +67,7 @@ npm run render:style -- NO-epNN-<slug> --to "NEON ODDS/episodes/epNN-<slug>/<slu
 python -P scripts/short-qa.py "NEON ODDS/episodes/epNN-<slug>/<slug>.mp4" --shots "NEON ODDS/episodes/epNN-<slug>/shots.timeline.json" --out "NEON ODDS/episodes/epNN-<slug>/QA.md"
 ```
 
-Chạy ở nền, khoảng 5 phút (tập Ivey 105 giây: 4 phút 37 giây). Phải ghi `--scale=1`, vì `render:style` mặc định là 4K. Ghi log ra file thay vì `tail`, để nếu lỗi thì còn thấy lý do. Máy này có card GTX 1050 Ti 4 GB: gặp lỗi "ran out of memory" hoặc không tạo được WebGL thì giảm `--concurrency`, và không chạy render khác cùng lúc. Nếu cần 4K thì bỏ `--scale=1` và dùng `--concurrency=1` (khoảng 40 phút cho 90 giây). Kiểm: 1080×1920, 30 fps, −14 LUFS ±1, true peak ≤ −1,5 dBTP.
+Chạy ở nền, khoảng 5–10 phút (đo trên hai tập: 4 phút 37 giây và 9 phút 26 giây, tuỳ máy đang bận gì). Phải ghi `--scale=1`, vì `render:style` mặc định là 4K. Ghi log ra file thay vì `tail`, để nếu lỗi thì còn thấy lý do. Máy này có card GTX 1050 Ti 4 GB: gặp lỗi "ran out of memory" hoặc không tạo được WebGL thì giảm `--concurrency`, và không chạy render khác cùng lúc. Nếu cần 4K thì bỏ `--scale=1` và dùng `--concurrency=1` (khoảng 40 phút cho 90 giây). Kiểm: 1080×1920, 30 fps, −14 LUFS ±1, true peak ≤ −1,5 dBTP.
 
 ### 5. Gói sản xuất và thumbnail
 

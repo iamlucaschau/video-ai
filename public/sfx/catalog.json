@@ -1475,5 +1475,32 @@
     "seconds": 12.0,
     "file": "sfx/synth/room-casino.wav",
     "lufs": -14.4
+  },
+  {
+    "category": "synth",
+    "title": "A coin flicked off a thumb",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 0.9,
+    "file": "sfx/synth/coin-flip.wav",
+    "lufs": -19.4
+  },
+  {
+    "category": "synth",
+    "title": "Office desk phone, two rings",
+    "author": "code",
+    "source": "scripts/make-sfx-lotto.py",
+    "seconds": 2.4,
+    "file": "sfx/synth/phone-ring.wav",
+    "lufs": -9.1
+  },
+  {
+    "category": "music/own",
+    "title": "NEON ODDS bed: tipton-lottery",
+    "author": "code",
+    "source": "scripts/make-music.py",
+    "seconds": 103,
+    "file": "sfx/music/own/tipton-lottery.mp3",
+    "lufs": -17
   }
 ]
