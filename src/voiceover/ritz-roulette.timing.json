@@ -1,0 +1,264 @@
+{
+  "durationInSeconds": 99.46125,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 4.412,
+      "text": "Would you pay one point three million pounds to a man you were sure had cheated you?"
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "start": 4.712083333333333,
+      "end": 7.507083333333333,
+      "text": "March twenty oh four, the Ritz casino in London."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 7.6267499999999995,
+      "end": 10.67375,
+      "text": "A thin man in rimless glasses sits down at roulette."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 10.793458333333334,
+      "end": 14.724458333333335,
+      "text": "The wheel is a standard European model: thirty-seven pockets, one green zero."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 14.844750000000001,
+      "end": 17.159750000000003,
+      "text": "Casinos know him as Niko Tosa."
+    },
+    {
+      "id": "06",
+      "scene": "s2",
+      "start": 17.279541666666667,
+      "end": 20.16154166666667,
+      "text": "He waits about six seconds, until the ball starts to slow."
+    },
+    {
+      "id": "07",
+      "scene": "s2",
+      "start": 20.281916666666667,
+      "end": 23.766916666666667,
+      "text": "Then he and a partner lunge in, covering up to fifteen numbers at once."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "start": 24.067041666666668,
+      "end": 25.583041666666666,
+      "text": "They hit about as often as they miss."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "start": 25.70325,
+      "end": 27.588250000000002,
+      "text": "Sometimes thirteen times in a row."
+    },
+    {
+      "id": "10",
+      "scene": "s3",
+      "start": 27.708750000000002,
+      "end": 30.44075,
+      "text": "Soon they're risking fifteen thousand pounds on one spin."
+    },
+    {
+      "id": "11",
+      "scene": "s3",
+      "start": 30.560291666666668,
+      "end": 34.008291666666665,
+      "text": "Counting earlier nights, the group is up about one point three million pounds."
+    },
+    {
+      "id": "12",
+      "scene": "s3",
+      "start": 34.127833333333335,
+      "end": 35.96483333333334,
+      "text": "And he tells staff he'll be back tomorrow."
+    },
+    {
+      "id": "13",
+      "scene": "s4",
+      "start": 36.26508333333334,
+      "end": 38.080083333333334,
+      "text": "The security chief studies the tapes."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "start": 38.199708333333334,
+      "end": 40.90570833333334,
+      "text": "Six seconds, he thinks, is enough time for a hidden computer."
+    },
+    {
+      "id": "15",
+      "scene": "s4",
+      "start": 41.02558333333333,
+      "end": 42.79558333333333,
+      "text": "So the next night, police are waiting."
+    },
+    {
+      "id": "16",
+      "scene": "s4",
+      "start": 42.91608333333333,
+      "end": 45.260083333333334,
+      "text": "All three are arrested on suspicion of deception."
+    },
+    {
+      "id": "17",
+      "scene": "s4",
+      "start": 45.380208333333336,
+      "end": 48.027208333333334,
+      "text": "Officers seize four phones and a pocket computer."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "start": 48.327041666666666,
+      "end": 50.40604166666667,
+      "text": "Then the papers get hold of it."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "start": 50.525708333333334,
+      "end": 54.494708333333335,
+      "text": "A laser hidden in a mobile phone, they say, wired to a tiny computer."
+    },
+    {
+      "id": "20",
+      "scene": "s5",
+      "start": 54.61504166666667,
+      "end": 55.56404166666667,
+      "text": "The laser scam."
+    },
+    {
+      "id": "21",
+      "scene": "s6",
+      "start": 56.364000000000004,
+      "end": 59.501000000000005,
+      "text": "But the searches find no earpiece, no wires, no timer."
+    },
+    {
+      "id": "22",
+      "scene": "s6",
+      "start": 59.620625000000004,
+      "end": 62.633625,
+      "text": "And Britain's gaming law dates back to eighteen forty-five."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "start": 62.75362500000001,
+      "end": 64.584625,
+      "text": "It says nothing about computers."
+    },
+    {
+      "id": "24",
+      "scene": "s6",
+      "start": 64.70420833333334,
+      "end": 67.17820833333334,
+      "text": "Police drop the case, and the Ritz has to pay."
+    },
+    {
+      "id": "25",
+      "scene": "s6",
+      "start": 67.29770833333335,
+      "end": 68.74070833333334,
+      "text": "The three walk away with their winnings."
+    },
+    {
+      "id": "26",
+      "scene": "s7",
+      "start": 69.04033333333335,
+      "end": 69.81533333333336,
+      "text": "Here's the thing."
+    },
+    {
+      "id": "27",
+      "scene": "s7",
+      "start": 69.93512500000001,
+      "end": 71.16512500000002,
+      "text": "There was no laser."
+    },
+    {
+      "id": "28",
+      "scene": "s7",
+      "start": 71.96500000000002,
+      "end": 74.43400000000001,
+      "text": "Years later, a reporter found him in Croatia."
+    },
+    {
+      "id": "29",
+      "scene": "s7",
+      "start": 74.55354166666669,
+      "end": 76.23854166666669,
+      "text": "He says he never used a computer."
+    },
+    {
+      "id": "30",
+      "scene": "s7",
+      "start": 76.35816666666669,
+      "end": 78.06916666666669,
+      "text": "Just practice, on a wheel at home."
+    },
+    {
+      "id": "31",
+      "scene": "s7",
+      "start": 78.18870833333335,
+      "end": 79.73770833333336,
+      "text": "The weak spot was the wheel."
+    },
+    {
+      "id": "32",
+      "scene": "s7",
+      "start": 79.85745833333335,
+      "end": 83.93745833333335,
+      "text": "A slightly tilted wheel drops the ball at almost the same spot, spin after spin."
+    },
+    {
+      "id": "33",
+      "scene": "s7",
+      "start": 84.05733333333336,
+      "end": 87.34733333333337,
+      "text": "And the Ritz wheel, one expert says, was old and predictable."
+    },
+    {
+      "id": "34",
+      "scene": "s7",
+      "start": 87.46770833333336,
+      "end": 89.30370833333336,
+      "text": "Within months, the Ritz replaced every wheel."
+    },
+    {
+      "id": "35",
+      "scene": "s8",
+      "start": 90.10408333333336,
+      "end": 93.68308333333336,
+      "text": "Casinos have one sure fix: no more bets once the ball is moving."
+    },
+    {
+      "id": "36",
+      "scene": "s8",
+      "start": 93.80341666666669,
+      "end": 94.51641666666669,
+      "text": "They won't use it."
+    },
+    {
+      "id": "37",
+      "scene": "s8",
+      "start": 94.63625000000002,
+      "end": 99.16125000000002,
+      "text": "So somewhere tonight, someone is still watching the ball slow down."
+    }
+  ]
+}

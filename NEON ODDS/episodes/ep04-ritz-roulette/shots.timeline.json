@@ -1,0 +1,298 @@
+[
+ {
+  "id": "S1",
+  "from": 0,
+  "len": 139,
+  "key": 70,
+  "size": "trung",
+  "note": "Tosa sau vòng quay, bóng chạy mép, đồi phỉnh trước mặt; £1.3M; khung 0"
+ },
+ {
+  "id": "S2",
+  "from": 139,
+  "len": 88,
+  "key": 192,
+  "size": "rộng",
+  "note": "sàn Ritz, đèn chùm, bàn roulette; MARCH 2004"
+ },
+ {
+  "id": "S3",
+  "from": 227,
+  "len": 95,
+  "key": 294,
+  "size": "trung",
+  "note": "người gầy kính không gọng đi tới, ngồi xuống"
+ },
+ {
+  "id": "S4",
+  "from": 322,
+  "len": 121,
+  "key": 395,
+  "size": "cận",
+  "note": "nhìn từ trên vòng quay: 37 ô, một ô 0 xanh; 37"
+ },
+ {
+  "id": "S5",
+  "from": 443,
+  "len": 73,
+  "key": 487,
+  "size": "cận",
+  "note": "mặt Tosa, mắt theo bóng; NIKO TOSA"
+ },
+ {
+  "id": "S6",
+  "from": 516,
+  "len": 96,
+  "key": 574,
+  "size": "trung",
+  "note": "hồ lì phóng bóng, Tosa chờ; đếm ~6 s"
+ },
+ {
+  "id": "S7",
+  "from": 612,
+  "len": 108,
+  "key": 677,
+  "size": "trung",
+  "note": "hai người nhào tới, phỉnh rải lên nhiều ô; 15 NUMBERS"
+ },
+ {
+  "id": "S8",
+  "from": 720,
+  "len": 49,
+  "key": 749,
+  "size": "cận",
+  "note": "bóng rơi vào ô có phỉnh"
+ },
+ {
+  "id": "S9",
+  "from": 769,
+  "len": 60,
+  "key": 805,
+  "size": "trung",
+  "note": "bảng lịch sử số, chuỗi trúng; 13 IN A ROW"
+ },
+ {
+  "id": "S10",
+  "from": 829,
+  "len": 86,
+  "key": 881,
+  "size": "cận",
+  "note": "tay đẩy phỉnh to; £15,000"
+ },
+ {
+  "id": "S11",
+  "from": 915,
+  "len": 107,
+  "key": 990,
+  "size": "trung",
+  "note": "đồi phỉnh cao lên trước hai người; £1.3M"
+ },
+ {
+  "id": "S12",
+  "from": 1022,
+  "len": 64,
+  "key": 1060,
+  "size": "trung",
+  "note": "Tosa đứng lên, nói với quản lý sàn, mỉm cười"
+ },
+ {
+  "id": "S13",
+  "from": 1086,
+  "len": 58,
+  "key": 1121,
+  "size": "trung",
+  "note": "phòng an ninh, trưởng an ninh xem nhiều màn CCTV"
+ },
+ {
+  "id": "S14",
+  "from": 1144,
+  "len": 85,
+  "key": 1195,
+  "size": "rộng",
+  "note": "CCTV bàn roulette: khoảng chờ trước khi đặt"
+ },
+ {
+  "id": "S15",
+  "from": 1229,
+  "len": 56,
+  "key": 1263,
+  "size": "trung",
+  "note": "phòng riêng, hai thám tử chờ sẵn"
+ },
+ {
+  "id": "S16",
+  "from": 1285,
+  "len": 74,
+  "key": 1329,
+  "size": "trung",
+  "note": "ba người bị dẫn đi"
+ },
+ {
+  "id": "S17",
+  "from": 1359,
+  "len": 89,
+  "key": 1412,
+  "size": "cận",
+  "note": "từ trên xuống: bốn điện thoại và một máy tính bỏ túi; 4 PHONES"
+ },
+ {
+  "id": "S18",
+  "from": 1448,
+  "len": 66,
+  "key": 1488,
+  "size": "trung",
+  "note": "báo in ra, chồng báo trên quầy"
+ },
+ {
+  "id": "S19",
+  "from": 1514,
+  "len": 122,
+  "key": 1587,
+  "size": "trung",
+  "note": "minh hoạ của báo: điện thoại bắn tia laser vào vòng, dây nối máy tính"
+ },
+ {
+  "id": "S20",
+  "from": 1636,
+  "len": 53,
+  "key": 1663,
+  "size": "cận",
+  "note": "trang báo THE LASER SCAM; khoảng lặng"
+ },
+ {
+  "id": "S21",
+  "from": 1689,
+  "len": 98,
+  "key": 1748,
+  "size": "trung",
+  "note": "thám tử lục đồ thu, không có gì"
+ },
+ {
+  "id": "S22",
+  "from": 1787,
+  "len": 152,
+  "key": 1878,
+  "size": "cận",
+  "note": "quyển luật cũ mở ra; 1845; không có chữ máy tính"
+ },
+ {
+  "id": "S23",
+  "from": 1939,
+  "len": 78,
+  "key": 1986,
+  "size": "trung",
+  "note": "quầy thu ngân đẩy tiền ra; NO CHARGES"
+ },
+ {
+  "id": "S24",
+  "from": 2017,
+  "len": 52,
+  "key": 2048,
+  "size": "rộng",
+  "note": "ba người ra khỏi Ritz trong mưa, xách túi"
+ },
+ {
+  "id": "S25",
+  "from": 2069,
+  "len": 27,
+  "key": 2083,
+  "size": "trung",
+  "note": "lại minh hoạ laser"
+ },
+ {
+  "id": "S26",
+  "from": 2096,
+  "len": 61,
+  "key": 2127,
+  "size": "trung",
+  "note": "tia laser tắt; NO LASER; khoảng lặng"
+ },
+ {
+  "id": "S27",
+  "from": 2157,
+  "len": 78,
+  "key": 2204,
+  "size": "trung",
+  "note": "quán ven biển Croatia, phóng viên ngồi đối diện Tosa; CROATIA"
+ },
+ {
+  "id": "S28",
+  "from": 2235,
+  "len": 47,
+  "key": 2263,
+  "size": "cận",
+  "note": "Tosa lắc đầu, xoè tay"
+ },
+ {
+  "id": "S29",
+  "from": 2282,
+  "len": 62,
+  "key": 2319,
+  "size": "trung",
+  "note": "Tosa một mình với vòng quay ở nhà, nhìn bóng"
+ },
+ {
+  "id": "S30",
+  "from": 2344,
+  "len": 50,
+  "key": 2374,
+  "size": "cận",
+  "note": "vòng quay Ritz cận, im"
+ },
+ {
+  "id": "S31",
+  "from": 2394,
+  "len": 126,
+  "key": 2457,
+  "size": "cận",
+  "note": "từ trên: vòng nghiêng, bóng rời mép đúng vạch, ba lượt"
+ },
+ {
+  "id": "S32",
+  "from": 2520,
+  "len": 102,
+  "key": 2581,
+  "size": "trung",
+  "note": "chuyên gia ngồi nói"
+ },
+ {
+  "id": "S33",
+  "from": 2622,
+  "len": 79,
+  "key": 2669,
+  "size": "trung",
+  "note": "thợ khiêng vòng cũ đi, đặt vòng mới"
+ },
+ {
+  "id": "S34",
+  "from": 2701,
+  "len": 111,
+  "key": 2768,
+  "size": "trung",
+  "note": "hồ lì phóng bóng, phỉnh vẫn đặt khi bóng chạy"
+ },
+ {
+  "id": "S35",
+  "from": 2812,
+  "len": 25,
+  "key": 2825,
+  "size": "trung",
+  "note": "quản lý sàn nhún vai"
+ },
+ {
+  "id": "S36",
+  "from": 2837,
+  "len": 82,
+  "key": 2878,
+  "size": "rộng",
+  "note": "sàn casino đêm, nhiều bàn roulette"
+ },
+ {
+  "id": "S37",
+  "from": 2919,
+  "len": 75,
+  "key": 2964,
+  "size": "trung",
+  "note": "về khung 0: Tosa nhìn bóng chậm dần"
+ }
+]

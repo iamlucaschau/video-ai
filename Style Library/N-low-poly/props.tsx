@@ -899,3 +899,107 @@ export const Phone: React.FC<{ p?: V3; r?: V3; s?: number; f?: number; screen?: 
     </group>
   );
 };
+
+// ---------------- roulette ----------------
+/** the European wheel, clockwise from zero */
+export const WHEEL_ORDER = [0, 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 23, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26];
+export const RED_NUMS = new Set([1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]);
+const POCKET = (Math.PI * 2) / 37;
+/** pocket i's angle in the rotor's own frame (world angle = this − rot) */
+const pocketAngle = (i: number) => i * POCKET;
+export const WHEEL = { rim: 0.42, track: 0.37, pocket: 0.255, trackY: 0.105, pocketY: 0.088 };
+const rotorTex = () =>
+  ctex("roulette-rotor", 1024, 1024, (c) => {
+    const C = 512;
+    c.clearRect(0, 0, 1024, 1024);
+    WHEEL_ORDER.forEach((n, i) => {
+      const a0 = pocketAngle(i) - POCKET / 2;
+      c.beginPath();
+      c.moveTo(C, C);
+      c.arc(C, C, 510, a0, a0 + POCKET);
+      c.closePath();
+      c.fillStyle = n === 0 ? "#1E8A4A" : RED_NUMS.has(n) ? "#B8261E" : "#141216";
+      c.fill();
+    });
+    // the number ring outside, the pockets inside it, a wooden cone in the middle
+    c.font = `900 40px ${SIGN_FONT}`;
+    c.textAlign = "center";
+    c.textBaseline = "middle";
+    c.fillStyle = "#F3EAD6";
+    WHEEL_ORDER.forEach((n, i) => {
+      c.save();
+      c.translate(C, C);
+      c.rotate(pocketAngle(i) + Math.PI / 2);
+      c.fillText(String(n), 0, -470);
+      c.restore();
+    });
+    c.strokeStyle = "#C9A04A";
+    c.lineWidth = 8;
+    for (const r of [430, 300]) {
+      c.beginPath();
+      c.arc(C, C, r, 0, Math.PI * 2);
+      c.stroke();
+    }
+    c.lineWidth = 5;
+    for (let i = 0; i < 37; i++) {
+      const a = pocketAngle(i) - POCKET / 2;
+      c.beginPath();
+      c.moveTo(C + Math.cos(a) * 300, C + Math.sin(a) * 300);
+      c.lineTo(C + Math.cos(a) * 430, C + Math.sin(a) * 430);
+      c.stroke();
+    }
+    c.beginPath();
+    c.arc(C, C, 296, 0, Math.PI * 2);
+    c.fillStyle = "#6A3E22";
+    c.fill();
+  });
+export type BallState = { a: number; rr: number; y: number; rot: number; on: boolean };
+/**
+ * One spin, `t` frames after the croupier launches the ball: it circles the track, slowing, leaves the rim at world angle
+ * `zone` at frame `drop`, bounces in, and from then on rides the rotor in pocket `pocket` (an index into WHEEL_ORDER).
+ * The rotor turns the other way at `wr` rad/frame from `rot0`. Before t = 0 the ball is not on the wheel.
+ */
+export const spinAt = (t: number, { drop = 150, zone = 0, pocket = 0, wr = 0.03, rot0 = 0, w0 = 0.3 }: { drop?: number; zone?: number; pocket?: number; wr?: number; rot0?: number; w0?: number } = {}): BallState => {
+  const rot = rot0 + wr * t;
+  const T = drop * 1.7;
+  const F = (x: number) => w0 * (x - (x * x) / (2 * T));
+  const free = (x: number) => zone - (F(drop) - F(Math.min(x, T)));
+  if (t < 0) return { a: 0, rr: WHEEL.track, y: WHEEL.trackY, rot, on: false };
+  if (t < drop) return { a: free(t), rr: WHEEL.track, y: WHEEL.trackY, rot, on: true };
+  const tl = drop + 26;
+  const raw = (x: number) => pocketAngle(pocket) - (rot0 + wr * x);
+  const n = Math.round((free(tl) - raw(tl)) / (Math.PI * 2));
+  const k = Math.min(1, Math.max(0, (t - drop - 6) / 20));
+  const kk = k * k * (3 - 2 * k);
+  const a = free(t) * (1 - kk) + (raw(t) + n * Math.PI * 2) * kk;
+  const d = t - drop;
+  const fall = Math.min(1, d / 10);
+  const rr = WHEEL.track + (WHEEL.pocket - WHEEL.track) * (1 - (1 - fall) ** 2);
+  const y = WHEEL.trackY + (WHEEL.pocketY - WHEEL.trackY) * fall + 0.018 * Math.abs(Math.sin(d * 0.55)) * Math.exp(-d / 9);
+  return { a, rr, y, rot, on: true };
+};
+/**
+ * A European roulette wheel, its foot at `p` (sits in a table top), the rotor turned by `ball.rot`. `tilt` (degrees)
+ * leans the whole wheel; `mark` 0→1 draws an amber arc on the track at world angle `zone` (the drop zone).
+ */
+export const RouletteWheel: React.FC<{ p?: V3; s?: number; ball?: BallState; rot?: number; tilt?: number; mark?: number; zone?: number }> = ({ p = [0, 0, 0], s = 1, ball, rot, tilt = 0, mark = 0, zone = 0 }) => {
+  const r = ball?.rot ?? rot ?? 0;
+  return (
+    <group position={p} scale={s} rotation={[tilt * D, 0, tilt * 0.4 * D]}>
+      {/* the bowl stays below the rotor; the track and the gold rim are rings, so the rotor shows through */}
+      <P g={cyl(WHEEL.rim, WHEEL.rim + 0.02, 0.075, 28)} c="#3A2216" o={{ rough: 0.4 }} />
+      <P g={torus(0.385, 0.04, 28)} c="#5A3420" p={[0, 0.088, 0]} r={[Math.PI / 2, 0, 0]} s={[1, 1, 0.45]} o={{ rough: 0.3 }} />
+      <P g={torus(WHEEL.rim, 0.012, 28)} c={N.gold} p={[0, 0.105, 0]} r={[Math.PI / 2, 0, 0]} o={{ metal: 0.6, rough: 0.35 }} shadow={false} />
+      {mark > 0 ? (
+        <P g={cyl(0.03, 0.03, 0.003, 8)} c="#FFB347" p={[Math.cos(zone) * WHEEL.track, WHEEL.trackY - 0.002, Math.sin(zone) * WHEEL.track]} s={[1.6 * mark, 1, 1.6 * mark]} o={{ e: "#FFB347", ei: 1.6 }} shadow={false} />
+      ) : null}
+      <group rotation={[0, r, 0]}>
+        <Panel map={rotorTex()} w={0.62} h={0.62} p={[0, WHEEL.pocketY - 0.004, 0]} r={[-Math.PI / 2, 0, 0]} alpha glow={0.9} />
+        <P g={cone(0.13, 0.06, 10)} c="#7A4A28" p={[0, WHEEL.pocketY - 0.004, 0]} o={{ rough: 0.35 }} />
+        <P g={cyl(0.018, 0.024, 0.07, 8)} c={N.gold} p={[0, WHEEL.pocketY + 0.05, 0]} o={{ metal: 0.7, rough: 0.3 }} />
+        {[0, 1].map((i) => <Box key={i} w={i ? 0.012 : 0.16} h={0.012} d={i ? 0.16 : 0.012} c={N.gold} p={[0, WHEEL.pocketY + 0.1, 0]} o={{ metal: 0.7, rough: 0.3 }} shadow={false} />)}
+      </group>
+      {ball?.on ? <P g={sph(0.011, 8, 6)} c="#F7F4EC" p={[Math.cos(ball.a) * ball.rr, ball.y + 0.011, Math.sin(ball.a) * ball.rr]} o={{ rough: 0.25 }} /> : null}
+    </group>
+  );
+};

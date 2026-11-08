@@ -70,6 +70,7 @@ import { NMandelThumb } from "../Style Library/N-low-poly/n-mandel/Thumb";
 import { duration as NOep01Duration, Thumb as NOep01Thumb, Video as NOep01 } from "../NEON ODDS/episodes/ep01-ivey-edge/Video";
 import { duration as NOep02Duration, Thumb as NOep02Thumb, Video as NOep02 } from "../NEON ODDS/episodes/ep02-tipton-lottery/Video";
 import { duration as NOep03Duration, Thumb as NOep03Thumb, Video as NOep03 } from "../NEON ODDS/episodes/ep03-slot-hack/Video";
+import { duration as NOep04Duration, Thumb as NOep04Thumb, Video as NOep04 } from "../NEON ODDS/episodes/ep04-ritz-roulette/Video";
 
 /**
  * Every renderable video is registered here. The `id` is what you pass to
@@ -135,6 +136,8 @@ export const RemotionRoot: React.FC = () => {
         <Composition id="NO-ep02-tipton-lottery-Thumb" component={NOep02Thumb} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
         <Composition id="NO-ep03-slot-hack" component={NOep03} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={NOep03Duration()} />
         <Composition id="NO-ep03-slot-hack-Thumb" component={NOep03Thumb} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
+        <Composition id="NO-ep04-ritz-roulette" component={NOep04} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={NOep04Duration()} />
+        <Composition id="NO-ep04-ritz-roulette-Thumb" component={NOep04Thumb} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
         <Composition id="Style-N-LowPoly-Sets" component={NSetsPreview} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={N_SETS_FRAMES} />
         <Composition id="Neon-Odds-Logo" component={NeonOddsLogo} width={1024} height={1024} fps={PVR.fps} durationInFrames={1} />
         <Composition id="Neon-Odds-Banner" component={NeonOddsBanner} width={2560} height={1440} fps={PVR.fps} durationInFrames={1} />

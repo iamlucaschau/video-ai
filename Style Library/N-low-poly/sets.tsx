@@ -4,7 +4,7 @@
  */
 import React from "react";
 import { Box, ctex, cyl, D, ico, type Look, N, P, Panel, Person, plate as plateGeo, PLANE, type Pose, rng, signTex, SIGN_FONT, useLiveTex, type V3 } from "./lowpoly";
-import { Chair, Chalkboard, Clock, Crate, Crt, Desk, DeskLamp, Frame, LedBoard, Pile, Printer, RngRack, CeilingCam, scatter, SlotMachine, SlotStool, Ticket, Van } from "./props";
+import { Chair, Chalkboard, Clock, Crate, Crt, Desk, DeskLamp, Frame, LedBoard, Pile, Printer, RED_NUMS, RngRack, RouletteWheel, CeilingCam, scatter, SlotMachine, SlotStool, type BallState, Ticket, Van } from "./props";
 import { cone, torus } from "./lowpoly";
 
 // ---------------- cast ----------------
@@ -35,6 +35,16 @@ export const CAST = {
   consultant: { skin: "#E6B693", hair: "#D8D2C8", hairStyle: "recede", glasses: true, top: "#4A4E58", shirt: "#F3EFE6", tie: "#2E6E7A", pants: "#4A4E58", build: 1.06 } as Look,
   /** the maker's compliance head */
   exec: { skin: "#F0C8A8", hair: "#C9A15A", hairStyle: "long", top: "#26303E", shirt: "#F3EFE6", pants: "#26303E" } as Look,
+  /** "Niko Tosa" at the Ritz: thin and tall, rimless glasses, dark suit (no photo face; not his real name) */
+  tosa: { skin: "#E2B08C", hair: "#3A2A20", hairStyle: "short", glasses: true, top: "#25272F", shirt: "#E8E4DA", pants: "#1E2026", eye: "#3A3028", build: 0.88, tall: 1.07 } as Look,
+  /** his playing partner: heavier, tired eyes */
+  tosaMate: { skin: "#E6B693", hair: "#1A1416", hairStyle: "short", top: "#3A2E2A", shirt: "#F3EFE6", pants: "#2A2420", eye: "#2A2420", build: 1.1 } as Look,
+  /** the third of the group: bottle-blond */
+  tosaBlonde: { skin: "#F0C8A8", hair: "#E8CF8A", hairStyle: "long", top: "#6A2232", pants: "#20202A", eye: "#3A4E5E" } as Look,
+  /** a casino security chief, ex-soldier: big, short grey hair */
+  secChief: { skin: "#E6B693", hair: "#8A8278", hairStyle: "short", top: "#1E2430", shirt: "#F3EFE6", tie: "#2E6E7A", pants: "#1E2430", build: 1.2 } as Look,
+  /** a reporter */
+  reporter: { skin: "#D9A47E", hair: "#5A3A22", hairStyle: "short", top: "#4A5A72", pants: "#2A2A34", eye: "#3A3028" } as Look,
 };
 const SKINS = ["#F0C8A8", "#E2A882", "#C98E6A", "#9C6644", "#6E4630", "#F5D2B8"];
 const HAIRS = ["#2A1A14", "#5A3A22", "#C9A15A", "#1A1416", "#8A5A3A", "#D8D2C8"];
@@ -586,6 +596,57 @@ export const BaccaratTable: React.FC<{ felt?: string }> = ({ felt = "#114A4C" })
     <P g={cyl(1, 1, 0.006, 28)} c={N.gold} p={[0, TABLE_Y - 0.004, 0]} s={[1.33, 1, 0.77]} o={{ metal: 0.6, rough: 0.35 }} shadow={false} />
     <P g={cyl(1, 1, 0.006, 28)} c={felt} p={[0, TABLE_Y, 0]} s={[1.28, 1, 0.73]} o={{ rough: 0.95 }} />
     <Panel map={feltMarks()} w={1.9} h={1.05} p={[0, TABLE_Y + 0.007, 0.02]} r={[-Math.PI / 2, 0, 0]} alpha glow={0.75} />
+  </group>
+);
+/** roulette table layout: 0, then 12 columns × 3 rows of numbers along +x (felt texture) */
+export const ROUL = { wheelX: -0.82, x0: -0.22, x1: 0.98, z0: -0.27, z1: 0.27, w: 2.3, d: 1.1 };
+/** world position (table at the origin) of number n's cell on the layout, at felt height */
+export const cellAt = (n: number): V3 => {
+  if (n === 0) return [ROUL.x0 - 0.06, TABLE_Y + 0.006, 0];
+  const col = Math.ceil(n / 3) - 1;
+  const row = (n - 1) % 3;
+  return [ROUL.x0 + ((col + 0.5) * (ROUL.x1 - ROUL.x0)) / 12, TABLE_Y + 0.006, ROUL.z1 - ((row + 0.5) * (ROUL.z1 - ROUL.z0)) / 3];
+};
+const rouletteFelt = () =>
+  ctex("roulette-felt", 1024, 512, (c) => {
+    // canvas spans x −0.42…1.12, z −0.4…0.4 of the table
+    const X = (x: number) => ((x + 0.42) / 1.54) * 1024;
+    const Z = (z: number) => ((z + 0.4) / 0.8) * 512;
+    c.clearRect(0, 0, 1024, 512);
+    c.lineWidth = 4;
+    c.strokeStyle = "rgba(242,226,180,.7)";
+    c.textAlign = "center";
+    c.textBaseline = "middle";
+    c.font = `900 30px ${SIGN_FONT}`;
+    for (let n = 1; n <= 36; n++) {
+      const [x, , z] = cellAt(n);
+      const cw = (ROUL.x1 - ROUL.x0) / 12;
+      const ch = (ROUL.z1 - ROUL.z0) / 3;
+      c.fillStyle = RED_NUMS.has(n) ? "rgba(184,38,30,.85)" : "rgba(20,18,22,.85)";
+      c.fillRect(X(x - cw / 2) + 3, Z(z - ch / 2) + 3, X(x + cw / 2) - X(x - cw / 2) - 6, Z(z + ch / 2) - Z(z - ch / 2) - 6);
+      c.strokeRect(X(x - cw / 2), Z(z - ch / 2), X(x + cw / 2) - X(x - cw / 2), Z(z + ch / 2) - Z(z - ch / 2));
+      c.fillStyle = "#F3EAD6";
+      c.fillText(String(n), X(x), Z(z));
+    }
+    c.fillStyle = "rgba(30,138,74,.9)";
+    c.fillRect(X(ROUL.x0 - 0.12), Z(ROUL.z0), X(ROUL.x0) - X(ROUL.x0 - 0.12), Z(ROUL.z1) - Z(ROUL.z0));
+    c.strokeRect(X(ROUL.x0 - 0.12), Z(ROUL.z0), X(ROUL.x0) - X(ROUL.x0 - 0.12), Z(ROUL.z1) - Z(ROUL.z0));
+    c.fillStyle = "#F3EAD6";
+    c.fillText("0", X(ROUL.x0 - 0.06), Z(0));
+    // the racetrack for "neighbours" bets, nearer the players (−z)
+    c.beginPath();
+    c.roundRect(X(ROUL.x0 + 0.05), Z(-0.385), X(ROUL.x1 - 0.05) - X(ROUL.x0 + 0.05), Z(-0.305) - Z(-0.385), 30);
+    c.stroke();
+  });
+/** a roulette table centred on the origin, long side along x: the wheel at −x, the layout toward +x; players on −z */
+export const RouletteTable: React.FC<{ ball?: BallState; rot?: number; tilt?: number; mark?: number; zone?: number; felt?: string }> = ({ ball, rot, tilt, mark, zone, felt = "#114A4C" }) => (
+  <group>
+    {[-0.75, 0.75].map((x) => <Box key={x} w={0.3} h={TABLE_Y - 0.05} d={0.5} c="#1A1214" p={[x, 0, 0]} />)}
+    <Box w={ROUL.w} h={0.06} d={ROUL.d} c="#3A2216" p={[0, TABLE_Y - 0.06, 0]} o={{ rough: 0.35 }} />
+    <Box w={ROUL.w - 0.08} h={0.004} d={ROUL.d - 0.08} c={felt} p={[0, TABLE_Y, 0]} o={{ rough: 0.95 }} />
+    <Box w={ROUL.w + 0.04} h={0.05} d={0.07} c="#2A1810" p={[0, TABLE_Y - 0.02, -ROUL.d / 2]} o={{ rough: 0.4 }} />
+    <Panel map={rouletteFelt()} w={1.54} h={0.8} p={[0.35, TABLE_Y + 0.006, 0]} r={[-Math.PI / 2, 0, 0]} alpha glow={0.8} />
+    <RouletteWheel p={[ROUL.wheelX, TABLE_Y - 0.05, 0]} ball={ball} rot={rot} tilt={tilt} mark={mark} zone={zone} />
   </group>
 );
 /** the gaming floor: slots and a lit sign on the back wall, an LED board, two pendants over the table at the origin */
