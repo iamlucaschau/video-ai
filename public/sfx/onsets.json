@@ -243,6 +243,10 @@
   "onset": 2.26,
   "peak": 140.17
  },
+ "sfx/music/own/bill-benter.mp3": {
+  "onset": 0.02,
+  "peak": 71.51
+ },
  "sfx/music/own/carrier-watch.mp3": {
   "onset": 1.96,
   "peak": 455.84

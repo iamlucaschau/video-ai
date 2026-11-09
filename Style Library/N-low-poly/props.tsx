@@ -1066,3 +1066,50 @@ export const Contract: React.FC<{ p?: V3; r?: V3; s?: number; title?: string; li
     </group>
   );
 };
+
+// ---------------- horse racing ----------------
+/**
+ * A galloping racehorse with its jockey, facing +z, hooves on the floor at `p`. `ph` is the gallop phase (advance it about
+ * 0.45 a frame for a full gallop, 0 for standing); `c` the coat, `silk` the jockey's colours.
+ */
+export const Horse: React.FC<{ p?: V3; ry?: number; ph?: number; c?: string; silk?: string; jockey?: boolean; s?: number }> = ({ p = [0, 0, 0], ry = 0, ph = 0, c = "#6A3E24", silk = "#B8342C", jockey = true, s = 1 }) => {
+  const run = ph !== 0 ? 1 : 0;
+  const bob = Math.abs(Math.sin(ph)) * 0.06 * run;
+  const leg = (off: number) => Math.sin(ph + off) * 0.7 * run;
+  const dark = "#2A1A12";
+  const legs: [number, number, number][] = [
+    [-0.14, 0.55, 0],
+    [0.14, 0.55, 0.6],
+    [-0.14, -0.55, 2.4],
+    [0.14, -0.55, 3.0],
+  ];
+  return (
+    <group position={p} rotation={[0, ry, 0]} scale={s}>
+      <group position={[0, bob, 0]} rotation={[Math.sin(ph * 2) * 0.03 * run, 0, 0]}>
+        <Box w={0.42} h={0.5} d={1.35} c={c} p={[0, 0.9, -0.05]} o={{ rough: 0.6 }} />
+        <Box w={0.3} h={0.75} d={0.3} c={c} p={[0, 1.15, 0.58]} r={[0.55, 0, 0]} o={{ rough: 0.6 }} />
+        <Box w={0.24} h={0.24} d={0.5} c={c} p={[0, 1.62, 0.92]} r={[0.35, 0, 0]} o={{ rough: 0.6 }} />
+        <Box w={0.08} h={0.5} d={0.12} c={dark} p={[0, 1.2, 0.45]} r={[0.55, 0, 0]} shadow={false} />
+        <Box w={0.1} h={0.55} d={0.1} c={dark} p={[0, 1.22, -0.72]} r={[-0.9 - Math.sin(ph) * 0.2 * run, 0, 0]} />
+        {legs.map(([x, z, off], i) => (
+          <group key={i} position={[x, 0.95, z]} rotation={[leg(off), 0, 0]}>
+            <Box w={0.11} h={0.42} d={0.12} c={c} p={[0, -0.42, 0]} />
+            <group position={[0, -0.42, 0]} rotation={[Math.max(0, -leg(off)) * 0.9 + 0.05, 0, 0]}>
+              <Box w={0.08} h={0.48} d={0.08} c={c} p={[0, -0.48, 0]} />
+              <Box w={0.1} h={0.06} d={0.1} c={dark} p={[0, -0.52, 0]} />
+            </group>
+          </group>
+        ))}
+        {jockey ? (
+          <group position={[0, 1.18, 0.1]} rotation={[0.9, 0, 0]}>
+            <Box w={0.3} h={0.42} d={0.18} c={silk} />
+            <P g={ico(0.11, 1)} c={silk} p={[0, 0.52, 0.04]} />
+            <P g={ico(0.09, 1)} c="#E2B08C" p={[0, 0.48, 0.1]} />
+            {[-1, 1].map((sd) => <Box key={sd} w={0.08} h={0.3} d={0.08} c={silk} p={[sd * 0.18, 0.12, 0.08]} r={[-0.9, 0, 0]} />)}
+            {[-1, 1].map((sd) => <Box key={sd} w={0.09} h={0.34} d={0.1} c="#F3EFE6" p={[sd * 0.16, -0.05, -0.04]} r={[2.2, 0, 0]} />)}
+          </group>
+        ) : null}
+      </group>
+    </group>
+  );
+};

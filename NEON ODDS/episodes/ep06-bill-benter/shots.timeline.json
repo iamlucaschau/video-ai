@@ -1,0 +1,234 @@
+[
+ {
+  "id": "S1",
+  "from": 0,
+  "len": 192,
+  "key": 96,
+  "size": "trung",
+  "note": "tầng 27: hai người nhìn màn hình, sau lưng cửa sổ thấy trường đua; khung 0"
+ },
+ {
+  "id": "S2",
+  "from": 192,
+  "len": 131,
+  "key": 284,
+  "size": "trung",
+  "note": "Las Vegas, bàn blackjack, Benter trẻ, tay quản lý đặt lên vai"
+ },
+ {
+  "id": "S3",
+  "from": 323,
+  "len": 117,
+  "key": 382,
+  "size": "trung",
+  "note": "Benter xách túi rời casino"
+ },
+ {
+  "id": "S4",
+  "from": 440,
+  "len": 59,
+  "key": 475,
+  "size": "rộng",
+  "note": "trường đua đêm, ngựa chạy qua"
+ },
+ {
+  "id": "S5",
+  "from": 499,
+  "len": 100,
+  "key": 559,
+  "size": "rộng",
+  "note": "khán đài kín người"
+ },
+ {
+  "id": "S6",
+  "from": 599,
+  "len": 26,
+  "key": 615,
+  "size": "trung",
+  "note": "vé cược đổ vào một bể chung"
+ },
+ {
+  "id": "S7",
+  "from": 625,
+  "len": 108,
+  "key": 701,
+  "size": "trung",
+  "note": "chồng tiền chung, một phần bị câu lạc bộ lấy đi; 17%"
+ },
+ {
+  "id": "S8",
+  "from": 733,
+  "len": 91,
+  "key": 788,
+  "size": "trung",
+  "note": "Benter trẻ nhìn bảng tỉ lệ"
+ },
+ {
+  "id": "S9",
+  "from": 824,
+  "len": 50,
+  "key": 854,
+  "size": "trung",
+  "note": "Benter với sách và máy tính màn xanh"
+ },
+ {
+  "id": "S10",
+  "from": 874,
+  "len": 107,
+  "key": 938,
+  "size": "trung",
+  "note": "hai người đánh máy, chồng sổ đua; 9 MONTHS"
+ },
+ {
+  "id": "S11",
+  "from": 981,
+  "len": 103,
+  "key": 1043,
+  "size": "trung",
+  "note": "xe hành lý chở ba máy tính; 1985"
+ },
+ {
+  "id": "S12",
+  "from": 1084,
+  "len": 115,
+  "key": 1165,
+  "size": "trung",
+  "note": "phòng chật, hai người xem đua trên TV, thua; -$120,000"
+ },
+ {
+  "id": "S13",
+  "from": 1199,
+  "len": 111,
+  "key": 1266,
+  "size": "rộng",
+  "note": "bảng tỉ lệ lớn ở trường đua"
+ },
+ {
+  "id": "S14",
+  "from": 1310,
+  "len": 93,
+  "key": 1366,
+  "size": "trung",
+  "note": "tỉ lệ chảy vào máy, vài con số đổi màu"
+ },
+ {
+  "id": "S15",
+  "from": 1403,
+  "len": 102,
+  "key": 1474,
+  "size": "trung",
+  "note": "chồng tiền lên; $3M"
+ },
+ {
+  "id": "S16",
+  "from": 1505,
+  "len": 38,
+  "key": 1528,
+  "size": "trung",
+  "note": "người của câu lạc bộ gọi điện, mỉm cười"
+ },
+ {
+  "id": "S17",
+  "from": 1543,
+  "len": 135,
+  "key": 1638,
+  "size": "cận",
+  "note": "cáp từ máy tính cắm vào thiết bị cược"
+ },
+ {
+  "id": "S18",
+  "from": 1678,
+  "len": 110,
+  "key": 1755,
+  "size": "trung",
+  "note": "danh sách yếu tố dài ra trên màn hình; 120+ FACTORS"
+ },
+ {
+  "id": "S19",
+  "from": 1788,
+  "len": 77,
+  "key": 1834,
+  "size": "cận",
+  "note": "màn hình ACCOUNT SUSPENDED; 1997"
+ },
+ {
+  "id": "S20",
+  "from": 1865,
+  "len": 161,
+  "key": 1962,
+  "size": "trung",
+  "note": "máy in nhả phiếu, người chạy mang phiếu đi"
+ },
+ {
+  "id": "S21",
+  "from": 2026,
+  "len": 66,
+  "key": 2066,
+  "size": "rộng",
+  "note": "trường đua đêm 2001; 2001"
+ },
+ {
+  "id": "S22",
+  "from": 2092,
+  "len": 129,
+  "key": 2182,
+  "size": "trung",
+  "note": "màn hình đầy dòng cược; 51,000 BETS"
+ },
+ {
+  "id": "S23",
+  "from": 2221,
+  "len": 98,
+  "key": 2290,
+  "size": "cận",
+  "note": "các dòng tắt còn một dòng sáng; $16M"
+ },
+ {
+  "id": "S24",
+  "from": 2319,
+  "len": 34,
+  "key": 2339,
+  "size": "cận",
+  "note": "ba phiếu cược hồng trên bàn"
+ },
+ {
+  "id": "S25",
+  "from": 2353,
+  "len": 73,
+  "key": 2397,
+  "size": "trung",
+  "note": "Benter lắc đầu, nói"
+ },
+ {
+  "id": "S26",
+  "from": 2426,
+  "len": 103,
+  "key": 2498,
+  "size": "trung",
+  "note": "phiếu vào két, cửa két đóng"
+ },
+ {
+  "id": "S27",
+  "from": 2529,
+  "len": 83,
+  "key": 2579,
+  "size": "trung",
+  "note": "tháp tiền khổng lồ; ~$1B"
+ },
+ {
+  "id": "S28",
+  "from": 2612,
+  "len": 130,
+  "key": 2677,
+  "size": "rộng",
+  "note": "ngựa chạy qua khán đài"
+ },
+ {
+  "id": "S29",
+  "from": 2742,
+  "len": 54,
+  "key": 2774,
+  "size": "trung",
+  "note": "về khung 0: tầng 27"
+ }
+]

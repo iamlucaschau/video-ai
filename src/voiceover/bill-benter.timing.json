@@ -1,0 +1,194 @@
+{
+  "durationInSeconds": 92.88745833333333,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 6.156,
+      "text": "Twenty-seven floors up, across the road from a Hong Kong racetrack, two men are watching a computer, not the race."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "start": 6.455791666666666,
+      "end": 10.721791666666666,
+      "text": "Bill Benter started out counting cards in Las Vegas, until the casinos blacklisted him."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 10.841625,
+      "end": 16.396625,
+      "text": "So he went looking for a game where the house couldn't throw him out: horse racing in Hong Kong."
+    },
+    {
+      "id": "04",
+      "scene": "s3",
+      "start": 16.696833333333334,
+      "end": 19.920833333333334,
+      "text": "Hong Kong bet more on horses than the entire United States."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "start": 20.040791666666667,
+      "end": 20.77179166666667,
+      "text": "And it's a pool."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "start": 20.891791666666666,
+      "end": 24.365791666666667,
+      "text": "Bettors play against each other, while the club keeps about seventeen percent."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "start": 24.485916666666668,
+      "end": 27.21991666666667,
+      "text": "To win, Benter had to beat the crowd by more than that."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "start": 27.52025,
+      "end": 29.082250000000002,
+      "text": "He taught himself statistics."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "start": 29.202,
+      "end": 32.64,
+      "text": "Two typists spent nine months entering thousands of old races."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "start": 32.760083333333334,
+      "end": 36.06608333333333,
+      "text": "In nineteen eighty-five, he flew in with three computers in his luggage."
+    },
+    {
+      "id": "11",
+      "scene": "s4",
+      "start": 36.18629166666667,
+      "end": 39.73829166666667,
+      "text": "The first season, he and his partner lost a hundred and twenty thousand dollars."
+    },
+    {
+      "id": "12",
+      "scene": "s5",
+      "start": 40.03866666666667,
+      "end": 43.628666666666675,
+      "text": "The answer was hiding in plain sight: the crowd's own odds."
+    },
+    {
+      "id": "13",
+      "scene": "s5",
+      "start": 43.74891666666667,
+      "end": 46.72291666666668,
+      "text": "His model stopped ignoring the public and started correcting it."
+    },
+    {
+      "id": "14",
+      "scene": "s5",
+      "start": 46.84333333333334,
+      "end": 49.92633333333334,
+      "text": "One season, he says, that was worth about three million dollars."
+    },
+    {
+      "id": "15",
+      "scene": "s6",
+      "start": 50.22595833333334,
+      "end": 51.37495833333334,
+      "text": "The club didn't ban him."
+    },
+    {
+      "id": "16",
+      "scene": "s6",
+      "start": 51.49487500000001,
+      "end": 55.891875000000006,
+      "text": "It called him one of its best customers, and let him plug his computers straight into its betting system."
+    },
+    {
+      "id": "17",
+      "scene": "s6",
+      "start": 56.01183333333334,
+      "end": 59.355833333333344,
+      "text": "His model grew to more than a hundred and twenty factors per horse."
+    },
+    {
+      "id": "18",
+      "scene": "s7",
+      "start": 59.65545833333334,
+      "end": 62.12245833333334,
+      "text": "In nineteen ninety-seven, the club suspended his account."
+    },
+    {
+      "id": "19",
+      "scene": "s7",
+      "start": 62.24212500000001,
+      "end": 67.314125,
+      "text": "So his team printed betting slips and fed them into machines by hand, minutes before each race."
+    },
+    {
+      "id": "20",
+      "scene": "s8",
+      "start": 67.61437500000001,
+      "end": 69.667375,
+      "text": "Which brings us back to that night in two thousand one."
+    },
+    {
+      "id": "21",
+      "scene": "s8",
+      "start": 69.78729166666668,
+      "end": 73.96929166666668,
+      "text": "Their computer had placed fifty-one thousand bets on one giant jackpot."
+    },
+    {
+      "id": "22",
+      "scene": "s8",
+      "start": 74.08912500000001,
+      "end": 76.561125,
+      "text": "One of them hit: sixteen million dollars."
+    },
+    {
+      "id": "23",
+      "scene": "s8",
+      "start": 77.36112500000002,
+      "end": 78.37012500000002,
+      "text": "Benter never cashed it."
+    },
+    {
+      "id": "24",
+      "scene": "s8",
+      "start": 78.48991666666669,
+      "end": 80.1459166666667,
+      "text": "\"It would be unsporting,\" he said."
+    },
+    {
+      "id": "25",
+      "scene": "s8",
+      "start": 80.94608333333335,
+      "end": 83.58208333333334,
+      "text": "The tickets went into a safe, and the money went to charity."
+    },
+    {
+      "id": "26",
+      "scene": "s9",
+      "start": 84.38183333333335,
+      "end": 87.02983333333334,
+      "text": "His operations made close to a billion dollars."
+    },
+    {
+      "id": "27",
+      "scene": "s9",
+      "start": 87.14945833333334,
+      "end": 92.58745833333334,
+      "text": "So the next time you bet on a horse, who else is in that pool with you?"
+    }
+  ]
+}

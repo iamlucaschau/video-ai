@@ -4,7 +4,7 @@
  */
 import React from "react";
 import { Box, ctex, cyl, D, ico, type Look, N, P, Panel, Person, plate as plateGeo, PLANE, type Pose, rng, signTex, SIGN_FONT, useLiveTex, type V3 } from "./lowpoly";
-import { Chair, Chalkboard, Clock, Crate, Crt, Desk, DeskLamp, Frame, LedBoard, Pile, Printer, RED_NUMS, RngRack, RouletteWheel, CeilingCam, scatter, SlotMachine, SlotStool, type BallState, Ticket, Van } from "./props";
+import { Chair, Chalkboard, Clock, Crate, Crt, Desk, DeskLamp, Frame, Horse, LedBoard, Pile, Printer, RED_NUMS, RngRack, RouletteWheel, CeilingCam, scatter, SlotMachine, SlotStool, type BallState, Ticket, Van } from "./props";
 import { cone, torus } from "./lowpoly";
 
 // ---------------- cast ----------------
@@ -47,6 +47,10 @@ export const CAST = {
   donJohnson: { skin: "#E6B693", hair: "#6A5A4A", hairStyle: "cap", capColor: "#B8261E", top: "#17171C", pants: "#2A2C34", eye: "#3A3028", build: 1.18 } as Look,
   /** a casino marketing executive */
   marketer: { skin: "#F0C8A8", hair: "#2A1A14", hairStyle: "long", top: "#3A2A4A", shirt: "#F3EFE6", pants: "#26303E" } as Look,
+  /** Bill Benter in Hong Kong: soft-spoken, a professor's look, wavy brown hair and moustache, suit (no photo face) */
+  benter: { skin: "#E6B693", hair: "#5A4632", hairStyle: "short", moustache: true, moustacheC: "#5A4632", top: "#3A4A5E", shirt: "#F3EFE6", tie: "#2E6E7A", pants: "#2A2C34", eye: "#3A4E5E" } as Look,
+  /** young Benter in Las Vegas: tweedy jacket, small beard (moustache) */
+  benterYoung: { skin: "#E6B693", hair: "#3A2A1E", hairStyle: "short", moustache: true, moustacheC: "#3A2A1E", top: "#6A5A44", shirt: "#E8E4DA", pants: "#3A3428", eye: "#3A4E5E" } as Look,
   /** a reporter */
   reporter: { skin: "#D9A47E", hair: "#5A3A22", hairStyle: "short", top: "#4A5A72", pants: "#2A2A34", eye: "#3A3028" } as Look,
 };
@@ -807,3 +811,95 @@ export const SlotFloor: React.FC<{ f: number; n?: number; rows?: number; hero?: 
 };
 export const SLOT_STEP = 0.78;
 export { Ticket, Van, Pile, ico, D };
+
+// ---------------- 13 · racetrack ----------------
+/** the oval: semi-axes along x and z, the racing lane in the middle of the turf ring */
+export const TRACK = { a: 14, b: 7, w: 3.2 };
+/** a point on the racing line at angle `u` (radians), `lane` metres out from the middle; ry faces along the running direction */
+export const trackAt = (u: number, lane = 0): { p: V3; ry: number } => {
+  const a = TRACK.a + lane;
+  const b = TRACK.b + lane;
+  const dx = -a * Math.sin(u);
+  const dz = b * Math.cos(u);
+  return { p: [a * Math.cos(u), 0, b * Math.sin(u)], ry: Math.atan2(dx, dz) };
+};
+const skylineTex = () =>
+  ctex("hk-skyline", 512, 512, (c, R) => {
+    c.fillStyle = "#0E141C";
+    c.fillRect(0, 0, 512, 512);
+    for (let i = 0; i < 900; i++) {
+      c.fillStyle = R() < 0.55 ? `rgba(255,214,150,${0.35 + R() * 0.5})` : `rgba(160,220,235,${0.2 + R() * 0.4})`;
+      c.fillRect(Math.floor(R() * 32) * 16 + 4, Math.floor(R() * 32) * 16 + 4, 8, 9);
+    }
+  }, [1, 1]);
+const standTex = () =>
+  ctex("grandstand", 1024, 256, (c, R) => {
+    c.fillStyle = "#1A1E26";
+    c.fillRect(0, 0, 1024, 256);
+    for (let row = 0; row < 7; row++)
+      for (let i = 0; i < 120; i++) {
+        c.fillStyle = ["#C0563F", "#3B6EA8", "#E2B24A", "#D9D0BE", "#5E8A5A", "#2A2A34"][Math.floor(R() * 6)];
+        c.fillRect(6 + i * 8.5 + (row % 2) * 4, 30 + row * 30, 6, 12);
+      }
+  });
+/** a ring of thin white rail around an ellipse with semi-axes a, b */
+const Rail: React.FC<{ a: number; b: number; n?: number }> = ({ a, b, n = 72 }) => (
+  <>
+    {Array.from({ length: n }, (_, i) => {
+      const u0 = (i / n) * Math.PI * 2;
+      const u1 = ((i + 1) / n) * Math.PI * 2;
+      const x0 = a * Math.cos(u0), z0 = b * Math.sin(u0), x1 = a * Math.cos(u1), z1 = b * Math.sin(u1);
+      const len = Math.hypot(x1 - x0, z1 - z0);
+      return (
+        <group key={i} position={[(x0 + x1) / 2, 0, (z0 + z1) / 2]} rotation={[0, -Math.atan2(z1 - z0, x1 - x0), 0]}>
+          <Box w={len + 0.02} h={0.05} d={0.05} c="#F3F1EA" p={[0, 0.95, 0]} shadow={false} />
+          <Box w={0.05} h={0.95} d={0.05} c="#F3F1EA" shadow={false} />
+        </group>
+      );
+    })}
+  </>
+);
+/**
+ * A floodlit night racetrack ringed by towers: turf oval (TRACK) with white rails, a grandstand along +z, a skyline of lit
+ * windows behind −z, four light towers. `horses` run anticlockwise from angle `u` (radians), a few metres apart.
+ */
+export const Racetrack: React.FC<{ f: number; u?: number; horses?: number; run?: boolean; children?: React.ReactNode; stand?: boolean }> = ({ f, u = 0, horses = 8, run = true, children, stand = true }) => {
+  const { a, b, w } = TRACK;
+  const silks = ["#B8342C", "#2F78B8", "#E2B24A", "#3F9A5A", "#8A5AA8", "#F3EFE6", "#D8682A", "#1E1A22"];
+  const coats = ["#6A3E24", "#3A2418", "#8A5A34", "#2A1A12"];
+  return (
+    <group>
+      <Floor w={90} d={90} c="#1C2A1E" />
+      <P g={cyl(1, 1, 0.02, 64)} c="#3F7A3A" s={[a + w / 2, 1, b + w / 2]} o={{ rough: 0.95 }} />
+      <P g={cyl(1, 1, 0.03, 64)} c="#26482A" s={[a - w / 2, 1, b - w / 2]} o={{ rough: 0.95 }} />
+      <Rail a={a - w / 2} b={b - w / 2} />
+      <Rail a={a + w / 2} b={b + w / 2} n={96} />
+      {stand ? (
+        <group position={[0, 0, b + w / 2 + 4]}>
+          <Box w={30} h={7} d={5} c="#22262E" p={[0, 0, 0]} />
+          <Panel map={standTex()} w={28} h={5} p={[0, 3.2, -2.52]} r={[0, Math.PI, 0]} glow={0.55} />
+          <Box w={31} h={0.3} d={7} c="#14161C" p={[0, 7, -1]} />
+        </group>
+      ) : null}
+      {[-34, -18, 0, 16, 30].map((x, i) => (
+        <group key={x} position={[x, 0, -b - 16 - (i % 2) * 6]}>
+          <Box w={9} h={26 + (i * 13) % 20} d={8} c="#101418" />
+          <Panel map={skylineTex()} w={8.6} h={25 + (i * 13) % 20} p={[0, (26 + (i * 13) % 20) / 2, 4.02]} glow={0.85} />
+        </group>
+      ))}
+      {[[-a - 4, -b - 3], [a + 4, -b - 3], [-a - 4, b + 3], [a + 4, b + 3]].map(([x, z], i) => (
+        <group key={i} position={[x, 0, z]}>
+          <P g={cyl(0.15, 0.2, 16, 6)} c="#3A3E46" />
+          <Box w={2.2} h={0.8} d={0.4} c="#F8F2DC" p={[0, 16, 0]} o={{ e: "#FFF4D0", ei: 2.4 }} shadow={false} />
+        </group>
+      ))}
+      <pointLight position={[-a, 14, 0]} intensity={260} distance={60} color="#FFF0D8" />
+      <pointLight position={[a, 14, 0]} intensity={260} distance={60} color="#FFF0D8" />
+      {Array.from({ length: horses }, (_, i) => {
+        const at = trackAt(u - i * 0.07 - (i % 3) * 0.02, (i % 4) * 0.55 - 0.8);
+        return <Horse key={i} p={at.p} ry={at.ry} ph={run ? f * 0.45 + i * 1.3 : 0} c={coats[i % 4]} silk={silks[i % 8]} />;
+      })}
+      {children}
+    </group>
+  );
+};

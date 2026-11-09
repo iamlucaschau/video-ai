@@ -1,0 +1,207 @@
+{
+  "name": "bill-benter",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "American male documentary narrator telling a true story to a friend. Calm, confident, a little amused, brisk pace around 200 words per minute, clear on every word. Numbers are crisp and land. The quote \"It would be unsporting\" is said plainly, a little dry. The last line is a quiet question. No hype, no shouting.",
+  "trimSilence": true,
+  "tempo": 1.02,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.2,
+    "scene": 0.3
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.3,
+      "text": "Twenty-seven floors up, across the road from a Hong Kong racetrack, two men are watching a computer, not the race."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "Bill Benter started out counting cards in Las Vegas, until the casinos blacklisted him."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02b",
+      "gapAfter": 0.3,
+      "text": "So he went looking for a game where the house couldn't throw him out: horse racing in Hong Kong.",
+      "style": "American male documentary narrator, calm and clear, normal pace. Say \"So HE went looking\" clearly, the word \"he\", not \"we\". No hype."
+    },
+    {
+      "id": "04",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "Hong Kong bet more on horses than the entire United States."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "And it's a pool."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "Bettors play against each other, while the club keeps about seventeen percent."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.3,
+      "text": "To win, Benter had to beat the crowd by more than that."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "He taught himself statistics."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Two typists spent nine months entering thousands of old races."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "In nineteen eighty-five, he flew in with three computers in his luggage."
+    },
+    {
+      "id": "11",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.3,
+      "text": "The first season, he and his partner lost a hundred and twenty thousand dollars."
+    },
+    {
+      "id": "12",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "The answer was hiding in plain sight: the crowd's own odds."
+    },
+    {
+      "id": "13",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "His model stopped ignoring the public and started correcting it."
+    },
+    {
+      "id": "14",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.3,
+      "text": "One season, he says, that was worth about three million dollars."
+    },
+    {
+      "id": "15",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "The club didn't ban him."
+    },
+    {
+      "id": "16",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "It called him one of its best customers, and let him plug his computers straight into its betting system."
+    },
+    {
+      "id": "17",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.3,
+      "text": "His model grew to more than a hundred and twenty factors per horse."
+    },
+    {
+      "id": "18",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "In nineteen ninety-seven, the club suspended his account."
+    },
+    {
+      "id": "19",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.3,
+      "text": "So his team printed betting slips and fed them into machines by hand, minutes before each race."
+    },
+    {
+      "id": "20",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "Which brings us back to that night in two thousand one."
+    },
+    {
+      "id": "21",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "Their computer had placed fifty-one thousand bets on one giant jackpot."
+    },
+    {
+      "id": "22",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.8,
+      "text": "One of them hit: sixteen million dollars."
+    },
+    {
+      "id": "23",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "Benter never cashed it."
+    },
+    {
+      "id": "24",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.8,
+      "text": "\"It would be unsporting,\" he said."
+    },
+    {
+      "id": "25",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.8,
+      "text": "The tickets went into a safe, and the money went to charity."
+    },
+    {
+      "id": "26",
+      "scene": "s9",
+      "take": "t09",
+      "gapAfter": 0.12,
+      "text": "His operations made close to a billion dollars."
+    },
+    {
+      "id": "27",
+      "scene": "s9",
+      "take": "t99",
+      "gapAfter": 0.3,
+      "text": "So the next time you bet on a horse, who else is in that pool with you?",
+      "style": "American male documentary narrator, quiet, slow and dry. A plain question to a friend, about four and a half seconds long, a small pause after \"horse\", no hype."
+    }
+  ]
+}
