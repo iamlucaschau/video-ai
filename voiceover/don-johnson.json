@@ -1,0 +1,247 @@
+{
+  "name": "don-johnson",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "American male documentary narrator telling a true story to a friend. Calm, confident, a little amused, brisk pace around 200 words per minute, clear on every word. Numbers are crisp and land. \"No.\" is one flat word after a beat. The last line is a quiet, dry question. No hype, no shouting.",
+  "trimSilence": true,
+  "tempo": 1.02,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.2,
+    "scene": 0.3
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.3,
+      "text": "You run a casino, and your biggest customer wants a discount on every dollar he loses."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "It's late twenty ten in Atlantic City."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "The recession has thinned out the high rollers."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "One whale's night can decide whether a casino's month ends in the red."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.3,
+      "text": "So the casinos start fighting for whales with discounts."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "Don Johnson used to run a racetrack."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "He started at twenty-five dollar tables."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "Now he bets a hundred thousand a hand."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.3,
+      "text": "And he won't play until the casino agrees to his terms."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Six decks."
+    },
+    {
+      "id": "11",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "The dealer stands on soft seventeen."
+    },
+    {
+      "id": "12",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "He can split aces again."
+    },
+    {
+      "id": "13",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.3,
+      "text": "Rule by rule, the house edge shrinks to about a quarter of one percent."
+    },
+    {
+      "id": "14",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "Then the big one."
+    },
+    {
+      "id": "15",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.8,
+      "text": "Lose more than half a million, and the casino hands back twenty percent."
+    },
+    {
+      "id": "16",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "Lose a million, and two hundred thousand comes back."
+    },
+    {
+      "id": "17",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "His losing nights now cost less."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.3,
+      "text": "His winning nights still pay in full."
+    },
+    {
+      "id": "19",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "December, Caesars: about four point two million dollars."
+    },
+    {
+      "id": "20",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "Then the Borgata: about five million."
+    },
+    {
+      "id": "21",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "April, the Tropicana: five point eight million in twelve hours."
+    },
+    {
+      "id": "22",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "One hand alone paid eight hundred thousand."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.3,
+      "text": "It's the worst loss in the Tropicana's history."
+    },
+    {
+      "id": "24",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "That's about fifteen million in six months."
+    },
+    {
+      "id": "25",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "Caesars bans him."
+    },
+    {
+      "id": "26",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.3,
+      "text": "Other casinos turn him away."
+    },
+    {
+      "id": "27",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "So he must count cards, right?"
+    },
+    {
+      "id": "28",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.8,
+      "text": "No."
+    },
+    {
+      "id": "29",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "He plays by the book, and luck still matters."
+    },
+    {
+      "id": "30",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "But the edge was never in his head."
+    },
+    {
+      "id": "31",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.8,
+      "text": "The casinos wrote it into the deal themselves."
+    },
+    {
+      "id": "32",
+      "scene": "s9",
+      "take": "t09",
+      "gapAfter": 0.12,
+      "text": "The Tropicana and the Borgata stopped offering him those terms."
+    },
+    {
+      "id": "33",
+      "scene": "s9",
+      "take": "t09",
+      "gapAfter": 0.3,
+      "text": "So when a casino offers you a deal, who do you think did the math first?"
+    }
+  ]
+}

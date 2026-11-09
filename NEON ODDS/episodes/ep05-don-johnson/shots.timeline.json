@@ -1,0 +1,266 @@
+[
+ {
+  "id": "S1",
+  "from": 0,
+  "len": 142,
+  "key": 71,
+  "size": "trung",
+  "note": "Don ở bàn blackjack đẩy tờ điều khoản về phía máy quay; khung 0"
+ },
+ {
+  "id": "S2",
+  "from": 142,
+  "len": 71,
+  "key": 185,
+  "size": "rộng",
+  "note": "sàn casino đêm, vắng; LATE 2010"
+ },
+ {
+  "id": "S3",
+  "from": 213,
+  "len": 69,
+  "key": 254,
+  "size": "trung",
+  "note": "phòng chơi lớn trống, hồ lì đứng chờ"
+ },
+ {
+  "id": "S4",
+  "from": 282,
+  "len": 100,
+  "key": 342,
+  "size": "trung",
+  "note": "phòng marketing: cột tháng đổi đỏ theo một chồng phỉnh"
+ },
+ {
+  "id": "S5",
+  "from": 382,
+  "len": 85,
+  "key": 433,
+  "size": "trung",
+  "note": "hai người marketing gọi điện mời khách"
+ },
+ {
+  "id": "S6",
+  "from": 467,
+  "len": 51,
+  "key": 498,
+  "size": "trung",
+  "note": "Don ở quầy vé trường đua; PHILADELPHIA PARK"
+ },
+ {
+  "id": "S7",
+  "from": 518,
+  "len": 64,
+  "key": 556,
+  "size": "cận",
+  "note": "phỉnh $25 trên bàn nhỏ; $25"
+ },
+ {
+  "id": "S8",
+  "from": 582,
+  "len": 73,
+  "key": 626,
+  "size": "cận",
+  "note": "thẻ phỉnh $100.000 đặt xuống; $100,000"
+ },
+ {
+  "id": "S9",
+  "from": 655,
+  "len": 83,
+  "key": 713,
+  "size": "trung",
+  "note": "Don khoanh tay, tờ điều khoản, quản lý ký"
+ },
+ {
+  "id": "S10",
+  "from": 738,
+  "len": 32,
+  "key": 757,
+  "size": "cận",
+  "note": "hộp chia sáu bộ; 6 DECKS"
+ },
+ {
+  "id": "S11",
+  "from": 770,
+  "len": 54,
+  "key": 808,
+  "size": "cận",
+  "note": "nhà cái lật A + 6 rồi dừng; S17"
+ },
+ {
+  "id": "S12",
+  "from": 824,
+  "len": 48,
+  "key": 858,
+  "size": "cận",
+  "note": "hai át tách, thêm át, tách lần nữa"
+ },
+ {
+  "id": "S13",
+  "from": 872,
+  "len": 128,
+  "key": 962,
+  "size": "trung",
+  "note": "cái cân lợi thế cân dần; 0.25%"
+ },
+ {
+  "id": "S14",
+  "from": 1000,
+  "len": 28,
+  "key": 1017,
+  "size": "cận",
+  "note": "tờ điều khoản, một dòng sáng lên"
+ },
+ {
+  "id": "S15",
+  "from": 1028,
+  "len": 131,
+  "key": 1133,
+  "size": "trung",
+  "note": "phỉnh thua bị gom đi, 20% trượt quay về; $500,000 · 20%"
+ },
+ {
+  "id": "S16",
+  "from": 1159,
+  "len": 90,
+  "key": 1222,
+  "size": "cận",
+  "note": "đống một triệu đi, một phần quay về; $200,000"
+ },
+ {
+  "id": "S17",
+  "from": 1249,
+  "len": 54,
+  "key": 1281,
+  "size": "trung",
+  "note": "Don thua mà vẫn bình thản"
+ },
+ {
+  "id": "S18",
+  "from": 1303,
+  "len": 58,
+  "key": 1338,
+  "size": "trung",
+  "note": "nhà cái đẩy đủ chồng thắng về cho Don"
+ },
+ {
+  "id": "S19",
+  "from": 1361,
+  "len": 101,
+  "key": 1432,
+  "size": "rộng",
+  "note": "biển CAESARS, Don ở bàn; $4.2M"
+ },
+ {
+  "id": "S20",
+  "from": 1462,
+  "len": 74,
+  "key": 1514,
+  "size": "rộng",
+  "note": "biển BORGATA; $5M"
+ },
+ {
+  "id": "S21",
+  "from": 1536,
+  "len": 134,
+  "key": 1630,
+  "size": "rộng",
+  "note": "TROPICANA, khán giả sau kính; $5.8M · 12 HOURS"
+ },
+ {
+  "id": "S22",
+  "from": 1670,
+  "len": 86,
+  "key": 1730,
+  "size": "cận",
+  "note": "bốn tay bài, chồng phỉnh to đẩy về; $800,000"
+ },
+ {
+  "id": "S23",
+  "from": 1756,
+  "len": 67,
+  "key": 1796,
+  "size": "trung",
+  "note": "quản lý ôm đầu"
+ },
+ {
+  "id": "S24",
+  "from": 1823,
+  "len": 86,
+  "key": 1883,
+  "size": "trung",
+  "note": "đồi phỉnh khổng lồ; $15M"
+ },
+ {
+  "id": "S25",
+  "from": 1909,
+  "len": 31,
+  "key": 1928,
+  "size": "trung",
+  "note": "cửa cuốn quầy CAESARS sập"
+ },
+ {
+  "id": "S26",
+  "from": 1940,
+  "len": 43,
+  "key": 1966,
+  "size": "trung",
+  "note": "Don ở cửa casino, người gác lắc đầu"
+ },
+ {
+  "id": "S27",
+  "from": 1983,
+  "len": 51,
+  "key": 2014,
+  "size": "cận",
+  "note": "mặt Don nhìn bài"
+ },
+ {
+  "id": "S28",
+  "from": 2034,
+  "len": 33,
+  "key": 2051,
+  "size": "cận",
+  "note": "Don ngẩng lên nhìn thẳng; khoảng lặng"
+ },
+ {
+  "id": "S29",
+  "from": 2067,
+  "len": 65,
+  "key": 2106,
+  "size": "cận",
+  "note": "thẻ chiến lược cơ bản cạnh bài"
+ },
+ {
+  "id": "S30",
+  "from": 2132,
+  "len": 62,
+  "key": 2169,
+  "size": "trung",
+  "note": "Don gõ ngón tay lên thái dương, lắc đầu"
+ },
+ {
+  "id": "S31",
+  "from": 2194,
+  "len": 85,
+  "key": 2253,
+  "size": "cận",
+  "note": "tờ điều khoản, dấu của casino đóng xuống"
+ },
+ {
+  "id": "S32",
+  "from": 2279,
+  "len": 85,
+  "key": 2330,
+  "size": "trung",
+  "note": "quản lý rút tờ điều khoản lại"
+ },
+ {
+  "id": "S33",
+  "from": 2364,
+  "len": 132,
+  "key": 2443,
+  "size": "trung",
+  "note": "về khung 0: tờ điều khoản trượt về phía người xem"
+ }
+]

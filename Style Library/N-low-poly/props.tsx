@@ -568,6 +568,27 @@ const cardPatternTex = () =>
         c.stroke();
       }
   });
+/** a face with a rank ("A", "6", "8", "K"…) in the corners and big in the middle; no rank = the plain diamond face */
+const rankFaceTex = (rank: string, red: boolean) =>
+  ctex(`cardrank|${rank}|${red}`, 256, 384, (c) => {
+    // drawn upside down: the face plane is turned over with the card, so this reads upright once `flip` is 1
+    c.translate(256, 384);
+    c.rotate(Math.PI);
+    c.fillStyle = "#F1EBDD";
+    c.fillRect(0, 0, 256, 384);
+    c.fillStyle = red ? "#B8342C" : "#141216";
+    c.textAlign = "center";
+    c.textBaseline = "middle";
+    c.font = `900 150px ${SIGN_FONT}`;
+    c.fillText(rank, 128, 200);
+    c.font = `900 54px ${SIGN_FONT}`;
+    c.fillText(rank, 40, 46);
+    c.save();
+    c.translate(216, 338);
+    c.rotate(Math.PI);
+    c.fillText(rank, 0, 0);
+    c.restore();
+  });
 const cardFaceTex = () =>
   ctex("cardface", 256, 384, (c) => {
     c.fillStyle = "#E4DCCA";
@@ -591,14 +612,14 @@ export const CARD = { w: 0.16, d: 0.24 };
  * on −x grows: the flaw, far wider than the real sub-millimetre one or a phone could not show it. `flip` turns it side over
  * side (1 = face up), `tumble` end over end. `edge` lights the wide long edge.
  */
-export const Card: React.FC<{ p?: V3; r?: V3; s?: number; shift?: number; flip?: number; tumble?: number; edge?: string; glow?: number }> = ({ p = [0, 0, 0], r = [0, 0, 0], s = 1, shift = 1, flip = 0, tumble = 0, edge, glow = 1 }) => {
+export const Card: React.FC<{ p?: V3; r?: V3; s?: number; shift?: number; flip?: number; tumble?: number; edge?: string; glow?: number; rank?: string; red?: boolean }> = ({ p = [0, 0, 0], r = [0, 0, 0], s = 1, shift = 1, flip = 0, tumble = 0, edge, glow = 1, rank, red = false }) => {
   const { w, d } = CARD;
   return (
     <group position={p} rotation={r} scale={s}>
       <group rotation={[tumble * Math.PI, 0, flip * Math.PI]}>
         <Box w={w} h={0.002} d={d} c="#F4EFE2" p={[0, -0.001, 0]} shadow={false} />
         <P g={PLANE} c="#FFFFFF" p={[shift * w * 0.05, 0.0012, 0]} r={[-Math.PI / 2, 0, 0]} s={[w * 0.84, d * 0.92, 1]} o={{ map: cardPatternTex() }} shadow={false} />
-        <P g={PLANE} c="#FFFFFF" p={[0, -0.0012, 0]} r={[Math.PI / 2, 0, 0]} s={[w, d, 1]} o={{ map: cardFaceTex() }} shadow={false} />
+        <P g={PLANE} c="#FFFFFF" p={[0, -0.0012, 0]} r={[Math.PI / 2, 0, 0]} s={[w, d, 1]} o={{ map: rank ? rankFaceTex(rank, red) : cardFaceTex() }} shadow={false} />
         {edge && glow > 0 ? <Box w={0.011} h={0.004} d={d} c={edge} p={[-w / 2, -0.001, 0]} o={{ e: edge, ei: 1.3 * glow }} shadow={false} /> : null}
       </group>
     </group>
@@ -1000,6 +1021,48 @@ export const RouletteWheel: React.FC<{ p?: V3; s?: number; ball?: BallState; rot
         {[0, 1].map((i) => <Box key={i} w={i ? 0.012 : 0.16} h={0.012} d={i ? 0.16 : 0.012} c={N.gold} p={[0, WHEEL.pocketY + 0.1, 0]} o={{ metal: 0.7, rough: 0.3 }} shadow={false} />)}
       </group>
       {ball?.on ? <P g={sph(0.011, 8, 6)} c="#F7F4EC" p={[Math.cos(ball.a) * ball.rr, ball.y + 0.011, Math.sin(ball.a) * ball.rr]} o={{ rough: 0.25 }} /> : null}
+    </group>
+  );
+};
+
+// ---------------- paperwork ----------------
+/**
+ * A sheet of terms lying flat (top edge toward −z): a title, `k` 0→1 brings the lines in one by one, `hi` lights one line
+ * amber (the clause the shot is about), `sign` 0→1 draws the signature on the bottom line.
+ */
+export const Contract: React.FC<{ p?: V3; r?: V3; s?: number; title?: string; lines?: number; k?: number; hi?: number; sign?: number }> = ({ p = [0, 0, 0], r = [0, 0, 0], s = 1, title = "TERMS", lines = 6, k = 1, hi = -1, sign = 0 }) => {
+  const tex = useLiveTex(384, 512, (c) => {
+    c.fillStyle = "#F4EEDF";
+    c.fillRect(0, 0, 384, 512);
+    c.fillStyle = "#141216";
+    c.font = `900 52px ${SIGN_FONT}`;
+    c.textAlign = "center";
+    c.fillText(title, 192, 70);
+    const shown = Math.round(k * lines);
+    for (let i = 0; i < shown; i++) {
+      c.fillStyle = i === hi ? "#E8962A" : "#7A7468";
+      c.fillRect(40, 120 + i * 46, i === hi ? 304 : 250 + ((i * 37) % 54), i === hi ? 22 : 14);
+    }
+    c.fillStyle = "#141216";
+    c.fillRect(40, 452, 200, 3);
+    if (sign > 0) {
+      c.strokeStyle = "#1F3F8C";
+      c.lineWidth = 6;
+      c.beginPath();
+      const n = Math.max(2, Math.round(sign * 24));
+      for (let i = 0; i < n; i++) {
+        const x = 48 + i * 7.5;
+        const y = 438 - Math.sin(i * 0.9) * 14 - (i % 5 === 0 ? 10 : 0);
+        if (i === 0) c.moveTo(x, y);
+        else c.lineTo(x, y);
+      }
+      c.stroke();
+    }
+  });
+  return (
+    <group position={p} rotation={r} scale={s}>
+      <Box w={0.3} h={0.003} d={0.4} c="#E8E1CF" p={[0, -0.002, 0]} shadow={false} />
+      <Panel map={tex} w={0.3} h={0.4} p={[0, 0.0015, 0]} r={[-Math.PI / 2, 0, 0]} glow={0.95} />
     </group>
   );
 };

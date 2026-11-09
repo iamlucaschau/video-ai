@@ -247,6 +247,10 @@
   "onset": 1.96,
   "peak": 455.84
  },
+ "sfx/music/own/don-johnson.mp3": {
+  "onset": 0.02,
+  "peak": 52.84
+ },
  "sfx/music/own/ivey-edge.mp3": {
   "onset": 0.01,
   "peak": 62.5

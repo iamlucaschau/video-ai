@@ -1529,5 +1529,14 @@
     "seconds": 108,
     "file": "sfx/music/own/ritz-roulette.mp3",
     "lufs": -17.8
+  },
+  {
+    "category": "music/own",
+    "title": "NEON ODDS bed: don-johnson",
+    "author": "code",
+    "source": "scripts/make-music.py",
+    "seconds": 92,
+    "file": "sfx/music/own/don-johnson.mp3",
+    "lufs": -18.1
   }
 ]

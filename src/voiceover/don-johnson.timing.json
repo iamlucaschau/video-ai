@@ -1,0 +1,236 @@
+{
+  "durationInSeconds": 82.89091666666667,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 4.515,
+      "text": "You run a casino, and your biggest customer wants a discount on every dollar he loses."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "start": 4.814916666666666,
+      "end": 7.0529166666666665,
+      "text": "It's late twenty ten in Atlantic City."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 7.172749999999999,
+      "end": 9.359749999999998,
+      "text": "The recession has thinned out the high rollers."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 9.480041666666665,
+      "end": 12.675041666666665,
+      "text": "One whale's night can decide whether a casino's month ends in the red."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 12.795499999999999,
+      "end": 15.319499999999998,
+      "text": "So the casinos start fighting for whales with discounts."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "start": 15.619791666666664,
+      "end": 17.226791666666664,
+      "text": "Don Johnson used to run a racetrack."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "start": 17.346624999999996,
+      "end": 19.345624999999995,
+      "text": "He started at twenty-five dollar tables."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "start": 19.465416666666663,
+      "end": 21.79541666666666,
+      "text": "Now he bets a hundred thousand a hand."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "start": 21.915749999999996,
+      "end": 24.368749999999995,
+      "text": "And he won't play until the casino agrees to his terms."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "start": 24.66883333333333,
+      "end": 25.60483333333333,
+      "text": "Six decks."
+    },
+    {
+      "id": "11",
+      "scene": "s4",
+      "start": 25.724624999999996,
+      "end": 27.403624999999995,
+      "text": "The dealer stands on soft seventeen."
+    },
+    {
+      "id": "12",
+      "scene": "s4",
+      "start": 27.523874999999997,
+      "end": 29.003874999999997,
+      "text": "He can split aces again."
+    },
+    {
+      "id": "13",
+      "scene": "s4",
+      "start": 29.12358333333333,
+      "end": 33.09958333333333,
+      "text": "Rule by rule, the house edge shrinks to about a quarter of one percent."
+    },
+    {
+      "id": "14",
+      "scene": "s5",
+      "start": 33.399541666666664,
+      "end": 34.20854166666666,
+      "text": "Then the big one."
+    },
+    {
+      "id": "15",
+      "scene": "s5",
+      "start": 34.328916666666665,
+      "end": 37.895916666666665,
+      "text": "Lose more than half a million, and the casino hands back twenty percent."
+    },
+    {
+      "id": "16",
+      "scene": "s5",
+      "start": 38.695625,
+      "end": 41.593625,
+      "text": "Lose a million, and two hundred thousand comes back."
+    },
+    {
+      "id": "17",
+      "scene": "s5",
+      "start": 41.713791666666665,
+      "end": 43.38579166666666,
+      "text": "His losing nights now cost less."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "start": 43.50608333333333,
+      "end": 45.12808333333333,
+      "text": "His winning nights still pay in full."
+    },
+    {
+      "id": "19",
+      "scene": "s6",
+      "start": 45.42770833333333,
+      "end": 48.681708333333326,
+      "text": "December, Caesars: about four point two million dollars."
+    },
+    {
+      "id": "20",
+      "scene": "s6",
+      "start": 48.80179166666666,
+      "end": 51.14279166666666,
+      "text": "Then the Borgata: about five million."
+    },
+    {
+      "id": "21",
+      "scene": "s6",
+      "start": 51.26262499999999,
+      "end": 55.61962499999999,
+      "text": "April, the Tropicana: five point eight million in twelve hours."
+    },
+    {
+      "id": "22",
+      "scene": "s6",
+      "start": 55.73929166666666,
+      "end": 58.49529166666666,
+      "text": "One hand alone paid eight hundred thousand."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "start": 58.61541666666666,
+      "end": 60.54541666666666,
+      "text": "It's the worst loss in the Tropicana's history."
+    },
+    {
+      "id": "24",
+      "scene": "s7",
+      "start": 60.84533333333333,
+      "end": 63.58533333333333,
+      "text": "That's about fifteen million in six months."
+    },
+    {
+      "id": "25",
+      "scene": "s7",
+      "start": 63.70579166666666,
+      "end": 64.59879166666666,
+      "text": "Caesars bans him."
+    },
+    {
+      "id": "26",
+      "scene": "s7",
+      "start": 64.71841666666666,
+      "end": 65.86741666666666,
+      "text": "Other casinos turn him away."
+    },
+    {
+      "id": "27",
+      "scene": "s8",
+      "start": 66.16758333333333,
+      "end": 67.75958333333332,
+      "text": "So he must count cards, right?"
+    },
+    {
+      "id": "28",
+      "scene": "s8",
+      "start": 67.87991666666666,
+      "end": 68.17391666666666,
+      "text": "No."
+    },
+    {
+      "id": "29",
+      "scene": "s8",
+      "start": 68.97441666666666,
+      "end": 71.01741666666666,
+      "text": "He plays by the book, and luck still matters."
+    },
+    {
+      "id": "30",
+      "scene": "s8",
+      "start": 71.13745833333333,
+      "end": 73.06445833333333,
+      "text": "But the edge was never in his head."
+    },
+    {
+      "id": "31",
+      "scene": "s8",
+      "start": 73.18437499999999,
+      "end": 75.23137499999999,
+      "text": "The casinos wrote it into the deal themselves."
+    },
+    {
+      "id": "32",
+      "scene": "s9",
+      "start": 76.03129166666666,
+      "end": 78.73829166666665,
+      "text": "The Tropicana and the Borgata stopped offering him those terms."
+    },
+    {
+      "id": "33",
+      "scene": "s9",
+      "start": 78.85841666666666,
+      "end": 82.59041666666666,
+      "text": "So when a casino offers you a deal, who do you think did the math first?"
+    }
+  ]
+}

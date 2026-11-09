@@ -43,6 +43,10 @@ export const CAST = {
   tosaBlonde: { skin: "#F0C8A8", hair: "#E8CF8A", hairStyle: "long", top: "#6A2232", pants: "#20202A", eye: "#3A4E5E" } as Look,
   /** a casino security chief, ex-soldier: big, short grey hair */
   secChief: { skin: "#E6B693", hair: "#8A8278", hairStyle: "short", top: "#1E2430", shirt: "#F3EFE6", tie: "#2E6E7A", pants: "#1E2430", build: 1.2 } as Look,
+  /** Don Johnson at the tables: burly, middle-aged, red cap, black hoodie (as The Atlantic describes him; no photo face) */
+  donJohnson: { skin: "#E6B693", hair: "#6A5A4A", hairStyle: "cap", capColor: "#B8261E", top: "#17171C", pants: "#2A2C34", eye: "#3A3028", build: 1.18 } as Look,
+  /** a casino marketing executive */
+  marketer: { skin: "#F0C8A8", hair: "#2A1A14", hairStyle: "long", top: "#3A2A4A", shirt: "#F3EFE6", pants: "#26303E" } as Look,
   /** a reporter */
   reporter: { skin: "#D9A47E", hair: "#5A3A22", hairStyle: "short", top: "#4A5A72", pants: "#2A2A34", eye: "#3A3028" } as Look,
 };
@@ -647,6 +651,34 @@ export const RouletteTable: React.FC<{ ball?: BallState; rot?: number; tilt?: nu
     <Box w={ROUL.w + 0.04} h={0.05} d={0.07} c="#2A1810" p={[0, TABLE_Y - 0.02, -ROUL.d / 2]} o={{ rough: 0.4 }} />
     <Panel map={rouletteFelt()} w={1.54} h={0.8} p={[0.35, TABLE_Y + 0.006, 0]} r={[-Math.PI / 2, 0, 0]} alpha glow={0.8} />
     <RouletteWheel p={[ROUL.wheelX, TABLE_Y - 0.05, 0]} ball={ball} rot={rot} tilt={tilt} mark={mark} zone={zone} />
+  </group>
+);
+const blackjackFelt = () =>
+  ctex("blackjackfelt", 1024, 576, (c) => {
+    c.clearRect(0, 0, 1024, 576);
+    c.strokeStyle = "rgba(242,226,180,.6)";
+    c.fillStyle = "rgba(242,226,180,.6)";
+    c.lineWidth = 6;
+    c.textAlign = "center";
+    c.textBaseline = "middle";
+    c.font = `900 50px ${SIGN_FONT}`;
+    c.fillText("BLACKJACK", 512, 250);
+    // six betting circles along the players' edge (bottom of the canvas = −z… top = +z; players sit on −z)
+    for (let i = 0; i < 6; i++) {
+      const a = Math.PI * (0.18 + (i * 0.64) / 5);
+      c.beginPath();
+      c.arc(512 - Math.cos(a) * 400, 120 + Math.sin(a) * -10 + 30 + Math.abs(i - 2.5) * 18, 34, 0, Math.PI * 2);
+      c.stroke();
+    }
+  });
+/** a blackjack table: the baccarat oval with blackjack markings; players on −z, the dealer and shoe on +z */
+export const BlackjackTable: React.FC<{ felt?: string }> = ({ felt = "#114A4C" }) => (
+  <group>
+    <P g={cyl(0.34, 0.44, TABLE_Y - 0.05, 10)} c="#1A1214" />
+    <P g={cyl(1, 0.96, 0.06, 28)} c="#3A2216" p={[0, TABLE_Y - 0.06, 0]} s={[1.36, 1, 0.8]} o={{ rough: 0.35 }} />
+    <P g={cyl(1, 1, 0.006, 28)} c={N.gold} p={[0, TABLE_Y - 0.004, 0]} s={[1.33, 1, 0.77]} o={{ metal: 0.6, rough: 0.35 }} shadow={false} />
+    <P g={cyl(1, 1, 0.006, 28)} c={felt} p={[0, TABLE_Y, 0]} s={[1.28, 1, 0.73]} o={{ rough: 0.95 }} />
+    <Panel map={blackjackFelt()} w={1.9} h={1.05} p={[0, TABLE_Y + 0.007, 0.02]} r={[-Math.PI / 2, 0, 0]} alpha glow={0.75} />
   </group>
 );
 /** the gaming floor: slots and a lit sign on the back wall, an LED board, two pendants over the table at the origin */
