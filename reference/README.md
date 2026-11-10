@@ -14,6 +14,7 @@ git clone --depth 1 https://github.com/Remocn/remocn.git
 git clone --depth 1 https://github.com/reactvideoeditor/remotion-templates.git
 git clone --depth 1 https://github.com/fliptheweb/motion-ui-design.git
 git clone --depth 1 https://github.com/kelano86/what-if-animation.git
+git clone --depth 1 https://github.com/mromidev/claude-animated-shorts.git
 ```
 
 | Repo | License | What it is | Use here |
@@ -25,6 +26,7 @@ git clone --depth 1 https://github.com/kelano86/what-if-animation.git
 | [reactvideoeditor/remotion-templates](https://github.com/reactvideoeditor/remotion-templates) | **none stated** | 81 small Remotion effect templates | Ideas only. **Do not copy code** (no license = all rights reserved) |
 | [fliptheweb/motion-ui-design](https://github.com/fliptheweb/motion-ui-design) | none stated | Curated list of motion-design resources | Reading list |
 | [kelano86/what-if-animation](https://github.com/kelano86/what-if-animation) | MIT (© 2026 FreshStack) | Claude Code skill: a 15–25 s "What If" cartoon from one line, every frame SVG in Remotion; ElevenLabs voice + SFX | **Adopted 2026-11-03** (Lucas approved W1–W10, `studio/DE-XUAT-WHAT-IF-ANIMATION.md`): rig + room kit + light → `Style Library/toon-engine/` (MIT notice kept); storyboard, word cues, pace → `scripts/shotlist.mjs`; covered-word check → `scripts/stems.py` + `studio:compare`; SFX onset / peak → `scripts/sfx-onsets.mjs` + `<Sfx align>`; board / motion checklists → `review-loop`. **Not taken:** ElevenLabs voice and AI-generated SFX (paid, non-commercial on the free plan, and against "real SFX only"), camera shake, its 16:9-only frame |
+| [mromidev/claude-animated-shorts](https://github.com/mromidev/claude-animated-shorts) | MIT (read at commit `e3b817b`, 2026-11-01) | Claude Code skill for animated shorts: 2D characters in 3D worlds, numpy-synthesized SFX / music | **Adopted 2026-11-04** (Lucas approved N1–N14, `studio/DE-XUAT-CLAUDE-ANIMATED-SHORTS.md`): ideas rewritten into `Style Library/M-hoat-su/`; its `templates/audio/` is the model for code-made SFX (AGENTS "Sound design"). **Not taken:** N15, N16, and the frames / sheets of another channel in its examples (private study, never in our videos) |
 
 ## Remocn components vs our short-form rules
 
