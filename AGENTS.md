@@ -425,6 +425,8 @@ inline, Studio can't save them back. To persist a change, edit
 
 ## Environment notes
 
+- New machine: `SETUP.md` lists what is not in git (Pixabay SFX, keys, earshot + models, Blender shots, Claude memory)
+  and how to install or copy each.
 - Node 24, npm (keep `package-lock.json`), Windows. The project path contains
   a space (`VIDEO AI`), so quote paths in shell commands.
 - Rendering uses Remotion's bundled Chrome Headless Shell (downloaded on first
