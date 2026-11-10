@@ -1,5 +1,5 @@
 /**
- * Coastline paths for "How an Aircraft Carrier Defends Itself" (Test/carrier): Natural Earth land (world-atlas 50m),
+ * Coastline paths for "How an Aircraft Carrier Defends Itself" (Formats/Naval Board/episodes/ep01-carrier): Natural Earth land (world-atlas 50m),
  * projected with d3-geo onto the 1920×1080 canvas. Writes src/compositions/Carrier/maps.json.
  *   node scripts/carrier-maps.mjs
  */

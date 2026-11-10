@@ -43,6 +43,15 @@ Mỗi video một dòng; ghi **ngày lấy số** vì số liệu thay đổi.
 - Điểm cắt cảnh: `ffmpeg -i <v> -vf "select='gt(scene,0.3)',showinfo" -f null -` → `_work/<V>.cuts.txt`. Khung đứng yên: `freezedetect` → `_work/<V>.freeze.txt`.
 - Lời đọc: caption tải kèm (`*_CAPTION.txt`) hoặc Whisper → transcript có thời gian từng câu → **wpm**, tỉ lệ thời gian có lời / tổng thời lượng.
 - Phụ đề (có / không, cỡ, font, số từ mỗi lần hiện), chữ trên màn hình, máy quay (đứng yên / bay / zoom / motion blur).
+- **Hình: 7 mảng đo bằng số** *(bổ sung 2026-11-04, từ claude-animated-shorts N12; Lucas duyệt)*: mỗi mảng một bảng số, không tả bằng tính từ, đo trên ≥ 20 khung rải đều (che dải phụ đề trước khi đo):
+  1. **Chuyển động**: % khung có máy quay động, tốc độ đỉnh (px / frame), thời gian một cú trượt, nhún khi đi (% chiều cao), số frame một bước, chớp mắt (khoảng cách, số frame).
+  2. **Chiều sâu**: % thời lượng có nền nhoè, độ nhoè nền theo cỡ cảnh (px trên khung 1080), % khung có vật tiền cảnh, sương / màu chân trời so với vật gần.
+  3. **Chất liệu**: bề mặt nào có vân (gỗ, đá, vữa, ngói, cỏ), độ tương phản vân.
+  4. **Nhân vật**: tỉ lệ đầu (cao / rộng), số đầu-chiều-cao, màu và độ dày viền, số biểu cảm, mặt sáng bao nhiêu (V).
+  5. **Ánh sáng**: hướng nắng so với camera, tỉ lệ bóng / sáng trên cùng bề mặt, màu bóng (ngày / hoàng hôn / đêm), bóng chân.
+  6. **Viền**: viền trên cảnh có không, dày bao nhiêu px, đổi theo khoảng cách không, màu.
+  7. **Màu (grade)**: độ sáng trung vị, p2 / p98, độ bão hoà, màu vùng tối.
+  So hình của mình với họ bằng `scripts/sbs-sheet.py` (mình trên, họ dưới).
 - **Nhãn cho mọi số đo** *(bổ sung 2026-11-01)*: **ĐO** (đọc từ lệnh / file: ffprobe, ebur128, Whisper, đếm khung), **ƯỚC** (nhìn bằng mắt trên khung: cỡ chữ, vị trí, kiểu máy quay), **QUYẾT** (lựa chọn của mình cho bản của mình). Mỗi giá trị **ƯỚC** ghi kèm frame / timestamp cần kiểm lại; không xây tiếp lên một giá trị ƯỚC trước khi đo lại.
 
 ### 1.3 Bảng shot-by-shot có timestamp *(bổ sung 2026-11-01)*

@@ -1,0 +1,126 @@
+{
+  "question": "Một hiện tượng tự nhiên trông thế nào khi vẽ toàn bộ dữ liệu thật của nó qua một chu kỳ (năm, tuần, chu kỳ đèn)?",
+  "length": {
+    "seconds": [
+      24,
+      68
+    ],
+    "words": [
+      0,
+      206
+    ]
+  },
+  "hook": {
+    "pattern": "Vòng lặp: khung 0 đã chuyển động + tiêu đề 2 tầng + câu bất ngờ ở caption. Phim có lời: nghịch lý / giả thiết nhìn thấy được ngay từ 0,0 s",
+    "quote": "Lower the Bering Sea by about 50 meters and Asia and America touch.",
+    "atS": 0
+  },
+  "bridge": {
+    "pattern": "Vòng lặp: đổi chiều chu kỳ (chữ Spring) ở ~50 %. Phim có lời: lùi về nguyên nhân (a year ago, to see why, but…)",
+    "quote": "A year ago, the warm water stopped in the middle of the ocean…",
+    "atShare": 0.19
+  },
+  "close": {
+    "pattern": "Vòng lặp: khép chu kỳ, chữ mùa đầu hiện lại → nối vòng. Phim có lời: một con số so sánh / cặp số đối xứng, không CTA",
+    "quote": "50 meters join two continents. It takes about 4,000 meters to empty the sea.",
+    "atS": 26.3
+  },
+  "beats": [
+    {
+      "name": "Mở (khung 0 đang chạy)",
+      "from": 0,
+      "to": 0.1,
+      "does": "bản đồ + dữ liệu đã chuyển động, tiêu đề + đồng hồ + nhãn mùa đứng sẵn"
+    },
+    {
+      "name": "Đi (mùa thu / triều lên / nước hạ)",
+      "from": 0.1,
+      "to": 0.45,
+      "does": "dòng sáng chảy theo hướng chính, máy quay trượt chậm theo"
+    },
+    {
+      "name": "Đổi chiều",
+      "from": 0.45,
+      "to": 0.55,
+      "does": "nhãn Spring / số đổi dấu; dòng quay ngược"
+    },
+    {
+      "name": "Về",
+      "from": 0.55,
+      "to": 0.9,
+      "does": "dòng chảy ngược toả lại khắp vùng xuất phát"
+    },
+    {
+      "name": "Khép vòng",
+      "from": 0.9,
+      "to": 1,
+      "does": "tua nhanh đoạn lặng, chữ mùa đầu hiện lại, khung cuối = khung 0"
+    }
+  ],
+  "devices": [
+    "thời gian không đều (chậm khi có chuyện)",
+    "chú giải 1 dòng nói rõ dữ liệu là mô phỏng hay đo",
+    "ảnh thật của đối tượng trong khung",
+    "caption: câu bất ngờ + giải thích + Data: có DOI",
+    "phiên bản theo nơi chốn (mỗi vịnh / mỗi đảo / mỗi loài = một reel)"
+  ],
+  "title": {
+    "pattern": "Facebook không có tiêu đề riêng: câu đầu caption là tiêu đề. YouTube: A year of <loài> migration / One Week of <nơi>'s Currents, Hour by Hour / Every <vật> in <nơi>, …",
+    "examples": [
+      "A year of Barn Swallow migration",
+      "One Week of Lake Michigan's Currents, Hour by Hour",
+      "Every Lighthouse on the Coast of New England, Flashing on Its Real Cycle"
+    ]
+  },
+  "facts": {
+    "checked": 21,
+    "ok": 8,
+    "approx": 8,
+    "wrong": 0,
+    "unknown": 5
+  },
+  "pillars": [
+    {
+      "name": "Di cư chim (một năm, một loài)",
+      "share": 0.2,
+      "examples": [
+        "R1 Barn Swallow 1,3M",
+        "R2 Baltimore Oriole 1M"
+      ]
+    },
+    {
+      "name": "Nước chuyển động (dòng chảy vịnh / hồ, sông)",
+      "share": 0.4,
+      "examples": [
+        "R3 Rivers 548K",
+        "R5 Mobile Bay 166K",
+        "R8 Corpus Christi 47K",
+        "R9 Garda 13K"
+      ]
+    },
+    {
+      "name": "Hải đăng theo chu kỳ thật",
+      "share": 0.2,
+      "examples": [
+        "R6 PEI 109K",
+        "R10 Thổ Nhĩ Kỳ 11K"
+      ]
+    },
+    {
+      "name": "Giải thích khoa học có lời (khí hậu, địa chất)",
+      "share": 0.2,
+      "examples": [
+        "R4 El Niño 250K",
+        "R7 Bering 108K"
+      ]
+    }
+  ],
+  "weaknesses": [
+    "Chữ nhỏ (trung vị 22–57 px trên 1080), nhiều chữ ngoài vùng an toàn (tới 100 % ở R8)",
+    "Reel có lời dài, nhiều số (Garda 62 s) flop",
+    "El Niño chọn mốc chuẩn cho số to nhất (+3,5 °C) mà không nói mốc",
+    "Reel đầu (Thổ Nhĩ Kỳ) 80 % khung đen, đèn li ti: không đọc được trên điện thoại",
+    "Trên YouTube cùng nội dung gần như không ai xem: format phụ thuộc Meta"
+  ],
+  "signature": "Chữ: A YEAR OF MIGRATION · <loài> / A Week of Currents. Âm: một bản nhạc nền, không lời. Hình: vệt sáng additive trên nền gần đen, đồng hồ vòng năm, logo mapped.earth góc trên"
+}

@@ -1,0 +1,234 @@
+[
+ {
+  "id": "S1",
+  "from": 0,
+  "len": 89,
+  "key": 45,
+  "size": "rộng",
+  "note": "Churchill giữa doanh trại, kiếm + cung + kèn túi (frame 0 = frame cuối)"
+ },
+ {
+  "id": "S2",
+  "from": 89,
+  "len": 25,
+  "key": 107,
+  "size": "cận",
+  "note": "tay rút kiếm, lưỡi loé"
+ },
+ {
+  "id": "S3",
+  "from": 114,
+  "len": 23,
+  "key": 128,
+  "size": "cận",
+  "note": "cung trên vai"
+ },
+ {
+  "id": "S4",
+  "from": 137,
+  "len": 39,
+  "key": 160,
+  "size": "cận",
+  "note": "thổi kèn túi, nốt nhạc"
+ },
+ {
+  "id": "S5",
+  "from": 176,
+  "len": 47,
+  "key": 204,
+  "size": "rộng",
+  "note": "hàng lính súng trường, Churchill cầm cung ở cuối hàng"
+ },
+ {
+  "id": "S6",
+  "from": 223,
+  "len": 86,
+  "key": 296,
+  "size": "vừa",
+  "note": "kéo cung, mũi tên cắm hồng tâm ở 'championships'"
+ },
+ {
+  "id": "S7",
+  "from": 309,
+  "len": 76,
+  "key": 355,
+  "size": "rộng",
+  "note": "xuồng đổ bộ cập bãi tuyết, biển NORWAY 1941"
+ },
+ {
+  "id": "S8",
+  "from": 385,
+  "len": 55,
+  "key": 418,
+  "size": "vừa",
+  "note": "Churchill bước xuống thổi kèn"
+ },
+ {
+  "id": "S9",
+  "from": 440,
+  "len": 77,
+  "key": 502,
+  "size": "phẳng",
+  "note": "bản đồ Ý ghim tường, SALERNO 1943, mũi tên lên đồi"
+ },
+ {
+  "id": "S10",
+  "from": 517,
+  "len": 31,
+  "key": 536,
+  "size": "rộng",
+  "note": "thị trấn núi, chốt bao cát trên đỉnh, vòng đỏ"
+ },
+ {
+  "id": "S11",
+  "from": 548,
+  "len": 44,
+  "key": 574,
+  "size": "vừa",
+  "note": "Churchill + hạ sĩ lên dốc"
+ },
+ {
+  "id": "S12",
+  "from": 592,
+  "len": 109,
+  "key": 679,
+  "size": "rộng",
+  "note": "hàng tù binh giơ tay, thẻ 42, ống cối"
+ },
+ {
+  "id": "S13",
+  "from": 701,
+  "len": 61,
+  "key": 738,
+  "size": "cận",
+  "note": "bao kiếm trống, mặt ngạc nhiên"
+ },
+ {
+  "id": "S14",
+  "from": 762,
+  "len": 57,
+  "key": 808,
+  "size": "vừa",
+  "note": "đi bộ vào hẻm, nhặt kiếm"
+ },
+ {
+  "id": "S15",
+  "from": 819,
+  "len": 76,
+  "key": 865,
+  "size": "rộng",
+  "note": "đồi đá đêm, biển BRAČ 1944"
+ },
+ {
+  "id": "S16",
+  "from": 895,
+  "len": 77,
+  "key": 957,
+  "size": "rộng",
+  "note": "chớp sáng, đồng đội khuất sau đá, chỉ ông đứng"
+ },
+ {
+  "id": "S17",
+  "from": 972,
+  "len": 98,
+  "key": 1031,
+  "size": "vừa",
+  "note": "thổi kèn một mình, bóng lính Đức tiến ở xa"
+ },
+ {
+  "id": "S18",
+  "from": 1070,
+  "len": 75,
+  "key": 1115,
+  "size": "cận",
+  "note": "cận thổi kèn, nốt nhạc"
+ },
+ {
+  "id": "S19",
+  "from": 1145,
+  "len": 52,
+  "key": 1166,
+  "size": "vừa",
+  "note": "lựu đạn lăn tới, chớp trắng, tối đen"
+ },
+ {
+  "id": "S20",
+  "from": 1197,
+  "len": 81,
+  "key": 1246,
+  "size": "rộng",
+  "note": "phòng thẩm vấn, biển BERLIN, sĩ quan Đức cầm hồ sơ"
+ },
+ {
+  "id": "S21",
+  "from": 1278,
+  "len": 19,
+  "key": 1293,
+  "size": "cận",
+  "note": "hồ sơ CHURCHILL (đẩy chậm duy nhất)"
+ },
+ {
+  "id": "S22",
+  "from": 1297,
+  "len": 61,
+  "key": 1340,
+  "size": "vừa",
+  "note": "sĩ quan giơ chân dung Winston cạnh Churchill"
+ },
+ {
+  "id": "S23",
+  "from": 1358,
+  "len": 40,
+  "key": 1378,
+  "size": "cận",
+  "note": "Churchill lắc đầu"
+ },
+ {
+  "id": "S24",
+  "from": 1398,
+  "len": 56,
+  "key": 1432,
+  "size": "rộng",
+  "note": "hàng rào kẽm gai + chòi canh, đèn quét"
+ },
+ {
+  "id": "S25",
+  "from": 1454,
+  "len": 24,
+  "key": 1466,
+  "size": "mặt cắt",
+  "note": "bò trong hầm dưới hàng rào"
+ },
+ {
+  "id": "S26",
+  "from": 1478,
+  "len": 29,
+  "key": 1495,
+  "size": "vừa",
+  "note": "đèn rọi lối ra, lính Đức, mặt 'oops'"
+ },
+ {
+  "id": "S27",
+  "from": 1507,
+  "len": 133,
+  "key": 1600,
+  "size": "vừa",
+  "note": "điện thoại dọc: video vẽ bắn cung, FRANCE 1940"
+ },
+ {
+  "id": "S28",
+  "from": 1640,
+  "len": 94,
+  "key": 1720,
+  "size": "rộng",
+  "note": "xe tải lùi qua cây cung, cung gãy ở 'crushed'"
+ },
+ {
+  "id": "S29",
+  "from": 1734,
+  "len": 114,
+  "key": 1820,
+  "size": "rộng",
+  "note": "về khung S1, biển 1945–1996 ở 'fifty' rồi rút"
+ }
+]

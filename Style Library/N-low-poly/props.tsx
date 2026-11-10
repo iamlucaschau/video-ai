@@ -1196,3 +1196,56 @@ export const KenoBoard: React.FC<{ p?: V3; w?: number; lit?: number[]; title?: s
     </group>
   );
 };
+
+// ---------------- bar ----------------
+/** a whisky tumbler, base at `p`; `fill` 0→1 is how full it is (amber liquid with a little glow so it reads in a dark room) */
+export const Glass: React.FC<{ p?: V3; fill?: number; s?: number }> = ({ p = [0, 0, 0], fill = 0.6, s = 1 }) => (
+  <group position={p} scale={s}>
+    <P g={cyl(0.04, 0.034, 0.012, 10)} c="#CFE6EA" o={{ op: 0.75, rough: 0.1 }} />
+    {fill > 0.02 ? <P g={cyl(0.036, 0.033, 0.075 * Math.min(1, fill), 10)} c="#C8781E" p={[0, 0.012, 0]} o={{ e: "#8A4A10", ei: 0.6, rough: 0.2, op: 0.92 }} /> : null}
+    <P g={cyl(0.042, 0.036, 0.095, 10)} c="#DDEFF2" o={{ op: 0.3, rough: 0.05 }} shadow={false} />
+  </group>
+);
+/** a liquor bottle standing on its base at `p` (tilt it with `r` to pour) */
+export const Bottle: React.FC<{ p?: V3; r?: V3; s?: number; c?: string }> = ({ p = [0, 0, 0], r = [0, 0, 0], s = 1, c = "#5A3A1E" }) => (
+  <group position={p} rotation={r} scale={s}>
+    <P g={cyl(0.04, 0.04, 0.2, 10)} c={c} o={{ op: 0.9, rough: 0.2 }} />
+    <P g={cyl(0.014, 0.04, 0.06, 10)} c={c} p={[0, 0.2, 0]} o={{ op: 0.9, rough: 0.2 }} />
+    <P g={cyl(0.014, 0.014, 0.05, 8)} c="#1A1214" p={[0, 0.26, 0]} />
+    <Box w={0.07} h={0.08} d={0.002} c="#E8DCC0" p={[0, 0.06, 0.041]} shadow={false} />
+  </group>
+);
+/** a wall screen with a pie chart: the `slice` share (0–1) pulls out of the pie by `k` 0→1 and turns amber */
+export const PieChart: React.FC<{ p?: V3; w?: number; slice?: number; k?: number }> = ({ p = [0, 0, 0], w = 1.4, slice = 0.1, k = 0 }) => {
+  const tex = useLiveTex(512, 384, (c) => {
+    c.fillStyle = "#0C1A1E";
+    c.fillRect(0, 0, 512, 384);
+    const cx = 256;
+    const cy = 192;
+    const r = 150;
+    const a0 = -Math.PI / 2;
+    const a1 = a0 + slice * Math.PI * 2;
+    c.fillStyle = "#2E4A52";
+    c.beginPath();
+    c.moveTo(cx, cy);
+    c.arc(cx, cy, r, a1, a0 + Math.PI * 2);
+    c.closePath();
+    c.fill();
+    const mid = (a0 + a1) / 2;
+    const ox = Math.cos(mid) * 34 * k;
+    const oy = Math.sin(mid) * 34 * k;
+    c.fillStyle = k > 0.05 ? "#FFB347" : "#3E5A62";
+    c.beginPath();
+    c.moveTo(cx + ox, cy + oy);
+    c.arc(cx + ox, cy + oy, r, a0, a1);
+    c.closePath();
+    c.fill();
+  });
+  const h = w * 0.75;
+  return (
+    <group position={p}>
+      <Box w={w + 0.1} h={h + 0.1} d={0.08} c="#14161C" p={[0, 0, -0.06]} />
+      <Panel map={tex} w={w} h={h} p={[0, h / 2 + 0.05, 0]} glow={1.1} />
+    </group>
+  );
+};

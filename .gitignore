@@ -60,3 +60,12 @@ Formats/**/*.mp4
 # NEON ODDS: renders and local listening copies stay out of git
 NEON ODDS/**/*.mp4
 NEON ODDS/episodes/**/vo.mp3
+
+# Naval Board: episode-folder vo.mp3 is a local listening copy of public/voiceover/<slug>/vo.mp3
+Formats/**/episodes/**/vo.mp3
+
+# zips of third-party reference material (frames cut from reels; study only)
+Test/**/*.zip
+
+# graphify: local caches (graph.json + GRAPH_REPORT.md are committed)
+graphify-out/cache/

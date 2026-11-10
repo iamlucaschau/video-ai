@@ -1,0 +1,205 @@
+{
+  "name": "l-thermopylae-full",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Adult male history documentary narrator, calm and confident, American English. Even pace, short clear sentences; years, numbers and place names a beat slower. A small pause before a single-word line. On the defenders' last stand and the epitaph, slow down and soften, quiet weight. No hype, no shouting.",
+  "trimSilence": true,
+  "tempo": 1.1,
+  "gaps": {
+    "sentence": 0.15,
+    "paragraph": 0.3,
+    "scene": 0.35
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "In 480 BC, the largest empire the world had yet seen marched on the small cities of Greece."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "take": "t01",
+      "gapAfter": 0.15,
+      "text": "Its king, Xerxes, ruled from Egypt to the Indus."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t01",
+      "gapAfter": 0.15,
+      "text": "Ten years earlier, Athens had beaten his father's army at Marathon."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "Xerxes wanted revenge."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "take": "t01",
+      "gapAfter": 0.15,
+      "text": "His army marched south along the coast, with his fleet beside it."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "take": "t01",
+      "gapAfter": 0.15,
+      "text": "To reach Athens, it had to pass one narrow gap between the mountains and the sea."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "Thermopylae."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "Waiting there: about seven thousand Greeks."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "take": "t02",
+      "gapAfter": 0.35,
+      "text": "Their leader, the Spartan king Leonidas, had brought three hundred of his own men, all fathers with sons at home."
+    },
+    {
+      "id": "10",
+      "scene": "s5",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "According to Plutarch, Xerxes told them to hand over their weapons."
+    },
+    {
+      "id": "11",
+      "scene": "s5",
+      "take": "t02",
+      "gapAfter": 0.35,
+      "text": "Leonidas replied: come and take them."
+    },
+    {
+      "id": "12",
+      "scene": "s6",
+      "take": "t02",
+      "gapAfter": 0.15,
+      "text": "Herodotus claimed over two million men."
+    },
+    {
+      "id": "13",
+      "scene": "s6",
+      "take": "t02",
+      "gapAfter": 0.35,
+      "text": "Historians today think far fewer, but still many times the Greeks."
+    },
+    {
+      "id": "14",
+      "scene": "s7",
+      "take": "t03",
+      "gapAfter": 0.15,
+      "text": "Xerxes waited four days for them to run."
+    },
+    {
+      "id": "15",
+      "scene": "s7",
+      "take": "t03",
+      "gapAfter": 0.15,
+      "text": "On the fifth, he attacked."
+    },
+    {
+      "id": "16",
+      "scene": "s7",
+      "take": "t03",
+      "gapAfter": 0.15,
+      "text": "For two days, his army could not break through."
+    },
+    {
+      "id": "17",
+      "scene": "s7",
+      "take": "t03",
+      "gapAfter": 0.35,
+      "text": "Not even his elite guard, the Immortals."
+    },
+    {
+      "id": "18",
+      "scene": "s8",
+      "take": "t03",
+      "gapAfter": 0.15,
+      "text": "Then a local Greek, Ephialtes, showed the Persians a path over the mountain."
+    },
+    {
+      "id": "19",
+      "scene": "s8",
+      "take": "t03",
+      "gapAfter": 0.15,
+      "text": "Leonidas sent most of the Greeks away."
+    },
+    {
+      "id": "20",
+      "scene": "s8",
+      "take": "t03",
+      "gapAfter": 0.15,
+      "text": "He stayed with his three hundred and seven hundred men from Thespiae."
+    },
+    {
+      "id": "21",
+      "scene": "s8",
+      "take": "t03",
+      "gapAfter": 0.35,
+      "text": "Almost all of them died."
+    },
+    {
+      "id": "22",
+      "scene": "s9",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "Xerxes marched on and burned Athens."
+    },
+    {
+      "id": "23",
+      "scene": "s9",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "But the victory did not last."
+    },
+    {
+      "id": "24",
+      "scene": "s9",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "Weeks later, his fleet was crushed at Salamis."
+    },
+    {
+      "id": "25",
+      "scene": "s9",
+      "take": "t04",
+      "gapAfter": 0.35,
+      "text": "The next year, his army was driven from Greece."
+    },
+    {
+      "id": "26",
+      "scene": "s10",
+      "take": "t04",
+      "gapAfter": 0.15,
+      "text": "At the pass, a stone still carries their epitaph."
+    },
+    {
+      "id": "27",
+      "scene": "s10",
+      "take": "t04",
+      "gapAfter": 0.35,
+      "text": "Go tell the Spartans, passer-by, that here we lie, obedient to their laws."
+    }
+  ]
+}

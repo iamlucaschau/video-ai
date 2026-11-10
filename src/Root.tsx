@@ -37,6 +37,23 @@ import {
 import { JAeneas, jAeneasDuration } from "../Style Library/J-satellite-journey/j-aeneas/Video";
 import { JAeneasFull, jAeneasFullDuration } from "../Style Library/J-satellite-journey/j-aeneas-full/Video";
 import { ArmyTest, armyTestDuration } from "../Style Library/J-satellite-journey/kit-army-test";
+import { KTest, kTestDuration } from "../Style Library/K-chibi-case/k-test/Video";
+import { LThermopylae, lThermopylaeDuration } from "../Style Library/L-siege-atlas/l-thermopylae/Video";
+import { LThermopylaeFull, lThermopylaeFullDuration } from "../Style Library/L-siege-atlas/l-thermopylae-full/Video";
+import { MKit, mKitDuration } from "../Style Library/M-hoat-su/m-kit/Video";
+import { MSets, mSetsDuration } from "../Style Library/M-hoat-su/m-kit/Sets";
+import { MCast } from "../Style Library/M-hoat-su/m-kit/Cast";
+import { Test3D } from "../Style Library/M-hoat-su/three/Test3D";
+import { MTest, mTestDuration } from "../Style Library/M-hoat-su/m-test/Video";
+import { MChurchill, mChurchillDuration } from "../Style Library/M-hoat-su/m-churchill/Video";
+import { MDoss, mDossDuration } from "../Style Library/M-hoat-su/m-doss/Video";
+import { MDoss3D, mDoss3dDuration } from "../Style Library/M-hoat-su/m-doss-3d/Video";
+import { NSetsPreview, N_SETS_FRAMES } from "../Style Library/N-low-poly/n-kit/Preview";
+import { NeonOddsBanner, NeonOddsLogo } from "../Style Library/N-low-poly/n-brand/Brand";
+import { NMandel, nMandelDuration } from "../Style Library/N-low-poly/n-mandel/Video";
+import { NMandelThumb } from "../Style Library/N-low-poly/n-mandel/Thumb";
+import { OKit, oKitDuration } from "../Style Library/O-data-loop/o-kit/Video";
+import { OShrike, oShrikeDuration } from "../Style Library/O-data-loop/o-shrike/Video";
 import { Hannibal, hannibalDuration } from "../Mapped Journeys/episodes/ep02-hannibal/Video";
 import { Magellan, magellanDuration } from "../Mapped Journeys/episodes/ep03-magellan/Video";
 import { Xuanzang, xuanzangDuration } from "../Mapped Journeys/episodes/ep04-xuanzang/Video";
@@ -59,14 +76,12 @@ import {
 import { Showcase } from "./compositions/Showcase/Showcase";
 import { FeaturesScene } from "./compositions/Showcase/scenes/FeaturesScene";
 import { IntroScene } from "./compositions/Showcase/scenes/IntroScene";
-import { OutroScene } from "./compositions/Showcase/scenes/OutroScene";
 import { Ambush, ambushDuration } from "./compositions/Ambush/Ambush";
 import { AmbushThumbnail, type ThumbVariant } from "./compositions/Ambush/Thumbnail";
 import { CarrierVideo, carrierDuration } from "./compositions/Carrier/Carrier";
-import { NSetsPreview, N_SETS_FRAMES } from "../Style Library/N-low-poly/n-kit/Preview";
-import { NeonOddsBanner, NeonOddsLogo } from "../Style Library/N-low-poly/n-brand/Brand";
-import { NMandel, nMandelDuration } from "../Style Library/N-low-poly/n-mandel/Video";
-import { NMandelThumb } from "../Style Library/N-low-poly/n-mandel/Thumb";
+import { CarrierThumbnail, type CarrierThumbVariant } from "./compositions/Carrier/Thumbnail";
+import { SubmarinesVideo, submarinesDuration } from "./compositions/Submarines/Submarines";
+import { SubmarinesThumbnail, type SubThumbVariant } from "./compositions/Submarines/Thumbnail";
 import { duration as NOep01Duration, Thumb as NOep01Thumb, Video as NOep01 } from "../NEON ODDS/episodes/ep01-ivey-edge/Video";
 import { duration as NOep02Duration, Thumb as NOep02Thumb, Video as NOep02 } from "../NEON ODDS/episodes/ep02-tipton-lottery/Video";
 import { duration as NOep03Duration, Thumb as NOep03Thumb, Video as NOep03 } from "../NEON ODDS/episodes/ep03-slot-hack/Video";
@@ -74,6 +89,8 @@ import { duration as NOep04Duration, Thumb as NOep04Thumb, Video as NOep04 } fro
 import { duration as NOep05Duration, Thumb as NOep05Thumb, Video as NOep05 } from "../NEON ODDS/episodes/ep05-don-johnson/Video";
 import { duration as NOep06Duration, Thumb as NOep06Thumb, Video as NOep06 } from "../NEON ODDS/episodes/ep06-bill-benter/Video";
 import { duration as NOep07Duration, Thumb as NOep07Thumb, Video as NOep07 } from "../NEON ODDS/episodes/ep07-ron-harris/Video";
+import { duration as NOep08Duration, Thumb as NOep08Thumb, Video as NOep08 } from "../NEON ODDS/episodes/ep08-watanabe/Video";
+import { OutroScene } from "./compositions/Showcase/scenes/OutroScene";
 
 /**
  * Every renderable video is registered here. The `id` is what you pass to
@@ -131,8 +148,63 @@ export const RemotionRoot: React.FC = () => {
           fps={PVR.fps}
           durationInFrames={armyTestDuration}
         />
+        <Composition
+          id="Style-K-ChibiCase-Test"
+          component={KTest}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={kTestDuration(PVR.fps)}
+        />
+        <Composition
+          id="Style-L-SiegeAtlas-Thermopylae"
+          component={LThermopylae}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={lThermopylaeDuration(PVR.fps)}
+        />
+        <Composition
+          id="Style-L-SiegeAtlas-ThermopylaeFull"
+          component={LThermopylaeFull}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={lThermopylaeFullDuration(PVR.fps)}
+        />
+        <Composition id="Style-M-HoatSu-Kit" component={MKit} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={mKitDuration} />
+        <Composition id="Style-M-HoatSu-Sets" component={MSets} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={mSetsDuration} />
+        <Composition id="Style-M-HoatSu-Cast" component={MCast} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={30} />
+        <Composition id="Style-M-3D-Test" component={Test3D} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={2} />
+        <Composition
+          id="Style-M-HoatSu-Test"
+          component={MTest}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={mTestDuration(PVR.fps)}
+        />
+        <Composition
+          id="Style-M-HoatSu-Churchill"
+          component={MChurchill}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={mChurchillDuration(PVR.fps)}
+        />
+        <Composition
+          id="Style-M-HoatSu-Doss"
+          component={MDoss}
+          width={PVR.width}
+          height={PVR.height}
+          fps={PVR.fps}
+          durationInFrames={mDossDuration(PVR.fps)}
+        />
         <Composition id="Style-N-LowPoly-Mandel" component={NMandel} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={nMandelDuration()} />
+        <Composition id="Style-N-LowPoly-Sets" component={NSetsPreview} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={N_SETS_FRAMES} />
         <Composition id="Style-N-LowPoly-Mandel-Thumb" component={NMandelThumb} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
+        <Composition id="Style-O-DataLoop-Kit" component={OKit} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={oKitDuration} />
+        <Composition id="Style-O-DataLoop-Shrike" component={OShrike} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={oShrikeDuration} />
         <Composition id="NO-ep01-ivey-edge" component={NOep01} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={NOep01Duration()} />
         <Composition id="NO-ep01-ivey-edge-Thumb" component={NOep01Thumb} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
         <Composition id="NO-ep02-tipton-lottery" component={NOep02} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={NOep02Duration()} />
@@ -147,9 +219,11 @@ export const RemotionRoot: React.FC = () => {
         <Composition id="NO-ep06-bill-benter-Thumb" component={NOep06Thumb} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
         <Composition id="NO-ep07-ron-harris" component={NOep07} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={NOep07Duration()} />
         <Composition id="NO-ep07-ron-harris-Thumb" component={NOep07Thumb} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
-        <Composition id="Style-N-LowPoly-Sets" component={NSetsPreview} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={N_SETS_FRAMES} />
+        <Composition id="NO-ep08-watanabe" component={NOep08} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={NOep08Duration()} />
+        <Composition id="NO-ep08-watanabe-Thumb" component={NOep08Thumb} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={1} />
         <Composition id="Neon-Odds-Logo" component={NeonOddsLogo} width={1024} height={1024} fps={PVR.fps} durationInFrames={1} />
         <Composition id="Neon-Odds-Banner" component={NeonOddsBanner} width={2560} height={1440} fps={PVR.fps} durationInFrames={1} />
+        <Composition id="Style-M-HoatSu-Doss3D" component={MDoss3D} width={PVR.width} height={PVR.height} fps={PVR.fps} durationInFrames={mDoss3dDuration(PVR.fps)} />
         <Composition
           id="MJ-ep02-hannibal"
           component={Hannibal}
@@ -289,8 +363,12 @@ export const RemotionRoot: React.FC = () => {
       {/* One-off 16:9 tactical explainer (Test/ambush) */}
       <Composition id="Ambush-HowAmbushesWork" component={Ambush} width={1920} height={1080} fps={30} durationInFrames={ambushDuration} defaultProps={{ subtitles: true }} />
       <Composition id="Ambush-Thumbnail" component={AmbushThumbnail} width={1920} height={1080} fps={30} durationInFrames={1} defaultProps={{ variant: "a" as ThumbVariant }} />
-      {/* One-off 16:9 naval explainer (Test/carrier) */}
+      {/* Naval Board #1 (Formats/Naval Board/episodes/ep01-carrier) */}
       <Composition id="Carrier-HowACarrierDefends" component={CarrierVideo} width={1920} height={1080} fps={30} durationInFrames={carrierDuration} defaultProps={{ subtitles: true }} />
+      <Composition id="Carrier-Thumbnail" component={CarrierThumbnail} width={1920} height={1080} fps={30} durationInFrames={1} defaultProps={{ variant: "a" as CarrierThumbVariant }} />
+      {/* Naval Board #2 (Formats/Naval Board/episodes/ep02-submarines) */}
+      <Composition id="Submarines-HowTheyFight" component={SubmarinesVideo} width={1920} height={1080} fps={30} durationInFrames={submarinesDuration} defaultProps={{ subtitles: true }} />
+      <Composition id="Submarines-Thumbnail" component={SubmarinesThumbnail} width={1920} height={1080} fps={30} durationInFrames={1} defaultProps={{ variant: "e" as SubThumbVariant }} />
 
       {/* 9:16 explainer, timed by its Gemini TTS voiceover */}
       <Composition

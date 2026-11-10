@@ -1,0 +1,184 @@
+{
+  "name": "m-doss",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Puck",
+  "style": "Young American male storyteller telling a friend an unbelievable true story. Brisk, curious and a little playful, about 200 words per minute, clear on every word. Short punchy sentences; years and numbers stay crisp; a tiny pause before the last line, which lands dry and quiet. No hype, no shouting.",
+  "trimSilence": true,
+  "tempo": 1,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.2,
+    "scene": 0.25
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.3,
+      "text": "This soldier refused to carry a gun, and America gave him its highest medal."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "In 1942, he was offered a way out of the draft."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "He said no."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.2,
+      "text": "But his faith said he must never kill."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "So he went to war with no rifle, only a medic's bag."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "On Guam and in the Philippines, he ran to the wounded under fire, again and again."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "So the army gave him two Bronze Stars."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Then came Okinawa."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "His unit climbed a cliff the soldiers called Hacksaw Ridge."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "It was four hundred feet high."
+    },
+    {
+      "id": "11",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "But Japanese troops hit back hard."
+    },
+    {
+      "id": "12",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.2,
+      "text": "About seventy-five men went down, and the rest pulled back."
+    },
+    {
+      "id": "13",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.4,
+      "text": "He stayed."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "One by one, he dragged the wounded to the edge, and lowered them down on a rope."
+    },
+    {
+      "id": "15",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "Weeks later, a grenade tore into his legs."
+    },
+    {
+      "id": "16",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "On the stretcher, he saw another wounded man."
+    },
+    {
+      "id": "17",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "So he crawled off and gave him his place."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "Then he was hit again, and his arm broke."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "He crawled three hundred yards to get help."
+    },
+    {
+      "id": "20",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "So did the army ever make him carry a gun?"
+    },
+    {
+      "id": "21",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.3,
+      "text": "No."
+    },
+    {
+      "id": "22",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "That October, President Truman put the Medal of Honor around his neck."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.45,
+      "text": "He was the first conscientious objector ever to receive it."
+    },
+    {
+      "id": "24",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.25,
+      "text": "The man who never fired a shot brought back about seventy-five."
+    }
+  ]
+}

@@ -16,7 +16,7 @@ const shortY = (i: number) => 395 + (140 * i) / 3;
 const cam = (s: number, cx: number, cy: number) => `translate(960 540) scale(${s}) translate(${-cx} ${-cy})`;
 
 /** Big outlined word: black stroke under the fill, plus a soft drop shadow. */
-const Word: React.FC<{ x: number; y: number; text: string; color: string; size: number; anchor?: "start" | "middle" | "end" }> = ({
+export const Word: React.FC<{ x: number; y: number; text: string; color: string; size: number; anchor?: "start" | "middle" | "end" }> = ({
   x,
   y,
   text,

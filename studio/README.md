@@ -112,6 +112,8 @@ npm run studio:format -- export "Formats/Siege Atlas" --to "B:/Claude/Project/si
 - `export` (thư mục đích phải trống): dự án Remotion đứng riêng: thư mục gói, kit style (từ `mau.json` và từ code), mọi file được import, tài sản `public/` mà code gọi tên, script giọng + cache TTS, `public/sfx`, scripts (trừ công cụ Studio), skills, config, `Root.tsx` chỉ gồm composition liên quan, README có prompt bắt đầu, **video demo** (git-ignored ở đó). Bỏ các `*.mp4` khác, `vo.mp3`, `_work/`. Chép `gemini_key.txt` (git-ignored; `--no-key` để bỏ). `git init` + commit đầu (không remote, `--no-git`); `--install` chạy `npm ci`. Cũng xuất được một thư mục kênh (vd. `Mapped Journeys`).
 - Đã thử: `Formats/Siege Atlas` → 1.019 file, 401 MB (style L + engine J, video demo 259 MB); trong dự án mới lint sạch, 5 composition, render khung Thermopylae; video không vào git. Mapped Journeys → 158 MB, lint, render.
 
+**Storyboard + cắt theo từ (2026-11-03, W3–W4):** `node scripts/shotlist.mjs "<thư mục tập>" [--board <CompositionId>]` đọc `shots.json` (mỗi shot một cue: `"07"`, `"07:3"`, `"07:soap#2"`, `"+18"`, `"s:4.2"`), ghi `shots.timeline.json` cho composition import và `shotlist.md` (cắt / phút, shot trung vị, shot > 3 s, so với `INGEST.md` của kênh nguồn cùng hướng khung); `--board` chụp 1 still có vùng an toàn ở khung chính mỗi shot. Nhân vật diễn + nội thất phối cảnh: `Style Library/toon-engine/` (rig, phòng, ánh sáng; MIT từ what-if-animation).
+
 ### Tốt hơn (P5)
 
 ```bash
@@ -121,7 +123,7 @@ npm run studio:stats -- import "<Table data.csv>" "Mapped Journeys" --moc 7d
 npm run studio:stats -- report "Mapped Journeys" --moc 30d --ref "Test/doi-thu"
 ```
 
-- `compare`: đo bản render của mình bằng đúng bộ đo của ingest (`out/compare/<tên>/`, không sheet), viết `SO-SANH.md` cạnh mp4: mỗi số đo của mình, trung vị + khoảng của đối thủ, mình ở đâu. Chỉ âm lượng là luật (đạt / trượt); khác biệt khác để đọc, giữ nếu là lựa chọn (QUYẾT), sửa nếu không có lý do. Cần `studio:ingest` của nguồn trước.
+- `compare`: đo bản render của mình bằng đúng bộ đo của ingest (`out/compare/<tên>/`, không sheet), viết `SO-SANH.md` cạnh mp4: mỗi số đo của mình, trung vị + khoảng của đối thủ, mình ở đâu. Chỉ âm lượng là luật (đạt / trượt); khác biệt khác để đọc, giữ nếu là lựa chọn (QUYẾT), sửa nếu không có lý do. Cần `studio:ingest` của nguồn trước. Từ 2026-11-03 (W5) có thêm **chỗ giọng bị nền che**: cửa sổ 0,4 s lúc đang nói mà nhạc + SFX trong vòng 3 dB của giọng (demucs trên bản render, ƯỚC), liệt kê theo giây ở cuối `SO-SANH.md`; thử trên Thermopylae đầy đủ: 2 tiếng trống rơi đúng lên "Thermopylae." và "Salamis".
 - `stats` (theo sổ của Atlas Tí Hon): `init` tạo một dòng mỗi tập (pillar từ Bible §11, độ dài từ timing); `import` đọc CSV xuất từ YouTube Studio (Analytics → Advanced mode → Content → Export; tên cột tiếng Anh hoặc tiếng Việt), ghép theo `youtube_id` rồi theo tiêu đề, dòng không khớp thì liệt kê, không đoán; `report` → `SO-LIEU.md`: tập theo "% đã xem (so với vuốt đi)", trung vị theo pillar và theo `bien_the` (nhãn A/B mình đặt), so với đối thủ (views / video, like / view). Dưới 6 tập có số thì chỉ là gợi ý.
 - Gói format (P4) đã có bước này: Bible §9 Cổng 5 + §10, dòng mới trong `checks.md`.
 

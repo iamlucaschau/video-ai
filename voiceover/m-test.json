@@ -1,0 +1,114 @@
+{
+  "name": "m-test",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Puck",
+  "style": "Young American male storyteller telling a friend an unbelievable true story. Brisk, curious and a little playful, about 200 words per minute, clear on every word. Short punchy sentences; years and numbers stay crisp; a tiny pause before the last line, which lands dry and quiet. No hype, no shouting.",
+  "trimSilence": true,
+  "tempo": 1,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.2,
+    "scene": 0.25
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.12,
+      "text": "Hitler gave this spy a medal."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.25,
+      "text": "So did Britain's king."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "In 1941, he begged the British to let him spy on Germany."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.25,
+      "text": "They said no."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "So he signed up with the Germans instead, and stayed in Lisbon."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.25,
+      "text": "From there, he faked reports from London, using a tourist guide and cinema newsreels."
+    },
+    {
+      "id": "07",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "The Germans loved them."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "So the British hired him after all."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.25,
+      "text": "He invented twenty-seven fake agents."
+    },
+    {
+      "id": "10",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "Three days after D-Day, he told Berlin that Normandy was a trick."
+    },
+    {
+      "id": "11",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.25,
+      "text": "Berlin believed him."
+    },
+    {
+      "id": "12",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "In July, Germany gave him the Iron Cross."
+    },
+    {
+      "id": "13",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "In November, Britain made him an MBE."
+    },
+    {
+      "id": "14",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.25,
+      "text": "Both medals were for the same lies."
+    }
+  ]
+}

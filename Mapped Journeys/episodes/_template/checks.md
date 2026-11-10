@@ -16,5 +16,6 @@
 | 4 · Test | tuyến không cắt đất liền / biển sai; thẻ không che nhãn, ghim | | | |
 | 5 · Final | `render:j`: 2160×3840, 30 fps, −14 LUFS ±1, true peak ≤ −1,5 dBTP | | | |
 | 5 · Final | sheet từ MP4 (không guide) đã xem | | | |
+| 5 · Final | **Nghe (bắt buộc từ 2026-11-08):** `npm run listen -- <id> "<mp4>" --out NGHE.md` sau `render:j`; mọi dòng "Cần nghe" trong `NGHE.md` có quyết định (đã nghe: giữ / đã sửa) | | | |
 | 5 · Final | **Lucas xem trên điện thoại, có tiếng, rồi nghe một lần không nhìn** (A11) | | ghi nhận xét của Lucas | |
 | 5 · Final | gói đăng `xuat-ban.md` đủ: tiêu đề, mô tả + nguồn ảnh, credit NASA, nhãn AI nếu cần | | | |

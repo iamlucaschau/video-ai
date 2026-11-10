@@ -1,0 +1,15 @@
+{
+  "name": "blockade",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Experienced naval documentary narrator, American male, like a former naval officer explaining naval warfare to a curious audience. Calm, grounded and authoritative, but keep it moving at a brisk documentary pace. Clear on every number and ship name, slight weight on key terms, a quiet edge of tension in the mistakes section. Never dramatic, never shouty.",
+  "trimSilence": true,
+  "tempo": 1.14,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.3,
+    "scene": 1.2
+  },
+  "batchBy": "take",
+  "lines": []
+}

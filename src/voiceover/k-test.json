@@ -1,0 +1,91 @@
+{
+  "name": "k-test",
+  "model": "gemini-3.8-flash-tts",
+  "totalSeconds": 13.682,
+  "lines": [
+    {
+      "id": "n1",
+      "scene": "hook",
+      "take": "t1",
+      "gapAfter": 0.35,
+      "text": "Mười giờ đêm, tiệm bánh tối om.",
+      "voice": "Kore",
+      "src": "voiceover/k-test/n1.wav",
+      "durationInSeconds": 3.246,
+      "tempo": 1,
+      "hash": "a2202600c081"
+    },
+    {
+      "id": "m1",
+      "scene": "room",
+      "take": "t2",
+      "gapAfter": 0.25,
+      "text": "Tôi ở trong kho cả tối.",
+      "voice": "Puck",
+      "src": "voiceover/k-test/m1.wav",
+      "durationInSeconds": 1.304,
+      "tempo": 1,
+      "hash": "56ee6091bd50"
+    },
+    {
+      "id": "m2",
+      "scene": "close",
+      "take": "t2",
+      "gapAfter": 0.45,
+      "text": "Tôi chưa hề chạm cầu dao.",
+      "voice": "Puck",
+      "src": "voiceover/k-test/m2.wav",
+      "durationInSeconds": 1.492,
+      "tempo": 1,
+      "hash": "56ee6091bd50"
+    },
+    {
+      "id": "n2",
+      "scene": "timeline",
+      "take": "t3",
+      "gapAfter": 0.25,
+      "text": "Ba nghi phạm, ba khoảng giờ.",
+      "voice": "Kore",
+      "src": "voiceover/k-test/n2.wav",
+      "durationInSeconds": 2.374,
+      "tempo": 1,
+      "hash": "f8b612e8b881"
+    },
+    {
+      "id": "n3",
+      "scene": "timeline",
+      "take": "t3",
+      "gapAfter": 0.45,
+      "text": "Tuấn có mặt lúc mười giờ.",
+      "voice": "Kore",
+      "src": "voiceover/k-test/n3.wav",
+      "durationInSeconds": 1.764,
+      "tempo": 1,
+      "hash": "f8b612e8b881"
+    },
+    {
+      "id": "n4",
+      "scene": "lineup",
+      "take": "t3",
+      "gapAfter": 0.45,
+      "text": "Một người đang nói dối.",
+      "voice": "Kore",
+      "src": "voiceover/k-test/n4.wav",
+      "durationInSeconds": 1.676,
+      "tempo": 1,
+      "hash": "f8b612e8b881"
+    },
+    {
+      "id": "n5",
+      "scene": "board",
+      "take": "t3",
+      "gapAfter": 0.2,
+      "text": "Đến lượt bạn: mười giây.",
+      "voice": "Kore",
+      "src": "voiceover/k-test/n5.wav",
+      "durationInSeconds": 1.826,
+      "tempo": 1,
+      "hash": "f8b612e8b881"
+    }
+  ]
+}

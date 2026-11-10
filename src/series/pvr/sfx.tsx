@@ -1,5 +1,6 @@
 import { Audio } from "@remotion/media";
-import { interpolate, Sequence, staticFile, useVideoConfig } from "remotion";
+import { useContext } from "react";
+import { getInputProps, getRemotionEnvironment, Internals, interpolate, Sequence, staticFile, useVideoConfig } from "remotion";
 import catalog from "../../../public/sfx/catalog.json";
 import onsets from "../../../public/sfx/onsets.json";
 
@@ -27,6 +28,12 @@ export const Sfx: React.FC<{ file: string; at: number; level?: number; seconds?:
   align = "start",
 }) => {
   const { fps } = useVideoConfig();
+  const parent = useContext(Internals.SequenceContext);
+  // scripts/sfx-cues.mjs collects these lines; never on in a normal render
+  if (getRemotionEnvironment().isRendering && getInputProps().sfxCues === true) {
+    const frame = (parent ? parent.cumulatedFrom + parent.relativeFrom : 0) + at;
+    console.log(`SFXCUE ${JSON.stringify({ file, frame, align, seconds })}`);
+  }
   const entry = catalog.find((c) => c.file === file);
   if (!entry) throw new Error(`SFX not in public/sfx/catalog.json: ${file}`);
   const times = (onsets as Record<string, { onset: number; peak: number }>)[file];

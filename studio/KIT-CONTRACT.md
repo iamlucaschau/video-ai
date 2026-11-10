@@ -6,7 +6,8 @@
 
 ```
 Style Library/<X>-<tên>/
-  README.md          look, mạnh / yếu, luật camera + chữ (ngoại lệ ghi rõ, Lucas duyệt), bảng kỹ thuật → component, cách dựng
+  README.md          look, mạnh / yếu, luật camera + chữ (ngoại lệ ghi rõ, Lucas duyệt), bảng kỹ thuật → component, cách dựng,
+                     mục "## Bẫy đã gặp" (W10, 2026-11-03: mỗi lỗi đã tốn thời gian một dòng; `check` cảnh báo khi thiếu)
   ref.jpg            khung mẫu từ bản test CỦA MÌNH (không dùng khung của video đối thủ)
   <tên>.tsx          kit: mọi component của style
   <x>-kit/Video.tsx  KitSheet: một khung bày đủ màu + component, để chụp sheet kiểm (không cần giọng)
@@ -32,6 +33,7 @@ Style Library/<X>-<tên>/
 
 - Đăng ký trong `src/Root.tsx`, 1080×1920, 30 fps, id `Style-<X>-<TênCamel>-Kit` / `-Test`.
 - Nhận prop `safeGuide?: boolean` → vẽ `<SafeGuide />` (`src/series/pvr/safe.tsx`) để `sheet-j` chụp có vùng đỏ.
+- Style có nhân vật diễn (tay chân, biểu cảm) hoặc nội thất có phối cảnh: dùng `Style Library/toon-engine/` (rig + phòng + ánh sáng, MIT), chép trang phục / phòng riêng vào kit của style, không sửa engine cho riêng một style.
 - Bản test: mọi mốc gắn vào chữ trong giọng đọc (`at(id)`, `end(id)`, `w(id, k)` như `L-siege-atlas/l-thermopylae/Video.tsx`), không mốc theo đồng hồ.
 
 ## 5. Vòng dựng một style mới (P3)
@@ -41,5 +43,6 @@ Style Library/<X>-<tên>/
 3. `npm run sheet:j -- Style-<X>-<Tên>-Kit --frames 0` → nhìn sheet: màu, chữ, vùng an toàn.
 4. Viết component cho từng T# (bảng trong README), mỗi cái thêm vào KitSheet.
 5. Bản test ~30 s: kịch bản + spec như tập (Bible kênh §9), `node scripts/episode.mjs prep` → `npm run voiceover` → `export` → `words.py` → `<x>-test/Video.tsx` (chép khung từ `L-siege-atlas/l-thermopylae/Video.tsx`).
-6. `review-loop` (sheet + critic) → `npm run render:style -- Style-<X>-<Tên>-Test` → Lucas xem trên điện thoại.
-7. `npm run studio:kit -- check "Style Library/<X>-<tên>"` ✓, thêm dòng vào `Style Library/README.md` §1 + cột §3.
+6. **Storyboard trước chuyển động** (W3–W4, 2026-11-03): `<x>-test/shots.json` (mỗi hình một shot, cắt theo từ: `"at": "07:soap"`) → `node scripts/shotlist.mjs "Style Library/<X>-<tên>/<x>-test" --board Style-<X>-<Tên>-Test` → `shots.timeline.json` (Video.tsx import để cắt cảnh), `shotlist.md` (nhịp so với kênh nguồn) và bảng 1 still / shot. Sửa trên still theo checklist của `review-loop` bước 0, rồi mới làm chuyển động.
+7. `review-loop` (sheet + critic, checklist chuyển động W7) → `npm run render:style -- Style-<X>-<Tên>-Test` → `npm run studio:compare` (âm lượng + chỗ giọng bị nền che) → Lucas xem trên điện thoại.
+8. `npm run studio:kit -- check "Style Library/<X>-<tên>"` ✓, thêm dòng vào `Style Library/README.md` §1 + cột §3.

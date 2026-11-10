@@ -1,0 +1,122 @@
+[
+ {
+  "id": "S1",
+  "from": 0,
+  "len": 68,
+  "key": 41,
+  "size": "vừa",
+  "note": "điệp viên giữa phòng tối, hai huân chương; vòng sáng ở Thập tự Sắt"
+ },
+ {
+  "id": "S2",
+  "from": 68,
+  "len": 47,
+  "key": 101,
+  "size": "cận ngực",
+  "note": "MBE loé ở 'king'"
+ },
+ {
+  "id": "S3",
+  "from": 115,
+  "len": 100,
+  "key": 165,
+  "size": "rộng",
+  "note": "văn phòng Anh ở Madrid, biển MADRID 1941, điệp viên xin"
+ },
+ {
+  "id": "S4",
+  "from": 215,
+  "len": 37,
+  "key": 237,
+  "size": "cận",
+  "note": "sĩ quan Anh lắc đầu"
+ },
+ {
+  "id": "S5",
+  "from": 252,
+  "len": 51,
+  "key": 283,
+  "size": "vừa",
+  "note": "sĩ quan Đức đưa giấy, điệp viên cười"
+ },
+ {
+  "id": "S6",
+  "from": 303,
+  "len": 98,
+  "key": 352,
+  "size": "rộng",
+  "note": "phòng trọ Lisbon, mái ngói qua cửa sổ, biển LISBON 1941, gõ máy chữ"
+ },
+ {
+  "id": "S7",
+  "from": 401,
+  "len": 68,
+  "key": 435,
+  "size": "cận từ trên",
+  "note": "sách LONDON GUIDE mở, tay lật trang"
+ },
+ {
+  "id": "S8",
+  "from": 469,
+  "len": 37,
+  "key": 491,
+  "size": "vừa",
+  "note": "sĩ quan Đức đọc điện, cười"
+ },
+ {
+  "id": "S9",
+  "from": 506,
+  "len": 45,
+  "key": 533,
+  "size": "vừa",
+  "note": "London 1942: sĩ quan Anh bắt tay điệp viên"
+ },
+ {
+  "id": "S10",
+  "from": 551,
+  "len": 69,
+  "key": 610,
+  "size": "rộng",
+  "note": "bóng người ảo nhân lên, sổ ghi 27"
+ },
+ {
+  "id": "S11",
+  "from": 620,
+  "len": 109,
+  "key": 718,
+  "size": "bản đồ",
+  "note": "bản đồ ghim tường: NORMANDY, CALAIS, mũi tên đỏ về Calais"
+ },
+ {
+  "id": "S12",
+  "from": 729,
+  "len": 38,
+  "key": 752,
+  "size": "vừa",
+  "note": "sĩ quan Đức trước bản đồ gật đầu"
+ },
+ {
+  "id": "S13",
+  "from": 767,
+  "len": 72,
+  "key": 817,
+  "size": "cận ngực",
+  "note": "tay áo xám gắn Thập tự Sắt"
+ },
+ {
+  "id": "S14",
+  "from": 839,
+  "len": 72,
+  "key": 889,
+  "size": "cận ngực",
+  "note": "tay áo navy gắn MBE"
+ },
+ {
+  "id": "S15",
+  "from": 911,
+  "len": 73,
+  "key": 955,
+  "size": "vừa",
+  "note": "điệp viên cười mỉm, hai huân chương = khung 0"
+ }
+]

@@ -1,0 +1,124 @@
+{
+  "question": "Vì sao một thứ hiển nhiên lại thành ra ngược lại? (video dài 16:9; hit: hiệp sĩ bỏ khiên, phá tiền tuyến là bẫy chết)",
+  "length": {
+    "seconds": [
+      564,
+      700
+    ],
+    "words": [
+      1582,
+      1941
+    ]
+  },
+  "hook": {
+    "pattern": "mở lạnh ngôi thứ hai ở khoảnh khắc nghịch lý gần CUỐI câu chuyện (\"Imagine you're… / You've broken… / It's the middle of the night…\"), khung 0 cận mặt hoặc góc nhìn thứ nhất, không chữ",
+    "quote": "You've broken through the Roman front line, the thing every enemy of Rome dreams about.",
+    "atS": 0
+  },
+  "bridge": {
+    "pattern": "câu hỏi lớn \"So why would anyone…?\" hoặc tua lại \"Let's go back to this morning…\" ở 3–5 %, kèm lời hứa sẽ quay lại cảnh mở",
+    "quote": "So why would anyone walk into an arrow storm without the one thing…",
+    "atShare": 0.05
+  },
+  "close": {
+    "pattern": "câu châm ngôn 10–14 từ đối xứng với tiêu đề, sau phần di sản hôm nay; video hit không CTA (video yếu kết bằng CTA comment); end screen ~15 s",
+    "quote": "The front line was never the war, it was the bait.",
+    "atS": 547
+  },
+  "beats": [
+    {
+      "name": "H · mở lạnh ngôi thứ hai",
+      "from": 0,
+      "to": 0.04,
+      "does": "đặt người xem vào khoảnh khắc nghịch lý, cảm giác \"có gì đó sai\""
+    },
+    {
+      "name": "B · câu hỏi lớn + tua lại",
+      "from": 0.03,
+      "to": 0.07,
+      "does": "\"so why…?\" / \"let's go back…\" / \"in a few minutes you'll see…\""
+    },
+    {
+      "name": "C · chương theo thời gian",
+      "from": 0.07,
+      "to": 0.6,
+      "does": "mỗi chương 60–90 s, nhảy ~100 năm hoặc theo tuyến quân; gieo một luật (\"Remember this, because it keeps happening\"); câu hỏi nhỏ mỗi 40–60 s"
+    },
+    {
+      "name": "V · quay về cảnh mở",
+      "from": 0.6,
+      "to": 0.78,
+      "does": "khoảnh khắc ở hook diễn ra thật, giờ người xem hiểu đủ"
+    },
+    {
+      "name": "Đ · giải thích + đảo luật",
+      "from": 0.78,
+      "to": 0.92,
+      "does": "\"So what actually happened to you today?\": cơ chế bằng lời thường, luật chạy ngược"
+    },
+    {
+      "name": "K · di sản hôm nay + câu châm ngôn",
+      "from": 0.92,
+      "to": 1,
+      "does": "dấu vết hôm nay (logo, cảnh sát, khu du lịch), câu cuối đối xứng tiêu đề"
+    }
+  ],
+  "devices": [
+    "ngôi thứ hai ở 45–47 % số câu (hit V6, V8); video yếu chỉ 2–5 %",
+    "gieo luật bằng \"Remember this / Remember that\" rồi trả ở chương sau",
+    "dán nhãn nguồn trong lời: \"Livy says…\", \"Herodotus calls you…\", \"By one count…\"",
+    "so sánh đời thường cho cơ chế cổ (\"tags in his big brother\", \"team jersey\", \"can opener contest\")",
+    "chi tiết giác quan mỗi chương (tay tê, mùi, bùn tới gối, không thở được trong mũ)",
+    "sơ đồ nhìn từ trên xen góc nhìn mặt đất (\"From above, here's what you're about to walk into\")",
+    "mô tả có chương + danh sách nguồn + câu cảnh báo số liệu cổ có thể bị thổi phồng"
+  ],
+  "title": {
+    "pattern": "\"Why + nghịch lý hẹp\" 5–9 từ (Why Knights Stopped Using Shields; Why Breaking the Roman Front Line Was a Death Trap); tránh câu hỏi rộng có / không hoặc \"The ENTIRE History of…\"",
+    "examples": [
+      "Why Knights Stopped Using Shields",
+      "Why Breaking the Roman Front Line Was a Death Trap",
+      "What Was Hiding Under America's Base in Vietnam?",
+      "The ENTIRE History of the Samurai",
+      "Were War Elephants Actually Useful?"
+    ]
+  },
+  "facts": {
+    "checked": 48,
+    "ok": 41,
+    "approx": 5,
+    "wrong": 0,
+    "unknown": 2
+  },
+  "pillars": [
+    {
+      "name": "Vì sao một vũ khí / chiến thuật hiển nhiên lại bị bỏ hoặc thành bẫy (ngôi thứ hai) — 1,48M và 327K",
+      "share": 0.4,
+      "examples": [
+        "Why Knights Stopped Using Shields",
+        "Why Breaking the Roman Front Line Was a Death Trap"
+      ]
+    },
+    {
+      "name": "Bí ẩn dưới / sau một nơi (ngôi thứ hai) — 2 ngày tuổi",
+      "share": 0.2,
+      "examples": [
+        "What Was Hiding Under America's Base in Vietnam?"
+      ]
+    },
+    {
+      "name": "Tổng quan / có hữu ích không (ngôi thứ ba, mục lục) — 89K và 24K",
+      "share": 0.4,
+      "examples": [
+        "The ENTIRE History of the Samurai",
+        "Were War Elephants Actually Useful?"
+      ]
+    }
+  ],
+  "weaknesses": [
+    "video tổng quan mở bằng mục lục kiểu listicle, kể ngôi thứ ba: yếu hơn hẳn",
+    "kết bằng CTA comment ở video yếu, phí 3 s cuối",
+    "số tự đặt khi nguồn không có (V8 ~20.000 mỗi bên)",
+    "nhãn chữ 14–40 px trong video dài, nhiều khối chữ ngoài vùng an toàn 16:9 (OCR 47–66 %)",
+    "like / view thấp (0,34–0,95 %) so với Short (2,1–2,8 %)"
+  ]
+}

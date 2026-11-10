@@ -1,5 +1,5 @@
 """
-Open-ocean texture for "How an Aircraft Carrier Defends Itself" (Test/carrier): deep water with long swell and
+Open-ocean texture for "How an Aircraft Carrier Defends Itself" (Formats/Naval Board/episodes/ep01-carrier): deep water with long swell and
 fine ripples, top-down, code-made. Covers -400..2320 x -400..1480.
   python -P scripts/make-sea-carrier.py   -> public/images/carrier/sea.jpg
 """

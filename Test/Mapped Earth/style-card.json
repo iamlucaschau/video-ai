@@ -1,0 +1,224 @@
+{
+  "source": {
+    "channel": "Mapped.Earth (Facebook; cùng nội dung IG @mapped.earth 207K, YT @mapped-earth) — Aaron J. Becker",
+    "url": "https://www.facebook.com/profile.php?id=61594187582735",
+    "videos": [
+      "[Facebook]_Mapped.Earth_1039138985866205",
+      "[Facebook]_Mapped.Earth_1122933883800791",
+      "[Facebook]_Mapped.Earth_1133584212628359",
+      "[Facebook]_Mapped.Earth_1137282965673455",
+      "[Facebook]_Mapped.Earth_1437135608589777",
+      "[Facebook]_Mapped.Earth_1452241487088449",
+      "[Facebook]_Mapped.Earth_1595926421856841",
+      "[Facebook]_Mapped.Earth_1663953701927519",
+      "[Facebook]_Mapped.Earth_2661450940955432",
+      "[Facebook]_Mapped.Earth_28861033983591400"
+    ],
+    "analysed": "2026-11-09",
+    "report": "BAO-CAO.md"
+  },
+  "format": {
+    "aspect": "9:16 (7 reel) và 4:5 (3 reel: sông, hải đăng)",
+    "seconds": [
+      24,
+      68
+    ],
+    "wpm": 182,
+    "lufs": -16.1,
+    "subtitles": "Reel không lời: không phụ đề. Reel có lời: cháy cứng 1–3 từ (El Niño) đến 3–6 từ (Bering), từ khoá tô vàng, ~39–46 px trên 1080",
+    "ending": "Vòng lặp không lời: chu kỳ dữ liệu khép kín (Jul 29 → Aug 1), chữ mùa mờ vào cuối → nối vòng không lộ. Phim có lời: dừng trên con số so sánh ~3 s, không CTA"
+  },
+  "palette": [
+    {
+      "hex": "#030B16",
+      "role": "nền: biển / đất tối gần đen xanh (R1)",
+      "label": "ĐO"
+    },
+    {
+      "hex": "#232C42",
+      "role": "đất liền xanh xám có bóng địa hình (R1)",
+      "label": "ĐO"
+    },
+    {
+      "hex": "#D7ABB5",
+      "role": "dữ liệu sáng: vệt chim hồng, cộng dồn additive (R1)",
+      "label": "ĐO"
+    },
+    {
+      "hex": "#CE6724",
+      "role": "nhấn nóng: nước ấm, số dương, cột 2026 (R4)",
+      "label": "ĐO"
+    },
+    {
+      "hex": "#33D8AC",
+      "role": "thang màu dữ liệu lạnh → nóng, logo xanh ngọc (R4)",
+      "label": "ĐO"
+    },
+    {
+      "hex": "#DFDBD4",
+      "role": "nền giấy kem cho kiểu infographic (R3 sông)",
+      "label": "ĐO"
+    }
+  ],
+  "type": {
+    "subtitle": "sans trung tính (kiểu Inter), trắng, bóng mềm; từ đang đọc vàng",
+    "labels": "2 tầng: nhãn nhỏ viết hoa + tên lớn sans đậm; chữ mùa serif nghiêng (Fall, Spring); tiêu đề serif ở template dòng chảy; chú giải + credit monospace 12–24 px. Trung vị 22–57 px trên 1080 (OCR), phần lớn < 48 px",
+    "label": "ƯỚC"
+  },
+  "camera": {
+    "summary": "Gần như đứng yên (scene trung vị 0,1–0,8 ‰, ĐO). 0 cú cắt ở cả 10 reel. Chim: trượt chậm theo đàn bắc ↔ nam. El Niño: 1 cú đẩy vào Peru + biến hình giữa các chế độ xem. Bering: đứng yên rồi lùi chậm cuối. Garda: bay quanh hồ (reel flop)",
+    "label": "ƯỚC"
+  },
+  "rhythm": {
+    "shotMeanS": 34.0,
+    "openingShotS": 34.0,
+    "newInfoEveryS": null,
+    "label": "ĐO"
+  },
+  "techniques": [
+    {
+      "id": "T1",
+      "name": "Dòng chảy hạt trên trường vector (nước, gió)",
+      "videos": "R4 R5 R8 R9",
+      "how": "hàng nghìn hạt để vệt mờ dần, màu theo nhiệt độ, sáng hơn khi nhanh",
+      "signals": "vệt mảnh, hạt sinh / chết đều, trường đổi theo giờ",
+      "feasibility": "yellow",
+      "kit": "Python đọc NetCDF (NOAA NGOFS2, OSCAR, Copernicus) → lưới u/v; vẽ trên canvas trong Remotion, hạt tính lại từ seed theo frame (không trạng thái)",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T2",
+      "name": "Đàn chim mô phỏng từ quan sát eBird",
+      "videos": "R1 R2",
+      "how": "nhóm chim đặt theo mật độ quan sát từng tuần, nội suy đường bay, vệt hồng cộng dồn additive",
+      "signals": "chú giải 'simulated paths, from reports'",
+      "feasibility": "yellow",
+      "kit": "GBIF download (miễn phí, có DOI) → lưới mật độ theo tuần → tác nhân đi theo gradient (numpy) → toạ độ theo ngày → canvas additive",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T3",
+      "name": "Chip số chạy theo dữ liệu (°C, m, m³/s)",
+      "videos": "R4 R7 R9",
+      "how": "số đổi theo ngày / mực nước",
+      "signals": "số lớn sans + dòng phụ nhỏ",
+      "feasibility": "green",
+      "kit": "Counter có sẵn + bảng số theo ngày",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T4",
+      "name": "Đồng hồ thời gian (vòng 12 tháng, thanh tuần, ngày giờ)",
+      "videos": "R1 R2 R3 R5 R8",
+      "how": "ngày ở giữa vòng, cung tiến độ",
+      "signals": "vòng 12 chữ cái tháng",
+      "feasibility": "green",
+      "kit": "SVG + interpolate",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T5",
+      "name": "Mặt cắt dọc đại dương / hồ",
+      "videos": "R4 R9",
+      "how": "nhiệt độ theo độ sâu, đường đẳng nhiệt, vạch độ sâu",
+      "signals": "dải màu đỏ → xanh theo chiều sâu",
+      "feasibility": "yellow",
+      "kit": "Copernicus Marine / mô hình hồ → ảnh nhiệt theo ngày (Python) → Img + nội suy",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T6",
+      "name": "Biến hình giữa các chế độ xem (cầu → mặt cắt → dải)",
+      "videos": "R4",
+      "how": "một cảnh liên tục đổi dạng thay cho cắt",
+      "signals": "không có điểm cắt nào dò được",
+      "feasibility": "green",
+      "kit": "three.js morph hoặc crossfade ≤ 8 frame",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T7",
+      "name": "Địa hình 3D nghiêng + hạ mực nước, đất lộ tô màu theo thời điểm khô",
+      "videos": "R7",
+      "how": "ETOPO + Blue Marble, độ cao ×12",
+      "signals": "bóng địa hình thật",
+      "feasibility": "yellow",
+      "kit": "@remotion/three mặt lưới + shader mực nước (đã dùng three.js ở style M); Blender dự phòng (đã có máy)",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T8",
+      "name": "Quả cầu dữ liệu",
+      "videos": "R4",
+      "how": "dòng chảy hạt dán lên cầu",
+      "signals": "cầu nghiêng, viền tối",
+      "feasibility": "yellow",
+      "kit": "three.js sphere + texture từ canvas T1",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T9",
+      "name": "Chùm sáng hải đăng quét đúng đặc tính hải đồ",
+      "videos": "R6 R10",
+      "how": "quạt sáng quét / chớp theo đặc tính Fl, Oc, Iso; bóng địa hình",
+      "signals": "nhịp chớp khác nhau từng đèn",
+      "feasibility": "yellow",
+      "kit": "OSM / NGA List of Lights (public domain) → parser đặc tính → quạt additive trên canvas",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T10",
+      "name": "Sông tô theo biển nhận, độ đậm = lưu lượng ngày",
+      "videos": "R3",
+      "how": "mỗi con sông một path, màu theo lưu vực đích",
+      "signals": "nền kem, bảng m³/s",
+      "feasibility": "yellow",
+      "kit": "HydroRIVERS + GloFAS → SVG path / canvas",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T11",
+      "name": "Nối vòng bằng chu kỳ dữ liệu",
+      "videos": "R1 R2 R3 R5 R8",
+      "how": "cắt đúng hết chu kỳ, chữ mùa mờ vào cuối",
+      "signals": "khung cuối ≈ khung 0",
+      "feasibility": "green",
+      "kit": "chọn chu kỳ; ánh xạ frame → ngày khép kín",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T12",
+      "name": "Thời gian không đều (chậm khi có chuyện, nhanh khi lặng)",
+      "videos": "R1 R2 R7",
+      "how": "tua nhanh mùa hè, chậm lúc di cư; hạ nhanh phần biển sâu",
+      "signals": "nhãn ngày nhảy không đều",
+      "feasibility": "green",
+      "kit": "hàm ánh xạ frame → ngày theo mức hoạt động của dữ liệu",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T13",
+      "name": "Ảnh thật của đối tượng trong khung (con chim)",
+      "videos": "R1 R2",
+      "how": "ảnh CC BY-SA cạnh đồng hồ, credit nhỏ",
+      "signals": "ảnh nhỏ góc dưới",
+      "feasibility": "yellow",
+      "kit": "Wikimedia Commons CC BY / CC BY-SA, ghi credit",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    }
+  ],
+  "tools": []
+}

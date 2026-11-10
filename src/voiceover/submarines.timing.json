@@ -1,0 +1,1076 @@
+{
+  "durationInSeconds": 527.0112083333333,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 1.696,
+      "text": "140 sailors."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 1.8160833333333335,
+      "end": 2.5530833333333334,
+      "text": "No windows."
+    },
+    {
+      "id": "03",
+      "scene": "s1",
+      "start": 2.6734166666666668,
+      "end": 4.300416666666667,
+      "text": "More than 800 feet down."
+    },
+    {
+      "id": "04",
+      "scene": "s1",
+      "start": 4.42,
+      "end": 5.145,
+      "text": "It can't see."
+    },
+    {
+      "id": "05",
+      "scene": "s1",
+      "start": 5.2651666666666666,
+      "end": 6.646166666666667,
+      "text": "It can't be seen."
+    },
+    {
+      "id": "06",
+      "scene": "s1",
+      "start": 6.766166666666667,
+      "end": 9.893166666666666,
+      "text": "So how does a submarine find, and kill, anything?"
+    },
+    {
+      "id": "07",
+      "scene": "s1",
+      "start": 10.893583333333334,
+      "end": 11.702583333333333,
+      "text": "It listens."
+    },
+    {
+      "id": "08",
+      "scene": "s1",
+      "start": 11.822541666666668,
+      "end": 13.690541666666668,
+      "text": "Radar does not work through seawater."
+    },
+    {
+      "id": "09",
+      "scene": "s1",
+      "start": 13.810541666666667,
+      "end": 18.215541666666667,
+      "text": "A boat can rise and raise a periscope, but that means leaving the deep and showing a mast."
+    },
+    {
+      "id": "10",
+      "scene": "s1",
+      "start": 18.33591666666667,
+      "end": 21.61891666666667,
+      "text": "So the whole fight comes down to one thing: sound."
+    },
+    {
+      "id": "11",
+      "scene": "s1",
+      "start": 21.738916666666668,
+      "end": 23.409916666666668,
+      "text": "And the rule is brutally simple."
+    },
+    {
+      "id": "12",
+      "scene": "s1",
+      "start": 23.529625000000003,
+      "end": 25.562625000000004,
+      "text": "Whoever hears first, wins."
+    },
+    {
+      "id": "13",
+      "scene": "s1",
+      "start": 25.862333333333336,
+      "end": 28.229333333333336,
+      "text": "So how do submarines actually fight?"
+    },
+    {
+      "id": "14",
+      "scene": "s1",
+      "start": 28.349583333333335,
+      "end": 31.423583333333333,
+      "text": "In this video, we go through the old idea it all comes from."
+    },
+    {
+      "id": "15",
+      "scene": "s1",
+      "start": 31.543333333333337,
+      "end": 34.49333333333334,
+      "text": "The two ways of listening, and why one of them can give you away."
+    },
+    {
+      "id": "16",
+      "scene": "s1",
+      "start": 34.61304166666667,
+      "end": 36.62204166666667,
+      "text": "How a boat stays hidden for months."
+    },
+    {
+      "id": "17",
+      "scene": "s1",
+      "start": 36.742000000000004,
+      "end": 39.923,
+      "text": "Where it fits around a carrier, and what drones are changing."
+    },
+    {
+      "id": "18",
+      "scene": "s1",
+      "start": 40.04341666666667,
+      "end": 44.78141666666667,
+      "text": "And we finish with the deadly mistakes: four real cases where the silence broke."
+    },
+    {
+      "id": "19",
+      "scene": "s2",
+      "start": 45.98179166666667,
+      "end": 48.349791666666675,
+      "text": "The idea is more than 500 years old."
+    },
+    {
+      "id": "20",
+      "scene": "s2",
+      "start": 48.470041666666674,
+      "end": 51.82704166666667,
+      "text": "In 1490, Leonardo da Vinci wrote down a trick."
+    },
+    {
+      "id": "21",
+      "scene": "s2",
+      "start": 51.94670833333334,
+      "end": 56.66870833333334,
+      "text": "Stop your ship, put a long tube in the water, and put your ear to the other end."
+    },
+    {
+      "id": "22",
+      "scene": "s2",
+      "start": 56.78900000000001,
+      "end": 58.59000000000001,
+      "text": "You will hear ships far away."
+    },
+    {
+      "id": "23",
+      "scene": "s2",
+      "start": 58.70983333333334,
+      "end": 62.10083333333334,
+      "text": "Every submarine today is still doing that, with much better ears."
+    },
+    {
+      "id": "24",
+      "scene": "s2",
+      "start": 62.400541666666676,
+      "end": 63.80854166666668,
+      "text": "The weapon came later."
+    },
+    {
+      "id": "25",
+      "scene": "s2",
+      "start": 63.92816666666668,
+      "end": 72.84416666666668,
+      "text": "On 17 February 1864, the Confederate submarine Hunley sank the sloop USS Housatonic with an explosive charge on a long spar."
+    },
+    {
+      "id": "26",
+      "scene": "s2",
+      "start": 72.96462500000001,
+      "end": 75.73962500000002,
+      "text": "It was the first warship ever sunk by a submarine."
+    },
+    {
+      "id": "27",
+      "scene": "s2",
+      "start": 75.86008333333335,
+      "end": 78.98008333333335,
+      "text": "The Hunley was lost the same night, with all eight of her crew."
+    },
+    {
+      "id": "28",
+      "scene": "s2",
+      "start": 79.28041666666668,
+      "end": 81.63541666666669,
+      "text": "Fifty years on, the idea grew teeth."
+    },
+    {
+      "id": "29",
+      "scene": "s2",
+      "start": 81.75583333333334,
+      "end": 88.59683333333334,
+      "text": "On 22 September 1914, a small German boat, U-9, put a torpedo into the British cruiser Aboukir."
+    },
+    {
+      "id": "30",
+      "scene": "s2",
+      "start": 88.71658333333335,
+      "end": 93.59658333333334,
+      "text": "The British assumed she had hit a mine, so two more cruisers closed in to rescue survivors."
+    },
+    {
+      "id": "31",
+      "scene": "s2",
+      "start": 93.71695833333335,
+      "end": 94.96895833333335,
+      "text": "U-9 sank them too."
+    },
+    {
+      "id": "32",
+      "scene": "s2",
+      "start": 95.08895833333335,
+      "end": 99.41095833333335,
+      "text": "Three cruisers in about an hour, and roughly 1,400 men lost."
+    },
+    {
+      "id": "33",
+      "scene": "s2",
+      "start": 99.71108333333335,
+      "end": 101.53408333333334,
+      "text": "That is the oldest lesson down here."
+    },
+    {
+      "id": "34",
+      "scene": "s2",
+      "start": 101.65395833333335,
+      "end": 105.69295833333335,
+      "text": "If the target cannot work out where you are, even its best instincts can help you."
+    },
+    {
+      "id": "35",
+      "scene": "s3",
+      "start": 106.89250000000001,
+      "end": 108.28850000000001,
+      "text": "Now the modern version."
+    },
+    {
+      "id": "36",
+      "scene": "s3",
+      "start": 108.40808333333335,
+      "end": 111.56108333333336,
+      "text": "In seawater, sound moves at about 1,500 metres a second."
+    },
+    {
+      "id": "37",
+      "scene": "s3",
+      "start": 111.68070833333336,
+      "end": 113.69670833333336,
+      "text": "That is more than four times faster than in air."
+    },
+    {
+      "id": "38",
+      "scene": "s3",
+      "start": 113.8165416666667,
+      "end": 116.14854166666669,
+      "text": "And in deep water it does something strange."
+    },
+    {
+      "id": "39",
+      "scene": "s3",
+      "start": 116.26820833333336,
+      "end": 121.92720833333337,
+      "text": "It bends downward, turns, and comes back up to the surface about every 30 miles, out to several hundred miles."
+    },
+    {
+      "id": "40",
+      "scene": "s3",
+      "start": 122.22712500000003,
+      "end": 125.85212500000003,
+      "text": "That is why nobody can give you one number for how far a sonar reaches."
+    },
+    {
+      "id": "41",
+      "scene": "s3",
+      "start": 125.97200000000002,
+      "end": 128.82600000000002,
+      "text": "It depends on the water, the speed and the target."
+    },
+    {
+      "id": "42",
+      "scene": "s3",
+      "start": 128.94579166666668,
+      "end": 130.63479166666667,
+      "text": "The ocean decides what you get to hear."
+    },
+    {
+      "id": "43",
+      "scene": "s3",
+      "start": 130.935125,
+      "end": 132.263125,
+      "text": "Navies built on that."
+    },
+    {
+      "id": "44",
+      "scene": "s3",
+      "start": 132.38354166666667,
+      "end": 138.35154166666666,
+      "text": "During the Cold War, the US Navy laid chains of hydrophones on the seabed, cabled to stations on shore."
+    },
+    {
+      "id": "45",
+      "scene": "s3",
+      "start": 138.47116666666668,
+      "end": 142.25616666666667,
+      "text": "They ran along the western Atlantic, from Nova Scotia to Barbados."
+    },
+    {
+      "id": "46",
+      "scene": "s3",
+      "start": 142.37620833333335,
+      "end": 144.70120833333334,
+      "text": "The ocean itself had been given ears."
+    },
+    {
+      "id": "47",
+      "scene": "s4",
+      "start": 145.90125,
+      "end": 147.26425,
+      "text": "There are two ways to use it."
+    },
+    {
+      "id": "48",
+      "scene": "s4",
+      "start": 147.384375,
+      "end": 150.180375,
+      "text": "Passive sonar only listens, and gives nothing away."
+    },
+    {
+      "id": "49",
+      "scene": "s4",
+      "start": 150.30029166666668,
+      "end": 153.26429166666668,
+      "text": "Active sonar sends out a pulse and reads the echo."
+    },
+    {
+      "id": "50",
+      "scene": "s4",
+      "start": 153.38462500000003,
+      "end": 158.86362500000004,
+      "text": "That goes back to 1914, when Reginald Fessenden's echo ranger found an iceberg about two miles away."
+    },
+    {
+      "id": "51",
+      "scene": "s4",
+      "start": 158.98362500000002,
+      "end": 160.945625,
+      "text": "Think of a flashlight in a dark room."
+    },
+    {
+      "id": "52",
+      "scene": "s4",
+      "start": 161.0654166666667,
+      "end": 164.0504166666667,
+      "text": "You can see the room, but now the room can see you too."
+    },
+    {
+      "id": "53",
+      "scene": "s4",
+      "start": 164.35045833333336,
+      "end": 166.55545833333338,
+      "text": "So a quiet boat would rather stay passive."
+    },
+    {
+      "id": "54",
+      "scene": "s4",
+      "start": 166.67575000000002,
+      "end": 172.30175000000003,
+      "text": "But the US Navy itself now says passive sonar is no longer enough against modern quiet submarines."
+    },
+    {
+      "id": "55",
+      "scene": "s4",
+      "start": 172.421375,
+      "end": 178.30437500000002,
+      "text": "The boats have become so silent that hunters are pushed into pinging, and pinging gives the hunter away."
+    },
+    {
+      "id": "56",
+      "scene": "s5",
+      "start": 179.50433333333334,
+      "end": 181.98033333333333,
+      "text": "Which makes noise the real currency down here."
+    },
+    {
+      "id": "57",
+      "scene": "s5",
+      "start": 182.10016666666667,
+      "end": 183.79516666666666,
+      "text": "A boat's machinery makes noise."
+    },
+    {
+      "id": "58",
+      "scene": "s5",
+      "start": 183.9155,
+      "end": 187.7475,
+      "text": "The water flowing over its hull makes more, and that climbs quickly with speed."
+    },
+    {
+      "id": "59",
+      "scene": "s5",
+      "start": 187.86704166666667,
+      "end": 191.89804166666667,
+      "text": "The Seawolf class is publicly credited with a top speed of 35 knots."
+    },
+    {
+      "id": "60",
+      "scene": "s5",
+      "start": 192.01829166666667,
+      "end": 194.13529166666666,
+      "text": "Running silent, that drops to about 20."
+    },
+    {
+      "id": "61",
+      "scene": "s5",
+      "start": 194.255125,
+      "end": 199.749125,
+      "text": "Its builder claims that at 25 knots, a Seawolf is harder to detect than an older boat tied up at the pier."
+    },
+    {
+      "id": "62",
+      "scene": "s5",
+      "start": 199.86929166666667,
+      "end": 204.35629166666666,
+      "text": "Speed makes you loud, and it makes you deaf, because your own noise drowns out your sonar."
+    },
+    {
+      "id": "63",
+      "scene": "s5",
+      "start": 204.476,
+      "end": 205.134,
+      "text": "Remember that."
+    },
+    {
+      "id": "64",
+      "scene": "s5",
+      "start": 205.25416666666666,
+      "end": 206.68116666666666,
+      "text": "It comes back in the mistakes."
+    },
+    {
+      "id": "65",
+      "scene": "s5",
+      "start": 206.98125,
+      "end": 209.96525,
+      "text": "Quiet is worth so much that it has caused scandals."
+    },
+    {
+      "id": "66",
+      "scene": "s5",
+      "start": 210.08499999999998,
+      "end": 216.31499999999997,
+      "text": "In 1987, the Pentagon announced that the Soviet Union had bought propeller-milling machinery from a Toshiba subsidiary."
+    },
+    {
+      "id": "67",
+      "scene": "s5",
+      "start": 216.43529166666664,
+      "end": 219.07029166666663,
+      "text": "It warned this could make Soviet boats harder to track."
+    },
+    {
+      "id": "68",
+      "scene": "s5",
+      "start": 219.1905833333333,
+      "end": 222.02658333333332,
+      "text": "Japanese experts disputed how much it really changed."
+    },
+    {
+      "id": "69",
+      "scene": "s5",
+      "start": 222.32608333333332,
+      "end": 224.1760833333333,
+      "text": "So how fast and how deep?"
+    },
+    {
+      "id": "70",
+      "scene": "s5",
+      "start": 224.2964583333333,
+      "end": 227.4674583333333,
+      "text": "Publicly, these boats are credited with more than 25 knots."
+    },
+    {
+      "id": "71",
+      "scene": "s5",
+      "start": 227.58716666666663,
+      "end": 229.19116666666665,
+      "text": "And more than 800 feet."
+    },
+    {
+      "id": "72",
+      "scene": "s5",
+      "start": 229.31087499999995,
+      "end": 230.93887499999994,
+      "text": "The real limits are classified."
+    },
+    {
+      "id": "73",
+      "scene": "s6",
+      "start": 232.1385416666666,
+      "end": 234.32554166666662,
+      "text": "Staying hidden starts with the ballast tanks."
+    },
+    {
+      "id": "74",
+      "scene": "s6",
+      "start": 234.44587499999994,
+      "end": 237.65887499999994,
+      "text": "To dive, the boat opens its vents and lets seawater flood in."
+    },
+    {
+      "id": "75",
+      "scene": "s6",
+      "start": 237.7785416666666,
+      "end": 240.7705416666666,
+      "text": "To rise, compressed air blows that water back out."
+    },
+    {
+      "id": "76",
+      "scene": "s6",
+      "start": 240.89074999999994,
+      "end": 243.86774999999994,
+      "text": "Do that fast, and it is called an emergency blow."
+    },
+    {
+      "id": "77",
+      "scene": "s6",
+      "start": 243.98816666666661,
+      "end": 244.7471666666666,
+      "text": "Hold on to that one."
+    },
+    {
+      "id": "78",
+      "scene": "s6",
+      "start": 245.0474166666666,
+      "end": 246.34741666666662,
+      "text": "Then there is air."
+    },
+    {
+      "id": "79",
+      "scene": "s6",
+      "start": 246.46758333333327,
+      "end": 249.78258333333326,
+      "text": "A reactor does not need any, so a nuclear boat stays down."
+    },
+    {
+      "id": "80",
+      "scene": "s6",
+      "start": 249.90283333333326,
+      "end": 253.94083333333327,
+      "text": "It even makes its own oxygen, splitting desalted seawater with electricity."
+    },
+    {
+      "id": "81",
+      "scene": "s6",
+      "start": 254.06074999999993,
+      "end": 255.97674999999992,
+      "text": "So the limit is not air."
+    },
+    {
+      "id": "82",
+      "scene": "s6",
+      "start": 256.09633333333323,
+      "end": 259.33333333333326,
+      "text": "It is food, with roughly 90 days stocked aboard."
+    },
+    {
+      "id": "83",
+      "scene": "s6",
+      "start": 259.63295833333325,
+      "end": 261.2469583333332,
+      "text": "A diesel boat has it harder."
+    },
+    {
+      "id": "84",
+      "scene": "s6",
+      "start": 261.36691666666655,
+      "end": 265.5729166666666,
+      "text": "It must raise a snorkel mast to run its engines and recharge its batteries."
+    },
+    {
+      "id": "85",
+      "scene": "s6",
+      "start": 265.6929583333332,
+      "end": 268.99695833333317,
+      "text": "That is its noisiest, most exposed moment."
+    },
+    {
+      "id": "86",
+      "scene": "s6",
+      "start": 269.11737499999987,
+      "end": 275.37937499999987,
+      "text": "Some newer boats carry an extra engine that needs no outside air, and stay down for about two weeks at slow speed."
+    },
+    {
+      "id": "87",
+      "scene": "s7",
+      "start": 276.57937499999986,
+      "end": 278.05737499999987,
+      "text": "Which brings us to the carrier."
+    },
+    {
+      "id": "88",
+      "scene": "s7",
+      "start": 278.1775833333332,
+      "end": 283.2835833333332,
+      "text": "A strike group can include up to two attack submarines, screening it against hostile ships and submarines."
+    },
+    {
+      "id": "89",
+      "scene": "s7",
+      "start": 283.4033333333332,
+      "end": 285.4063333333332,
+      "text": "Where they are is rarely made public."
+    },
+    {
+      "id": "90",
+      "scene": "s7",
+      "start": 285.52679166666655,
+      "end": 286.94579166666654,
+      "text": "It is hunter against hunter."
+    },
+    {
+      "id": "91",
+      "scene": "s7",
+      "start": 287.2460833333332,
+      "end": 288.8110833333332,
+      "text": "But the screen can be beaten."
+    },
+    {
+      "id": "92",
+      "scene": "s7",
+      "start": 288.9313333333332,
+      "end": 296.2113333333332,
+      "text": "In a mid-2000s exercise, one small Swedish boat, Gotland, reportedly slipped through Carrier Strike Group 7 undetected."
+    },
+    {
+      "id": "93",
+      "scene": "s7",
+      "start": 296.3312916666666,
+      "end": 299.7512916666666,
+      "text": "It reportedly came back with pictures of the USS Ronald Reagan."
+    },
+    {
+      "id": "94",
+      "scene": "s7",
+      "start": 299.87079166666655,
+      "end": 303.09579166666657,
+      "text": "It was only an exercise, and that is exactly why navies run them."
+    },
+    {
+      "id": "95",
+      "scene": "s7",
+      "start": 303.39541666666656,
+      "end": 305.55641666666656,
+      "text": "In real war, the picture is harsher."
+    },
+    {
+      "id": "96",
+      "scene": "s7",
+      "start": 305.6768333333332,
+      "end": 314.1938333333332,
+      "text": "On 2 May 1982, the British submarine HMS Conqueror fired three torpedoes at the Argentine cruiser General Belgrano."
+    },
+    {
+      "id": "97",
+      "scene": "s7",
+      "start": 314.31374999999986,
+      "end": 316.7237499999999,
+      "text": "Two hit, and 323 people died."
+    },
+    {
+      "id": "98",
+      "scene": "s7",
+      "start": 316.84362499999986,
+      "end": 319.15962499999983,
+      "text": "Her two escorts did not know what was happening."
+    },
+    {
+      "id": "99",
+      "scene": "s7",
+      "start": 319.27954166666655,
+      "end": 324.02454166666655,
+      "text": "It was only the second ship sunk in action by any submarine since the Second World War."
+    },
+    {
+      "id": "100",
+      "scene": "s7",
+      "start": 324.32454166666656,
+      "end": 325.50754166666655,
+      "text": "And it is not history."
+    },
+    {
+      "id": "101",
+      "scene": "s7",
+      "start": 325.6272083333332,
+      "end": 332.5922083333332,
+      "text": "On 4 March 2026, an American attack submarine torpedoed and sank the Iranian frigate Dena off Sri Lanka."
+    },
+    {
+      "id": "102",
+      "scene": "s7",
+      "start": 332.7118749999999,
+      "end": 335.6388749999999,
+      "text": "Sri Lanka's navy pulled 32 survivors from the water."
+    },
+    {
+      "id": "103",
+      "scene": "s7",
+      "start": 335.7589999999999,
+      "end": 338.1049999999999,
+      "text": "More than eighty of her crew never came home."
+    },
+    {
+      "id": "104",
+      "scene": "s7",
+      "start": 338.2246249999999,
+      "end": 343.1356249999999,
+      "text": "It was reported as the first American submarine torpedo kill since the Second World War."
+    },
+    {
+      "id": "105",
+      "scene": "s7",
+      "start": 343.43533333333323,
+      "end": 345.7293333333332,
+      "text": "Now the hunted have a new problem too."
+    },
+    {
+      "id": "106",
+      "scene": "s7",
+      "start": 345.8494999999999,
+      "end": 352.9244999999999,
+      "text": "In December 2025, Ukraine claimed an underwater drone had hit a Russian Kilo-class submarine in the port of Novorossiysk."
+    },
+    {
+      "id": "107",
+      "scene": "s7",
+      "start": 353.04437499999995,
+      "end": 354.72037499999993,
+      "text": "Russia denied any damage."
+    },
+    {
+      "id": "108",
+      "scene": "s7",
+      "start": 354.8407083333333,
+      "end": 357.9097083333333,
+      "text": "British intelligence assessed that significant damage was likely."
+    },
+    {
+      "id": "109",
+      "scene": "s7",
+      "start": 358.0299166666666,
+      "end": 361.4899166666666,
+      "text": "If that holds, even a harbour is no longer a hiding place."
+    },
+    {
+      "id": "110",
+      "scene": "s8",
+      "start": 362.6902916666666,
+      "end": 365.4352916666666,
+      "text": "So the system works, as long as the crew respects it."
+    },
+    {
+      "id": "111",
+      "scene": "s8",
+      "start": 365.5552916666666,
+      "end": 367.1512916666666,
+      "text": "Here are the deadly mistakes."
+    },
+    {
+      "id": "112",
+      "scene": "s8",
+      "start": 367.45099999999996,
+      "end": 370.81199999999995,
+      "text": "Mistake one: sailing with a noise you already know about."
+    },
+    {
+      "id": "113",
+      "scene": "s8",
+      "start": 370.9316666666666,
+      "end": 377.5476666666666,
+      "text": "In February 1945, the German submarine U-864 was off Norway with an engine that kept misfiring."
+    },
+    {
+      "id": "114",
+      "scene": "s8",
+      "start": 377.66724999999997,
+      "end": 381.97324999999995,
+      "text": "Aboard HMS Venturer, an operator picked up a faint sound on the hydrophones."
+    },
+    {
+      "id": "115",
+      "scene": "s8",
+      "start": 382.09366666666665,
+      "end": 384.30566666666664,
+      "text": "Historians think it was probably that fault."
+    },
+    {
+      "id": "116",
+      "scene": "s8",
+      "start": 384.42566666666664,
+      "end": 387.73266666666666,
+      "text": "Venturer's captain did not ping, because a ping would have given him away."
+    },
+    {
+      "id": "117",
+      "scene": "s8",
+      "start": 387.85295833333333,
+      "end": 390.76595833333334,
+      "text": "He fired four torpedoes, and the last one hit."
+    },
+    {
+      "id": "118",
+      "scene": "s8",
+      "start": 390.88554166666665,
+      "end": 392.5045416666667,
+      "text": "All 73 aboard were lost."
+    },
+    {
+      "id": "119",
+      "scene": "s8",
+      "start": 392.62491666666665,
+      "end": 396.28791666666666,
+      "text": "It is the only time on record one submerged submarine has sunk another."
+    },
+    {
+      "id": "120",
+      "scene": "s8",
+      "start": 396.58829166666663,
+      "end": 399.97729166666664,
+      "text": "Mistake two: hearing a contact, and misjudging it."
+    },
+    {
+      "id": "121",
+      "scene": "s8",
+      "start": 400.09729166666665,
+      "end": 406.23429166666665,
+      "text": "On 9 February 2001, south of Oahu, USS Greeneville had civilian visitors aboard."
+    },
+    {
+      "id": "122",
+      "scene": "s8",
+      "start": 406.3547083333333,
+      "end": 409.36070833333326,
+      "text": "She performed an emergency blow to show them what she could do."
+    },
+    {
+      "id": "123",
+      "scene": "s8",
+      "start": 409.4808333333333,
+      "end": 414.3218333333333,
+      "text": "She came up and struck the Japanese vessel Ehime Maru, which sank within minutes."
+    },
+    {
+      "id": "124",
+      "scene": "s8",
+      "start": 414.4416666666666,
+      "end": 416.5466666666666,
+      "text": "Nine of the 35 aboard died."
+    },
+    {
+      "id": "125",
+      "scene": "s8",
+      "start": 416.6669999999999,
+      "end": 423.2289999999999,
+      "text": "The National Transportation Safety Board blamed poor communication among senior crew, and a failure to analyse the contact properly."
+    },
+    {
+      "id": "126",
+      "scene": "s8",
+      "start": 423.34941666666657,
+      "end": 425.3844166666666,
+      "text": "Hearing is not the same as knowing."
+    },
+    {
+      "id": "127",
+      "scene": "s8",
+      "start": 425.6847499999999,
+      "end": 428.4377499999999,
+      "text": "Mistake three: outrunning your own senses."
+    },
+    {
+      "id": "128",
+      "scene": "s8",
+      "start": 428.5579166666666,
+      "end": 433.1409166666666,
+      "text": "In October 2021, USS Connecticut was running submerged in the Indo-Pacific."
+    },
+    {
+      "id": "129",
+      "scene": "s8",
+      "start": 433.26095833333324,
+      "end": 436.5379583333332,
+      "text": "Her speed had been raised from 16 knots to 24."
+    },
+    {
+      "id": "130",
+      "scene": "s8",
+      "start": 436.65829166666657,
+      "end": 439.6042916666666,
+      "text": "Her aft depth sounder degraded at speeds above 16."
+    },
+    {
+      "id": "131",
+      "scene": "s8",
+      "start": 439.7241666666666,
+      "end": 442.70516666666657,
+      "text": "She struck an uncharted seamount, and 11 sailors were injured."
+    },
+    {
+      "id": "132",
+      "scene": "s8",
+      "start": 442.8256249999999,
+      "end": 444.86262499999987,
+      "text": "The Navy did not blame any one decision."
+    },
+    {
+      "id": "133",
+      "scene": "s8",
+      "start": 444.9825833333332,
+      "end": 450.2185833333332,
+      "text": "It found an accumulation of errors in navigation planning, watch-team execution and risk management."
+    },
+    {
+      "id": "134",
+      "scene": "s8",
+      "start": 450.3387499999999,
+      "end": 453.6517499999999,
+      "text": "Its verdict: \"it was preventable.\" It was not the first time."
+    },
+    {
+      "id": "135",
+      "scene": "s8",
+      "start": 453.7720833333332,
+      "end": 459.8980833333332,
+      "text": "In 2005, USS San Francisco hit a seamount at top speed, 525 feet down, and one sailor died."
+    },
+    {
+      "id": "136",
+      "scene": "s8",
+      "start": 460.01845833333323,
+      "end": 462.0214583333332,
+      "text": "Other charts aboard had shown the danger."
+    },
+    {
+      "id": "137",
+      "scene": "s8",
+      "start": 462.3219583333332,
+      "end": 466.1319583333332,
+      "text": "And mistake four: two boats, both built to be silent."
+    },
+    {
+      "id": "138",
+      "scene": "s8",
+      "start": 466.2517916666665,
+      "end": 471.3707916666665,
+      "text": "On the night of 3 February 2009, two nuclear missile submarines met in the Atlantic."
+    },
+    {
+      "id": "139",
+      "scene": "s8",
+      "start": 471.4907499999999,
+      "end": 476.90274999999986,
+      "text": "Britain's HMS Vanguard and France's Le Triomphant collided at very low speed."
+    },
+    {
+      "id": "140",
+      "scene": "s8",
+      "start": 477.02274999999986,
+      "end": 479.29174999999987,
+      "text": "The French commander thought he had hit a container."
+    },
+    {
+      "id": "141",
+      "scene": "s8",
+      "start": 479.41212499999983,
+      "end": 481.92112499999985,
+      "text": "We could not find a published inquiry explaining it."
+    },
+    {
+      "id": "142",
+      "scene": "s8",
+      "start": 482.04070833333316,
+      "end": 492.48070833333315,
+      "text": "France's defence minister offered his own answer: \"These submarines are undetectable, they make less noise than a shrimp.\" When everyone is silent, listening finds nothing."
+    },
+    {
+      "id": "143",
+      "scene": "s8",
+      "start": 492.7807916666665,
+      "end": 496.28979166666653,
+      "text": "Different boats, different decades, same lesson underneath."
+    },
+    {
+      "id": "144",
+      "scene": "s8",
+      "start": 496.40954166666654,
+      "end": 497.74054166666656,
+      "text": "A noise ignored."
+    },
+    {
+      "id": "145",
+      "scene": "s8",
+      "start": 497.8609166666665,
+      "end": 499.3539166666665,
+      "text": "A contact misread."
+    },
+    {
+      "id": "146",
+      "scene": "s8",
+      "start": 499.47412499999984,
+      "end": 502.3091249999998,
+      "text": "A boat moving too fast to sense what was ahead."
+    },
+    {
+      "id": "147",
+      "scene": "s8",
+      "start": 502.4287916666665,
+      "end": 505.3857916666665,
+      "text": "And two boats that may have been too quiet to hear each other."
+    },
+    {
+      "id": "148",
+      "scene": "s9",
+      "start": 506.58579166666647,
+      "end": 509.70379166666646,
+      "text": "So a submarine is not hard to kill because it is strong."
+    },
+    {
+      "id": "149",
+      "scene": "s9",
+      "start": 509.82383333333314,
+      "end": 511.84683333333317,
+      "text": "It is a steel tube full of people."
+    },
+    {
+      "id": "150",
+      "scene": "s9",
+      "start": 511.96645833333315,
+      "end": 515.6134583333331,
+      "text": "It is hard to kill because it hears you before you hear it."
+    },
+    {
+      "id": "151",
+      "scene": "s9",
+      "start": 515.7329999999998,
+      "end": 518.1599999999999,
+      "text": "The moment that flips, it is just another target."
+    },
+    {
+      "id": "152",
+      "scene": "s9",
+      "start": 518.2804583333332,
+      "end": 520.6884583333332,
+      "text": "Whoever hears first, wins."
+    },
+    {
+      "id": "154",
+      "scene": "s9",
+      "start": 520.9883749999998,
+      "end": 525.8113749999998,
+      "text": "And next, no shots fired, no ships sunk: how a naval blockade actually works."
+    }
+  ]
+}

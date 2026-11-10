@@ -1,7 +1,7 @@
 {
   "name": "carrier",
   "model": "gemini-3.8-flash-tts",
-  "totalSeconds": 590.365,
+  "totalSeconds": 585.417,
   "lines": [
     {
       "id": "01",
@@ -1464,18 +1464,6 @@
       "voice": "Charon",
       "src": "voiceover/carrier/122.wav",
       "durationInSeconds": 1.919,
-      "tempo": 1,
-      "hash": "9f9ab9979e7d"
-    },
-    {
-      "id": "123",
-      "scene": "s8",
-      "take": "t22",
-      "gapAfter": 0.18,
-      "text": "If you want the full ring diagram from this video as a printable guide, it is linked below.",
-      "voice": "Charon",
-      "src": "voiceover/carrier/123.wav",
-      "durationInSeconds": 4.948,
       "tempo": 1,
       "hash": "9f9ab9979e7d"
     },

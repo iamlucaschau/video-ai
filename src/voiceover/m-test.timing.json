@@ -1,0 +1,104 @@
+{
+  "durationInSeconds": 32.73770833333333,
+  "loop": true,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.05,
+      "end": 2.206,
+      "text": "Hitler gave this spy a medal."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 2.326458333333333,
+      "end": 3.6594583333333333,
+      "text": "So did Britain's king."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 3.9094999999999995,
+      "end": 7.1205,
+      "text": "In 1941, he begged the British to let him spy on Germany."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 7.240375,
+      "end": 8.231375,
+      "text": "They said no."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "start": 8.481541666666667,
+      "end": 11.212541666666667,
+      "text": "So he signed up with the Germans instead, and stayed in Lisbon."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "start": 11.333,
+      "end": 15.46,
+      "text": "From there, he faked reports from London, using a tourist guide and cinema newsreels."
+    },
+    {
+      "id": "07",
+      "scene": "s4",
+      "start": 15.71025,
+      "end": 16.82025,
+      "text": "The Germans loved them."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "start": 16.940291666666667,
+      "end": 18.305291666666665,
+      "text": "So the British hired him after all."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "start": 18.425125,
+      "end": 20.479125,
+      "text": "He invented twenty-seven fake agents."
+    },
+    {
+      "id": "10",
+      "scene": "s5",
+      "start": 20.729125,
+      "end": 24.257125,
+      "text": "Three days after D-Day, he told Berlin that Normandy was a trick."
+    },
+    {
+      "id": "11",
+      "scene": "s5",
+      "start": 24.376958333333334,
+      "end": 25.375958333333333,
+      "text": "Berlin believed him."
+    },
+    {
+      "id": "12",
+      "scene": "s6",
+      "start": 25.62591666666667,
+      "end": 27.91791666666667,
+      "text": "In July, Germany gave him the Iron Cross."
+    },
+    {
+      "id": "13",
+      "scene": "s6",
+      "start": 28.03841666666667,
+      "end": 30.32441666666667,
+      "text": "In November, Britain made him an MBE."
+    },
+    {
+      "id": "14",
+      "scene": "s6",
+      "start": 30.44408333333334,
+      "end": 32.488083333333336,
+      "text": "Both medals were for the same lies."
+    }
+  ]
+}

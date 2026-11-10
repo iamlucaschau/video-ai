@@ -32,6 +32,10 @@
 4. Không đọc CTA trong video; câu hỏi gợi bình luận để ở comment ghim.
 5. Lỗi của kênh tham khảo không được lặp:
 {{WEAKNESSES}}
+6. **Mỗi câu là một hình** (W8, 2026-11-03): câu nào cũng phải dựng được thành một shot đọc hiểu không cần chữ; câu cần chú thích mới hiểu thì viết lại. Mỗi câu ít nhất một dòng trong `shots.json` (cắt theo từ).
+7. Câu ngắn, thì hiện tại; ngôi thứ hai ("You're…") khi format dùng nó (xem mẹo giữ chân ở trên).
+8. **Chữ ký của format:** {{SIGNATURE}}. Nói / nghe / thấy mỗi lần nó xảy ra.
+9. Mỗi con số có **cách tính** viết ra trong bảng kiểm chứng (W9) trước khi thu giọng; không tự đặt số khi nguồn không có.
 
 ## 4. Mục tiêu đo được (kiểm ở Cổng 5 bằng `studio:compare`)
 

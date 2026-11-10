@@ -1,5 +1,5 @@
 """
-Code-made SFX for "How an Aircraft Carrier Defends Itself" (Test/carrier): jet pass, missile launch, Phalanx burst,
+Code-made SFX for "How an Aircraft Carrier Defends Itself" (Formats/Naval Board/episodes/ep01-carrier): jet pass, missile launch, Phalanx burst,
 radar and sonar pings, jamming static, a two-tone alarm. Same rules as make-sfx-ambush.py (no cartoon sounds; each
 file levelled by Sfx from its measured loudness).
   python -P scripts/make-sfx-carrier.py   -> public/sfx/synth/*.wav (+ catalog.json entries, author "code")

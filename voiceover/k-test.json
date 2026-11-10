@@ -1,0 +1,25 @@
+{
+  "name": "k-test",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Kore",
+  "style": "Giọng nữ trẻ miền Bắc Việt Nam, thám tử kể chuyện: chậm, chắc, bình tĩnh, hơi bí ẩn. Giờ và con số đọc rõ, chậm nửa nhịp. Không cao giọng.",
+  "trimSilence": true,
+  "batchBy": "take",
+  "lines": [
+    { "id": "n1", "scene": "hook", "take": "t1", "gapAfter": 0.35, "text": "Mười giờ đêm, tiệm bánh tối om." },
+    {
+      "id": "m1", "scene": "room", "take": "t2", "gapAfter": 0.25, "text": "Tôi ở trong kho cả tối.",
+      "voice": "Puck",
+      "style": "Giọng nam trẻ miền Bắc Việt Nam, thợ làm bánh đang bị hỏi cung: lo lắng, phân trần, nói hơi nhanh."
+    },
+    {
+      "id": "m2", "scene": "close", "take": "t2", "gapAfter": 0.45, "text": "Tôi chưa hề chạm cầu dao.",
+      "voice": "Puck",
+      "style": "Giọng nam trẻ miền Bắc Việt Nam, thợ làm bánh đang bị hỏi cung: lo lắng, phân trần, nói hơi nhanh."
+    },
+    { "id": "n2", "scene": "timeline", "take": "t3", "gapAfter": 0.25, "text": "Ba nghi phạm, ba khoảng giờ." },
+    { "id": "n3", "scene": "timeline", "take": "t3", "gapAfter": 0.45, "text": "Tuấn có mặt lúc mười giờ." },
+    { "id": "n4", "scene": "lineup", "take": "t3", "gapAfter": 0.45, "text": "Một người đang nói dối." },
+    { "id": "n5", "scene": "board", "take": "t3", "gapAfter": 0.2, "text": "Đến lượt bạn: mười giây." }
+  ]
+}

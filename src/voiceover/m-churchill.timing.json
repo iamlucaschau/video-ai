@@ -1,0 +1,160 @@
+{
+  "durationInSeconds": 61.53808333333333,
+  "loop": true,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.05,
+      "end": 5.6339999999999995,
+      "text": "This British officer fought the Second World War with a sword, a longbow and bagpipes."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "start": 5.9344166666666665,
+      "end": 7.388416666666666,
+      "text": "Everyone else carried rifles."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 7.508875,
+      "end": 10.172875,
+      "text": "He'd shot arrows for Britain at the world championships."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 10.373166666666666,
+      "end": 14.487166666666667,
+      "text": "So when his commandos raided Norway that December, he went ashore playing the bagpipes."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "start": 14.736833333333333,
+      "end": 18.196833333333334,
+      "text": "Two years later, in Italy, he was sent to take a German post above Salerno."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "start": 18.317291666666666,
+      "end": 19.673291666666668,
+      "text": "He took one corporal."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "start": 19.793125,
+      "end": 23.244125,
+      "text": "They came back with forty-two prisoners, a mortar crew included."
+    },
+    {
+      "id": "08",
+      "scene": "s3",
+      "start": 23.443833333333334,
+      "end": 25.361833333333333,
+      "text": "But he'd lost his sword in the fight."
+    },
+    {
+      "id": "09",
+      "scene": "s3",
+      "start": 25.481416666666668,
+      "end": 27.109416666666668,
+      "text": "So he walked back into the town to get it."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "start": 27.359083333333334,
+      "end": 29.769083333333334,
+      "text": "Then came the island of Brač, off Yugoslavia."
+    },
+    {
+      "id": "11",
+      "scene": "s4",
+      "start": 29.888833333333334,
+      "end": 32.350833333333334,
+      "text": "A mortar shell killed or wounded everyone but him."
+    },
+    {
+      "id": "12",
+      "scene": "s4",
+      "start": 32.47058333333334,
+      "end": 35.605583333333335,
+      "text": "So he played the bagpipes as the Germans advanced."
+    },
+    {
+      "id": "13",
+      "scene": "s4",
+      "start": 35.725625,
+      "end": 38.038625,
+      "text": "The song was \"Will Ye No Come Back Again?\""
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "start": 38.23866666666667,
+      "end": 39.532666666666664,
+      "text": "Then a grenade knocked him out."
+    },
+    {
+      "id": "15",
+      "scene": "s5",
+      "start": 39.982875,
+      "end": 43.185875,
+      "text": "The Germans flew him to Berlin for questioning, because of his surname."
+    },
+    {
+      "id": "16",
+      "scene": "s5",
+      "start": 43.305708333333335,
+      "end": 45.22170833333333,
+      "text": "They thought he was related to Winston Churchill."
+    },
+    {
+      "id": "17",
+      "scene": "s5",
+      "start": 45.341750000000005,
+      "end": 46.323750000000004,
+      "text": "He wasn't."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "start": 46.67420833333334,
+      "end": 48.39720833333334,
+      "text": "So they locked him in Sachsenhausen."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "start": 48.51695833333334,
+      "end": 50.03795833333334,
+      "text": "He tunnelled out, and they caught him again."
+    },
+    {
+      "id": "20",
+      "scene": "s6",
+      "start": 50.288208333333344,
+      "end": 54.60320833333334,
+      "text": "Videos online say that in France, in 1940, he killed a German with that longbow."
+    },
+    {
+      "id": "21",
+      "scene": "s6",
+      "start": 54.72354166666668,
+      "end": 57.410541666666674,
+      "text": "But Churchill himself said a truck had crushed his bows."
+    },
+    {
+      "id": "22",
+      "scene": "s7",
+      "start": 57.860666666666674,
+      "end": 61.287666666666674,
+      "text": "The man who took a sword to a gun war outlived it by fifty years."
+    }
+  ]
+}

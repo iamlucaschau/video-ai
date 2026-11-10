@@ -1,0 +1,154 @@
+{
+  "question": "Số phận của MỘT người (hoặc một vật) đi ngược luật của thời đó ra sao, và hệ thống phản ứng thế nào? (Short 9:16; video dài: formula-long.json)",
+  "length": {
+    "seconds": [
+      64,
+      75
+    ],
+    "words": [
+      206,
+      246
+    ]
+  },
+  "hook": {
+    "pattern": "một câu 11–17 từ nói KẾT QUẢ nghịch lý của một người cụ thể, chỉ bằng \"this / these\" hoặc ngôi thứ hai \"You're…\"; giấu lý do; lời + phụ đề từ frame 0, khung 0 vẽ đúng nghịch lý",
+    "quote": "Japan held this pilot's funeral twice while he was still alive.",
+    "atS": 0
+  },
+  "bridge": {
+    "pattern": "câu biến luật / mệnh lệnh thành rủi ro hoặc báo \"tệ hơn\", mở đầu bằng So / and that's where; đặt ở 18–37 %",
+    "quote": "So to save him, she cut off her hair and went in his place.",
+    "atShare": 0.18
+  },
+  "close": {
+    "pattern": "một câu trớ trêu 8–15 từ đảo ngược hook hoặc trả lời bằng một con số; không CTA; ≤ 0,5 s sau đó là frame 0 (nối vòng bằng hình)",
+    "quote": "But he outlived the war, went home, became a farmer and lived to be 92.",
+    "atS": 68.5
+  },
+  "beats": [
+    {
+      "name": "H · nghịch lý một câu",
+      "from": 0,
+      "to": 0.07,
+      "does": "kết quả lạ của một người, \"this pilot / this soldier / you\""
+    },
+    {
+      "name": "B · bối cảnh + luật",
+      "from": 0.07,
+      "to": 0.25,
+      "does": "năm, nơi, mệnh lệnh hoặc luật cấm trong 2–3 câu; câu bắc cầu biến luật thành rủi ro"
+    },
+    {
+      "name": "L · lật lần 1",
+      "from": 0.25,
+      "to": 0.45,
+      "does": "But / So: nhân vật hành động, hệ thống hiểu sai hoặc trừng phạt"
+    },
+    {
+      "name": "T · tệ hơn / lặp",
+      "from": 0.45,
+      "to": 0.75,
+      "does": "Even worse / again and again; số lần, thời gian; có thể có 3–4 câu thoại cực ngắn"
+    },
+    {
+      "name": "Q · câu hỏi mở lại hoặc bác tin đồn",
+      "from": 0.75,
+      "to": 0.9,
+      "does": "câu hỏi người xem đang nghĩ (\"so how did the army finally…?\") hoặc \"videos online say…\" rồi sửa"
+    },
+    {
+      "name": "K · trớ trêu kết",
+      "from": 0.9,
+      "to": 1,
+      "does": "một câu đảo hook bằng một con số / một danh hiệu; cắt về frame 0"
+    }
+  ],
+  "devices": [
+    "câu nối But / So / Then mở đầu ~30–40 % số câu",
+    "câu 2–4 từ đứng riêng ngay sau câu dài (\"You don't.\", \"He came back!\")",
+    "một con số mỗi 3–5 câu (0,18–0,40 số / câu ở hit; video flop V1: 0,85)",
+    "nhân vật thường không gọi tên, chỉ \"this pilot / she\"; tên chỉ khi tên là nút thắt (\"Aristodemus the Trembler\")",
+    "ngôi thứ hai \"You're one of…\" là biến thể (V3, 76 % câu có \"you\")",
+    "đối thoại 3–4 câu cực ngắn thay cho lời kể ở cao trào (V7)",
+    "bác tin đồn \"videos online say…\" ở 85–90 %",
+    "con số là vật trong cảnh (nến 92, bảng 23, vạch khắc)",
+    "không chào, không giới thiệu kênh, không CTA; frame cuối = frame 0"
+  ],
+  "title": {
+    "pattern": "câu hỏi Why / What Happened to / How + MỘT người có đặc điểm lạ (\"This Kamikaze\", \"This 300 Survivor\", \"the Only Pilot Who…\"), 5–9 từ, có thể IN HOA một động từ cảm xúc (HATED, DIED, ATTACKING) hoặc bỏ lửng \"...\"; tránh câu khẳng định \"The X That…\"",
+    "examples": [
+      "Why Sparta HATED This 300 Survivor",
+      "Why This Kamikaze Kept Coming Back...",
+      "She Went to War Disguised as Her Brother",
+      "What Happened to this Stranded Pearl Harbor Pilot?",
+      "What Happened to the Only Pilot Who Bombed America?",
+      "The 17-Year-Old Marine Who Couldn't Be Killed",
+      "How Did a Trapped Samurai Escape by ATTACKING?",
+      "Why Did America's Tunnel Dogs Lose to Soap",
+      "The Fake Army That Fooled the Nazis"
+    ]
+  },
+  "facts": {
+    "checked": 33,
+    "ok": 22,
+    "approx": 9,
+    "wrong": 0,
+    "unknown": 2
+  },
+  "pillars": [
+    {
+      "name": "Một người sống sót / quay về ngược ý hệ thống (không chết được, bị báo tử, bị tẩy chay) — trung vị 693K (7 video)",
+      "share": 0.19,
+      "examples": [
+        "Kamikaze 1,78M",
+        "300 Survivor 1,77M",
+        "Stranded Pearl Harbor Pilot 884K",
+        "17-Year-Old Marine 693K"
+      ]
+    },
+    {
+      "name": "Một người lừa / vượt luật bằng mẹo (giả trai, giả ngốc, thoát bằng tấn công) — trung vị 461K (4)",
+      "share": 0.11,
+      "examples": [
+        "Disguised as Her Brother 3,78M",
+        "Trapped Samurai 651K",
+        "Prisoner Pretended to Be an Idiot 272K"
+      ]
+    },
+    {
+      "name": "Người duy nhất / kỷ lục trái khoáy (phi công duy nhất ném bom Mỹ, điệp viên giỏi nhất) — trung vị 129K (12; từ 05/10: 234K)",
+      "share": 0.32,
+      "examples": [
+        "Only Pilot Who Bombed America 828K",
+        "Best Spy in the Soviet Union 440K",
+        "Golden Gate pilot 327K"
+      ]
+    },
+    {
+      "name": "Luật tàn nhẫn của một thời, kể ngôi thứ hai — trung vị 386K (2)",
+      "share": 0.05,
+      "examples": [
+        "Arrested in Samurai Japan 453K",
+        "5 Samurai Laws 320K"
+      ]
+    },
+    {
+      "name": "Sự vật / mẹo quân sự kỳ quặc, không có nhân vật (trung vị thấp hơn) — trung vị 67K (12; từ 05/10: 102K)",
+      "share": 0.32,
+      "examples": [
+        "Fake Paris 259K",
+        "Bombers Over This Mountain 102K",
+        "Tunnel Dogs 42K",
+        "Fake Army 3,6K"
+      ]
+    }
+  ],
+  "weaknesses": [
+    "hook phóng đại hơn nội dung (\"lost to soap\")",
+    "giai thoại kể như sự thật, không nhãn nguồn (thoại của Milunka Savić, \"hai tang lễ\")",
+    "thứ tự sự kiện lỏng (V7 thăng chức \"trong cùng trận đó\")",
+    "nhãn chữ trong cảnh nhỏ 14–40 px, có khung 5–11 khối chữ cùng lúc",
+    "Short không gọi tên nhân vật: người xem không tra tiếp được, mình có thể làm tốt hơn bằng tên + năm trong cảnh",
+    "chủ đề nghiêng về Thế chiến II / Mỹ; Việt Nam kể từ phía lính Mỹ (\"enemy\")"
+  ]
+}

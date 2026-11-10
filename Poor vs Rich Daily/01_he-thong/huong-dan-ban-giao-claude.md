@@ -106,6 +106,7 @@ Quy tắc vàng: **Claude không được tự ý qua cổng.** Mỗi cổng c�
 - [ ] **Không máy quay giả:** không zoom chuyển cảnh, không rung/lắc
 - [ ] **Ít chữ:** không câu VO nào lặp thành dải chữ; khối chữ ≤ 5 từ; ≤ 2 khối cùng lúc; phụ đề 1–3 từ
 - [ ] **SFX** chỉ từ `public/sfx/` (thật, không hoạt hình), không lấn VO
+- [ ] **Cổng nghe** (bắt buộc từ 2026-11-08, khi tập có SFX): `npm run listen -- <id> <mp4> --out NGHE.md`; mọi dòng "Cần nghe" có quyết định
 
 ## 7. Quyết định đã chốt / còn mở
 

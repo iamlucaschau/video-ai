@@ -33,6 +33,13 @@ file wins. For anything else, the skill (and https://www.remotion.dev/docs) wins
 | Format package from cards (formula + sample script + demo; channel name / market asked later) / export as its own project (Studio P4) | `npm run studio:format -- new "<Format>" --style <X-name> --from <folder> --sample <test folder>` · `export "Formats/<Format>" --to <dir> [--install]` |
 | Our render vs the reference / numbers after publishing (Studio P5) | `npm run studio:compare -- <mp4> --ref <folder>` → `SO-SANH.md` · `npm run studio:stats -- init\|import\|report` → `SO-LIEU.md` |
 | Render / contact sheet, any style | `npm run render:style -- <id>` · `npm run sheet -- <id> …` (same as `render:j` / `sheet:j`) |
+| Shot list on the VO's words + pace + storyboard (one still per shot) | `node scripts/shotlist.mjs "<episode folder>" [--board <id>]` (`shots.json` → `shots.timeline.json`, `shotlist.md`) |
+| Frame QA after a render (black / white / frozen / one-frame pops, loudness) | `python -P scripts/short-qa.py <mp4> --shots <episode>/shots.timeline.json --out <episode>/QA.md` |
+| Our frames over the reference channel's | `python -P scripts/sbs-sheet.py <ours.mp4> <reference.mp4> --n 6 --out out/sheets/<slug>-sbs.jpg` |
+| Measure SFX attack / peak (for `<Sfx align>`) | `node scripts/sfx-onsets.mjs` → `public/sfx/onsets.json` |
+| Export a video's SFX cues (for `earshot timeline --cues`) | `node scripts/sfx-cues.mjs <id> <out.json> [--every <s>]` |
+| SFX placed on a spoken word, from code, before any render (~20 s) | `npm run listen -- <id> --precheck --words src/voiceover/<slug>.words.json --out "<episode>/NGHE.md"` |
+| Listening gate after the final render (cues + demucs + earshot → `NGHE.md`; required for new episodes; `--words` adds the covered words) | `npm run listen -- <id> "<mp4 or audio-only wav>" --out "<episode>/NGHE.md" --words src/voiceover/<slug>.words.json` (4–9 min for 105 s, ~9 min for 9 min; run in the background) |
 | Clear Remotion's temp bundles (~700 MB per render / still, never removed by Remotion) | `node scripts/clean-temp.mjs [hours]` (default 6 h; `render:style` runs it at the end) |
 | Add a Remotion package | `npx remotion add @remotion/<pkg>` (keeps versions in sync) |
 | Upgrade Remotion | `npx remotion upgrade` |
@@ -70,6 +77,7 @@ src/
       scenes/*.tsx         one file per scene
     _template/             SceneTemplate.tsx, a copyable starter (not registered)
 Style Library/              shared visual styles A–J for every project (one folder per style; README = index + picker)
+Style Library/toon-engine/  2D character rig + perspective rooms + light in code (MIT, from what-if-animation), for styles that need acting characters
 scripts/tts.mjs            Gemini TTS generator (check / say / build), multi-key rotation
 scripts/make-audio.mjs     synthesizes music beds + SFX into public/audio/
 voiceover/*.json           voiceover scripts (input for npm run voiceover)
@@ -142,7 +150,7 @@ Most vertical videos ignore these. Ours may not. Check every one at QA.
      reference videos; map labels, place names and number chips carry the text.
    - One clean sans family, weight 700–800, ≥ 48 px on 1080 wide. No
      cinematic/display serif fonts for text blocks or quotes.
-4. **Real SFX only** (see Sound design).
+4. **SFX: real recordings first; synthesized in code when no real one fits** (Lucas 2026-11-04; see Sound design).
 5. **Banned "AI slop" tells** (Lucas 2026-11-01): every element entering
    the same way (all fades); a number or claim on screen that is not in the
    episode's verification table / sources; a new shot or element on a timer
@@ -237,7 +245,7 @@ these conventions (see the `remotion-interactivity` skill):
 
 1. `npm run lint` must pass.
    Then check the short-form rules: safe zone (`safeGuide` stills), no fake
-   camera, text density, real SFX.
+   camera, text density, SFX (real first, code-made only where no real file fits).
 2. Spot-check frames with `npx remotion still <id> out/check.png --frame=<n>`
    and view the image. For several frames, either run `still` per frame or
    render a range as images: `npx remotion render <id> out/seq --sequence --frames=90-100 --image-format=jpeg`.
@@ -321,23 +329,69 @@ Gemini reads ~200 wpm; use `tempo` and the composition's gaps to hit a target le
 
 ## Sound design
 
-- **SFX: real recordings only.** Use the curated Pixabay library in
+- **SFX: real recordings first.** Use the curated Pixabay / Mixkit library in
   `public/sfx/<category>/` (whoosh, click, flash, shutter, progress, deephit,
   hit; 73 files) listed in `public/sfx/catalog.json` with measured loudness.
   Play them with `<Sfx file="sfx/whoosh/clean-whoosh-382726.mp3" at={frame} />`
   (`src/series/pvr/sfx.tsx`), which levels every file to −15 LUFS, about voice level, as an accent (−26 and −18 were too quiet).
   Add files with `node scripts/fetch-sfx.mjs <list.json>` (audio is git-ignored:
   Pixabay license allows use in videos, not redistribution of the files).
-- **Never synthesize SFX** and never use cartoon sounds (boing, pop, ding,
-  slide-whistle). The SFX in `scripts/make-audio.mjs` (`tick`, `impact`,
-  `ching`, `riser`, `buzz`, `whoosh`, `pop`) sound cartoonish and are retired
-  for new work (Lucas, 2026-10-08). Max one SFX per beat; most beats need none.
+- **Synthesized SFX are allowed when no real recording fits** (Lucas 2026-11-04, was "real only" since
+  2026-10-08): search the library and Pixabay / Mixkit first; if nothing fits the action (a sound that does not
+  exist as a file, or one that must follow the picture exactly), make it in code (e.g. numpy / ffmpeg synthesis, as in
+  `reference/claude-animated-shorts/templates/audio/`), save it under `public/sfx/<category>/` with a `catalog.json`
+  entry (`author: "code"`, `source:` the script) and level it like any other file. Still **no cartoon sounds**
+  (boing, pop, ding, slide-whistle): the old `scripts/make-audio.mjs` SFX (`tick`, `impact`, `ching`, `riser`,
+  `buzz`, `whoosh`, `pop`) stay retired. Max one SFX per beat; most beats need none (a style can allow denser sound).
 - Licensed music beds (Lucas 2026-10-14): Pixabay tracks in `public/sfx/music/`
   (list + sources: `scripts/music-list.json`, fetched with `node scripts/fetch-sfx.mjs
   scripts/music-list.json`, which merges into `catalog.json`). Use `<MusicBed file={PILLAR_MUSIC.P1} />`
   (`src/series/pvr/sfx.tsx`): levels to −28 LUFS, soft ends, optional `duck(frame)`.
 - Synth beds (older series): `node scripts/make-audio.mjs` still makes `bed-dark.wav` /
   `bed-bright.wav` (40 s loops; `<Audio loop>`). Levels per series rules.
+- **Placing a hit (Lucas 2026-11-03, W6; from kelano86/what-if-animation, MIT):**
+  - A hit that illustrates a word lands **in the pause just after the word, never on it**
+    (cue the next word minus ~4 frames, or the line end). A hit on the word covers it.
+  - Align by the sound, not the file: `<Sfx … align="onset" />` for hits, clicks, steps (the
+    attack lands on `at`), `align="peak"` for whooshes and booms (the loudest moment lands on the
+    fastest movement / the impact). Times: `public/sfx/onsets.json` (`node scripts/sfx-onsets.mjs`,
+    run by `fetch-sfx.mjs`); most files open with ~0.14 s of silence, so the default `"start"`
+    sounds ~4 frames late. The default stays `"start"` only so older videos render unchanged.
+  - Silence is a tool: cut or duck the music a beat before the turn so its hit lands in a gap; beds
+    stay low under the key line (the fact, the last line).
+  - A style that needs denser sound (one effect per visible action, e.g. Squire-like animation)
+    says so in its README; the default stays "max one SFX per beat".
+  - Check: `npm run studio:compare` lists in `SO-SANH.md` every moment the background comes within
+    3 dB of the voice while words are spoken (W5; demucs on our render, ƯỚC). Fix the key words.
+- **Listening with earshot (required for every new episode with SFX from 2026-11-08, Lucas; tried 2026-11-07 on
+  `NO-ep01-ivey-edge`):** the gate is `npm run listen` (table above), whose `NGHE.md` lists every SFX that barely rises
+  over the bed or lands more than 2 frames off; each row gets a decision (listened: keep / fixed) in `checks.md`.
+  Installed outside the repo
+  (`uv tool install --python 3.12 "earshot @ git+https://github.com/Leonxlnx/earshot@4ac3d2a"`, MIT). Every call needs
+  `EARSHOT_HOME=B:/Claude/earshot-home`, or it downloads its 1.1 GB of models again to C:. Results are evidence, not taste.
+  - **Use it in three stages, not only at the end (Lucas 2026-11-08):** Naval Board #2 needed three full renders
+    (about 45 min each) to fix its sound, because the faults were found only on the finished mp4. Most were hits on words.
+    1. Before any render: `--precheck --words …` (table above, ~20 s) lists every hit whose attack lands inside a spoken
+       word. Move it to the pause after the word, or keep it on purpose and say so. On #2 the one row it gave ("hit." under
+       a blast) was also the worst covered word in the measured mix.
+    2. While fixing the mix, render only the audio (`npx remotion render <id> out/<id>.wav --codec=wav`, minutes) and run
+       the gate on that wav with `--words`: the same cues, stems and covered words as on the mp4, without the picture.
+    3. On the final mp4, the required gate, with `--words`. Its `NGHE.md` is the one each decision in `checks.md` refers to.
+  - `--words` adds "Chữ bị nền che" (`scripts/word-masking.py` on the same stems): each word where the background comes
+    within 3 dB of the voice, in the speech band (300–3400 Hz, the table) and full band (count and worst dB), with the
+    nearest SFX, which is usually the fix. Weak words ("and", a breath) usually stay. It saves running `studio:compare`
+    (W5) just for this, which splits the audio a second time and gives 0.4 s windows without words.
+  - Pick a file: `earshot rank "<what it should sound like>" public/sfx/<folder> --top 5`. Verdict "strong" was the right
+    kind of sound in 19 of 22 trials on our library. Check a single file: `earshot match <file> "<description>"`.
+    "no match" on a code-made SFX means listen to it, not that it is wrong; on room tones it means nothing.
+  - Check sync **on the background stem only** (`node scripts/sfx-cues.mjs <id> cues.json`, about 2 min; `python -m demucs
+    --two-stems vocals -n htdemucs -d cpu`, then `earshot timeline no_vocals.wav --cues cues.json --detail low`; 6 min for
+    a 105 s video). Cues describe the current code, so the mp4 must be newer than the code. On the full mix the voice
+    makes ~7 onsets a second and any cue looks in sync (22 real cues 55% within a frame, the same cues moved 0.7 s 41%,
+    chance 44%). On the stem: 64% vs 41%, and on a strong accent 45% vs 14%. Read `offset_ms` and `event_prominence_db`.
+  - Ignore for our videos: event and section labels on a mix (narration read as "chat message pop", "funk music"),
+    `critique` and the `launch` kit (profiled on product launch films), and "cuts without a hit" (most of our cuts need none).
+  - Bank sounds (`earshot sfx`) are not tried yet, so the rules above for real and code-made SFX stand unchanged.
 
 ## Voiceover-driven videos (pattern: `src/compositions/PriceTheirWork/`)
 
@@ -375,10 +429,6 @@ inline, Studio can't save them back. To persist a change, edit
   a space (`VIDEO AI`), so quote paths in shell commands.
 - Rendering uses Remotion's bundled Chrome Headless Shell (downloaded on first
   render) and bundled FFmpeg. System FFmpeg 9 is also available for audio/video prep.
-- All `remotion` and `@remotion/*` packages must share the exact same version.
-  Use `npx remotion add` / `npx remotion upgrade`, never a bare `npm i @remotion/x`.
-- Licensing: Remotion is free for individuals and companies of up to 3 people.
-  Larger companies need a license (https://remotion.pro/license).
 - Render speed on this PC (measured 2026-11-07; 2 × Xeon E5-2680 v4, GTX 1050 Ti): keep Remotion's default
   concurrency (8). More is slower even with CPU near 25% (first 40 s of Carrier: c=8 85 s, c=16 100 s, c=32 242 s;
   c=36 failed with a frame-extraction timeout). Moving the bundle to the SSD gains about 5%. Blender: splitting into
@@ -389,3 +439,7 @@ inline, Studio can't save them back. To persist a change, edit
   flicker up 1–11%, same look on stills. Transparent smoke is the real cost: halving Moskva's puffs (360, larger, denser)
   took 54.6 → 21.6 s/frame together with 8 samples; a third shows sphere rings; `transparent_max_bounces` 32 cuts hard
   edges into the smoke. `adaptive_threshold` 0.1 changes nothing.
+- All `remotion` and `@remotion/*` packages must share the exact same version.
+  Use `npx remotion add` / `npx remotion upgrade`, never a bare `npm i @remotion/x`.
+- Licensing: Remotion is free for individuals and companies of up to 3 people.
+  Larger companies need a license (https://remotion.pro/license).

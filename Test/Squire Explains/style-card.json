@@ -1,0 +1,336 @@
+{
+  "source": {
+    "channel": "Squire Explains",
+    "url": "https://www.youtube.com/channel/UCx04mh80FmICMZCes1t-VUw",
+    "videos": [
+      "hZT0hBblgT0",
+      "MzW5RNR7nsU",
+      "Cxjnxg0Ibjs",
+      "C9Yfam1foCU",
+      "2i8tQ3yxpDk",
+      "CIYIefUvHq0",
+      "XuOxszx1TU0",
+      "1vPQmuX3Ckc",
+      "0LvsCccxIm8",
+      "eSEQdunl1_E",
+      "nFO9uCmAv_w"
+    ],
+    "analysed": "2026-11-02",
+    "report": "BAO-CAO.md"
+  },
+  "format": {
+    "aspect": "9:16 Short (1440×2560, 30 fps) + 16:9 video dài (2560×1440, 30 fps)",
+    "seconds": [
+      49,
+      700
+    ],
+    "wpm": 200,
+    "lufs": -14.1,
+    "subtitles": "Short: cháy cứng 1–3 từ, IN HOA, trắng viền đen, sans đậm kiểu Montserrat Black ~50 px trên khung 1080, giữa khung y ≈ 1300 / 1920, từ frame 0; video dài: không phụ đề",
+    "ending": "Short: câu trớ trêu 8–15 từ, ≤ 0,5 s sau lời cuối, frame cuối = frame 0 (nối vòng bằng hình, không nối câu), không CTA; video dài: câu châm ngôn đối xứng tiêu đề (hit) hoặc CTA comment (video yếu), end screen 2 ô ~15 s"
+  },
+  "palette": [
+    {
+      "hex": "#FFFFFF",
+      "role": "mặt nhân vật (đầu tròn trắng) + phụ đề",
+      "label": "ƯỚC"
+    },
+    {
+      "hex": "#1B1A1F",
+      "role": "viền đen dày mọi hình + viền phụ đề",
+      "label": "ƯỚC"
+    },
+    {
+      "hex": "#938161",
+      "role": "đất / kaki / giấy cũ (nền trung tính chủ đạo)",
+      "label": "ĐO"
+    },
+    {
+      "hex": "#6D5649",
+      "role": "gỗ, da, bóng tối trong nhà",
+      "label": "ĐO"
+    },
+    {
+      "hex": "#809DB6",
+      "role": "trời / biển xanh nhạt",
+      "label": "ĐO"
+    },
+    {
+      "hex": "#C74B46",
+      "role": "nhấn đỏ: mũi tên, vòng, X, chữ khắc, cờ",
+      "label": "ƯỚC"
+    }
+  ],
+  "type": {
+    "subtitle": "sans đen đậm IN HOA (kiểu Montserrat Black / Poppins ExtraBold) ~50 px trên khung 1080, trắng viền đen; V1 (bản đầu kênh) nhấn từ khoá màu đỏ, sau bỏ",
+    "labels": "chữ viết tay kiểu truyện tranh (kiểu Bangers / Permanent Marker) trên vật trong cảnh: bản đồ, biển gỗ, giấy tờ, cuộn danh dự; nhiều nhãn 16–40 px (OCR: 10 % chữ nhỏ nhất 14–44 px); video dài có thẻ đỏ chú thích bộ phận",
+    "label": "ƯỚC"
+  },
+  "camera": {
+    "summary": "Short: khung đứng là chính, đổi cỡ cảnh bằng hard cut rộng → cận, nền mờ khi cận; đẩy chậm vào bản đồ / tranh ghim tường; không rung, không zoom giật, không blur. Video dài: thêm lia ngang qua đám đông và mặt cắt, góc nhìn thứ nhất (sau khiên, qua khe mũ), nhìn từ trên cho sơ đồ",
+    "label": "ƯỚC"
+  },
+  "rhythm": {
+    "shotMeanS": 2.1,
+    "openingShotS": 3.1,
+    "newInfoEveryS": 2.1,
+    "label": "ĐO"
+  },
+  "techniques": [
+    {
+      "id": "T1",
+      "name": "Nhân vật đầu tròn trắng viền đen, biểu cảm mặt, tay chân khớp, trang phục theo thời kỳ",
+      "videos": "cả 11",
+      "how": "rig 2D cắt khớp (puppet), thay mặt theo cảm xúc, tay cử động, đi, ngồi, quỳ; mỗi tập một bộ trang phục",
+      "signals": "chuyển động khớp cứng như con rối, mặt thay khung (không nội suy), cùng một đầu cho mọi nhân vật",
+      "feasibility": "green",
+      "kit": "`Style Library/toon-engine/` rig (Lucas duyệt W1 2026-11-03): tay / chân 2 khớp, 9 biểu cảm, đi, gắn đạo cụ; thêm bộ trang phục theo thời kỳ (Look + extra) trong kit style M",
+      "decision": "chờ Lucas",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T2",
+      "name": "Cảnh nền minh hoạ riêng từng shot (15–25 nền / Short)",
+      "videos": "cả 11",
+      "how": "vẽ vector cùng bút pháp: gradient trời, viền đen, đất kaki, ánh sáng mềm",
+      "signals": "mỗi shot một bối cảnh khác, không lặp nền giữa các tập",
+      "feasibility": "yellow",
+      "kit": "nội thất (lều, nhà, sảnh, hầm) dựng bằng bộ phòng phối cảnh + ánh sáng của toon-engine (W2); ngoại cảnh (núi, chiến trường, biển) = ảnh AI 2D phẳng do Lucas tạo, không người trong ảnh (~5–8 ảnh / Short)",
+      "decision": "chờ Lucas",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T3",
+      "name": "Đạo cụ / phương tiện vẽ riêng (xe tăng, máy bay, tàu, khiên có hình, huân chương)",
+      "videos": "cả 11",
+      "how": "sprite vector, chuyển động bằng tịnh tiến / xoay",
+      "signals": "vật thể phẳng có viền đen, bay / trượt nguyên khối",
+      "feasibility": "yellow",
+      "kit": "ảnh AI nền trong suốt (`cutout.py`) hoặc SVG đơn giản trong kit",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T4",
+      "name": "Phụ đề 1–3 từ IN HOA trắng viền đen giữa khung",
+      "videos": "Short (6)",
+      "how": "cháy cứng, đổi theo cụm 1–3 từ, y ≈ 1300 / 1920",
+      "signals": "OCR: 95–100 % khung có chữ, 2 từ / khung, cao chữ ~50 px",
+      "feasibility": "green",
+      "kit": "`KaraokeSubs oneLine maxWords={3} maxChars={18}` + skin mới viền đen",
+      "decision": "dùng",
+      "label": "ĐO"
+    },
+    {
+      "id": "T5",
+      "name": "Bản đồ giấy ghim tường / đặt bàn, nhãn viết tay, chấm quân, mũi tên + vòng đỏ vẽ dần",
+      "videos": "V3 V5 V6 V7 V10 V11",
+      "how": "bản đồ minh hoạ phẳng trên giấy, nét đỏ vẽ dần, nhãn nơi",
+      "signals": "giấy có ghim / đèn dầu / cốc cà phê cạnh bản đồ",
+      "feasibility": "green",
+      "kit": "`AtlasMap` (L) / E map story + `evolvePath` (@remotion/paths) + khung giấy",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T6",
+      "name": "Bảng phấn / sơ đồ chiến thuật (thả bom rồi vòng lên, khối maniple, đồ thị năng lượng)",
+      "videos": "V5 V6 V8",
+      "how": "nét trắng trên nền xanh / giấy, vẽ dần theo lời",
+      "signals": "nét phấn run tay, mũi tên vòng",
+      "feasibility": "green",
+      "kit": "`evolvePath` + `RedRing` (K)",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T7",
+      "name": "Cắt rộng → cận cùng bối cảnh, nền mờ khi cận",
+      "videos": "cả 11",
+      "how": "hai khung của một cảnh, cắt cứng đúng chữ nhấn",
+      "signals": "cận mặt có nền nhoè, cùng bố cục với shot trước",
+      "feasibility": "green",
+      "kit": "`camT` (toon-engine) đổi cỡ cảnh bằng hard cut + `Foreground` / blur lớp nền",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T8",
+      "name": "Đẩy / lia máy chậm trong shot (bản đồ, đám đông, mặt cắt)",
+      "videos": "V3 V5 V11 + video dài",
+      "how": "máy ảo trên cảnh 2D, ease đều",
+      "signals": "cả khung trượt / phóng dần, không có vật nào đứng yên tương đối",
+      "feasibility": "green",
+      "kit": "kỹ thuật có (luật I), nhưng trái luật camera của K và short-form §2",
+      "decision": "chờ Lucas",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T9",
+      "name": "Biển nơi · năm nằm trong cảnh (biển gỗ, đá sơn, biển trại)",
+      "videos": "V3 V7",
+      "how": "chữ viết tay trên vật thể của bối cảnh, thay chip trên màn hình",
+      "signals": "\"SERBIA 1912\", \"BREGALNICA 1913\", \"CRNA BEND 1916\", \"PLATAEA 479 BC\"",
+      "feasibility": "green",
+      "kit": "component mới `SignPost` (biển gỗ / đá / bảng) dùng font nhãn của kit",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T10",
+      "name": "Khung hồi tưởng / nhảy thời gian (ô \"LATER…\" viền giấy rách, ảnh hồi tưởng ghim, sepia)",
+      "videos": "V3 V5 V7",
+      "how": "lớp phủ khung truyện tranh, đổi màu",
+      "signals": "viền giấy xé, chữ trong hộp vàng, cảnh sepia",
+      "feasibility": "green",
+      "kit": "SVG khung + `filter: sepia()`",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T11",
+      "name": "Hiệu ứng truyện tranh: mũi tên đỏ cong, X đỏ, khói, nổ, chữ tượng thanh, dấu ? !",
+      "videos": "cả 11",
+      "how": "sprite vector bật vào",
+      "signals": "\"BRRRMMM!\", \"PSSSHHH!\", dấu ? đỏ trên đầu",
+      "feasibility": "green",
+      "kit": "`XMark`, `RedRing` (K) + SVG nổ / khói; chữ tượng thanh tính là 1 khối chữ",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T12",
+      "name": "Bóng đen trên nền mặt trời / màn tách đôi cho cảnh bạo lực",
+      "videos": "V3 V5",
+      "how": "silhouette thay máu me",
+      "signals": "hình đen đặc trước mặt trời đỏ cam",
+      "feasibility": "green",
+      "kit": "SVG fill đen + nền gradient",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T13",
+      "name": "Đánh dấu \"bạn\": nhãn YOU + mũi tên trong đám đông, khung ngắm, góc nhìn thứ nhất",
+      "videos": "V3 V6 V8",
+      "how": "lớp phủ chỉ nhân vật POV; khung đen 2 lỗ (khe mũ), tay cầm kiếm từ dưới khung",
+      "signals": "nhãn \"YOU\" nhỏ trên đầu một nhân vật giữa hàng nghìn",
+      "feasibility": "green",
+      "kit": "component mới `YouMark` + khung POV (SVG mask)",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T14",
+      "name": "Mặt cắt lòng đất / nhìn từ trên xuống",
+      "videos": "V9 V10",
+      "how": "minh hoạ mặt cắt nhiều tầng, đèn dầu trong hầm",
+      "signals": "lớp đất có đường hầm, người nhỏ trong hầm",
+      "feasibility": "yellow",
+      "kit": "ảnh AI mặt cắt (Lucas tạo) + nhân vật code; lia → theo D3",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T15",
+      "name": "Giấy tờ trong truyện: giấy triệu tập, báo, cuộn danh dự gạch tên, trang chép tay, đồng hồ",
+      "videos": "V3 V5 V6 V7",
+      "how": "vector + chữ viết tay, gạch đỏ vẽ dần",
+      "signals": "\"ПОЗИВ\" có dấu đỏ; cuộn \"HONOURS\" 3 tên + 1 tên gạch",
+      "feasibility": "green",
+      "kit": "`PhotoCard` (J) / thẻ hồ sơ (H) + SVG giấy",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T16",
+      "name": "Chia khung chéo / răng cưa: hai thực tại cùng lúc",
+      "videos": "V5 V7",
+      "how": "mặt nạ đa giác chia đôi khung",
+      "signals": "đường chia chéo / răng cưa trắng",
+      "feasibility": "green",
+      "kit": "`clipPath: polygon()`",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T17",
+      "name": "Màn hình điện thoại \"video trên mạng nói…\" để bác tin đồn",
+      "videos": "V5",
+      "how": "UI điện thoại vẽ phẳng, ngón tay lướt",
+      "signals": "điện thoại cầm tay giữa khung, các ô video",
+      "feasibility": "green",
+      "kit": "D Text Thread (khung điện thoại)",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T18",
+      "name": "Ánh sáng không khí: đèn dầu, nắng ngược, mưa, tuyết, bụi, đèn chiếu",
+      "videos": "cả 11",
+      "how": "lớp phủ gradient + hạt",
+      "signals": "quầng sáng ấm quanh đèn, hạt mưa / tuyết rơi đều",
+      "feasibility": "green",
+      "kit": "toon-engine light.tsx / kit.tsx: Glow, Cone, LightVeil, Dust, Rays, Haze, viền sáng rimR / rimL",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T19",
+      "name": "Con số thành vật trong cảnh (bảng đen \"23\", vạch khắc báng súng, nến \"92\", băng rôn \"1,100\")",
+      "videos": "V1 V5 V7",
+      "how": "số được vẽ / khắc / cắm trên vật thể đúng lúc lời đọc nói",
+      "signals": "số không phải chữ phủ, mà là một phần của cảnh",
+      "feasibility": "green",
+      "kit": "`Counter` + SVG vật mang số",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T20",
+      "name": "Đám đông nhân bản (hàng trăm nhân vật) + lia ngang",
+      "videos": "V3 V6 V8 + video dài",
+      "how": "nhân bản rig, đổi màu khiên / áo",
+      "signals": "cùng một nhân vật lặp với biến thể nhỏ",
+      "feasibility": "green",
+      "kit": "nhân bản `Hero` (toon-engine) theo `rnd(seed, i)`, đổi Look / màu khiên",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T21",
+      "name": "Thẻ chú thích bộ phận (vũ khí có nhãn mũi tên) + end screen 2 ô",
+      "videos": "V6",
+      "how": "thẻ đỏ viền vàng, nhãn chỉ vào bộ phận",
+      "signals": "\"POLLAXE\" + SPIKE / HAMMER / AXE BLADE",
+      "feasibility": "green",
+      "kit": "`Chip` / `Label` (L) + đường chỉ",
+      "decision": "dùng",
+      "label": "ƯỚC"
+    },
+    {
+      "id": "T22",
+      "name": "Giọng nam Mỹ kể chuyện ~200 wpm, nền −11 dB dưới giọng, SFX dày, master −14 LUFS",
+      "videos": "cả 11",
+      "how": "giọng đọc + nhạc nền thấp + SFX mỗi cú cắt / va chạm",
+      "signals": "ĐO: giọng −14,4 LUFS, nền −25,8, tiếng nhấn 30–40 / phút; giọng người hay AI chưa xác định (Lucas nghe)",
+      "feasibility": "yellow",
+      "kit": "Gemini TTS + `tempo`; nhạc + SFX Pixabay (`MusicBed`, `Sfx`); master `render:style`",
+      "decision": "dùng",
+      "label": "ĐO"
+    }
+  ],
+  "tools": [
+    {
+      "name": "@remotion/rive",
+      "for": [
+        "T1"
+      ],
+      "license": "gói Remotion chính thức (cùng giấy phép Remotion); trình vẽ Rive chạy trên web, bản miễn phí đủ cho rig cá nhân, file .riv của mình",
+      "install": "npx remotion add @remotion/rive (giữ cùng phiên bản 4.0.532)",
+      "bridge": "<RemotionRiveCanvas src={staticFile('rigs/x.riv')} /> trong scene; animation / state machine của Rive chạy theo frame Remotion",
+      "fallback": "thay bằng rig code của toon-engine (W1, Lucas duyệt 2026-11-03): không cần cài",
+      "status": "rejected"
+    }
+  ]
+}

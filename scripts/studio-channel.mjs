@@ -193,6 +193,7 @@ if (cmd === "new" && target && opt("style") && opt("from")) {
     CLOSE_PATTERN: form.close.pattern,
     BEATS: form.beats.map((b) => `| ${b.name} | ${Math.round(b.from * 100)}–${Math.round(b.to * 100)} % | ${b.does} |`).join("\n"),
     DEVICES: form.devices.map((d) => `- ${d}`).join("\n") || "- [...]",
+    SIGNATURE: form.signature ?? "[chưa có: một từ + một âm + một hình lặp lại mỗi lần, để người xem học luật của format]",
     WEAKNESSES: form.weaknesses.map((w) => `   - ${w}`).join("\n") || "   - [...]",
     VOICE: "Charon",
     VOICE_STYLE: "Adult documentary narrator, warm and grounded. Quick and curious on the opening line, clear and steady after; names and numbers a beat slower. On the quiet beat, slow down and soften. No hype, no shouting. The last line lands with quiet weight.",
@@ -213,7 +214,8 @@ if (cmd === "new" && target && opt("style") && opt("from")) {
   const sampleFiles = sample ? fs.readdirSync(sample) : [];
   const copyMd = sampleFiles.filter((f) => /(-FINAL|^01_EPISODE-SPEC|^checks|^progress|^SO-SANH).*\.md$/.test(f));
   copyMd.forEach((f) => fs.copyFileSync(path.join(sample, f), path.join(mau, f)));
-  const video = sampleFiles.find((f) => f.endsWith(".mp4"));
+  // the demo is <folder name>.mp4 when there is one (a folder can also hold side renders, e.g. cam-so-sanh.mp4)
+  const video = sampleFiles.find((f) => f === `${path.basename(sample)}.mp4`) ?? sampleFiles.find((f) => f.endsWith(".mp4"));
   fs.writeFileSync(path.join(mau, "mau.json"), JSON.stringify({ style: `Style Library/${style}`, source: rel(src), sample: sample ? rel(sample) : null, video: sample && video ? rel(path.join(sample, video)) : null }, null, 2) + "\n");
   const link = (p) => `[\`${p}\`](${encodeURI(posix(path.relative(mau, path.join(ROOT, p))))})`;
   fs.writeFileSync(

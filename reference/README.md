@@ -13,6 +13,7 @@ git clone --depth 1 https://github.com/kylezantos/design-motion-principles.git
 git clone --depth 1 https://github.com/Remocn/remocn.git
 git clone --depth 1 https://github.com/reactvideoeditor/remotion-templates.git
 git clone --depth 1 https://github.com/fliptheweb/motion-ui-design.git
+git clone --depth 1 https://github.com/kelano86/what-if-animation.git
 ```
 
 | Repo | License | What it is | Use here |
@@ -23,6 +24,7 @@ git clone --depth 1 https://github.com/fliptheweb/motion-ui-design.git
 | [Remocn/remocn](https://github.com/Remocn/remocn) | MIT | 184 copy-paste Remotion components (shadcn registry): text reveals, transitions, charts, shaders | Vendor single components **on demand** into `src/components/` (keep the MIT notice in the file header), after checking them against our rules — see lists below |
 | [reactvideoeditor/remotion-templates](https://github.com/reactvideoeditor/remotion-templates) | **none stated** | 81 small Remotion effect templates | Ideas only. **Do not copy code** (no license = all rights reserved) |
 | [fliptheweb/motion-ui-design](https://github.com/fliptheweb/motion-ui-design) | none stated | Curated list of motion-design resources | Reading list |
+| [kelano86/what-if-animation](https://github.com/kelano86/what-if-animation) | MIT (© 2026 FreshStack) | Claude Code skill: a 15–25 s "What If" cartoon from one line, every frame SVG in Remotion; ElevenLabs voice + SFX | **Adopted 2026-11-03** (Lucas approved W1–W10, `studio/DE-XUAT-WHAT-IF-ANIMATION.md`): rig + room kit + light → `Style Library/toon-engine/` (MIT notice kept); storyboard, word cues, pace → `scripts/shotlist.mjs`; covered-word check → `scripts/stems.py` + `studio:compare`; SFX onset / peak → `scripts/sfx-onsets.mjs` + `<Sfx align>`; board / motion checklists → `review-loop`. **Not taken:** ElevenLabs voice and AI-generated SFX (paid, non-commercial on the free plan, and against "real SFX only"), camera shake, its 16:9-only frame |
 
 ## Remocn components vs our short-form rules
 

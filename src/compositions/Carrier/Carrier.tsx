@@ -1,6 +1,6 @@
 /**
- * "How an Aircraft Carrier Defends Itself" (Test/carrier, 2026-11-05): 16:9 top-down naval explainer, ~10:40.
- * Script by Lucas (fact-checked: Test/carrier/FACTS-carrier.md). Same pipeline as Test/ambush: every cue comes from
+ * "How an Aircraft Carrier Defends Itself" (Formats/Naval Board/episodes/ep01-carrier, 2026-11-05): 16:9 top-down naval explainer, ~10:40.
+ * Script by Lucas (fact-checked: Formats/Naval Board/episodes/ep01-carrier/FACTS-carrier.md). Same pipeline as Test/ambush: every cue comes from
  * the VO, A(id) line start, E(id) line end, W(id, word) the frame a word is spoken (src/voiceover/carrier.words.json).
  */
 import { Audio, Video } from "@remotion/media";
@@ -768,8 +768,8 @@ const C65: React.FC<{ g: number }> = ({ g }) => {
         <DataLink x1={hk.x} y1={hk.y} x2={dd.x} y2={dd.y} p={ease(g, A("66") + 10, 20)} />
         <Jet x={tgt.x + interpolate(g, [A("65"), E("66")], [-200, 0], CLAMP)} y={tgt.y} a={30} kind="bomber" color={N.foe} s={1.1} />
         <Blip x={tgt.x} y={tgt.y} p={ease(g, A("66"), 10)} size={2.4} />
-        <Missile g={g} x1={dd.x} y1={dd.y} x2={tgt.x} y2={tgt.y} at={remote} dur={70} bend={-140} color={N.link} s={2.2} />
-        <Blast g={g} x={tgt.x} y={tgt.y} at={remote + 70} s={1.5} />
+        <Missile g={g} x1={dd.x} y1={dd.y} x2={tgt.x} y2={tgt.y} at={remote} dur={E("66") - remote} bend={-140} color={N.link} s={2.2} />
+        <Blast g={g} x={tgt.x} y={tgt.y} at={E("66")} s={1.5} />
       </g>
       <Tag x={960} y={150} text="AEGIS: ONE NETWORK" p={net} out={ease(g, A("66") - 4, 6)} size={56} color={C.tracer} />
       <Tag x={960} y={150} text="FIRE ON WHAT YOU CAN'T SEE" p={ease(g, A("66"), 10)} size={54} color={N.link} />
@@ -1306,18 +1306,18 @@ const C113: React.FC<{ g: number }> = ({ g }) => {
   );
 };
 
-// ═════════════════════════ 27. Outro: fortress rings, the order, the next video (118–124) ═════════════════════════
+// ═════════════════════════ 27. Outro: fortress rings, the order, the next video (118–122, 124) ═════════════════════════
 const ORDER = ["EYES", "FIGHTERS", "WALL", "GUN"];
 const C118: React.FC<{ g: number }> = ({ g }) => {
   const fort = ease(g, W("119", "fortress"), 20) * (1 - inOut(g, W("119", "steel"), W("119", "steel") + 40));
   const order = ["eyes", "fighters", "wall", "gun"].map((w) => W("120", w));
   const one = ease(g, A("121"), 12);
   const all = ease(g, A("122"), 12);
-  const end = ease(g, A("123"), 20);
+  const end = ease(g, A("124"), 20); // the title card comes up with the tease (guide line 123 cut, Lucas 2026-11-09)
   const next = ease(g, W("124", "submarines"), 20);
   return (
     <Svg>
-      <g transform={cam(mix(0.62, 0.86, lin(g, A("118"), A("123"))), CV.x, CV.y)}>
+      <g transform={cam(mix(0.62, 0.86, lin(g, A("118"), A("124"))), CV.x, CV.y)}>
         <Fleet g={g} sub={next} cap={1} />
         {/* a pulse runs out through the rings each time the VO names a layer */}
         {order.map((o, i) =>
@@ -1347,7 +1347,7 @@ const C118: React.FC<{ g: number }> = ({ g }) => {
         })}
         <Tag x={960} y={150} text="FORTRESS RINGS" p={fort} size={56} color="#e0c99a" />
         <Tag x={960} y={150} text="DEFENCE: ONE GOOD MOMENT" p={one} out={ease(g, A("122") - 4, 6)} size={54} color={N.link} />
-        <Tag x={960} y={150} text="ATTACKER: EVERYTHING MUST FAIL" p={all} out={ease(g, A("123") - 4, 6)} size={54} color={C.red} />
+        <Tag x={960} y={150} text="ATTACKER: EVERYTHING MUST FAIL" p={all} out={ease(g, A("124") - 4, 6)} size={54} color={C.red} />
       </g>
       <rect x={0} y={0} width={1920} height={1080} fill="#05080c" opacity={0.55 * end} />
       <Heading text="HOW A CARRIER" sub="DEFENDS ITSELF" p={end} out={next} y={480} size={130} />
@@ -1514,15 +1514,15 @@ const Subtitles: React.FC = () => {
 const SX = (n: string) => `sfx/synth/${n}.wav`;
 const SoundTrack: React.FC = () => {
   const cues: [string, number, number?][] = [
-    [SX("radar-ping"), A("01"), -26],
+    [SX("radar-ping"), 0, -30], // under the first word, there is no pause before it: frame 0 and quiet (listen --precheck, 2026-11-09)
     [SX("missile-launch"), W("01", "enemy") + 10, -24],
     [SX("sub-hit"), W("02", "kill"), -18],
     [SX("jet-pass"), W("04", "fighters"), -24],
     [SX("ciws-burst"), W("04", "gun"), -22],
     [SX("sub-hit"), W("08", "no"), -18],
     ...CHAPTERS.map(([, prev]) => [SX("sub-hit"), E(prev) + 3, -18] as [string, number, number]),
-    [SX("sonar-ping"), W("24", "hunting"), -24],
-    [SX("missile-launch"), W("31", "one") - 18, -24],
+    [SX("sonar-ping"), W("24", "hunting"), -30], // with the first ring on screen; at −24 it covered "hunting" by 2 dB (NGHE 2026-11-09)
+    [SX("missile-launch"), W("31", "one") - 18, -30], // follows the launch on screen, so it stays on "only"; quieter instead
     [SX("radar-ping"), W("35", "pops"), -22],
     [SX("radar-ping"), W("41", "talks"), -26],
     [SX("jam-static"), W("43", "blind"), -24],
@@ -1532,7 +1532,7 @@ const SoundTrack: React.FC = () => {
     [SX("jam-static"), W("56", "jams"), -26],
     [SX("jet-pass"), W("61", "launched"), -22],
     [SX("missile-launch"), W("66", "fire"), -22],
-    ["sfx/explosion/explosive-impact-from-afar-2758.mp3", W("66", "fire") + 70, -22],
+    ["sfx/explosion/explosive-impact-from-afar-2758.mp3", E("66"), -22], // in the pause after "yet.", with the blast (was on the word)
     [SX("missile-launch"), A("69") + 29, -22], // first shot of the 3D launch (carrier3d.py: shot start + 40)
     [SX("missile-launch"), W("70", "storm"), -20],
     [SX("missile-launch"), W("72", "twice"), -22],

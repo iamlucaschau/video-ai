@@ -25,12 +25,20 @@ PRESETS = {
         "arp": [12, 19, 24, 15, 19, 12, 24, 19],  # semitones over the bass, octave up
         "seed": 6,
     },
-    # carrier-watch (Test/carrier, 2026-11-05): E minor i – VI – III – VII, slow, open fifths over the sea
+    # carrier-watch (Naval Board ep01-carrier, 2026-11-05): E minor i – VI – III – VII, slow, open fifths over the sea
     "carrier-watch": {
         "bar": 7.5,
         "chords": [(28, [47, 52, 55, 59]), (24, [48, 52, 55, 60]), (31, [47, 50, 55, 59]), (26, [50, 54, 57, 62])],
         "arp": [12, 19, 24, 19, 12, 19, 24, 31],
         "seed": 12,
+    },
+    # o-flyway (Style O Data Loop test, 2026-11-09): D major I – vi – IV – V, calm wonder; 4 bars × 7.5 s = one 30 s loop
+    # (render 90 s, keep 30–60 s: keys and bass are steady there, so the cut loops cleanly)
+    "o-flyway": {
+        "bar": 7.5,
+        "chords": [(38, [57, 62, 66, 69]), (35, [54, 59, 62, 66]), (31, [55, 59, 62, 67]), (33, [57, 61, 64, 69])],
+        "arp": [12, 19, 24, 16, 19, 24, 28, 19],
+        "seed": 5,
     },
     # ambush-tension (Test/ambush, 2026-11-05): A minor i – VI – iv – V, slow, dark military explainer bed
     "ambush-tension": {
@@ -183,6 +191,23 @@ PRESETS = {
             "pad": [(0.0, 1), (55.6, 1), (55.8, 0.5), (59.5, 0.5), (60.2, 1.2), (72.5, 1.2), (72.7, 0.5), (73.4, 1.4), (82.0, 1.2)],
             "brush": [(0.0, 0.3), (11.6, 0.7), (19.0, 1), (55.6, 1.2), (55.8, 0), (60.2, 0.5), (72.5, 0.5), (72.7, 0)],
             "drive": [(0.0, 0), (36.4, 0), (40.0, 0.6), (46.7, 1), (55.6, 1), (55.8, 0)],
+        },
+    },
+    "watanabe": {
+        "kind": "pizz",
+        "bpm": 90,
+        "chords": [(33, [57, 60, 64]), (29, [57, 60, 65]), (31, [55, 59, 62]), (28, [56, 59, 64])],
+        "pad": 0.7,
+        "seed": 149,
+        # layer gains over the 79 s VO: a lounge floor for the hook and Omaha, the whale treatment builds, the money at full,
+        # thinner for the drinking, a hole after "stayed unpaid" and "twenty-eight years", a thin settlement, a hole after the fine
+        "arc": {
+            "bass": [(0.0, 0.5), (15.0, 0.8), (23.6, 1), (35.4, 0.8), (51.2, 0.8), (51.4, 0), (52.0, 0), (52.2, 1), (58.1, 1), (58.3, 0), (58.9, 0), (59.2, 0.6), (74.0, 0.6), (74.2, 0)],
+            "stab": [(0.0, 0), (15.0, 0.4), (23.6, 0.9), (35.4, 0.5), (51.2, 0.5), (51.4, 0), (52.2, 0.8), (58.1, 0.8), (58.3, 0), (59.2, 0.3), (74.0, 0.3), (74.2, 0)],
+            "mel": [(0.0, 0.4), (15.0, 0.6), (23.6, 0.9), (35.4, 0.6), (51.2, 0.6), (51.4, 0), (52.2, 0.6), (58.1, 0.6), (58.3, 0), (59.2, 0.4), (74.0, 0.4), (74.2, 0), (77.0, 0.3), (80.0, 0)],
+            "pad": [(0.0, 1), (51.2, 1), (51.4, 0.5), (52.0, 0.5), (52.2, 1), (58.1, 1), (58.3, 0.5), (59.2, 1.1), (74.0, 1.1), (74.2, 0.5), (74.9, 1.4), (82.0, 1.2)],
+            "brush": [(0.0, 0.3), (15.0, 0.7), (23.6, 1), (35.4, 0.7), (51.2, 0.8), (51.4, 0), (52.2, 0.8), (58.1, 0.8), (58.3, 0), (59.2, 0.4), (74.0, 0.4), (74.2, 0)],
+            "drive": [(0.0, 0), (23.6, 0), (26.0, 0.7), (35.4, 0.7), (36.0, 0), (52.2, 0.6), (58.1, 0.8), (58.3, 0)],
         },
     },
     # m-resolve: F major I – vi – IV – V, slower and warmer (a quiet-courage story)

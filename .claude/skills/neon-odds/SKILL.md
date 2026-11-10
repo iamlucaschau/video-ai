@@ -67,6 +67,20 @@ npm run render:style -- NO-epNN-<slug> --to "NEON ODDS/episodes/epNN-<slug>/<slu
 python -P scripts/short-qa.py "NEON ODDS/episodes/epNN-<slug>/<slug>.mp4" --shots "NEON ODDS/episodes/epNN-<slug>/shots.timeline.json" --out "NEON ODDS/episodes/epNN-<slug>/QA.md"
 ```
 
+Trước khi render, sau khi đặt xong SFX, chạy kiểm tra nhanh (khoảng 20 giây, chưa cần âm thanh). Lệnh này liệt kê các tiếng nhấn rơi giữa một chữ đang đọc. Sửa chúng trong code trước:
+
+```bash
+npm run listen -- NO-epNN-<slug> --precheck --words src/voiceover/<slug>.words.json --out "NEON ODDS/episodes/epNN-<slug>/NGHE.md"
+```
+
+Cổng nghe (bắt buộc từ 2026-11-08) chạy nền sau khi render xong, mất khoảng 4–9 phút. `--words` thêm bảng chữ bị nền che. Nếu đang sửa tiếng thì chạy cổng trên bản chỉ có tiếng (`npx remotion render NO-epNN-<slug> out/<slug>.wav --codec=wav`), không cần render lại hình:
+
+```bash
+npm run listen -- NO-epNN-<slug> "NEON ODDS/episodes/epNN-<slug>/<slug>.mp4" --out "NEON ODDS/episodes/epNN-<slug>/NGHE.md" --words src/voiceover/<slug>.words.json
+```
+
+Đọc `NGHE.md`: mỗi dòng "Cần nghe" (SFX nổi dưới 3 dB trên nền hoặc lệch hơn 2 frame) phải được sửa, hoặc báo người dùng nghe và quyết giữ. Nếu báo "không hơn ngẫu nhiên" thì ghi vậy, đừng dựa vào bảng.
+
 Chạy ở nền, khoảng 5–10 phút (đo trên hai tập: 4 phút 37 giây và 9 phút 26 giây, tuỳ máy đang bận gì). Phải ghi `--scale=1`, vì `render:style` mặc định là 4K. Ghi log ra file thay vì `tail`, để nếu lỗi thì còn thấy lý do. Máy này có card GTX 1050 Ti 4 GB: gặp lỗi "ran out of memory" hoặc không tạo được WebGL thì giảm `--concurrency`, và không chạy render khác cùng lúc. Nếu cần 4K thì bỏ `--scale=1` và dùng `--concurrency=1` (khoảng 40 phút cho 90 giây). Kiểm: 1080×1920, 30 fps, −14 LUFS ±1, true peak ≤ −1,5 dBTP.
 
 ### 5. Gói sản xuất và thumbnail
@@ -82,4 +96,4 @@ Mẫu đã đạt: `Style Library/N-low-poly/n-mandel/Thumb.tsx` (chữ ở trê
 
 ## Bàn giao
 
-Gửi bằng `SendUserFile`: `<slug>.mp4`, `thumb.jpg`, `xuat-ban.md`. Báo thật những gì chưa kiểm: âm thanh chưa ai nghe, số còn ghi ƯỚC, lỗi còn thấy. Không commit, không đăng lên YouTube trừ khi người dùng yêu cầu.
+Gửi bằng `SendUserFile`: `<slug>.mp4`, `thumb.jpg`, `xuat-ban.md`. Báo thật những gì chưa kiểm: âm thanh chưa ai nghe, các dòng "Cần nghe" trong `NGHE.md` chưa ai quyết, số còn ghi ƯỚC, lỗi còn thấy. Không commit, không đăng lên YouTube trừ khi người dùng yêu cầu.

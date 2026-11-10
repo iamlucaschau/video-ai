@@ -1,0 +1,186 @@
+{
+  "name": "watanabe",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "American male documentary narrator telling a true story to a friend. Calm, confident, a little amused, brisk pace around 200 words per minute, clear on every word. Numbers are crisp and land. The last line is a quiet, direct question. No hype, no shouting.",
+  "trimSilence": true,
+  "tempo": 1.02,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.2,
+    "scene": 0.3
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.12,
+      "text": "You run a casino."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.12,
+      "text": "Your best customer can barely stand up."
+    },
+    {
+      "id": "03",
+      "scene": "s1",
+      "take": "t01b",
+      "gapAfter": 0.3,
+      "text": "Do you cut him off?",
+      "style": "American male documentary narrator telling a true story to a friend. Calm, confident, a little amused, brisk pace around 200 words per minute, clear on every word. Numbers are crisp and land. The last line is a quiet, direct question. No hype, no shouting. This single question is slow and deliberate, with a small beat before 'cut him off'."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "Terrance Watanabe ran his family's party-supply company in Omaha for over twenty years."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.3,
+      "text": "Then he sold it, and found Las Vegas."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.3,
+      "text": "His drinking got so bad that one casino, the Wynn, banned him."
+    },
+    {
+      "id": "07",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Caesars Palace and the Rio did the opposite."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "They gave him a bellman of his own, and a personal security guard."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.3,
+      "text": "On big losses, he reportedly got fifteen percent back."
+    },
+    {
+      "id": "10",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "In two thousand seven, by his own count, he bet more than eight hundred and twenty-five million dollars."
+    },
+    {
+      "id": "11",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "He lost nearly a hundred and twenty-seven million."
+    },
+    {
+      "id": "12",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.3,
+      "text": "That one man was five point six percent of the company's Las Vegas gambling revenue."
+    },
+    {
+      "id": "13",
+      "scene": "s6",
+      "take": "t06a",
+      "gapAfter": 0.12,
+      "text": "Three casino workers later said he was drunk almost every time he played.",
+      "style": "American male documentary narrator telling a true story to a friend. Calm, confident, a little amused, brisk pace around 200 words per minute, clear on every word. Numbers are crisp and land. The last line is a quiet, direct question. No hype, no shouting. Say \"every time HE played\" clearly; the word is he, not you."
+    },
+    {
+      "id": "14",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.3,
+      "text": "Some nights he fell asleep at the table, woke up, and kept betting."
+    },
+    {
+      "id": "15",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "His sister finally stepped in, and he went to rehab."
+    },
+    {
+      "id": "16",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "He had paid back almost everything."
+    },
+    {
+      "id": "17",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.8,
+      "text": "But fourteen point seven million dollars stayed unpaid."
+    },
+    {
+      "id": "18",
+      "scene": "s8",
+      "take": "t08a",
+      "gapAfter": 0.12,
+      "text": "So the casino took him to the district attorney."
+    },
+    {
+      "id": "19",
+      "scene": "s8",
+      "take": "t08a",
+      "gapAfter": 0.8,
+      "text": "He was charged with four felonies, and faced up to twenty-eight years."
+    },
+    {
+      "id": "20",
+      "scene": "s8",
+      "take": "t08a",
+      "gapAfter": 0.3,
+      "text": "His answer: the casino had kept him drunk to keep him playing."
+    },
+    {
+      "id": "21",
+      "scene": "s8",
+      "take": "t08b",
+      "gapAfter": 0.12,
+      "text": "In the end, the charges were dropped, and both sides settled in private."
+    },
+    {
+      "id": "22",
+      "scene": "s8",
+      "take": "t08b",
+      "gapAfter": 0.12,
+      "text": "Years later, New Jersey regulators fined Caesars two hundred and twenty-five thousand dollars over how it handled him."
+    },
+    {
+      "id": "23",
+      "scene": "s8",
+      "take": "t08b",
+      "gapAfter": 0.8,
+      "text": "That's less than a fifth of one percent of what he lost."
+    },
+    {
+      "id": "24",
+      "scene": "s9",
+      "take": "t09",
+      "gapAfter": 0.3,
+      "text": "So when a casino's best customer can't stand up, who is supposed to say stop?"
+    }
+  ]
+}

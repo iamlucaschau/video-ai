@@ -1,5 +1,5 @@
 {
-  "durationInSeconds": 635.16025,
+  "durationInSeconds": 630.032625,
   "tail": 1.5,
   "lines": [
     {
@@ -857,17 +857,10 @@
       "text": "The attacker needs all of them to fail."
     },
     {
-      "id": "123",
-      "scene": "s8",
-      "start": 622.0586666666665,
-      "end": 627.0066666666664,
-      "text": "If you want the full ring diagram from this video as a printable guide, it is linked below."
-    },
-    {
       "id": "124",
       "scene": "s8",
-      "start": 627.1862916666664,
-      "end": 634.7102916666664,
+      "start": 622.0586666666665,
+      "end": 629.5826666666665,
       "text": "And the one opponent built to sneak underneath all three rings is the subject of the next video: how submarines actually fight."
     }
   ]

@@ -1333,11 +1333,65 @@
     "lufs": -19.4
   },
   {
+    "category": "music/own",
+    "title": "NEON ODDS bed: tipton-lottery",
+    "author": "code",
+    "source": "scripts/make-music.py",
+    "seconds": 103,
+    "file": "sfx/music/own/tipton-lottery.mp3",
+    "lufs": -17
+  },
+  {
+    "category": "synth",
+    "title": "Engine misfire heard through water",
+    "author": "code",
+    "source": "scripts/make-sfx-sub.py",
+    "seconds": 5,
+    "file": "sfx/synth/engine-misfire.wav",
+    "lufs": -19.7
+  },
+  {
+    "category": "synth",
+    "title": "Torpedo running, closing",
+    "author": "code",
+    "source": "scripts/make-sfx-sub.py",
+    "seconds": 4.5,
+    "file": "sfx/synth/torpedo-run.wav",
+    "lufs": -13.6
+  },
+  {
+    "category": "synth",
+    "title": "Explosion heard underwater",
+    "author": "code",
+    "source": "scripts/make-sfx-sub.py",
+    "seconds": 4.5,
+    "file": "sfx/synth/under-blast.wav",
+    "lufs": -22
+  },
+  {
+    "category": "synth",
+    "title": "Ballast tanks blown with high-pressure air",
+    "author": "code",
+    "source": "scripts/make-sfx-sub.py",
+    "seconds": 3,
+    "file": "sfx/synth/air-blow.wav",
+    "lufs": -17.2
+  },
+  {
+    "category": "synth",
+    "title": "Two hulls meeting at low speed",
+    "author": "code",
+    "source": "scripts/make-sfx-sub.py",
+    "seconds": 4,
+    "file": "sfx/synth/hull-touch.wav",
+    "lufs": -16.6
+  },
+  {
     "category": "synth",
     "title": "Lottery balls tumbling in a globe",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 3.0,
+    "seconds": 3,
     "file": "sfx/synth/ball-rattle.wav",
     "lufs": -18.2
   },
@@ -1346,16 +1400,16 @@
     "title": "Clock ticking (4 ticks, 0.5 s apart)",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 2.0,
+    "seconds": 2,
     "file": "sfx/synth/clock-tick.wav",
-    "lufs": -27.0
+    "lufs": -27
   },
   {
     "category": "synth",
     "title": "Dot-matrix printer burst",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 2.0,
+    "seconds": 2,
     "file": "sfx/synth/dot-matrix.wav",
     "lufs": -11.5
   },
@@ -1364,7 +1418,7 @@
     "title": "Roller shutter let go, slams at 1.05 s",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 2.0,
+    "seconds": 2,
     "file": "sfx/synth/shutter-down.wav",
     "lufs": -22.3
   },
@@ -1373,7 +1427,7 @@
     "title": "A heap of tickets pouring out",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 3.0,
+    "seconds": 3,
     "file": "sfx/synth/paper-rush.wav",
     "lufs": -14.6
   },
@@ -1400,7 +1454,7 @@
     "title": "Room tone: small shop, strip-light hum",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 12.0,
+    "seconds": 12,
     "file": "sfx/synth/room-shop.wav",
     "lufs": -14.1
   },
@@ -1409,7 +1463,7 @@
     "title": "Room tone: quiet office",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 12.0,
+    "seconds": 12,
     "file": "sfx/synth/room-office.wav",
     "lufs": -15.8
   },
@@ -1418,7 +1472,7 @@
     "title": "Room tone: big warehouse",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 12.0,
+    "seconds": 12,
     "file": "sfx/synth/room-warehouse.wav",
     "lufs": -14.6
   },
@@ -1427,7 +1481,7 @@
     "title": "Room tone: large stone hall",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 12.0,
+    "seconds": 12,
     "file": "sfx/synth/room-chamber.wav",
     "lufs": -14.3
   },
@@ -1436,7 +1490,7 @@
     "title": "Room tone: small room, tube-light buzz",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 12.0,
+    "seconds": 12,
     "file": "sfx/synth/room-interview.wav",
     "lufs": -12.5
   },
@@ -1463,7 +1517,7 @@
     "title": "Automatic card shuffler running",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 3.0,
+    "seconds": 3,
     "file": "sfx/synth/card-shuffle.wav",
     "lufs": -13.2
   },
@@ -1472,7 +1526,7 @@
     "title": "Room tone: carpeted gaming floor, far murmur",
     "author": "code",
     "source": "scripts/make-sfx-lotto.py",
-    "seconds": 12.0,
+    "seconds": 12,
     "file": "sfx/synth/room-casino.wav",
     "lufs": -14.4
   },
@@ -1493,15 +1547,6 @@
     "seconds": 2.4,
     "file": "sfx/synth/phone-ring.wav",
     "lufs": -9.1
-  },
-  {
-    "category": "music/own",
-    "title": "NEON ODDS bed: tipton-lottery",
-    "author": "code",
-    "source": "scripts/make-music.py",
-    "seconds": 103,
-    "file": "sfx/music/own/tipton-lottery.mp3",
-    "lufs": -17
   },
   {
     "category": "synth",
@@ -1556,5 +1601,14 @@
     "seconds": 89,
     "file": "sfx/music/own/ron-harris.mp3",
     "lufs": -19.1
+  },
+  {
+    "category": "music/own",
+    "title": "NEON ODDS bed: watanabe",
+    "author": "code",
+    "source": "scripts/make-music.py",
+    "seconds": 88,
+    "file": "sfx/music/own/watanabe.mp3",
+    "lufs": -19.4
   }
 ]

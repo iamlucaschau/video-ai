@@ -50,6 +50,7 @@ npm run voiceover -- voiceover/<slug>.json
 npm run sheet -- <CompositionId> --slug <slug>
 npm run render:style -- <CompositionId> --to "<thư mục kênh>/episodes/epNN-<slug>/<slug>.mp4"
 npm run studio:compare -- "<mp4>" --ref "Test/History Maps Lore"
+npm run listen -- <CompositionId> "<mp4>" --out "<thư mục kênh>/episodes/epNN-<slug>/NGHE.md"   # cổng nghe, bắt buộc (4–9 phút, chạy nền)
 ```
 
 ## 4. Luật cứng

@@ -69,3 +69,5 @@ for (const [category, id, titleBy, seconds, url, pageUrl] of list) {
 }
 fs.writeFileSync(catalogFile, JSON.stringify(catalog, null, 2) + "\n");
 console.log(`${catalog.length} entries → public/sfx/catalog.json`);
+// attack + peak times for <Sfx align> (public/sfx/onsets.json)
+spawnSync(process.execPath, [path.join(ROOT, "scripts/sfx-onsets.mjs")], { stdio: "inherit" });

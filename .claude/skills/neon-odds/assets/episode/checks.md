@@ -13,6 +13,7 @@
 | Nhạc tự tạo; SFX có trong catalog | | |
 | Lucas xem và nghe bản nháp, duyệt | | |
 | 1080×1920, 30 fps, −14 LUFS ±1, true peak ≤ −1,5 dBTP | | |
+| Cổng nghe: `npm run listen` → `NGHE.md`; mọi dòng "Cần nghe" có quyết định (đã nghe: giữ / đã sửa) | | |
 | QA khung: không khung đen, nháy chỉ ở chỗ cố ý | | |
 | Khung cuối bằng khung 0 | | |
 | `xuat-ban.md` đủ tiêu đề, mô tả có nguồn, hashtag, từ khoá | | |

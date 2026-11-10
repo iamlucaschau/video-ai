@@ -59,6 +59,7 @@
     "studio:channel": "node scripts/studio-channel.mjs",
     "studio:compare": "node scripts/studio-compare.mjs",
     "studio:stats": "node scripts/studio-stats.mjs",
-    "studio:format": "node scripts/studio-channel.mjs"
+    "studio:format": "node scripts/studio-channel.mjs",
+    "listen": "node scripts/listen.mjs"
   }
 }

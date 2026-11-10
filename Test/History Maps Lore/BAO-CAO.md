@@ -2,6 +2,10 @@
 
 *2026-11-01, Luis, theo `Style Library/QUY-TRINH-PHAN-TICH.md` (mục 1.1–1.6). Nguồn: 4 Shorts Lucas tải vào `Test/History Maps Lore/` (= toàn bộ kênh). Đi kèm: `BOC-TACH-HINH.md` (1.3), `BOC-TACH-KICH-BAN.md` (1.4). File làm việc: `_work/` (video chép tên ngắn, transcript Whisper, cắt cảnh, loudness, metadata) và `out/sheets/HML-*` (khung hình); cả hai không vào git (thêm `Test/**/_work/` vào `.gitignore`). Ở cùng thư mục có `BAO-CAO-PHAN-TICH-HISTORYMAPSLORE.md` (31/10, viết cho góc Atlas Tí Hon); báo cáo này đo lại từ đầu, so với style J / Mapped Journeys.*
 
+> **Lucas chốt 2026-11-01:** **D1** làm style mới **L**. **D2** kênh chưa chốt, tạo sau khi video mẫu và cấu trúc ổn. **D3–D12** duyệt theo phương án Luis đề xuất (in đậm ở §1.5c). Công cụ ngoài (Blender, …) Luis đề xuất từng lần, Lucas duyệt. → Giai đoạn 2: `Style Library/L-…/`.
+
+> **Tên style chốt 2026-11-02:** **Thế Trận** (thay tên tạm "Siege Atlas" ở D1; thư mục giữ `Style Library/L-siege-atlas/`).
+
 Ký hiệu: **V1** Genghis / Western Xia · **V2** Malta 1565 · **V3** Rhodes 1480 · **V4** Copenhagen 1807 (thứ tự đăng).
 
 ## 0. Tóm tắt cho Lucas

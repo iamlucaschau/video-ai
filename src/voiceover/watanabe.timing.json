@@ -1,0 +1,173 @@
+{
+  "durationInSeconds": 79.38979166666667,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 1.197,
+      "text": "You run a casino."
+    },
+    {
+      "id": "02",
+      "scene": "s1",
+      "start": 1.316875,
+      "end": 3.256875,
+      "text": "Your best customer can barely stand up."
+    },
+    {
+      "id": "03",
+      "scene": "s1",
+      "start": 3.377083333333333,
+      "end": 4.342083333333333,
+      "text": "Do you cut him off?"
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 4.641958333333333,
+      "end": 8.952958333333333,
+      "text": "Terrance Watanabe ran his family's party-supply company in Omaha for over twenty years."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 9.072875,
+      "end": 11.100875,
+      "text": "Then he sold it, and found Las Vegas."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "start": 11.401333333333334,
+      "end": 14.871333333333334,
+      "text": "His drinking got so bad that one casino, the Wynn, banned him."
+    },
+    {
+      "id": "07",
+      "scene": "s4",
+      "start": 15.171791666666667,
+      "end": 17.101791666666667,
+      "text": "Caesars Palace and the Rio did the opposite."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "start": 17.222125000000002,
+      "end": 20.627125000000003,
+      "text": "They gave him a bellman of his own, and a personal security guard."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "start": 20.747375,
+      "end": 23.489375000000003,
+      "text": "On big losses, he reportedly got fifteen percent back."
+    },
+    {
+      "id": "10",
+      "scene": "s5",
+      "start": 23.78975,
+      "end": 28.339750000000002,
+      "text": "In two thousand seven, by his own count, he bet more than eight hundred and twenty-five million dollars."
+    },
+    {
+      "id": "11",
+      "scene": "s5",
+      "start": 28.459583333333335,
+      "end": 30.841583333333336,
+      "text": "He lost nearly a hundred and twenty-seven million."
+    },
+    {
+      "id": "12",
+      "scene": "s5",
+      "start": 30.961833333333335,
+      "end": 35.319833333333335,
+      "text": "That one man was five point six percent of the company's Las Vegas gambling revenue."
+    },
+    {
+      "id": "13",
+      "scene": "s6",
+      "start": 35.62016666666667,
+      "end": 39.085166666666666,
+      "text": "Three casino workers later said he was drunk almost every time he played."
+    },
+    {
+      "id": "14",
+      "scene": "s6",
+      "start": 39.204875,
+      "end": 42.620875,
+      "text": "Some nights he fell asleep at the table, woke up, and kept betting."
+    },
+    {
+      "id": "15",
+      "scene": "s7",
+      "start": 42.920375,
+      "end": 45.806375,
+      "text": "His sister finally stepped in, and he went to rehab."
+    },
+    {
+      "id": "16",
+      "scene": "s7",
+      "start": 45.9265,
+      "end": 47.878499999999995,
+      "text": "He had paid back almost everything."
+    },
+    {
+      "id": "17",
+      "scene": "s7",
+      "start": 47.998916666666666,
+      "end": 51.264916666666664,
+      "text": "But fourteen point seven million dollars stayed unpaid."
+    },
+    {
+      "id": "18",
+      "scene": "s8",
+      "start": 52.06495833333334,
+      "end": 54.25295833333334,
+      "text": "So the casino took him to the district attorney."
+    },
+    {
+      "id": "19",
+      "scene": "s8",
+      "start": 54.37254166666667,
+      "end": 58.15354166666667,
+      "text": "He was charged with four felonies, and faced up to twenty-eight years."
+    },
+    {
+      "id": "20",
+      "scene": "s8",
+      "start": 58.953875000000004,
+      "end": 62.184875000000005,
+      "text": "His answer: the casino had kept him drunk to keep him playing."
+    },
+    {
+      "id": "21",
+      "scene": "s8",
+      "start": 62.485125000000004,
+      "end": 65.518125,
+      "text": "In the end, the charges were dropped, and both sides settled in private."
+    },
+    {
+      "id": "22",
+      "scene": "s8",
+      "start": 65.63787500000001,
+      "end": 70.89087500000001,
+      "text": "Years later, New Jersey regulators fined Caesars two hundred and twenty-five thousand dollars over how it handled him."
+    },
+    {
+      "id": "23",
+      "scene": "s8",
+      "start": 71.01070833333334,
+      "end": 74.10170833333333,
+      "text": "That's less than a fifth of one percent of what he lost."
+    },
+    {
+      "id": "24",
+      "scene": "s9",
+      "start": 74.902,
+      "end": 79.09,
+      "text": "So when a casino's best customer can't stand up, who is supposed to say stop?"
+    }
+  ]
+}

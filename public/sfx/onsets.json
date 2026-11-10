@@ -447,6 +447,10 @@
   "onset": 0.04,
   "peak": 0.18
  },
+ "sfx/synth/air-blow.wav": {
+  "onset": 0.01,
+  "peak": 0.35
+ },
  "sfx/synth/alarm.wav": {
   "onset": 0,
   "peak": 0.59
@@ -499,6 +503,10 @@
   "onset": 0,
   "peak": 0.07
  },
+ "sfx/synth/engine-misfire.wav": {
+  "onset": 0.1,
+  "peak": 2.07
+ },
  "sfx/synth/fpv-dive.wav": {
   "onset": 0.07,
   "peak": 2.16
@@ -506,6 +514,10 @@
  "sfx/synth/heartbeat-low.wav": {
   "onset": 0.1,
   "peak": 19.37
+ },
+ "sfx/synth/hull-touch.wav": {
+  "onset": 0.01,
+  "peak": 0.22
  },
  "sfx/synth/jam-static.wav": {
   "onset": 0.01,
@@ -594,6 +606,14 @@
  "sfx/synth/sub-hit.wav": {
   "onset": 0,
   "peak": 0.02
+ },
+ "sfx/synth/torpedo-run.wav": {
+  "onset": 0.16,
+  "peak": 4.4
+ },
+ "sfx/synth/under-blast.wav": {
+  "onset": 0,
+  "peak": 0.03
  },
  "sfx/tick/cinematic-glitch-trailer-1021.mp3": {
   "onset": 0.12,

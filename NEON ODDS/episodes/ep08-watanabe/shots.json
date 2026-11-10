@@ -1,0 +1,33 @@
+{
+  "vo": "watanabe",
+  "fps": 30,
+  "lead": 2,
+  "end": 79.7,
+  "shots": [
+    { "id": "S1", "at": "01", "size": "trung", "note": "Watanabe lảo đảo ở bàn blackjack, ly được rót đầy; khung 0", "key": 0.5 },
+    { "id": "S2", "at": "02:barely", "size": "trung", "note": "ông gượng đứng dậy, chao đảo; bellman đỡ", "key": 0.6 },
+    { "id": "S3", "at": "03", "size": "cận", "note": "quản lý sàn lưỡng lự rồi gật cho rót tiếp", "key": 0.7 },
+    { "id": "S4", "at": "04", "size": "trung", "note": "kho đồ tiệc ở Omaha, Watanabe giữa các thùng hàng", "key": 0.6 },
+    { "id": "S5", "at": "05", "size": "cận", "note": "ông ký giấy bán công ty", "key": 0.6 },
+    { "id": "S6", "at": "05:found", "size": "rộng", "note": "biển LAS VEGAS, ông bước vào", "key": 0.6 },
+    { "id": "S7", "at": "06", "size": "trung", "note": "biển WYNN, bảo vệ chặn ông ở cửa", "key": 0.7 },
+    { "id": "S8", "at": "07", "size": "trung", "note": "biển CAESARS PALACE, quản lý dang tay đón", "key": 0.6 },
+    { "id": "S9", "at": "08", "size": "trung", "note": "bellman và vệ sĩ đi hai bên ông", "key": 0.6 },
+    { "id": "S10", "at": "09", "size": "cận", "note": "phỉnh trượt trả lại về phía ông; 15%", "key": 0.7 },
+    { "id": "S11", "at": "10", "size": "trung", "note": "bảng LED đếm tiền đặt lên $825M; 2007", "key": 0.7 },
+    { "id": "S12", "at": "11", "size": "trung", "note": "bảng đổi đỏ $127M, ông ngồi sụp vai", "key": 0.7 },
+    { "id": "S13", "at": "12", "size": "trung", "note": "phòng điều hành: biểu đồ tròn, một lát 5.6% tách ra", "key": 0.6 },
+    { "id": "S14", "at": "13", "size": "trung", "note": "bellman kể lại trong phòng phỏng vấn", "key": 0.6 },
+    { "id": "S15", "at": "14", "size": "trung", "note": "ông gục xuống bàn, tỉnh dậy, đẩy phỉnh", "key": 0.7 },
+    { "id": "S16", "at": "15", "size": "trung", "note": "người chị kéo vali, dẫn ông đi", "key": 0.6 },
+    { "id": "S17", "at": "16", "size": "trung", "note": "chồng tiền đẩy qua quầy thu ngân", "key": 0.6 },
+    { "id": "S18", "at": "17", "size": "cận", "note": "giấy nợ đóng dấu UNPAID; $14.7M", "key": 0.7 },
+    { "id": "S19", "at": "18", "size": "trung", "note": "văn phòng công tố, quản lý trao hồ sơ", "key": 0.6 },
+    { "id": "S20", "at": "19", "size": "cận", "note": "bốn tờ cáo buộc đập xuống bàn; 4 FELONIES, 28 YEARS", "key": 0.7 },
+    { "id": "S21", "at": "20", "size": "trung", "note": "toà án, Watanabe và luật sư nói", "key": 0.6 },
+    { "id": "S22", "at": "21", "size": "cận", "note": "hai bên ký giấy dàn xếp, cặp hồ sơ đóng lại", "key": 0.6 },
+    { "id": "S23", "at": "22", "size": "trung", "note": "cơ quan New Jersey đóng dấu phạt; $225,000", "key": 0.7 },
+    { "id": "S24", "at": "23", "size": "rộng", "note": "núi phỉnh $127M cạnh một chồng nhỏ $225K; 0.18%", "key": 0.7 },
+    { "id": "S25", "at": "24", "size": "trung", "note": "về khung 0: ly được rót tiếp", "key": 0.5 }
+  ]
+}

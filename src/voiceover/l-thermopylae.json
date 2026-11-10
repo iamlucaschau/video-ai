@@ -1,0 +1,79 @@
+{
+  "name": "l-thermopylae",
+  "model": "gemini-3.8-flash-tts",
+  "totalSeconds": 27.505,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "In 480 BC, the largest empire the world had yet seen marched on Greece.",
+      "voice": "Charon",
+      "src": "voiceover/l-thermopylae/01.wav",
+      "durationInSeconds": 6.286,
+      "tempo": 1.05,
+      "hash": "5252fb8563dc"
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "Its king, Xerxes, ruled from Egypt to the Indus.",
+      "voice": "Charon",
+      "src": "voiceover/l-thermopylae/02.wav",
+      "durationInSeconds": 4.119,
+      "tempo": 1.05,
+      "hash": "5252fb8563dc"
+    },
+    {
+      "id": "03",
+      "scene": "s3",
+      "take": "t01",
+      "gapAfter": 0.15,
+      "text": "To reach Athens, his army had to squeeze through one gap between the mountains and the sea.",
+      "voice": "Charon",
+      "src": "voiceover/l-thermopylae/03.wav",
+      "durationInSeconds": 5.859,
+      "tempo": 1.05,
+      "hash": "5252fb8563dc"
+    },
+    {
+      "id": "04",
+      "scene": "s3",
+      "take": "t01",
+      "gapAfter": 0.15,
+      "text": "Thermopylae.",
+      "voice": "Charon",
+      "src": "voiceover/l-thermopylae/04.wav",
+      "durationInSeconds": 0.922,
+      "tempo": 1.05,
+      "hash": "5252fb8563dc"
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "In places, barely wide enough for a single cart.",
+      "voice": "Charon",
+      "src": "voiceover/l-thermopylae/05.wav",
+      "durationInSeconds": 3.318,
+      "tempo": 1.05,
+      "hash": "5252fb8563dc"
+    },
+    {
+      "id": "06",
+      "scene": "s4",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "Waiting there: about seven thousand Greeks, led by a Spartan king and three hundred of his men.",
+      "voice": "Charon",
+      "src": "voiceover/l-thermopylae/06.wav",
+      "durationInSeconds": 7.001,
+      "tempo": 1.05,
+      "hash": "5252fb8563dc"
+    }
+  ]
+}

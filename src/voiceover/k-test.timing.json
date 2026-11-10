@@ -1,0 +1,54 @@
+{
+  "durationInSeconds": 16.38179166666667,
+  "lines": [
+    {
+      "id": "n1",
+      "scene": "hook",
+      "start": 0.3,
+      "end": 3.546,
+      "text": "Mười giờ đêm, tiệm bánh tối om."
+    },
+    {
+      "id": "m1",
+      "scene": "room",
+      "start": 3.8964583333333334,
+      "end": 5.200458333333334,
+      "text": "Tôi ở trong kho cả tối."
+    },
+    {
+      "id": "m2",
+      "scene": "close",
+      "start": 5.450541666666666,
+      "end": 6.942541666666666,
+      "text": "Tôi chưa hề chạm cầu dao."
+    },
+    {
+      "id": "n2",
+      "scene": "timeline",
+      "start": 7.392124999999999,
+      "end": 9.766124999999999,
+      "text": "Ba nghi phạm, ba khoảng giờ."
+    },
+    {
+      "id": "n3",
+      "scene": "timeline",
+      "start": 10.015999999999998,
+      "end": 11.779999999999998,
+      "text": "Tuấn có mặt lúc mười giờ."
+    },
+    {
+      "id": "n4",
+      "scene": "lineup",
+      "start": 12.229499999999998,
+      "end": 13.905499999999998,
+      "text": "Một người đang nói dối."
+    },
+    {
+      "id": "n5",
+      "scene": "board",
+      "start": 14.355416666666665,
+      "end": 16.181416666666664,
+      "text": "Đến lượt bạn: mười giây."
+    }
+  ]
+}

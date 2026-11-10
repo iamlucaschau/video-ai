@@ -523,7 +523,8 @@ const videos = files.map((f) => {
   const pal = cached(w("palette.json"), () => palette(file));
   const tx = whisper ? cached(w("transcript.json"), () => transcribe(file, w("transcript.json"))) : null;
   const ocr = ocrOn ? cached(w("ocr.json"), () => pyStep("ocr.py", file, w("ocr.json"))) : null;
-  const stems = stemsOn ? cached(w("stems.json"), () => pyStep("stems.py", file, w("stems.json"))) : null;
+  // older stems.json has no "masked" (covered words, 2026-11-03): measure again
+  const stems = stemsOn ? cached(w("stems.json"), () => pyStep("stems.py", file, w("stems.json")), (v) => "masked" in v) : null;
   const sh = sheets ? contact(file, key, tech.duration, work) : [];
   const shots = m ? shotsFrom(m.cuts, tech.duration).map((s) => ({ ...s, motion: motion(m.scores, s.a, s.b) })) : [];
   const sents = tx ? sentences(tx, tech.duration) : [];

@@ -1,0 +1,10 @@
+{
+  "vo": "SLUG",
+  "fps": 30,
+  "lead": 2,
+  "landscape": true,
+  "shots": [
+    { "id": "A01", "at": "01", "kind": "3D", "clip": "hook", "size": "cận", "note": "Hình mở đầu, số hiện theo từng từ", "text": ["SỐ CỨNG"] },
+    { "id": "A02", "at": "07", "kind": "2D", "size": "rộng", "note": "Mỗi shot gắn vào đầu một câu (\"07\") hoặc một chữ (\"07:Word\")", "text": [] }
+  ]
+}

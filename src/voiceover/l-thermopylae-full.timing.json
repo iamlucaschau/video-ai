@@ -1,0 +1,194 @@
+{
+  "durationInSeconds": 101.72083333333333,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.3,
+      "end": 7.412,
+      "text": "In 480 BC, the largest empire the world had yet seen marched on the small cities of Greece."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "start": 7.762375,
+      "end": 11.640374999999999,
+      "text": "Its king, Xerxes, ruled from Egypt to the Indus."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 11.790791666666667,
+      "end": 15.986791666666667,
+      "text": "Ten years earlier, Athens had beaten his father's army at Marathon."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 16.136666666666667,
+      "end": 17.990666666666666,
+      "text": "Xerxes wanted revenge."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "start": 18.340958333333333,
+      "end": 21.838958333333334,
+      "text": "His army marched south along the coast, with his fleet beside it."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "start": 21.988625,
+      "end": 27.533625,
+      "text": "To reach Athens, it had to pass one narrow gap between the mountains and the sea."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "start": 27.68375,
+      "end": 28.59875,
+      "text": "Thermopylae."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "start": 28.948333333333334,
+      "end": 32.062333333333335,
+      "text": "Waiting there: about seven thousand Greeks."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "start": 32.212625,
+      "end": 39.602625,
+      "text": "Their leader, the Spartan king Leonidas, had brought three hundred of his own men, all fathers with sons at home."
+    },
+    {
+      "id": "10",
+      "scene": "s5",
+      "start": 39.95308333333334,
+      "end": 44.09108333333334,
+      "text": "According to Plutarch, Xerxes told them to hand over their weapons."
+    },
+    {
+      "id": "11",
+      "scene": "s5",
+      "start": 44.24150000000001,
+      "end": 47.46150000000001,
+      "text": "Leonidas replied: come and take them."
+    },
+    {
+      "id": "12",
+      "scene": "s6",
+      "start": 47.811666666666675,
+      "end": 50.28566666666667,
+      "text": "Herodotus claimed over two million men."
+    },
+    {
+      "id": "13",
+      "scene": "s6",
+      "start": 50.43583333333334,
+      "end": 55.41183333333334,
+      "text": "Historians today think far fewer, but still many times the Greeks."
+    },
+    {
+      "id": "14",
+      "scene": "s7",
+      "start": 55.761458333333344,
+      "end": 58.77545833333335,
+      "text": "Xerxes waited four days for them to run."
+    },
+    {
+      "id": "15",
+      "scene": "s7",
+      "start": 58.92504166666668,
+      "end": 60.68104166666668,
+      "text": "On the fifth, he attacked."
+    },
+    {
+      "id": "16",
+      "scene": "s7",
+      "start": 60.83125000000001,
+      "end": 63.99525000000001,
+      "text": "For two days, his army could not break through."
+    },
+    {
+      "id": "17",
+      "scene": "s7",
+      "start": 64.14512500000001,
+      "end": 66.79812500000001,
+      "text": "Not even his elite guard, the Immortals."
+    },
+    {
+      "id": "18",
+      "scene": "s8",
+      "start": 67.14804166666667,
+      "end": 72.29804166666668,
+      "text": "Then a local Greek, Ephialtes, showed the Persians a path over the mountain."
+    },
+    {
+      "id": "19",
+      "scene": "s8",
+      "start": 72.44841666666667,
+      "end": 74.91441666666667,
+      "text": "Leonidas sent most of the Greeks away."
+    },
+    {
+      "id": "20",
+      "scene": "s8",
+      "start": 75.06483333333334,
+      "end": 78.94883333333334,
+      "text": "He stayed with his three hundred and seven hundred men from Thespiae."
+    },
+    {
+      "id": "21",
+      "scene": "s8",
+      "start": 79.098375,
+      "end": 80.735375,
+      "text": "Almost all of them died."
+    },
+    {
+      "id": "22",
+      "scene": "s9",
+      "start": 81.08554166666667,
+      "end": 83.89354166666666,
+      "text": "Xerxes marched on and burned Athens."
+    },
+    {
+      "id": "23",
+      "scene": "s9",
+      "start": 84.043375,
+      "end": 85.850375,
+      "text": "But the victory did not last."
+    },
+    {
+      "id": "24",
+      "scene": "s9",
+      "start": 86.00079166666666,
+      "end": 88.87979166666666,
+      "text": "Weeks later, his fleet was crushed at Salamis."
+    },
+    {
+      "id": "25",
+      "scene": "s9",
+      "start": 89.02954166666666,
+      "end": 92.04654166666666,
+      "text": "The next year, his army was driven from Greece."
+    },
+    {
+      "id": "26",
+      "scene": "s10",
+      "start": 92.39616666666666,
+      "end": 95.56916666666666,
+      "text": "At the pass, a stone still carries their epitaph."
+    },
+    {
+      "id": "27",
+      "scene": "s10",
+      "start": 95.71883333333332,
+      "end": 101.37083333333332,
+      "text": "Go tell the Spartans, passer-by, that here we lie, obedient to their laws."
+    }
+  ]
+}

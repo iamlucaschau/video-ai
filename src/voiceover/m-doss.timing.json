@@ -1,0 +1,174 @@
+{
+  "durationInSeconds": 62.456833333333336,
+  "loop": true,
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "start": 0.05,
+      "end": 4.045,
+      "text": "This soldier refused to carry a gun, and America gave him its highest medal."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "start": 4.344541666666666,
+      "end": 6.873541666666666,
+      "text": "In 1942, he was offered a way out of the draft."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "start": 6.994,
+      "end": 8.036,
+      "text": "He said no."
+    },
+    {
+      "id": "04",
+      "scene": "s2",
+      "start": 8.155541666666666,
+      "end": 10.004541666666666,
+      "text": "But his faith said he must never kill."
+    },
+    {
+      "id": "05",
+      "scene": "s2",
+      "start": 10.204041666666667,
+      "end": 12.688041666666667,
+      "text": "So he went to war with no rifle, only a medic's bag."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "start": 12.938458333333333,
+      "end": 17.075458333333334,
+      "text": "On Guam and in the Philippines, he ran to the wounded under fire, again and again."
+    },
+    {
+      "id": "07",
+      "scene": "s3",
+      "start": 17.195833333333333,
+      "end": 18.985833333333332,
+      "text": "So the army gave him two Bronze Stars."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "start": 19.235416666666666,
+      "end": 20.419416666666667,
+      "text": "Then came Okinawa."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "start": 20.5395,
+      "end": 23.6655,
+      "text": "His unit climbed a cliff the soldiers called Hacksaw Ridge."
+    },
+    {
+      "id": "10",
+      "scene": "s4",
+      "start": 23.785541666666667,
+      "end": 25.98154166666667,
+      "text": "It was four hundred feet high."
+    },
+    {
+      "id": "11",
+      "scene": "s4",
+      "start": 26.101833333333335,
+      "end": 28.426833333333335,
+      "text": "But Japanese troops hit back hard."
+    },
+    {
+      "id": "12",
+      "scene": "s4",
+      "start": 28.546833333333336,
+      "end": 31.598833333333335,
+      "text": "About seventy-five men went down, and the rest pulled back."
+    },
+    {
+      "id": "13",
+      "scene": "s4",
+      "start": 31.798958333333335,
+      "end": 32.915958333333336,
+      "text": "He stayed."
+    },
+    {
+      "id": "14",
+      "scene": "s4",
+      "start": 33.31570833333333,
+      "end": 37.04870833333333,
+      "text": "One by one, he dragged the wounded to the edge, and lowered them down on a rope."
+    },
+    {
+      "id": "15",
+      "scene": "s5",
+      "start": 37.298875,
+      "end": 39.677875,
+      "text": "Weeks later, a grenade tore into his legs."
+    },
+    {
+      "id": "16",
+      "scene": "s5",
+      "start": 39.79754166666667,
+      "end": 41.64854166666667,
+      "text": "On the stretcher, he saw another wounded man."
+    },
+    {
+      "id": "17",
+      "scene": "s5",
+      "start": 41.76858333333333,
+      "end": 43.907583333333335,
+      "text": "So he crawled off and gave him his place."
+    },
+    {
+      "id": "18",
+      "scene": "s5",
+      "start": 44.028,
+      "end": 47.053,
+      "text": "Then he was hit again, and his arm broke."
+    },
+    {
+      "id": "19",
+      "scene": "s5",
+      "start": 47.173,
+      "end": 49.128,
+      "text": "He crawled three hundred yards to get help."
+    },
+    {
+      "id": "20",
+      "scene": "s6",
+      "start": 49.378375000000005,
+      "end": 51.629375,
+      "text": "So did the army ever make him carry a gun?"
+    },
+    {
+      "id": "21",
+      "scene": "s6",
+      "start": 51.749791666666674,
+      "end": 52.10679166666667,
+      "text": "No."
+    },
+    {
+      "id": "22",
+      "scene": "s6",
+      "start": 52.40683333333334,
+      "end": 55.92483333333334,
+      "text": "That October, President Truman put the Medal of Honor around his neck."
+    },
+    {
+      "id": "23",
+      "scene": "s6",
+      "start": 56.04491666666667,
+      "end": 58.86891666666667,
+      "text": "He was the first conscientious objector ever to receive it."
+    },
+    {
+      "id": "24",
+      "scene": "s7",
+      "start": 59.31845833333334,
+      "end": 62.20645833333334,
+      "text": "The man who never fired a shot brought back about seventy-five."
+    }
+  ]
+}

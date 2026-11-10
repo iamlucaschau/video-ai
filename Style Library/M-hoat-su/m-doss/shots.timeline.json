@@ -1,0 +1,210 @@
+[
+ {
+  "id": "S1",
+  "from": 0,
+  "len": 48,
+  "key": 24,
+  "size": "rộng",
+  "note": "Doss tay không giữa hai lính cầm súng, Huân chương trên cổ (frame 0 = frame cuối)"
+ },
+ {
+  "id": "S2",
+  "from": 48,
+  "len": 42,
+  "key": 73,
+  "size": "cận",
+  "note": "khẩu súng đưa tới, tay anh giơ lên từ chối"
+ },
+ {
+  "id": "S3",
+  "from": 90,
+  "len": 38,
+  "key": 117,
+  "size": "cận ngực",
+  "note": "Huân chương loé"
+ },
+ {
+  "id": "S4",
+  "from": 128,
+  "len": 80,
+  "key": 176,
+  "size": "vừa",
+  "note": "bàn tuyển quân 1942, giấy hoãn"
+ },
+ {
+  "id": "S5",
+  "from": 208,
+  "len": 35,
+  "key": 229,
+  "size": "cận",
+  "note": "lắc đầu, đẩy giấy lại"
+ },
+ {
+  "id": "S6",
+  "from": 243,
+  "len": 61,
+  "key": 280,
+  "size": "vừa",
+  "note": "đọc sách dưới đèn đêm"
+ },
+ {
+  "id": "S7",
+  "from": 304,
+  "len": 82,
+  "key": 353,
+  "size": "rộng",
+  "note": "khoác túi cứu thương, lính đeo súng đi qua"
+ },
+ {
+  "id": "S8",
+  "from": 386,
+  "len": 64,
+  "key": 418,
+  "size": "rộng",
+  "note": "rừng Guam, biển GUAM 1944, anh chạy"
+ },
+ {
+  "id": "S9",
+  "from": 450,
+  "len": 64,
+  "key": 488,
+  "size": "vừa",
+  "note": "quỳ băng bó người bị thương"
+ },
+ {
+  "id": "S10",
+  "from": 514,
+  "len": 61,
+  "key": 563,
+  "size": "vừa",
+  "note": "gắn hai Ngôi sao Đồng"
+ },
+ {
+  "id": "S11",
+  "from": 575,
+  "len": 39,
+  "key": 602,
+  "size": "phẳng",
+  "note": "bản đồ Okinawa, đẩy chậm"
+ },
+ {
+  "id": "S12",
+  "from": 614,
+  "len": 98,
+  "key": 673,
+  "size": "rộng",
+  "note": "vách đá, lưới, lính leo, biển HACKSAW RIDGE"
+ },
+ {
+  "id": "S13",
+  "from": 712,
+  "len": 69,
+  "key": 774,
+  "size": "rộng",
+  "note": "thước 400 FT vẽ lên dọc vách"
+ },
+ {
+  "id": "S14",
+  "from": 781,
+  "len": 73,
+  "key": 825,
+  "size": "rộng",
+  "note": "chớp lửa trên đỉnh, lính ngã sau đá"
+ },
+ {
+  "id": "S15",
+  "from": 854,
+  "len": 98,
+  "key": 923,
+  "size": "rộng",
+  "note": "lính rút, người bị thương nằm lại, sổ 75"
+ },
+ {
+  "id": "S16",
+  "from": 952,
+  "len": 45,
+  "key": 979,
+  "size": "cận",
+  "note": "He stayed: quỳ một mình"
+ },
+ {
+  "id": "S17",
+  "from": 997,
+  "len": 120,
+  "key": 1069,
+  "size": "mặt cắt",
+  "note": "cáng thả bằng dây xuống vách"
+ },
+ {
+  "id": "S18",
+  "from": 1117,
+  "len": 75,
+  "key": 1177,
+  "size": "vừa",
+  "note": "đêm, lựu đạn, chớp trắng, anh ngã"
+ },
+ {
+  "id": "S19",
+  "from": 1192,
+  "len": 59,
+  "key": 1227,
+  "size": "rộng",
+  "note": "khiêng cáng, thấy người khác"
+ },
+ {
+  "id": "S20",
+  "from": 1251,
+  "len": 68,
+  "key": 1299,
+  "size": "rộng",
+  "note": "bò xuống cáng, chỉ người kia"
+ },
+ {
+  "id": "S21",
+  "from": 1319,
+  "len": 94,
+  "key": 1385,
+  "size": "vừa",
+  "note": "trúng đạn, tay gãy, đeo băng"
+ },
+ {
+  "id": "S22",
+  "from": 1413,
+  "len": 66,
+  "key": 1453,
+  "size": "rộng",
+  "note": "bò dài trên bùn tới lều cứu thương"
+ },
+ {
+  "id": "S23",
+  "from": 1479,
+  "len": 91,
+  "key": 1552,
+  "size": "cận",
+  "note": "khẩu súng dựng bên cạnh; No: lắc đầu"
+ },
+ {
+  "id": "S24",
+  "from": 1570,
+  "len": 109,
+  "key": 1646,
+  "size": "vừa",
+  "note": "Truman choàng huân chương, biển OCTOBER 1945"
+ },
+ {
+  "id": "S25",
+  "from": 1679,
+  "len": 99,
+  "key": 1738,
+  "size": "cận ngực",
+  "note": "huân chương loé"
+ },
+ {
+  "id": "S26",
+  "from": 1778,
+  "len": 97,
+  "key": 1846,
+  "size": "rộng",
+  "note": "về khung S1, sổ 75 rồi rút"
+ }
+]

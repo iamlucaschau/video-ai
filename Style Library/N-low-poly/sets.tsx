@@ -57,6 +57,14 @@ export const CAST = {
   harrisMate: { skin: "#6E4630", hair: "#141012", hairStyle: "short", top: "#2A3A4A", shirt: "#E8E4DA", pants: "#1E2026", eye: "#2A1A14", build: 1.2, tall: 1.05 } as Look,
   /** a judge */
   judge: { skin: "#E2A882", hair: "#B8B0A2", hairStyle: "recede", glasses: true, top: "#121216", pants: "#121216" } as Look,
+  /** Terrance Watanabe, Omaha businessman and Las Vegas high roller in 2007: short black hair, open-collar shirt under a dark jacket (no photo face) */
+  watanabe: { skin: "#E2B490", hair: "#16120F", hairStyle: "short", top: "#2A2C36", shirt: "#7A8AA0", pants: "#24262E", eye: "#2A1E18", build: 1.12 } as Look,
+  /** his sister */
+  wSister: { skin: "#E2B490", hair: "#1A1412", hairStyle: "long", top: "#5A6A7A", pants: "#2A2C34", eye: "#2A1E18" } as Look,
+  /** a hotel bellman in a maroon uniform with gold trim */
+  bellman: { skin: "#C98E6A", hair: "#2A1A14", hairStyle: "cap", capColor: "#6A1A24", top: "#6A1A24", shirt: "#F3EFE6", tie: "#C9A04A", pants: "#1E1A20" } as Look,
+  /** a casino security officer: black suit, earpiece implied */
+  guard: { skin: "#8E5C3E", hair: "#141012", hairStyle: "bald", top: "#141418", shirt: "#F3EFE6", tie: "#141418", pants: "#141418", build: 1.18, tall: 1.04 } as Look,
   /** a reporter */
   reporter: { skin: "#D9A47E", hair: "#5A3A22", hairStyle: "short", top: "#4A5A72", pants: "#2A2A34", eye: "#3A3028" } as Look,
 };

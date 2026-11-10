@@ -1,0 +1,762 @@
+[
+ {
+  "id": "A01",
+  "from": 0,
+  "len": 325,
+  "key": 163,
+  "size": "cận",
+  "note": "Thân tàu ngầm trôi xuống tối dần, chỉ còn viền sáng; số hiện theo từng từ"
+ },
+ {
+  "id": "A02",
+  "from": 325,
+  "len": 87,
+  "key": 369,
+  "size": "rộng",
+  "note": "Mặt cắt biển: tia radar từ mặt nước tắt ngay khi chạm nước, tàu nằm dưới sâu"
+ },
+ {
+  "id": "A03",
+  "from": 412,
+  "len": 136,
+  "key": 480,
+  "size": "vừa",
+  "note": "Tàu nổi lên, cột kính tiềm vọng nhô khỏi mặt nước, vòng phát hiện đỏ quanh cột"
+ },
+ {
+  "id": "A04",
+  "from": 548,
+  "len": 226,
+  "key": 661,
+  "size": "rộng",
+  "note": "Hai tàu trong bóng tối, hai vòng sóng âm lan về nhau; vòng của tàu xanh chạm trước"
+ },
+ {
+  "id": "A05",
+  "from": 774,
+  "len": 74,
+  "key": 811,
+  "size": "rộng",
+  "note": "Tiêu đề đặt trên sa bàn tối, 5 ô lộ trình còn tắt"
+ },
+ {
+  "id": "A06",
+  "from": 848,
+  "len": 96,
+  "key": 896,
+  "size": "vừa",
+  "note": "Ô 1 sáng: ống nghe vẽ nét"
+ },
+ {
+  "id": "A07",
+  "from": 944,
+  "len": 92,
+  "key": 990,
+  "size": "vừa",
+  "note": "Ô 2 sáng: hai sóng, một vào một ra"
+ },
+ {
+  "id": "A08",
+  "from": 1036,
+  "len": 64,
+  "key": 1068,
+  "size": "vừa",
+  "note": "Ô 3 sáng: tàu lặn và lịch ngày tháng"
+ },
+ {
+  "id": "A09",
+  "from": 1100,
+  "len": 99,
+  "key": 1150,
+  "size": "vừa",
+  "note": "Ô 4 sáng: tàu sân bay và drone"
+ },
+ {
+  "id": "A10",
+  "from": 1199,
+  "len": 178,
+  "key": 1288,
+  "size": "vừa",
+  "note": "Ô 5 sáng đỏ: vết nứt lan trên sa bàn"
+ },
+ {
+  "id": "B01",
+  "from": 1377,
+  "len": 179,
+  "key": 1467,
+  "size": "vừa",
+  "note": "Thẻ chương. Hình vẽ sổ tay: thuyền gỗ đứng yên trên nước"
+ },
+ {
+  "id": "B02",
+  "from": 1556,
+  "len": 146,
+  "key": 1629,
+  "size": "cận",
+  "note": "Ống dài thả xuống nước, tai ở đầu kia, vẽ nét theo lời"
+ },
+ {
+  "id": "B03",
+  "from": 1702,
+  "len": 57,
+  "key": 1731,
+  "size": "rộng",
+  "note": "Sóng âm từ các tàu xa truyền vào đầu ống"
+ },
+ {
+  "id": "B04",
+  "from": 1759,
+  "len": 111,
+  "key": 1815,
+  "size": "vừa",
+  "note": "Ống biến hình thành dải cảm biến ở mũi tàu ngầm hiện đại"
+ },
+ {
+  "id": "B05",
+  "from": 1870,
+  "len": 317,
+  "key": 2029,
+  "size": "rộng",
+  "note": "Hunley áp sát sloop Housatonic, cọc mìn dài chạm thân, chớp nổ"
+ },
+ {
+  "id": "B06",
+  "from": 2187,
+  "len": 87,
+  "key": 2231,
+  "size": "vừa",
+  "note": "Sloop nghiêng và chìm, chữ ghi nhận"
+ },
+ {
+  "id": "B07",
+  "from": 2274,
+  "len": 102,
+  "key": 2325,
+  "size": "vừa",
+  "note": "Hunley tắt dần trong nước tối, 8 chấm mờ đi"
+ },
+ {
+  "id": "B08",
+  "from": 2376,
+  "len": 283,
+  "key": 2518,
+  "size": "rộng",
+  "note": "Sa bàn nhìn từ trên: 3 tuần dương đi thẳng hàng, U-9 nhỏ; ngư lôi tới Aboukir"
+ },
+ {
+  "id": "B09",
+  "from": 2659,
+  "len": 151,
+  "key": 2735,
+  "size": "rộng",
+  "note": "Hai tàu còn lại đổi hướng tới cứu, mũi tên chính vào vị trí U-9 đang chờ"
+ },
+ {
+  "id": "B10",
+  "from": 2810,
+  "len": 41,
+  "key": 2831,
+  "size": "rộng",
+  "note": "Hai vệt ngư lôi nữa, hai tàu chuyển màu chết"
+ },
+ {
+  "id": "B11",
+  "from": 2851,
+  "len": 138,
+  "key": 2920,
+  "size": "vừa",
+  "note": "3 biểu tượng tuần dương đếm, thời gian chạy"
+ },
+ {
+  "id": "B12",
+  "from": 2989,
+  "len": 216,
+  "key": 3097,
+  "size": "rộng",
+  "note": "Cùng sa bàn phủ tối: đường cứu hộ sáng lên và trỏ thẳng vào U-9"
+ },
+ {
+  "id": "C01",
+  "from": 3205,
+  "len": 45,
+  "key": 3228,
+  "size": "rộng",
+  "note": "Thẻ chương. Mặt cắt đại dương kèm thước độ sâu"
+ },
+ {
+  "id": "C02",
+  "from": 3250,
+  "len": 162,
+  "key": 3331,
+  "size": "vừa",
+  "note": "Hai vạch đua: âm thanh trong nước vượt xa trong không khí"
+ },
+ {
+  "id": "C03",
+  "from": 3412,
+  "len": 253,
+  "key": 3539,
+  "size": "rộng",
+  "note": "Tia âm vẽ dần: cong xuống, quẹo lên, chạm mặt biển, lặp lại từng nhịp sang phải"
+ },
+ {
+  "id": "C04",
+  "from": 3665,
+  "len": 261,
+  "key": 3796,
+  "size": "rộng",
+  "note": "Vòng tầm sonar trên sa bàn méo đi theo từng từ: nước, tốc độ, mục tiêu"
+ },
+ {
+  "id": "C05",
+  "from": 3926,
+  "len": 343,
+  "key": 4098,
+  "size": "rộng",
+  "note": "Bản đồ tây Đại Tây Dương: chuỗi thủy âm vẽ dọc đáy biển, cáp chạy về trạm bờ"
+ },
+ {
+  "id": "C06",
+  "from": 4269,
+  "len": 106,
+  "key": 4322,
+  "size": "rộng",
+  "note": "Cả chuỗi thủy âm sáng lên, các vòng nghe lan ra biển"
+ },
+ {
+  "id": "D01",
+  "from": 4375,
+  "len": 45,
+  "key": 4398,
+  "size": "rộng",
+  "note": "Thẻ chương. Màn chia đôi hai cách nghe"
+ },
+ {
+  "id": "D02",
+  "from": 4420,
+  "len": 87,
+  "key": 4464,
+  "size": "vừa",
+  "note": "Sóng chỉ đi vào tàu, không có gì đi ra"
+ },
+ {
+  "id": "D03",
+  "from": 4507,
+  "len": 93,
+  "key": 4554,
+  "size": "vừa",
+  "note": "Xung đi ra, chạm mục tiêu, tiếng vọng quay lại"
+ },
+ {
+  "id": "D04",
+  "from": 4600,
+  "len": 168,
+  "key": 4684,
+  "size": "rộng",
+  "note": "Tàu và tảng băng, tiếng vọng đi về"
+ },
+ {
+  "id": "D05",
+  "from": 4768,
+  "len": 62,
+  "key": 4799,
+  "size": "vừa",
+  "note": "Phòng tối, chùm đèn pin quét"
+ },
+ {
+  "id": "D06",
+  "from": 4830,
+  "len": 168,
+  "key": 4914,
+  "size": "rộng",
+  "note": "Xung sáng lan trong nước tối, soi thân tàu kia, và lộ luôn nơi nó phát ra"
+ },
+ {
+  "id": "D07",
+  "from": 4998,
+  "len": 173,
+  "key": 5085,
+  "size": "vừa",
+  "note": "Đốm tàu quiet mờ dần trên màn nghe, gắn nhãn nguồn"
+ },
+ {
+  "id": "D08",
+  "from": 5171,
+  "len": 212,
+  "key": 5277,
+  "size": "rộng",
+  "note": "Tàu săn buộc phải phát xung, vòng xung đổi đỏ và chỉ về chính nó"
+ },
+ {
+  "id": "E01",
+  "from": 5383,
+  "len": 78,
+  "key": 5422,
+  "size": "rộng",
+  "note": "Thẻ chương. Tàu nhìn ngang kèm cột đo tiếng ồn không có số"
+ },
+ {
+  "id": "E02",
+  "from": 5461,
+  "len": 54,
+  "key": 5488,
+  "size": "vừa",
+  "note": "Mặt cắt: máy móc trong tàu rung sáng, cột đo lên một nấc"
+ },
+ {
+  "id": "E03",
+  "from": 5515,
+  "len": 311,
+  "key": 5671,
+  "size": "vừa",
+  "note": "Dòng nước chảy dọc thân tàu tăng dần rồi giảm; nhãn tốc độ theo từng câu"
+ },
+ {
+  "id": "E04",
+  "from": 5826,
+  "len": 168,
+  "key": 5910,
+  "size": "rộng",
+  "note": "Tàu cũ đậu bến và Seawolf chạy, hai cột đo gần bằng nhau"
+ },
+ {
+  "id": "E05",
+  "from": 5994,
+  "len": 213,
+  "key": 6101,
+  "size": "rộng",
+  "note": "Vòng tiếng ồn của chính tàu nở ra nuốt tiếng mục tiêu ở xa"
+ },
+ {
+  "id": "E06",
+  "from": 6207,
+  "len": 284,
+  "key": 6349,
+  "size": "vừa",
+  "note": "Chân vịt trên máy phay vẽ nét, không logo công ty"
+ },
+ {
+  "id": "E07",
+  "from": 6491,
+  "len": 177,
+  "key": 6580,
+  "size": "rộng",
+  "note": "Vòng theo dõi đối phương co lại; sau đó dấu hỏi lên"
+ },
+ {
+  "id": "E08",
+  "from": 6668,
+  "len": 294,
+  "key": 6815,
+  "size": "vừa",
+  "note": "Đồng hồ tốc độ và thước độ sâu, đoạn trên bị dấu CLASSIFIED che"
+ },
+ {
+  "id": "F01",
+  "from": 6962,
+  "len": 69,
+  "key": 6997,
+  "size": "vừa",
+  "note": "Thẻ chương. Mặt cắt tàu lộ két dằn"
+ },
+ {
+  "id": "F02",
+  "from": 7031,
+  "len": 100,
+  "key": 7081,
+  "size": "vừa",
+  "note": "Tàu trên mặt nước mở van, cột khí phun, boong chìm dần"
+ },
+ {
+  "id": "F03",
+  "from": 7131,
+  "len": 94,
+  "key": 7178,
+  "size": "vừa",
+  "note": "Mặt cắt: khí nén đẩy nước ra khỏi két, tàu lên"
+ },
+ {
+  "id": "F04",
+  "from": 7225,
+  "len": 124,
+  "key": 7287,
+  "size": "vừa",
+  "note": "Cùng mặt cắt chạy rất nhanh, gắn nhãn"
+ },
+ {
+  "id": "F05",
+  "from": 7349,
+  "len": 271,
+  "key": 7485,
+  "size": "vừa",
+  "note": "Lò phản ứng sáng trong mặt cắt, nước biển tách thành oxy"
+ },
+ {
+  "id": "F06",
+  "from": 7620,
+  "len": 167,
+  "key": 7704,
+  "size": "vừa",
+  "note": "Kho thực phẩm vơi dần theo lịch"
+ },
+ {
+  "id": "F07",
+  "from": 7787,
+  "len": 285,
+  "key": 7930,
+  "size": "vừa",
+  "note": "Biển đêm, cột ống thở rẽ sóng để lại vệt, khói diesel nhẹ không dùng khói dày"
+ },
+ {
+  "id": "F08",
+  "from": 8072,
+  "len": 223,
+  "key": 8184,
+  "size": "vừa",
+  "note": "Tàu nhỏ thêm một máy phụ trong mặt cắt, cột ống thở thu vào"
+ },
+ {
+  "id": "G01",
+  "from": 8295,
+  "len": 205,
+  "key": 8398,
+  "size": "rộng",
+  "note": "Thẻ chương. Dùng lại đội hình 3D của Carrier"
+ },
+ {
+  "id": "G02",
+  "from": 8500,
+  "len": 115,
+  "key": 8558,
+  "size": "rộng",
+  "note": "Sa bàn đội hình, đốm tàu ngầm mờ không rõ vị trí, rồi hai bên săn nhau"
+ },
+ {
+  "id": "G03",
+  "from": 8615,
+  "len": 273,
+  "key": 8752,
+  "size": "rộng",
+  "note": "Vệt tàu nhỏ luồn qua các vòng hộ tống"
+ },
+ {
+  "id": "G04",
+  "from": 8888,
+  "len": 212,
+  "key": 8994,
+  "size": "rộng",
+  "note": "Nhìn sát mặt nước qua khung kính tiềm vọng, tàu sân bay ở xa"
+ },
+ {
+  "id": "G05",
+  "from": 9100,
+  "len": 68,
+  "key": 9134,
+  "size": "rộng",
+  "note": "Bản đồ Nam Đại Tây Dương, vị trí vụ việc"
+ },
+ {
+  "id": "G06",
+  "from": 9168,
+  "len": 335,
+  "key": 9336,
+  "size": "rộng",
+  "note": "Dưới nước nhìn lên: 3 vệt ngư lôi hướng tới bóng thân tàu, dừng ở chớp sáng trong nước, không tả cảnh người"
+ },
+ {
+  "id": "G07",
+  "from": 9503,
+  "len": 225,
+  "key": 9616,
+  "size": "rộng",
+  "note": "Sa bàn: hai tàu hộ tống vẫn đi tiếp, tàu giữa dừng lại"
+ },
+ {
+  "id": "G08",
+  "from": 9728,
+  "len": 251,
+  "key": 9854,
+  "size": "rộng",
+  "note": "Bản đồ Ấn Độ Dương và Sri Lanka, đốm khung tàu rồi tắt"
+ },
+ {
+  "id": "G09",
+  "from": 9979,
+  "len": 322,
+  "key": 10140,
+  "size": "vừa",
+  "note": "Giữ bản đồ, tiết chế, không nhạc mạnh, chữ nhỏ có nguồn"
+ },
+ {
+  "id": "G10",
+  "from": 10301,
+  "len": 288,
+  "key": 10445,
+  "size": "rộng",
+  "note": "Bản đồ Biển Đen có sẵn, ghim Novorossiysk; vụ đang tranh cãi nên không dựng cảnh trúng đích"
+ },
+ {
+  "id": "G11",
+  "from": 10589,
+  "len": 150,
+  "key": 10664,
+  "size": "vừa",
+  "note": "Hai nhãn đối nhau hiện theo câu"
+ },
+ {
+  "id": "G12",
+  "from": 10739,
+  "len": 140,
+  "key": 10809,
+  "size": "vừa",
+  "note": "Mặt cắt cảng: tàu đậu bến, vòng an toàn bị vạch đứt quanh"
+ },
+ {
+  "id": "H01",
+  "from": 10879,
+  "len": 143,
+  "key": 10951,
+  "size": "rộng",
+  "note": "Thẻ chương đỏ"
+ },
+ {
+  "id": "H02",
+  "from": 11022,
+  "len": 104,
+  "key": 11074,
+  "size": "vừa",
+  "note": "Thẻ sai lầm 1, biểu tượng tiếng ồn"
+ },
+ {
+  "id": "H03",
+  "from": 11126,
+  "len": 202,
+  "key": 11227,
+  "size": "rộng",
+  "note": "Bản đồ bờ Na Uy, đốm tàu phát nhịp lỗi không đều"
+ },
+ {
+  "id": "H04",
+  "from": 11328,
+  "len": 397,
+  "key": 11527,
+  "size": "rộng",
+  "note": "Hai tàu thời Thế chiến 2 dưới nước, nhịp âm yếu; bốn vệt ngư lôi, vệt cuối trúng, cắt ngay ở chớp sáng"
+ },
+ {
+  "id": "H05",
+  "from": 11725,
+  "len": 52,
+  "key": 11751,
+  "size": "vừa",
+  "note": "Mặt nước tối, chữ giữ lâu, không SFX"
+ },
+ {
+  "id": "H06",
+  "from": 11777,
+  "len": 119,
+  "key": 11837,
+  "size": "vừa",
+  "note": "Hai biểu tượng tàu lặn trên nền trống"
+ },
+ {
+  "id": "H07",
+  "from": 11896,
+  "len": 105,
+  "key": 11949,
+  "size": "vừa",
+  "note": "Thẻ sai lầm 2"
+ },
+ {
+  "id": "H08",
+  "from": 12001,
+  "len": 188,
+  "key": 12095,
+  "size": "rộng",
+  "note": "Bản đồ Oahu, đốm tàu, biểu tượng khách trên tàu"
+ },
+ {
+  "id": "H09",
+  "from": 12189,
+  "len": 93,
+  "key": 12236,
+  "size": "rộng",
+  "note": "Mũi tàu lao lên khỏi mặt biển giữa bọt nước, bọt phải thưa để giữ giờ render"
+ },
+ {
+  "id": "H10",
+  "from": 12282,
+  "len": 149,
+  "key": 12357,
+  "size": "rộng",
+  "note": "Mặt cắt sơ đồ: đường đi lên gặp thân tàu Ehime Maru ở trên, không tả người"
+ },
+ {
+  "id": "H11",
+  "from": 12431,
+  "len": 67,
+  "key": 12465,
+  "size": "vừa",
+  "note": "35 chấm, 9 chấm mờ đi, im lặng"
+ },
+ {
+  "id": "H12",
+  "from": 12498,
+  "len": 200,
+  "key": 12598,
+  "size": "vừa",
+  "note": "Tệp kết luận với nguồn, một dòng khóa"
+ },
+ {
+  "id": "H13",
+  "from": 12698,
+  "len": 71,
+  "key": 12734,
+  "size": "rộng",
+  "note": "Đốm âm thanh đúng chỗ, nhưng ô phân tích vẽ sai vị trí"
+ },
+ {
+  "id": "H14",
+  "from": 12769,
+  "len": 86,
+  "key": 12812,
+  "size": "vừa",
+  "note": "Thẻ sai lầm 3"
+ },
+ {
+  "id": "H15",
+  "from": 12855,
+  "len": 141,
+  "key": 12926,
+  "size": "rộng",
+  "note": "Bản đồ Ấn Độ Dương – Thái Bình Dương, đốm tàu, không ghi vị trí chính xác"
+ },
+ {
+  "id": "H16",
+  "from": 12996,
+  "len": 102,
+  "key": 13047,
+  "size": "vừa",
+  "note": "Đồng hồ tốc độ quay từ 16 lên 24, vạch đỏ ở 16"
+ },
+ {
+  "id": "H17",
+  "from": 13098,
+  "len": 185,
+  "key": 13191,
+  "size": "rộng",
+  "note": "Tàu lao trong tối, sườn núi ngầm hiện dần trước mũi, cắt ngay trước khi chạm"
+ },
+ {
+  "id": "H18",
+  "from": 13283,
+  "len": 225,
+  "key": 13396,
+  "size": "vừa",
+  "note": "Ba thẻ lỗi xếp chồng theo từng cụm từ"
+ },
+ {
+  "id": "H19",
+  "from": 13508,
+  "len": 103,
+  "key": 13560,
+  "size": "vừa",
+  "note": "Dấu đóng lên hồ sơ, rồi hồ sơ trượt sang năm 2005"
+ },
+ {
+  "id": "H20",
+  "from": 13611,
+  "len": 188,
+  "key": 13705,
+  "size": "rộng",
+  "note": "Mặt cắt: USS San Francisco ở độ sâu 525 ft gặp núi ngầm"
+ },
+ {
+  "id": "H21",
+  "from": 13799,
+  "len": 69,
+  "key": 13834,
+  "size": "vừa",
+  "note": "Hai tờ hải đồ: tờ đang dùng trống, tờ khác có ký hiệu nguy hiểm"
+ },
+ {
+  "id": "H22",
+  "from": 13868,
+  "len": 118,
+  "key": 13927,
+  "size": "vừa",
+  "note": "Thẻ sai lầm 4"
+ },
+ {
+  "id": "H23",
+  "from": 13986,
+  "len": 157,
+  "key": 14065,
+  "size": "rộng",
+  "note": "Bản đồ Đại Tây Dương, hai đốm không vị trí chính xác"
+ },
+ {
+  "id": "H24",
+  "from": 14143,
+  "len": 237,
+  "key": 14262,
+  "size": "rộng",
+  "note": "Hai tàu tên lửa lớn đi chậm trong tối, chạm rất nhẹ, không nổ"
+ },
+ {
+  "id": "H25",
+  "from": 14380,
+  "len": 79,
+  "key": 14420,
+  "size": "vừa",
+  "note": "Hồ sơ trống"
+ },
+ {
+  "id": "H26",
+  "from": 14459,
+  "len": 220,
+  "key": 14569,
+  "size": "vừa",
+  "note": "Trích lời có tên người nói, biểu tượng con tôm nét mảnh"
+ },
+ {
+  "id": "H27",
+  "from": 14679,
+  "len": 102,
+  "key": 14730,
+  "size": "rộng",
+  "note": "Hai vòng nghe trống rỗng tiến sát nhau, không đốm nào hiện"
+ },
+ {
+  "id": "H28",
+  "from": 14781,
+  "len": 415,
+  "key": 14989,
+  "size": "rộng",
+  "note": "Bốn biểu tượng sai lầm sáng theo đúng từng câu"
+ },
+ {
+  "id": "I01",
+  "from": 15196,
+  "len": 161,
+  "key": 15277,
+  "size": "vừa",
+  "note": "Thẻ chương kết. Mặt cắt ống thép đầy chấm người"
+ },
+ {
+  "id": "I02",
+  "from": 15357,
+  "len": 271,
+  "key": 15493,
+  "size": "rộng",
+  "note": "Từ sau đuôi, tàu tan vào bóng tối, câu chìa khóa hiện cuối"
+ },
+ {
+  "id": "I04",
+  "from": 15628,
+  "len": 182,
+  "key": 15719,
+  "size": "rộng",
+  "note": "Bản đồ vòng tàu quanh một cảng, chung chung"
+ }
+]

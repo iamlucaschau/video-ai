@@ -1,5 +1,5 @@
 /**
- * Naval kit for "How an Aircraft Carrier Defends Itself" (Test/carrier): top-down ships, aircraft, missiles, rings,
+ * Naval kit for "How an Aircraft Carrier Defends Itself" (Formats/Naval Board/episodes/ep01-carrier): top-down ships, aircraft, missiles, rings,
  * radar and data links on a 1920×1080 SVG canvas. Motion only from the frame (`g` props or useCurrentFrame).
  * Shared pieces (tags, headings, blasts, tracers, easing) come from the Ambush kit.
  */

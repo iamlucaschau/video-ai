@@ -16,5 +16,6 @@
 | 5 · Final | `render:style`: 2160×3840, 30 fps, −14 LUFS ±1, true peak ≤ −1,5 dBTP | | | |
 | 5 · Final | sheet từ MP4 (không guide) đã xem | | | |
 | 5 · Final | `studio:compare` với đối thủ: `SO-SANH.md` đọc xong, mỗi dòng "ngoài khoảng của họ" có lý do (QUYẾT) hoặc đã sửa | | | |
+| 5 · Final | **Nghe (bắt buộc từ 2026-11-08):** `npm run listen -- <id> "<mp4>" --out NGHE.md` sau `render:style`; mọi dòng "Cần nghe" trong `NGHE.md` có quyết định (đã nghe: giữ / đã sửa) | | | |
 | 5 · Final | **Lucas xem trên điện thoại, có tiếng, rồi nghe một lần không nhìn** (A11) | | ghi nhận xét của Lucas | |
 | 5 · Final | gói đăng `xuat-ban.md` đủ: tiêu đề, mô tả + nguồn ảnh và dữ liệu, nhãn AI nếu cần | | | |

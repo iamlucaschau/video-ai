@@ -89,6 +89,8 @@ if (cmd === "check" && target) {
     process.exit(1);
   }
   add(fs.existsSync(path.join(dir, "README.md")) ? "✓" : "✗", "README.md");
+  // W10 (2026-11-03): a living traps list, read before building; a warning so older kits still pass
+  if (fs.existsSync(path.join(dir, "README.md"))) add(/^## Bẫy đã gặp/m.test(fs.readFileSync(path.join(dir, "README.md"), "utf8")) ? "✓" : "⚠", "README has \"## Bẫy đã gặp\" (KIT-CONTRACT §1)");
   add(fs.existsSync(path.join(dir, "ref.jpg")) ? "✓" : "⚠", "ref.jpg (frame from our own test)");
   const kit = path.join(dir, `${name}.tsx`);
   if (!fs.existsSync(kit)) add("✗", `${name}.tsx (kit file named after the folder)`);
@@ -277,7 +279,13 @@ ${techRows.join("\n")}
 
 ## Cách dựng
 
-\`studio/KIT-CONTRACT.md\` §5: KitSheet → component từng T# → bản test ~30 s theo giọng đọc → review-loop → \`ref.jpg\` từ bản test của mình.
+\`studio/KIT-CONTRACT.md\` §5: KitSheet → component từng T# → bản test ~30 s theo giọng đọc → storyboard (\`shotlist.mjs --board\`) → review-loop → \`ref.jpg\` từ bản test của mình.
+
+## Bẫy đã gặp
+
+*Mỗi lỗi đã tốn thời gian: một dòng (cái gì sai, vì sao, cách tránh, ngày). Đọc trước khi dựng tập mới.*
+
+- (chưa có)
 `;
 
 fs.mkdirSync(path.join(dir, `${x}-kit`), { recursive: true });

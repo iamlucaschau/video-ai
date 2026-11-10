@@ -1,0 +1,24 @@
+{
+  "vo": "m-test",
+  "fps": 30,
+  "lead": 2,
+  "ref": "Test/Squire Explains",
+  "end": 32.8,
+  "shots": [
+    { "id": "S1", "at": "01", "size": "vừa", "note": "điệp viên giữa phòng tối, hai huân chương; vòng sáng ở Thập tự Sắt", "key": 0.6 },
+    { "id": "S2", "at": "02", "size": "cận ngực", "note": "MBE loé ở 'king'", "key": 0.7 },
+    { "id": "S3", "at": "03", "size": "rộng", "note": "văn phòng Anh ở Madrid, biển MADRID 1941, điệp viên xin", "key": 0.5 },
+    { "id": "S4", "at": "04", "size": "cận", "note": "sĩ quan Anh lắc đầu", "key": 0.6 },
+    { "id": "S5", "at": "05", "size": "vừa", "note": "sĩ quan Đức đưa giấy, điệp viên cười", "key": 0.6 },
+    { "id": "S6", "at": "05:stayed", "size": "rộng", "note": "phòng trọ Lisbon, mái ngói qua cửa sổ, biển LISBON 1941, gõ máy chữ", "key": 0.5 },
+    { "id": "S7", "at": "06:tourist", "size": "cận từ trên", "note": "sách LONDON GUIDE mở, tay lật trang", "key": 0.5 },
+    { "id": "S8", "at": "07", "size": "vừa", "note": "sĩ quan Đức đọc điện, cười", "key": 0.6 },
+    { "id": "S9", "at": "08", "size": "vừa", "note": "London 1942: sĩ quan Anh bắt tay điệp viên", "key": 0.6 },
+    { "id": "S10", "at": "09", "size": "rộng", "note": "bóng người ảo nhân lên, sổ ghi 27", "key": 0.85 },
+    { "id": "S11", "at": "10", "size": "bản đồ", "note": "bản đồ ghim tường: NORMANDY, CALAIS, mũi tên đỏ về Calais", "key": 0.9 },
+    { "id": "S12", "at": "11", "size": "vừa", "note": "sĩ quan Đức trước bản đồ gật đầu", "key": 0.6 },
+    { "id": "S13", "at": "12", "size": "cận ngực", "note": "tay áo xám gắn Thập tự Sắt", "key": 0.7 },
+    { "id": "S14", "at": "13", "size": "cận ngực", "note": "tay áo navy gắn MBE", "key": 0.7 },
+    { "id": "S15", "at": "14", "size": "vừa", "note": "điệp viên cười mỉm, hai huân chương = khung 0", "key": 0.6 }
+  ]
+}

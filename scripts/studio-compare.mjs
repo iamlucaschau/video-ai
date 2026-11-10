@@ -58,6 +58,7 @@ const measures = (v) => {
     outsideSafe: v.text?.outsideSafe ?? null,
     bedMinusVoice: v.stems?.bedMinusVoice ?? null,
     hitsPerMin: v.stems?.hitsPerMin ?? null,
+    maskedPerMin: v.stems?.masked ? v.stems.masked.length / (d / 60) : null,
     sentences: v.script?.sentences ?? null,
     wordsPerSentence: v.script?.wordsPerSentence ?? null,
     hookWords: v.script?.hookWords ?? null,
@@ -117,6 +118,7 @@ const ROWS = [
   ["outsideSafe", "Khối chữ ngoài vùng an toàn (%)", 0, 100, "luật: 0 (trừ watermark / handle ở mép)"],
   ["bedMinusVoice", "Nền − giọng (dB, demucs)", 1, 1, "càng âm, giọng càng nổi trên nhạc + SFX"],
   ["hitsPerMin", "Tiếng nhấn ở nền / phút (ƯỚC)", 1, 1, "SFX + nhịp nhạc mạnh; hiệu chỉnh trên Ep02: 39 đếm vs 41 đặt"],
+  ["maskedPerMin", "Chỗ giọng bị nền che / phút (ƯỚC)", 1, 1, "nền trong vòng 3 dB của giọng lúc đang nói; danh sách giây ở cuối"],
 ];
 
 const verdict = (key, x, refs) => {
@@ -185,6 +187,7 @@ const fails = ROWS.filter(([key]) => verdict(key, mo[key], []).startsWith("✗")
 L.push("", "## Tóm tắt", "");
 L.push(`- Luật âm lượng: ${fails.length ? fails.map(([, l]) => `✗ ${l}`).join(", ") : "✓ đạt cả hai"}.`);
 L.push(`- Ngoài khoảng của họ (${outside.length}): ${outside.map(([key, l]) => `${l} (${verdict(key, mo[key], mr.map((m) => m[key])).replace(" khoảng của họ", "")})`).join(" · ") || "không có"}.`);
+if (ours.stems?.masked?.length) L.push(`- Giọng có thể bị nền che (${ours.stems.masked.length} cửa sổ 0,4 s, giây · dB trên giọng): ${ours.stems.masked.map(([t, db]) => `${fmt(t, 1, 1)} (${db > 0 ? "+" : ""}${fmt(db, 1, 1)})`).join(", ")}. Nghe từng chỗ: tiếng nhấn đè lên một từ quan trọng thì dời vào khoảng lặng sau từ đó hoặc hạ nhỏ (AGENTS "Sound design").`);
 L.push("- Không đo ở đây: kiểu chữ / font, nội dung hình (bản đồ, tranh), giữ chân thật (`npm run studio:stats` sau khi đăng). Chữ (OCR) và tiếng nhấn (demucs) có sai số: kiểm lại trên sheet / tai.");
 const file = path.join(path.dirname(abs), "SO-SANH.md");
 fs.writeFileSync(file, L.join("\n") + "\n");

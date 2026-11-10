@@ -80,6 +80,8 @@ const formula = z.object({
   close: z.object({ pattern: z.string(), quote, atS: z.number().optional() }),
   beats: z.array(z.object({ name: z.string(), from: z.number().min(0).max(1), to: z.number().min(0).max(1), does: z.string() })).min(3),
   devices: z.array(z.string()),
+  // W8 (2026-11-03): the format's recurring device, one word + one sound + one look said / heard / seen every time
+  signature: z.string().optional(),
   title: z.object({ pattern: z.string(), examples: z.array(z.string()) }),
   facts: z.object({ checked: z.number(), ok: z.number(), approx: z.number(), wrong: z.number(), unknown: z.number() }),
   pillars: z.array(z.object({ name: z.string(), share: z.number().nullable(), examples: z.array(z.string()) })),
@@ -196,7 +198,8 @@ if (cmd === "init") {
     if (fs.existsSync(file(n))) console.log(`= ${n} exists, kept`);
     else fs.writeFileSync(file(n), JSON.stringify(data, null, 2) + "\n"), console.log(`+ ${n}`);
   }
-  for (const n of fs.readdirSync(path.join(ROOT, "studio/templates"))) {
+  // report templates only; studio/templates/format/ belongs to studio:format
+  for (const n of fs.readdirSync(path.join(ROOT, "studio/templates")).filter((n) => n.endsWith(".md"))) {
     if (fs.existsSync(file(n))) console.log(`= ${n} exists, kept`);
     else fs.copyFileSync(path.join(ROOT, "studio/templates", n), file(n)), console.log(`+ ${n}`);
   }

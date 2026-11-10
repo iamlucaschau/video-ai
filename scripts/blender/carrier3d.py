@@ -1,5 +1,5 @@
 """
-3D hero shots for "How an Aircraft Carrier Defends Itself" (Test/carrier), built in code and rendered headless.
+3D hero shots for "How an Aircraft Carrier Defends Itself" (Formats/Naval Board/episodes/ep01-carrier), built in code and rendered headless.
 Cues come from the same VO timing as the Remotion video.
 
   "B:/Blender/blender.exe" -b --factory-startup --python scripts/blender/carrier3d.py -- <shot> [start end] [samples|preview]

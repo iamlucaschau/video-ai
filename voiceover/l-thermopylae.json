@@ -1,0 +1,58 @@
+{
+  "name": "l-thermopylae",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Adult male history documentary narrator, calm and confident, American English. Even pace, short clear sentences; years, numbers and place names a beat slower. A small pause before a single-word line. No hype, no shouting.",
+  "trimSilence": true,
+  "tempo": 1.05,
+  "gaps": {
+    "sentence": 0.15,
+    "paragraph": 0.3,
+    "scene": 0.35
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "In 480 BC, the largest empire the world had yet seen marched on Greece."
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "Its king, Xerxes, ruled from Egypt to the Indus."
+    },
+    {
+      "id": "03",
+      "scene": "s3",
+      "take": "t01",
+      "gapAfter": 0.15,
+      "text": "To reach Athens, his army had to squeeze through one gap between the mountains and the sea."
+    },
+    {
+      "id": "04",
+      "scene": "s3",
+      "take": "t01",
+      "gapAfter": 0.15,
+      "text": "Thermopylae."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "In places, barely wide enough for a single cart."
+    },
+    {
+      "id": "06",
+      "scene": "s4",
+      "take": "t01",
+      "gapAfter": 0.35,
+      "text": "Waiting there: about seven thousand Greeks, led by a Spartan king and three hundred of his men."
+    }
+  ]
+}
