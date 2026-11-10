@@ -279,6 +279,10 @@
   "onset": 0.02,
   "peak": 23.52
  },
+ "sfx/music/own/ron-harris.mp3": {
+  "onset": 0.02,
+  "peak": 50.22
+ },
  "sfx/music/own/slot-hack.mp3": {
   "onset": 0.01,
   "peak": 60.14

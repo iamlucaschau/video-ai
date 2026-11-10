@@ -1,0 +1,210 @@
+[
+ {
+  "id": "S1",
+  "from": 0,
+  "len": 119,
+  "key": 60,
+  "size": "trung",
+  "note": "thanh tra cắm laptop vào máy slot, màn máy chớp; khung 0"
+ },
+ {
+  "id": "S2",
+  "from": 119,
+  "len": 131,
+  "key": 198,
+  "size": "trung",
+  "note": "văn phòng Gaming Control Board, Harris ở bàn máy tính; 1990s"
+ },
+ {
+  "id": "S3",
+  "from": 250,
+  "len": 96,
+  "key": 308,
+  "size": "cận",
+  "note": "Harris soi màn hình mã"
+ },
+ {
+  "id": "S4",
+  "from": 346,
+  "len": 85,
+  "key": 397,
+  "size": "trung",
+  "note": "thanh tra cắm laptop vào máy trên sàn casino"
+ },
+ {
+  "id": "S5",
+  "from": 431,
+  "len": 85,
+  "key": 482,
+  "size": "trung",
+  "note": "Harris gõ trên laptop"
+ },
+ {
+  "id": "S6",
+  "from": 516,
+  "len": 51,
+  "key": 552,
+  "size": "cận",
+  "note": "màn hình mã, một dòng đỏ lẩn vào"
+ },
+ {
+  "id": "S7",
+  "from": 567,
+  "len": 121,
+  "key": 652,
+  "size": "trung",
+  "note": "thanh tra kiểm tra máy, thanh tiến độ, màn máy chớp đổi"
+ },
+ {
+  "id": "S8",
+  "from": 688,
+  "len": 88,
+  "key": 750,
+  "size": "cận",
+  "note": "đồng xu bỏ vào khe theo nhịp, máy nổ jackpot"
+ },
+ {
+  "id": "S9",
+  "from": 776,
+  "len": 68,
+  "key": 817,
+  "size": "trung",
+  "note": "Harris và bạn bè thì thầm ở bàn"
+ },
+ {
+  "id": "S10",
+  "from": 844,
+  "len": 103,
+  "key": 896,
+  "size": "rộng",
+  "note": "sàn slot, biển đổi LAS VEGAS / RENO / LAKE TAHOE, jackpot"
+ },
+ {
+  "id": "S11",
+  "from": 947,
+  "len": 96,
+  "key": 1005,
+  "size": "trung",
+  "note": "công tố viên với tập hồ sơ; $42,000+"
+ },
+ {
+  "id": "S12",
+  "from": 1043,
+  "len": 48,
+  "key": 1072,
+  "size": "rộng",
+  "note": "sàn slot tối, máy nhấp nháy"
+ },
+ {
+  "id": "S13",
+  "from": 1091,
+  "len": 29,
+  "key": 1106,
+  "size": "trung",
+  "note": "Harris với laptop mới, đêm"
+ },
+ {
+  "id": "S14",
+  "from": 1120,
+  "len": 116,
+  "key": 1201,
+  "size": "trung",
+  "note": "laptop đoán số, bảng keno sáng đúng các số"
+ },
+ {
+  "id": "S15",
+  "from": 1236,
+  "len": 163,
+  "key": 1350,
+  "size": "trung",
+  "note": "cộng sự ở máy keno Las Vegas; $10,000 · 5 MIN"
+ },
+ {
+  "id": "S16",
+  "from": 1399,
+  "len": 98,
+  "key": 1458,
+  "size": "trung",
+  "note": "hai người với túi, bảng ATLANTIC CITY; JAN 1995"
+ },
+ {
+  "id": "S17",
+  "from": 1497,
+  "len": 69,
+  "key": 1538,
+  "size": "trung",
+  "note": "quầy keno ở BALLY'S, cộng sự mua vé"
+ },
+ {
+  "id": "S18",
+  "from": 1566,
+  "len": 125,
+  "key": 1666,
+  "size": "trung",
+  "note": "bảng keno sáng từng số khớp vé; $100,000"
+ },
+ {
+  "id": "S19",
+  "from": 1691,
+  "len": 93,
+  "key": 1747,
+  "size": "cận",
+  "note": "mặt cộng sự cứng lại; khoảng lặng"
+ },
+ {
+  "id": "S20",
+  "from": 1784,
+  "len": 79,
+  "key": 1831,
+  "size": "trung",
+  "note": "quản lý sàn nhìn, nhấc điện thoại"
+ },
+ {
+  "id": "S21",
+  "from": 1863,
+  "len": 81,
+  "key": 1912,
+  "size": "trung",
+  "note": "cửa cuốn quầy sập, cộng sự bị dẫn đi"
+ },
+ {
+  "id": "S22",
+  "from": 1944,
+  "len": 92,
+  "key": 1999,
+  "size": "trung",
+  "note": "sân bay ARRIVALS Las Vegas, hai thám tử chặn Harris"
+ },
+ {
+  "id": "S23",
+  "from": 2036,
+  "len": 56,
+  "key": 2070,
+  "size": "trung",
+  "note": "toà án, thẩm phán; 7 YEARS"
+ },
+ {
+  "id": "S24",
+  "from": 2092,
+  "len": 106,
+  "key": 2156,
+  "size": "trung",
+  "note": "Harris cúi đầu trước toà; khoảng lặng"
+ },
+ {
+  "id": "S25",
+  "from": 2198,
+  "len": 125,
+  "key": 2273,
+  "size": "cận",
+  "note": "Sổ đen mở ra"
+ },
+ {
+  "id": "S26",
+  "from": 2323,
+  "len": 89,
+  "key": 2376,
+  "size": "trung",
+  "note": "về khung 0: thanh tra cắm laptop vào máy"
+ }
+]

@@ -1,0 +1,202 @@
+{
+  "name": "ron-harris",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "American male documentary narrator telling a true story to a friend. Calm, confident, a little amused, brisk pace around 200 words per minute, clear on every word. Numbers are crisp and land. The judge's words are quoted plainly and slowly. The last line is a quiet question. No hype, no shouting.",
+  "trimSilence": true,
+  "tempo": 1.02,
+  "gaps": {
+    "sentence": 0.12,
+    "paragraph": 0.2,
+    "scene": 0.3
+  },
+  "batchBy": "take",
+  "lines": [
+    {
+      "id": "01",
+      "scene": "s1",
+      "take": "t01",
+      "gapAfter": 0.3,
+      "text": "What if the man who checks the slot machines is the one rigging them?"
+    },
+    {
+      "id": "02",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.12,
+      "text": "In the early nineties, Ron Harris was a computer expert at Nevada's Gaming Control Board."
+    },
+    {
+      "id": "03",
+      "scene": "s2",
+      "take": "t02",
+      "gapAfter": 0.3,
+      "text": "His job was to find cheating software hidden in casino games."
+    },
+    {
+      "id": "04",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "Agents checked slot machines by plugging in a laptop."
+    },
+    {
+      "id": "05",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.12,
+      "text": "Harris wrote the program on those laptops."
+    },
+    {
+      "id": "06",
+      "scene": "s3",
+      "take": "t03",
+      "gapAfter": 0.3,
+      "text": "And he hid something inside it."
+    },
+    {
+      "id": "07",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Every time an agent tested a machine, the program quietly changed it."
+    },
+    {
+      "id": "08",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.12,
+      "text": "Now it paid a jackpot when coins went in a set order."
+    },
+    {
+      "id": "09",
+      "scene": "s4",
+      "take": "t04",
+      "gapAfter": 0.3,
+      "text": "Only Harris and his friends knew the order."
+    },
+    {
+      "id": "10",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "His friends hit jackpots in Las Vegas, Reno and Lake Tahoe."
+    },
+    {
+      "id": "11",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.12,
+      "text": "Prosecutors could prove at least forty-two thousand dollars."
+    },
+    {
+      "id": "12",
+      "scene": "s5",
+      "take": "t05",
+      "gapAfter": 0.3,
+      "text": "Nobody knows the real total."
+    },
+    {
+      "id": "13",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "Then he went further."
+    },
+    {
+      "id": "14",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.12,
+      "text": "He built a program that predicted keno numbers without touching the machine at all."
+    },
+    {
+      "id": "15",
+      "scene": "s6",
+      "take": "t06",
+      "gapAfter": 0.3,
+      "text": "In Las Vegas, he and a partner took ten thousand dollars from a keno machine in under five minutes."
+    },
+    {
+      "id": "16",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "So in January nineteen ninety-five, they flew to Atlantic City.",
+      "style": "American male documentary narrator telling a true story to a friend. Calm, confident, a little amused, brisk pace around 200 words per minute, clear on every word. Numbers are crisp and land. The judge's words are quoted plainly and slowly. The last line is a quiet question. No hype, no shouting. Stop cleanly after \"at Bally's.\""
+    },
+    {
+      "id": "17",
+      "scene": "s7",
+      "take": "t07",
+      "gapAfter": 0.12,
+      "text": "The partner bought keno tickets at Bally's.",
+      "style": "American male documentary narrator telling a true story to a friend. Calm, confident, a little amused, brisk pace around 200 words per minute, clear on every word. Numbers are crisp and land. The judge's words are quoted plainly and slowly. The last line is a quiet question. No hype, no shouting. Stop cleanly after \"at Bally's.\""
+    },
+    {
+      "id": "18",
+      "scene": "s7",
+      "take": "t07b",
+      "gapAfter": 0.8,
+      "text": "One ticket hit: a hundred thousand dollars.",
+      "style": "American male documentary narrator, calm and clear. \"One ticket hit:\" then a short beat, then \"a hundred thousand dollars.\" landing crisply. About two and a half seconds. No hype."
+    },
+    {
+      "id": "19",
+      "scene": "s8",
+      "take": "t08a",
+      "gapAfter": 0.8,
+      "text": "And that's what sank them.",
+      "style": "American male documentary narrator, slow and dry, each word clear: \"And that's what sank them.\" About one and a half seconds, \"them\" clearly audible. No hype."
+    },
+    {
+      "id": "20",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "A win that big made the casino suspicious."
+    },
+    {
+      "id": "21",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "Before a cent was paid, the partner was arrested."
+    },
+    {
+      "id": "22",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "Harris was picked up when his plane landed in Las Vegas."
+    },
+    {
+      "id": "23",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.12,
+      "text": "The judge gave him seven years."
+    },
+    {
+      "id": "24",
+      "scene": "s8",
+      "take": "t08",
+      "gapAfter": 0.8,
+      "text": "\"The depth of your betrayal,\" he said, \"was complete.\""
+    },
+    {
+      "id": "25",
+      "scene": "s9",
+      "take": "t09",
+      "gapAfter": 0.12,
+      "text": "Today, Harris is in Nevada's Black Book, banned from the casinos he once inspected."
+    },
+    {
+      "id": "26",
+      "scene": "s9",
+      "take": "t09",
+      "gapAfter": 0.3,
+      "text": "So who checks the people checking the machines?"
+    }
+  ]
+}

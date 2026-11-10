@@ -51,6 +51,12 @@ export const CAST = {
   benter: { skin: "#E6B693", hair: "#5A4632", hairStyle: "short", moustache: true, moustacheC: "#5A4632", top: "#3A4A5E", shirt: "#F3EFE6", tie: "#2E6E7A", pants: "#2A2C34", eye: "#3A4E5E" } as Look,
   /** young Benter in Las Vegas: tweedy jacket, small beard (moustache) */
   benterYoung: { skin: "#E6B693", hair: "#3A2A1E", hairStyle: "short", moustache: true, moustacheC: "#3A2A1E", top: "#6A5A44", shirt: "#E8E4DA", pants: "#3A3428", eye: "#3A4E5E" } as Look,
+  /** Ron Harris, a state gaming-board computer engineer in the mid-1990s: glasses, short hair, shirt and tie (no photo face) */
+  harris: { skin: "#E6B693", hair: "#5A4632", hairStyle: "short", glasses: true, top: "#4A5468", shirt: "#E8E4DA", tie: "#7A2434", pants: "#2A2C34", eye: "#3A3028" } as Look,
+  /** his keno partner: tall, heavy-set (as the New Jersey exclusion record describes him) */
+  harrisMate: { skin: "#6E4630", hair: "#141012", hairStyle: "short", top: "#2A3A4A", shirt: "#E8E4DA", pants: "#1E2026", eye: "#2A1A14", build: 1.2, tall: 1.05 } as Look,
+  /** a judge */
+  judge: { skin: "#E2A882", hair: "#B8B0A2", hairStyle: "recede", glasses: true, top: "#121216", pants: "#121216" } as Look,
   /** a reporter */
   reporter: { skin: "#D9A47E", hair: "#5A3A22", hairStyle: "short", top: "#4A5A72", pants: "#2A2A34", eye: "#3A3028" } as Look,
 };

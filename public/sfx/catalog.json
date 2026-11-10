@@ -1547,5 +1547,14 @@
     "seconds": 102,
     "file": "sfx/music/own/bill-benter.mp3",
     "lufs": -18.2
+  },
+  {
+    "category": "music/own",
+    "title": "NEON ODDS bed: ron-harris",
+    "author": "code",
+    "source": "scripts/make-music.py",
+    "seconds": 89,
+    "file": "sfx/music/own/ron-harris.mp3",
+    "lufs": -19.1
   }
 ]

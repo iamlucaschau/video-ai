@@ -1113,3 +1113,86 @@ export const Horse: React.FC<{ p?: V3; ry?: number; ph?: number; c?: string; sil
     </group>
   );
 };
+
+// ---------------- computers and keno ----------------
+export type LaptopScreen = "code" | "progress" | "keno" | "off";
+/**
+ * A 1990s laptop on a surface at `p`, screen hinged at the back, facing +z. `screen`: scrolling code (`hidden` 0→1 slides one
+ * red line in), a progress bar (`k` 0→1), keno picks (`picks`, amber), or off.
+ */
+export const Laptop: React.FC<{ p?: V3; ry?: number; s?: number; f?: number; screen?: LaptopScreen; k?: number; hidden?: number; picks?: number[] }> = ({ p = [0, 0, 0], ry = 0, s = 1, f = 0, screen = "code", k = 0, hidden = 0, picks = [] }) => {
+  const tex = useLiveTex(384, 256, (c) => {
+    c.fillStyle = screen === "off" ? "#06080C" : "#0A1A2A";
+    c.fillRect(0, 0, 384, 256);
+    if (screen === "code") {
+      for (let i = 0; i < 12; i++) {
+        const row = (i + Math.floor(f / 4)) % 40;
+        c.fillStyle = "#7FD0FF";
+        c.fillRect(14 + ((row * 13) % 30), 12 + i * 20, 90 + ((row * 37) % 180), 8);
+      }
+      if (hidden > 0) {
+        c.fillStyle = "#FF4A3A";
+        c.fillRect(14 + (1 - hidden) * 380, 132, 260, 10);
+      }
+    } else if (screen === "progress") {
+      c.fillStyle = "#3A5A7A";
+      c.fillRect(40, 116, 304, 26);
+      c.fillStyle = "#5CFF8A";
+      c.fillRect(44, 120, 296 * k, 18);
+    } else if (screen === "keno") {
+      c.font = `900 26px ${SIGN_FONT}`;
+      c.textAlign = "center";
+      c.textBaseline = "middle";
+      for (let n = 1; n <= 80; n++) {
+        const x = 24 + ((n - 1) % 10) * 37;
+        const y = 22 + Math.floor((n - 1) / 10) * 30;
+        const on = picks.includes(n);
+        c.fillStyle = on ? "#FFB347" : "#2A3A4A";
+        c.fillText(String(n), x, y);
+      }
+    }
+  });
+  return (
+    <group position={p} rotation={[0, ry, 0]} scale={s}>
+      <Box w={0.34} h={0.025} d={0.26} c="#2A2C30" />
+      <Box w={0.3} h={0.004} d={0.14} c="#16181C" p={[0, 0.025, 0.04]} shadow={false} />
+      <group position={[0, 0.025, -0.125]} rotation={[-0.25, 0, 0]}>
+        <Box w={0.34} h={0.24} d={0.018} c="#2A2C30" />
+        <Panel map={tex} w={0.3} h={0.2} p={[0, 0.12, 0.0095]} glow={1} />
+      </group>
+    </group>
+  );
+};
+/** a casino keno board: 80 numbers in 8 rows of 10, `lit` numbers glowing amber; the board faces +z, its bottom at `p` */
+export const KenoBoard: React.FC<{ p?: V3; w?: number; lit?: number[]; title?: string }> = ({ p = [0, 0, 0], w = 1.6, lit = [], title = "KENO" }) => {
+  const tex = useLiveTex(640, 480, (c) => {
+    c.fillStyle = "#08080C";
+    c.fillRect(0, 0, 640, 480);
+    c.font = `900 40px ${SIGN_FONT}`;
+    c.textAlign = "center";
+    c.textBaseline = "middle";
+    c.fillStyle = "#FFB347";
+    c.fillText(title, 320, 32);
+    c.font = `900 30px ${SIGN_FONT}`;
+    for (let n = 1; n <= 80; n++) {
+      const x = 44 + ((n - 1) % 10) * 61;
+      const y = 92 + Math.floor((n - 1) / 10) * 49;
+      const on = lit.includes(n);
+      if (on) {
+        c.fillStyle = "#FFB347";
+        c.beginPath();
+        c.arc(x, y, 21, 0, Math.PI * 2);
+        c.fill();
+      }
+      c.fillStyle = on ? "#08080C" : "#5A5A64";
+      c.fillText(String(n), x, y + 1);
+    }
+  });
+  const h = w * 0.75;
+  return (
+    <group position={p}>
+      <Box w={w + 0.1} h={h + 0.1} d={0.08} c="#14161C" p={[0, 0, -0.06]} />
+      <Panel map={tex} w={w} h={h} p={[0, h / 2 + 0.05, 0]} glow={1.1} />
+    </group>
+  );
+};
