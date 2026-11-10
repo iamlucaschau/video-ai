@@ -11,10 +11,10 @@
 | Vùng an toàn: ảnh có guide đỏ đã xem | pass | out/sheets/wat-a-1, wat-b-1 (3 lượt) |
 | Không camera giả; ≤ 5 từ mỗi khối, ≤ 2 khối ngoài phụ đề | pass | 1 glide/shot, cắt cứng; khối dài nhất "$127M vs $225K" (3 từ) |
 | Nhạc tự tạo; SFX có trong catalog | pass | make-music preset watanabe; 4 SFX từ catalog, precheck 0 trên chữ |
-| Lucas xem và nghe bản nháp, duyệt | | |
-| 1080×1920, 30 fps, −14 LUFS ±1, true peak ≤ −1,5 dBTP | | |
-| Cổng nghe: `npm run listen` → `NGHE.md`; mọi dòng "Cần nghe" có quyết định (đã nghe: giữ / đã sửa) | | |
-| QA khung: không khung đen, nháy chỉ ở chỗ cố ý | | |
-| Khung cuối bằng khung 0 | | |
-| `xuat-ban.md` đủ tiêu đề, mô tả có nguồn, hashtag, từ khoá | | |
-| `thumb.jpg` 1080×1920, dưới 2 MB, đọc được khi thu nhỏ | | |
+| Lucas xem và nghe bản nháp, duyệt | pass | duyệt 2026-11-10 |
+| 1080×1920, 30 fps, −14 LUFS ±1, true peak ≤ −1,5 dBTP | pass | −13,9 LUFS, −2,1 dBTP (`QA.md`) |
+| Cổng nghe: `npm run listen` → `NGHE.md`; mọi dòng "Cần nghe" có quyết định (đã nghe: giữ / đã sửa) | unresolved | đã ghi quyết định theo số đo; chưa ai nghe bằng tai |
+| QA khung: không khung đen, nháy chỉ ở chỗ cố ý | pass | không có nhảy hình |
+| Khung cuối bằng khung 0 | pass | PSNR 45 dB |
+| `xuat-ban.md` đủ tiêu đề, mô tả có nguồn, hashtag, từ khoá | pass | 5 nguồn |
+| `thumb.jpg` 1080×1920, dưới 2 MB, đọc được khi thu nhỏ | pass | đã xem, 2 lượt |
